@@ -1,0 +1,446 @@
+@import "reset";
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    /* 讓文字和圖片向左對齊 */
+    max-width: 1200px;
+  }
+
+  .leftcontent {
+    width: 60%;
+    /* 讓文字和圖片在小螢幕上都佔滿寬度 */
+  }
+
+  .rightcontent {
+    width: 40%;
+    /* 讓文字和圖片在小螢幕上都佔滿寬度 */
+  }
+}
+
+.container {
+  padding: 10px;
+  background-color: $color-base-yellow;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftcontent {
+  width: 60%;
+}
+
+.rightcontent {
+  width: 40%;
+  flex-wrap: wrap;
+  /* 在小螢幕上自動換行 */
+
+  .imgblock img {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.Title {
+  margin: 5px;
+  font-weight: 800;
+  /*設定字體粗細*/
+  font-size: 30px;
+  /* 設定字體大小 */
+}
+
+.checklist {
+  width: 100%;
+}
+
+.target {
+  display: flex;
+
+  .target_img {
+    width: auto;
+  }
+
+  .target_img img {
+    width: 40px;
+  }
+
+  .subtitle {
+    display: flex;
+    /* 使用 Flexbox */
+    width: 100%;
+    /* 設定寬度 */
+    border-radius: 8px;
+    /* 設定圓角半徑 */
+    padding: 6px;
+    /* 內邊距 */
+    margin: 3px;
+    text-align: left;
+    /* 文字置中 */
+    background-color: #000000;
+    /* 黑色背景 */
+    color: #ffffff;
+    /* 白色文字 */
+    font-size: 18px;
+    /* 設定字體大小 */
+    font-weight: 600;
+    /*設定字體粗細*/
+    align-items: center;
+    /* 垂直置中 */
+  }
+
+  .pricecontent {
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+
+    .pricing {
+      display: flex;
+      /* 使用 Flexbox */
+      width: 100%;
+      /* 設定寬度 */
+      height: auto;
+      /* 設定高度 */
+      border-radius: 8px;
+      /* 設定圓角半徑 */
+      padding: 6px;
+      /* 內邊距 */
+      margin: 3px 3px 3px 4px;
+      text-align: center;
+      /* 文字置中 */
+      background-color: #363434e1;
+      /* 黑色背景 */
+      color: #ffffff;
+      /* 白色文字 */
+      font-size: 18px;
+      /* 設定字體大小 */
+      font-weight: 600;
+      /*設定字體粗細*/
+      align-items: center;
+      /* 垂直置中 */
+      justify-content: center;
+      /* 水平置中 */
+      //display: none;
+      //使div消失
+    }
+
+    .nowprice {
+      display: flex;
+      /* 使用 Flexbox */
+      width: 100%;
+      /* 設定寬度 */
+      height: 90%;
+      /* 設定高度 */
+      background-color: #ffffffff;
+      color: #000000;
+      border-radius: 8px;
+      /* 設定圓角半徑 */
+      padding: 1px;
+      /* 內邊距 */
+      margin: 3px 3px 3px 4px;
+      text-align: center;
+      /* 文字置中 */
+      font-size: 20px;
+      /* 設定字體大小 */
+      font-weight: 500;
+      /*設定字體粗細*/
+      align-items: center;
+      /* 垂直置中 */
+      justify-content: center;
+      /* 水平置中 */
+      border: 1px solid black;
+      display: none;
+    }
+  }
+}
+
+.chkcontent_1st {
+  display: flex;
+  flex-direction: column;
+  /* 垂直排列 */
+  flex: 2;
+
+  .car_color {
+    width: calc(100% - 10px);
+    /* 下面 div 的寬度小於 100% */
+    flex-wrap: wrap;
+    /* 在小螢幕上自動換行 */
+    border: 3px dashed black;
+    /* 設定邊框寬度和顏色 */
+    margin: 3px 5px 5px 5px;
+    ;
+    /* 上 3px，右 10px，下 3px，左 10px */
+    padding: 1px 1px 1px 6px;
+    /* 內邊距 */
+    border-top: none;
+    /* 隱藏上邊的邊框 */
+    display: flex;
+    /* 設置為 Flexbox */
+    display: none;
+
+    .chkblock {
+      display: flex;
+      align-items: center;
+      /* 垂直置中 */
+      justify-content: center;
+      /* 水平置中 */
+      margin: 0 0 0 8px;
+      flex: 0.5;
+    }
+
+    //第一個顏色車台
+    .cherry_red {
+      display: flex;
+      /* 設置為 Flexbox */
+      justify-content: space-between;
+      /* 在主軸上均勻分布 */
+      min-width: 19.2%;
+      border: 2px solid $color-primary-red;
+      /* 設定邊框寬度和顏色 */
+      border-radius: 10px;
+      /* 設定圓角半徑 */
+      margin: 3px;
+      /*外邊距*/
+      padding: 0 0 0 6px;
+      /* 內邊距 */
+      align-items: center;
+      /* 垂直置中 */
+
+      .red_car {
+        flex: 1.5;
+        /* 前兩個 div 佔用較多的空間 */
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 800;
+        /*設定字體粗細*/
+        padding: 8px 0px 8px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
+
+      .img_red {
+        border-radius: 0 8px 8px 0;
+        /* 只設定右上及右下圓角半徑 */
+        max-width: 100%;
+        max-height: 100%;
+        background-color: $color-base-yellow;
+        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+        flex: 1;
+        /* 最後一個 div 寬度為前面的一半 */
+        border-left: 50px solid transparent;
+        /* 三角形右側的透明邊 */
+        border-bottom: 50px solid $color-primary-red;
+        /* 將上邊邊框設為白色，形成朝上的三角形 */
+      }
+    }
+
+    //第二個顏色車台
+    .pearl_orange {
+      display: flex;
+      /* 設置為 Flexbox */
+      justify-content: space-between;
+      /* 在主軸上均勻分布 */
+      min-width: 19.2%;
+      border: 2px solid $color-primary-orange;
+      /* 設定邊框寬度和顏色 */
+      border-radius: 10px;
+      /* 設定圓角半徑 */
+      margin: 3px;
+      /*外邊距*/
+      padding: 0 0 0 6px;
+      /* 內邊距 */
+      align-items: center;
+      /* 垂直置中 */
+
+      .orange_car {
+        flex: 1.5;
+        /* 前兩個 div 佔用較多的空間 */
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 800;
+        /*設定字體粗細*/
+        padding: 8px 0px 8px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
+
+      .img_orange {
+        border-radius: 0 8px 8px 0;
+        /* 只設定右上及右下圓角半徑 */
+        width: 100%;
+        height: 100%;
+        background-color: $color-base-yellow;
+        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+        flex: 1;
+        /* 最後一個 div 寬度為前面的一半 */
+        border-left: 50px solid transparent;
+        /* 三角形右側的透明邊 */
+        border-bottom: 50px solid $color-primary-orange;
+        /* 將上邊邊框設為白色，形成朝上的三角形 */
+      }
+    }
+
+    //第三個顏色車台
+    .rose_gold {
+      display: flex;
+      /* 設置為 Flexbox */
+      justify-content: space-between;
+      /* 在主軸上均勻分布 */
+      min-width: 19.2%;
+      border: 2px solid $color-rose-pink;
+      /* 設定邊框寬度和顏色 */
+      border-radius: 10px;
+      /* 設定圓角半徑 */
+      margin: 3px;
+      /*外邊距*/
+      padding: 0 0 0 6px;
+      /* 內邊距 */
+      align-items: center;
+      /* 垂直置中 */
+
+
+      .pink_car {
+        flex: 1.5;
+        /* 前兩個 div 佔用較多的空間 */
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 800;
+        /*設定字體粗細*/
+        padding: 8px 0px 8px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
+
+      .img_pink {
+        border-radius: 0 8px 8px 0;
+        /* 只設定右上及右下圓角半徑 */
+        width: 100%;
+        height: 100%;
+        background-color: $color-base-yellow;
+        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+        flex: 1;
+        /* 最後一個 div 寬度為前面的一半 */
+        border-left: 50px solid transparent;
+        /* 三角形右側的透明邊 */
+        border-bottom: 50px solid $color-rose-pink;
+        /* 將上邊邊框設為白色，形成朝上的三角形 */
+      }
+    }
+
+    //第四個顏色車台
+    .sky_blue {
+      display: flex;
+      /* 設置為 Flexbox */
+      justify-content: space-between;
+      /* 在主軸上均勻分布 */
+      min-width: 19.2%;
+      border: 2px solid $color-light-blue;
+      /* 設定邊框寬度和顏色 */
+      border-radius: 10px;
+      /* 設定圓角半徑 */
+      margin: 3px;
+      /*外邊距*/
+      padding: 0 0 0 6px;
+      /* 內邊距 */
+      align-items: center;
+      /* 垂直置中 */
+
+      .blue_car {
+        flex: 1.5;
+        /* 前兩個 div 佔用較多的空間 */
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 800;
+        /*設定字體粗細*/
+        padding: 8px 0px 8px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
+
+      .img_blue {
+        border-radius: 0 8px 8px 0;
+        /* 只設定右上及右下圓角半徑 */
+        width: 100%;
+        height: 100%;
+        background-color: $color-base-yellow;
+        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+        flex: 1;
+        /* 最後一個 div 寬度為前面的一半 */
+        border-left: 50px solid transparent;
+        /* 三角形右側的透明邊 */
+        border-bottom: 50px solid $color-light-blue;
+        /* 將上邊邊框設為白色，形成朝上的三角形 */
+      }
+    }
+
+    //第五個顏色車台
+    .camo_gray {
+      display: flex;
+      /* 設置為 Flexbox */
+      justify-content: space-between;
+      /* 在主軸上均勻分布 */
+      min-width: 19.2%;
+      border: 2px solid $color-deep-grey;
+      /* 設定邊框寬度和顏色 */
+      border-radius: 10px;
+      /* 設定圓角半徑 */
+      margin: 3px;
+      /*外邊距*/
+      padding: 0 0 0 6px;
+      /* 內邊距 */
+      align-items: center;
+      /* 垂直置中 */
+
+      .gray_car {
+        flex: 1.5;
+        /* 前兩個 div 佔用較多的空間 */
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 800;
+        /*設定字體粗細*/
+        padding: 8px 0px 8px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
+
+      .img_gray {
+        border-radius: 0 8px 8px 0;
+        /* 只設定右上及右下圓角半徑 */
+        width: 100%;
+        height: 100%;
+        background-color: $color-base-yellow;
+        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+        flex: 1;
+        /* 最後一個 div 寬度為前面的一半 */
+        border-left: 50px solid transparent;
+        /* 三角形右側的透明邊 */
+        border-bottom: 50px solid $color-deep-grey;
+        /* 將上邊邊框設為白色，形成朝上的三角形 */
+      }
+    }
+  }
+}
+
+.ca-seat{
+  display: flex;
+  width: 100%;
+  flex: 2;
+}
+
+.smallblock {
+  width: 60px;
+  /* 設定寬度 */
+  height: 50px;
+  /* 設定高度 */
+  background-color: #000000;
+  /* 黑色背景 */
+  color: #ffffff;
+  /* 白色文字 */
+}

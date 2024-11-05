@@ -1,0 +1,32 @@
+
+// color setting
+$color-base-yellow:#ffd76b;
+$color-primary-red: #E50046;
+$color-primary-orange: #EE7500;
+$color-rose-pink: #F3AECC;
+$color-light-blue: #2EA7E0;
+$color-deep-grey: #666666;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  // position: relative;
+  flex-wrap: wrap; /* 在小螢幕上自動換行 */
+  background-color: #fff;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  //max-width: 1080px;
+  max-width: 100%;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5); /* 調整 scale 值來放大或縮小 */
+}
