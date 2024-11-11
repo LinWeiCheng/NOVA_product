@@ -441,17 +441,53 @@ input[type=checkbox] {
   display: flex;
 }
 .chkcontent_2st .Seat-widthgroup .seat-width {
-  width: auto;
-  height: auto;
+  margin: 0 0 4px 0;
   background-color: rgb(31, 30, 30);
   color: #ffffff;
   text-align: center;
   /* 文字置中 */
-  border: 1px solid black;
+  border: 2px solid black;
   /* 設定邊框寬度和顏色 */
   border-radius: 8px;
   /* 設定圓角半徑 */
   font-weight: 500;
+}
+
+.width_cmCount {
+  display: flex;
+  margin: 0 0 2px 2px;
+  padding: 2px;
+  flex-direction: column;
+}
+.width_cmCount .width_number {
+  display: flex;
+  height: 50%;
+  flex-direction: row; /* 水平排列新增的 div */
+  align-items: center; /* 水平置中 */
+}
+.width_cmCount .width_number .generated_SWdiv {
+  margin: 5px 9px 5px 9px;
+  padding: 10px 11px 10px 11px;
+  font-weight: 500;
+  border-radius: 8px;
+  /* 設定圓角半徑 */
+  text-align: center;
+  /* 文字置中 */
+  align-items: center; /* 水平置中 */
+  justify-content: center; /* 垂直置中 */
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+.width_cmCount .width_chkblock {
+  height: 50%;
+  display: flex;
+  align-items: center; /* 水平置中 */
+}
+.width_cmCount .width_chkblock .SWC_checkbox {
+  margin: 10px 23px 0px 22px;
+  border-radius: 8px;
+  /* 設定圓角半徑 */
+  transform: scale(2.2);
 }
 
 .smallblock {
