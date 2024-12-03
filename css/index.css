@@ -13,6 +13,7 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 400;
   max-width: 100%;
+  max-height: 100%;
 }
 
 input[type=checkbox] {
@@ -138,32 +139,10 @@ input[type=checkbox] {
   /* 垂直置中 */
   justify-content: center;
   /* 水平置中 */
+  display: none;
 }
 .target .pricecontent .nowprice {
-  display: flex;
   /* 使用 Flexbox */
-  width: 100%;
-  /* 設定寬度 */
-  height: 90%;
-  /* 設定高度 */
-  background-color: white;
-  color: #000000;
-  border-radius: 8px;
-  /* 設定圓角半徑 */
-  padding: 1px;
-  /* 內邊距 */
-  margin: 3px 3px 3px 4px;
-  text-align: center;
-  /* 文字置中 */
-  font-size: 20px;
-  /* 設定字體大小 */
-  font-weight: 500;
-  /*設定字體粗細*/
-  align-items: center;
-  /* 垂直置中 */
-  justify-content: center;
-  /* 水平置中 */
-  border: 1px solid black;
   display: none;
 }
 
@@ -174,21 +153,15 @@ input[type=checkbox] {
   width: 100%;
 }
 .chkcontent_1st .car_color {
-  width: calc(100% - 10px);
   /* 下面 div 的寬度小於 100% */
-  flex-wrap: wrap;
   /* 在小螢幕上自動換行 */
-  border: 3px dashed black;
   /* 設定邊框寬度和顏色 */
-  margin: 3px 5px 5px 5px;
   /* 上 3px，右 10px，下 3px，左 10px */
-  padding: 1px 1px 1px 6px;
   /* 內邊距 */
-  border-top: none;
   /* 隱藏上邊的邊框 */
-  display: flex;
   /* 設置為 Flexbox */
-  display: none;
+  visibility: hidden;
+  height: 0;
 }
 .chkcontent_1st .car_color .chkblock {
   display: flex;
