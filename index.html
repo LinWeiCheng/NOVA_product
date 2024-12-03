@@ -21,12 +21,12 @@
                                 <img src="./img/black triangle.png" alt="">
                             </div>
                             <div class="chkcontent_1st">
-                                <div class="subtitle">車體顏色</div>
-                                <div class="car_color hidden">
+                                <div class="subtitle" data-collapse-status="0" data-showinfo="carcolor">車體顏色</div>
+                                <div class="car_color">
                                     <!--第一台車顏色-->
                                     <div class="cherry_red">
                                         <div class="chkblock">
-                                            <input type="checkbox" id="checkbox_red">
+                                            <input type="checkbox" id="checkbox_red" name="car_color">
                                         </div>
                                         <div class="red_car">櫻桃紅</div>
                                         <div class="img_red"></div>
@@ -34,7 +34,7 @@
                                     <!-- 第二台車顏色 -->
                                     <div class="pearl_orange">
                                         <div class="chkblock">
-                                            <input type="checkbox" id="checkbox_org">
+                                            <input type="checkbox" id="checkbox_org" name="car_color">
                                         </div>
                                         <div class="orange_car">珍珠橘</div>
                                         <div class="img_orange"></div>
@@ -42,7 +42,7 @@
                                     <!-- 第三台車顏色 -->
                                     <div class="rose_gold">
                                         <div class="chkblock">
-                                            <input type="checkbox" id="checkbox_gold">
+                                            <input type="checkbox" id="checkbox_gold" name="car_color">
                                         </div>
                                         <div class="pink_car">玫瑰金</div>
                                         <div class="img_pink"></div>
@@ -50,7 +50,7 @@
                                     <!-- 第四台車顏色 -->
                                     <div class="sky_blue">
                                         <div class="chkblock">
-                                            <input type="checkbox" id="checkbox_blue">
+                                            <input type="checkbox" id="checkbox_blue"  name="car_color">
                                         </div>
                                         <div class="blue_car">天空藍</div>
                                         <div class="img_blue"></div>
@@ -58,7 +58,7 @@
                                     <!-- 第五台車顏色 -->
                                     <div class="camo_gray">
                                         <div class="chkblock">
-                                            <input type="checkbox" id="checkbox_gray">
+                                            <input type="checkbox" id="checkbox_gray"  name="car_color">
                                         </div>
                                         <div class="gray_car">迷彩灰</div>
                                         <div class="img_gray"></div>
@@ -66,8 +66,8 @@
                                 </div>
                             </div>
                             <div class="pricecontent">
-                                <div class="pricing">建議售價</div>
-                                <div class="nowprice">40000元</div>
+                                <div class="pricing" data-price-carcolor="carcolor">建議售價</div>
+                                <div class="nowprice"></div>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                             </div>
                             <div class="pricecontent">
                                 <div class="pricing">建議售價</div>
-                                <div class="nowprice">40000元</div>
+                                <div class="nowprice"></div>
                             </div>
                         </div>
                     </div>
@@ -109,6 +109,7 @@
         </div>
     </div>
     </div>
+    <script src="./js/index.js"></script>
     <script src="./js/tool.js"></script>
 </body>
 
