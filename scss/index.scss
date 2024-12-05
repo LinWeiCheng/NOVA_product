@@ -61,6 +61,7 @@
 
   .target_img {
     width: auto;
+    height: 42px;
   }
 
   .target_img img {
@@ -126,7 +127,7 @@
       justify-content: center;
       /* 水平置中 */
       //visibility:hidden;
-      display:none;
+      display: none;
     }
 
     .nowprice {
@@ -154,34 +155,20 @@
       // justify-content: center;
       // /* 水平置中 */
       // border: 1px solid black;
-       display: none;
+      display: none;
     }
   }
 }
 
+// 車體顏色
 .chkcontent_1st {
   display: flex;
   flex-direction: column;
-  /* 垂直排列 */
   width: 100%;
 
+
   .car_color {
-    //width: calc(100% - 10px);
-    /* 下面 div 的寬度小於 100% */
-    //flex-wrap: wrap;
-    /* 在小螢幕上自動換行 */
-    //border: 3px dashed black;
-    /* 設定邊框寬度和顏色 */
-    //margin: 3px 5px 5px 5px;
-    /* 上 3px，右 10px，下 3px，左 10px */
-    //padding: 1px 1px 1px 6px;
-    /* 內邊距 */
-    //border-top: none;
-    /* 隱藏上邊的邊框 */
-    //display: flex;
-    /* 設置為 Flexbox */
-    //display: none;
-    visibility:hidden;
+    visibility: hidden;
     height: 0;
 
     .chkblock {
@@ -431,36 +418,26 @@
   }
 }
 
-.chkcontent_2st {
+// 座板尺寸
+.chkcontent_2nd {
   display: flex;
   width: 100%;
   flex-direction: column;
-  /* 垂直排列 */
 
   .basesize {
-    // width: calc(100% - 8px);
-    // /* 下面 div 的寬度小於 100% */
-    // flex-wrap: wrap;
-    // /* 在小螢幕上自動換行 */
-    // border: 3px dashed black;
-    // /* 設定邊框寬度和顏色 */
-    // margin: 3px 2px 5px 7px;
-    // /* 上 3px，右 2px，下 5px，左 8px */
-    // padding: 1px 1px 1px 6px;
-    // /* 內邊距 */
-    // border-top: none;
-    // /* 隱藏上邊的邊框 */
-    // display: flex;
-    // /* 設置為 Flexbox */
-    visibility:hidden;
+    visibility: hidden;
     height: 0;
+    justify-content: flex-start;
   }
 
   .Seat-widthgroup {
     display: flex;
+    width: 100%;
+    height: 77px;
+    border-bottom: 3px dashed black;
 
     .seat-width {
-      margin: 0 0 4px 0;
+      //margin: 0 0 12px 0;
       background-color: rgb(31, 30, 30);
       color: #ffffff;
       text-align: center;
@@ -470,48 +447,120 @@
       border-radius: 8px;
       /* 設定圓角半徑 */
       font-weight: 500;
+      height: 65px;
+    }
+  }
+
+  .Seat-deepgroup {
+    display: flex;
+    padding: 8px 2px 0px 0px;
+    width: 100%;
+
+    .seat-deep {
+      //margin: 0 0 12px 0;
+      background-color: rgb(31, 30, 30);
+      color: #ffffff;
+      text-align: center;
+      /* 文字置中 */
+      border: 2px solid black;
+      /* 設定邊框寬度和顏色 */
+      border-radius: 8px;
+      /* 設定圓角半徑 */
+      font-weight: 500;
+      height: 65px;
     }
   }
 
 }
 
-.width_cmCount{
+.width_cmCount {
   display: flex;
   margin: 0 0 2px 2px;
   padding: 2px;
-  flex-direction: column; 
+  flex-direction: column;
 
-  .width_number{
+  .width_number {
     display: flex;
-    height: 50%;
-    flex-direction: row;      /* 水平排列新增的 div */
-    align-items: center;         /* 水平置中 */
-    //justify-content: center;     /* 垂直置中 */
+    height: 40%;
+    flex-direction: row;
+    /* 水平排列新增的 div */
+    align-items: center;
+    /* 水平置中 */
 
-    .generated_SWdiv{
-    margin: 5px 9px 5px 9px;
-    padding: 10px 11px 10px 11px;
-    font-weight: 500;
-    border-radius: 8px;
+    .generated_SWdiv {
+      margin: 5px 9px 5px 9px;
+      padding: 10px 11px 10px 11px;
+      font-weight: 500;
+      border-radius: 8px;
       /* 設定圓角半徑 */
-    text-align: center;
-    /* 文字置中 */
-    align-items: center;         /* 水平置中 */
-    justify-content: center;     /* 垂直置中 */
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
+      text-align: center;
+      /* 文字置中 */
+      align-items: center;
+      /* 水平置中 */
+      justify-content: center;
+      /* 垂直置中 */
+      background-color: rgb(0, 0, 0);
+      color: #ffffff;
     }
   }
 
-  .width_chkblock{
+  .width_chkblock {
     height: 50%;
     display: flex;
-    align-items: center;         /* 水平置中 */
+    align-items: center;
+    /* 水平置中 */
 
     .SWC_checkbox {
       margin: 10px 23px 0px 22px;
       border-radius: 8px;
-        /* 設定圓角半徑 */
+      /* 設定圓角半徑 */
+      transform: scale(2.2);
+    }
+
+  }
+}
+
+.deep_cmCount {
+  display: flex;
+  margin: 0 0 2px 2px;
+  padding: 2px;
+  flex-direction: column;
+
+  .deep_number {
+    display: flex;
+    height: 40%;
+    flex-direction: row;
+    /* 水平排列新增的 div */
+    align-items: center;
+    /* 水平置中 */
+
+    .generated_Sddiv {
+      margin: 5px 9px 5px 9px;
+      padding: 10px 11px 10px 11px;
+      font-weight: 500;
+      border-radius: 8px;
+      /* 設定圓角半徑 */
+      text-align: center;
+      /* 文字置中 */
+      align-items: center;
+      /* 水平置中 */
+      justify-content: center;
+      /* 垂直置中 */
+      background-color: rgb(0, 0, 0);
+      color: #ffffff;
+    }
+  }
+
+  .deep_chkblock {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    /* 水平置中 */
+
+    .SdC_checkbox {
+      margin: 10px 23px 0px 22px;
+      border-radius: 8px;
+      /* 設定圓角半徑 */
       transform: scale(2.2);
     }
 
@@ -527,4 +576,34 @@
   /* 黑色背景 */
   color: #ffffff;
   /* 白色文字 */
+}
+
+// 腳架
+.chkcontent_3rd {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .tripodgroup {
+    visibility: hidden;
+    height: 0;
+    width: 100%;
+    
+    .degrees {
+      flex-grow: 1;
+      /* 平均分配空間 */
+      text-align: center;
+      /* 文字置中 */
+      padding: 5px;
+      /* 內邊距 */
+      box-sizing: border-box;
+      /* 包含 padding 和 border */
+      font-size: 20px;
+      font-weight: 600;
+
+      input[name="car_tripod"] {
+        margin: 3px;
+      }
+    }
+  }
 }
