@@ -588,7 +588,7 @@
     visibility: hidden;
     height: 0;
     width: 100%;
-    
+
     .degrees {
       flex-grow: 1;
       /* 平均分配空間 */
@@ -606,4 +606,43 @@
       }
     }
   }
+}
+
+
+//踏板
+.chkcontent_4th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .footpedalgroup {
+    //visibility: hidden;
+    //height: 0;
+    width: calc(100% - 8px);
+    display: flex;
+    flex-direction: column;   /* 讓子元素垂直排列 */
+    padding: 5px 1px 1px 3px;
+    border : 3px dashed black;
+    border-Top : none;
+    margin : 0px 0px 5px 6px;
+    height : auto;
+    justify-content :space-between;
+
+    .footpedal_twopiece {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .footpedal_piecealuminum {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+
+.type{
+  width: 30%;
+  height: auto;
 }

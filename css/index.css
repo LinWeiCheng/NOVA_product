@@ -546,4 +546,35 @@ input[type=checkbox] {
 }
 .chkcontent_3rd .tripodgroup .degrees input[name=car_tripod] {
   margin: 3px;
+}
+
+.chkcontent_4th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.chkcontent_4th .footpedalgroup {
+  width: calc(100% - 8px);
+  display: flex;
+  flex-direction: column; /* 讓子元素垂直排列 */
+  padding: 5px 1px 1px 3px;
+  border: 3px dashed black;
+  border-Top: none;
+  margin: 0px 0px 5px 6px;
+  height: auto;
+  justify-content: space-between;
+}
+.chkcontent_4th .footpedalgroup .footpedal_twopiece {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.chkcontent_4th .footpedalgroup .footpedal_piecealuminum {
+  display: flex;
+  flex-direction: row;
+}
+
+.type {
+  width: 30%;
+  height: auto;
 }/*# sourceMappingURL=index.css.map */
