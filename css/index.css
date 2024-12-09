@@ -18,6 +18,7 @@ body {
 
 input[type=checkbox] {
   transform: scale(2); /* 調整 scale 值來放大或縮小 */
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -182,6 +183,9 @@ input[type=checkbox] {
   align-items: center;
   /* 垂直置中 */
 }
+.chkcontent_1st .car_color .cherry_red .chkblock input[type=checkbox] {
+  accent-color: #E50046;
+}
 .chkcontent_1st .car_color .cherry_red .red_car {
   flex: 1.5;
   /* 前兩個 div 佔用較多的空間 */
@@ -224,6 +228,9 @@ input[type=checkbox] {
   /* 內邊距 */
   align-items: center;
   /* 垂直置中 */
+}
+.chkcontent_1st .car_color .pearl_orange .chkblock input[type=checkbox] {
+  accent-color: #EE7500;
 }
 .chkcontent_1st .car_color .pearl_orange .orange_car {
   flex: 1.5;
@@ -268,6 +275,9 @@ input[type=checkbox] {
   align-items: center;
   /* 垂直置中 */
 }
+.chkcontent_1st .car_color .rose_gold .chkblock input[type=checkbox] {
+  accent-color: #F3AECC;
+}
 .chkcontent_1st .car_color .rose_gold .pink_car {
   flex: 1.5;
   /* 前兩個 div 佔用較多的空間 */
@@ -311,6 +321,9 @@ input[type=checkbox] {
   align-items: center;
   /* 垂直置中 */
 }
+.chkcontent_1st .car_color .sky_blue .chkblock input[type=checkbox] {
+  accent-color: #2EA7E0;
+}
 .chkcontent_1st .car_color .sky_blue .blue_car {
   flex: 1.5;
   /* 前兩個 div 佔用較多的空間 */
@@ -353,6 +366,9 @@ input[type=checkbox] {
   /* 內邊距 */
   align-items: center;
   /* 垂直置中 */
+}
+.chkcontent_1st .car_color .camo_gray .chkblock input[type=checkbox] {
+  accent-color: #666666;
 }
 .chkcontent_1st .car_color .camo_gray .gray_car {
   flex: 1.5;
@@ -554,27 +570,253 @@ input[type=checkbox] {
   flex-direction: column;
 }
 .chkcontent_4th .footpedalgroup {
-  width: calc(100% - 8px);
+  visibility: hidden;
+  height: 0;
+}
+.chkcontent_4th .footpedal_twopiece {
   display: flex;
-  flex-direction: column; /* 讓子元素垂直排列 */
-  padding: 5px 1px 1px 3px;
-  border: 3px dashed black;
-  border-Top: none;
-  margin: 0px 0px 5px 6px;
+  flex-direction: row;
+  align-items: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
   height: auto;
-  justify-content: space-between;
+  margin: 2px 0 1px 0;
+  padding: 2px;
 }
-.chkcontent_4th .footpedalgroup .footpedal_twopiece {
+.chkcontent_4th .footpedal_twopiece .twopiece_anglefixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chkcontent_4th .footpedal_twopiece .twopiece_angleadjust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chkcontent_4th .footpedal_piecealuminum {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  align-items: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: auto;
+  margin: 1px 0 1px 0;
+  padding: 2px;
 }
-.chkcontent_4th .footpedalgroup .footpedal_piecealuminum {
+.chkcontent_4th .footpedal_Plugin {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: auto;
+  margin: 1px 0 1px 0;
+  padding: 2px;
+}
+.chkcontent_4th .footpedal_plumb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: auto;
+  margin: 1px 0 2px 0;
+  padding: 2px;
 }
 
-.type {
+.div_type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30%;
+  height: 100%;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 0 2px 0 2px;
+}
+
+.div_twopiece_angle {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 0 2px 0 0;
+  padding: 1px;
+}
+.div_twopiece_angle .twopiece_anglefixed {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+}
+.div_twopiece_angle .twopiece_angleadjust {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+}
+
+.div_angle {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+}
+
+.div_angleadjust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+  width: 30%;
+  height: 100%;
+}
+
+.div_pedalsize {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* 子元素平均分配高度 */
+  border: 1px solid black;
+  /* 添加邊框便於查看效果 */
+  display: flex;
+  /* 子元素內部內容置中 */
+  justify-content: center;
+  /* 水平置中 */
+  align-items: center;
+  /* 垂直置中 */
+}
+
+.pedalcmcmgroup {
+  display: flex;
+  flex-direction: column;
+  width: 34.5%;
+  margin: 0 3px 1px 1px;
+}
+.pedalcmcmgroup .pedalcm {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
   height: auto;
+  margin: 1px 0 1px 0;
+  padding: 2px;
+}
+
+.div_pedalsize {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: auto;
+  margin: 2px 0 2px 0;
+  padding: 2px;
+}
+
+.div_pedal_direction {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin: 0 3px 1px 1px;
+}
+.div_pedal_direction .div_direction {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: auto;
+  margin: 2px 0 2px 0;
+  padding: 2px;
+}
+
+.footpedal_checkbox1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+  padding: 1px 0 0 0;
+}
+
+.footpedal_checkbox2 {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+}
+
+.footpedal_checkbox3 {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+}
+
+.footpedal_checkbox4 {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+}
+
+.footpedal_checkbox1 input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 9px 2px 8px 2px;
+}
+
+.footpedal_checkbox2 input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 8.5px 2px 10px 2px;
+}
+
+.footpedal_checkbox3 input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 2px 9px 2px;
+}
+
+.footpedal_checkbox4 input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 2px 9px 2px;
+}
+
+.div_notice {
+  border-top: 2px solid black;
+  margin: 2px 0 1px 0;
+  padding: 2px 0 1px 1px;
+  font-size: 15px;
+  font-weight: 600;
 }/*# sourceMappingURL=index.css.map */

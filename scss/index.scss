@@ -166,7 +166,6 @@
   flex-direction: column;
   width: 100%;
 
-
   .car_color {
     visibility: hidden;
     height: 0;
@@ -197,7 +196,13 @@
       padding: 0 0 0 6px;
       /* 內邊距 */
       align-items: center;
+
       /* 垂直置中 */
+      .chkblock {
+        input[type="checkbox"] {
+          accent-color: #E50046;
+        }
+      }
 
       .red_car {
         flex: 1.5;
@@ -246,6 +251,12 @@
       align-items: center;
       /* 垂直置中 */
 
+      .chkblock {
+        input[type="checkbox"] {
+          accent-color: #EE7500;
+        }
+      }
+
       .orange_car {
         flex: 1.5;
         /* 前兩個 div 佔用較多的空間 */
@@ -292,6 +303,12 @@
       /* 內邊距 */
       align-items: center;
       /* 垂直置中 */
+
+      .chkblock {
+        input[type="checkbox"] {
+          accent-color: #F3AECC;
+        }
+      }
 
       .pink_car {
         flex: 1.5;
@@ -340,6 +357,12 @@
       align-items: center;
       /* 垂直置中 */
 
+      .chkblock {
+        input[type="checkbox"] {
+          accent-color: #2EA7E0;
+        }
+      }
+
       .blue_car {
         flex: 1.5;
         /* 前兩個 div 佔用較多的空間 */
@@ -386,6 +409,12 @@
       /* 內邊距 */
       align-items: center;
       /* 垂直置中 */
+
+      .chkblock {
+        input[type="checkbox"] {
+          accent-color: #666666;
+        }
+      }
 
       .gray_car {
         flex: 1.5;
@@ -616,33 +645,284 @@
   flex-direction: column;
 
   .footpedalgroup {
-    //visibility: hidden;
-    //height: 0;
-    width: calc(100% - 8px);
+    visibility: hidden;
+    height: 0;
+    // width: calc(100% - 8px);
+    // display: flex;
+    // flex-direction: column;
+    // /* 讓子元素垂直排列 */
+    // padding: 0px 1px 1px 3px;
+    // border: 3px dashed black;
+    // border-Top: none;
+    // height: auto;
+    // justify-content: space-between;
+  }
+
+  //兩片式塑踏板
+  .footpedal_twopiece {
     display: flex;
-    flex-direction: column;   /* 讓子元素垂直排列 */
-    padding: 5px 1px 1px 3px;
-    border : 3px dashed black;
-    border-Top : none;
-    margin : 0px 0px 5px 6px;
-    height : auto;
-    justify-content :space-between;
+    flex-direction: row;
+    align-items: center;
+    /* 垂直置中 */
+    font-size: 18px;
+    /* 調整字體大小 */
+    font-weight: 600;
+    /* 調整字體粗細 */
+    height: auto;
+    margin: 2px 0 1px 0;
+    padding: 2px;
 
-    .footpedal_twopiece {
+    .twopiece_anglefixed {
       display: flex;
-      flex-direction: row;
-      width: 100%;
+      justify-content: center;
+      align-items: center;
     }
 
-    .footpedal_piecealuminum {
+    .twopiece_angleadjust {
       display: flex;
-      flex-direction: row;
+      justify-content: center;
+      align-items: center;
     }
+  }
+
+  //一片式鋁踏板
+  .footpedal_piecealuminum {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* 垂直置中 */
+    font-size: 18px;
+    /* 調整字體大小 */
+    font-weight: 600;
+    /* 調整字體粗細 */
+    height: auto;
+    margin: 1px 0 1px 0;
+    padding: 2px;
+  }
+
+  //外掛式腳踏組
+  .footpedal_Plugin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* 垂直置中 */
+    font-size: 18px;
+    /* 調整字體大小 */
+    font-weight: 600;
+    /* 調整字體粗細 */
+    height: auto;
+    margin: 1px 0 1px 0;
+    padding: 2px;
+  }
+
+  //垂直調整腳踏組
+  .footpedal_plumb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* 垂直置中 */
+    font-size: 18px;
+    /* 調整字體大小 */
+    font-weight: 600;
+    /* 調整字體粗細 */
+    height: auto;
+    margin: 1px 0 2px 0;
+    padding: 2px;
   }
 }
 
-
-.type{
+.div_type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30%;
+  height: 100%;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 0 2px 0 2px;
+}
+
+.div_twopiece_angle {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 0 2px 0 0;
+  padding: 1px;
+
+  .twopiece_anglefixed {
+    border: 1px solid #000000;
+    border-radius: 7px;
+    margin: 1px 1px 1px 1px;
+  }
+
+  .twopiece_angleadjust {
+    border: 1px solid #000000;
+    border-radius: 7px;
+    margin: 1px 1px 1px 1px;
+  }
+}
+
+.div_angle {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+}
+
+.div_angleadjust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+  width: 30%;
+  height: 100%;
+}
+
+.div_pedalsize {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* 子元素平均分配高度 */
+  border: 1px solid black;
+  /* 添加邊框便於查看效果 */
+  display: flex;
+  /* 子元素內部內容置中 */
+  justify-content: center;
+  /* 水平置中 */
+  align-items: center;
+  /* 垂直置中 */
+}
+
+.pedalcmcmgroup {
+  display: flex;
+  flex-direction: column;
+  width: 34.5%;
+  margin: 0 3px 1px 1px;
+
+  .pedalcm {
+    border: 1px solid #000000;
+    border-radius: 7px;
+    margin: 1px 1px 1px 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 垂直置中 */
+    font-size: 18px;
+    /* 調整字體大小 */
+    font-weight: 600;
+    /* 調整字體粗細 */
+    height: auto;
+    margin: 1px 0 1px 0;
+    padding: 2px;
+  }
+}
+
+.div_pedalsize {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 1px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
   height: auto;
+  margin: 2px 0 2px 0;
+  padding: 2px;
+}
+
+.div_pedal_direction {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin: 0 3px 1px 1px;
+
+  .div_direction {
+    border: 1px solid #000000;
+    border-radius: 7px;
+    margin: 1px 1px 1px 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* 垂直置中 */
+    font-size: 18px;
+    /* 調整字體大小 */
+    font-weight: 600;
+    /* 調整字體粗細 */
+    height: auto;
+    margin: 2px 0 2px 0;
+    padding: 2px;
+  }
+}
+
+.footpedal_checkbox1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+  padding: 1px 0 0 0;
+}
+
+.footpedal_checkbox2 {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+}
+
+.footpedal_checkbox3 {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+  //padding: 1px 0 0 0;
+}
+
+.footpedal_checkbox4 {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  flex: 1;
+}
+
+
+.footpedal_checkbox1 input[type="checkbox"] {
+  //accent-color: blue;
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 9px 2px 8px 2px;
+}
+
+.footpedal_checkbox2 input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 8.5px 2px 10px 2px;
+}
+
+
+.footpedal_checkbox3 input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 2px 9px 2px;
+}
+
+.footpedal_checkbox4 input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 2px 9px 2px;
+}
+
+.div_notice {
+  border-top: 2px solid black;
+  margin: 2px 0 1px 0;
+  padding: 2px 0 1px 1px;
+  font-size: 15px;
+  font-weight: 600;
 }
