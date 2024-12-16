@@ -919,6 +919,104 @@
   margin: 12px 2px 9px 2px;
 }
 
+//頭靠子系統
+.chkcontent_5th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .head_supportsgroup {
+    visibility: hidden;
+    // width: calc(100% - 8px);
+    // display: flex;
+    // flex-direction: row;
+    // /* 讓子元素垂直排列 */
+    // padding: 0px 1px 1px 3px;
+    // border: 3px dashed black;
+    // border-Top: none;
+    // height: auto;
+    // justify-content: space-between;
+    height: 0;
+    width: 100%;
+  }
+}
+
+//背靠子系統
+.chkcontent_6th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .back_supportsgroup {
+    //visibility: hidden;
+    width: calc(100% - 8px);
+    display: flex;
+    flex-direction: row;
+    /* 讓子元素垂直排列 */
+    padding: 0px 1px 1px 3px;
+    border: 3px dashed black;
+    border-Top: none;
+    height: auto;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+
+
+    .Novahardware_title {
+      border: 1px solid #000000;
+      border-radius: 7px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 30;
+      width: 40%;
+      padding: 2px 1px 1px 3px;
+      margin: 3px;
+    }
+
+    .back_sizegroup {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin: 0 3px 1px 1px;
+      margin: 2px;
+
+      .back_size {
+        border: 1px solid #000000;
+        border-radius: 7px;
+        margin: 1px 1px 3px 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 垂直置中 */
+        font-size: 18px;
+        /* 調整字體大小 */
+        font-weight: 600;
+        /* 調整字體粗細 */
+        height: auto;
+        padding: 2px;
+      }
+    }
+
+    .back_supports_checkbox {
+      display: flex;
+      flex-direction: column;
+      width: 5%;
+      margin: 0px 6px 0px 6px;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.back_supports_checkbox input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 11px 3px 9.5px 3px;
+}
+
 .div_notice {
   border-top: 2px solid black;
   margin: 2px 0 1px 0;
