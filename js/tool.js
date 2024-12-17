@@ -485,7 +485,7 @@ let Car_head_supports_checkboxes = document.querySelectorAll(
 );
 
 Price.forEach(function (openIntro) {
-  let nowprice_tripod = Price[4].nextElementSibling;
+  let nowprice_carheadsupports = Price[4].nextElementSibling;
 
   Car_head_supports_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
@@ -497,11 +497,54 @@ Price.forEach(function (openIntro) {
           }
         });
         if (event.target.id === "checkbox_headsupports_Nova") {
-          nowprice_tripod.textContent = "4,500元";
+          nowprice_carheadsupports.textContent = "4,500元";
         }
       }
       if (!event.target.checked) {
-        nowprice_tripod.textContent = "";
+        nowprice_carheadsupports.textContent = "";
+      }
+    });
+  });
+});
+
+/*----- 軀幹點擊列  -----*/
+let Car_side_supports_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_back_supports"]'
+);
+
+Price.forEach(function (openIntro) {
+  let nowprice_backsupports = Price[5].nextElementSibling;
+
+  Car_side_supports_checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", (event) => {
+      // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
+      if (event.target.checked) {
+        Car_side_supports_checkboxes.forEach((otherCheckbox) => {
+          if (otherCheckbox !== event.target) {
+            otherCheckbox.checked = false;
+          }
+        });
+        if (event.target.id === "checkbox_backsupports30_Nova") {
+          nowprice_backsupports.textContent = "3,500元";
+        }else if(event.target.id === "checkbox_backsupports32_Nova") {
+          nowprice_backsupports.textContent = "3,500元";
+        }else if(event.target.id === "checkbox_backsupports34_Nova") {
+          nowprice_backsupports.textContent = "3,500元";
+        }else if(event.target.id === "checkbox_backsupports36_Nova") {
+          nowprice_backsupports.textContent = "3,500元";
+        }else if(event.target.id === "checkbox_backsupports38_Nova") {
+          nowprice_backsupports.textContent = "3,500元";
+        }else if(event.target.id === "checkbox_backsupports40_Nova") {
+          nowprice_backsupports.textContent = "3,500元";
+        }else if(event.target.id === "checkbox_backsupports42_Nova") {
+          nowprice_backsupports.textContent = "3,500元";
+        }else if
+        (event.target.id === "checkbox_backsupportsHardware_Nova") {
+          nowprice_backsupports.textContent = "3,400元";
+        }
+      }
+      if (!event.target.checked) {
+        nowprice_backsupports.textContent = "";
       }
     });
   });
