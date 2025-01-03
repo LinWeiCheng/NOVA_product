@@ -512,40 +512,67 @@ let Car_side_supports_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_back_supports"]'
 );
 
-Price.forEach(function (openIntro) {
+let side_supports_prices = {
+  checkbox1: 3500,
+  checkbox2: 3500,
+  checkbox3: 3500,
+  checkbox4: 3500,
+  checkbox5: 3500,
+  checkbox6: 3500,
+  checkbox7: 3500,
+  checkbox8: 3400 // 第 8 個 checkbox 的價格
+};
+
+//記錄總價
+let totalPrice = 0;
+// 格式化價格函式
+function formatPrice(side_supports_prices) {
+  return new Intl.NumberFormat('en-US').format(side_supports_prices); // 格式化為帶逗號的數字
+}
+
+// 更新價格的函式
+function updatePrice(event) { 
   let nowprice_backsupports = Price[5].nextElementSibling;
 
-  Car_side_supports_checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", (event) => {
-      // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
-      if (event.target.checked) {
-        Car_side_supports_checkboxes.forEach((otherCheckbox) => {
-          if (otherCheckbox !== event.target) {
-            otherCheckbox.checked = false;
-          }
-        });
-        if (event.target.id === "checkbox_backsupports30_Nova") {
-          nowprice_backsupports.textContent = "3,500元";
-        }else if(event.target.id === "checkbox_backsupports32_Nova") {
-          nowprice_backsupports.textContent = "3,500元";
-        }else if(event.target.id === "checkbox_backsupports34_Nova") {
-          nowprice_backsupports.textContent = "3,500元";
-        }else if(event.target.id === "checkbox_backsupports36_Nova") {
-          nowprice_backsupports.textContent = "3,500元";
-        }else if(event.target.id === "checkbox_backsupports38_Nova") {
-          nowprice_backsupports.textContent = "3,500元";
-        }else if(event.target.id === "checkbox_backsupports40_Nova") {
-          nowprice_backsupports.textContent = "3,500元";
-        }else if(event.target.id === "checkbox_backsupports42_Nova") {
-          nowprice_backsupports.textContent = "3,500元";
-        }else if
-        (event.target.id === "checkbox_backsupportsHardware_Nova") {
-          nowprice_backsupports.textContent = "3,400元";
+  totalPrice = 0; // 重置價格
+  let target = event.target; // 取得觸發事件的 checkbox
+
+  if (target.id !== "checkbox8") {
+    // 如果勾選的是 1 到 7 的 checkbox
+    if (target.checked) {
+      // 取消其他 1 到 7 checkbox 的勾選，但不影響第 8 個
+      Car_side_supports_checkboxes.forEach((checkbox, index) => {
+        if (checkbox !== target && index < 7) {
+          checkbox.checked = false;
         }
+      });
+    }
+  }
+
+  let basePriceAdded = false;
+
+  // 計算總價
+  Car_side_supports_checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      if (index < 7) {
+        // 如果是第 1 到第 7 個 checkbox
+        totalPrice = side_supports_prices[`checkbox${index + 1}`]; // 設置基礎價格
+        basePriceAdded = true;
+      } else if (index === 7 && basePriceAdded) {
+        // 如果第 8 個被勾選，且有基礎價格
+        totalPrice += side_supports_prices.checkbox8;
+      } else if (index === 7 && !basePriceAdded) {
+        // 如果只有第 8 個被勾選
+        totalPrice = side_supports_prices.checkbox8;
       }
-      if (!event.target.checked) {
-        nowprice_backsupports.textContent = "";
-      }
-    });
+    }
   });
+
+  // 更新價格到畫面
+  nowprice_backsupports.textContent = `${formatPrice(totalPrice)} 元`;
+}
+
+//為每個 checkbox 添加事件監聽
+Car_side_supports_checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('change', updatePrice);
 });
