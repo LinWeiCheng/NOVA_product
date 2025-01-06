@@ -393,7 +393,7 @@ left.addEventListener("click", function (event) {
   }
 });
 
-/*----- 6.軀幹子系統點擊列  -----*/
+/*----- 6.軀幹子系統-背靠點擊列  -----*/
 left.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -459,6 +459,78 @@ left.addEventListener("click", function (event) {
           //建議售價金額隱藏
           openIntro.style.display = "none";
           nowprice_backsupports.style.display = "none";
+        }
+      }
+    });
+  }
+});
+
+/*----- 7.軀幹子系統-軀幹側支撐點擊列  -----*/
+left.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是carbasetripod
+  if (showinfo === "carlatertrunksupports") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_carlatertrunksupports = document.querySelectorAll(".pricing");
+
+    Price_carlatertrunksupports.forEach(function (openIntro) {
+      //直接判斷是第幾個.Price
+      let nowprice_carlatertrunksupports = Price_carlatertrunksupports[6].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-carlatertrunksupports") === "carlatertrunksupports" &&
+        nowprice_carlatertrunksupports.getAttribute("data-nowprice-carlatertrunksupports") ===
+          "nowcarlatertrunksupports"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carcarlatertrunksupports勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 1px 3px";
+          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.flexDirection = "column";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.display = "flex";
+          introdutionid.style.height = "auto";
+          introdutionid.style.justifyContent ="space-between";
+          introdutionid.style.margin="0px 5px 5px 7px";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_carlatertrunksupports.style.display = "block";
+          nowprice_carlatertrunksupports.style.display = "flex";
+          nowprice_carlatertrunksupports.style.width = "100%";
+          nowprice_carlatertrunksupports.style.height = "90%";
+          nowprice_carlatertrunksupports.style.color = "#000000";
+          nowprice_carlatertrunksupports.style.borderRadius = "8px";
+          nowprice_carlatertrunksupports.style.padding = "1px";
+          nowprice_carlatertrunksupports.style.margin = "3px 3px 3px 4px";
+          nowprice_carlatertrunksupports.style.textAlign = "center";
+          nowprice_carlatertrunksupports.style.fontSize = "21px";
+          nowprice_carlatertrunksupports.style.fontWeight = "600";
+          nowprice_carlatertrunksupports.style.alignItems = "center";
+          nowprice_carlatertrunksupports.style.justifyContent = "center";
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");         
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_carlatertrunksupports.style.display = "none";
         }
       }
     });

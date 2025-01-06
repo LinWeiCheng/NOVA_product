@@ -1,3 +1,7 @@
+// 格式化為帶逗號的數字
+function formatPrice(back_supports_prices) {
+  return new Intl.NumberFormat("en-US").format(back_supports_prices);
+}
 /*----- 1.車體顏色點擊列  -----*/
 let Car_color_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_color"]'
@@ -507,37 +511,29 @@ Price.forEach(function (openIntro) {
   });
 });
 
-/*----- 軀幹點擊列  -----*/
+/*----- 軀幹點擊列-背靠  -----*/
 let Car_side_supports_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_back_supports"]'
 );
 
-let side_supports_prices = {
-  checkbox1: 3500,
-  checkbox2: 3500,
-  checkbox3: 3500,
-  checkbox4: 3500,
-  checkbox5: 3500,
-  checkbox6: 3500,
-  checkbox7: 3500,
-  checkbox8: 3400 // 第 8 個 checkbox 的價格
+let back_supports_prices = {
+  back_prices1: 3500,
+  back_prices2: 3500,
+  back_prices3: 3500,
+  back_prices4: 3500,
+  back_prices5: 3500,
+  back_prices6: 3500,
+  back_prices7: 3500,
+  hardware_prices8: 3400, // 第 8 個 checkbox 的價格
 };
 
-//記錄總價
-let totalPrice = 0;
-// 格式化價格函式
-function formatPrice(side_supports_prices) {
-  return new Intl.NumberFormat('en-US').format(side_supports_prices); // 格式化為帶逗號的數字
-}
-
 // 更新價格的函式
-function updatePrice(event) { 
+function update_back_supportsPrice(event) {
   let nowprice_backsupports = Price[5].nextElementSibling;
-
-  totalPrice = 0; // 重置價格
+  let totalPrice = 0; // 重置價格
   let target = event.target; // 取得觸發事件的 checkbox
 
-  if (target.id !== "checkbox8") {
+  if (target.id !== "hardware_prices8") {
     // 如果勾選的是 1 到 7 的 checkbox
     if (target.checked) {
       // 取消其他 1 到 7 checkbox 的勾選，但不影響第 8 個
@@ -556,14 +552,41 @@ function updatePrice(event) {
     if (checkbox.checked) {
       if (index < 7) {
         // 如果是第 1 到第 7 個 checkbox
-        totalPrice = side_supports_prices[`checkbox${index + 1}`]; // 設置基礎價格
+        totalPrice = back_supports_prices[`back_prices${index + 1}`]; // 設置基礎價格
         basePriceAdded = true;
       } else if (index === 7 && basePriceAdded) {
         // 如果第 8 個被勾選，且有基礎價格
-        totalPrice += side_supports_prices.checkbox8;
+        totalPrice += back_supports_prices.hardware_prices8;
       } else if (index === 7 && !basePriceAdded) {
         // 如果只有第 8 個被勾選
-        totalPrice = side_supports_prices.checkbox8;
+        totalPrice = back_supports_prices.hardware_prices8;
+      }
+    }
+  });
+
+  // 更新價格到畫面
+  nowprice_backsupports.textContent = `${formatPrice(totalPrice)} 元`;
+}
+
+// 更新價格的函式
+function update_back_supports_hardwarePrice(event) {
+  let nowprice_backsupports = Price[5].nextElementSibling;
+  let totalPrice = 0; // 重置價格
+  let basePriceAdded = false;
+
+  // 計算總價
+  Car_side_supports_checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      if (index < 7) {
+        // 如果是第 1 到第 7 個 checkbox
+        totalPrice = back_supports_prices[`back_prices${index + 1}`]; // 設置基礎價格
+        basePriceAdded = true;
+      } else if (index === 7 && basePriceAdded) {
+        // 如果第 8 個被勾選，且有基礎價格
+        totalPrice += back_supports_prices.hardware_prices8;
+      } else if (index === 7 && !basePriceAdded) {
+        // 如果只有第 8 個被勾選
+        totalPrice = back_supports_prices.hardware_prices8;
       }
     }
   });
@@ -574,5 +597,84 @@ function updatePrice(event) {
 
 //為每個 checkbox 添加事件監聽
 Car_side_supports_checkboxes.forEach((checkbox) => {
-  checkbox.addEventListener('change', updatePrice);
+  checkbox.addEventListener("change", (event) => {
+    if (event.target.id === "checkbox_backsupportsHardware_Nova") {
+      // 第 8 個 checkbox 不影響第 1 到第 7 個的選中狀態
+      update_back_supports_hardwarePrice(event);
+    } else {
+      // 第 1 到第 7 個 checkbox 互斥，但不影響第 8 個
+      update_back_supportsPrice(event);
+    }
+  });
+});
+
+/*----- 軀幹點擊列-軀幹側支撐 -----*/
+let Car_latertrunk_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_latertrunk_support"]'
+);
+
+let latertrunksupportSL = document.getElementById(
+  "checkbox_latertrunksupportSL_Nova"
+);
+
+let latertrunksupportSR = document.getElementById(
+  "checkbox_latertrunksupportSR_Nova"
+);
+
+let latertrunksupportML = document.getElementById(
+  "checkbox_latertrunksupportML_Nova"
+);
+let latertrunksupportMR = document.getElementById(
+  "checkbox_latertrunksupportMR_Nova"
+);
+
+let latertrunk_supports_prices = {
+  latertrunk_prices1: 8500,
+  latertrunk_prices2: 9000,
+};
+
+function update_latertrunk_Price(event) {
+  let nowprice_latertrunksupports = Price[6].nextElementSibling;
+
+  Car_latertrunk_checkboxes.forEach((checkbox, index) => {
+    if (checkbox !== event.target) {
+      checkbox.checked = false;
+    }
+    if (event.target.id === "checkbox_latertrunksupportSL_Nova") {
+      nowprice_latertrunksupports.textContent = `${formatPrice(
+        latertrunk_supports_prices.latertrunk_prices1
+      )} 元`;
+      latertrunksupportSR.checked = true;
+    } else if (event.target.id === "checkbox_latertrunksupportSR_Nova") {
+      nowprice_latertrunksupports.textContent = `${formatPrice(
+        latertrunk_supports_prices.latertrunk_prices1
+      )} 元`;
+      latertrunksupportSL.checked = true;
+    } else if (event.target.id === "checkbox_latertrunksupportML_Nova") {
+      nowprice_latertrunksupports.textContent = `${formatPrice(
+        latertrunk_supports_prices.latertrunk_prices2
+      )} 元`;
+      latertrunksupportMR.checked = true;
+    } else if (event.target.id === "checkbox_latertrunksupportMR_Nova") {
+      nowprice_latertrunksupports.textContent = `${formatPrice(
+        latertrunk_supports_prices.latertrunk_prices2
+      )} 元`;
+      latertrunksupportML.checked = true;
+    }
+  });
+}
+
+//為每個 checkbox 添加事件監聽
+Car_latertrunk_checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", (event) => {
+    if (event.target.checked) {
+      update_latertrunk_Price(event);
+    } else {
+      let nowprice_latertrunksupports = Price[6].nextElementSibling;
+      nowprice_latertrunksupports.textContent = "0元";
+      Car_latertrunk_checkboxes.forEach((otherCheckbox) => {
+        otherCheckbox.checked = false;
+      });
+    }
+  });
 });
