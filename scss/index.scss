@@ -37,7 +37,7 @@
   flex-wrap: wrap;
   /* 在小螢幕上自動換行 */
 
-  .imgblock{
+  .imgblock {
     width: 100%;
     height: 100%;
     display: flex;
@@ -46,7 +46,7 @@
     // border: 2px solid black;
     margin: 20px auto;
   }
-  
+
   #ProductImage {
     max-width: 100%;
     max-height: 100%;
@@ -951,13 +951,13 @@
   }
 }
 
-//軀幹子系統
+//軀幹子系統_背靠
 .chkcontent_6th {
   display: flex;
   width: 100%;
   flex-direction: column;
 
-  .trunk_suppotrts {
+  .trunk_suppotrts_back {
     visibility: hidden;
     // width: calc(100% - 8px);
     // display: flex;
@@ -976,7 +976,7 @@
       display: flex;
       flex-direction: row;
 
-      .Novahardware_title {
+      .Nova_back_hardware_title {
         border: 1px solid #000000;
         border-radius: 7px;
         height: auto;
@@ -1023,6 +1023,35 @@
         justify-content: center;
       }
     }
+  }
+}
+
+.back_supports_checkbox input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 7.9px 0px 13.1px 0px;
+}
+
+
+//軀幹子系統_軀幹側支撐
+.chkcontent_7th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .trunk_suppotrts_LaterTrunk {
+    visibility: hidden;
+    // width: calc(100% - 8px);
+    // display: flex;
+    // flex-direction: column;
+    // /* 讓子元素垂直排列 */
+    // padding: 0px 1px 1px 3px;
+    // border: 3px dashed black;
+    // border-Top: none;
+    // height: auto;
+    // justify-content: space-between;
+    height: 0;
+    width: 100%;
 
     .side_supportgroup {
       display: flex;
@@ -1036,8 +1065,8 @@
         align-items: center;
         justify-content: center;
         font-weight: 600;
-        font-size: 24px;
-        width: 42.5%;
+        font-size: 25px;
+        width: 40%;
         padding: 2px 1px 1px 3px;
         margin: 3px;
       }
@@ -1088,7 +1117,8 @@
           padding: 1px 5px 1px 5px;
         }
       }
-      .side_supports_checkbox {
+
+      .latertrunk_checkboxes {
         display: flex;
         flex-direction: column;
         width: 5%;
@@ -1101,13 +1131,7 @@
   }
 }
 
-.back_supports_checkbox input[type="checkbox"] {
-  //accent-color: rgb(255, 0, 0);
-  /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 7.9px 0px 13.1px 0px;
-}
-
-.side_supports_checkbox input[type="checkbox"] {
+.latertrunk_checkboxes input[type="checkbox"] {
   //accent-color: rgb(255, 0, 0);
   /* 更改勾選顏色（現代瀏覽器支持） */
   margin: 10px 3px 9.5px 3px;

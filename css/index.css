@@ -837,16 +837,16 @@ input[type=checkbox] {
   width: 100%;
   flex-direction: column;
 }
-.chkcontent_6th .trunk_suppotrts {
+.chkcontent_6th .trunk_suppotrts_back {
   visibility: hidden;
   height: 0;
   width: 100%;
 }
-.chkcontent_6th .trunk_suppotrts .back_supportsgroup {
+.chkcontent_6th .trunk_suppotrts_back .back_supportsgroup {
   display: flex;
   flex-direction: row;
 }
-.chkcontent_6th .trunk_suppotrts .back_supportsgroup .Novahardware_title {
+.chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .Nova_back_hardware_title {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -859,13 +859,13 @@ input[type=checkbox] {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.chkcontent_6th .trunk_suppotrts .back_supportsgroup .back_sizegroup {
+.chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup {
   display: flex;
   flex-direction: column;
   width: 60%;
   margin: 0 3px 1px 1px;
 }
-.chkcontent_6th .trunk_suppotrts .back_supportsgroup .back_sizegroup .back_size {
+.chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup .back_size {
   border: 1px solid #000000;
   border-radius: 7px;
   margin: 1px 1px 3px 1px;
@@ -880,75 +880,7 @@ input[type=checkbox] {
   height: auto;
   padding: 2px;
 }
-.chkcontent_6th .trunk_suppotrts .back_supportsgroup .back_supports_checkbox {
-  display: flex;
-  flex-direction: column;
-  width: 5%;
-  margin: 0px 6px 0px 6px;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-}
-.chkcontent_6th .trunk_suppotrts .side_supportgroup {
-  display: flex;
-  flex-direction: row;
-}
-.chkcontent_6th .trunk_suppotrts .side_supportgroup .Novalateralhardware_title {
-  border: 1px solid #000000;
-  border-radius: 7px;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 24px;
-  width: 42.5%;
-  padding: 2px 1px 1px 3px;
-  margin: 3px;
-}
-.chkcontent_6th .trunk_suppotrts .side_supportgroup .side_sizegroup {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: 2px 0 2px 0;
-}
-.chkcontent_6th .trunk_suppotrts .side_supportgroup .side_sizegroup .side_size {
-  border: 1px solid #000000;
-  border-radius: 7px;
-  margin: 1px 1px 3px 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* 垂直置中 */
-  font-size: 18px;
-  /* 調整字體大小 */
-  font-weight: 600;
-  /* 調整字體粗細 */
-  height: 100%;
-  padding: 3px 1px 3px;
-}
-.chkcontent_6th .trunk_suppotrts .side_supportgroup .side_sizeLRgroup {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 2.5px 1px 2px 1px;
-}
-.chkcontent_6th .trunk_suppotrts .side_supportgroup .side_sizeLRgroup .side_sizeLR {
-  border: 1px solid #000000;
-  border-radius: 7px;
-  margin: 1px 1px 3px 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* 垂直置中 */
-  font-size: 18px;
-  /* 調整字體大小 */
-  font-weight: 600;
-  /* 調整字體粗細 */
-  height: auto;
-  padding: 1px 5px 1px 5px;
-}
-.chkcontent_6th .trunk_suppotrts .side_supportgroup .side_supports_checkbox {
+.chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_supports_checkbox {
   display: flex;
   flex-direction: column;
   width: 5%;
@@ -963,7 +895,86 @@ input[type=checkbox] {
   margin: 7.9px 0px 13.1px 0px;
 }
 
-.side_supports_checkbox input[type=checkbox] {
+.chkcontent_7th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup {
+  display: flex;
+  flex-direction: row;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .Novalateralhardware_title {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  width: 40%;
+  padding: 2px 1px 1px 3px;
+  margin: 3px;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 2px 0 2px 0;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup .side_size {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 3px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: 100%;
+  padding: 3px 1px 3px;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeLRgroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2.5px 1px 2px 1px;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeLRgroup .side_sizeLR {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 3px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: auto;
+  padding: 1px 5px 1px 5px;
+}
+.chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes {
+  display: flex;
+  flex-direction: column;
+  width: 5%;
+  margin: 0px 6px 0px 6px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.latertrunk_checkboxes input[type=checkbox] {
   /* 更改勾選顏色（現代瀏覽器支持） */
   margin: 10px 3px 9.5px 3px;
 }
