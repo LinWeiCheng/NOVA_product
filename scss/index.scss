@@ -21,6 +21,7 @@
 .container {
   padding: 10px;
   background-color: $color-base-yellow;
+  min-height: 1500px;
 }
 
 .content {
@@ -35,7 +36,7 @@
 .rightcontent {
   width: 40%;
   flex-wrap: wrap;
-  /* 在小螢幕上自動換行 */
+  position: relative;
 
   .imgblock {
     width: 100%;
@@ -51,6 +52,33 @@
     max-width: 100%;
     max-height: 100%;
     padding: 15px;
+  }
+
+  //總價浮動視窗
+  .totalPrice {
+    position: fixed;
+    /* 固定在視窗 */
+    top: 10px;
+    /* 距離視窗頂部 20px */
+    right: 10px;
+    /* 距離視窗右側 20px */
+    background-color: #ffffff;
+    /* 背景色 */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    /* 邊框 */
+    border-radius: 8px;
+    /* 圓角 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 陰影 */
+    font-size: 30px;
+    /* 字體大小 */
+    font-weight: 900;
+    /* 字體加粗 */
+    text-align: center;
+    /* 文字置中 */
+    color: #333;
+    /* 文字顏色 */
   }
 }
 
@@ -1144,4 +1172,86 @@
   font-size: 15px;
   font-weight: 600;
   background: #bebebe;
+}
+
+//軀幹子系統_背靠
+.chkcontent_8th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .seatbasegroup {
+    visibility: hidden;
+    // width: calc(100% - 8px);
+    // display: flex;
+    // flex-direction: column;
+    // /* 讓子元素垂直排列 */
+    // padding: 0px 1px 1px 3px;
+    // border: 3px dashed black;
+    // border-Top: none;
+    // height: auto;
+    // justify-content: space-between;
+    height: 0;
+    width: 100%;
+
+
+    .seat_supportsgroup {
+      display: flex;
+      flex-direction: row;
+
+        .Nova_seatbase_title {
+          border: 1px solid #000000;
+          border-radius: 7px;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 25px;
+          width: 40%;
+          padding: 2px 1px 1px 3px;
+          margin: 3px;
+        }
+
+        .seatbase_sizegroup {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          margin: 0 3px 1px 1px;
+
+          .seatbase_size {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            margin: 1px 1px 3px 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 18px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: auto;
+            padding: 2px;
+          }
+        }
+
+        .seatbase_checkbox {
+          display: flex;
+          flex-direction: column;
+          width: 5%;
+          margin: 0px 6px 0px 6px;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    
+  }
+}
+
+.seatbase_checkbox input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 7.9px 0px 13.1px 0px;
 }

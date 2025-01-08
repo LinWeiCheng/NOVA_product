@@ -40,6 +40,7 @@ input[type=checkbox] {
 .container {
   padding: 10px;
   background-color: #ffd76b;
+  min-height: 1500px;
 }
 
 .content {
@@ -54,7 +55,7 @@ input[type=checkbox] {
 .rightcontent {
   width: 40%;
   flex-wrap: wrap;
-  /* 在小螢幕上自動換行 */
+  position: relative;
 }
 .rightcontent .imgblock {
   width: 100%;
@@ -68,6 +69,31 @@ input[type=checkbox] {
   max-width: 100%;
   max-height: 100%;
   padding: 15px;
+}
+.rightcontent .totalPrice {
+  position: fixed;
+  /* 固定在視窗 */
+  top: 10px;
+  /* 距離視窗頂部 20px */
+  right: 10px;
+  /* 距離視窗右側 20px */
+  background-color: #ffffff;
+  /* 背景色 */
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  /* 邊框 */
+  border-radius: 8px;
+  /* 圓角 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 陰影 */
+  font-size: 30px;
+  /* 字體大小 */
+  font-weight: 900;
+  /* 字體加粗 */
+  text-align: center;
+  /* 文字置中 */
+  color: #333;
+  /* 文字顏色 */
 }
 
 .Title {
@@ -986,4 +1012,67 @@ input[type=checkbox] {
   font-size: 15px;
   font-weight: 600;
   background: #bebebe;
+}
+
+.chkcontent_8th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.chkcontent_8th .seatbasegroup {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+.chkcontent_8th .seatbasegroup .seat_supportsgroup {
+  display: flex;
+  flex-direction: row;
+}
+.chkcontent_8th .seatbasegroup .seat_supportsgroup .Nova_seatbase_title {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  width: 40%;
+  padding: 2px 1px 1px 3px;
+  margin: 3px;
+}
+.chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 3px 1px 1px;
+}
+.chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup .seatbase_size {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 3px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: auto;
+  padding: 2px;
+}
+.chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_checkbox {
+  display: flex;
+  flex-direction: column;
+  width: 5%;
+  margin: 0px 6px 0px 6px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.seatbase_checkbox input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 7.9px 0px 13.1px 0px;
 }/*# sourceMappingURL=index.css.map */
