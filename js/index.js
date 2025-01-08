@@ -1,5 +1,5 @@
 let left = document.querySelector(".leftcontent");
-/*----- 1.車體顏色點擊列  -----*/
+/*-----  1.車體顏色點擊列  -----*/
 left.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -44,7 +44,7 @@ left.addEventListener("click", function (event) {
   }
 });
 
-/*----- 2.座板尺寸點擊列  -----*/
+/*-----  2.座板尺寸點擊列  -----*/
 //座寬尺寸黑格子
 let SW_container = document.querySelector(".width_number");
 let SWCount = 30;
@@ -159,7 +159,7 @@ left.addEventListener("click", function (event) {
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
-          
+
           //建議售價標題隱藏
           introdutionid.style.visibility = "hidden";
           introdutionid.style.height = "0";
@@ -176,7 +176,7 @@ left.addEventListener("click", function (event) {
   }
 });
 
-/*----- 3.腳架點擊列  -----*/
+/*-----  3.腳架點擊列  -----*/
 left.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -209,7 +209,7 @@ left.addEventListener("click", function (event) {
           introdutionid.style.display = "flex";
           introdutionid.style.margin = "0px 5px 5px 7px";
           introdutionid.style.height = "auto";
-          introdutionid.style.justifyContent ="space-between";
+          introdutionid.style.justifyContent = "space-between";
 
           //建議售價標題顯示
           openIntro.style.display = "block";
@@ -230,7 +230,7 @@ left.addEventListener("click", function (event) {
           nowprice_tripod.style.justifyContent = "center";
         } else {
           //把data-collapse-status改成0
-          introdution.setAttribute("data-collapse-status", "0");         
+          introdution.setAttribute("data-collapse-status", "0");
 
           //建議售價標題隱藏
           introdutionid.style.visibility = "hidden";
@@ -248,7 +248,7 @@ left.addEventListener("click", function (event) {
   }
 });
 
-/*----- 4.踏板樣式點擊列  -----*/
+/*-----  4.踏板樣式點擊列  -----*/
 left.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -281,8 +281,8 @@ left.addEventListener("click", function (event) {
           introdutionid.style.display = "flex";
           introdutionid.style.margin = "0px 0px 5px 6px";
           introdutionid.style.height = "auto";
-          introdutionid.style.justifyContent ="space-between";
-          introdutionid.style.flexDirection = 'column';
+          introdutionid.style.justifyContent = "space-between";
+          introdutionid.style.flexDirection = "column";
 
           //建議售價標題顯示
           openIntro.style.display = "block";
@@ -303,7 +303,7 @@ left.addEventListener("click", function (event) {
           nowprice_carfootpedal.style.justifyContent = "center";
         } else {
           //把data-collapse-status改成0
-          introdution.setAttribute("data-collapse-status", "0");         
+          introdution.setAttribute("data-collapse-status", "0");
 
           //建議售價標題隱藏
           introdutionid.style.visibility = "hidden";
@@ -321,7 +321,7 @@ left.addEventListener("click", function (event) {
   }
 });
 
-/*----- 5.頭靠子系統點擊列  -----*/
+/*-----  5.頭靠子系統點擊列  -----*/
 left.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -336,9 +336,11 @@ left.addEventListener("click", function (event) {
       let nowprice_carheadsupports = Price_headsupports[4].nextElementSibling;
 
       if (
-        openIntro.getAttribute("data-price-carheadsupports") === "carheadsupports" &&
-        nowprice_carheadsupports.getAttribute("data-nowprice-carheadsupports") ===
-          "nowcarheadsupports"
+        openIntro.getAttribute("data-price-carheadsupports") ===
+          "carheadsupports" &&
+        nowprice_carheadsupports.getAttribute(
+          "data-nowprice-carheadsupports"
+        ) === "nowcarheadsupports"
       ) {
         if (introdution.getAttribute("data-collapse-status") === "0") {
           //把data-collapse-status改成1
@@ -354,7 +356,7 @@ left.addEventListener("click", function (event) {
           introdutionid.style.borderTop = "none";
           introdutionid.style.margin = "0px 5px 5px 7px";
           introdutionid.style.height = "auto";
-          introdutionid.style.justifyContent ="space-between";
+          introdutionid.style.justifyContent = "space-between";
 
           //建議售價標題顯示
           openIntro.style.display = "block";
@@ -375,7 +377,7 @@ left.addEventListener("click", function (event) {
           nowprice_carheadsupports.style.justifyContent = "center";
         } else {
           //把data-collapse-status改成0
-          introdution.setAttribute("data-collapse-status", "0");         
+          introdution.setAttribute("data-collapse-status", "0");
 
           //建議售價標題隱藏
           introdutionid.style.visibility = "hidden";
@@ -393,7 +395,7 @@ left.addEventListener("click", function (event) {
   }
 });
 
-/*----- 6.軀幹子系統-背靠點擊列  -----*/
+/*-----  6.軀幹子系統-背靠點擊列  -----*/
 left.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -408,7 +410,8 @@ left.addEventListener("click", function (event) {
       let nowprice_backsupports = Price_backsupports[5].nextElementSibling;
 
       if (
-        openIntro.getAttribute("data-price-carbacksupports") === "carbacksupports" &&
+        openIntro.getAttribute("data-price-carbacksupports") ===
+          "carbacksupports" &&
         nowprice_backsupports.getAttribute("data-nowprice-carbacksupports") ===
           "nowcarbacksupports"
       ) {
@@ -425,8 +428,8 @@ left.addEventListener("click", function (event) {
           introdutionid.style.borderTop = "none";
           introdutionid.style.display = "flex";
           introdutionid.style.height = "auto";
-          introdutionid.style.justifyContent ="space-between";
-          introdutionid.style.margin="0px 5px 5px 7px";
+          introdutionid.style.justifyContent = "space-between";
+          introdutionid.style.margin = "0px 5px 5px 7px";
 
           //建議售價標題顯示
           openIntro.style.display = "block";
@@ -447,7 +450,7 @@ left.addEventListener("click", function (event) {
           nowprice_backsupports.style.justifyContent = "center";
         } else {
           //把data-collapse-status改成0
-          introdution.setAttribute("data-collapse-status", "0");         
+          introdution.setAttribute("data-collapse-status", "0");
 
           //建議售價標題隱藏
           introdutionid.style.visibility = "hidden";
@@ -465,7 +468,7 @@ left.addEventListener("click", function (event) {
   }
 });
 
-/*----- 7.軀幹子系統-軀幹側支撐點擊列  -----*/
+/*-----  7.軀幹子系統-軀幹側支撐點擊列  -----*/
 left.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -477,12 +480,15 @@ left.addEventListener("click", function (event) {
 
     Price_carlatertrunksupports.forEach(function (openIntro) {
       //直接判斷是第幾個.Price
-      let nowprice_carlatertrunksupports = Price_carlatertrunksupports[6].nextElementSibling;
+      let nowprice_carlatertrunksupports =
+        Price_carlatertrunksupports[6].nextElementSibling;
 
       if (
-        openIntro.getAttribute("data-price-carlatertrunksupports") === "carlatertrunksupports" &&
-        nowprice_carlatertrunksupports.getAttribute("data-nowprice-carlatertrunksupports") ===
-          "nowcarlatertrunksupports"
+        openIntro.getAttribute("data-price-carlatertrunksupports") ===
+          "carlatertrunksupports" &&
+        nowprice_carlatertrunksupports.getAttribute(
+          "data-nowprice-carlatertrunksupports"
+        ) === "nowcarlatertrunksupports"
       ) {
         if (introdution.getAttribute("data-collapse-status") === "0") {
           //把data-collapse-status改成1
@@ -497,8 +503,8 @@ left.addEventListener("click", function (event) {
           introdutionid.style.borderTop = "none";
           introdutionid.style.display = "flex";
           introdutionid.style.height = "auto";
-          introdutionid.style.justifyContent ="space-between";
-          introdutionid.style.margin="0px 5px 5px 7px";
+          introdutionid.style.justifyContent = "space-between";
+          introdutionid.style.margin = "0px 5px 5px 7px";
 
           //建議售價標題顯示
           openIntro.style.display = "block";
@@ -519,7 +525,7 @@ left.addEventListener("click", function (event) {
           nowprice_carlatertrunksupports.style.justifyContent = "center";
         } else {
           //把data-collapse-status改成0
-          introdution.setAttribute("data-collapse-status", "0");         
+          introdution.setAttribute("data-collapse-status", "0");
 
           //建議售價標題隱藏
           introdutionid.style.visibility = "hidden";
@@ -534,5 +540,115 @@ left.addEventListener("click", function (event) {
         }
       }
     });
+  }
+});
+
+/*----- 8.底座子系統  -----*/
+left.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是carbasetripod
+  if (showinfo === "carseatbase") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_seatbase = document.querySelectorAll(".pricing");
+
+    Price_seatbase.forEach(function (openIntro) {
+      //直接判斷是第幾個.Price
+      let nowprice_seatbase = Price_seatbase[7].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-carseatbase") ===
+          "carseatbase" &&
+          nowprice_seatbase.getAttribute("data-nowprice-carseatbase") ===
+          "nowcarseatbase"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carseatbase勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 1px 3px";
+          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.flexDirection = "column";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.display = "flex";
+          introdutionid.style.height = "auto";
+          introdutionid.style.justifyContent = "space-between";
+          introdutionid.style.margin = "0px 5px 5px 7px";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_seatbase.style.display = "block";
+          nowprice_seatbase.style.display = "flex";
+          nowprice_seatbase.style.width = "100%";
+          nowprice_seatbase.style.height = "90%";
+          nowprice_seatbase.style.color = "#000000";
+          nowprice_seatbase.style.borderRadius = "8px";
+          nowprice_seatbase.style.padding = "1px";
+          nowprice_seatbase.style.margin = "3px 3px 3px 4px";
+          nowprice_seatbase.style.textAlign = "center";
+          nowprice_seatbase.style.fontSize = "21px";
+          nowprice_seatbase.style.fontWeight = "600";
+          nowprice_seatbase.style.alignItems = "center";
+          nowprice_seatbase.style.justifyContent = "center";
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_seatbase.style.display = "none";
+        }
+      }
+    });
+  }
+});
+
+
+
+/*-----  Last.總價格相加  -----*/
+function formatPrice(price) {
+  return new Intl.NumberFormat("en-US").format(price);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  let priceDisplay = document.getElementById("priceDisplay");
+  
+  // 監聽 body 的變化事件
+  document.body.addEventListener("change", (event) => {
+    if (event.target.type === "checkbox") {
+      updateTotalPrice();
+    }
+  });
+
+  // 更新總價函式
+  function updateTotalPrice() {
+    let alladdprice = 0;
+
+    // 遍歷所有 checkbox 並計算總價
+    document.querySelectorAll('[data-addPrice="add"]').forEach((addprice) => {
+      let price = parseInt(addprice.textContent.replace(/[^0-9]/g, ''), 10); // 去掉所有非數字字符
+
+      if (!isNaN(price)) { // 確保 price 是有效數字
+        alladdprice += price; // 累加價格
+      } else {
+        console.error(`Invalid price text: ${textContent}`);
+      }
+    });
+
+    // 更新總價到畫面
+    priceDisplay.textContent = `${formatPrice(alladdprice)}`;
   }
 });

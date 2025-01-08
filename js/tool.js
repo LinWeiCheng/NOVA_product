@@ -2,7 +2,7 @@
 function formatPrice(back_supports_prices) {
   return new Intl.NumberFormat("en-US").format(back_supports_prices);
 }
-/*----- 1.車體顏色點擊列  -----*/
+/*-----  1.車體顏色點擊列  -----*/
 let Car_color_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_color"]'
 );
@@ -65,7 +65,7 @@ Price.forEach(function (openIntro) {
   });
 });
 
-/*----- 2.座板尺寸點擊列  -----*/
+/*-----  2.座板尺寸點擊列  -----*/
 let Car_Basewidth_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_basewidth"]'
 );
@@ -112,7 +112,7 @@ Price.forEach(function (openIntro) {
     if (Basewidth && Basedeep) {
       nowprice_size.textContent = "40,000元";
     } else {
-      nowprice_size.textContent = ""; // 清空文字
+      nowprice_size.textContent = "0元"; // 清空文字
     }
   }
 
@@ -124,7 +124,7 @@ Price.forEach(function (openIntro) {
   });
 });
 
-/*----- 3.腳架點擊列  -----*/
+/*-----  3.腳架點擊列  -----*/
 let Car_tripod_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_tripod"]'
 );
@@ -150,13 +150,13 @@ Price.forEach(function (openIntro) {
         }
       }
       if (!event.target.checked) {
-        nowprice_tripod.textContent = "";
+        nowprice_tripod.textContent = "0元";
       }
     });
   });
 });
 
-/*----- 4.踏板樣式點擊列  -----*/
+/*-----  4.踏板樣式點擊列  -----*/
 
 let Car_footpedal_name_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_footpedal"]'
@@ -252,7 +252,7 @@ Price.forEach(function (openIntro) {
           addfootpedal_footpedal_Plugin(footpedal_footpedal_PluginDiv);
           //垂直調整腳踏組
           addfootpedal_plumb(footpedal_plumbDiv);
-          nowprice_footpedal.textContent = "";
+          nowprice_footpedal.textContent = "0元";
         }
       }
     });
@@ -317,7 +317,7 @@ Price.forEach(function (openIntro) {
           addfootpedal_footpedal_Plugin(footpedal_footpedal_PluginDiv);
           //垂直調整腳踏組
           addfootpedal_plumb(footpedal_plumbDiv);
-          nowprice_footpedal.textContent = "";
+          nowprice_footpedal.textContent = "0元";
         }
       }
     });
@@ -369,7 +369,7 @@ Price.forEach(function (openIntro) {
           addfootpedal_piecealuminum(footpedal_piecealuminumDiv);
           //垂直調整腳踏組
           addfootpedal_plumb(footpedal_plumbDiv);
-          nowprice_footpedal.textContent = "";
+          nowprice_footpedal.textContent = "0元";
           Car_footpedal_Plugin_class_checkboxes.forEach((otherCheckbox) => {
             otherCheckbox.checked = false;
           });
@@ -425,7 +425,7 @@ Price.forEach(function (openIntro) {
           addfootpedal_piecealuminum(footpedal_piecealuminumDiv);
           //外掛式腳踏組
           addfootpedal_footpedal_Plugin(footpedal_footpedal_PluginDiv);
-          nowprice_footpedal.textContent = "";
+          nowprice_footpedal.textContent = "0元";
           Car_footpedal_vertical_class_checkboxes.forEach((otherCheckbox) => {
             otherCheckbox.checked = false;
           });
@@ -483,7 +483,7 @@ function addfootpedal_plumb(footpedal_plumb) {
   footpedal_plumb.style.padding = "2px";
 }
 
-/*----- 頭靠點擊列  -----*/
+/*-----  5.頭靠點擊列  -----*/
 let Car_head_supports_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_head_supports"]'
 );
@@ -505,13 +505,13 @@ Price.forEach(function (openIntro) {
         }
       }
       if (!event.target.checked) {
-        nowprice_carheadsupports.textContent = "";
+        nowprice_carheadsupports.textContent = "0元";
       }
     });
   });
 });
 
-/*----- 軀幹點擊列-背靠  -----*/
+/*-----  6.軀幹點擊列-背靠  -----*/
 let Car_side_supports_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_back_supports"]'
 );
@@ -608,7 +608,7 @@ Car_side_supports_checkboxes.forEach((checkbox) => {
   });
 });
 
-/*----- 軀幹點擊列-軀幹側支撐 -----*/
+/*-----  7.軀幹點擊列-軀幹側支撐 -----*/
 let Car_latertrunk_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_latertrunk_support"]'
 );
@@ -675,6 +675,105 @@ Car_latertrunk_checkboxes.forEach((checkbox) => {
       Car_latertrunk_checkboxes.forEach((otherCheckbox) => {
         otherCheckbox.checked = false;
       });
+    }
+  });
+});
+
+/*-----  8.軀幹點擊列-背靠  -----*/
+let Car_seatbase_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_ironseatbase"]'
+);
+
+let seat_base_prices = {
+  seatbase_prices1: 2000,
+  seatbase_prices2: 2000,
+  seatbase_prices3: 2000,
+  seatbase_prices4: 2000,
+  seatbase_prices5: 2000,
+  seatbase_prices6: 2000,
+  seatbase_prices7: 2000,
+  hardware_prices8: 2800, // 第 8 個 checkbox 的價格
+};
+
+// 更新價格的函式
+function update_seatbasePrice(event) {
+  let nowprice_seatbase = Price[7].nextElementSibling;
+  let totalPrice = 0; // 重置價格
+  let target = event.target; // 取得觸發事件的 checkbox
+
+  if (target.id !== "hardware_prices8") {
+    // 如果勾選的是 1 到 7 的 checkbox
+    if (target.checked) {
+      // 取消其他 1 到 7 checkbox 的勾選，但不影響第 8 個
+      Car_seatbase_checkboxes.forEach((checkbox, index) => {
+        if (checkbox !== target && index < 7) {
+          checkbox.checked = false;
+        }
+      });
+    }
+  }
+
+  let basePriceAdded = false;
+
+  // 計算總價
+  Car_seatbase_checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      if (index < 7) {
+        // 如果是第 1 到第 7 個 checkbox
+        totalPrice = seat_base_prices[`seatbase_prices${index + 1}`]; // 設置基礎價格
+        basePriceAdded = true;
+        console.log(totalPrice);
+        
+      } else if (index === 7 && basePriceAdded) {
+        // 如果第 8 個被勾選，且有基礎價格
+        totalPrice += seat_base_prices.hardware_prices8;
+      } else if (index === 7 && !basePriceAdded) {
+        // 如果只有第 8 個被勾選
+        totalPrice = seat_base_prices.hardware_prices8;
+      }
+    }
+  });
+
+  // 更新價格到畫面
+  nowprice_seatbase.textContent = `${formatPrice(totalPrice)} 元`;
+}
+
+// 更新價格的函式
+function update_seatbase_hardwarePrice(event) {
+  let nowprice_seatbase = Price[7].nextElementSibling;
+  let totalPrice = 0; // 重置價格
+  let basePriceAdded = false;
+
+  // 計算總價
+  Car_seatbase_checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      if (index < 7) {
+        // 如果是第 1 到第 7 個 checkbox
+        totalPrice = seat_base_prices[`seatbase_prices${index + 1}`]; // 設置基礎價格
+        basePriceAdded = true;
+      } else if (index === 7 && basePriceAdded) {
+        // 如果第 8 個被勾選，且有基礎價格
+        totalPrice += seat_base_prices.hardware_prices8;
+      } else if (index === 7 && !basePriceAdded) {
+        // 如果只有第 8 個被勾選
+        totalPrice = seat_base_prices.hardware_prices8;
+      }
+    }
+  });
+
+  // 更新價格到畫面
+  nowprice_seatbase.textContent = `${formatPrice(totalPrice)} 元`;
+}
+
+//為每個 checkbox 添加事件監聽
+Car_seatbase_checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", (event) => {
+    if (event.target.id === "checkbox_seatbaseHardware_Nova") {
+      // 第 8 個 checkbox 不影響第 1 到第 7 個的選中狀態
+      update_seatbase_hardwarePrice(event);
+    } else {
+      // 第 1 到第 7 個 checkbox 互斥，但不影響第 8 個
+      update_seatbasePrice(event);
     }
   });
 });
