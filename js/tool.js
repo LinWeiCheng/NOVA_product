@@ -679,7 +679,7 @@ Car_latertrunk_checkboxes.forEach((checkbox) => {
   });
 });
 
-/*-----  8.軀幹點擊列-背靠  -----*/
+/*-----  8.底座子系統  -----*/
 let Car_seatbase_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_ironseatbase"]'
 );
@@ -722,8 +722,6 @@ function update_seatbasePrice(event) {
         // 如果是第 1 到第 7 個 checkbox
         totalPrice = seat_base_prices[`seatbase_prices${index + 1}`]; // 設置基礎價格
         basePriceAdded = true;
-        console.log(totalPrice);
-        
       } else if (index === 7 && basePriceAdded) {
         // 如果第 8 個被勾選，且有基礎價格
         totalPrice += seat_base_prices.hardware_prices8;
@@ -777,3 +775,46 @@ Car_seatbase_checkboxes.forEach((checkbox) => {
     }
   });
 });
+
+/*-----  9.綁帶子系統點擊列  -----*/
+let Car_bandage_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_bandage"]'
+);
+
+let bandage_prices = {
+  bandage_prices1: 1000,
+  bandage_prices2: 0,
+  bandage_prices3: 1450,
+  bandage_prices4: 1500,
+  bandage_prices5: 0,
+  bandage_prices6: 950,
+  bandage_prices7: 1000,
+  bandage_prices8: 1000, 
+  bandage_prices9: 750, 
+};
+let bandagetotalPrice = 0; // 重置價格
+
+function update_bandagePrice(event) {
+  let nowprice_bandage = Price[8].nextElementSibling;
+  
+
+  // 計算總價
+  Car_bandage_checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      bandagetotalPrice += bandage_prices[`bandage_prices${index + 1}`]; // 設置基礎價格   
+    }
+  });
+
+
+  // 更新價格到畫面
+  nowprice_bandage.textContent = `${formatPrice(bandagetotalPrice)} 元`;
+  bandagetotalPrice = 0; // 重置價格
+}
+
+//為每個 checkbox 添加事件監聽
+Car_bandage_checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", (event) => {
+      update_bandagePrice(event);
+  });
+});
+
