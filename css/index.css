@@ -86,7 +86,7 @@ input[type=checkbox] {
   /* 圓角 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   /* 陰影 */
-  font-size: 30px;
+  font-size: 40px;
   /* 字體大小 */
   font-weight: 900;
   /* 字體加粗 */
@@ -1083,16 +1083,8 @@ input[type=checkbox] {
   flex-direction: column;
 }
 .chkcontent_9th .bandagegroup {
-  width: calc(100% - 8px);
-  display: flex;
-  flex-direction: column;
-  /* 讓子元素垂直排列 */
-  padding: 0px 1px 1px 3px;
-  border: 3px dashed black;
-  border-Top: none;
-  height: auto;
-  justify-content: space-between;
-  height: 100%;
+  visibility: hidden;
+  height: 0;
   width: 100%;
 }
 .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup {
@@ -1269,11 +1261,11 @@ input[type=checkbox] {
   display: flex;
   flex-direction: column;
 }
-.chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_beltgroup {
+.chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup {
   display: flex;
   flex-direction: row;
 }
-.chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_beltgroup .calf_belt {
+.chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_band {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1285,6 +1277,9 @@ input[type=checkbox] {
   width: 40%;
   padding: 2px 1px 1px 3px;
   margin: 3px;
+}
+.chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calfbandchk {
+  margin: 0 5px 0 5px;
 }
 .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup {
   display: flex;
@@ -1303,6 +1298,9 @@ input[type=checkbox] {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
+.chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calfcuffchk {
+  margin: 0 5px 0 5px;
+}
 .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_font {
   border: 1px solid #000000;
   border-radius: 7px;
@@ -1315,4 +1313,14 @@ input[type=checkbox] {
   width: 60%;
   padding: 2px 1px 1px 3px;
   margin: 3px;
+}
+
+.chest_straps_checkbox input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 5px 12px 5px;
+}
+
+.pelvic_belt_checkbox input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 5px 12px 5px;
 }/*# sourceMappingURL=index.css.map */
