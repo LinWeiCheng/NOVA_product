@@ -652,3 +652,8 @@ document.addEventListener('DOMContentLoaded', () => {
     priceDisplay.textContent = `${formatPrice(alladdprice)}`;
   }
 });
+
+// 為按鈕添加點擊事件
+document.getElementById('printButton').addEventListener('click', () => {
+  window.print(); // 觸發列印
+});
