@@ -616,6 +616,79 @@ left.addEventListener("click", function (event) {
   }
 });
 
+/*----- 8.底座子系統  -----*/
+left.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是carbasetripod
+  if (showinfo === "carbandage") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_bandage = document.querySelectorAll(".pricing");
+
+    Price_bandage.forEach(function (openIntro) {
+      //直接判斷是第幾個.Price
+      let nowprice_bandage = Price_bandage[8].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-carbandage") ===
+          "carbandage" &&
+          nowprice_bandage.getAttribute("data-nowprice-carbandage") ===
+          "nowcarbandage"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carseatbase勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 1px 3px";
+          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.flexDirection = "column";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.display = "flex";
+          introdutionid.style.height = "auto";
+          introdutionid.style.justifyContent = "space-between";
+          introdutionid.style.margin = "0px 5px 5px 7px";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_bandage.style.display = "block";
+          nowprice_bandage.style.display = "flex";
+          nowprice_bandage.style.width = "100%";
+          nowprice_bandage.style.height = "90%";
+          nowprice_bandage.style.color = "#000000";
+          nowprice_bandage.style.borderRadius = "8px";
+          nowprice_bandage.style.padding = "1px";
+          nowprice_bandage.style.margin = "3px 3px 3px 4px";
+          nowprice_bandage.style.textAlign = "center";
+          nowprice_bandage.style.fontSize = "21px";
+          nowprice_bandage.style.fontWeight = "600";
+          nowprice_bandage.style.alignItems = "center";
+          nowprice_bandage.style.justifyContent = "center";
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_bandage.style.display = "none";
+        }
+      }
+    });
+  }
+});
+
 
 
 /*-----  Last.總價格相加  -----*/
@@ -649,7 +722,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 更新總價到畫面
-    priceDisplay.textContent = `${formatPrice(alladdprice)}`;
+    priceDisplay.textContent = `${formatPrice(alladdprice)}`;    
   }
 });
 
