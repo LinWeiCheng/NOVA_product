@@ -82,12 +82,52 @@
   }
 }
 
+//報價單
+.btnoutputQuotation{
+position: fixed;
+bottom: 10px;
+right: 10px;
+padding: 4px 8px;
+background-color: #ffffff;
+font-size: 15px;
+font-weight: 600;
+border-radius: 8px;
+}
+
+.Quotation-div {
+  display: none; /* 初始為隱藏 */
+  position: fixed;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 向上和向左移動50%自己的寬度和高度 */
+  width: 1000px;
+  height: 1000px;
+  z-index: 1000; /* 確保它顯示在其他元素之上 */
+}
+.visible {
+  display: block; /* 顯示 */
+}
+.close-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #900;
+}
+
 .Title {
   margin: 5px;
   font-weight: 800;
   /*設定字體粗細*/
   font-size: 30px;
   /* 設定字體大小 */
+  cursor: default; 
 }
 
 .checklist {
@@ -100,6 +140,7 @@
   .target_img {
     width: auto;
     height: 42px;
+    cursor: default; 
   }
 
   .target_img img {
@@ -128,6 +169,7 @@
     /*設定字體粗細*/
     align-items: center;
     /* 垂直置中 */
+    cursor: pointer;
   }
 
   .pricecontent {
@@ -577,13 +619,12 @@
     align-items: center;
     /* 水平置中 */
 
-    .SWC_checkbox {
+    #SWC_checkbox {
       margin: 10px 23px 0px 22px;
       border-radius: 8px;
       /* 設定圓角半徑 */
       transform: scale(2.2);
     }
-
   }
 }
 
@@ -624,7 +665,7 @@
     align-items: center;
     /* 水平置中 */
 
-    .SdC_checkbox {
+    #SdC_checkbox {
       margin: 10px 23px 0px 22px;
       border-radius: 8px;
       /* 設定圓角半徑 */
