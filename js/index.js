@@ -55,6 +55,7 @@ for (let i = 0; i < 7; i++) {
 
   divSW_Size.textContent = `${SWCount} `;
   divSW_Size.classList.add(`generated_SWdiv`);
+  // 設置 data-size 屬性，根據需要修改屬性值
   SWCount += 2;
   SW_container.appendChild(divSW_Size);
 }
@@ -68,9 +69,13 @@ for (let i = 0; i < 7; i++) {
   let divSW_Check = document.createElement("input");
 
   divSW_Check.type = "checkbox";
-  divSW_Check.id = `Ssize`;
+  divSW_Check.classList.add(`content-checkbox`);
+  divSW_Check.id = `SWC_checkbox`;
   divSW_Check.name = `car_basewidth`;
-  divSW_Check.classList.add(`SWC_checkbox`);
+  // 設置 data-size 屬性，根據需要修改屬性值
+  divSW_Check.setAttribute('data-size', `${SWCCount}`);
+  divSW_Check.setAttribute('data-group', `Sbsize`);
+
   SWCCount += 2;
 
   SWC_container.appendChild(divSW_Check);
@@ -98,9 +103,12 @@ for (let i = 0; i < 9; i++) {
   let divSd_Check = document.createElement("input");
 
   divSd_Check.type = "checkbox";
-  divSd_Check.id = `Ssize`;
+  divSd_Check.classList.add(`content-checkbox`);
+  divSd_Check.id = `SdC_checkbox`;
   divSd_Check.name = `car_basedeep`;
-  divSd_Check.classList.add(`SdC_checkbox`);
+  // 設置 data-size 屬性，根據需要修改屬性值
+  divSd_Check.setAttribute('data-size', `${SdCCount}`);
+  divSd_Check.setAttribute('data-group', `Sbsize`);
   SdCCount += 2;
 
   SdC_container.appendChild(divSd_Check);
@@ -726,7 +734,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 為按鈕添加點擊事件
-document.getElementById('printButton').addEventListener('click', () => {
-  window.print(); // 觸發列印
-});

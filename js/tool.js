@@ -157,26 +157,21 @@ Price.forEach(function (openIntro) {
 });
 
 /*-----  4.踏板樣式點擊列  -----*/
-
-let Car_footpedal_name_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][name="car_footpedal"]'
-);
-
 let Car_footpedal_twopiece_class_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][class="footpedal_twopiecechk"]'
+  'input[type="checkbox"][name="footpedal_twopiecechk"]'
 );
 
 let Car_footpedal_onepiece_aluminumpedal_class_checkboxes =
   document.querySelectorAll(
-    'input[type="checkbox"][class="footpedal_onepiece_aluminumpedalchk"]'
+    'input[type="checkbox"][name="footpedal_onepiece_aluminumpedalchk"]'
   );
 
 let Car_footpedal_Plugin_class_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][class="footpedal_Pluginchk"]'
+  'input[type="checkbox"][name="footpedal_Pluginchk"]'
 );
 
 let Car_footpedal_vertical_class_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][class="footpedal_verticalchk"]'
+  'input[type="checkbox"][name="footpedal_verticalchk"]'
 );
 
 let footpedal_twopieceDiv = document.querySelector(".footpedal_twopiece");
@@ -222,16 +217,13 @@ Price.forEach(function (openIntro) {
   //兩片式塑踏板勾選
   Car_footpedal_twopiece_class_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-      if (event.target.classList.contains("footpedal_twopiecechk")) {
+      if (event.target.name === "footpedal_twopiecechk") {
         // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
         if (event.target.checked) {
           Car_footpedal_twopiece_class_checkboxes.forEach((otherCheckbox) => {
             if (otherCheckbox !== event.target) {
               otherCheckbox.checked = false;
             }
-
-            let previousElement = event.target.previousElementSibling; // 找到上一個節點
-
             if (event.target.id === "checkbox_twopiece_fixed") {
               nowprice_footpedal.textContent = "900元";
             } else if (event.target.id === "checkbox_twopiece_adjustable") {
@@ -262,7 +254,7 @@ Price.forEach(function (openIntro) {
   Car_footpedal_onepiece_aluminumpedal_class_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
       if (
-        event.target.classList.contains("footpedal_onepiece_aluminumpedalchk")
+        event.target.name ==="footpedal_onepiece_aluminumpedalchk"
       ) {
         // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
         if (event.target.checked) {
@@ -270,10 +262,7 @@ Price.forEach(function (openIntro) {
             (otherCheckbox) => {
               if (otherCheckbox !== event.target) {
                 otherCheckbox.checked = false;
-              }
-
-              let previousElement = event.target.previousElementSibling; // 找到上一個節點
-
+              }                
               if (event.target.id === "checkbox_onepiece32_aluminumpedal") {
                 nowprice_footpedal.textContent = "1,300元";
               } else if (
@@ -326,15 +315,13 @@ Price.forEach(function (openIntro) {
   //外掛式腳踏組勾選
   Car_footpedal_Plugin_class_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-      if (event.target.classList.contains("footpedal_Pluginchk")) {
+      if (event.target.name ==="footpedal_Pluginchk") {
         // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
         if (event.target.checked) {
           Car_footpedal_Plugin_class_checkboxes.forEach((otherCheckbox) => {
             if (otherCheckbox !== event.target) {
               otherCheckbox.checked = false;
             }
-
-            let previousElement = event.target.previousElementSibling; // 找到上一個節點
             if (event.target.id === "checkbox_Plugin9_left") {
               nowprice_footpedal.textContent = "1,800元";
               footpedal_Plugin9_Right.checked = event.target.checked;
@@ -381,16 +368,13 @@ Price.forEach(function (openIntro) {
   //垂直調整腳踏組勾選
   Car_footpedal_vertical_class_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-      if (event.target.classList.contains("footpedal_verticalchk")) {
+      if (event.target.name ==="footpedal_verticalchk") {
         // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
         if (event.target.checked) {
           Car_footpedal_vertical_class_checkboxes.forEach((otherCheckbox) => {
             if (otherCheckbox !== event.target) {
               otherCheckbox.checked = false;
             }
-
-            let previousElement = event.target.previousElementSibling; // 找到上一個節點
-
             if (event.target.id === "checkbox_vertical9_left") {
               nowprice_footpedal.textContent = "1,500元";
               footpedal_vertical9_Right.checked = event.target.checked;
