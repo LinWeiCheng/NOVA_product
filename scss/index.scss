@@ -82,35 +82,54 @@
   }
 }
 
+.nowprice {
+  text-align: center;
+  align-items: center;
+
+  .dollarP {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+
 //報價單
-.btnoutputQuotation{
-position: fixed;
-bottom: 10px;
-right: 10px;
-padding: 4px 8px;
-background-color: #ffffff;
-font-size: 15px;
-font-weight: 600;
-border-radius: 8px;
+.btnoutputQuotation {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
 }
 
 .Quotation-div {
-  display: none; /* 初始為隱藏 */
+  display: none;
+  /* 初始為隱藏 */
   position: fixed;
   border: 1px solid #000;
   padding: 10px;
   margin-top: 20px;
   background-color: #f9f9f9;
-  top: 50%; /* 垂直居中 */
-  left: 50%; /* 水平居中 */
-  transform: translate(-50%, -50%); /* 向上和向左移動50%自己的寬度和高度 */
+  top: 50%;
+  /* 垂直居中 */
+  left: 50%;
+  /* 水平居中 */
+  transform: translate(-50%, -50%);
+  /* 向上和向左移動50%自己的寬度和高度 */
   width: 1000px;
   height: 1000px;
-  z-index: 1000; /* 確保它顯示在其他元素之上 */
+  z-index: 1000;
+  /* 確保它顯示在其他元素之上 */
 }
+
 .visible {
-  display: block; /* 顯示 */
+  display: block;
+  /* 顯示 */
 }
+
 .close-icon {
   position: absolute;
   top: 5px;
@@ -127,7 +146,7 @@ border-radius: 8px;
   /*設定字體粗細*/
   font-size: 30px;
   /* 設定字體大小 */
-  cursor: default; 
+  cursor: default;
 }
 
 .checklist {
@@ -140,7 +159,7 @@ border-radius: 8px;
   .target_img {
     width: auto;
     height: 42px;
-    cursor: default; 
+    cursor: default;
   }
 
   .target_img img {
@@ -158,7 +177,6 @@ border-radius: 8px;
     /* 內邊距 */
     margin: 3px;
     text-align: left;
-    /* 文字置中 */
     background-color: #000000;
     /* 黑色背景 */
     color: #ffffff;
@@ -1529,7 +1547,7 @@ border-radius: 8px;
           margin: 3px;
         }
 
-        .calfbandchk{
+        .calfbandchk {
           margin: 0 5px 0 5px;
         }
       }
@@ -1552,12 +1570,12 @@ border-radius: 8px;
           margin: 3px;
         }
 
-        .calfcuffchk{
+        .calfcuffchk {
           margin: 0 5px 0 5px;
         }
       }
 
-      
+
 
       .calf_font {
         border: 1px solid #000000;
@@ -1583,6 +1601,18 @@ border-radius: 8px;
 }
 
 .pelvic_belt_checkbox input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 5px 12px 5px;
+}
+
+.calf_bandgroup input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 5px 12px 5px;
+}
+
+.calf_cuffgroup input[type="checkbox"] {
   //accent-color: rgb(255, 0, 0);
   /* 更改勾選顏色（現代瀏覽器支持） */
   margin: 12px 5px 12px 5px;

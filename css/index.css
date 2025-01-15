@@ -96,6 +96,15 @@ input[type=checkbox] {
   /* 文字顏色 */
 }
 
+.nowprice {
+  text-align: center;
+  align-items: center;
+}
+.nowprice .dollarP {
+  text-align: center;
+  align-items: center;
+}
+
 .btnoutputQuotation {
   position: fixed;
   bottom: 10px;
@@ -108,22 +117,28 @@ input[type=checkbox] {
 }
 
 .Quotation-div {
-  display: none; /* 初始為隱藏 */
+  display: none;
+  /* 初始為隱藏 */
   position: fixed;
   border: 1px solid #000;
   padding: 10px;
   margin-top: 20px;
   background-color: #f9f9f9;
-  top: 50%; /* 垂直居中 */
-  left: 50%; /* 水平居中 */
-  transform: translate(-50%, -50%); /* 向上和向左移動50%自己的寬度和高度 */
+  top: 50%;
+  /* 垂直居中 */
+  left: 50%;
+  /* 水平居中 */
+  transform: translate(-50%, -50%);
+  /* 向上和向左移動50%自己的寬度和高度 */
   width: 1000px;
   height: 1000px;
-  z-index: 1000; /* 確保它顯示在其他元素之上 */
+  z-index: 1000;
+  /* 確保它顯示在其他元素之上 */
 }
 
 .visible {
-  display: block; /* 顯示 */
+  display: block;
+  /* 顯示 */
 }
 
 .close-icon {
@@ -171,7 +186,6 @@ input[type=checkbox] {
   /* 內邊距 */
   margin: 3px;
   text-align: left;
-  /* 文字置中 */
   background-color: #000000;
   /* 黑色背景 */
   color: #ffffff;
@@ -1364,6 +1378,16 @@ input[type=checkbox] {
 }
 
 .pelvic_belt_checkbox input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 5px 12px 5px;
+}
+
+.calf_bandgroup input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 12px 5px 12px 5px;
+}
+
+.calf_cuffgroup input[type=checkbox] {
   /* 更改勾選顏色（現代瀏覽器支持） */
   margin: 12px 5px 12px 5px;
 }/*# sourceMappingURL=index.css.map */
