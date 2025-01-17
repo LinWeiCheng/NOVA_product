@@ -21,9 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updatecarbasesize() {
     let basesize = [];
     let selectedItems = [];
-    let groupedSelections = {};
     let prices = "";
-    let data = 0;
 
     // 選擇所有被勾選的 checkbox
     let checkedCheckboxes = document.querySelectorAll(
@@ -42,76 +40,68 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     let items = basesize.join("");
-    selectedItems.push(items, prices);
+    selectedItems.push({ item: items, price: prices });
+
     console.log(selectedItems);
+    checkedCheckboxes.forEach((checkbox) => {
+      let group = checkbox.dataset.group;
+      let item = checkbox.dataset.item;
+      let price = checkbox.dataset.price;
+      if (!group) {
+        selectedItems.push({ item: item, price: price });
+      }
+    });
   }
-  //   checkedCheckboxes.forEach((checkbox) => {
-  //     let group = checkbox.dataset.group;
-  //     let item = checkbox.dataset.item;
-  //     let price = checkbox.dataset.price;
-  //     if (!group) {
-  //       // 檢查該 group 是否已存在於 groupedSelections 中，若不存在則初始化為空陣列
-  //       if (!groupedSelections[data]) {
-  //         groupedSelections[data] = []; // 如果沒有這個 group，初始化為空陣列
-  //       }
-
-  //       groupedSelections[data].push({ item: item, price: price });
-  //     }
-  //   });
-  //   console.log(groupedSelections);
-  // }
-
-  // checkboxes.forEach((checkbox) => {
-  //   if (checkbox.checked) {
-  //     let group = checkbox.dataset.group;
-  //     let size = checkbox.dataset.size;
-
-  //     if (group === "Sbsize") {
-  //       basesize.push({ size });
-  //     }
-  //   }
-  // });
-
-  // checkboxes.forEach((checkbox) => {
-  //   if (checkbox.checked) {
-  //     if (checkbox.id === "checkbox_red") {
-  //       selectedItems.push({
-  //         item:
-  //           "車體顏色(櫻桃紅)" +
-  //           "-" +
-  //           basesize.map((b) => b.size).join("*") +
-  //           " cm",
-  //         price: "40,000",
-  //       });
-  //     }
-  //   }
-  // });
-
-  // let elementsWithAddPrice = document.querySelectorAll(
-  //   '[data-addPrice="add"]'
-  // );
-
-  // checkboxes.forEach((checkbox) => {
-  //   if (checkbox.checked) {
-  //     let group = checkbox.dataset.group;
-  //     let item = checkbox.dataset.item;
-  //     let size = checkbox.dataset.size;
-  //     let price = checkbox.dataset.price;
-
-  //     if (!group) {
-  //       // 遍歷這些元素，並輸出它們
-  //       elementsWithAddPrice.forEach((element) => {
-  //         if (size) {
-  //           let items = `${item} - ${size}`;
-  //           selectedItems.push({ items, price });
-  //         } else {
-  //           let items = `${item}`;
-  //           selectedItems.push({ items, price });
-  //         }
-  //         // let nowprice_tripod = Price[2].nextElementSibling;
-  //         // price = nowprice_tripod.textContent.replace("元", ""); // 去掉"元"
-  //       });
-  //     }
-  //   }
-  // });
 });
+
+
+
+let quotationpage = document.getElementById("Quotation");
+
+// 創建 Header 區塊
+let quotationheader = document.createElement("div");
+quotationheader.classList.add("quotationheader");
+
+let companyTitle = document.createElement("h1");
+companyTitle.textContent = "光星骨科復健器材股份有限公司";
+
+let subTitle = document.createElement("h2");
+subTitle.textContent = "報價單";
+
+quotationheader.appendChild(companyTitle);
+quotationheader.appendChild(subTitle);
+
+// 添加 Header 到主要容器
+quotationpage.appendChild(quotationheader);
+
+let quotationSub = document.createElement("div");
+quotationSub.classList.add("quotationSub");
+
+let quotationClient = document.createElement("div");
+quotationClient.textContent = "客戶名稱：";
+
+let quotationTime = document.createElement("div");
+quotationTime.textContent = "報價日期：";
+
+quotationSub.appendChild(quotationClient);
+quotationSub.appendChild(quotationTime);
+
+// 添加 sub 到主要容器
+quotationpage.appendChild(quotationSub);
+
+
+// 創建表格
+let table = document.createElement("table");
+
+// 創建表頭
+let tableHead = document.createElement("thead");
+let headerRow = document.createElement("tr");
+
+["序號", "項目內容", "價錢", "備註"].forEach((text) => {
+  const th = document.createElement("th");
+  th.textContent = text;
+  headerRow.appendChild(th);
+});
+
+tableHead.appendChild(headerRow);
+table.appendChild(tableHead);
