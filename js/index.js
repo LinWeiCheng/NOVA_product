@@ -73,7 +73,8 @@ for (let i = 0; i < 7; i++) {
   divSW_Check.id = `SWC_checkbox`;
   divSW_Check.name = `car_basewidth`;
   // 設置 data-size 屬性，根據需要修改屬性值
-  divSW_Check.setAttribute('data-item', `-${SWCCount}cm`);
+  let formattedItem = ` - ${SWCCount} cm`;
+  divSW_Check.setAttribute('data-item', formattedItem);
   divSW_Check.setAttribute('data-group', `Sbsize`);
 
   SWCCount += 2;
@@ -107,7 +108,8 @@ for (let i = 0; i < 9; i++) {
   divSd_Check.id = `SdC_checkbox`;
   divSd_Check.name = `car_basedeep`;
   // 設置 data-size 屬性，根據需要修改屬性值
-  divSd_Check.setAttribute('data-item', `*${SdCCount}`);
+  let formattedItem = ` * ${SdCCount} cm`;
+  divSd_Check.setAttribute('data-item', formattedItem);
   divSd_Check.setAttribute('data-group', `Sbsize`);
   SdCCount += 2;
 
