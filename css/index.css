@@ -25,7 +25,7 @@ input[type=checkbox] {
   display: none;
   /* 初始為隱藏 */
   position: fixed;
-  border: 1px solid #000;
+  border: 3px solid #000;
   padding: 10px;
   margin-top: 20px;
   background-color: #f9f9f9;
@@ -35,8 +35,8 @@ input[type=checkbox] {
   /* 水平居中 */
   transform: translate(-50%, -50%);
   /* 向上和向左移動50%自己的寬度和高度 */
-  width: 1000px;
-  height: 1000px;
+  width: 70%;
+  height: 60%;
   z-index: 1000;
   /* 確保它顯示在其他元素之上 */
 }
@@ -44,6 +44,88 @@ input[type=checkbox] {
 .visible {
   display: block;
   /* 顯示 */
+}
+
+.close-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #900;
+}
+
+.quotationheader {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background-image: url("../img/New-Logo.png");
+  /* 替換為你的背景圖片 */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 添加透明的白色 */
+  background-blend-mode: lighten;
+  /* 混合模式 */
+}
+.quotationheader h1 {
+  margin: 0;
+  font-size: 55px;
+  color: #000;
+}
+.quotationheader h2 {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 600;
+  color: #000;
+}
+
+.quotationSub {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.quotationSub .quotation-client-container {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+}
+.quotationSub .quotation-client-container label {
+  font-size: 18px;
+  font-weight: 700;
+}
+.quotationSub .quotation-client-container input {
+  padding: 6px 0 3px 0;
+  background-color: inherit;
+  /* 背景色與外層一致 */
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.quotationSub .quotationTime {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px;
+  padding: 8px 0 6px 0;
+}
+
+.quotationtable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+.quotationtable th,
+.quotationtable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+.quotationtable th {
+  background-color: #f5f5f5;
 }
 
 @media (max-width: 768px) {
