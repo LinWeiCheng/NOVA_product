@@ -148,56 +148,154 @@ document.addEventListener("DOMContentLoaded", () => {
     // 添加新行
     selectedItems.forEach((row, index) => {
       let tr = document.createElement("tr");
+      tr.style.width = "100%";
+      tr.style.borderBottom = "2px solid black";
 
       // 序號
       let serialCell = document.createElement("td");
       serialCell.textContent = index + 1;
+      serialCell.style.borderBottom = "2px solid black";
+
       tr.appendChild(serialCell);
 
       // 項目內容
       let itemCell = document.createElement("td");
       itemCell.textContent = row.item;
+      itemCell.style.borderBottom = "2px solid black";
       tr.appendChild(itemCell);
 
       // 價錢
       let priceCell = document.createElement("td");
       priceCell.textContent = row.price;
       priceCell.style.textAlign = "center"; // 價錢置中
+      priceCell.style.borderBottom = "2px solid black";
       tr.appendChild(priceCell);
 
       // 備註
       let noteCell = document.createElement("td");
       noteCell.textContent = row.note;
+      noteCell.style.borderBottom = "2px solid black";
       tr.appendChild(noteCell);
 
       tbody.appendChild(tr);
     });
 
     // 添加自訂的"報價業務"行，這一行的兩個格子各占 50%
-  let tr = document.createElement("tr");
+    let trbusiness = document.createElement("tr");
+    trbusiness.classList.add("business-row"); // 添加樣式類別
 
-  // 左格 (佔 50% 寬度)
-  let leftCell = document.createElement("td");
-  leftCell.setAttribute("colspan", "2"); // 左格佔 2 欄
-  leftCell.textContent = "報價業務：";
-  leftCell.style.width = "50%";
+    let orgtd = document.createElement("td");
+    orgtd.style.width = "100%";
+    orgtd.colSpan = 4; // 4格合併
+    orgtd.classList.add("orgtd");
+    // 將td加入tr
+    trbusiness.appendChild(orgtd);
 
-  // 右格 (佔 50% 寬度)
-  let rightCell = document.createElement("td");
-  rightCell.setAttribute("colspan", "2"); // 右格佔 2 欄
-  let inputField = document.createElement("input");
-  inputField.type = "text";
-  inputField.placeholder = "臨危成 097585745"; // 默認顯示的提示文字
-  rightCell.appendChild(inputField);
-  rightCell.style.width = "50%"; // 設定寬度為表格的一半
-  rightCell.style.textAlign = "center"; // 內容置中
+    // 將tr加入到表格
+    tbody.appendChild(trbusiness);
 
-  // 將這一行加入表格
-  tr.appendChild(leftCell);
-  tr.appendChild(rightCell);
+    // 找到目標 td
+    let addbusinesstd = document.querySelector(" td.orgtd");
 
-  // 加入到表格
-  tbody.appendChild(tr);
+    // 創建嵌套表格
+    let businessTable = document.createElement("table");
+    businessTable.style.width = "100%";
+    businessTable.style.border = "1";
+
+    // 創建嵌套表格的行與列
+    let businessTr = document.createElement("tr");
+
+    let businessTd1 = document.createElement("td");
+    businessTd1.style.width = "50%";
+    businessTd1.textContent = "報價業務：";
+    businessTd1.style.fontSize = "20px";
+    businessTd1.style.border = "0px";
+    businessTd1.style.fontWeight = "700";
+    let inputBusiness = document.createElement("input");
+    inputBusiness.type = "text";
+    inputBusiness.placeholder = "臨危成 097585745"; // 默認顯示的提示文字
+    inputBusiness.style.width = "50%";
+    inputBusiness.style.fontWeight = "700";
+
+    inputBusiness.style.textAlign = "left"; // 內容置中
+    inputBusiness.style.fontSize = "18px";
+    inputBusiness.style.backgroundColor = "inherit";
+    inputBusiness.style.border = "0px";
+    // 將這一行加入表格
+    businessTd1.appendChild(inputBusiness);
+
+    let businessTd2 = document.createElement("td");
+    businessTd2.style.width = "50%";
+    businessTd2.textContent = "總價格：";
+    businessTd2.style.fontSize = "20px";
+    businessTd2.style.border = "0px";
+    businessTd2.style.fontWeight = "800";
+
+    businessTd2.style.borderLeft = "2px solid black"; // 左邊框顏色繼承表格的邊框樣式
+    let totalprice = document.getElementById("priceDisplay");
+    if (totalprice) {
+      businessTd2.textContent = "總價格：" + `${totalprice.textContent}` + "元";
+    }
+
+    // 將嵌套的單元格加入到行，行加入到表格
+    businessTr.appendChild(businessTd1);
+    businessTr.appendChild(businessTd2);
+    businessTable.appendChild(businessTr);
+
+    // 將嵌套表格加入到原 td
+    addbusinesstd.appendChild(businessTable);
+
+    // 添加自訂的"注意事項"行，這一行的兩個格子各占 50%
+    let trnotice = document.createElement("tr");
+    trnotice.classList.add("trnotice"); // 添加樣式類別
+
+    //新增注意事項表格
+    let noticetd = document.createElement("td");
+    noticetd.style.width = "50%";
+    noticetd.colSpan = 2; // 4格合併
+    noticetd.classList.add("noticetd");
+    noticetd.style.padding = "3px 0px 3px 0";
+    noticetd.style.height = "100%";
+
+    let noticetdDiv1 = document.createElement("div");
+    noticetdDiv1.textContent = "注意事項";
+    noticetdDiv1.style.textAlign = "center";
+    noticetdDiv1.style.fontSize = "22px";
+    noticetdDiv1.style.fontWeight = "900";
+    noticetdDiv1.style.borderBottom = "1px solid black";
+    noticetdDiv1.style.padding = "5px 0 5px 0";
+
+    let noticetdDiv2 = document.createElement("div");
+    // 要插入的多行內容
+    let lines = ["1.", "2.", "3."];
+
+    // 將每行內容插入到 div
+    lines.forEach((line) => {
+      let p = document.createElement("p"); // 每行使用 <p> 包裹
+      p.textContent = line;
+      p.style.padding = "5px 0 5px 5px";
+      noticetdDiv2.appendChild(p);
+    });
+    noticetdDiv2.style.textAlign = "left";
+    noticetdDiv2.style.fontSize = "18px";
+    noticetdDiv2.style.fontWeight = "900";
+    
+
+    noticetd.appendChild(noticetdDiv1);
+    noticetd.appendChild(noticetdDiv2);
+
+    //新增公司章表格
+    let sealtd = document.createElement("td");
+    sealtd.style.width = "50%";
+    sealtd.colSpan = 2; // 4格合併
+    noticetd.classList.add("sealtd");
+
+    // 將td加入tr
+    trnotice.appendChild(noticetd);
+    trnotice.appendChild(sealtd);
+
+    // 將tr加入到表格
+    tbody.appendChild(trnotice);
   }
 
   // 創建表格結構（僅執行一次）
@@ -209,9 +307,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let thead = document.createElement("thead");
     let headerRow = document.createElement("tr");
 
-    ["序號", "項目內容", "價錢", "備註"].forEach((text) => {
+    let columnWidths = ["10%", "50%", "20%", "20%"]; // 定義每個欄位的寬度
+
+    ["序號", "項目內容", "價錢", "備註"].forEach((text, index) => {
       let th = document.createElement("th");
       th.textContent = text;
+      th.style.width = columnWidths[index]; // 設定寬度
       headerRow.appendChild(th);
     });
 
