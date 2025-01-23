@@ -6,16 +6,19 @@
   padding: 10px;
   margin-top: 20px;
   background-color: #f9f9f9;
-  top: 50%;
-  /* 垂直居中 */
-  left: 50%;
-  /* 水平居中 */
-  transform: translate(-50%, -50%);
+  top: 5px; /* 距離頂部 */
+  right: 220px; /* 距離右側 */
+  // top: 50%;
+  // /* 垂直居中 */
+  // left: 50%;
+  // /* 水平居中 */
+  // transform: translate(-50%, -50%);
   /* 向上和向左移動50%自己的寬度和高度 */
-  width: 70%;
-  height: auto;
+  width: 595px;
+  height:  842px;
   z-index: 1000;
   /* 確保它顯示在其他元素之上 */
+  overflow: auto; /* 啟用滾動條 */
 }
 
 .visible {
@@ -49,13 +52,13 @@
 
   h1 {
     margin: 0;
-    font-size: 55px;
+    font-size: 35px;
     color: #000;
   }
 
   h2 {
     margin: 0;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
     color: #000;
 
@@ -97,9 +100,6 @@
     padding: 8px 0 6px 0;
   }
 }
-
-
-
 
 // 表格樣式
 .quotationtable {

@@ -29,16 +29,14 @@ input[type=checkbox] {
   padding: 10px;
   margin-top: 20px;
   background-color: #f9f9f9;
-  top: 50%;
-  /* 垂直居中 */
-  left: 50%;
-  /* 水平居中 */
-  transform: translate(-50%, -50%);
+  top: 5px; /* 距離頂部 */
+  right: 220px; /* 距離右側 */
   /* 向上和向左移動50%自己的寬度和高度 */
-  width: 70%;
-  height: 60%;
+  width: 595px;
+  height: 842px;
   z-index: 1000;
   /* 確保它顯示在其他元素之上 */
+  overflow: auto; /* 啟用滾動條 */
 }
 
 .visible {
@@ -60,11 +58,7 @@ input[type=checkbox] {
   text-align: center;
   padding: 20px;
   color: white;
-  background-image: url("../img/New-Logo.png");
   /* 替換為你的背景圖片 */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: rgba(255, 255, 255, 0.8);
   /* 添加透明的白色 */
   background-blend-mode: lighten;
@@ -72,12 +66,12 @@ input[type=checkbox] {
 }
 .quotationheader h1 {
   margin: 0;
-  font-size: 55px;
+  font-size: 35px;
   color: #000;
 }
 .quotationheader h2 {
   margin: 0;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 600;
   color: #000;
 }
@@ -117,15 +111,22 @@ input[type=checkbox] {
   width: 100%;
   border-collapse: collapse;
   margin-top: 5px;
+  border: 2px solid black;
 }
 .quotationtable th,
 .quotationtable td {
-  border: 1px solid #ccc;
+  border: 2px solid black;
   padding: 10px;
   text-align: left;
 }
 .quotationtable th {
   background-color: #f5f5f5;
+}
+.quotationtable table {
+  border: 1px solid black;
+}
+.quotationtable td.orgtd {
+  padding: 0px;
 }
 
 @media (max-width: 768px) {
@@ -212,6 +213,17 @@ input[type=checkbox] {
   align-items: center;
 }
 
+.btnallcheckboxfalse {
+  position: fixed;
+  bottom: 10px;
+  right: 110px;
+  padding: 4px 8px;
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
 .btnoutputQuotation {
   position: fixed;
   bottom: 10px;
@@ -220,6 +232,19 @@ input[type=checkbox] {
   background-color: #ffffff;
   font-size: 15px;
   font-weight: 600;
+  border-radius: 8px;
+}
+
+#printButton {
+  visibility: hidden;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 8px;
+  background-color: #ffffff;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 800;
   border-radius: 8px;
 }
 
