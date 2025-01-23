@@ -3,10 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let closeoutputQuotationBtn = document.getElementById(
     "closeoutputQuotationBtn"
   );
-
+  let container = document.getElementById("myContainer");
   let QuotationDiv = document.getElementById("Quotation");
-  let checkboxes = document.querySelectorAll(".content-checkbox");
+  let printButton = document.getElementById('printButton');
+  // let checkboxes = document.querySelectorAll(".content-checkbox");
 
+  console.log(printButton);
+  
   // 全局數據存儲
   let selectedItems = [];
   let basesize = [];
@@ -16,13 +19,29 @@ document.addEventListener("DOMContentLoaded", () => {
     updatecarbasesize(); // 更新座板大小
     QuotationDiv.classList.add("visible"); // 顯示大 Div
     updateTable(); // 顯示表格內容
+    document.body.style.overflow = "hidden"; // 禁止背景滾動
+    container.style.display = "none";
+    document.body.style.backgroundColor = "#ffd76b";
+    printButton.style.visibility = "visible";
   });
 
   // 隱藏大 Div
   closeoutputQuotationBtn.addEventListener("click", () => {
     clearcarbasesize();
+    document.body.style.overflow = ""; // 恢復背景滾動
     QuotationDiv.classList.remove("visible"); // 隱藏大 Div
+    container.style.display = "";
+    printButton.style.visibility = "hidden";
+
   });
+
+  if (QuotationDiv) {
+    QuotationDiv.addEventListener("wheel", (e) => {
+      e.stopPropagation();
+    });
+  } else {
+    console.error("QuotationDiv 元素未找到");
+  }
 
   //清空資料
   function clearcarbasesize() {
@@ -63,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedItems.push({ item: item, price: price, note: notes });
       }
     });
-    console.log(selectedItems);
   }
 
   //  -------  創建Header 區塊  -------
@@ -208,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let businessTd1 = document.createElement("td");
     businessTd1.style.width = "50%";
     businessTd1.textContent = "報價業務：";
-    businessTd1.style.fontSize = "20px";
+    businessTd1.style.fontSize = "10px";
     businessTd1.style.border = "0px";
     businessTd1.style.fontWeight = "700";
     let inputBusiness = document.createElement("input");
@@ -218,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inputBusiness.style.fontWeight = "700";
 
     inputBusiness.style.textAlign = "left"; // 內容置中
-    inputBusiness.style.fontSize = "18px";
+    inputBusiness.style.fontSize = "10px";
     inputBusiness.style.backgroundColor = "inherit";
     inputBusiness.style.border = "0px";
     // 將這一行加入表格
@@ -227,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let businessTd2 = document.createElement("td");
     businessTd2.style.width = "50%";
     businessTd2.textContent = "總價格：";
-    businessTd2.style.fontSize = "20px";
+    businessTd2.style.fontSize = "10px";
     businessTd2.style.border = "0px";
     businessTd2.style.fontWeight = "800";
 
@@ -252,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //新增注意事項表格
     let noticetd = document.createElement("td");
     noticetd.style.width = "50%";
-    noticetd.colSpan = 2; // 4格合併
+    noticetd.colSpan = 3; // 4格合併
     noticetd.classList.add("noticetd");
     noticetd.style.padding = "3px 0px 3px 0";
     noticetd.style.height = "100%";
@@ -260,15 +278,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let noticetdDiv1 = document.createElement("div");
     noticetdDiv1.textContent = "注意事項";
     noticetdDiv1.style.textAlign = "center";
-    noticetdDiv1.style.fontSize = "22px";
+    noticetdDiv1.style.fontSize = "14px";
     noticetdDiv1.style.fontWeight = "900";
     noticetdDiv1.style.borderBottom = "1px solid black";
-    noticetdDiv1.style.padding = "5px 0 5px 0";
+    noticetdDiv1.style.padding = "1px 0 0 0";
 
     let noticetdDiv2 = document.createElement("div");
     // 要插入的多行內容
-    let lines = ["1.", "2.", "3."];
-
+    let lines = [
+      "1.此報價有效為30天內有效。(含台灣本島區域內寄送)",
+      "2.內含特製產品，交期另議。",
+      "3.最低出貨每次為末端售價金額$3,000 (含)以上可免國內運費。",
+      "4.客製貨產品及進口貨物訂購到貨，原則上無法退貨，僅在商品規格與訂購不符或出現損傷的情況下可進行退換。",
+      "5.若貨物寄出後三天內未收到反應，對於缺貨或寄錯或的情況將不再提供補貨或換貨服務。",
+    ];
     // 將每行內容插入到 div
     lines.forEach((line) => {
       let p = document.createElement("p"); // 每行使用 <p> 包裹
@@ -277,18 +300,45 @@ document.addEventListener("DOMContentLoaded", () => {
       noticetdDiv2.appendChild(p);
     });
     noticetdDiv2.style.textAlign = "left";
-    noticetdDiv2.style.fontSize = "18px";
+    noticetdDiv2.style.fontSize = "12px";
     noticetdDiv2.style.fontWeight = "900";
-    
 
     noticetd.appendChild(noticetdDiv1);
     noticetd.appendChild(noticetdDiv2);
 
-    //新增公司章表格
+    // 創建 sealtd 表格單元格
     let sealtd = document.createElement("td");
-    sealtd.style.width = "50%";
-    sealtd.colSpan = 2; // 4格合併
-    noticetd.classList.add("sealtd");
+    sealtd.classList.add("sealtd");
+    sealtd.style.padding = "0px";
+    sealtd.style.display = "flex";
+    sealtd.style.flexDirection = "column";
+    sealtd.style.alignItems = "center"; // 水平置中
+    sealtd.style.justifyContent = "flex-start"; // 垂直靠上
+    sealtd.style.height = "100%"; // 保證 td 本身高度正確
+
+    // 創建 "公司簽章" 文字部分
+    let sealtextdiv = document.createElement("div");
+    sealtextdiv.classList.add("sealtextdiv");
+    sealtextdiv.textContent = "公司簽章";
+    sealtextdiv.style.borderBottom = "3px solid black";
+    sealtextdiv.style.color = "red";
+    sealtextdiv.style.fontWeight = "900";
+    sealtextdiv.style.fontSize = "14px";
+    sealtextdiv.style.width = "100%"; // 寬度拉滿
+    sealtextdiv.style.textAlign = "center"; // 文字水平置中
+    sealtextdiv.style.padding = "1px 4px 0 4px";
+    sealtd.appendChild(sealtextdiv);
+
+    // 創建 sealimgdiv 圖片容器，直接用 div 加背景圖
+    let sealimgdiv = document.createElement("div");
+    sealimgdiv.style.width = "100%";
+    sealimgdiv.style.height = "175px"; // 測試高度
+    sealimgdiv.style.padding = "0 5px 0 5px";
+    sealimgdiv.style.backgroundImage = "url('./img/Companyseal.png')";
+    sealimgdiv.style.backgroundSize = "contain";
+    sealimgdiv.style.backgroundRepeat = "no-repeat";
+    sealimgdiv.style.backgroundPosition = "center";
+    sealtd.appendChild(sealimgdiv);
 
     // 將td加入tr
     trnotice.appendChild(noticetd);
@@ -328,4 +378,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return table;
   }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('printButton').addEventListener('click', function () {
+    window.print();
+  });
 });

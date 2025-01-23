@@ -74,8 +74,8 @@ for (let i = 0; i < 7; i++) {
   divSW_Check.name = `car_basewidth`;
   // 設置 data-size 屬性，根據需要修改屬性值
   let formattedItem = ` - ${SWCCount} cm`;
-  divSW_Check.setAttribute('data-item', formattedItem);
-  divSW_Check.setAttribute('data-group', `Sbsize`);
+  divSW_Check.setAttribute("data-item", formattedItem);
+  divSW_Check.setAttribute("data-group", `Sbsize`);
 
   SWCCount += 2;
 
@@ -109,8 +109,8 @@ for (let i = 0; i < 9; i++) {
   divSd_Check.name = `car_basedeep`;
   // 設置 data-size 屬性，根據需要修改屬性值
   let formattedItem = ` * ${SdCCount} cm`;
-  divSd_Check.setAttribute('data-item', formattedItem);
-  divSd_Check.setAttribute('data-group', `Sbsize`);
+  divSd_Check.setAttribute("data-item", formattedItem);
+  divSd_Check.setAttribute("data-group", `Sbsize`);
   SdCCount += 2;
 
   SdC_container.appendChild(divSd_Check);
@@ -568,9 +568,8 @@ left.addEventListener("click", function (event) {
       let nowprice_seatbase = Price_seatbase[7].nextElementSibling;
 
       if (
-        openIntro.getAttribute("data-price-carseatbase") ===
-          "carseatbase" &&
-          nowprice_seatbase.getAttribute("data-nowprice-carseatbase") ===
+        openIntro.getAttribute("data-price-carseatbase") === "carseatbase" &&
+        nowprice_seatbase.getAttribute("data-nowprice-carseatbase") ===
           "nowcarseatbase"
       ) {
         if (introdution.getAttribute("data-collapse-status") === "0") {
@@ -641,9 +640,8 @@ left.addEventListener("click", function (event) {
       let nowprice_bandage = Price_bandage[8].nextElementSibling;
 
       if (
-        openIntro.getAttribute("data-price-carbandage") ===
-          "carbandage" &&
-          nowprice_bandage.getAttribute("data-nowprice-carbandage") ===
+        openIntro.getAttribute("data-price-carbandage") === "carbandage" &&
+        nowprice_bandage.getAttribute("data-nowprice-carbandage") ===
           "nowcarbandage"
       ) {
         if (introdution.getAttribute("data-collapse-status") === "0") {
@@ -699,16 +697,14 @@ left.addEventListener("click", function (event) {
   }
 });
 
-
-
 /*-----  Last.總價格相加  -----*/
 function formatPrice(price) {
   return new Intl.NumberFormat("en-US").format(price);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   let priceDisplay = document.getElementById("priceDisplay");
-  
+
   // 監聽 body 的變化事件
   document.body.addEventListener("change", (event) => {
     if (event.target.type === "checkbox") {
@@ -722,9 +718,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 遍歷所有 checkbox 並計算總價
     document.querySelectorAll('[data-addPrice="add"]').forEach((addprice) => {
-      let price = parseInt(addprice.textContent.replace(/[^0-9]/g, ''), 10); // 去掉所有非數字字符
+      let price = parseInt(addprice.textContent.replace(/[^0-9]/g, ""), 10); // 去掉所有非數字字符
 
-      if (!isNaN(price)) { // 確保 price 是有效數字
+      if (!isNaN(price)) {
+        // 確保 price 是有效數字
         alladdprice += price; // 累加價格
       } else {
         console.error(`Invalid price text: ${textContent}`);
@@ -732,7 +729,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 更新總價到畫面
-    priceDisplay.textContent = `${formatPrice(alladdprice)}`;    
+    priceDisplay.textContent = `${formatPrice(alladdprice)}`;
   }
 });
+
+let allcheckboxfalsebtn = document.getElementById("allcheckboxfalse");
+
+allcheckboxfalsebtn.addEventListener("click", () => {
+  allcheckboxfalsefct();
+});
+
+function allcheckboxfalsefct() {
+  // 查询所有复选框
+  let allcheckboxsearch = document.querySelectorAll('input[type="checkbox"]');
+  
+  // 遍历每个复选框并取消勾选
+  allcheckboxsearch.forEach((checkbox) => {
+    checkbox.checked = false; // 取消勾选
+  });
+}
+
 
