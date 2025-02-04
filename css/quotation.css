@@ -4,17 +4,28 @@
   /* 初始為隱藏 */
   position: fixed;
   border: 3px solid #000;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 5px;
   background-color: #f9f9f9;
-  top: 5px; /* 距離頂部 */
-  right: 220px; /* 距離右側 */
+  top: 50%;
+  /* 垂直居中 */
+  left: 50%;
+  /* 水平居中 */
+  transform: translate(-50%, -50%);
   /* 向上和向左移動50%自己的寬度和高度 */
   width: 595px;
   height: 842px;
   z-index: 1000;
   /* 確保它顯示在其他元素之上 */
   overflow: auto; /* 啟用滾動條 */
+}
+.Quotation-div .watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 .visible {
@@ -34,22 +45,15 @@
 
 .quotationheader {
   text-align: center;
-  padding: 20px;
+  padding: 6px;
   color: white;
-  /* 替換為你的背景圖片 */
-  background-color: rgba(255, 255, 255, 0.8);
-  /* 添加透明的白色 */
-  background-blend-mode: lighten;
-  /* 混合模式 */
 }
 .quotationheader h1 {
-  margin: 0;
-  font-size: 35px;
+  font-size: 22px;
   color: #000;
 }
 .quotationheader h2 {
-  margin: 0;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 600;
   color: #000;
 }
@@ -62,39 +66,37 @@
 .quotationSub .quotation-client-container {
   display: flex;
   align-items: center;
-  margin: 5px;
-  padding: 5px;
+  padding: 3px;
 }
 .quotationSub .quotation-client-container label {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
 }
 .quotationSub .quotation-client-container input {
-  padding: 6px 0 3px 0;
+  padding: 4px 0 1px 0;
   background-color: inherit;
   /* 背景色與外層一致 */
   border: 0px solid #ccc;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
 }
 .quotationSub .quotationTime {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
-  margin: 5px;
-  padding: 8px 0 6px 0;
+  padding: 3px 0 3px 0;
 }
 
 .quotationtable {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 5px;
+  margin-top: 1px;
   border: 2px solid black;
 }
 .quotationtable th,
 .quotationtable td {
   border: 2px solid black;
-  padding: 10px;
+  padding: 4px;
   text-align: left;
 }
 .quotationtable th {
@@ -105,4 +107,4 @@
 }
 .quotationtable td.orgtd {
   padding: 0px;
-}/*# sourceMappingURL=Quotation.css.map */
+}/*# sourceMappingURL=quotation.css.map */
