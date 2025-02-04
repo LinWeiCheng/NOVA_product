@@ -5,11 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   let container = document.getElementById("myContainer");
   let QuotationDiv = document.getElementById("Quotation");
-  let printButton = document.getElementById('printButton');
-  // let checkboxes = document.querySelectorAll(".content-checkbox");
+  let printButton = document.getElementById("printButton");
 
-  console.log(printButton);
-  
   // 全局數據存儲
   let selectedItems = [];
   let basesize = [];
@@ -23,6 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     container.style.display = "none";
     document.body.style.backgroundColor = "#ffd76b";
     printButton.style.visibility = "visible";
+
+    // 創建浮水印圖片
+    let watermark = document.createElement("img");
+    watermark.src = "./img/New-Logo.png";
+    watermark.alt = "Watermark Logo";
+    watermark.classList.add("watermark"); // 加入 class 方便用 CSS 控制
+
+    // 添加到 QuotationDiv
+    QuotationDiv.appendChild(watermark);
   });
 
   // 隱藏大 Div
@@ -32,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     QuotationDiv.classList.remove("visible"); // 隱藏大 Div
     container.style.display = "";
     printButton.style.visibility = "hidden";
-
   });
 
   if (QuotationDiv) {
@@ -56,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let checkedCheckboxes = document.querySelectorAll(
       'input[type="checkbox"]:checked'
     );
+    // 先存放已加入的 items，避免重複
+    let addedItems = new Set();
 
     // 遍歷這些勾選的 checkbox 並處理
     checkedCheckboxes.forEach((checkbox) => {
@@ -71,17 +78,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     let items = basesize.join("");
 
-    selectedItems.push({ item: items, price: prices, note: "" });
+    if (items) {
+      selectedItems.push({ item: items, price: prices, note: "" });
+    }
 
     checkedCheckboxes.forEach((checkbox) => {
       let group = checkbox.dataset.group;
       let item = checkbox.dataset.item;
       let price = checkbox.dataset.price;
       let notes = checkbox.dataset.note;
+      // 如果這個 item 已經存過了，就跳過
+      if (addedItems.has(item)) {
+        return;
+      }
       if (!group) {
         selectedItems.push({ item: item, price: price, note: notes });
       }
+
+      // 記錄這個 item 已經被加入
+      addedItems.add(item);
     });
+    console.log(selectedItems);
   }
 
   //  -------  創建Header 區塊  -------
@@ -173,13 +190,15 @@ document.addEventListener("DOMContentLoaded", () => {
       let serialCell = document.createElement("td");
       serialCell.textContent = index + 1;
       serialCell.style.borderBottom = "2px solid black";
-
+      serialCell.style.fontWeight = "700";
       tr.appendChild(serialCell);
 
       // 項目內容
       let itemCell = document.createElement("td");
       itemCell.textContent = row.item;
       itemCell.style.borderBottom = "2px solid black";
+      itemCell.style.fontSize = "11px";
+      itemCell.style.fontWeight = "600";
       tr.appendChild(itemCell);
 
       // 價錢
@@ -187,12 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
       priceCell.textContent = row.price;
       priceCell.style.textAlign = "center"; // 價錢置中
       priceCell.style.borderBottom = "2px solid black";
+      priceCell.style.fontSize = "12px";
       tr.appendChild(priceCell);
 
       // 備註
       let noteCell = document.createElement("td");
       noteCell.textContent = row.note;
       noteCell.style.borderBottom = "2px solid black";
+      noteCell.style.fontSize = "10px";
+      noteCell.style.fontWeight = "600";
       tr.appendChild(noteCell);
 
       tbody.appendChild(tr);
@@ -226,17 +248,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let businessTd1 = document.createElement("td");
     businessTd1.style.width = "50%";
     businessTd1.textContent = "報價業務：";
-    businessTd1.style.fontSize = "10px";
+    businessTd1.style.fontSize = "14px";
     businessTd1.style.border = "0px";
     businessTd1.style.fontWeight = "700";
     let inputBusiness = document.createElement("input");
     inputBusiness.type = "text";
-    inputBusiness.placeholder = "臨危成 097585745"; // 默認顯示的提示文字
+    inputBusiness.placeholder = "業務名稱 電話"; // 默認顯示的提示文字
     inputBusiness.style.width = "50%";
     inputBusiness.style.fontWeight = "700";
 
     inputBusiness.style.textAlign = "left"; // 內容置中
-    inputBusiness.style.fontSize = "10px";
+    inputBusiness.style.fontSize = "12px";
     inputBusiness.style.backgroundColor = "inherit";
     inputBusiness.style.border = "0px";
     // 將這一行加入表格
@@ -245,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let businessTd2 = document.createElement("td");
     businessTd2.style.width = "50%";
     businessTd2.textContent = "總價格：";
-    businessTd2.style.fontSize = "10px";
+    businessTd2.style.fontSize = "14px";
     businessTd2.style.border = "0px";
     businessTd2.style.fontWeight = "800";
 
@@ -272,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     noticetd.style.width = "50%";
     noticetd.colSpan = 3; // 4格合併
     noticetd.classList.add("noticetd");
-    noticetd.style.padding = "3px 0px 3px 0";
+    noticetd.style.padding = "0px 0px 3px 0";
     noticetd.style.height = "100%";
 
     let noticetdDiv1 = document.createElement("div");
@@ -280,8 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
     noticetdDiv1.style.textAlign = "center";
     noticetdDiv1.style.fontSize = "14px";
     noticetdDiv1.style.fontWeight = "900";
-    noticetdDiv1.style.borderBottom = "1px solid black";
-    noticetdDiv1.style.padding = "1px 0 0 0";
+    noticetdDiv1.style.borderBottom = "2px solid black";
 
     let noticetdDiv2 = document.createElement("div");
     // 要插入的多行內容
@@ -300,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
       noticetdDiv2.appendChild(p);
     });
     noticetdDiv2.style.textAlign = "left";
-    noticetdDiv2.style.fontSize = "12px";
+    noticetdDiv2.style.fontSize = "10px";
     noticetdDiv2.style.fontWeight = "900";
 
     noticetd.appendChild(noticetdDiv1);
@@ -321,6 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sealtextdiv.classList.add("sealtextdiv");
     sealtextdiv.textContent = "公司簽章";
     sealtextdiv.style.borderBottom = "3px solid black";
+    sealtextdiv.colSpan = 1; // 4格合併
     sealtextdiv.style.color = "red";
     sealtextdiv.style.fontWeight = "900";
     sealtextdiv.style.fontSize = "14px";
@@ -332,12 +354,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // 創建 sealimgdiv 圖片容器，直接用 div 加背景圖
     let sealimgdiv = document.createElement("div");
     sealimgdiv.style.width = "100%";
-    sealimgdiv.style.height = "175px"; // 測試高度
-    sealimgdiv.style.padding = "0 5px 0 5px";
-    sealimgdiv.style.backgroundImage = "url('./img/Companyseal.png')";
+    sealimgdiv.style.height = "auto"; // 測試高度
     sealimgdiv.style.backgroundSize = "contain";
     sealimgdiv.style.backgroundRepeat = "no-repeat";
     sealimgdiv.style.backgroundPosition = "center";
+
+    let sealimg = document.createElement("img");
+    sealimg.src = "./img/Companyseal.png";
+    sealimg.style.margin = "14px 0 14px 6px"
+    sealimg.style.padding = "5px 0"
+    sealimgdiv.appendChild(sealimg);
     sealtd.appendChild(sealimgdiv);
 
     // 將td加入tr
@@ -380,9 +406,67 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.getElementById("printButton").addEventListener("click", function () {
+//     window.print();
+//   });
+// });
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('printButton').addEventListener('click', function () {
-    window.print();
-  });
+document.getElementById("printButton").addEventListener("click", function () {
+  let printContent = document.getElementById("Quotation").outerHTML; // 取得 Quotation div 內容
+
+  // 開新視窗
+  let printWindow = window.open("", "", "width=794,height=1123");
+
+  // 載入當前頁面的 CSS 樣式，確保列印時版面不會跑掉
+  let styles = "";
+  document
+    .querySelectorAll("link[rel='stylesheet'], style")
+    .forEach((style) => {
+      styles += style.outerHTML;
+    });
+
+  // 將內容寫入新視窗
+  printWindow.document.open();
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>列印</title>
+        ${styles} <!-- 帶入 CSS -->
+        <style>
+          @media print {
+            body {
+              margin: 0;
+              padding: 0;
+              display: flex;
+              justify-content: center; /* 水平置中 */
+              align-items: flex-start; /* 從上方開始 */
+              height: 100vh;
+            }
+            #Quotation {
+              width: 210mm; /* A4寬度 */
+              height: 297mm; /* A4高度 */
+              max-width: 100%;
+              max-height: 100%;
+              margin: 0 auto;
+              
+              padding: 5mm; /* 預留邊距，避免內容太靠近邊緣 */
+              box-sizing: border-box;
+              page-break-before: always;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        ${printContent}
+        <script>
+          window.onload = function () {
+            window.print();
+            window.onafterprint = function () { window.close(); };
+          };
+        </script>
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
 });

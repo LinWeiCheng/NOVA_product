@@ -2,6 +2,9 @@
 function formatPrice(back_supports_prices) {
   return new Intl.NumberFormat("en-US").format(back_supports_prices);
 }
+
+let productImage = document.getElementById("ProductImage");
+
 /*-----  1.車體顏色點擊列  -----*/
 let Car_color_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_color"]'
@@ -21,8 +24,6 @@ let Car_checkbox_blue = document.querySelectorAll(
 let Car_checkbox_gray = document.querySelectorAll(
   'input[type="checkbox"][id="checkbox_gray"]'
 );
-
-let productImage = document.getElementById("ProductImage");
 
 let Price = document.querySelectorAll(".pricing");
 
@@ -143,6 +144,7 @@ Price.forEach(function (openIntro) {
         });
         if (event.target.id === "checkbox_77degrees") {
           nowprice_tripod.textContent = "1,200元";
+          productImage.src = "./img/77pedal.png";
         } else if (event.target.id === "checkbox_80degrees") {
           nowprice_tripod.textContent = "1,800元";
         } else if (event.target.id === "checkbox_90degrees") {
@@ -151,6 +153,7 @@ Price.forEach(function (openIntro) {
       }
       if (!event.target.checked) {
         nowprice_tripod.textContent = "0元";
+        productImage.src = "./img/Novarc_standrad.png";
       }
     });
   });
@@ -253,16 +256,14 @@ Price.forEach(function (openIntro) {
   //一片式鋁踏板勾選
   Car_footpedal_onepiece_aluminumpedal_class_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-      if (
-        event.target.name ==="footpedal_onepiece_aluminumpedalchk"
-      ) {
+      if (event.target.name === "footpedal_onepiece_aluminumpedalchk") {
         // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
         if (event.target.checked) {
           Car_footpedal_onepiece_aluminumpedal_class_checkboxes.forEach(
             (otherCheckbox) => {
               if (otherCheckbox !== event.target) {
                 otherCheckbox.checked = false;
-              }                
+              }
               if (event.target.id === "checkbox_onepiece32_aluminumpedal") {
                 nowprice_footpedal.textContent = "1,300元";
               } else if (
@@ -315,7 +316,7 @@ Price.forEach(function (openIntro) {
   //外掛式腳踏組勾選
   Car_footpedal_Plugin_class_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-      if (event.target.name ==="footpedal_Pluginchk") {
+      if (event.target.name === "footpedal_Pluginchk") {
         // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
         if (event.target.checked) {
           Car_footpedal_Plugin_class_checkboxes.forEach((otherCheckbox) => {
@@ -368,7 +369,7 @@ Price.forEach(function (openIntro) {
   //垂直調整腳踏組勾選
   Car_footpedal_vertical_class_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-      if (event.target.name ==="footpedal_verticalchk") {
+      if (event.target.name === "footpedal_verticalchk") {
         // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
         if (event.target.checked) {
           Car_footpedal_vertical_class_checkboxes.forEach((otherCheckbox) => {
@@ -486,10 +487,12 @@ Price.forEach(function (openIntro) {
         });
         if (event.target.id === "checkbox_headsupports_Nova") {
           nowprice_carheadsupports.textContent = "4,500元";
+          productImage.src = "./img/Headrest.png";
         }
       }
       if (!event.target.checked) {
         nowprice_carheadsupports.textContent = "0元";
+        productImage.src = "./img/Novarc_standrad.png";
       }
     });
   });
@@ -538,6 +541,7 @@ function update_back_supportsPrice(event) {
         // 如果是第 1 到第 7 個 checkbox
         totalPrice = back_supports_prices[`back_prices${index + 1}`]; // 設置基礎價格
         basePriceAdded = true;
+        productImage.src = "./img/Back_support.png";
       } else if (index === 7 && basePriceAdded) {
         // 如果第 8 個被勾選，且有基礎價格
         totalPrice += back_supports_prices.hardware_prices8;
@@ -545,6 +549,9 @@ function update_back_supportsPrice(event) {
         // 如果只有第 8 個被勾選
         totalPrice = back_supports_prices.hardware_prices8;
       }
+    }
+    if (target.checked === false) {
+      productImage.src = "./img/Novarc_standrad.png";
     }
   });
 
@@ -565,6 +572,7 @@ function update_back_supports_hardwarePrice(event) {
         // 如果是第 1 到第 7 個 checkbox
         totalPrice = back_supports_prices[`back_prices${index + 1}`]; // 設置基礎價格
         basePriceAdded = true;
+        productImage.src = "./img/Back_support.png";
       } else if (index === 7 && basePriceAdded) {
         // 如果第 8 個被勾選，且有基礎價格
         totalPrice += back_supports_prices.hardware_prices8;
@@ -572,6 +580,11 @@ function update_back_supports_hardwarePrice(event) {
         // 如果只有第 8 個被勾選
         totalPrice = back_supports_prices.hardware_prices8;
       }
+    }
+    if (index < 7) {
+      // productImage.src = "./img/Back_support.png";
+    } else if (!checkbox.checked) {
+      productImage.src = "./img/Novarc_standrad.png";
     }
   });
 
@@ -628,23 +641,27 @@ function update_latertrunk_Price(event) {
       nowprice_latertrunksupports.textContent = `${formatPrice(
         latertrunk_supports_prices.latertrunk_prices1
       )} 元`;
+      productImage.src = "./img/Side_support(middle).png";
       latertrunksupportSR.checked = true;
     } else if (event.target.id === "checkbox_latertrunksupportSR_Nova") {
       nowprice_latertrunksupports.textContent = `${formatPrice(
         latertrunk_supports_prices.latertrunk_prices1
       )} 元`;
+      productImage.src = "./img/Side_support(middle).png";
       latertrunksupportSL.checked = true;
     } else if (event.target.id === "checkbox_latertrunksupportML_Nova") {
       nowprice_latertrunksupports.textContent = `${formatPrice(
         latertrunk_supports_prices.latertrunk_prices2
       )} 元`;
+      productImage.src = "./img/Side_support(big).png";
       latertrunksupportMR.checked = true;
     } else if (event.target.id === "checkbox_latertrunksupportMR_Nova") {
       nowprice_latertrunksupports.textContent = `${formatPrice(
         latertrunk_supports_prices.latertrunk_prices2
       )} 元`;
+      productImage.src = "./img/Side_support(big).png";
       latertrunksupportML.checked = true;
-    }
+    } 
   });
 }
 
@@ -659,6 +676,7 @@ Car_latertrunk_checkboxes.forEach((checkbox) => {
       Car_latertrunk_checkboxes.forEach((otherCheckbox) => {
         otherCheckbox.checked = false;
       });
+        productImage.src = "./img/Novarc_standrad.png";
     }
   });
 });
@@ -706,6 +724,7 @@ function update_seatbasePrice(event) {
         // 如果是第 1 到第 7 個 checkbox
         totalPrice = seat_base_prices[`seatbase_prices${index + 1}`]; // 設置基礎價格
         basePriceAdded = true;
+        productImage.src = "./img/seatbase.png";
       } else if (index === 7 && basePriceAdded) {
         // 如果第 8 個被勾選，且有基礎價格
         totalPrice += seat_base_prices.hardware_prices8;
@@ -713,6 +732,9 @@ function update_seatbasePrice(event) {
         // 如果只有第 8 個被勾選
         totalPrice = seat_base_prices.hardware_prices8;
       }
+    }
+    if (target.checked === false) {
+      productImage.src = "./img/Novarc_standrad.png";
     }
   });
 
@@ -740,6 +762,11 @@ function update_seatbase_hardwarePrice(event) {
         // 如果只有第 8 個被勾選
         totalPrice = seat_base_prices.hardware_prices8;
       }
+    }
+    if (index < 7) {
+      // productImage.src = "./img/Back_support.png";
+    } else if (!checkbox.checked) {
+      productImage.src = "./img/Novarc_standrad.png";
     }
   });
 
@@ -773,22 +800,20 @@ let bandage_prices = {
   bandage_prices5: 0,
   bandage_prices6: 950,
   bandage_prices7: 1000,
-  bandage_prices8: 1000, 
-  bandage_prices9: 750, 
+  bandage_prices8: 1000,
+  bandage_prices9: 750,
 };
 let bandagetotalPrice = 0; // 重置價格
 
 function update_bandagePrice(event) {
   let nowprice_bandage = Price[8].nextElementSibling;
-  
 
   // 計算總價
   Car_bandage_checkboxes.forEach((checkbox, index) => {
     if (checkbox.checked) {
-      bandagetotalPrice += bandage_prices[`bandage_prices${index + 1}`]; // 設置基礎價格   
+      bandagetotalPrice += bandage_prices[`bandage_prices${index + 1}`]; // 設置基礎價格
     }
   });
-
 
   // 更新價格到畫面
   nowprice_bandage.textContent = `${formatPrice(bandagetotalPrice)} 元`;
@@ -798,7 +823,6 @@ function update_bandagePrice(event) {
 //為每個 checkbox 添加事件監聽
 Car_bandage_checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", (event) => {
-      update_bandagePrice(event);
+    update_bandagePrice(event);
   });
 });
-
