@@ -7,6 +7,9 @@
     <title>Novarc_Tick List</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/quotation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 </head>
 
 <body>
@@ -622,7 +625,6 @@
             <!-- 顯示大 Div 的按鈕 -->
             <button id="outputQuotation" class="btnoutputQuotation">輸出報價單</button>
             <button id="allcheckboxfalse" class="btnallcheckboxfalse">取消勾選</button>
-
         </div>
     </div>
     <!-- 大的輸出 Div -->
@@ -631,7 +633,7 @@
         <span class="close-icon" id="closeoutputQuotationBtn">✖</span>
     </div>
     <button id="printButton" class="no-print">列印</button>
-
+    <button id="printPDFButton" class="no-print">PDF生成</button>
     </div>
     <script src="./js/index.js"></script>
     <script src="./js/tool.js"></script>
