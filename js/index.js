@@ -750,3 +750,146 @@ function allcheckboxfalsefct() {
 }
 
 
+// document.getElementById("printPDFButton").addEventListener("click", function () {
+//   let { jsPDF } = window.jspdf; // 確保 jsPDF 正確取得
+
+//   // 等待 domtoimage 渲染完成後再處理生成 PDF
+//   domtoimage.toPng(document.getElementById('Quotation'))
+//     .then(function (dataUrl) {
+//         // 確保圖片完全加載後處理 PDF
+//         const pdf = new jsPDF();
+
+//         const img = new Image();
+//         img.src = dataUrl;
+
+//         img.onload = function () {
+//             // 設置 A4 頁面的寬度和高度（單位：mm）
+//             const pdfWidth = 210; // A4 寬度
+//             const pdfHeight = 297; // A4 高度
+//             const imgWidth = img.width;
+//             const imgHeight = img.height;
+
+//             // 計算縮放比例，使圖片能夠適應 A4 頁面大小
+//             const scaleFactor = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+//             const scaledWidth = imgWidth * scaleFactor;
+//             const scaledHeight = imgHeight * scaleFactor;
+
+//             // 計算圖片居中顯示
+//             const xOffset = (pdfWidth - scaledWidth) / 2; // 水平居中
+//             const yOffset = (pdfHeight - scaledHeight) / 2; // 垂直居中
+
+//             // 添加圖片到 PDF
+//             pdf.addImage(dataUrl, 'PNG', xOffset, yOffset, scaledWidth, scaledHeight);
+
+//             // 儲存生成的 PDF 檔案
+//             pdf.save("quotation.pdf");
+//         };
+
+//         // 如果圖片無法加載，輸出錯誤
+//         img.onerror = function () {
+//             console.error("圖片加載失敗");
+//         };
+//     })
+//     .catch(function (error) {
+//         console.error('Error:', error);
+//     });
+// });
+
+// 確保頁面加載完成再執行
+
+
+
+
+// document.getElementById("printPDFButton").addEventListener("click", function () {
+//   // 使用 html2canvas 渲染 Quotation div 為圖片
+//   html2canvas(document.getElementById('Quotation')).then(function(canvas) {
+//     // 取得生成的 canvas 元素
+//     let imgData = canvas.toDataURL('image/png'); // 將 canvas 轉換為圖片格式
+
+//     // 顯示 imgData 轉換後的圖片
+//     let imgElement = document.createElement("img");
+//     imgElement.src = imgData;
+//     document.body.appendChild(imgElement); // 將圖片加入頁面中查看
+
+//     // 使用 jsPDF 創建 PDF 文件
+//     const { jsPDF } = window.jspdf;
+//     const pdf = new jsPDF();
+
+//     // 調整圖片加入 PDF 的起始位置（5, 8）
+//     pdf.addImage(imgData, 'PNG', 5, 8); // 這裡的15, 15是X和Y座標，表示圖片從 PDF 頁面的(15, 15)位置開始
+
+//     // 儲存 PDF 檔案
+//     pdf.save("quotation.pdf");
+//   }).catch(function(error) {
+//     console.error('Error:', error);
+//   });
+// });
+
+// document.getElementById("printPDFButton").addEventListener("click", function () {
+//   let printContent = document.getElementById("Quotation").outerHTML; // 取得 Quotation div 內容
+
+//   // 開新視窗
+//   let printWindow = window.open("", "", "width=794,height=1123");
+
+//   // 載入當前頁面的 CSS 樣式，確保列印時版面不會跑掉
+//   let styles = "";
+//   document
+//     .querySelectorAll("link[rel='stylesheet'], style")
+//     .forEach((style) => {
+//       styles += style.outerHTML;
+//     });
+
+//   // 將內容寫入新視窗
+//   printWindow.document.open();
+//   printWindow.document.write(`
+//     <html>
+//       <head>
+//         <title>列印</title>
+//         ${styles} <!-- 帶入 CSS -->
+//         <style>
+//           @media print {
+//             body {
+//               margin: 0;
+//               padding: 0;
+//               display: flex;
+//               justify-content: center; /* 水平置中 */
+//               align-items: flex-start; /* 從上方開始 */
+//               height: 100vh;
+//             }
+//             #Quotation {
+//               width: 210mm; /* A4寬度 */
+//               height: 297mm; /* A4高度 */
+//               max-width: 100%;
+//               max-height: 100%;
+//               margin: 0 auto;
+              
+//               padding: 5mm; /* 預留邊距，避免內容太靠近邊緣 */
+//               box-sizing: border-box;
+//               page-break-before: always;
+//             }
+//           }
+//         </style>
+//       </head>
+//       <body>
+//         ${printContent}
+//         <script>
+//           window.onload = function () {
+//             window.print();
+//             window.onafterprint = function () { window.close(); };
+//           };
+//         </script>
+//       </body>
+//     </html>
+//   `);
+//   printWindow.document.close();
+
+//   // 使用 html2pdf.js 來生成 PDF
+//   html2pdf(printContent, {
+//     margin:       10,
+//     filename:     'my_pdf.pdf',  // 指定生成的 PDF 文件名稱
+//     image:        { type: 'jpeg', quality: 0.98 },  // 設定圖像質量
+//     html2canvas:  { scale: 2 },  // 設定畫質，增強圖像清晰度
+//     jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }  // PDF 格式和紙張方向
+//   });
+//   html2pdf().from(printContent).save('my_pdf.pdf');  // 使用 .from(element) 調用生成 PDF
+// });

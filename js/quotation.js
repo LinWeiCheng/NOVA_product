@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 創建浮水印圖片
     let watermark = document.createElement("img");
     watermark.src = "./img/New-Logo.png";
+    watermark.crossOrigin = "anonymous";
     watermark.alt = "Watermark Logo";
     watermark.classList.add("watermark"); // 加入 class 方便用 CSS 控制
 
@@ -307,11 +308,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let noticetdDiv2 = document.createElement("div");
     // 要插入的多行內容
     let lines = [
-      "1.此報價有效為30天內有效。(含台灣本島區域內寄送)",
-      "2.內含特製產品，交期另議。",
-      "3.最低出貨每次為末端售價金額$3,000 (含)以上可免國內運費。",
-      "4.客製貨產品及進口貨物訂購到貨，原則上無法退貨，僅在商品規格與訂購不符或出現損傷的情況下可進行退換。",
-      "5.若貨物寄出後三天內未收到反應，對於缺貨或寄錯或的情況將不再提供補貨或換貨服務。",
+      "1.本報價有效期限為30天，適用於台灣本島地區之配送服務。",
+      "2.訂單內含特製產品者，其交期將另行協商。",
+      "3.單筆訂單金額達新台幣3,000元（含）以上，可享台灣本島免運費服務。",
+      "4. 客製化產品及進口商品原則上不接受退貨，惟如商品規格與訂單不符或運送過程導致損壞，得申請換貨。",
+      "5.貨品送達後，若有短缺、錯誤或其他異常，請於三日內提出反應，逾期恕不受理補貨或換貨申請。",
+      "6. 產品顏色、規格、售價請依光星原廠系統公告為準，此資料僅供參考。",
     ];
     // 將每行內容插入到 div
     lines.forEach((line) => {
@@ -359,11 +361,12 @@ document.addEventListener("DOMContentLoaded", () => {
     sealimgdiv.style.backgroundRepeat = "no-repeat";
     sealimgdiv.style.backgroundPosition = "center";
 
-    let sealimg = document.createElement("img");
-    sealimg.src = "./img/Companyseal.png";
-    sealimg.style.margin = "14px 0 14px 6px"
-    sealimg.style.padding = "5px 0"
-    sealimgdiv.appendChild(sealimg);
+    // let sealimg = document.createElement("img");
+    // sealimg.src = "./img/Companyseal.png";
+    // sealimg.style.margin = "14px 0 14px 6px";
+    // sealimg.style.padding = "5px 0";
+    // sealimg.crossOrigin = "anonymous";
+    // sealimgdiv.appendChild(sealimg);
     sealtd.appendChild(sealimgdiv);
 
     // 將td加入tr
@@ -406,11 +409,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.getElementById("printButton").addEventListener("click", function () {
-//     window.print();
-//   });
-// });
 
 document.getElementById("printButton").addEventListener("click", function () {
   let printContent = document.getElementById("Quotation").outerHTML; // 取得 Quotation div 內容
