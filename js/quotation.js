@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let container = document.getElementById("myContainer");
   let QuotationDiv = document.getElementById("Quotation");
   let printButton = document.getElementById("printButton");
+  //let printPDFButton = document.getElementById("printPDFButton");
 
   // 全局數據存儲
   let selectedItems = [];
@@ -20,11 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
     container.style.display = "none";
     document.body.style.backgroundColor = "#ffd76b";
     printButton.style.visibility = "visible";
+    //printPDFButton.style.visibility = "visible";
+
 
     // 創建浮水印圖片
     let watermark = document.createElement("img");
     watermark.src = "./img/New-Logo.png";
-    watermark.crossOrigin = "anonymous";
+    // watermark.crossOrigin = "anonymous";
     watermark.alt = "Watermark Logo";
     watermark.classList.add("watermark"); // 加入 class 方便用 CSS 控制
 
