@@ -1,0 +1,86 @@
+.car_color {
+
+    @media screen and (max-width:1100px) {
+        background-color: #fff;
+    }
+
+    @media screen and (max-width:500px) {
+        background-color: red;
+    }
+}
+
+// @media screen and (max-width: 1100px) {
+//     // 隱藏原有的內部 div（紅色字部分）
+//     .subtitle[data-showinfo="carbasesize"] > div {
+//       display: none;
+//     }
+//     // 在 .subtitle 上添加偽元素，顯示新內容
+//     .subtitle[data-showinfo="carbasesize"]::after {
+//       content: "(...)";
+//       font-size: 12px;
+//       font-weight: 700;
+//       color: red;
+//       display: block; // 顯示為塊級元素（或 inline-block）
+//       margin-top: 0.5em; // 可依需求調整間距
+//     }
+//   }
+
+
+@media screen and (max-width:1100px) {
+    .basesize {
+        flex-direction: row;
+        height: 100%;
+
+        .Seat-widthgroup {
+            width: 50%;
+            flex-direction: column;
+            padding: 0px 1px;
+
+            border-bottom: 0px;
+
+            .width_cmCount {
+                flex-direction: row;
+                width: 100%;
+
+                .width_number {
+                    flex-direction: column;
+                    width: 50%;
+                }
+
+                .width_chkblock {
+                    flex-direction: column;
+                    width: 50%;
+                }
+            }
+        }
+
+        .Seat-deepgroup {
+            width: 50%;
+            height: auto;
+            flex-direction: column;
+            border-left: 3px dashed black;
+            padding: 0px 1px;
+
+            .seat-deep{
+                height: 61px;
+            }
+
+            .deep_cmCount {
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .deep_number {
+                flex-direction: column;
+                width: 50%;
+            }
+
+            .deep_chkblock {
+                flex-direction: column;
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {}

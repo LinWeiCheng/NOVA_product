@@ -1,0 +1,57 @@
+@media screen and (max-width: 1100px) {
+  .car_color {
+    background-color: #fff;
+  }
+}
+@media screen and (max-width: 500px) {
+  .car_color {
+    background-color: red;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .basesize {
+    flex-direction: row;
+    height: 100%;
+  }
+  .basesize .Seat-widthgroup {
+    width: 50%;
+    flex-direction: column;
+    padding: 0px 1px;
+    border-bottom: 0px;
+  }
+  .basesize .Seat-widthgroup .width_cmCount {
+    flex-direction: row;
+    width: 100%;
+  }
+  .basesize .Seat-widthgroup .width_cmCount .width_number {
+    flex-direction: column;
+    width: 50%;
+  }
+  .basesize .Seat-widthgroup .width_cmCount .width_chkblock {
+    flex-direction: column;
+    width: 50%;
+  }
+  .basesize .Seat-deepgroup {
+    width: 50%;
+    height: auto;
+    flex-direction: column;
+    border-left: 3px dashed black;
+    padding: 0px 1px;
+  }
+  .basesize .Seat-deepgroup .seat-deep {
+    height: 61px;
+  }
+  .basesize .Seat-deepgroup .deep_cmCount {
+    flex-direction: row;
+    width: 100%;
+  }
+  .basesize .Seat-deepgroup .deep_number {
+    flex-direction: column;
+    width: 50%;
+  }
+  .basesize .Seat-deepgroup .deep_chkblock {
+    flex-direction: column;
+    width: 50%;
+  }
+}/*# sourceMappingURL=mobile.css.map */
