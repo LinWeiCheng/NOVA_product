@@ -140,14 +140,14 @@ left.addEventListener("click", function (event) {
 
           //carbasesize勾選位置大小設置
           introdutionid.style.visibility = "visible";
-          introdutionid.style.padding = "5px 1px 1px 3px";
+          introdutionid.style.padding = "7px 1px 0px 3px";
           introdutionid.style.width = "calc(100% - 8px)";
           introdutionid.style.flexWrap = "wrap";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
           introdutionid.style.display = "flex";
           introdutionid.style.margin = "0px 5px 5px 7px";
-          introdutionid.style.height = "160px";
+          introdutionid.style.height = "auto";
 
           //建議售價標題顯示
           openIntro.style.display = "block";
