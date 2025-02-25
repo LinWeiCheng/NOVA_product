@@ -148,6 +148,12 @@ input[type=checkbox] {
     /* 讓文字和圖片在小螢幕上都佔滿寬度 */
   }
 }
+html, body {
+  height: auto;
+  overflow: auto;
+  width: 100%;
+}
+
 .totalPrice {
   position: fixed;
   /* 固定在視窗 */
@@ -177,8 +183,9 @@ input[type=checkbox] {
 .container {
   padding: 10px;
   background-color: #ffd76b;
-  height: 100%;
-  position: fixed;
+  min-height: 100vh;
+  position: absolute;
+  height: auto;
   left: 0;
   top: 0;
   z-index: -1;

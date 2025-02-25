@@ -19,6 +19,12 @@
     /* 讓文字和圖片在小螢幕上都佔滿寬度 */
   }
 }
+html, body {
+  height: auto; // 避免 100% 限制高度
+  overflow: auto; // 確保可以滾動
+  width: 100%;
+}
+
 //總價浮動視窗
 .totalPrice {
   position: fixed;
@@ -49,12 +55,13 @@
 .container {
   padding: 10px;
   background-color: $color-base-yellow;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  height: auto; // 內容增加時，背景高度自動擴展
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
 }
 
 .content {
@@ -202,7 +209,8 @@
     /* 垂直置中 */
     cursor: pointer;
   }
-  .subtitle_2{
+
+  .subtitle_2 {
     font-size: 12px;
     font-weight: 700;
     color: red;
