@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div class="totalPrice">總價格：<span id="priceDisplay">0</span> 元</div>
     <div class="container" id="myContainer">
         <div class="Title">Nova光星 Novarc線上勾選單</div>
         <div class="content">
@@ -95,7 +96,7 @@
                             </div>
                             <div class="chkcontent_2nd">
                                 <div class="subtitle" data-collapse-status="0" data-showinfo="carbasesize">車體座板尺寸
-                                    <div style="font-size: 12px;font-weight: 700;color: red;">(座寬及座深都要勾選)</div>
+                                    <div class ="subtitle_2">(座寬及座深都要勾選)</div>
                                 </div>
                                 <div class="basesize">
                                     <div class="Seat-widthgroup">
@@ -125,7 +126,7 @@
                             <div class="pricecontent">
                                 <div class="pricing" data-price-carbasesize="carbasesize">建議售價</div>
 
-                                <div class="nowprice" data-nowprice-carbasesize="nowcarbasesize" data-addPrice="add">0
+                                <div class="nowprice" id="seatprice" data-nowprice-carbasesize="nowcarbasesize" data-addPrice="add">0
                                     <div class="dollar">元</div>
                                 </div>
                             </div>
@@ -140,20 +141,17 @@
                             <div class="chkcontent_3rd">
                                 <div class="subtitle" data-collapse-status="0" data-showinfo="cartripod">腳架</div>
                                 <div class="tripodgroup">
-                                    <div class="degrees">
+                                    <div class="degrees"> 77 度/一對
                                         <input type="checkbox" class="content-checkbox" id="checkbox_77degrees"
                                             name="car_tripod" data-item="77 度/一對" data-price="1,200" data-note="左/右各一">
-                                        77 度/一對
                                     </div>
-                                    <div class="degrees">
+                                        <div class="degrees"> 80 度/一對
                                         <input type="checkbox" class="content-checkbox" id="checkbox_80degrees"
                                             name="car_tripod" data-item="80 度/一對" data-price="1,800" data-note="左/右各一">
-                                        80 度/一對
                                     </div>
-                                    <div class="degrees">
+                                    <div class="degrees"> 90 度/一對
                                         <input type="checkbox" class="content-checkbox" id="checkbox_90degrees"
                                             name="car_tripod" data-item="90 度/一對" data-price="1,800" data-note="左/右各一">
-                                        90 度/一對
                                     </div>
                                 </div>
                             </div>
@@ -622,7 +620,6 @@
                 <div class="imgblock">
                     <img id="ProductImage" src="./img/Novarc_standrad.png" alt="Novarc車台">
                 </div>
-                <div class="totalPrice">總價格：<span id="priceDisplay">0</span> 元</div>
             </div>
             <!-- 顯示大 Div 的按鈕 -->
             <button id="outputQuotation" class="btnoutputQuotation">輸出報價單</button>
