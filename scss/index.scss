@@ -5,7 +5,8 @@
     flex-direction: column;
     align-items: flex-start;
     /* 讓文字和圖片向左對齊 */
-    max-width: 1500px;
+    max-width: 1000px;
+    position: relative;
   }
 
   .leftcontent {
@@ -18,11 +19,42 @@
     /* 讓文字和圖片在小螢幕上都佔滿寬度 */
   }
 }
+//總價浮動視窗
+.totalPrice {
+  position: fixed;
+  /* 固定在視窗 */
+  top: 10px;
+  /* 距離視窗頂部 20px */
+  right: 10px;
+  /* 距離視窗右側 20px */
+  background-color: #ffffff;
+  /* 背景色 */
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  /* 邊框 */
+  border-radius: 8px;
+  /* 圓角 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 陰影 */
+  font-size: 40px;
+  /* 字體大小 */
+  font-weight: 900;
+  /* 字體加粗 */
+  text-align: center;
+  /* 文字置中 */
+  color: #333;
+  /* 文字顏色 */
+}
 
 .container {
   padding: 10px;
   background-color: $color-base-yellow;
-  height: 6000px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
 }
 
 .content {
@@ -32,6 +64,7 @@
 
 .leftcontent {
   width: 60%;
+  height: 100%;
 }
 
 .rightcontent {
@@ -54,40 +87,13 @@
     max-height: 100%;
     padding: 15px;
   }
-
-  //總價浮動視窗
-  .totalPrice {
-    position: fixed;
-    /* 固定在視窗 */
-    top: 10px;
-    /* 距離視窗頂部 20px */
-    right: 10px;
-    /* 距離視窗右側 20px */
-    background-color: #ffffff;
-    /* 背景色 */
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    /* 邊框 */
-    border-radius: 8px;
-    /* 圓角 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* 陰影 */
-    font-size: 40px;
-    /* 字體大小 */
-    font-weight: 900;
-    /* 字體加粗 */
-    text-align: center;
-    /* 文字置中 */
-    color: #333;
-    /* 文字顏色 */
-  }
 }
 
 .nowprice {
   text-align: center;
   align-items: center;
 
-  .dollarP {
+  .dollar {
     text-align: center;
     align-items: center;
   }
@@ -195,6 +201,11 @@
     align-items: center;
     /* 垂直置中 */
     cursor: pointer;
+  }
+  .subtitle_2{
+    font-size: 12px;
+    font-weight: 700;
+    color: red;
   }
 
   .pricecontent {
@@ -556,6 +567,7 @@
 .chkcontent_2nd {
   display: flex;
   width: 100%;
+  height: auto;
   flex-direction: column;
 
   .basesize {
@@ -587,7 +599,7 @@
 
   .Seat-deepgroup {
     display: flex;
-    padding: 8px 2px 0px 0px;
+    padding: 11px 2px 0px 0px;
     width: 100%;
 
     .seat-deep {
@@ -656,7 +668,7 @@
 .deep_cmCount {
   display: flex;
   margin: 0 0 2px 2px;
-  padding: 2px;
+  padding: 2px 2px 0 2px;
   flex-direction: column;
 
   .deep_number {

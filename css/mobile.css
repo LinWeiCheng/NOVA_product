@@ -1,15 +1,39 @@
-@media screen and (max-width: 1100px) {
-  .car_color {
-    background-color: #fff;
+@charset "UTF-8";
+/* 手機直屏時隱藏 */
+@media screen and (orientation: portrait) {
+  .rightcontent {
+    display: none;
   }
 }
-@media screen and (max-width: 500px) {
-  .car_color {
-    background-color: red;
+@media screen and (max-width: 650px) {
+  .car_color .cherry_red {
+    width: 100%;
+  }
+  .car_color .pearl_orange {
+    width: 100%;
+  }
+  .car_color .rose_gold {
+    width: 100%;
+  }
+  .car_color .sky_blue {
+    width: 100%;
+  }
+  .car_color .camo_gray {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 1100px) {
+  .container .Title {
+    font-weight: 800;
+    font-size: 30px;
+  }
+  .container .totalPrice {
+    top: 55px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 30px;
+  }
   .basesize {
     flex-direction: row;
     height: 100%;
@@ -23,6 +47,7 @@
   .basesize .Seat-widthgroup .width_cmCount {
     flex-direction: row;
     width: 100%;
+    height: 100%;
   }
   .basesize .Seat-widthgroup .width_cmCount .width_number {
     flex-direction: column;
@@ -31,6 +56,9 @@
   .basesize .Seat-widthgroup .width_cmCount .width_chkblock {
     flex-direction: column;
     width: 50%;
+  }
+  .basesize .Seat-widthgroup .width_chkblock #SWC_checkbox {
+    margin: 17px 31px 18px 10px;
   }
   .basesize .Seat-deepgroup {
     width: 50%;
@@ -45,6 +73,7 @@
   .basesize .Seat-deepgroup .deep_cmCount {
     flex-direction: row;
     width: 100%;
+    height: 100%;
   }
   .basesize .Seat-deepgroup .deep_number {
     flex-direction: column;
@@ -53,5 +82,128 @@
   .basesize .Seat-deepgroup .deep_chkblock {
     flex-direction: column;
     width: 50%;
+  }
+  .basesize .Seat-deepgroup .deep_chkblock #SdC_checkbox {
+    margin: 17px 31px 18px 10px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .totalPrice {
+    top: 866px;
+    padding: 8px 8px;
+    font-size: 18px;
+    left: 10px;
+    right: 0px;
+    display: inline-block;
+    max-width: 200px;
+  }
+  .container .Title {
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 12px !important;
+  }
+  .subtitle .subtitle_2 {
+    font-size: 9px !important;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .seat-width {
+    font-size: 12px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_number .generated_SWdiv {
+    padding: 5px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_chkblock #SWC_checkbox {
+    margin: 12.5px 4px 13px 9px;
+    transform: scale(1.5);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .seat-deep {
+    font-size: 11px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .deep_cmCount .deep_number .generated_Sddiv {
+    padding: 5px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .deep_cmCount .deep_chkblock #SdC_checkbox {
+    margin: 12.5px 4px 13px 9px;
+    transform: scale(1.5);
+  }
+  .car-seat .target .pricecontent .pricing {
+    font-size: 12px;
+  }
+  .car-seat .target .pricecontent #seatprice {
+    font-size: 15px !important;
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees {
+    font-size: 14px;
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_77degrees {
+    margin: 3px 0px 5px 3px;
+    transform: scale(1.4);
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_80degrees {
+    margin: 3px 0px 5px 3px;
+    transform: scale(1.4);
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_90degrees {
+    margin: 3px 0px 5px 3px;
+    transform: scale(1.4);
+  }
+  .car-tripod .pricecontent .pricing {
+    font-size: 12px;
+  }
+  .car-tripod .pricecontent .nowprice {
+    font-size: 15px !important;
+  }
+  .footpedalgroup .footpedal_twopiece .div_type {
+    font-size: 16px;
+    height: auto;
+  }
+  .footpedalgroup .footpedal_twopiece .div_twopiece_angle {
+    padding: 0 8px 0 0;
+    font-size: 14px;
+    height: 100%;
+  }
+  .footpedalgroup .footpedal_twopiece .div_twopiece_angle .twopiece_anglefixed {
+    height: 50%;
+  }
+  .footpedalgroup .footpedal_twopiece .div_twopiece_angle .twopiece_angleadjust {
+    height: 50%;
+  }
+  .footpedalgroup .footpedal_twopiece .footpedal_checkbox1 #checkbox_twopiece_fixed {
+    margin: 10px 10px 8px 2px;
+    transform: scale(1.7);
+  }
+  .footpedalgroup .footpedal_twopiece .footpedal_checkbox1 #checkbox_twopiece_adjustable {
+    margin: 10px 10px 8px 2px;
+    transform: scale(1.7);
+  }
+  .footpedalgroup .footpedal_piecealuminum .div_type {
+    font-size: 18px;
+    padding: 0 0 0 6px;
+    height: 100%;
+  }
+  .footpedalgroup .footpedal_piecealuminum .div_angleadjust {
+    font-size: 18px;
+    padding: 0 0 0 6px;
+    height: 100%;
+  }
+  .footpedalgroup .footpedal_piecealuminum .pedalcm {
+    font-size: 13px;
+    margin: 1px 3px 1px 0;
+  }
+  .footpedalgroup .footpedal_piecealuminum .footpedal_checkbox2 {
+    margin: 0px 5px 0 0;
+  }
+  .footpedalgroup .footpedal_piecealuminum .footpedal_checkbox2 .content-checkbox {
+    margin: 17.5px 1px 10px 1px;
+    transform: scale(1.8);
+  }
+  .footpedalgroup .footpedal_Plugin .div_type {
+    font-size: 18px;
+    padding: 0 0 0 6px;
+    height: 100%;
+  }
+  .footpedalgroup .footpedal_Plugin .div_angle .div_pedalsize {
+    font-size: 13px;
   }
 }/*# sourceMappingURL=mobile.css.map */

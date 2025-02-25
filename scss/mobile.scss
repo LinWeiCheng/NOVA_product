@@ -1,11 +1,34 @@
+/* 手機直屏時隱藏 */
+@media screen and (orientation: portrait) {
+    .rightcontent {
+        display: none;
+    }
+}
+
 .car_color {
 
-    @media screen and (max-width:1100px) {
-        background-color: #fff;
-    }
+    @media screen and (max-width:1100px) {}
 
-    @media screen and (max-width:500px) {
-        background-color: red;
+    @media screen and (max-width:650px) {
+        .cherry_red {
+            width: 100%;
+        }
+
+        .pearl_orange {
+            width: 100%;
+        }
+
+        .rose_gold {
+            width: 100%;
+        }
+
+        .sky_blue {
+            width: 100%;
+        }
+
+        .camo_gray {
+            width: 100%;
+        }
     }
 }
 
@@ -27,6 +50,20 @@
 
 
 @media screen and (max-width:1100px) {
+    .container {
+        .Title {
+            font-weight: 800;
+            font-size: 30px;
+        }
+
+        .totalPrice {
+            top: 55px;
+            right: 10px;
+            padding: 6px 12px;
+            font-size: 30px;
+        }
+    }
+
     .basesize {
         flex-direction: row;
         height: 100%;
@@ -35,12 +72,13 @@
             width: 50%;
             flex-direction: column;
             padding: 0px 1px;
-
             border-bottom: 0px;
 
             .width_cmCount {
                 flex-direction: row;
                 width: 100%;
+                height: 100%;
+
 
                 .width_number {
                     flex-direction: column;
@@ -52,6 +90,13 @@
                     width: 50%;
                 }
             }
+
+            .width_chkblock {
+
+                #SWC_checkbox {
+                    margin: 17px 31px 18px 10px;
+                }
+            }
         }
 
         .Seat-deepgroup {
@@ -61,13 +106,14 @@
             border-left: 3px dashed black;
             padding: 0px 1px;
 
-            .seat-deep{
+            .seat-deep {
                 height: 61px;
             }
 
             .deep_cmCount {
                 flex-direction: row;
                 width: 100%;
+                height: 100%;
             }
 
             .deep_number {
@@ -79,8 +125,213 @@
                 flex-direction: column;
                 width: 50%;
             }
+
+            .deep_chkblock {
+
+                #SdC_checkbox {
+                    margin: 17px 31px 18px 10px;
+                }
+
+            }
         }
     }
 }
 
-@media screen and (max-width:500px) {}
+@media screen and (max-width:650px) {
+    .totalPrice {
+        top: 866px;
+        padding: 8px 8px;
+        font-size: 18px;
+        left: 10px;
+        right: 0px;
+        display: inline-block;
+        max-width: 200px;
+    }
+
+    .container {
+        .Title {
+            font-weight: 900;
+            font-size: 20px;
+        }
+    }
+
+    .subtitle {
+        font-size: 12px !important;
+
+        .subtitle_2 {
+            font-size: 9px !important;
+        }
+    }
+
+    .car-seat {
+        .target {
+            .chkcontent_2nd {
+                .basesize {
+                    .Seat-widthgroup {
+                        .seat-width {
+                            font-size: 12px;
+                        }
+
+                        .width_cmCount {
+                            .width_number {
+                                .generated_SWdiv {
+                                    padding: 5px;
+                                }
+                            }
+
+                            .width_chkblock {
+                                #SWC_checkbox {
+                                    margin: 12.5px 4px 13px 9px;
+                                    transform: scale(1.5);
+                                }
+                            }
+                        }
+                    }
+
+                    .Seat-deepgroup {
+                        .seat-deep {
+                            font-size: 11px;
+                        }
+
+                        .deep_cmCount {
+                            .deep_number {
+                                .generated_Sddiv {
+                                    padding: 5px;
+                                }
+                            }
+
+                            .deep_chkblock {
+                                #SdC_checkbox {
+                                    margin: 12.5px 4px 13px 9px;
+                                    transform: scale(1.5);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    font-size: 12px;
+                }
+
+                #seatprice {
+                    font-size: 15px !important;
+                }
+            }
+        }
+    }
+
+    .car-tripod {
+        .chkcontent_3rd {
+            .tripodgroup {
+                .degrees {
+                    font-size: 14px;
+
+                    #checkbox_77degrees {
+                        margin: 3px 0px 5px 3px;
+                        transform: scale(1.4);
+                    }
+
+                    #checkbox_80degrees {
+                        margin: 3px 0px 5px 3px;
+                        transform: scale(1.4);
+                    }
+
+                    #checkbox_90degrees {
+                        margin: 3px 0px 5px 3px;
+                        transform: scale(1.4);
+                    }
+                }
+            }
+        }
+        .pricecontent {
+            .pricing {
+                font-size: 12px;
+            }
+
+            .nowprice {
+                font-size: 15px !important;
+            }
+        }
+    }
+
+    .footpedalgroup {
+        .footpedal_twopiece {
+            .div_type {
+                font-size: 16px;
+                height: auto;
+            }
+
+            .div_twopiece_angle {
+                padding: 0 8px 0 0;
+                font-size: 14px;
+                height: 100%;
+
+                .twopiece_anglefixed {
+                    height: 50%;
+                }
+
+                .twopiece_angleadjust {
+                    height: 50%;
+                }
+            }
+
+            .footpedal_checkbox1 {
+                #checkbox_twopiece_fixed {
+                    margin: 10px 10px 8px 2px;
+                    transform: scale(1.7);
+                }
+
+                #checkbox_twopiece_adjustable {
+                    margin: 10px 10px 8px 2px;
+                    transform: scale(1.7);
+                }
+            }
+
+        }
+
+        .footpedal_piecealuminum {
+            .div_type {
+                font-size: 18px;
+                padding: 0 0 0 6px;
+                height: 100%;
+            }
+
+            .div_angleadjust {
+                font-size: 18px;
+                padding: 0 0 0 6px;
+                height: 100%;
+            }
+
+            .pedalcm {
+                font-size: 13px;
+                margin: 1px 3px 1px 0;
+            }
+
+            .footpedal_checkbox2 {
+                margin: 0px 5px 0 0;
+
+                .content-checkbox {
+                    margin: 17.5px 1px 10px 1px;
+                    transform: scale(1.8);
+                }
+            }
+        }
+
+        .footpedal_Plugin {
+            .div_type {
+                font-size: 18px;
+                padding: 0 0 0 6px;
+                height: 100%;
+            }
+
+            .div_angle {
+                .div_pedalsize {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
