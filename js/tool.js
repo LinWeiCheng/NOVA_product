@@ -2,7 +2,7 @@
 function formatPrice(back_supports_prices) {
   return new Intl.NumberFormat("en-US").format(back_supports_prices);
 }
-
+let  color_car_switch = false;
 let productImage = document.getElementById("ProductImage");
 
 /*-----  1.車體顏色點擊列  -----*/
@@ -30,7 +30,8 @@ let Price = document.querySelectorAll(".pricing");
 Price.forEach(function (openIntro) {
   Car_color_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
+      if (event.target.checked && color_car_switch === false) {
+        color_car_switch =true;
         // 取消其他 checkbox 的勾選
         Car_color_checkboxes.forEach((otherCheckbox) => {
           if (otherCheckbox !== event.target) {
@@ -51,7 +52,43 @@ Price.forEach(function (openIntro) {
         } else if (!event.target.checked) {
           productImage.src = "./img/Novarc_standrad.png";
         }
-      } else {
+      } 
+      else if( color_car_switch === true)
+      {
+        Car_color_checkboxes.forEach((otherCheckbox) => {
+          if (otherCheckbox !== event.target) {
+            otherCheckbox.checked = false;
+          }
+        });
+
+        Car_color_checkboxes.forEach((checkbox) => {
+          let nowprice_size = Price[1].nextElementSibling;
+          if (checkbox.checked) {
+            if (checkbox.id === "checkbox_red") {
+              nowprice_size.textContent = "35,000元";
+            } else if (checkbox.id === "checkbox_org") {
+              nowprice_size.textContent = "35,000元";
+            } else if (checkbox.id === "checkbox_gold") {
+              nowprice_size.textContent = "35,000元";
+            } else if (checkbox.id === "checkbox_blue") {
+              nowprice_size.textContent = "35,000元";
+            } else if (checkbox.id === "checkbox_gray") {
+              nowprice_size.textContent = "36,500元";
+            }
+          }
+          else{
+            let isAnyChecked = Array.from(Car_color_checkboxes).some(
+              (checkbox) => checkbox.checked
+            );
+    
+            if (!isAnyChecked) {
+              // 如果沒有任何 checkbox 被勾選，恢復默認圖片
+              nowprice_size.textContent = "0元";
+            }
+          }
+        });
+      }
+      else {
         // 檢查是否所有 checkbox 都未選中
         let isAnyChecked = Array.from(Car_color_checkboxes).some(
           (checkbox) => checkbox.checked
@@ -111,7 +148,22 @@ Price.forEach(function (openIntro) {
     let Basedeep = Array.from(Car_Basedeep_checkboxes).some((cb) => cb.checked);
 
     if (Basewidth && Basedeep) {
-      nowprice_size.textContent = "40,000元";
+      Car_color_checkboxes.forEach((checkbox) => {
+        let nowprice_size = Price[1].nextElementSibling;
+        if (checkbox.checked) {
+          if (checkbox.id === "checkbox_red") {
+            nowprice_size.textContent = "35,000元";
+          } else if (checkbox.id === "checkbox_org") {
+            nowprice_size.textContent = "35,000元";
+          } else if (checkbox.id === "checkbox_gold") {
+            nowprice_size.textContent = "35,000元";
+          } else if (checkbox.id === "checkbox_blue") {
+            nowprice_size.textContent = "35,000元";
+          } else if (checkbox.id === "checkbox_gray") {
+            nowprice_size.textContent = "36,500元";
+          }
+        }
+      });
     } else {
       nowprice_size.textContent = "0元"; // 清空文字
     }
@@ -297,6 +349,8 @@ Price.forEach(function (openIntro) {
               footpedal_footpedal_PluginDiv.style.height = "auto"; // 縮小黑邊
               footpedal_plumbDiv.style.display = "none";
               footpedal_plumbDiv.style.height = "auto"; // 縮小黑邊
+              nowprice_footpedal.style.padding = "60px 0px 0px 0px";
+              nowprice_footpedal.style.margin = "18px 3px 3px 4px";
             }
           );
         }
@@ -348,6 +402,8 @@ Price.forEach(function (openIntro) {
             footpedal_piecealuminumDiv.style.height = "auto"; // 縮小黑邊
             footpedal_plumbDiv.style.display = "none";
             footpedal_plumbDiv.style.height = "auto"; // 縮小黑邊
+            nowprice_footpedal.style.padding = "43px 0px 0px 0px"
+            nowprice_footpedal.style.margin = "18px 3px 3px 4px";
           });
         }
         if (!event.target.checked) {
@@ -401,6 +457,8 @@ Price.forEach(function (openIntro) {
             footpedal_piecealuminumDiv.style.height = "auto"; // 縮小黑邊
             footpedal_footpedal_PluginDiv.style.display = "none";
             footpedal_footpedal_PluginDiv.style.height = "auto"; // 縮小黑邊
+            nowprice_footpedal.style.padding = "43px 0px 0px 0px"
+            nowprice_footpedal.style.margin = "18px 3px 3px 4px";
           });
         }
         if (!event.target.checked) {
@@ -661,7 +719,7 @@ function update_latertrunk_Price(event) {
       )} 元`;
       productImage.src = "./img/Side_support(big).png";
       latertrunksupportML.checked = true;
-    } 
+    }
   });
 }
 
@@ -676,7 +734,7 @@ Car_latertrunk_checkboxes.forEach((checkbox) => {
       Car_latertrunk_checkboxes.forEach((otherCheckbox) => {
         otherCheckbox.checked = false;
       });
-        productImage.src = "./img/Novarc_standrad.png";
+      productImage.src = "./img/Novarc_standrad.png";
     }
   });
 });
