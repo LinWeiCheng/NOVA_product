@@ -19,7 +19,9 @@
     /* 讓文字和圖片在小螢幕上都佔滿寬度 */
   }
 }
-html, body {
+
+html,
+body {
   height: auto; // 避免 100% 限制高度
   overflow: auto; // 確保可以滾動
   width: 100%;
@@ -55,13 +57,14 @@ html, body {
 .container {
   padding: 10px;
   background-color: $color-base-yellow;
-  min-height: 100vh;
   position: absolute;
   height: auto; // 內容增加時，背景高度自動擴展
   left: 0;
   top: 0;
   z-index: -1;
   width: 100%;
+  min-height: 1200px;
+  overflow: auto; // 確保可以滾動
 }
 
 .content {
@@ -1062,6 +1065,28 @@ html, body {
     // justify-content: space-between;
     height: 0;
     width: 100%;
+
+    .head_supports_font {
+      width: 40%;
+      margin: 3px 0 2px 2px;
+      padding: 3px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .head_supports_size {
+      width: 30%;
+      margin: 3px 0 2px 2px;
+      padding: 3px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .head_supports_checkbox {
+      width: 5%;
+      margin: 4px 4px 0 2px;
+      padding: 8px;
+    }
   }
 }
 
