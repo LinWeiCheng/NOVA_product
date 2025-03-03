@@ -5,6 +5,7 @@
     }
 }
 
+/*-----  1.車體顏色手機板  -----*/
 .car_color {
 
     @media screen and (max-width:1100px) {}
@@ -63,6 +64,7 @@
             font-size: 30px;
         }
     }
+
 
     .basesize {
         flex-direction: row;
@@ -139,16 +141,16 @@
 
 @media screen and (max-width:650px) {
     .totalPrice {
-        top: 10px;
+        top: 850px;
+        left: 10px;
         padding: 8px 8px;
         font-size: 18px;
-        left: 10px;
-        right: 0px;
         display: inline-block;
         max-width: 200px;
     }
 
     .container {
+        min-height: 1200px;
         .Title {
             font-weight: 900;
             font-size: 20px;
@@ -163,6 +165,7 @@
         }
     }
 
+    /*-----  2.座板尺寸手機板  -----*/
     .car-seat {
         .target {
             .chkcontent_2nd {
@@ -223,6 +226,7 @@
         }
     }
 
+    /*-----  3.腳架點擊列手機板  -----*/
     .car-tripod {
         .chkcontent_3rd {
             .tripodgroup {
@@ -246,6 +250,7 @@
                 }
             }
         }
+
         .pricecontent {
             .pricing {
                 font-size: 12px;
@@ -257,80 +262,224 @@
         }
     }
 
-    .footpedalgroup {
-        .footpedal_twopiece {
-            .div_type {
-                font-size: 16px;
-                height: auto;
+    /*-----  4.踏板樣式點擊列手機板  -----*/
+    .car-footpedal {
+        .target {
+            .chkcontent_4th {
+                .footpedalgroup {
+                    .footpedal_twopiece {
+                        .div_type {
+                            font-size: 14px;
+                            height: 100%;
+                            width: 26%;
+                            padding: 0 0 0 1px
+                        }
+
+                        .div_twopiece_angle {
+                            font-size: 14px;
+                            height: 100%;
+                            width: 54%;
+                            margin: 0px 2px 0 1px;
+
+                            .twopiece_anglefixed {
+                                height: 50%;
+                            }
+
+                            .twopiece_angleadjust {
+                                height: 50%;
+                            }
+                        }
+
+                        .footpedal_checkbox1 {
+                            flex: 1;
+
+                            #checkbox_twopiece_fixed {
+                                flex: 1;
+                                margin: 10px 1px 8px 0px;
+                                ;
+                                transform: scale(1.5);
+                            }
+
+                            #checkbox_twopiece_adjustable {
+                                flex: 0.8;
+                                margin: 10px 1px 8px 0px;
+                                ;
+                                transform: scale(1.5);
+                            }
+                        }
+
+                    }
+
+                    .footpedal_piecealuminum {
+                        .div_type {
+                            font-size: 18px;
+                            height: 100%;
+                            width: 20%;
+                            padding: 0 0 0 1px;
+                        }
+
+                        .div_angleadjust {
+                            font-size: 18px;
+                            width: 22%;
+                            height: 100%;
+                            padding: 0 0 0 3px;
+                        }
+
+                        .pedalcmcmgroup {
+                            width: 34%;
+                            height: 100%;
+                            margin: 0 3px 0 1px;
+
+                            .pedalcm {
+                                font-size: 13px;
+                                margin: 1px 3px 1px 0;
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+
+                        .footpedal_checkbox2 {
+                            margin: 0px 1px 0 1px;
+                            flex: 1;
+
+                            .content-checkbox {
+                                margin: 17.5px 1px 10px 1px;
+                                transform: scale(1.5);
+                            }
+                        }
+                    }
+
+                    .footpedal_Plugin {
+                        .div_type {
+                            border-radius: 5px;
+                            font-size: 18px;
+                            height: 100%;
+                            width: 18%;
+                            padding: 0 1px 0 1px;
+                        }
+
+                        .div_angle {
+                            width: 38%;
+
+                            .div_pedalsize {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .div_pedal_direction {
+                            font-size: 15px;
+                            height: 100%;
+                            width: 22%;
+                            margin: 0px 4px 1px 1px;
+                        }
+
+                        .footpedal_checkbox3 {
+                            flex: 1;
+                            margin: 0 2px 0 0;
+
+                            .content-checkbox {
+                                margin: 10px 0 10px 0;
+                                transform: scale(1.5);
+                            }
+                        }
+                    }
+
+                    .footpedal_plumb {
+                        .div_type {
+                            border-radius: 5px;
+                            font-size: 18px;
+                            height: 100%;
+                            width: 18%;
+                            padding: 0 1px 0 1px;
+                        }
+
+                        .div_angle {
+                            width: 38%;
+
+                            .div_pedalsize {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .div_pedal_direction {
+                            font-size: 15px;
+                            height: 100%;
+                            width: 22%;
+                            margin: 0px 0px 1px 1px;
+                        }
+
+                        .footpedal_checkbox4 {
+                            flex: 1;
+                            margin: 0 4px 0 4px;
+
+                            .content-checkbox {
+                                margin: 10px 0 10px 0;
+                                transform: scale(1.5);
+                            }
+                        }
+                    }
+
+                    .div_notice {
+                        font-size: 12px;
+                        font-weight: 700;
+                    }
+                }
             }
 
-            .div_twopiece_angle {
-                padding: 0 8px 0 0;
-                font-size: 14px;
-                height: 100%;
-
-                .twopiece_anglefixed {
-                    height: 50%;
+            .pricecontent {
+                .pricing {
+                    font-size: 12px;
                 }
 
-                .twopiece_angleadjust {
-                    height: 50%;
+                .nowprice {
+                    font-size: 15px !important;
+
                 }
             }
-
-            .footpedal_checkbox1 {
-                #checkbox_twopiece_fixed {
-                    margin: 10px 10px 8px 2px;
-                    transform: scale(1.7);
-                }
-
-                #checkbox_twopiece_adjustable {
-                    margin: 10px 10px 8px 2px;
-                    transform: scale(1.7);
-                }
-            }
-
         }
+    }
 
-        .footpedal_piecealuminum {
-            .div_type {
-                font-size: 18px;
-                padding: 0 0 0 6px;
-                height: 100%;
-            }
+    .car-head_supports {
+        .chkcontent_5th {
 
-            .div_angleadjust {
-                font-size: 18px;
-                padding: 0 0 0 6px;
-                height: 100%;
-            }
+            .head_supportsgroup {
+                padding: 0px 10px 1px 3px;
+                width: calc(100% - 11px);
 
-            .pedalcm {
-                font-size: 13px;
-                margin: 1px 3px 1px 0;
-            }
-
-            .footpedal_checkbox2 {
-                margin: 0px 5px 0 0;
-
-                .content-checkbox {
-                    margin: 17.5px 1px 10px 1px;
-                    transform: scale(1.8);
+                .head_supports_font {
+                    margin: 9px 0px 0px 0px;
+                    font-size: 15px;
+                    padding: 0 1px 0 1px;
+                    width: 35%;
+                    font-size: 14px;
                 }
-            }
-        }
 
-        .footpedal_Plugin {
-            .div_type {
-                font-size: 18px;
-                padding: 0 0 0 6px;
-                height: 100%;
-            }
-
-            .div_angle {
-                .div_pedalsize {
+                .head_supports_size {
+                    width: 39%;
                     font-size: 13px;
+                    margin: 7px 0 2px 2px;
                 }
+
+                .head_supports_checkbox {
+                    margin: 42px 12px 0 0px;
+                    padding: 0px;
+
+                    .content-checkbox {
+                        transform: scale(1.5);
+                    }
+                }
+
+            }
+        }
+
+        .pricecontent {
+            .pricing {
+                font-size: 12px;
+            }
+
+            .nowprice {
+                font-size: 15px !important;
+
             }
         }
     }
