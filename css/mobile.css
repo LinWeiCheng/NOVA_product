@@ -90,8 +90,9 @@
 }
 @media screen and (max-width: 650px) {
   .totalPrice {
-    top: 850px;
+    bottom: 40px;
     left: 10px;
+    top: auto;
     padding: 8px 8px;
     font-size: 18px;
     display: inline-block;
@@ -134,9 +135,6 @@
   .car-seat .target .pricecontent .pricing {
     font-size: 12px;
   }
-  .car-seat .target .pricecontent #seatprice {
-    font-size: 15px !important;
-  }
   /*-----  3.腳架點擊列手機板  -----*/
   .car-tripod .chkcontent_3rd .tripodgroup .degrees {
     font-size: 14px;
@@ -155,9 +153,6 @@
   }
   .car-tripod .pricecontent .pricing {
     font-size: 12px;
-  }
-  .car-tripod .pricecontent .nowprice {
-    font-size: 15px !important;
   }
   /*-----  4.踏板樣式點擊列手機板  -----*/
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_type {
@@ -283,9 +278,7 @@
   .car-footpedal .target .pricecontent .pricing {
     font-size: 12px;
   }
-  .car-footpedal .target .pricecontent .nowprice {
-    font-size: 15px !important;
-  }
+  /*-----  5.頭靠子系統手機板  -----*/
   .car-head_supports .chkcontent_5th .head_supportsgroup {
     padding: 0px 10px 1px 3px;
     width: calc(100% - 11px);
@@ -312,7 +305,108 @@
   .car-head_supports .pricecontent .pricing {
     font-size: 12px;
   }
-  .car-head_supports .pricecontent .nowprice {
-    font-size: 15px !important;
+  /*-----  6.軀幹子系統-背靠點擊列手機板  -----*/
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .Nova_back_hardware_title {
+    padding: 1px 0px 0px 1px;
+    font-size: 15px;
+    margin: 0px 1px 0 0;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup {
+    width: 42%;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup .back_size {
+    font-size: 15px;
+    height: 100%;
+    padding: 1px;
+    margin: 0px 1px 2px 0px;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_supports_checkbox {
+    margin: 0px 5px 0px 4px;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_supports_checkbox .content-checkbox {
+    margin: 13px 0px 18px 0px;
+    transform: scale(1.5);
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .div_notice {
+    padding: 1px 0 1px 1px;
+    font-size: 14px;
+  }
+  .car-back_supports .target .pricecontent .pricing {
+    font-size: 12px;
+  }
+  /*-----  7.軀幹子系統-軀幹側支撐點擊列手機板  -----*/
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .Novalateralhardware_title {
+    height: 100%;
+    font-size: 14px;
+    padding: 0px 0px 0px 1px;
+    margin: 0 1px 0 0px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup {
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup .side_size {
+    font-size: 12px;
+    margin: 0px 0px 1px 0px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup {
+    width: 40%;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup {
+    height: 50%;
+    margin: 0px 1px 1px 1px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR1 {
+    font-size: 12px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR2 {
+    font-size: 12px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup {
+    height: 50%;
+    margin: 0px 1px 3px 1px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR1 {
+    font-size: 12px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR2 {
+    font-size: 12px;
+  }
+  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes .content-checkbox {
+    margin: 13px 0px 9px 0px;
+    transform: scale(1.5);
+  }
+  .car-LaterTrunk_supports .target .pricecontent .pricing {
+    font-size: 12px;
+  }
+  /*-----  8.底座子系統點擊列手機版  -----*/
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .Nova_seatbase_title {
+    font-size: 16px;
+    width: 50%;
+    padding: 0px 1px 0px 2px;
+    margin: 1px 1px 1px 1px;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup {
+    width: 50%;
+    height: 100%;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup .seatbase_size {
+    font-size: 14px;
+    margin: 1px 0px 1px 0px;
+    padding: 1px;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_checkbox {
+    margin: -5px 7px 0px 6px;
+    height: 100%;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_checkbox .content-checkbox {
+    margin: 18px 0px 11px 0px;
+    transform: scale(1.5);
+  }
+  .car-seatbase .target .chkcontent_8th .div_notice {
+    font-size: 13px;
+  }
+  .car-seatbase .target .pricecontent .pricing {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=mobile.css.map */
