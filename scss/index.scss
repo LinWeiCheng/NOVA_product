@@ -1224,7 +1224,7 @@ body {
           align-items: center;
           justify-content: center;
           /* 垂直置中 */
-          font-size: 18px;
+          font-size: 17px;
           /* 調整字體大小 */
           font-weight: 600;
           /* 調整字體粗細 */
@@ -1233,27 +1233,80 @@ body {
         }
       }
 
-      .side_sizeLRgroup {
+      .side_sizeSMgroup {
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin: 2.5px 1px 2px 1px;
+        height: 100%;
 
+        .side_sizeSgroup {
+          height: 45%;
+          margin: 2px 1px 0 2px;
 
-        .side_sizeLR {
-          border: 1px solid #000000;
-          border-radius: 7px;
-          margin: 1px 1px 3px 1px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          /* 垂直置中 */
-          font-size: 18px;
-          /* 調整字體大小 */
-          font-weight: 600;
-          /* 調整字體粗細 */
-          height: auto;
-          padding: 1px 5px 1px 5px;
+          .side_SLR1 {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 18px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: 48%;
+            margin: 1px 0 3px 0;
+          }
+
+          .side_SLR2 {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 18px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: 48%;
+            margin: 2px 0 1px 0;
+          }
+        }
+
+        .side_sizeLgroup {
+          height: 45%;
+          margin: 4px 0 1px 2px;
+
+          .side_MLR1 {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 18px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: 48%;
+            margin: 2px 0 3px 0;
+          }
+
+          .side_MLR2 {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 18px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: 48%;
+            margin: 3px 0 1px 0;
+          }
         }
       }
 
