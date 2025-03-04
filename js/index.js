@@ -121,8 +121,10 @@ left.addEventListener("click", function (event) {
   let showinfo = event.target.dataset.showinfo;
   let introdution = event.target;
   //確認我點擊到的位置是否是carbasesize
-  if (showinfo === "carbasesize") {
+  if (showinfo === "carbasesize" || showinfo === "carbasesize2") {
     let introdutionid = event.target.nextElementSibling;
+    let introdutionid1 = event.target.parentNode.nextElementSibling;
+
     let Price_carbasesize = document.querySelectorAll(".pricing");
 
     Price_carbasesize.forEach(function (openIntro) {
@@ -137,18 +139,28 @@ left.addEventListener("click", function (event) {
         if (introdution.getAttribute("data-collapse-status") === "0") {
           //把data-collapse-status改成1
           introdution.setAttribute("data-collapse-status", "1");
-
-          //carbasesize勾選位置大小設置
-          introdutionid.style.visibility = "visible";
-          introdutionid.style.padding = "7px 1px 0px 3px";
-          introdutionid.style.width = "calc(100% - 8px)";
-          introdutionid.style.flexWrap = "wrap";
-          introdutionid.style.border = "3px dashed black";
-          introdutionid.style.borderTop = "none";
-          introdutionid.style.display = "flex";
-          introdutionid.style.margin = "0px 5px 5px 7px";
-          introdutionid.style.height = "auto";
-
+          if (showinfo === "carbasesize") {
+            //carbasesize勾選位置大小設置
+            introdutionid.style.visibility = "visible";
+            introdutionid.style.padding = "7px 1px 0px 3px";
+            introdutionid.style.width = "calc(100% - 8px)";
+            introdutionid.style.flexWrap = "wrap";
+            introdutionid.style.border = "3px dashed black";
+            introdutionid.style.borderTop = "none";
+            introdutionid.style.display = "flex";
+            introdutionid.style.margin = "0px 5px 5px 7px";
+            introdutionid.style.height = "auto";
+          } else if (showinfo === "carbasesize2") {
+            introdutionid1.style.visibility = "visible";
+            introdutionid1.style.padding = "7px 1px 0px 3px";
+            introdutionid1.style.width = "calc(100% - 8px)";
+            introdutionid1.style.flexWrap = "wrap";
+            introdutionid1.style.border = "3px dashed black";
+            introdutionid1.style.borderTop = "none";
+            introdutionid1.style.display = "flex";
+            introdutionid1.style.margin = "0px 5px 5px 7px";
+            introdutionid1.style.height = "auto";
+          }
           //建議售價標題顯示
           openIntro.style.display = "block";
 
@@ -166,17 +178,28 @@ left.addEventListener("click", function (event) {
           nowprice_basesize.style.fontWeight = "600";
           nowprice_basesize.style.alignItems = "center";
           nowprice_basesize.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_basesize.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
 
           //建議售價標題隱藏
-          introdutionid.style.visibility = "hidden";
-          introdutionid.style.height = "0";
-          introdutionid.style.padding = "0";
-          introdutionid.style.border = "0px dashed black";
-          introdutionid.style.margin = "0";
-
+          if (showinfo === "carbasesize") {
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+          } else if (showinfo === "carbasesize2") {
+            introdutionid1.style.visibility = "hidden";
+            introdutionid1.style.height = "0";
+            introdutionid1.style.padding = "0";
+            introdutionid1.style.border = "0px dashed black";
+            introdutionid1.style.margin = "0";
+          }
           //建議售價金額隱藏
           openIntro.style.display = "none";
           nowprice_basesize.style.display = "none";
@@ -238,6 +261,10 @@ left.addEventListener("click", function (event) {
           nowprice_tripod.style.fontWeight = "600";
           nowprice_tripod.style.alignItems = "center";
           nowprice_tripod.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_tripod.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
@@ -311,6 +338,10 @@ left.addEventListener("click", function (event) {
           nowprice_carfootpedal.style.fontWeight = "600";
           nowprice_carfootpedal.style.alignItems = "center";
           nowprice_carfootpedal.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_carfootpedal.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
@@ -385,6 +416,10 @@ left.addEventListener("click", function (event) {
           nowprice_carheadsupports.style.fontWeight = "600";
           nowprice_carheadsupports.style.alignItems = "center";
           nowprice_carheadsupports.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_carheadsupports.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
@@ -458,6 +493,11 @@ left.addEventListener("click", function (event) {
           nowprice_backsupports.style.fontWeight = "600";
           nowprice_backsupports.style.alignItems = "center";
           nowprice_backsupports.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_backsupports.style.margin = "3px 0px 76px 0px";
+            nowprice_backsupports.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
@@ -533,6 +573,10 @@ left.addEventListener("click", function (event) {
           nowprice_carlatertrunksupports.style.fontWeight = "600";
           nowprice_carlatertrunksupports.style.alignItems = "center";
           nowprice_carlatertrunksupports.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_carlatertrunksupports.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
@@ -605,6 +649,10 @@ left.addEventListener("click", function (event) {
           nowprice_seatbase.style.fontWeight = "600";
           nowprice_seatbase.style.alignItems = "center";
           nowprice_seatbase.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_seatbase.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
@@ -677,6 +725,10 @@ left.addEventListener("click", function (event) {
           nowprice_bandage.style.fontWeight = "600";
           nowprice_bandage.style.alignItems = "center";
           nowprice_bandage.style.justifyContent = "center";
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_bandage.style.fontSize = "15px";
+          }
         } else {
           //把data-collapse-status改成0
           introdution.setAttribute("data-collapse-status", "0");
@@ -742,15 +794,12 @@ allcheckboxfalsebtn.addEventListener("click", () => {
 function allcheckboxfalsefct() {
   // 查询所有复选框
   let allcheckboxsearch = document.querySelectorAll('input[type="checkbox"]');
-  
+
   // 遍历每个复选框并取消勾选
   allcheckboxsearch.forEach((checkbox) => {
     checkbox.checked = false; // 取消勾选
   });
 }
-
-
-
 
 // document.getElementById("printPDFButton").addEventListener("click", function () {
 //   // 使用 html2canvas 渲染 Quotation div 為圖片
@@ -770,8 +819,7 @@ function allcheckboxfalsefct() {
 //     // 調整圖片加入 PDF 的起始位置（5, 8）
 //     pdf.addImage(imgData, 'PNG', 5, 8); // 這裡的15, 15是X和Y座標，表示圖片從 PDF 頁面的(15, 15)位置開始
 //     console.log(imgData);
-    
-    
+
 //     // 儲存 PDF 檔案
 //     pdf.save("quotation.pdf");
 //   }).catch(function(error) {
