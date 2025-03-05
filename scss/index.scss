@@ -23,7 +23,7 @@
 html,
 body {
   height: auto; // 避免 100% 限制高度
-  overflow: auto; // 確保可以滾動
+  // overflow: auto; // 確保可以滾動
   width: 100%;
 }
 
@@ -63,7 +63,7 @@ body {
   top: 0;
   z-index: -1;
   width: 100%;
-  min-height: 1200px;
+  min-height: 1500px;
   overflow: auto; // 確保可以滾動
 }
 
@@ -288,346 +288,354 @@ body {
 }
 
 // 車體顏色
-.chkcontent_1st {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.car-order {
+  margin: 0 0 8px 0;
 
-  .car_color {
-    visibility: hidden;
-    height: 0;
+  .chkcontent_1st {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
-    .chkblock {
-      display: flex;
-      align-items: center;
-      /* 垂直置中 */
-      justify-content: center;
-      /* 水平置中 */
-      margin: 0 0 0 8px;
-      flex: 0.5;
-    }
+    .car_color {
+      visibility: hidden;
+      height: 0;
 
-    //第一個顏色車台
-    .cherry_red {
-      display: flex;
-      /* 設置為 Flexbox */
-      justify-content: space-between;
-      /* 在主軸上均勻分布 */
-      min-width: 19.2%;
-      border: 2px solid $color-primary-red;
-      /* 設定邊框寬度和顏色 */
-      border-radius: 10px;
-      /* 設定圓角半徑 */
-      margin: 3px;
-      /*外邊距*/
-      padding: 0 0 0 6px;
-      /* 內邊距 */
-      align-items: center;
-
-      /* 垂直置中 */
       .chkblock {
-        input[type="checkbox"] {
-          accent-color: #E50046;
+        display: flex;
+        align-items: center;
+        /* 垂直置中 */
+        justify-content: center;
+        /* 水平置中 */
+        margin: 0 0 0 8px;
+        flex: 0.5;
+      }
+
+      //第一個顏色車台
+      .cherry_red {
+        display: flex;
+        /* 設置為 Flexbox */
+        justify-content: space-between;
+        /* 在主軸上均勻分布 */
+        min-width: 19.2%;
+        border: 2px solid $color-primary-red;
+        /* 設定邊框寬度和顏色 */
+        border-radius: 10px;
+        /* 設定圓角半徑 */
+        margin: 3px;
+        /*外邊距*/
+        padding: 0 0 0 6px;
+        /* 內邊距 */
+        align-items: center;
+
+        /* 垂直置中 */
+        .chkblock {
+          input[type="checkbox"] {
+            accent-color: #E50046;
+          }
+        }
+
+        .red_car {
+          flex: 1.5;
+          /* 前兩個 div 佔用較多的空間 */
+          text-align: center;
+          color: rgb(0, 0, 0);
+          font-size: 20px;
+          font-weight: 800;
+          /*設定字體粗細*/
+          padding: 8px 0px 8px 10px;
+          border-radius: 5px;
+          white-space: nowrap;
+        }
+
+        .img_red {
+          border-radius: 0 8px 8px 0;
+          /* 只設定右上及右下圓角半徑 */
+          max-width: 100%;
+          max-height: 100%;
+          background-color: $color-base-yellow;
+          /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+          flex: 1;
+          /* 最後一個 div 寬度為前面的一半 */
+          border-left: 50px solid transparent;
+          /* 三角形右側的透明邊 */
+          border-bottom: 50px solid $color-primary-red;
+          /* 將上邊邊框設為白色，形成朝上的三角形 */
         }
       }
 
-      .red_car {
-        flex: 1.5;
-        /* 前兩個 div 佔用較多的空間 */
-        text-align: center;
-        color: rgb(0, 0, 0);
-        font-size: 20px;
-        font-weight: 800;
-        /*設定字體粗細*/
-        padding: 8px 0px 8px 10px;
-        border-radius: 5px;
-        white-space: nowrap;
-      }
+      //第二個顏色車台
+      .pearl_orange {
+        display: flex;
+        /* 設置為 Flexbox */
+        justify-content: space-between;
+        /* 在主軸上均勻分布 */
+        min-width: 19.2%;
+        border: 2px solid $color-primary-orange;
+        /* 設定邊框寬度和顏色 */
+        border-radius: 10px;
+        /* 設定圓角半徑 */
+        margin: 3px;
+        /*外邊距*/
+        padding: 0 0 0 6px;
+        /* 內邊距 */
+        align-items: center;
+        /* 垂直置中 */
 
-      .img_red {
-        border-radius: 0 8px 8px 0;
-        /* 只設定右上及右下圓角半徑 */
-        max-width: 100%;
-        max-height: 100%;
-        background-color: $color-base-yellow;
-        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
-        flex: 1;
-        /* 最後一個 div 寬度為前面的一半 */
-        border-left: 50px solid transparent;
-        /* 三角形右側的透明邊 */
-        border-bottom: 50px solid $color-primary-red;
-        /* 將上邊邊框設為白色，形成朝上的三角形 */
-      }
-    }
+        .chkblock {
+          input[type="checkbox"] {
+            accent-color: #EE7500;
+          }
+        }
 
-    //第二個顏色車台
-    .pearl_orange {
-      display: flex;
-      /* 設置為 Flexbox */
-      justify-content: space-between;
-      /* 在主軸上均勻分布 */
-      min-width: 19.2%;
-      border: 2px solid $color-primary-orange;
-      /* 設定邊框寬度和顏色 */
-      border-radius: 10px;
-      /* 設定圓角半徑 */
-      margin: 3px;
-      /*外邊距*/
-      padding: 0 0 0 6px;
-      /* 內邊距 */
-      align-items: center;
-      /* 垂直置中 */
+        .orange_car {
+          flex: 1.5;
+          /* 前兩個 div 佔用較多的空間 */
+          text-align: center;
+          color: rgb(0, 0, 0);
+          font-size: 20px;
+          font-weight: 800;
+          /*設定字體粗細*/
+          padding: 8px 0px 8px 10px;
+          border-radius: 5px;
+          white-space: nowrap;
+        }
 
-      .chkblock {
-        input[type="checkbox"] {
-          accent-color: #EE7500;
+        .img_orange {
+          border-radius: 0 8px 8px 0;
+          /* 只設定右上及右下圓角半徑 */
+          width: 100%;
+          height: 100%;
+          background-color: $color-base-yellow;
+          /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+          flex: 1;
+          /* 最後一個 div 寬度為前面的一半 */
+          border-left: 50px solid transparent;
+          /* 三角形右側的透明邊 */
+          border-bottom: 50px solid $color-primary-orange;
+          /* 將上邊邊框設為白色，形成朝上的三角形 */
         }
       }
 
-      .orange_car {
-        flex: 1.5;
-        /* 前兩個 div 佔用較多的空間 */
-        text-align: center;
-        color: rgb(0, 0, 0);
-        font-size: 20px;
-        font-weight: 800;
-        /*設定字體粗細*/
-        padding: 8px 0px 8px 10px;
-        border-radius: 5px;
-        white-space: nowrap;
-      }
+      //第三個顏色車台
+      .rose_gold {
+        display: flex;
+        /* 設置為 Flexbox */
+        justify-content: space-between;
+        /* 在主軸上均勻分布 */
+        min-width: 19.2%;
+        border: 2px solid $color-rose-pink;
+        /* 設定邊框寬度和顏色 */
+        border-radius: 10px;
+        /* 設定圓角半徑 */
+        margin: 3px;
+        /*外邊距*/
+        padding: 0 0 0 6px;
+        /* 內邊距 */
+        align-items: center;
+        /* 垂直置中 */
 
-      .img_orange {
-        border-radius: 0 8px 8px 0;
-        /* 只設定右上及右下圓角半徑 */
-        width: 100%;
-        height: 100%;
-        background-color: $color-base-yellow;
-        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
-        flex: 1;
-        /* 最後一個 div 寬度為前面的一半 */
-        border-left: 50px solid transparent;
-        /* 三角形右側的透明邊 */
-        border-bottom: 50px solid $color-primary-orange;
-        /* 將上邊邊框設為白色，形成朝上的三角形 */
-      }
-    }
+        .chkblock {
+          input[type="checkbox"] {
+            accent-color: #F3AECC;
+          }
+        }
 
-    //第三個顏色車台
-    .rose_gold {
-      display: flex;
-      /* 設置為 Flexbox */
-      justify-content: space-between;
-      /* 在主軸上均勻分布 */
-      min-width: 19.2%;
-      border: 2px solid $color-rose-pink;
-      /* 設定邊框寬度和顏色 */
-      border-radius: 10px;
-      /* 設定圓角半徑 */
-      margin: 3px;
-      /*外邊距*/
-      padding: 0 0 0 6px;
-      /* 內邊距 */
-      align-items: center;
-      /* 垂直置中 */
+        .pink_car {
+          flex: 1.5;
+          /* 前兩個 div 佔用較多的空間 */
+          text-align: center;
+          color: rgb(0, 0, 0);
+          font-size: 20px;
+          font-weight: 800;
+          /*設定字體粗細*/
+          padding: 8px 0px 8px 10px;
+          border-radius: 5px;
+          white-space: nowrap;
+        }
 
-      .chkblock {
-        input[type="checkbox"] {
-          accent-color: #F3AECC;
+        .img_pink {
+          border-radius: 0 8px 8px 0;
+          /* 只設定右上及右下圓角半徑 */
+          width: 100%;
+          height: 100%;
+          background-color: $color-base-yellow;
+          /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+          flex: 1;
+          /* 最後一個 div 寬度為前面的一半 */
+          border-left: 50px solid transparent;
+          /* 三角形右側的透明邊 */
+          border-bottom: 50px solid $color-rose-pink;
+          /* 將上邊邊框設為白色，形成朝上的三角形 */
         }
       }
 
-      .pink_car {
-        flex: 1.5;
-        /* 前兩個 div 佔用較多的空間 */
-        text-align: center;
-        color: rgb(0, 0, 0);
-        font-size: 20px;
-        font-weight: 800;
-        /*設定字體粗細*/
-        padding: 8px 0px 8px 10px;
-        border-radius: 5px;
-        white-space: nowrap;
-      }
+      //第四個顏色車台
+      .sky_blue {
+        display: flex;
+        /* 設置為 Flexbox */
+        justify-content: space-between;
+        /* 在主軸上均勻分布 */
+        min-width: 19.2%;
+        border: 2px solid $color-light-blue;
+        /* 設定邊框寬度和顏色 */
+        border-radius: 10px;
+        /* 設定圓角半徑 */
+        margin: 3px;
+        /*外邊距*/
+        padding: 0 0 0 6px;
+        /* 內邊距 */
+        align-items: center;
+        /* 垂直置中 */
 
-      .img_pink {
-        border-radius: 0 8px 8px 0;
-        /* 只設定右上及右下圓角半徑 */
-        width: 100%;
-        height: 100%;
-        background-color: $color-base-yellow;
-        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
-        flex: 1;
-        /* 最後一個 div 寬度為前面的一半 */
-        border-left: 50px solid transparent;
-        /* 三角形右側的透明邊 */
-        border-bottom: 50px solid $color-rose-pink;
-        /* 將上邊邊框設為白色，形成朝上的三角形 */
-      }
-    }
+        .chkblock {
+          input[type="checkbox"] {
+            accent-color: #2EA7E0;
+          }
+        }
 
-    //第四個顏色車台
-    .sky_blue {
-      display: flex;
-      /* 設置為 Flexbox */
-      justify-content: space-between;
-      /* 在主軸上均勻分布 */
-      min-width: 19.2%;
-      border: 2px solid $color-light-blue;
-      /* 設定邊框寬度和顏色 */
-      border-radius: 10px;
-      /* 設定圓角半徑 */
-      margin: 3px;
-      /*外邊距*/
-      padding: 0 0 0 6px;
-      /* 內邊距 */
-      align-items: center;
-      /* 垂直置中 */
+        .blue_car {
+          flex: 1.5;
+          /* 前兩個 div 佔用較多的空間 */
+          text-align: center;
+          color: rgb(0, 0, 0);
+          font-size: 20px;
+          font-weight: 800;
+          /*設定字體粗細*/
+          padding: 8px 0px 8px 10px;
+          border-radius: 5px;
+          white-space: nowrap;
+        }
 
-      .chkblock {
-        input[type="checkbox"] {
-          accent-color: #2EA7E0;
+        .img_blue {
+          border-radius: 0 8px 8px 0;
+          /* 只設定右上及右下圓角半徑 */
+          width: 100%;
+          height: 100%;
+          background-color: $color-base-yellow;
+          /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+          flex: 1;
+          /* 最後一個 div 寬度為前面的一半 */
+          border-left: 50px solid transparent;
+          /* 三角形右側的透明邊 */
+          border-bottom: 50px solid $color-light-blue;
+          /* 將上邊邊框設為白色，形成朝上的三角形 */
         }
       }
 
-      .blue_car {
-        flex: 1.5;
-        /* 前兩個 div 佔用較多的空間 */
-        text-align: center;
-        color: rgb(0, 0, 0);
-        font-size: 20px;
-        font-weight: 800;
-        /*設定字體粗細*/
-        padding: 8px 0px 8px 10px;
-        border-radius: 5px;
-        white-space: nowrap;
-      }
+      //第五個顏色車台
+      .camo_gray {
+        display: flex;
+        /* 設置為 Flexbox */
+        justify-content: space-between;
+        /* 在主軸上均勻分布 */
+        min-width: 19.2%;
+        border: 2px solid $color-deep-grey;
+        /* 設定邊框寬度和顏色 */
+        border-radius: 10px;
+        /* 設定圓角半徑 */
+        margin: 3px;
+        /*外邊距*/
+        padding: 0 0 0 6px;
+        /* 內邊距 */
+        align-items: center;
+        /* 垂直置中 */
 
-      .img_blue {
-        border-radius: 0 8px 8px 0;
-        /* 只設定右上及右下圓角半徑 */
-        width: 100%;
-        height: 100%;
-        background-color: $color-base-yellow;
-        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
-        flex: 1;
-        /* 最後一個 div 寬度為前面的一半 */
-        border-left: 50px solid transparent;
-        /* 三角形右側的透明邊 */
-        border-bottom: 50px solid $color-light-blue;
-        /* 將上邊邊框設為白色，形成朝上的三角形 */
-      }
-    }
-
-    //第五個顏色車台
-    .camo_gray {
-      display: flex;
-      /* 設置為 Flexbox */
-      justify-content: space-between;
-      /* 在主軸上均勻分布 */
-      min-width: 19.2%;
-      border: 2px solid $color-deep-grey;
-      /* 設定邊框寬度和顏色 */
-      border-radius: 10px;
-      /* 設定圓角半徑 */
-      margin: 3px;
-      /*外邊距*/
-      padding: 0 0 0 6px;
-      /* 內邊距 */
-      align-items: center;
-      /* 垂直置中 */
-
-      .chkblock {
-        input[type="checkbox"] {
-          accent-color: #666666;
+        .chkblock {
+          input[type="checkbox"] {
+            accent-color: #666666;
+          }
         }
-      }
 
-      .gray_car {
-        flex: 1.5;
-        /* 前兩個 div 佔用較多的空間 */
-        text-align: center;
-        color: rgb(0, 0, 0);
-        font-size: 20px;
-        font-weight: 800;
-        /*設定字體粗細*/
-        padding: 8px 0px 8px 10px;
-        border-radius: 5px;
-        white-space: nowrap;
-      }
+        .gray_car {
+          flex: 1.5;
+          /* 前兩個 div 佔用較多的空間 */
+          text-align: center;
+          color: rgb(0, 0, 0);
+          font-size: 20px;
+          font-weight: 800;
+          /*設定字體粗細*/
+          padding: 8px 0px 8px 10px;
+          border-radius: 5px;
+          white-space: nowrap;
+        }
 
-      .img_gray {
-        border-radius: 0 8px 8px 0;
-        /* 只設定右上及右下圓角半徑 */
-        width: 100%;
-        height: 100%;
-        background-color: $color-base-yellow;
-        /* 將圖片內顏色變回基底色再去生成需要的顏色*/
-        flex: 1;
-        /* 最後一個 div 寬度為前面的一半 */
-        border-left: 50px solid transparent;
-        /* 三角形右側的透明邊 */
-        border-bottom: 50px solid $color-deep-grey;
-        /* 將上邊邊框設為白色，形成朝上的三角形 */
+        .img_gray {
+          border-radius: 0 8px 8px 0;
+          /* 只設定右上及右下圓角半徑 */
+          width: 100%;
+          height: 100%;
+          background-color: $color-base-yellow;
+          /* 將圖片內顏色變回基底色再去生成需要的顏色*/
+          flex: 1;
+          /* 最後一個 div 寬度為前面的一半 */
+          border-left: 50px solid transparent;
+          /* 三角形右側的透明邊 */
+          border-bottom: 50px solid $color-deep-grey;
+          /* 將上邊邊框設為白色，形成朝上的三角形 */
+        }
       }
     }
   }
 }
 
 // 座板尺寸
-.chkcontent_2nd {
-  display: flex;
-  width: 100%;
-  height: auto;
-  flex-direction: column;
+.car-seat {
+  margin: 0 0 8px 0;
 
-  .basesize {
-    visibility: hidden;
-    height: 0;
-    justify-content: flex-start;
-  }
-
-  .Seat-widthgroup {
+  .chkcontent_2nd {
     display: flex;
     width: 100%;
-    height: 77px;
-    border-bottom: 3px dashed black;
+    height: auto;
+    flex-direction: column;
 
-    .seat-width {
-      //margin: 0 0 12px 0;
-      background-color: rgb(31, 30, 30);
-      color: #ffffff;
-      text-align: center;
-      /* 文字置中 */
-      border: 2px solid black;
-      /* 設定邊框寬度和顏色 */
-      border-radius: 8px;
-      /* 設定圓角半徑 */
-      font-weight: 500;
-      height: 65px;
+    .basesize {
+      visibility: hidden;
+      height: 0;
+      justify-content: flex-start;
     }
-  }
 
-  .Seat-deepgroup {
-    display: flex;
-    padding: 11px 2px 0px 0px;
-    width: 100%;
+    .Seat-widthgroup {
+      display: flex;
+      width: 100%;
+      height: 77px;
+      border-bottom: 3px dashed black;
 
-    .seat-deep {
-      //margin: 0 0 12px 0;
-      background-color: rgb(31, 30, 30);
-      color: #ffffff;
-      text-align: center;
-      /* 文字置中 */
-      border: 2px solid black;
-      /* 設定邊框寬度和顏色 */
-      border-radius: 8px;
-      /* 設定圓角半徑 */
-      font-weight: 500;
-      height: 65px;
+      .seat-width {
+        //margin: 0 0 12px 0;
+        background-color: rgb(31, 30, 30);
+        color: #ffffff;
+        text-align: center;
+        /* 文字置中 */
+        border: 2px solid black;
+        /* 設定邊框寬度和顏色 */
+        border-radius: 8px;
+        /* 設定圓角半徑 */
+        font-weight: 500;
+        height: 65px;
+      }
     }
-  }
 
+    .Seat-deepgroup {
+      display: flex;
+      padding: 11px 2px 0px 0px;
+      width: 100%;
+
+      .seat-deep {
+        //margin: 0 0 12px 0;
+        background-color: rgb(31, 30, 30);
+        color: #ffffff;
+        text-align: center;
+        /* 文字置中 */
+        border: 2px solid black;
+        /* 設定邊框寬度和顏色 */
+        border-radius: 8px;
+        /* 設定圓角半徑 */
+        font-weight: 500;
+        height: 65px;
+      }
+    }
+
+  }
 }
 
 .width_cmCount {
@@ -735,126 +743,133 @@ body {
 }
 
 // 腳架
-.chkcontent_3rd {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+.car-tripod {
+  margin: 0 0 8px 0;
 
-  .tripodgroup {
-    visibility: hidden;
-    height: 0;
+  .chkcontent_3rd {
+    display: flex;
     width: 100%;
+    flex-direction: column;
 
-    .degrees {
-      flex-grow: 1;
-      /* 平均分配空間 */
-      text-align: center;
-      /* 文字置中 */
-      padding: 5px;
-      /* 內邊距 */
-      box-sizing: border-box;
-      /* 包含 padding 和 border */
-      font-size: 20px;
-      font-weight: 600;
+    .tripodgroup {
+      visibility: hidden;
+      height: 0;
+      width: 100%;
 
-      input[name="car_tripod"] {
-        margin: 3px;
+      .degrees {
+        flex-grow: 1;
+        /* 平均分配空間 */
+        text-align: center;
+        /* 文字置中 */
+        padding: 5px;
+        /* 內邊距 */
+        box-sizing: border-box;
+        /* 包含 padding 和 border */
+        font-size: 20px;
+        font-weight: 600;
+
+        input[name="car_tripod"] {
+          margin: 3px;
+        }
       }
     }
   }
 }
 
-
 //踏板
-.chkcontent_4th {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+.car-footpedal {
+  margin: 0 0 8px 0;
 
-  .footpedalgroup {
-    visibility: hidden;
-    height: 0;
-    // width: calc(100% - 8px);
-    // display: flex;
-    // flex-direction: column;
-    // /* 讓子元素垂直排列 */
-    // padding: 0px 1px 1px 3px;
-    // border: 3px dashed black;
-    // border-Top: none;
-    // height: auto;
-    // justify-content: space-between;
-  }
-
-  //兩片式塑踏板
-  .footpedal_twopiece {
+  .chkcontent_4th {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* 垂直置中 */
-    font-size: 18px;
-    /* 調整字體大小 */
-    font-weight: 600;
-    /* 調整字體粗細 */
-    height: auto;
-    margin: 2px 0 1px 0;
-    padding: 2px;
+    width: 100%;
+    flex-direction: column;
 
-    .twopiece_anglefixed {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .footpedalgroup {
+      visibility: hidden;
+      height: 0;
+      // width: calc(100% - 8px);
+      // display: flex;
+      // flex-direction: column;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // height: auto;
+      // justify-content: space-between;
     }
 
-    .twopiece_angleadjust {
+    //兩片式塑踏板
+    .footpedal_twopiece {
       display: flex;
-      justify-content: center;
+      flex-direction: row;
       align-items: center;
+      /* 垂直置中 */
+      font-size: 18px;
+      /* 調整字體大小 */
+      font-weight: 600;
+      /* 調整字體粗細 */
+      height: auto;
+      margin: 2px 0 1px 0;
+      padding: 2px;
+
+      .twopiece_anglefixed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .twopiece_angleadjust {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
-  }
 
-  //一片式鋁踏板
-  .footpedal_piecealuminum {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* 垂直置中 */
-    font-size: 18px;
-    /* 調整字體大小 */
-    font-weight: 600;
-    /* 調整字體粗細 */
-    height: auto;
-    margin: 1px 0 1px 0;
-    padding: 2px;
-  }
+    //一片式鋁踏板
+    .footpedal_piecealuminum {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* 垂直置中 */
+      font-size: 18px;
+      /* 調整字體大小 */
+      font-weight: 600;
+      /* 調整字體粗細 */
+      height: auto;
+      margin: 1px 0 1px 0;
+      padding: 2px;
+    }
 
-  //外掛式腳踏組
-  .footpedal_Plugin {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* 垂直置中 */
-    font-size: 18px;
-    /* 調整字體大小 */
-    font-weight: 600;
-    /* 調整字體粗細 */
-    height: auto;
-    margin: 1px 0 1px 0;
-    padding: 2px;
-  }
+    //外掛式腳踏組
+    .footpedal_Plugin {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* 垂直置中 */
+      font-size: 18px;
+      /* 調整字體大小 */
+      font-weight: 600;
+      /* 調整字體粗細 */
+      height: auto;
+      margin: 1px 0 1px 0;
+      padding: 2px;
+    }
 
-  //垂直調整腳踏組
-  .footpedal_plumb {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* 垂直置中 */
-    font-size: 18px;
-    /* 調整字體大小 */
-    font-weight: 600;
-    /* 調整字體粗細 */
-    height: auto;
-    margin: 1px 0 2px 0;
-    padding: 2px;
+    //垂直調整腳踏組
+    .footpedal_plumb {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* 垂直置中 */
+      font-size: 18px;
+      /* 調整字體大小 */
+      font-weight: 600;
+      /* 調整字體粗細 */
+      height: auto;
+      margin: 1px 0 2px 0;
+      padding: 2px;
+    }
   }
 }
 
@@ -1047,119 +1062,127 @@ body {
 }
 
 //頭靠子系統
-.chkcontent_5th {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+.car-head_supports {
+  margin: 0 0 8px 0;
 
-  .head_supportsgroup {
-    visibility: hidden;
-    // width: calc(100% - 8px);
-    // display: flex;
-    // flex-direction: row;
-    // /* 讓子元素垂直排列 */
-    // padding: 0px 1px 1px 3px;
-    // border: 3px dashed black;
-    // border-Top: none;
-    // height: auto;
-    // justify-content: space-between;
-    height: 0;
+  .chkcontent_5th {
+    display: flex;
     width: 100%;
+    flex-direction: column;
 
-    .head_supports_font {
-      width: 40%;
-      margin: 3px 0 2px 2px;
-      padding: 3px;
-      font-weight: 600;
-      font-size: 20px;
-    }
+    .head_supportsgroup {
+      visibility: hidden;
+      // width: calc(100% - 8px);
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // height: auto;
+      // justify-content: space-between;
+      height: 0;
+      width: 100%;
 
-    .head_supports_size {
-      width: 30%;
-      margin: 3px 0 2px 2px;
-      padding: 3px;
-      font-weight: 600;
-      font-size: 20px;
-    }
+      .head_supports_font {
+        width: 40%;
+        margin: 3px 0 2px 2px;
+        padding: 3px;
+        font-weight: 600;
+        font-size: 20px;
+      }
 
-    .head_supports_checkbox {
-      width: 5%;
-      margin: 4px 4px 0 2px;
-      padding: 8px;
+      .head_supports_size {
+        width: 30%;
+        margin: 3px 0 2px 2px;
+        padding: 3px;
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      .head_supports_checkbox {
+        width: 5%;
+        margin: 4px 4px 0 2px;
+        padding: 8px;
+      }
     }
   }
 }
 
 //軀幹子系統_背靠
-.chkcontent_6th {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+.car-back_supports {
+  margin: 0 0 8px 0;
 
-  .trunk_suppotrts_back {
-    visibility: hidden;
-    // width: calc(100% - 8px);
-    // display: flex;
-    // flex-direction: column;
-    // /* 讓子元素垂直排列 */
-    // padding: 0px 1px 1px 3px;
-    // border: 3px dashed black;
-    // border-Top: none;
-    // height: auto;
-    // justify-content: space-between;
-    height: 0;
+  .chkcontent_6th {
+    display: flex;
     width: 100%;
+    flex-direction: column;
+
+    .trunk_suppotrts_back {
+      visibility: hidden;
+      // width: calc(100% - 8px);
+      // display: flex;
+      // flex-direction: column;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // height: auto;
+      // justify-content: space-between;
+      height: 0;
+      width: 100%;
 
 
-    .back_supportsgroup {
-      display: flex;
-      flex-direction: row;
-
-      .Nova_back_hardware_title {
-        border: 1px solid #000000;
-        border-radius: 7px;
-        height: auto;
+      .back_supportsgroup {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 25px;
-        width: 40%;
-        padding: 2px 1px 1px 3px;
-        margin: 3px;
-      }
+        flex-direction: row;
 
-      .back_sizegroup {
-        display: flex;
-        flex-direction: column;
-        width: 60%;
-        margin: 0 3px 1px 1px;
-
-        .back_size {
+        .Nova_back_hardware_title {
           border: 1px solid #000000;
           border-radius: 7px;
-          margin: 1px 1px 3px 1px;
+          height: auto;
           display: flex;
           align-items: center;
           justify-content: center;
-          /* 垂直置中 */
-          font-size: 18px;
-          /* 調整字體大小 */
           font-weight: 600;
-          /* 調整字體粗細 */
-          height: auto;
-          padding: 2px;
+          font-size: 25px;
+          width: 40%;
+          padding: 2px 1px 1px 3px;
+          margin: 3px;
         }
-      }
 
-      .back_supports_checkbox {
-        display: flex;
-        flex-direction: column;
-        width: 5%;
-        margin: 0px 6px 0px 6px;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
+        .back_sizegroup {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          margin: 0 3px 1px 1px;
+
+          .back_size {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            margin: 1px 1px 3px 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 18px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: auto;
+            padding: 2px;
+          }
+        }
+
+        .back_supports_checkbox {
+          display: flex;
+          flex-direction: column;
+          width: 5%;
+          margin: 0px 6px 0px 6px;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
   }
@@ -1173,151 +1196,155 @@ body {
 
 
 //軀幹子系統_軀幹側支撐
-.chkcontent_7th {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+.car-LaterTrunk_supports {
+  margin: 0 0 8px 0;
 
-  .trunk_suppotrts_LaterTrunk {
-    visibility: hidden;
-    // width: calc(100% - 8px);
-    // display: flex;
-    // flex-direction: column;
-    // /* 讓子元素垂直排列 */
-    // padding: 0px 1px 1px 3px;
-    // border: 3px dashed black;
-    // border-Top: none;
-    // height: auto;
-    // justify-content: space-between;
-    height: 0;
+  .chkcontent_7th {
+    display: flex;
     width: 100%;
+    flex-direction: column;
 
-    .side_supportgroup {
-      display: flex;
-      flex-direction: row;
+    .trunk_suppotrts_LaterTrunk {
+      visibility: hidden;
+      // width: calc(100% - 8px);
+      // display: flex;
+      // flex-direction: column;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // height: auto;
+      // justify-content: space-between;
+      height: 0;
+      width: 100%;
 
-      .Novalateralhardware_title {
-        border: 1px solid #000000;
-        border-radius: 7px;
-        height: auto;
+      .side_supportgroup {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 25px;
-        width: 40%;
-        padding: 2px 1px 1px 3px;
-        margin: 3px;
-      }
+        flex-direction: row;
 
-      .side_sizegroup {
-        display: flex;
-        flex-direction: column;
-        width: 60%;
-        margin: 2px 0 2px 0;
-
-        .side_size {
+        .Novalateralhardware_title {
           border: 1px solid #000000;
           border-radius: 7px;
-          margin: 1px 1px 3px 1px;
+          height: auto;
           display: flex;
           align-items: center;
           justify-content: center;
-          /* 垂直置中 */
-          font-size: 17px;
-          /* 調整字體大小 */
           font-weight: 600;
-          /* 調整字體粗細 */
+          font-size: 25px;
+          width: 40%;
+          padding: 2px 1px 1px 3px;
+          margin: 3px;
+        }
+
+        .side_sizegroup {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          margin: 2px 0 2px 0;
+
+          .side_size {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            margin: 1px 1px 3px 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 17px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: 100%;
+            padding: 3px 1px 3px;
+          }
+        }
+
+        .side_sizeSMgroup {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
           height: 100%;
-          padding: 3px 1px 3px;
-        }
-      }
 
-      .side_sizeSMgroup {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
+          .side_sizeSgroup {
+            height: 45%;
+            margin: 2px 1px 0 2px;
 
-        .side_sizeSgroup {
-          height: 45%;
-          margin: 2px 1px 0 2px;
+            .side_SLR1 {
+              border: 1px solid #000000;
+              border-radius: 7px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              /* 垂直置中 */
+              font-size: 18px;
+              /* 調整字體大小 */
+              font-weight: 600;
+              /* 調整字體粗細 */
+              height: 48%;
+              margin: 1px 0 3px 0;
+            }
 
-          .side_SLR1 {
-            border: 1px solid #000000;
-            border-radius: 7px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* 垂直置中 */
-            font-size: 18px;
-            /* 調整字體大小 */
-            font-weight: 600;
-            /* 調整字體粗細 */
-            height: 48%;
-            margin: 1px 0 3px 0;
+            .side_SLR2 {
+              border: 1px solid #000000;
+              border-radius: 7px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              /* 垂直置中 */
+              font-size: 18px;
+              /* 調整字體大小 */
+              font-weight: 600;
+              /* 調整字體粗細 */
+              height: 48%;
+              margin: 2px 0 1px 0;
+            }
           }
 
-          .side_SLR2 {
-            border: 1px solid #000000;
-            border-radius: 7px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* 垂直置中 */
-            font-size: 18px;
-            /* 調整字體大小 */
-            font-weight: 600;
-            /* 調整字體粗細 */
-            height: 48%;
-            margin: 2px 0 1px 0;
-          }
-        }
+          .side_sizeLgroup {
+            height: 45%;
+            margin: 4px 0 1px 2px;
 
-        .side_sizeLgroup {
-          height: 45%;
-          margin: 4px 0 1px 2px;
+            .side_MLR1 {
+              border: 1px solid #000000;
+              border-radius: 7px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              /* 垂直置中 */
+              font-size: 18px;
+              /* 調整字體大小 */
+              font-weight: 600;
+              /* 調整字體粗細 */
+              height: 48%;
+              margin: 2px 0 3px 0;
+            }
 
-          .side_MLR1 {
-            border: 1px solid #000000;
-            border-radius: 7px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* 垂直置中 */
-            font-size: 18px;
-            /* 調整字體大小 */
-            font-weight: 600;
-            /* 調整字體粗細 */
-            height: 48%;
-            margin: 2px 0 3px 0;
-          }
-
-          .side_MLR2 {
-            border: 1px solid #000000;
-            border-radius: 7px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* 垂直置中 */
-            font-size: 18px;
-            /* 調整字體大小 */
-            font-weight: 600;
-            /* 調整字體粗細 */
-            height: 48%;
-            margin: 3px 0 1px 0;
+            .side_MLR2 {
+              border: 1px solid #000000;
+              border-radius: 7px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              /* 垂直置中 */
+              font-size: 18px;
+              /* 調整字體大小 */
+              font-weight: 600;
+              /* 調整字體粗細 */
+              height: 48%;
+              margin: 3px 0 1px 0;
+            }
           }
         }
-      }
 
-      .latertrunk_checkboxes {
-        display: flex;
-        flex-direction: column;
-        width: 5%;
-        margin: 0px 6px 0px 6px;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
+        .latertrunk_checkboxes {
+          display: flex;
+          flex-direction: column;
+          width: 5%;
+          margin: 0px 6px 0px 6px;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
   }
@@ -1339,78 +1366,82 @@ body {
 }
 
 //底座子系統
-.chkcontent_8th {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+.car-seatbase {
+  margin: 0 0 8px 0;
 
-  .seatbasegroup {
-    visibility: hidden;
-    // width: calc(100% - 8px);
-    // display: flex;
-    // flex-direction: column;
-    // /* 讓子元素垂直排列 */
-    // padding: 0px 1px 1px 3px;
-    // border: 3px dashed black;
-    // border-Top: none;
-    // height: auto;
-    // justify-content: space-between;
-    height: 0;
+  .chkcontent_8th {
+    display: flex;
     width: 100%;
+    flex-direction: column;
+
+    .seatbasegroup {
+      visibility: hidden;
+      // width: calc(100% - 8px);
+      // display: flex;
+      // flex-direction: column;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // height: auto;
+      // justify-content: space-between;
+      height: 0;
+      width: 100%;
 
 
-    .seat_supportsgroup {
-      display: flex;
-      flex-direction: row;
-
-      .Nova_seatbase_title {
-        border: 1px solid #000000;
-        border-radius: 7px;
-        height: auto;
+      .seat_supportsgroup {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 25px;
-        width: 40%;
-        padding: 2px 1px 1px 3px;
-        margin: 3px;
-      }
+        flex-direction: row;
 
-      .seatbase_sizegroup {
-        display: flex;
-        flex-direction: column;
-        width: 60%;
-        margin: 0 3px 1px 1px;
-
-        .seatbase_size {
+        .Nova_seatbase_title {
           border: 1px solid #000000;
           border-radius: 7px;
-          margin: 1px 1px 3px 1px;
+          height: auto;
           display: flex;
           align-items: center;
           justify-content: center;
-          /* 垂直置中 */
-          font-size: 18px;
-          /* 調整字體大小 */
           font-weight: 600;
-          /* 調整字體粗細 */
-          height: auto;
-          padding: 2px;
+          font-size: 25px;
+          width: 40%;
+          padding: 2px 1px 1px 3px;
+          margin: 3px;
+        }
+
+        .seatbase_sizegroup {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          margin: 0 3px 1px 1px;
+
+          .seatbase_size {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            margin: 1px 1px 3px 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 垂直置中 */
+            font-size: 18px;
+            /* 調整字體大小 */
+            font-weight: 600;
+            /* 調整字體粗細 */
+            height: auto;
+            padding: 2px;
+          }
+        }
+
+        .seatbase_checkbox {
+          display: flex;
+          flex-direction: column;
+          width: 5%;
+          margin: 0px 6px 0px 6px;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
         }
       }
 
-      .seatbase_checkbox {
-        display: flex;
-        flex-direction: column;
-        width: 5%;
-        margin: 0px 6px 0px 6px;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-      }
     }
-
   }
 }
 
@@ -1421,53 +1452,37 @@ body {
 }
 
 //綁帶子系統
-.chkcontent_9th {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+.car-bandage {
+  margin: 0 0 8px 0;
 
-  .bandagegroup {
-    visibility: hidden;
-    // width: calc(100% - 8px);
-    // display: flex;
-    // flex-direction: column;
-    // /* 讓子元素垂直排列 */
-    // padding: 0px 1px 1px 3px;
-    // border: 3px dashed black;
-    // border-Top: none;
-    // height: auto;
-    // justify-content: space-between;
-    height: 0;
+  .chkcontent_9th {
+    display: flex;
     width: 100%;
+    flex-direction: column;
 
-    .Shoulder_chest_strapsgroup {
-      display: flex;
-      flex-direction: column;
+    .bandagegroup {
+      visibility: hidden;
+      // width: calc(100% - 8px);
+      // display: flex;
+      // flex-direction: column;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // height: auto;
+      // justify-content: space-between;
+      height: 0;
+      width: 100%;
 
-      .chest_strapsgroup {
+      .Shoulder_chest_strapsgroup {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
-        .chest_straps_title {
-          border: 1px solid #000000;
-          border-radius: 7px;
-          height: auto;
+        .chest_strapsgroup {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 600;
-          font-size: 20px;
-          width: 40%;
-          padding: 2px 1px 1px 3px;
-          margin: 3px;
-        }
+          flex-direction: row;
 
-        .chest_straps {
-          display: flex;
-          flex-direction: column;
-          width: 60%;
-
-          .chest_straps_font {
+          .chest_straps_title {
             border: 1px solid #000000;
             border-radius: 7px;
             height: auto;
@@ -1476,16 +1491,17 @@ body {
             justify-content: center;
             font-weight: 600;
             font-size: 20px;
+            width: 40%;
             padding: 2px 1px 1px 3px;
             margin: 3px;
           }
 
-          .Xchest_strapsgroup {
+          .chest_straps {
             display: flex;
-            flex-direction: row;
-            width: 100%;
+            flex-direction: column;
+            width: 60%;
 
-            .chest_straps_font_2 {
+            .chest_straps_font {
               border: 1px solid #000000;
               border-radius: 7px;
               height: auto;
@@ -1496,15 +1512,14 @@ body {
               font-size: 20px;
               padding: 2px 1px 1px 3px;
               margin: 3px;
-              width: 80%;
             }
 
-            .Xchest_straps_size {
+            .Xchest_strapsgroup {
               display: flex;
-              flex-direction: column;
-              width: 30%;
+              flex-direction: row;
+              width: 100%;
 
-              .chest_straps_font_2s {
+              .chest_straps_font_2 {
                 border: 1px solid #000000;
                 border-radius: 7px;
                 height: auto;
@@ -1515,54 +1530,54 @@ body {
                 font-size: 20px;
                 padding: 2px 1px 1px 3px;
                 margin: 3px;
+                width: 80%;
               }
 
-              .chest_straps_font_2b {
-                border: 1px solid #000000;
-                border-radius: 7px;
-                height: auto;
+              .Xchest_straps_size {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 600;
-                font-size: 20px;
-                padding: 2px 1px 1px 3px;
-                margin: 3px;
+                flex-direction: column;
+                width: 30%;
+
+                .chest_straps_font_2s {
+                  border: 1px solid #000000;
+                  border-radius: 7px;
+                  height: auto;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 600;
+                  font-size: 20px;
+                  padding: 2px 1px 1px 3px;
+                  margin: 3px;
+                }
+
+                .chest_straps_font_2b {
+                  border: 1px solid #000000;
+                  border-radius: 7px;
+                  height: auto;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 600;
+                  font-size: 20px;
+                  padding: 2px 1px 1px 3px;
+                  margin: 3px;
+                }
               }
             }
           }
+
+          .chest_straps_checkbox {
+            display: flex;
+            flex-direction: column;
+          }
         }
 
-        .chest_straps_checkbox {
+        .pelvic_beltgroup {
           display: flex;
-          flex-direction: column;
-        }
-      }
+          flex-direction: row;
 
-      .pelvic_beltgroup {
-        display: flex;
-        flex-direction: row;
-
-        .pelvic_belt_title {
-          border: 1px solid #000000;
-          border-radius: 7px;
-          height: auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 600;
-          font-size: 20px;
-          width: 40%;
-          padding: 2px 1px 1px 3px;
-          margin: 3px;
-        }
-
-        .pelvic_belt {
-          display: flex;
-          flex-direction: column;
-          width: 60%;
-
-          .standard_pelvic_belt {
+          .pelvic_belt_title {
             border: 1px solid #000000;
             border-radius: 7px;
             height: auto;
@@ -1571,16 +1586,17 @@ body {
             justify-content: center;
             font-weight: 600;
             font-size: 20px;
+            width: 40%;
             padding: 2px 1px 1px 3px;
             margin: 3px;
           }
 
-          .pointpelvic_beltgroup {
+          .pelvic_belt {
             display: flex;
-            flex-direction: row;
-            width: 100%;
+            flex-direction: column;
+            width: 60%;
 
-            .pointpelvic_belt {
+            .standard_pelvic_belt {
               border: 1px solid #000000;
               border-radius: 7px;
               height: auto;
@@ -1591,15 +1607,14 @@ body {
               font-size: 20px;
               padding: 2px 1px 1px 3px;
               margin: 3px;
-              width: 80%;
             }
 
-            .pointpelvic_belt_size {
+            .pointpelvic_beltgroup {
               display: flex;
-              flex-direction: column;
-              width: 30%;
+              flex-direction: row;
+              width: 100%;
 
-              .pointpelvic_belt_fonts {
+              .pointpelvic_belt {
                 border: 1px solid #000000;
                 border-radius: 7px;
                 height: auto;
@@ -1610,35 +1625,98 @@ body {
                 font-size: 20px;
                 padding: 2px 1px 1px 3px;
                 margin: 3px;
+                width: 80%;
               }
 
-              .pointpelvic_belt_fontb {
-                border: 1px solid #000000;
-                border-radius: 7px;
-                height: auto;
+              .pointpelvic_belt_size {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 600;
-                font-size: 20px;
-                padding: 2px 1px 1px 3px;
-                margin: 3px;
+                flex-direction: column;
+                width: 30%;
+
+                .pointpelvic_belt_fonts {
+                  border: 1px solid #000000;
+                  border-radius: 7px;
+                  height: auto;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 600;
+                  font-size: 20px;
+                  padding: 2px 1px 1px 3px;
+                  margin: 3px;
+                }
+
+                .pointpelvic_belt_fontb {
+                  border: 1px solid #000000;
+                  border-radius: 7px;
+                  height: auto;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 600;
+                  font-size: 20px;
+                  padding: 2px 1px 1px 3px;
+                  margin: 3px;
+                }
               }
             }
           }
+
+          .pelvic_belt_checkbox {
+            display: flex;
+            flex-direction: column;
+          }
         }
 
-        .pelvic_belt_checkbox {
+        .calf_bandgroup {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+
+          .calf_band {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 20px;
+            width: 40%;
+            padding: 2px 1px 1px 3px;
+            margin: 3px;
+          }
+
+          .calfbandchk {
+            margin: 0 5px 0 5px;
+          }
         }
-      }
 
-      .calf_bandgroup {
-        display: flex;
-        flex-direction: row;
+        .calf_cuffgroup {
+          display: flex;
+          flex-direction: row;
 
-        .calf_band {
+          .calf_cuff {
+            border: 1px solid #000000;
+            border-radius: 7px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 20px;
+            width: 40%;
+            padding: 2px 1px 1px 3px;
+            margin: 3px;
+          }
+
+          .calfcuffchk {
+            margin: 0 5px 0 5px;
+          }
+        }
+
+
+
+        .calf_font {
           border: 1px solid #000000;
           border-radius: 7px;
           height: auto;
@@ -1647,53 +1725,10 @@ body {
           justify-content: center;
           font-weight: 600;
           font-size: 20px;
-          width: 40%;
+          width: 60%;
           padding: 2px 1px 1px 3px;
           margin: 3px;
         }
-
-        .calfbandchk {
-          margin: 0 5px 0 5px;
-        }
-      }
-
-      .calf_cuffgroup {
-        display: flex;
-        flex-direction: row;
-
-        .calf_cuff {
-          border: 1px solid #000000;
-          border-radius: 7px;
-          height: auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 600;
-          font-size: 20px;
-          width: 40%;
-          padding: 2px 1px 1px 3px;
-          margin: 3px;
-        }
-
-        .calfcuffchk {
-          margin: 0 5px 0 5px;
-        }
-      }
-
-
-
-      .calf_font {
-        border: 1px solid #000000;
-        border-radius: 7px;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 20px;
-        width: 60%;
-        padding: 2px 1px 1px 3px;
-        margin: 3px;
       }
     }
   }
