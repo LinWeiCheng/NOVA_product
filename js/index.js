@@ -139,6 +139,7 @@ left.addEventListener("click", function (event) {
         if (introdution.getAttribute("data-collapse-status") === "0") {
           //把data-collapse-status改成1
           introdution.setAttribute("data-collapse-status", "1");
+
           if (showinfo === "carbasesize") {
             //carbasesize勾選位置大小設置
             introdutionid.style.visibility = "visible";
@@ -800,6 +801,32 @@ function allcheckboxfalsefct() {
     checkbox.checked = false; // 取消勾选
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 取得所有 subtitle 和 subtitle_2
+  const subtitles = document.querySelectorAll(".subtitle, .subtitle_2");
+
+  subtitles.forEach(subtitle => {
+      subtitle.addEventListener("click", function () {
+          // 找到最近的 .target_img 內的 img
+          const img = this.closest(".target").querySelector(".target_img img");
+
+          if (img) {
+              // 取得目前的圖片路徑
+              const currentSrc = img.getAttribute("src");
+
+              // 根據當前圖片路徑切換
+              if (currentSrc.includes("black triangle.png")) {
+                  img.setAttribute("src", "./img/black triangle after.png");
+              } else {
+                  img.setAttribute("src", "./img/black triangle.png");
+              }
+          }
+      });
+  });
+});
+
+
 
 // document.getElementById("printPDFButton").addEventListener("click", function () {
 //   // 使用 html2canvas 渲染 Quotation div 為圖片
