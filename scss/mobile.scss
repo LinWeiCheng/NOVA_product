@@ -140,8 +140,14 @@
 }
 
 @media screen and (max-width:650px) {
+
+    html,
+    body {
+        overflow: auto; // 確保可以滾動
+    }
+
     .totalPrice {
-        bottom: 40px;
+        bottom: 10px;
         left: 10px;
         top: auto;
         padding: 8px 8px;
@@ -151,11 +157,15 @@
     }
 
     .container {
-        min-height: 1200px;
+        min-height: 1300px;
 
         .Title {
             font-weight: 900;
             font-size: 20px;
+        }
+
+        .leftcontent {
+            width: 100%;
         }
     }
 
@@ -169,10 +179,17 @@
 
     /*-----  2.座板尺寸手機板  -----*/
     .car-seat {
+        margin: 0px;
+
         .target {
             .chkcontent_2nd {
                 .basesize {
                     .Seat-widthgroup {
+                        border-bottom: 0px dashed black;
+                        width: 50%;
+                        height: 100%;
+                        padding: 0px 3px 0px 1px;
+
                         .seat-width {
                             font-size: 12px;
                         }
@@ -194,6 +211,10 @@
                     }
 
                     .Seat-deepgroup {
+                        width: 50%;
+                        height: 100%;
+                        padding: 0px 3px 0px 3px;
+
                         .seat-deep {
                             font-size: 11px;
                         }
@@ -618,14 +639,209 @@
                             height: 100%;
 
                             .content-checkbox {
-                                margin: 18px 0px 11px 0px;;
+                                margin: 18px 0px 11px 0px;
+                                ;
                                 transform: scale(1.5);
                             }
                         }
                     }
                 }
-                .div_notice{
+
+                .div_notice {
                     font-size: 13px;
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    /*-----  9.綁帶子系統點擊列  -----*/
+    .car-bandage {
+        .target {
+            .chkcontent_9th {
+                .bandagegroup {
+                    .Shoulder_chest_strapsgroup {
+                        .chest_strapsgroup {
+                            .chest_straps_title {
+                                font-size: 15px;
+                                width: 25%;
+                                padding: 1px 0px 0px 5px;
+                                margin: 1px 1px 1px 0;
+                            }
+
+                            .chest_straps {
+                                width: 60%;
+                                margin: 0 1px 0 0;
+
+                                .chest_straps_font {
+                                    font-size: 15px;
+                                    padding: 1px 0px 0px 1px;
+                                    margin: 1px;
+                                }
+
+                                .Xchest_strapsgroup {
+                                    height: 100%;
+                                    margin: 1px 0 2px 0;
+
+                                    .chest_straps_font_2 {
+                                        font-size: 13px;
+                                        padding: 0px 0px 0px 1px;
+                                        margin: 1px;
+                                        width: 60%;
+                                    }
+
+                                    .Xchest_straps_size {
+                                        width: 35%;
+                                        height: 100%;
+
+                                        .chest_straps_font_2s {
+                                            font-size: 16px;
+                                            padding: 0px 1px 0px 1px;
+                                            margin: 1px 1px 1px 1px;
+                                            height: 50%;
+                                        }
+
+                                        .chest_straps_font_2b {
+                                            font-size: 16px;
+                                            margin: 1px 1px 0 1px;
+                                            height: 50%;
+                                            padding: 0px 1px 0px 1px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .chest_straps_checkbox {
+                                margin: 0 3px 0px 4px;
+
+                                .content-checkbox {
+                                    margin: 18px 0px 11px 0px;
+                                    ;
+                                    transform: scale(1.5);
+                                }
+                            }
+                        }
+
+                        .pelvic_beltgroup {
+                            margin: 1px 0 1px 0;
+                            height: 100%;
+
+                            .pelvic_belt_title {
+                                font-size: 15px;
+                                height: 100%;
+                                width: 25%;
+                                padding: 0px 1px 0px 5px;
+                                margin: 1px 1px 1px 0px;
+                            }
+
+                            .pelvic_belt {
+                                height: 100%;
+                                width: 56%;
+                                margin: 0 5px 0 1px;
+
+                                .standard_pelvic_belt {
+                                    height: 35%;
+                                    font-size: 16px;
+                                    padding: 1px 1px 1px 4px;
+                                    margin: 1px 1px 2px 1px;
+                                }
+
+                                .pointpelvic_beltgroup {
+                                    height: 65%;
+                                    width: 100%;
+
+                                    .pointpelvic_belt {
+                                        font-size: 13px;
+                                        padding: 1px 1px 1px 1px;
+                                        margin: 1px;
+                                        width: 63%;
+                                        height: 100%;
+                                    }
+
+                                    .pointpelvic_belt_size {
+                                        height: 100%;
+                                        width: 35%;
+
+                                        .pointpelvic_belt_fonts {
+                                            font-size: 14px;
+                                            padding: 1px 1px 1px 1px;
+                                            margin: 1px;
+                                            height: 50%;
+                                        }
+
+                                        .pointpelvic_belt_fontb {
+                                            font-size: 14px;
+                                            padding: 1px 1px 1px 1px;
+                                            margin: 1px;
+                                            height: 50%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .pelvic_belt_checkbox {
+                                .content-checkbox {
+                                    margin: 18px 0px 11px 0px;
+                                    ;
+                                    transform: scale(1.5);
+                                }
+                            }
+                        }
+
+                        .calf_bandgroup {
+                            margin: 1px 0 1px 0;
+
+                            .calf_band {
+                                font-size: 16px;
+                                width: 25%;
+                                padding: 1px 1px 1px 5px;
+                                margin: 2px 2px 1px 1px;
+                            }
+
+                            .calf_font {
+                                font-size: 14px;
+                                width: 55%;
+                                padding: 1px 1px 1px 2px;
+                                margin: 2px 5px 1px 1px;
+                            }
+
+                            .content-checkbox {
+                                margin: 14px 0px 9px 0px;
+                                ;
+                                transform: scale(1.5);
+                            }
+                        }
+
+                        .calf_cuffgroup {
+                            margin: 1px 0 1px 0;
+
+                            .calf_cuff {
+                                font-size: 16px;
+                                width: 25%;
+                                padding: 1px 1px 1px 5px;
+                                margin: 2px 2px 2px 1px;
+                            }
+
+                            .calf_font {
+                                font-size: 15px;
+                                width: 55%;
+                                padding: 1px 1px 1px 1px;
+                                margin: 2px 5px 2px 1px;
+                            }
+
+                            .content-checkbox {
+                                margin: 18px 0px 11px 0px;
+                                ;
+                                transform: scale(1.5);
+                            }
+                        }
+
+                    }
                 }
             }
 

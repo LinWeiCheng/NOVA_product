@@ -89,8 +89,12 @@
   }
 }
 @media screen and (max-width: 650px) {
+  html,
+  body {
+    overflow: auto;
+  }
   .totalPrice {
-    bottom: 40px;
+    bottom: 10px;
     left: 10px;
     top: auto;
     padding: 8px 8px;
@@ -99,11 +103,14 @@
     max-width: 200px;
   }
   .container {
-    min-height: 1200px;
+    min-height: 1300px;
   }
   .container .Title {
     font-weight: 900;
     font-size: 20px;
+  }
+  .container .leftcontent {
+    width: 100%;
   }
   .subtitle {
     font-size: 12px !important;
@@ -112,6 +119,15 @@
     font-size: 9px !important;
   }
   /*-----  2.座板尺寸手機板  -----*/
+  .car-seat {
+    margin: 0px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup {
+    border-bottom: 0px dashed black;
+    width: 50%;
+    height: 100%;
+    padding: 0px 3px 0px 1px;
+  }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .seat-width {
     font-size: 12px;
   }
@@ -121,6 +137,11 @@
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_chkblock #SWC_checkbox {
     margin: 12.5px 4px 13px 9px;
     transform: scale(1.5);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup {
+    width: 50%;
+    height: 100%;
+    padding: 0px 3px 0px 3px;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .seat-deep {
     font-size: 11px;
@@ -407,6 +428,149 @@
     font-size: 13px;
   }
   .car-seatbase .target .pricecontent .pricing {
+    font-size: 12px;
+  }
+  /*-----  9.綁帶子系統點擊列  -----*/
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_title {
+    font-size: 15px;
+    width: 25%;
+    padding: 1px 0px 0px 5px;
+    margin: 1px 1px 1px 0;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps {
+    width: 60%;
+    margin: 0 1px 0 0;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .chest_straps_font {
+    font-size: 15px;
+    padding: 1px 0px 0px 1px;
+    margin: 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup {
+    height: 100%;
+    margin: 1px 0 2px 0;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .chest_straps_font_2 {
+    font-size: 13px;
+    padding: 0px 0px 0px 1px;
+    margin: 1px;
+    width: 60%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size {
+    width: 35%;
+    height: 100%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2s {
+    font-size: 16px;
+    padding: 0px 1px 0px 1px;
+    margin: 1px 1px 1px 1px;
+    height: 50%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2b {
+    font-size: 16px;
+    margin: 1px 1px 0 1px;
+    height: 50%;
+    padding: 0px 1px 0px 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox {
+    margin: 0 3px 0px 4px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox .content-checkbox {
+    margin: 18px 0px 11px 0px;
+    transform: scale(1.5);
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup {
+    margin: 1px 0 1px 0;
+    height: 100%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_title {
+    font-size: 15px;
+    height: 100%;
+    width: 25%;
+    padding: 0px 1px 0px 5px;
+    margin: 1px 1px 1px 0px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt {
+    height: 100%;
+    width: 56%;
+    margin: 0 5px 0 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .standard_pelvic_belt {
+    height: 35%;
+    font-size: 16px;
+    padding: 1px 1px 1px 4px;
+    margin: 1px 1px 2px 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup {
+    height: 65%;
+    width: 100%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt {
+    font-size: 13px;
+    padding: 1px 1px 1px 1px;
+    margin: 1px;
+    width: 63%;
+    height: 100%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size {
+    height: 100%;
+    width: 35%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fonts {
+    font-size: 14px;
+    padding: 1px 1px 1px 1px;
+    margin: 1px;
+    height: 50%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fontb {
+    font-size: 14px;
+    padding: 1px 1px 1px 1px;
+    margin: 1px;
+    height: 50%;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_checkbox .content-checkbox {
+    margin: 18px 0px 11px 0px;
+    transform: scale(1.5);
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup {
+    margin: 1px 0 1px 0;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_band {
+    font-size: 16px;
+    width: 25%;
+    padding: 1px 1px 1px 5px;
+    margin: 2px 2px 1px 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_font {
+    font-size: 14px;
+    width: 55%;
+    padding: 1px 1px 1px 2px;
+    margin: 2px 5px 1px 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .content-checkbox {
+    margin: 14px 0px 9px 0px;
+    transform: scale(1.5);
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup {
+    margin: 1px 0 1px 0;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_cuff {
+    font-size: 16px;
+    width: 25%;
+    padding: 1px 1px 1px 5px;
+    margin: 2px 2px 2px 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_font {
+    font-size: 15px;
+    width: 55%;
+    padding: 1px 1px 1px 1px;
+    margin: 2px 5px 2px 1px;
+  }
+  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .content-checkbox {
+    margin: 18px 0px 11px 0px;
+    transform: scale(1.5);
+  }
+  .car-bandage .target .pricecontent .pricing {
     font-size: 12px;
   }
 }/*# sourceMappingURL=mobile.css.map */
