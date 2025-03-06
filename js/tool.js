@@ -195,7 +195,7 @@ Price.forEach(function (openIntro) {
           }
         });
         if (event.target.id === "checkbox_77degrees") {
-          nowprice_tripod.textContent = "1,200元";
+          nowprice_tripod.textContent = "1,400元";
           productImage.src = "./img/77pedal.png";
         } else if (event.target.id === "checkbox_80degrees") {
           nowprice_tripod.textContent = "1,800元";
@@ -433,22 +433,22 @@ Price.forEach(function (openIntro) {
               otherCheckbox.checked = false;
             }
             if (event.target.id === "checkbox_vertical9_left") {
-              nowprice_footpedal.textContent = "1,500元";
+              nowprice_footpedal.textContent = "3,000元";
               footpedal_vertical9_Right.checked = event.target.checked;
             } else if (event.target.id === "checkbox_vertical9_right") {
-              nowprice_footpedal.textContent = "1,500元";
+              nowprice_footpedal.textContent = "3,000元";
               footpedal_vertical9_Left.checked = event.target.checked;
             } else if (event.target.id === "checkbox_vertical11_left") {
-              nowprice_footpedal.textContent = "1,500元";
+              nowprice_footpedal.textContent = "3,000元";
               footpedal_vertical11_Right.checked = event.target.checked;
             } else if (event.target.id === "checkbox_vertical11_right") {
-              nowprice_footpedal.textContent = "1,500元";
+              nowprice_footpedal.textContent = "3,000元";
               footpedal_vertical11_Left.checked = event.target.checked;
             } else if (event.target.id === "checkbox_vertical14_left") {
-              nowprice_footpedal.textContent = "1,550元";
+              nowprice_footpedal.textContent = "3,000元";
               footpedal_vertical14_Right.checked = event.target.checked;
             } else if (event.target.id === "checkbox_vertical14_right") {
-              nowprice_footpedal.textContent = "1,550元";
+              nowprice_footpedal.textContent = "3,000元";
               footpedal_vertical14_Left.checked = event.target.checked;
             }
             footpedal_twopieceDiv.style.display = "none";
@@ -544,7 +544,7 @@ Price.forEach(function (openIntro) {
           }
         });
         if (event.target.id === "checkbox_headsupports_Nova") {
-          nowprice_carheadsupports.textContent = "4,500元";
+          nowprice_carheadsupports.textContent = "3,500元";
           productImage.src = "./img/Headrest.png";
         }
       }
@@ -569,7 +569,7 @@ let back_supports_prices = {
   back_prices5: 3500,
   back_prices6: 3500,
   back_prices7: 3500,
-  hardware_prices8: 3400, // 第 8 個 checkbox 的價格
+  hardware_prices8: 2800, // 第 8 個 checkbox 的價格
 };
 
 // 更新價格的函式
@@ -684,8 +684,8 @@ let latertrunksupportMR = document.getElementById(
 );
 
 let latertrunk_supports_prices = {
-  latertrunk_prices1: 8500,
-  latertrunk_prices2: 9000,
+  latertrunk_prices1: 7000,
+  latertrunk_prices2: 7600,
 };
 
 function update_latertrunk_Price(event) {
@@ -745,14 +745,14 @@ let Car_seatbase_checkboxes = document.querySelectorAll(
 );
 
 let seat_base_prices = {
-  seatbase_prices1: 2000,
-  seatbase_prices2: 2000,
-  seatbase_prices3: 2000,
-  seatbase_prices4: 2000,
-  seatbase_prices5: 2000,
-  seatbase_prices6: 2000,
-  seatbase_prices7: 2000,
-  hardware_prices8: 2800, // 第 8 個 checkbox 的價格
+  seatbase_prices1: 1500,
+  seatbase_prices2: 1500,
+  seatbase_prices3: 1500,
+  seatbase_prices4: 1500,
+  seatbase_prices5: 1500,
+  seatbase_prices6: 1500,
+  seatbase_prices7: 1500,
+  hardware_prices8: 2000, // 第 8 個 checkbox 的價格
 };
 
 // 更新價格的函式
@@ -851,14 +851,14 @@ let Car_bandage_checkboxes = document.querySelectorAll(
 );
 
 let bandage_prices = {
-  bandage_prices1: 1000,
+  bandage_prices1: 500,
   bandage_prices2: 0,
   bandage_prices3: 1450,
   bandage_prices4: 1500,
   bandage_prices5: 0,
   bandage_prices6: 950,
   bandage_prices7: 1000,
-  bandage_prices8: 1000,
+  bandage_prices8: 1300,
   bandage_prices9: 750,
 };
 let bandagetotalPrice = 0; // 重置價格
