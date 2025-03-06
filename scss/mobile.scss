@@ -249,22 +249,24 @@
     .car-tripod {
         .chkcontent_3rd {
             .tripodgroup {
+                padding: 0px 1px 1px 1px;
+
                 .degrees {
-                    font-size: 14px;
+                    font-size: 13px;
 
                     #checkbox_77degrees {
-                        margin: 3px 0px 5px 3px;
-                        transform: scale(1.4);
+                        margin: 2px 0px 2px 3px;
+                        transform: scale(1.5);
                     }
 
                     #checkbox_80degrees {
-                        margin: 3px 0px 5px 3px;
-                        transform: scale(1.4);
+                        margin: 2px 0px 2px 3px;
+                        transform: scale(1.5);
                     }
 
                     #checkbox_90degrees {
-                        margin: 3px 0px 5px 3px;
-                        transform: scale(1.4);
+                        margin: 2px 0px 2px 3px;
+                        transform: scale(1.5);
                     }
                 }
             }
@@ -284,16 +286,16 @@
                 .footpedalgroup {
                     .footpedal_twopiece {
                         .div_type {
-                            font-size: 14px;
+                            font-size: 15px;
                             height: 100%;
-                            width: 26%;
-                            padding: 0 0 0 1px
+                            width: 20%;
+                            padding: 0 1px 0 3px;
                         }
 
                         .div_twopiece_angle {
                             font-size: 14px;
                             height: 100%;
-                            width: 54%;
+                            width: 65%;
                             margin: 0px 2px 0 1px;
 
                             .twopiece_anglefixed {
@@ -330,23 +332,23 @@
                             font-size: 18px;
                             height: 100%;
                             width: 20%;
-                            padding: 0 0 0 1px;
+                            padding: 0 0 0 6px;
                         }
 
                         .div_angleadjust {
-                            font-size: 18px;
-                            width: 22%;
+                            font-size: 17px;
+                            width: 27%;
                             height: 100%;
-                            padding: 0 0 0 3px;
+                            padding: 0px 0 0 1px;
                         }
 
                         .pedalcmcmgroup {
                             width: 34%;
                             height: 100%;
-                            margin: 0 3px 0 1px;
+                            margin: 0 3px 0 2px;
 
                             .pedalcm {
-                                font-size: 13px;
+                                font-size: 16px;
                                 margin: 1px 3px 1px 0;
                                 height: 100%;
                                 width: 100%;
@@ -404,23 +406,24 @@
                             border-radius: 5px;
                             font-size: 18px;
                             height: 100%;
-                            width: 18%;
-                            padding: 0 1px 0 1px;
+                            width: 20%;
+                            padding: 0 1px 0 5px;
                         }
 
                         .div_angle {
-                            width: 38%;
+                            width: 40%;
 
                             .div_pedalsize {
-                                font-size: 13px;
+                                font-size: 14px;
+                                margin: 0px 3px 3px 1px;
                             }
                         }
 
                         .div_pedal_direction {
                             font-size: 15px;
                             height: 100%;
-                            width: 22%;
-                            margin: 0px 0px 1px 1px;
+                            width: 26%;
+                            margin: 0px 5px 1px 2px;
                         }
 
                         .footpedal_checkbox4 {

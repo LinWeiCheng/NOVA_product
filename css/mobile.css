@@ -157,35 +157,38 @@
     font-size: 12px;
   }
   /*-----  3.腳架點擊列手機板  -----*/
+  .car-tripod .chkcontent_3rd .tripodgroup {
+    padding: 0px 1px 1px 1px;
+  }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees {
-    font-size: 14px;
+    font-size: 13px;
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_77degrees {
-    margin: 3px 0px 5px 3px;
-    transform: scale(1.4);
+    margin: 2px 0px 2px 3px;
+    transform: scale(1.5);
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_80degrees {
-    margin: 3px 0px 5px 3px;
-    transform: scale(1.4);
+    margin: 2px 0px 2px 3px;
+    transform: scale(1.5);
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_90degrees {
-    margin: 3px 0px 5px 3px;
-    transform: scale(1.4);
+    margin: 2px 0px 2px 3px;
+    transform: scale(1.5);
   }
   .car-tripod .pricecontent .pricing {
     font-size: 12px;
   }
   /*-----  4.踏板樣式點擊列手機板  -----*/
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_type {
-    font-size: 14px;
+    font-size: 15px;
     height: 100%;
-    width: 26%;
-    padding: 0 0 0 1px;
+    width: 20%;
+    padding: 0 1px 0 3px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_twopiece_angle {
     font-size: 14px;
     height: 100%;
-    width: 54%;
+    width: 65%;
     margin: 0px 2px 0 1px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_twopiece_angle .twopiece_anglefixed {
@@ -211,21 +214,21 @@
     font-size: 18px;
     height: 100%;
     width: 20%;
-    padding: 0 0 0 1px;
+    padding: 0 0 0 6px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .div_angleadjust {
-    font-size: 18px;
-    width: 22%;
+    font-size: 17px;
+    width: 27%;
     height: 100%;
-    padding: 0 0 0 3px;
+    padding: 0px 0 0 1px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .pedalcmcmgroup {
     width: 34%;
     height: 100%;
-    margin: 0 3px 0 1px;
+    margin: 0 3px 0 2px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .pedalcmcmgroup .pedalcm {
-    font-size: 13px;
+    font-size: 16px;
     margin: 1px 3px 1px 0;
     height: 100%;
     width: 100%;
@@ -269,20 +272,21 @@
     border-radius: 5px;
     font-size: 18px;
     height: 100%;
-    width: 18%;
-    padding: 0 1px 0 1px;
+    width: 20%;
+    padding: 0 1px 0 5px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_angle {
-    width: 38%;
+    width: 40%;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_angle .div_pedalsize {
-    font-size: 13px;
+    font-size: 14px;
+    margin: 0px 3px 3px 1px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_pedal_direction {
     font-size: 15px;
     height: 100%;
-    width: 22%;
-    margin: 0px 0px 1px 1px;
+    width: 26%;
+    margin: 0px 5px 1px 2px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .footpedal_checkbox4 {
     flex: 1;
