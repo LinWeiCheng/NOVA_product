@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let closeoutputQuotationBtn = document.getElementById(
     "closeoutputQuotationBtn"
   );
+  let totalPricedisplay = document.getElementById("TotalPrice");
   let container = document.getElementById("myContainer");
   let QuotationDiv = document.getElementById("Quotation");
   let printButton = document.getElementById("printButton");
@@ -21,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     container.style.display = "none";
     document.body.style.backgroundColor = "#ffd76b";
     printButton.style.visibility = "visible";
+    totalPricedisplay.style.visibility = "hidden";
     //printPDFButton.style.visibility = "visible";
-
 
     // 創建浮水印圖片
     let watermark = document.createElement("img");
@@ -42,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     QuotationDiv.classList.remove("visible"); // 隱藏大 Div
     container.style.display = "";
     printButton.style.visibility = "hidden";
+    totalPricedisplay.style.visibility = "visible";
+
   });
 
   if (QuotationDiv) {
@@ -336,6 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let sealtd = document.createElement("td");
     sealtd.classList.add("sealtd");
     sealtd.style.padding = "0px";
+    sealtd.style.border = "0px";
     sealtd.style.display = "flex";
     sealtd.style.flexDirection = "column";
     sealtd.style.alignItems = "center"; // 水平置中
@@ -346,14 +350,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let sealtextdiv = document.createElement("div");
     sealtextdiv.classList.add("sealtextdiv");
     sealtextdiv.textContent = "公司簽章";
-    sealtextdiv.style.borderBottom = "3px solid black";
+    sealtextdiv.style.borderBottom = "2px solid black";
     sealtextdiv.colSpan = 1; // 4格合併
     sealtextdiv.style.color = "red";
     sealtextdiv.style.fontWeight = "900";
     sealtextdiv.style.fontSize = "14px";
     sealtextdiv.style.width = "100%"; // 寬度拉滿
     sealtextdiv.style.textAlign = "center"; // 文字水平置中
-    sealtextdiv.style.padding = "1px 4px 0 4px";
+    sealtextdiv.style.padding = "0px 0px 0 0px";
     sealtd.appendChild(sealtextdiv);
 
     // 創建 sealimgdiv 圖片容器，直接用 div 加背景圖
@@ -411,7 +415,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return table;
   }
 });
-
 
 document.getElementById("printButton").addEventListener("click", function () {
   let printContent = document.getElementById("Quotation").outerHTML; // 取得 Quotation div 內容
