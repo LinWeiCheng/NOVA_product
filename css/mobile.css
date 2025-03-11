@@ -238,7 +238,7 @@
     flex: 1;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .footpedal_checkbox2 .content-checkbox {
-    margin: 17.5px 1px 10px 1px;
+    margin: 17.5px 1px 10px 10px;
     transform: scale(1.5);
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_type {
@@ -265,7 +265,7 @@
     margin: 0 2px 0 0;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .footpedal_checkbox3 .content-checkbox {
-    margin: 10px 0 10px 0;
+    margin: 10px 0 10px 10px;
     transform: scale(1.5);
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_type {
@@ -293,7 +293,7 @@
     margin: 0 4px 0 4px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .footpedal_checkbox4 .content-checkbox {
-    margin: 10px 0 10px 0;
+    margin: 10px 0 10px 8px;
     transform: scale(1.5);
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .div_notice {

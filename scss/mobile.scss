@@ -360,7 +360,7 @@
                             flex: 1;
 
                             .content-checkbox {
-                                margin: 17.5px 1px 10px 1px;
+                                margin: 17.5px 1px 10px 10px;
                                 transform: scale(1.5);
                             }
                         }
@@ -395,7 +395,7 @@
                             margin: 0 2px 0 0;
 
                             .content-checkbox {
-                                margin: 10px 0 10px 0;
+                                margin: 10px 0 10px 10px;
                                 transform: scale(1.5);
                             }
                         }
@@ -431,7 +431,7 @@
                             margin: 0 4px 0 4px;
 
                             .content-checkbox {
-                                margin: 10px 0 10px 0;
+                                margin: 10px 0 10px 8px;
                                 transform: scale(1.5);
                             }
                         }
@@ -943,9 +943,6 @@
                     }
                 }
                 .trnotice{
-                    .noticetd{
-
-                    }
                     .sealtd{
                         border: 0px;
                         .sealtextdiv{
