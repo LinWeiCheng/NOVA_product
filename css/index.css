@@ -299,6 +299,17 @@ body {
   width: auto;
   height: 42px;
   cursor: default;
+  position: relative;
+  display: inline-block;
+}
+.target .target_img::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: transparent;
 }
 .target .target_img img {
   width: 40px;
