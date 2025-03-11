@@ -1,13 +1,85 @@
 let left = document.querySelector(".leftcontent");
 /*-----  1.車體顏色點擊列  -----*/
-left.addEventListener("click", function (event) {
+
+/*--- 車體顏色點擊列-圖片箭頭部分   ---*/
+let targetimg_1 = document.querySelector(".target_img");
+targetimg_1.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_1 = event.target;
+  let carOrder = tgimg_1.closest(".car-order"); // 找到最近的 .car-order
+  //確認我點擊到的位置是否是car-order的箭頭
+  if (carOrder.className.trim() === "car-order") {
+    let introdutionid = carOrder.querySelector(".car_color"); // 在 car-order 內部找 car_color
+    let introdution = carOrder.querySelector(".subtitle"); // 在 car-order 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (visibilityValue === "hidden") {
+        let Price_carcolor = document.querySelectorAll(".pricing");
+        Price_carcolor.forEach(function (openIntro) {
+          let nowprice_color = Price_carcolor[0].nextElementSibling;
+          if (
+            openIntro.getAttribute("data-price-carcolor") === "carcolor" &&
+            nowprice_color.getAttribute("data-nowprice-carcolor") ===
+              "nowcarcolor"
+          ) {
+            if (introdution.getAttribute("data-collapse-status") === "0") {
+              //把data-collapse-status改成1
+              introdution.setAttribute("data-collapse-status", "1");
+
+              //carcolor勾選位置大小設置
+              introdutionid.style.visibility = "visible";
+              introdutionid.style.padding = "1px 1px 1px 6px";
+              introdutionid.style.width = "calc(100% - 10px)";
+              introdutionid.style.flexWrap = "wrap";
+              introdutionid.style.border = "3px dashed black";
+              introdutionid.style.borderTop = "none";
+              introdutionid.style.display = "flex";
+              introdutionid.style.margin = "3px 0px 5px 8px";
+              introdutionid.style.height = "auto";
+            } else {
+              //把data-collapse-status改成0
+              introdution.setAttribute("data-collapse-status", "0");
+
+              // //建議售價標題隱藏
+              introdutionid.style.visibility = "hidden";
+              introdutionid.style.height = "0";
+              introdutionid.style.padding = "0";
+              introdutionid.style.margin = "0";
+              introdutionid.style.border = "0px dashed black";
+            }
+          }
+        });
+      } else {
+        //把data-collapse-status改成0
+        introdution.setAttribute("data-collapse-status", "0");
+
+        // //建議售價標題隱藏
+        introdutionid.style.visibility = "hidden";
+        introdutionid.style.height = "0";
+        introdutionid.style.padding = "0";
+        introdutionid.style.margin = "0";
+        introdutionid.style.border = "0px dashed black";
+      }
+    }
+  }
+});
+
+/*---  車體顏色點擊列-subtitle部分  ---*/
+let carorder = document.querySelector(".car-order");
+carorder.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
   let introdution = event.target;
-  //確認我點擊到的位置是否是carcolor
-  if (showinfo === "carcolor") {
-    let introdutionid = event.target.nextElementSibling;
-    let Price_carcolor = document.querySelectorAll(".pricing");
+  let introdutionid = event.target.nextElementSibling;
+  let Price_carcolor = document.querySelectorAll(".pricing");
+  let targetimg = document.querySelector(".target_img");
+  let img = targetimg.querySelector("img");
+
+  let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+  if (visibilityValue === "hidden") {
     Price_carcolor.forEach(function (openIntro) {
       let nowprice_color = Price_carcolor[0].nextElementSibling;
       if (
@@ -28,17 +100,27 @@ left.addEventListener("click", function (event) {
           introdutionid.style.display = "flex";
           introdutionid.style.margin = "3px 0px 5px 8px";
           introdutionid.style.height = "auto";
-        } else {
-          //把data-collapse-status改成0
-          introdution.setAttribute("data-collapse-status", "0");
-
-          // //建議售價標題隱藏
-          introdutionid.style.visibility = "hidden";
-          introdutionid.style.height = "0";
-          introdutionid.style.padding = "0";
-          introdutionid.style.margin = "0";
-          introdutionid.style.border = "0px dashed black";
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
         }
+      }
+    });
+  }
+  //確認我點擊到的位置是否是carcolor
+  else if (showinfo === "carcolor") {
+    Price_carcolor.forEach(function () {
+      //把data-collapse-status改成0
+      introdution.setAttribute("data-collapse-status", "0");
+
+      // //建議售價標題隱藏
+      introdutionid.style.visibility = "hidden";
+      introdutionid.style.height = "0";
+      introdutionid.style.padding = "0";
+      introdutionid.style.margin = "0";
+      introdutionid.style.border = "0px dashed black";
+      if (img) {
+        img.setAttribute("src", "./img/black triangle.png");
       }
     });
   }
@@ -116,7 +198,98 @@ for (let i = 0; i < 9; i++) {
   SdC_container.appendChild(divSd_Check);
 }
 
-left.addEventListener("click", function (event) {
+
+/*--- 車體座板點擊列-圖片箭頭部分   ---*/
+// document.addEventListener("click", function (event) {
+//   //showinfo為我設定的data名稱
+//   let tgimg_2 = event.target;
+//   let carseat2 = tgimg_2.closest(".car-seat"); // 找到最近的 .car-seat
+  
+//   //確認我點擊到的位置是否是car-seat的箭頭
+//   if (carseat2.className.trim() === "car-seat") {
+//     let introdutionid = carseat2.querySelector(".basesize"); // 在 car-seat 內部找 basesize
+//     let introdution = carseat2.querySelector(".subtitle"); // 在 car-seat 內部找 subtitle
+
+//     if (introdutionid) {
+//       // 取得 `visibility` 的計算後樣式
+//       let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+//       if (visibilityValue === "hidden") {
+//         let Price_carbasesize = document.querySelectorAll(".pricing");
+
+//         Price_carbasesize.forEach(function (openIntro) {
+//           //直接判斷是第幾個.Price
+//           let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
+    
+//           if (
+//             openIntro.getAttribute("data-price-carbasesize") === "carbasesize" &&
+//             nowprice_basesize.getAttribute("data-nowprice-carbasesize") ===
+//               "nowcarbasesize"
+//           ) {
+//             if (introdution.getAttribute("data-collapse-status") === "0") {
+//               //把data-collapse-status改成1
+//               introdution.setAttribute("data-collapse-status", "1");
+//                 //carbasesize勾選位置大小設置
+//                 introdutionid.style.visibility = "visible";
+//                 introdutionid.style.padding = "7px 1px 0px 3px";
+//                 introdutionid.style.width = "calc(100% - 8px)";
+//                 introdutionid.style.flexWrap = "wrap";
+//                 introdutionid.style.border = "3px dashed black";
+//                 introdutionid.style.borderTop = "none";
+//                 introdutionid.style.display = "flex";
+//                 introdutionid.style.margin = "0px 5px 5px 7px";
+//                 introdutionid.style.height = "auto";
+              
+//               //建議售價標題顯示
+//               openIntro.style.display = "block";
+    
+//               //建議售價金額顯示
+//               nowprice_basesize.style.display = "block";
+//               nowprice_basesize.style.display = "flex";
+//               nowprice_basesize.style.width = "100%";
+//               nowprice_basesize.style.height = "90%";
+//               nowprice_basesize.style.color = "#000000";
+//               nowprice_basesize.style.borderRadius = "8px";
+//               nowprice_basesize.style.padding = "1px";
+//               nowprice_basesize.style.margin = "3px 3px 3px 4px";
+//               nowprice_basesize.style.textAlign = "center";
+//               nowprice_basesize.style.fontSize = "20px";
+//               nowprice_basesize.style.fontWeight = "600";
+//               nowprice_basesize.style.alignItems = "center";
+//               nowprice_basesize.style.justifyContent = "center";
+    
+//               if (window.matchMedia("(max-width: 650px)").matches) {
+//                 nowprice_basesize.style.fontSize = "13px";
+//               }
+//             }
+//           }
+//         });
+//       } else {
+//         let Price_carbasesize = document.querySelectorAll(".pricing");
+
+//         Price_carbasesize.forEach(function (openIntro) {
+//           let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
+//         //把data-collapse-status改成0
+//         introdution.setAttribute("data-collapse-status", "0");
+
+//         //建議售價標題隱藏
+//           introdutionid.style.visibility = "hidden";
+//           introdutionid.style.height = "0";
+//           introdutionid.style.padding = "0";
+//           introdutionid.style.border = "0px dashed black";
+//           introdutionid.style.margin = "0";
+        
+//         //建議售價金額隱藏
+//         openIntro.style.display = "none";
+//         nowprice_basesize.style.display = "none";
+//       }
+//       )};
+//     }
+//   }
+// });
+
+let carseat = document.querySelector(".car-seat");
+carseat.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
   let introdution = event.target;
@@ -181,7 +354,7 @@ left.addEventListener("click", function (event) {
           nowprice_basesize.style.justifyContent = "center";
 
           if (window.matchMedia("(max-width: 650px)").matches) {
-            nowprice_basesize.style.fontSize = "15px";
+            nowprice_basesize.style.fontSize = "13px";
           }
         } else {
           //把data-collapse-status改成0
@@ -802,31 +975,69 @@ function allcheckboxfalsefct() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // 取得所有 subtitle 和 subtitle_2
-  const subtitles = document.querySelectorAll(".subtitle, .subtitle_2");
+document.addEventListener("click", function (event) {
+  console.log("使用者點擊了:", event.target);
+});
 
-  subtitles.forEach(subtitle => {
-      subtitle.addEventListener("click", function () {
-          // 找到最近的 .target_img 內的 img
-          const img = this.closest(".target").querySelector(".target_img img");
+//確保箭頭圖片每次都有更新
+document.addEventListener("DOMContentLoaded", () => {
+  let targetImages = document.querySelectorAll(".target_img");
 
-          if (img) {
-              // 取得目前的圖片路徑
-              const currentSrc = img.getAttribute("src");
+  targetImages.forEach((target) => {
+    target.addEventListener("click", function () {
+      let img = this.querySelector("img");
 
-              // 根據當前圖片路徑切換
-              if (currentSrc.includes("black triangle.png")) {
-                  img.setAttribute("src", "./img/black triangle after.png");
-              } else {
-                  img.setAttribute("src", "./img/black triangle.png");
-              }
-          }
-      });
+      if (img) {
+        // 取得完整的圖片 URL
+        let currentSrc = new URL(img.getAttribute("src"), document.baseURI)
+          .href;
+
+        // 取得完整的圖片網址，確保一致
+        let blackTriangle = new URL(
+          "./img/black triangle.png",
+          document.baseURI
+        ).href;
+        let blackTriangleAfter = new URL(
+          "./img/black triangle after.png",
+          document.baseURI
+        ).href;
+
+        // 確保匹配完整網址
+        if (currentSrc === blackTriangle) {
+          img.setAttribute("src", blackTriangleAfter);
+        } else {
+          img.setAttribute("src", blackTriangle);
+        }
+
+        console.log("圖片已更換為：" + img.getAttribute("src"));
+      }
+    });
   });
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   取得所有 subtitle 和 subtitle_2
+//   let subtitles = document.querySelectorAll(".subtitle, .subtitle_2");
 
+//   subtitles.forEach((subtitle) => {
+//     subtitle.addEventListener("click", function () {
+//       // 找到最近的 .target_img 內的 img
+//       let img = this.closest(".target").querySelector(".target_img img");
+
+//       if (img) {
+//         // 取得目前的圖片路徑
+//         const currentSrc = img.getAttribute("src");
+
+//         // 根據當前圖片路徑切換
+//         if (currentSrc.includes("black triangle.png")) {
+//           img.setAttribute("src", "./img/black triangle after.png");
+//         } else {
+//           img.setAttribute("src", "./img/black triangle.png");
+//         }
+//       }
+//     });
+//   });
+// });
 
 // document.getElementById("printPDFButton").addEventListener("click", function () {
 //   // 使用 html2canvas 渲染 Quotation div 為圖片
