@@ -165,7 +165,7 @@ Price.forEach(function (openIntro) {
         }
       });
     } else {
-      nowprice_size.textContent = "0元"; // 清空文字
+      //nowprice_size.textContent = "0元"; // 清空文字
     }
   }
 
