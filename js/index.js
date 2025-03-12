@@ -127,6 +127,7 @@ carorder.addEventListener("click", function (event) {
 });
 
 /*-----  2.座板尺寸點擊列  -----*/
+
 //座寬尺寸黑格子
 let SW_container = document.querySelector(".width_number");
 let SWCount = 30;
@@ -198,96 +199,100 @@ for (let i = 0; i < 9; i++) {
   SdC_container.appendChild(divSd_Check);
 }
 
-
 /*--- 車體座板點擊列-圖片箭頭部分   ---*/
-// document.addEventListener("click", function (event) {
-//   //showinfo為我設定的data名稱
-//   let tgimg_2 = event.target;
-//   let carseat2 = tgimg_2.closest(".car-seat"); // 找到最近的 .car-seat
-  
-//   //確認我點擊到的位置是否是car-seat的箭頭
-//   if (carseat2.className.trim() === "car-seat") {
-//     let introdutionid = carseat2.querySelector(".basesize"); // 在 car-seat 內部找 basesize
-//     let introdution = carseat2.querySelector(".subtitle"); // 在 car-seat 內部找 subtitle
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_2 = event.target;
+  let carseat2 = tgimg_2.closest(".car-seat"); // 找到最近的 .car-seat
+  let imgCarseat = event.target.dataset.imgCarseat;
 
-//     if (introdutionid) {
-//       // 取得 `visibility` 的計算後樣式
-//       let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+  //確認我點擊到的位置是否是car-seat的箭頭
+  if (carseat2 && carseat2.className.trim() === "car-seat") {
+    let introdutionid = carseat2.querySelector(".basesize"); // 在 car-seat 內部找 basesize
+    let introdution = carseat2.querySelector(".subtitle"); // 在 car-seat 內部找 subtitle
 
-//       if (visibilityValue === "hidden") {
-//         let Price_carbasesize = document.querySelectorAll(".pricing");
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
 
-//         Price_carbasesize.forEach(function (openIntro) {
-//           //直接判斷是第幾個.Price
-//           let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
-    
-//           if (
-//             openIntro.getAttribute("data-price-carbasesize") === "carbasesize" &&
-//             nowprice_basesize.getAttribute("data-nowprice-carbasesize") ===
-//               "nowcarbasesize"
-//           ) {
-//             if (introdution.getAttribute("data-collapse-status") === "0") {
-//               //把data-collapse-status改成1
-//               introdution.setAttribute("data-collapse-status", "1");
-//                 //carbasesize勾選位置大小設置
-//                 introdutionid.style.visibility = "visible";
-//                 introdutionid.style.padding = "7px 1px 0px 3px";
-//                 introdutionid.style.width = "calc(100% - 8px)";
-//                 introdutionid.style.flexWrap = "wrap";
-//                 introdutionid.style.border = "3px dashed black";
-//                 introdutionid.style.borderTop = "none";
-//                 introdutionid.style.display = "flex";
-//                 introdutionid.style.margin = "0px 5px 5px 7px";
-//                 introdutionid.style.height = "auto";
-              
-//               //建議售價標題顯示
-//               openIntro.style.display = "block";
-    
-//               //建議售價金額顯示
-//               nowprice_basesize.style.display = "block";
-//               nowprice_basesize.style.display = "flex";
-//               nowprice_basesize.style.width = "100%";
-//               nowprice_basesize.style.height = "90%";
-//               nowprice_basesize.style.color = "#000000";
-//               nowprice_basesize.style.borderRadius = "8px";
-//               nowprice_basesize.style.padding = "1px";
-//               nowprice_basesize.style.margin = "3px 3px 3px 4px";
-//               nowprice_basesize.style.textAlign = "center";
-//               nowprice_basesize.style.fontSize = "20px";
-//               nowprice_basesize.style.fontWeight = "600";
-//               nowprice_basesize.style.alignItems = "center";
-//               nowprice_basesize.style.justifyContent = "center";
-    
-//               if (window.matchMedia("(max-width: 650px)").matches) {
-//                 nowprice_basesize.style.fontSize = "13px";
-//               }
-//             }
-//           }
-//         });
-//       } else {
-//         let Price_carbasesize = document.querySelectorAll(".pricing");
+      if (imgCarseat === "carseatImg") {
+        if (visibilityValue === "hidden") {
+          let Price_carbasesize = document.querySelectorAll(".pricing");
 
-//         Price_carbasesize.forEach(function (openIntro) {
-//           let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
-//         //把data-collapse-status改成0
-//         introdution.setAttribute("data-collapse-status", "0");
+          Price_carbasesize.forEach(function (openIntro) {
+            //直接判斷是第幾個.Price
+            let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
 
-//         //建議售價標題隱藏
-//           introdutionid.style.visibility = "hidden";
-//           introdutionid.style.height = "0";
-//           introdutionid.style.padding = "0";
-//           introdutionid.style.border = "0px dashed black";
-//           introdutionid.style.margin = "0";
-        
-//         //建議售價金額隱藏
-//         openIntro.style.display = "none";
-//         nowprice_basesize.style.display = "none";
-//       }
-//       )};
-//     }
-//   }
-// });
+            if (
+              openIntro.getAttribute("data-price-carbasesize") ===
+                "carbasesize" &&
+              nowprice_basesize.getAttribute("data-nowprice-carbasesize") ===
+                "nowcarbasesize"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+                //carbasesize勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "7px 1px 0px 3px";
+                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.flexWrap = "wrap";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.display = "flex";
+                introdutionid.style.margin = "0px 5px 5px 7px";
+                introdutionid.style.height = "auto";
 
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_basesize.style.display = "block";
+                nowprice_basesize.style.display = "flex";
+                nowprice_basesize.style.width = "100%";
+                nowprice_basesize.style.height = "90%";
+                nowprice_basesize.style.color = "#000000";
+                nowprice_basesize.style.borderRadius = "8px";
+                nowprice_basesize.style.padding = "1px";
+                nowprice_basesize.style.margin = "3px 3px 3px 4px";
+                nowprice_basesize.style.textAlign = "center";
+                nowprice_basesize.style.fontSize = "20px";
+                nowprice_basesize.style.fontWeight = "600";
+                nowprice_basesize.style.alignItems = "center";
+                nowprice_basesize.style.justifyContent = "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_basesize.style.fontSize = "13px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_carbasesize = document.querySelectorAll(".pricing");
+
+          Price_carbasesize.forEach(function (openIntro) {
+            let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            //建議售價金額隱藏
+            openIntro.style.display = "none";
+            nowprice_basesize.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+
+/*---  車體座板點擊列-subtitle部分  ---*/
 let carseat = document.querySelector(".car-seat");
 carseat.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -299,6 +304,8 @@ carseat.addEventListener("click", function (event) {
     let introdutionid1 = event.target.parentNode.nextElementSibling;
 
     let Price_carbasesize = document.querySelectorAll(".pricing");
+    let carSeat = carseat.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = carSeat.querySelector("img");
 
     Price_carbasesize.forEach(function (openIntro) {
       //直接判斷是第幾個.Price
@@ -353,6 +360,10 @@ carseat.addEventListener("click", function (event) {
           nowprice_basesize.style.alignItems = "center";
           nowprice_basesize.style.justifyContent = "center";
 
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_basesize.style.fontSize = "13px";
           }
@@ -377,6 +388,10 @@ carseat.addEventListener("click", function (event) {
           //建議售價金額隱藏
           openIntro.style.display = "none";
           nowprice_basesize.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
         }
       }
     });
@@ -384,7 +399,106 @@ carseat.addEventListener("click", function (event) {
 });
 
 /*-----  3.腳架點擊列  -----*/
-left.addEventListener("click", function (event) {
+
+/*--- 腳架點擊列-圖片箭頭部分   ---*/
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_3 = event.target;
+  let carseat3 = tgimg_3.closest(".car-tripod"); // 找到最近的 .car-tripod
+  let showinfo = event.target.dataset.showinfo;
+  let imgCartripod = event.target.dataset.imgCartripod;
+  console.log(imgCartripod);
+
+  //確認我點擊到的位置是否是car-tripod的箭頭
+  if (carseat3 && carseat3.className.trim() === "car-tripod") {
+    let introdutionid = carseat3.querySelector(".tripodgroup"); // 在 car-tripod 內部找 tripodgroup
+    let introdution = carseat3.querySelector(".subtitle"); // 在 car-tripod 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgCartripod === "cartripodImg") {
+        if (visibilityValue === "hidden") {
+          let Price_cartripod = document.querySelectorAll(".pricing");
+
+          Price_cartripod.forEach(function (openIntro) {
+            //直接判斷是第幾個.Price
+            let nowprice_tripod = Price_cartripod[2].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-cartripod") === "cartripod" &&
+              nowprice_tripod.getAttribute("data-nowprice-cartripod") ===
+                "nowcartripod"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //cartripod勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.flexWrap = "wrap";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.display = "flex";
+                introdutionid.style.margin = "0px 5px 5px 7px";
+                introdutionid.style.height = "auto";
+                introdutionid.style.justifyContent = "space-between";
+
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_tripod.style.display = "block";
+                nowprice_tripod.style.display = "flex";
+                nowprice_tripod.style.width = "100%";
+                nowprice_tripod.style.height = "90%";
+                nowprice_tripod.style.color = "#000000";
+                nowprice_tripod.style.borderRadius = "8px";
+                nowprice_tripod.style.padding = "1px";
+                nowprice_tripod.style.margin = "3px 3px 3px 4px";
+                nowprice_tripod.style.textAlign = "center";
+                nowprice_tripod.style.fontSize = "21px";
+                nowprice_tripod.style.fontWeight = "600";
+                nowprice_tripod.style.alignItems = "center";
+                nowprice_tripod.style.justifyContent = "center";
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_tripod.style.fontSize = "15px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_cartripod = document.querySelectorAll(".pricing");
+
+          Price_cartripod.forEach(function (openIntro) {
+            let nowprice_tripod = Price_cartripod[2].nextElementSibling;
+            //把data-collapse-status改成0
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            //建議售價金額隱藏
+            openIntro.style.display = "none";
+            nowprice_tripod.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+
+/*---  腳架點擊列-subtitle部分  ---*/
+let cartripod = document.querySelector(".car-tripod");
+cartripod.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
   let introdution = event.target;
@@ -392,6 +506,8 @@ left.addEventListener("click", function (event) {
   if (showinfo === "cartripod") {
     let introdutionid = event.target.nextElementSibling;
     let Price_cartripod = document.querySelectorAll(".pricing");
+    let carTripod = cartripod.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = carTripod.querySelector("img");
 
     Price_cartripod.forEach(function (openIntro) {
       //直接判斷是第幾個.Price
@@ -436,6 +552,10 @@ left.addEventListener("click", function (event) {
           nowprice_tripod.style.alignItems = "center";
           nowprice_tripod.style.justifyContent = "center";
 
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_tripod.style.fontSize = "15px";
           }
@@ -453,6 +573,10 @@ left.addEventListener("click", function (event) {
           //建議售價金額隱藏
           openIntro.style.display = "none";
           nowprice_tripod.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
         }
       }
     });
@@ -923,6 +1047,10 @@ left.addEventListener("click", function (event) {
   }
 });
 
+/*----- n.其他  -----*/
+let carother = document.querySelector(".car-other");
+carother.style.visibility = "hidden";
+
 /*-----  Last.總價格相加  -----*/
 function formatPrice(price) {
   return new Intl.NumberFormat("en-US").format(price);
@@ -975,10 +1103,6 @@ function allcheckboxfalsefct() {
   });
 }
 
-document.addEventListener("click", function (event) {
-  console.log("使用者點擊了:", event.target);
-});
-
 //確保箭頭圖片每次都有更新
 document.addEventListener("DOMContentLoaded", () => {
   let targetImages = document.querySelectorAll(".target_img");
@@ -1013,6 +1137,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+
+//測試我每次都點了甚麼
+document.addEventListener("click", function (event) {
+  console.log("使用者點擊了:", event.target);
 });
 
 // document.addEventListener("DOMContentLoaded", function () {
