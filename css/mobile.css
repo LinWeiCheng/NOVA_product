@@ -582,6 +582,17 @@
   .car-bandage .target .pricecontent .pricing {
     font-size: 11px;
   }
+  /*-----  n.其他點擊列  -----*/
+  .car-other {
+    visibility: hidden;
+  }
+  .car-other .target .chkcontent_nth {
+    width: 100%;
+  }
+  .car-other .target .chkcontent_nth .subtitle {
+    width: 100%;
+    height: 28px;
+  }
   .Quotation-div {
     width: 430px;
     height: 680px;
