@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden"; // 禁止背景滾動
     container.style.display = "none";
     document.body.style.backgroundColor = "#ffd76b";
-    printButton.style.visibility = "visible";
+    if (window.matchMedia("(min-width: 650px)").matches) {
+      printButton.style.visibility = "visible";
+    }
+
     totalPricedisplay.style.visibility = "hidden";
     //printPDFButton.style.visibility = "visible";
 
