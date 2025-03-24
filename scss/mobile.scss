@@ -5,34 +5,6 @@
     }
 }
 
-/*-----  1.車體顏色手機板  -----*/
-.car_color {
-
-    @media screen and (max-width:1100px) {}
-
-    @media screen and (max-width:650px) {
-        .cherry_red {
-            width: 100%;
-        }
-
-        .pearl_orange {
-            width: 100%;
-        }
-
-        .rose_gold {
-            width: 100%;
-        }
-
-        .sky_blue {
-            width: 100%;
-        }
-
-        .camo_gray {
-            width: 100%;
-        }
-    }
-}
-
 // @media screen and (max-width: 1100px) {
 //     // 隱藏原有的內部 div（紅色字部分）
 //     .subtitle[data-showinfo="carbasesize"] > div {
@@ -177,6 +149,36 @@
         }
     }
 
+    /*-----  1.車體顏色手機板  -----*/
+    .car-order {
+        .target {
+            .chkcontent_1st {
+                .car_color {
+
+                    .cherry_red {
+                        width: 100%;
+                    }
+
+                    .pearl_orange {
+                        width: 100%;
+                    }
+
+                    .rose_gold {
+                        width: 100%;
+                    }
+
+                    .sky_blue {
+                        width: 100%;
+                    }
+
+                    .camo_gray {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
     /*-----  2.座板尺寸手機板  -----*/
     .car-seat {
         margin: 0px;
@@ -196,15 +198,19 @@
 
                         .width_cmCount {
                             .width_number {
+                                margin: 0px 0px 0px 5px;
+
                                 .generated_SWdiv {
                                     padding: 5px;
+                                    font-size: 20px;
                                 }
                             }
 
                             .width_chkblock {
                                 #SWC_checkbox {
-                                    margin: 12.5px 4px 13px 9px;
-                                    transform: scale(1.5);
+                                    margin: 17px 10px 13px 0px;
+                                    ;
+                                    transform: scale(2);
                                 }
                             }
                         }
@@ -216,20 +222,24 @@
                         padding: 0px 3px 0px 3px;
 
                         .seat-deep {
-                            font-size: 11px;
+                            font-size: 12px;
                         }
 
                         .deep_cmCount {
                             .deep_number {
+                                margin: 0px 0px 0px 8px;
+
                                 .generated_Sddiv {
+                                    font-size: 20px;
                                     padding: 5px;
                                 }
                             }
 
                             .deep_chkblock {
                                 #SdC_checkbox {
-                                    margin: 12.5px 4px 13px 9px;
-                                    transform: scale(1.5);
+                                    margin: 17px 11px 13px 0px;
+                                    ;
+                                    transform: scale(2);
                                 }
                             }
                         }
@@ -249,23 +259,25 @@
     .car-tripod {
         .chkcontent_3rd {
             .tripodgroup {
-                padding: 0px 1px 1px 1px;
+                padding: 0px 1px 0px 0px;
 
                 .degrees {
-                    font-size: 13px;
+                    margin: 2px;
+                    font-size: 15px;
+                    padding: 1px;
 
                     #checkbox_77degrees {
-                        margin: 2px 0px 2px 3px;
+                        margin: 4px 0px 2px 3px;
                         transform: scale(1.5);
                     }
 
                     #checkbox_80degrees {
-                        margin: 2px 0px 2px 3px;
+                        margin: 4px 0px 2px 3px;
                         transform: scale(1.5);
                     }
 
                     #checkbox_90degrees {
-                        margin: 2px 0px 2px 3px;
+                        margin: 4px 0px 2px 3px;
                         transform: scale(1.5);
                     }
                 }
@@ -295,7 +307,7 @@
                         .div_twopiece_angle {
                             font-size: 14px;
                             height: 100%;
-                            width: 65%;
+                            width: 68%;
                             margin: 0px 2px 0 1px;
 
                             .twopiece_anglefixed {
@@ -343,24 +355,24 @@
                         }
 
                         .pedalcmcmgroup {
-                            width: 34%;
+                            width: 39%;
                             height: 100%;
-                            margin: 0 3px 0 2px;
+                            margin: 0 0px 0 2px;
 
                             .pedalcm {
                                 font-size: 16px;
-                                margin: 1px 3px 1px 0;
+                                margin: 0px 0px 1px 0;
                                 height: 100%;
                                 width: 100%;
                             }
                         }
 
                         .footpedal_checkbox2 {
-                            margin: 0px 1px 0 1px;
+                            margin: 0px 1px 0 5px;
                             flex: 1;
 
                             .content-checkbox {
-                                margin: 17.5px 1px 10px 10px;
+                                margin: 17.5px 1px 10px px;
                                 transform: scale(1.5);
                             }
                         }
@@ -386,13 +398,13 @@
                         .div_pedal_direction {
                             font-size: 15px;
                             height: 100%;
-                            width: 24%;
-                            margin: 0px 3px 0px 2px;
+                            width: 29%;
+                            margin: 0px 0px 0px 2px;
                         }
 
                         .footpedal_checkbox3 {
                             flex: 1;
-                            margin: 0 2px 0 0;
+                            margin: 0 8px 0 0;
 
                             .content-checkbox {
                                 margin: 10px 0 10px 10px;
@@ -422,13 +434,13 @@
                         .div_pedal_direction {
                             font-size: 15px;
                             height: 100%;
-                            width: 24%;
-                            margin: 0px 1px 1px 0px;
+                            width: 28%;
+                            margin: 0px 0px 1px 0px;
                         }
 
                         .footpedal_checkbox4 {
                             flex: 1;
-                            margin: 0 4px 0 4px;
+                            margin: 0 6px 0 0px;
 
                             .content-checkbox {
                                 margin: 10px 0 10px 8px;
@@ -462,20 +474,20 @@
 
                 .head_supports_font {
                     margin: 5px 0px 0px 0px;
-                    font-size: 16px;
-                    padding: 0 1px 0 1px;
-                    width: 35%;
-                    font-size: 16px;
+                    padding: 1px 1px 1px 6px;
+                    width: 40%;
+                    font-size: 14px;
                 }
 
                 .head_supports_size {
-                    width: 45%;
-                    font-size: 16px;
-                    margin: 5px 0 0px 0px;
+                    width: 40%;
+                    font-size: 14px;
+                    margin: 2px 0 0px 0px;
+                    padding: 3px 6px 1px 0px;
                 }
 
                 .head_supports_checkbox {
-                    margin: 17px 19px 0 0px;
+                    margin: 17px 9px 0 0px;
                     padding: 0px;
 
                     .content-checkbox {
@@ -503,11 +515,11 @@
                             padding: 1px 0px 0px 0px;
                             font-size: 15px;
                             margin: 0px 1px 0 0;
-                            width: 35%;
+                            width: 40%;
                         }
 
                         .back_sizegroup {
-                            width: 47%;
+                            width: 50%;
 
                             .back_size {
                                 font-size: 17px;
@@ -543,7 +555,7 @@
     }
 
     /*-----  7.軀幹子系統-軀幹側支撐點擊列手機板  -----*/
-    .car-LaterTrunk_supports {
+    .car-latertrunk_supports {
         .target {
             .chkcontent_7th {
                 .trunk_suppotrts_LaterTrunk {
@@ -553,13 +565,13 @@
                             font-size: 14px;
                             padding: 0px 1px 0px 5px;
                             margin: 2px 1px 0px 1px;
-                            width: 20%;
+                            width: 25%;
                         }
 
                         .side_sizegroup {
                             height: 100%;
                             margin: 2px 1px 0px 1px;
-                            width: 25%;
+                            width: 30%;
 
                             .side_size {
                                 font-size: 16px;
@@ -572,7 +584,7 @@
 
                             .side_sizeSgroup {
                                 height: 50%;
-                                margin: 0px 1px 1px 1px;
+                                margin: 0px 5px 0px 6px;
 
                                 .side_SLR1 {
                                     font-size: 18px;
@@ -585,7 +597,7 @@
 
                             .side_sizeLgroup {
                                 height: 50%;
-                                margin: 0px 1px 3px 1px;
+                                margin: 2px 5px 0px 6px;
 
                                 .side_MLR1 {
                                     font-size: 18px;
@@ -610,31 +622,31 @@
 
             .pricecontent {
                 .pricing {
-                    font-size: 11px;
+                    font-size: 12px;
                 }
             }
         }
     }
 
-    /*-----  8.底座子系統點擊列手機版  -----*/
+    /*-----  8.底座子系統-座板點擊列手機版  -----*/
     .car-seatbase {
         .target {
             .chkcontent_8th {
                 .seatbasegroup {
                     .seat_supportsgroup {
                         .Nova_seatbase_title {
-                            font-size: 15px;
-                            width: 30%;
+                            font-size: 16px;
+                            width: 35%;
                             padding: 0px 1px 0px 2px;
                             margin: 1px 1px 1px 1px;
                         }
 
                         .seatbase_sizegroup {
-                            width: 50%;
+                            width: 55%;
                             height: 100%;
 
                             .seatbase_size {
-                                font-size: 14px;
+                                font-size: 16px;
                                 margin: 1px 0px 1px 0px;
                                 padding: 1px;
                                 height: 12%;
@@ -642,12 +654,11 @@
                         }
 
                         .seatbase_checkbox {
-                            margin: -5px 7px 0px 6px;
+                            margin: -1px 7px 0px 6px;
                             height: 100%;
 
                             .content-checkbox {
-                                margin: 18px 0px 11px 0px;
-                                ;
+                                margin: 12px 0px 6px 0px;
                                 transform: scale(1.5);
                             }
                         }
@@ -667,16 +678,68 @@
         }
     }
 
-    /*-----  9.綁帶子系統點擊列  -----*/
-    .car-bandage {
+    /*-----  9.底座子系統-座墊點擊列手機版  -----*/
+    .car-cushion {
         .target {
             .chkcontent_9th {
+                .cushiongroup {
+                    padding: 0px 1px 2px 3px;
+                    width: 100%;
+
+                    .Nova_cushiontitle {
+                        height: 100%;
+                        font-size: 15px;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+
+                    .cushiongroup_typegroup {
+                        width: 70%;
+                        margin: 0 0px 1px 3px;
+                        height: 100%;
+
+                        .cushion_type {
+                            font-size: 15px;
+                            height: 33%;
+                            margin: 1px 1px 1px 0px;
+                            padding: 0px;
+                        }
+
+                        .cushion_typeC {
+                            font-size: 13px;
+                            height: 34%;
+                            margin: 1px 1px 1px 0px
+                        }
+                    }
+
+                    .cushion_checkbox {
+                        margin: 2px 7px 0px 7px;
+
+                        .content-checkbox {
+                            transform: scale(1.5);
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    /*-----  10.綁帶子系統點擊列  -----*/
+    .car-bandage {
+        .target {
+            .chkcontent_10th {
                 .bandagegroup {
                     .Shoulder_chest_strapsgroup {
                         .chest_strapsgroup {
                             .chest_straps_title {
                                 font-size: 15px;
-                                width: 25%;
+                                width: 30%;
                                 padding: 1px 0px 0px 5px;
                                 margin: 1px 1px 1px 0;
                             }
@@ -728,8 +791,7 @@
                                 margin: 0 3px 0px 4px;
 
                                 .content-checkbox {
-                                    margin: 18px 0px 11px 7px;
-                                    ;
+                                    margin: 7px 0px 6px 2px;
                                     transform: scale(1.5);
                                 }
                             }
@@ -742,7 +804,7 @@
                             .pelvic_belt_title {
                                 font-size: 15px;
                                 height: 100%;
-                                width: 25%;
+                                width: 30%;
                                 padding: 0px 1px 0px 5px;
                                 margin: 1px 1px 1px 0px;
                             }
@@ -767,13 +829,13 @@
                                         font-size: 13px;
                                         padding: 1px 1px 1px 1px;
                                         margin: 1px;
-                                        width: 63%;
+                                        width: 80%;
                                         height: 100%;
                                     }
 
                                     .pointpelvic_belt_size {
                                         height: 100%;
-                                        width: 35%;
+                                        width: 25%;
 
                                         .pointpelvic_belt_fonts {
                                             font-size: 14px;
@@ -794,8 +856,7 @@
 
                             .pelvic_belt_checkbox {
                                 .content-checkbox {
-                                    margin: 18px 0px 11px 6px;
-                                    ;
+                                    margin: 11px 0px 7px 1px;
                                     transform: scale(1.5);
                                 }
                             }
@@ -805,22 +866,21 @@
                             margin: 1px 0 1px 0;
 
                             .calf_band {
-                                font-size: 16px;
-                                width: 25%;
+                                font-size: 15px;
+                                width: 30%;
                                 padding: 0px 0px 0px 0px;
                                 margin: 2px 2px 1px 1px;
                             }
 
                             .calf_font {
-                                font-size: 14px;
+                                font-size: 12px;
                                 width: 60%;
                                 padding: 1px 1px 1px 2px;
                                 margin: 2px 6px 1px 0px;
                             }
 
                             .content-checkbox {
-                                margin: 14px 0px 9px 4px;
-                                ;
+                                margin: 14px 0px 8px 1px;
                                 transform: scale(1.5);
                             }
                         }
@@ -829,8 +889,8 @@
                             margin: 1px 0 1px 0;
 
                             .calf_cuff {
-                                font-size: 16px;
-                                width: 25%;
+                                font-size: 15px;
+                                width: 30%;
                                 padding: 1px 1px 1px 5px;
                                 margin: 2px 2px 2px 1px;
                             }
@@ -839,12 +899,11 @@
                                 font-size: 14px;
                                 width: 60%;
                                 padding: 1px 1px 1px 1px;
-                                margin: 2px 5px 2px 0px;
+                                margin: 2px 2px 2px 0px;
                             }
 
                             .content-checkbox {
-                                margin: 18px 0px 11px 6px;
-                                ;
+                                margin: 10px 0px 8px 5px;
                                 transform: scale(1.5);
                             }
                         }
@@ -862,12 +921,14 @@
     }
 
     /*-----  n.其他點擊列  -----*/
-    .car-other{
+    .car-other {
         visibility: hidden;
-        .target{
-            .chkcontent_nth{
+
+        .target {
+            .chkcontent_nth {
                 width: 100%;
-                .subtitle{
+
+                .subtitle {
                     width: 100%;
                     height: 28px;
                 }
@@ -957,10 +1018,12 @@
                         }
                     }
                 }
-                .trnotice{
-                    .sealtd{
+
+                .trnotice {
+                    .sealtd {
                         border: 0px;
-                        .sealtextdiv{
+
+                        .sealtextdiv {
                             padding: 0px 0px 0px 0px;
                             border-bottom: 2px solid black;
                         }

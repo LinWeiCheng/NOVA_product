@@ -5,25 +5,6 @@
     display: none;
   }
 }
-/*-----  1.車體顏色手機板  -----*/
-@media screen and (max-width: 650px) {
-  .car_color .cherry_red {
-    width: 100%;
-  }
-  .car_color .pearl_orange {
-    width: 100%;
-  }
-  .car_color .rose_gold {
-    width: 100%;
-  }
-  .car_color .sky_blue {
-    width: 100%;
-  }
-  .car_color .camo_gray {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 1100px) {
   .container .Title {
     font-weight: 800;
@@ -118,6 +99,22 @@
   .subtitle .subtitle_2 {
     font-size: 9px !important;
   }
+  /*-----  1.車體顏色手機板  -----*/
+  .car-order .target .chkcontent_1st .car_color .cherry_red {
+    width: 100%;
+  }
+  .car-order .target .chkcontent_1st .car_color .pearl_orange {
+    width: 100%;
+  }
+  .car-order .target .chkcontent_1st .car_color .rose_gold {
+    width: 100%;
+  }
+  .car-order .target .chkcontent_1st .car_color .sky_blue {
+    width: 100%;
+  }
+  .car-order .target .chkcontent_1st .car_color .camo_gray {
+    width: 100%;
+  }
   /*-----  2.座板尺寸手機板  -----*/
   .car-seat {
     margin: 0px;
@@ -131,12 +128,16 @@
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .seat-width {
     font-size: 12px;
   }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_number {
+    margin: 0px 0px 0px 5px;
+  }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_number .generated_SWdiv {
     padding: 5px;
+    font-size: 20px;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_chkblock #SWC_checkbox {
-    margin: 12.5px 4px 13px 9px;
-    transform: scale(1.5);
+    margin: 17px 10px 13px 0px;
+    transform: scale(2);
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup {
     width: 50%;
@@ -144,35 +145,41 @@
     padding: 0px 3px 0px 3px;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .seat-deep {
-    font-size: 11px;
+    font-size: 12px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .deep_cmCount .deep_number {
+    margin: 0px 0px 0px 8px;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .deep_cmCount .deep_number .generated_Sddiv {
+    font-size: 20px;
     padding: 5px;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-deepgroup .deep_cmCount .deep_chkblock #SdC_checkbox {
-    margin: 12.5px 4px 13px 9px;
-    transform: scale(1.5);
+    margin: 17px 11px 13px 0px;
+    transform: scale(2);
   }
   .car-seat .target .pricecontent .pricing {
     font-size: 11px;
   }
   /*-----  3.腳架點擊列手機板  -----*/
   .car-tripod .chkcontent_3rd .tripodgroup {
-    padding: 0px 1px 1px 1px;
+    padding: 0px 1px 0px 0px;
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees {
-    font-size: 13px;
+    margin: 2px;
+    font-size: 15px;
+    padding: 1px;
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_77degrees {
-    margin: 2px 0px 2px 3px;
+    margin: 4px 0px 2px 3px;
     transform: scale(1.5);
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_80degrees {
-    margin: 2px 0px 2px 3px;
+    margin: 4px 0px 2px 3px;
     transform: scale(1.5);
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_90degrees {
-    margin: 2px 0px 2px 3px;
+    margin: 4px 0px 2px 3px;
     transform: scale(1.5);
   }
   .car-tripod .pricecontent .pricing {
@@ -188,7 +195,7 @@
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_twopiece_angle {
     font-size: 14px;
     height: 100%;
-    width: 65%;
+    width: 68%;
     margin: 0px 2px 0 1px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_twopiece_angle .twopiece_anglefixed {
@@ -223,22 +230,22 @@
     padding: 0px 0 0 1px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .pedalcmcmgroup {
-    width: 34%;
+    width: 39%;
     height: 100%;
-    margin: 0 3px 0 2px;
+    margin: 0 0px 0 2px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .pedalcmcmgroup .pedalcm {
     font-size: 16px;
-    margin: 1px 3px 1px 0;
+    margin: 0px 0px 1px 0;
     height: 100%;
     width: 100%;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .footpedal_checkbox2 {
-    margin: 0px 1px 0 1px;
+    margin: 0px 1px 0 5px;
     flex: 1;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .footpedal_checkbox2 .content-checkbox {
-    margin: 17.5px 1px 10px 10px;
+    margin: 17.5px 1px 10px px;
     transform: scale(1.5);
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_type {
@@ -257,12 +264,12 @@
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_pedal_direction {
     font-size: 15px;
     height: 100%;
-    width: 24%;
-    margin: 0px 3px 0px 2px;
+    width: 29%;
+    margin: 0px 0px 0px 2px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .footpedal_checkbox3 {
     flex: 1;
-    margin: 0 2px 0 0;
+    margin: 0 8px 0 0;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .footpedal_checkbox3 .content-checkbox {
     margin: 10px 0 10px 10px;
@@ -285,12 +292,12 @@
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_pedal_direction {
     font-size: 15px;
     height: 100%;
-    width: 24%;
-    margin: 0px 1px 1px 0px;
+    width: 28%;
+    margin: 0px 0px 1px 0px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .footpedal_checkbox4 {
     flex: 1;
-    margin: 0 4px 0 4px;
+    margin: 0 6px 0 0px;
   }
   .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .footpedal_checkbox4 .content-checkbox {
     margin: 10px 0 10px 8px;
@@ -310,18 +317,18 @@
   }
   .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_font {
     margin: 5px 0px 0px 0px;
-    font-size: 16px;
-    padding: 0 1px 0 1px;
-    width: 35%;
-    font-size: 16px;
+    padding: 1px 1px 1px 6px;
+    width: 40%;
+    font-size: 14px;
   }
   .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_size {
-    width: 45%;
-    font-size: 16px;
-    margin: 5px 0 0px 0px;
+    width: 40%;
+    font-size: 14px;
+    margin: 2px 0 0px 0px;
+    padding: 3px 6px 1px 0px;
   }
   .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_checkbox {
-    margin: 17px 19px 0 0px;
+    margin: 17px 9px 0 0px;
     padding: 0px;
   }
   .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_checkbox .content-checkbox {
@@ -335,10 +342,10 @@
     padding: 1px 0px 0px 0px;
     font-size: 15px;
     margin: 0px 1px 0 0;
-    width: 35%;
+    width: 40%;
   }
   .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup {
-    width: 47%;
+    width: 50%;
   }
   .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup .back_size {
     font-size: 17px;
@@ -361,75 +368,75 @@
     font-size: 11px;
   }
   /*-----  7.軀幹子系統-軀幹側支撐點擊列手機板  -----*/
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .Novalateralhardware_title {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .Novalateralhardware_title {
     height: 100%;
     font-size: 14px;
     padding: 0px 1px 0px 5px;
     margin: 2px 1px 0px 1px;
-    width: 20%;
-  }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup {
-    height: 100%;
-    margin: 2px 1px 0px 1px;
     width: 25%;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup .side_size {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup {
+    height: 100%;
+    margin: 2px 1px 0px 1px;
+    width: 30%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup .side_size {
     font-size: 16px;
     margin: 0px 0px 1px 0px;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup {
     width: 35%;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup {
     height: 50%;
-    margin: 0px 1px 1px 1px;
+    margin: 0px 5px 0px 6px;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR1 {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR1 {
     font-size: 18px;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR2 {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR2 {
     font-size: 18px;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup {
     height: 50%;
-    margin: 0px 1px 3px 1px;
+    margin: 2px 5px 0px 6px;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR1 {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR1 {
     font-size: 18px;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR2 {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR2 {
     font-size: 18px;
   }
-  .car-LaterTrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes .content-checkbox {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes .content-checkbox {
     margin: 13px 0px 9px 0px;
     transform: scale(1.5);
   }
-  .car-LaterTrunk_supports .target .pricecontent .pricing {
-    font-size: 11px;
+  .car-latertrunk_supports .target .pricecontent .pricing {
+    font-size: 12px;
   }
-  /*-----  8.底座子系統點擊列手機版  -----*/
+  /*-----  8.底座子系統-座板點擊列手機版  -----*/
   .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .Nova_seatbase_title {
-    font-size: 15px;
-    width: 30%;
+    font-size: 16px;
+    width: 35%;
     padding: 0px 1px 0px 2px;
     margin: 1px 1px 1px 1px;
   }
   .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup {
-    width: 50%;
+    width: 55%;
     height: 100%;
   }
   .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup .seatbase_size {
-    font-size: 14px;
+    font-size: 16px;
     margin: 1px 0px 1px 0px;
     padding: 1px;
     height: 12%;
   }
   .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_checkbox {
-    margin: -5px 7px 0px 6px;
+    margin: -1px 7px 0px 6px;
     height: 100%;
   }
   .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_checkbox .content-checkbox {
-    margin: 18px 0px 11px 0px;
+    margin: 12px 0px 6px 0px;
     transform: scale(1.5);
   }
   .car-seatbase .target .chkcontent_8th .div_notice {
@@ -438,145 +445,181 @@
   .car-seatbase .target .pricecontent .pricing {
     font-size: 11px;
   }
-  /*-----  9.綁帶子系統點擊列  -----*/
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_title {
+  /*-----  9.底座子系統-座墊點擊列手機版  -----*/
+  .car-cushion .target .chkcontent_9th .cushiongroup {
+    padding: 0px 1px 2px 3px;
+    width: 100%;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .Nova_cushiontitle {
+    height: 100%;
     font-size: 15px;
-    width: 25%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushiongroup_typegroup {
+    width: 70%;
+    margin: 0 0px 1px 3px;
+    height: 100%;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_type {
+    font-size: 15px;
+    height: 33%;
+    margin: 1px 1px 1px 0px;
+    padding: 0px;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_typeC {
+    font-size: 13px;
+    height: 34%;
+    margin: 1px 1px 1px 0px;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushion_checkbox {
+    margin: 2px 7px 0px 7px;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushion_checkbox .content-checkbox {
+    transform: scale(1.5);
+  }
+  .car-cushion .target .pricecontent .pricing {
+    font-size: 10px;
+  }
+  /*-----  10.綁帶子系統點擊列  -----*/
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_title {
+    font-size: 15px;
+    width: 30%;
     padding: 1px 0px 0px 5px;
     margin: 1px 1px 1px 0;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps {
     width: 60%;
     margin: 0 1px 0 0;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .chest_straps_font {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .chest_straps_font {
     font-size: 15px;
     padding: 1px 0px 0px 1px;
     margin: 1px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup {
     height: 100%;
     margin: 1px 0 2px 0;
     width: 100%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .chest_straps_font_2 {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .chest_straps_font_2 {
     font-size: 13px;
     padding: 0px 0px 0px 1px;
     margin: 1px;
     width: 60%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size {
     width: 40%;
     height: 100%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2s {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2s {
     font-size: 16px;
     padding: 0px 1px 0px 1px;
     margin: 1px 1px 1px 1px;
     height: 50%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2b {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2b {
     font-size: 16px;
     margin: 1px 1px 0 1px;
     height: 50%;
     padding: 0px 1px 0px 1px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox {
     margin: 0 3px 0px 4px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox .content-checkbox {
-    margin: 18px 0px 11px 7px;
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox .content-checkbox {
+    margin: 7px 0px 6px 2px;
     transform: scale(1.5);
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup {
     margin: 1px 0 1px 0;
     height: 100%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_title {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_title {
     font-size: 15px;
     height: 100%;
-    width: 25%;
+    width: 30%;
     padding: 0px 1px 0px 5px;
     margin: 1px 1px 1px 0px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt {
     height: 100%;
     width: 60%;
     margin: 0 5px 0 1px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .standard_pelvic_belt {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .standard_pelvic_belt {
     height: 35%;
     font-size: 16px;
     padding: 1px 1px 1px 4px;
     margin: 1px 1px 2px 1px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup {
     height: 65%;
     width: 100%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt {
     font-size: 13px;
     padding: 1px 1px 1px 1px;
     margin: 1px;
-    width: 63%;
+    width: 80%;
     height: 100%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size {
     height: 100%;
-    width: 35%;
+    width: 25%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fonts {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fonts {
     font-size: 14px;
     padding: 1px 1px 1px 1px;
     margin: 1px;
     height: 50%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fontb {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fontb {
     font-size: 14px;
     padding: 1px 1px 1px 1px;
     margin: 1px;
     height: 50%;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_checkbox .content-checkbox {
-    margin: 18px 0px 11px 6px;
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_checkbox .content-checkbox {
+    margin: 11px 0px 7px 1px;
     transform: scale(1.5);
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup {
     margin: 1px 0 1px 0;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_band {
-    font-size: 16px;
-    width: 25%;
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_band {
+    font-size: 15px;
+    width: 30%;
     padding: 0px 0px 0px 0px;
     margin: 2px 2px 1px 1px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_font {
-    font-size: 14px;
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_font {
+    font-size: 12px;
     width: 60%;
     padding: 1px 1px 1px 2px;
     margin: 2px 6px 1px 0px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .content-checkbox {
-    margin: 14px 0px 9px 4px;
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .content-checkbox {
+    margin: 14px 0px 8px 1px;
     transform: scale(1.5);
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup {
     margin: 1px 0 1px 0;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_cuff {
-    font-size: 16px;
-    width: 25%;
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_cuff {
+    font-size: 15px;
+    width: 30%;
     padding: 1px 1px 1px 5px;
     margin: 2px 2px 2px 1px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_font {
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_font {
     font-size: 14px;
     width: 60%;
     padding: 1px 1px 1px 1px;
-    margin: 2px 5px 2px 0px;
+    margin: 2px 2px 2px 0px;
   }
-  .car-bandage .target .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .content-checkbox {
-    margin: 18px 0px 11px 6px;
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .content-checkbox {
+    margin: 10px 0px 8px 5px;
     transform: scale(1.5);
   }
   .car-bandage .target .pricecontent .pricing {
