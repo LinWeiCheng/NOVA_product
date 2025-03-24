@@ -739,7 +739,7 @@ Car_latertrunk_checkboxes.forEach((checkbox) => {
   });
 });
 
-/*-----  8.底座子系統  -----*/
+/*-----  8.底座子系統-座板  -----*/
 let Car_seatbase_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_ironseatbase"]'
 );
@@ -845,7 +845,57 @@ Car_seatbase_checkboxes.forEach((checkbox) => {
   });
 });
 
-/*-----  9.綁帶子系統點擊列  -----*/
+/*-----  9.底座子系統-座墊  -----*/
+let Car_cushion_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_basecushion"]'
+);
+
+let seat_cushion_prices = {
+  seatcushion_prices1: 1500,
+  seatcushion_prices2: 1550,
+  seatcushion_prices3: 10000,// 第 3 個 checkbox 的價格
+};
+
+function update_cushion_Price(event) {
+  let nowprice_cushion = Price[8].nextElementSibling;
+
+  Car_cushion_checkboxes.forEach((checkbox, index) => {
+    if (checkbox !== event.target) {
+      checkbox.checked = false;
+    }
+    if (event.target.id === "checkbox_cushion14_Nova") {
+      nowprice_cushion.textContent = `${formatPrice(
+        seat_cushion_prices.seatcushion_prices1
+      )} 元`;
+    } else if (event.target.id === "checkbox_cushion16_Nova") {
+      nowprice_cushion.textContent = `${formatPrice(
+        seat_cushion_prices.seatcushion_prices2
+      )} 元`;
+    } else if (event.target.id === "checkbox_cushionGelive_Nova") {
+      nowprice_cushion.textContent = `${formatPrice(
+        seat_cushion_prices.seatcushion_prices3
+      )} 元`;
+    }
+  });
+}
+
+//為每個 checkbox 添加事件監聽
+Car_cushion_checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", (event) => {
+    if (event.target.checked) {
+      update_cushion_Price(event);
+    } else {
+      let nowprice_cushion = Price[8].nextElementSibling;
+      nowprice_cushion.textContent = "0元";
+      Car_cushion_checkboxes.forEach((otherCheckbox) => {
+        otherCheckbox.checked = false;
+      });
+    }
+  });
+});
+
+
+/*-----  10.綁帶子系統點擊列  -----*/
 let Car_bandage_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_bandage"]'
 );
