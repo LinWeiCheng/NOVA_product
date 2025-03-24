@@ -186,6 +186,7 @@ body {
     position: relative;
     display: inline-block;
   }
+
   .target_img::before {
     content: "";
     position: absolute;
@@ -194,7 +195,7 @@ body {
     left: -5px;
     right: -5px;
     background: transparent;
-}
+  }
 
   .target_img img {
     width: 40px;
@@ -1207,7 +1208,7 @@ body {
 
 
 //軀幹子系統_軀幹側支撐
-.car-LaterTrunk_supports {
+.car-latertrunk_supports {
   margin: 0 0 8px 0;
 
   .chkcontent_7th {
@@ -1376,7 +1377,7 @@ body {
   background: #bebebe;
 }
 
-//底座子系統
+//底座子系統-座板
 .car-seatbase {
   margin: 0 0 8px 0;
 
@@ -1462,11 +1463,108 @@ body {
   margin: 7.9px 0px 13.1px 0px;
 }
 
+//底座子系統-座墊
+.car-cushion {
+  margin: 0 0 8px 0;
+
+  .chkcontent_9th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .cushiongroup {
+      visibility: hidden;
+      // width: calc(100% - 8px);
+      // display: flex;
+      // flex-direction: row;
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // height: auto;
+      // justify-content: space-between;
+      height: 0;
+      width: 100%;
+
+
+
+      .Nova_cushiontitle {
+        border: 1px solid #000000;
+        border-radius: 7px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 20px;
+        width: 40%;
+        padding: 2px 1px 1px 3px;
+        margin: 3px;
+      }
+
+      .cushiongroup_typegroup {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin: 0 3px 1px 1px;
+        height: 100%;
+
+        .cushion_type {
+          border: 1px solid #000000;
+          border-radius: 7px;
+          margin: 1px 1px 3px 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /* 垂直置中 */
+          font-size: 16px;
+          /* 調整字體大小 */
+          font-weight: 600;
+          /* 調整字體粗細 */
+          height: 100%;
+          padding: 2px;
+        }
+        .cushion_typeC {
+          border: 1px solid #000000;
+          border-radius: 7px;
+          margin: 1px 1px 3px 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /* 垂直置中 */
+          font-size: 16px;
+          /* 調整字體大小 */
+          font-weight: 600;
+          /* 調整字體粗細 */
+          height: 100%;
+          padding: 2px;
+        }
+      }
+
+      .cushion_checkbox {
+        display: flex;
+        flex-direction: column;
+        width: 5%;
+        margin: 2px 5px 0px 6px;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+  }
+}
+
+.cushion_checkbox input[type="checkbox"] {
+  //accent-color: rgb(255, 0, 0);
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 8px 0px 11px 0px;
+}
+
 //綁帶子系統
 .car-bandage {
   margin: 0 0 8px 0;
 
-  .chkcontent_9th {
+  .chkcontent_10th {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -1770,15 +1868,17 @@ body {
 }
 
 //n.其他
-.car-other{
+.car-other {
   visibility: hidden;
-  .target{
-      .chkcontent_nth{
-          width: 100%;
-          .subtitle{
-              width: 100%;
-              height: 36px;
-          }
+
+  .target {
+    .chkcontent_nth {
+      width: 100%;
+
+      .subtitle {
+        width: 100%;
+        height: 36px;
       }
+    }
   }
 }

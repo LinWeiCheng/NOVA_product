@@ -1160,24 +1160,24 @@ body {
   margin: 7.9px 0px 13.1px 0px;
 }
 
-.car-LaterTrunk_supports {
+.car-latertrunk_supports {
   margin: 0 0 8px 0;
 }
-.car-LaterTrunk_supports .chkcontent_7th {
+.car-latertrunk_supports .chkcontent_7th {
   display: flex;
   width: 100%;
   flex-direction: column;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk {
   visibility: hidden;
   height: 0;
   width: 100%;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup {
   display: flex;
   flex-direction: row;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .Novalateralhardware_title {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .Novalateralhardware_title {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1190,13 +1190,13 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup {
   display: flex;
   flex-direction: column;
   width: 60%;
   margin: 2px 0 2px 0;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup .side_size {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup .side_size {
   border: 1px solid #000000;
   border-radius: 7px;
   margin: 1px 1px 3px 1px;
@@ -1211,17 +1211,17 @@ body {
   height: 100%;
   padding: 3px 1px 3px;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup {
   height: 45%;
   margin: 2px 1px 0 2px;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR1 {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR1 {
   border: 1px solid #000000;
   border-radius: 7px;
   display: flex;
@@ -1235,7 +1235,7 @@ body {
   height: 48%;
   margin: 1px 0 3px 0;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR2 {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR2 {
   border: 1px solid #000000;
   border-radius: 7px;
   display: flex;
@@ -1249,11 +1249,11 @@ body {
   height: 48%;
   margin: 2px 0 1px 0;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup {
   height: 45%;
   margin: 4px 0 1px 2px;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR1 {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR1 {
   border: 1px solid #000000;
   border-radius: 7px;
   display: flex;
@@ -1267,7 +1267,7 @@ body {
   height: 48%;
   margin: 2px 0 3px 0;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR2 {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR2 {
   border: 1px solid #000000;
   border-radius: 7px;
   display: flex;
@@ -1281,7 +1281,7 @@ body {
   height: 48%;
   margin: 3px 0 1px 0;
 }
-.car-LaterTrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes {
   display: flex;
   flex-direction: column;
   width: 5%;
@@ -1371,28 +1371,20 @@ body {
   margin: 7.9px 0px 13.1px 0px;
 }
 
-.car-bandage {
+.car-cushion {
   margin: 0 0 8px 0;
 }
-.car-bandage .chkcontent_9th {
+.car-cushion .chkcontent_9th {
   display: flex;
   width: 100%;
   flex-direction: column;
 }
-.car-bandage .chkcontent_9th .bandagegroup {
+.car-cushion .chkcontent_9th .cushiongroup {
   visibility: hidden;
   height: 0;
   width: 100%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup {
-  display: flex;
-  flex-direction: column;
-}
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup {
-  display: flex;
-  flex-direction: row;
-}
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_title {
+.car-cushion .chkcontent_9th .cushiongroup .Nova_cushiontitle {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1405,12 +1397,98 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps {
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroup_typegroup {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 3px 1px 1px;
+  height: 100%;
+}
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_type {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 3px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 16px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: 100%;
+  padding: 2px;
+}
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_typeC {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  margin: 1px 1px 3px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 16px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: 100%;
+  padding: 2px;
+}
+.car-cushion .chkcontent_9th .cushiongroup .cushion_checkbox {
+  display: flex;
+  flex-direction: column;
+  width: 5%;
+  margin: 2px 5px 0px 6px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.cushion_checkbox input[type=checkbox] {
+  /* 更改勾選顏色（現代瀏覽器支持） */
+  margin: 8px 0px 11px 0px;
+}
+
+.car-bandage {
+  margin: 0 0 8px 0;
+}
+.car-bandage .chkcontent_10th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.car-bandage .chkcontent_10th .bandagegroup {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup {
+  display: flex;
+  flex-direction: column;
+}
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup {
+  display: flex;
+  flex-direction: row;
+}
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_title {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  width: 40%;
+  padding: 2px 1px 1px 3px;
+  margin: 3px;
+}
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps {
   display: flex;
   flex-direction: column;
   width: 60%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .chest_straps_font {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .chest_straps_font {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1422,12 +1500,12 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .chest_straps_font_2 {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .chest_straps_font_2 {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1440,12 +1518,12 @@ body {
   margin: 3px;
   width: 80%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size {
   display: flex;
   flex-direction: column;
   width: 30%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2s {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2s {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1457,7 +1535,7 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2b {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2b {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1469,15 +1547,15 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox {
   display: flex;
   flex-direction: column;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup {
   display: flex;
   flex-direction: row;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_title {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_title {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1490,12 +1568,12 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt {
   display: flex;
   flex-direction: column;
   width: 60%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .standard_pelvic_belt {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .standard_pelvic_belt {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1507,12 +1585,12 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1525,12 +1603,12 @@ body {
   margin: 3px;
   width: 80%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size {
   display: flex;
   flex-direction: column;
   width: 30%;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fonts {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fonts {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1542,7 +1620,7 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fontb {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fontb {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1554,15 +1632,15 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_checkbox {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_checkbox {
   display: flex;
   flex-direction: column;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup {
   display: flex;
   flex-direction: row;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_band {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_band {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1575,14 +1653,14 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calfbandchk {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calfbandchk {
   margin: 0 5px 0 5px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup {
   display: flex;
   flex-direction: row;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_cuff {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_cuff {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1595,10 +1673,10 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calfcuffchk {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calfcuffchk {
   margin: 0 5px 0 5px;
 }
-.car-bandage .chkcontent_9th .bandagegroup .Shoulder_chest_strapsgroup .calf_font {
+.car-bandage .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_font {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
