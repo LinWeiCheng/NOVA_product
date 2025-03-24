@@ -1364,7 +1364,7 @@ document.addEventListener("click", function (event) {
       // 取得 `visibility` 的計算後樣式
       let visibilityValue = window.getComputedStyle(introdutionid).visibility;
 
-      if (imgCarseatbase === "carcushionImg") {
+      if (imgCarseatbase === "carseatbaseImg") {
         if (visibilityValue === "hidden") {
           let Price_seatbase = document.querySelectorAll(".pricing");
 
