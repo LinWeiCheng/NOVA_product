@@ -115,7 +115,7 @@
 
     html,
     body {
-        overflow: auto; // 確保可以滾動
+        overflow: hidden;
     }
 
     .totalPrice {
@@ -149,6 +149,48 @@
         }
     }
 
+    .checklist {
+        width: 100%;
+        //上下左右都可以滾動
+        //overflow-y: scroll;
+        overflow-y: auto;
+        /* 允許垂直滾動 */
+        scroll-behavior: smooth;
+        max-height: 850px;
+        /* 設定高度 */
+        overflow-x: hidden;
+        /* 禁止水平滾動 */
+        padding-right: 2px;
+        /* 增加右側間距 */
+      }
+      
+      /* 修改滾動條寬度 */
+      .checklist::-webkit-scrollbar {
+        width: 4px;
+        /* 調整滾動條寬度 */
+      }
+      
+      /* 滾動條軌道（背景） */
+      .checklist::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* 淺灰色背景 */
+        border-radius: 8px;
+        /* 圓角 */
+      }
+      
+      /* 滾動條滑塊 */
+      .checklist::-webkit-scrollbar-thumb {
+        background: #888;
+        /* 深灰色滑塊 */
+        border-radius: 10px;
+        /* 圓角 */
+      }
+      
+      /* 滑鼠懸停時變色 */
+      .checklist::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
     /*-----  1.車體顏色手機板  -----*/
     .car-order {
         .target {
@@ -181,7 +223,7 @@
 
     /*-----  2.座板尺寸手機板  -----*/
     .car-seat {
-        margin: 0px;
+        margin: 0px 0px 8px 0px;
 
         .target {
             .chkcontent_2nd {
@@ -622,7 +664,7 @@
 
             .pricecontent {
                 .pricing {
-                    font-size: 12px;
+                    font-size: 11px;
                 }
             }
         }
@@ -724,7 +766,7 @@
 
             .pricecontent {
                 .pricing {
-                    font-size: 10px;
+                    font-size: 11px;
                 }
             }
         }
@@ -935,7 +977,6 @@
             }
         }
     }
-
 
     .Quotation-div {
         width: 430px;
