@@ -152,6 +152,8 @@ html,
 body {
   height: auto;
   width: 100%;
+  overflow: hidden;
+  /* 隱藏整個頁面的滾動條 */
 }
 
 .totalPrice {
@@ -206,19 +208,31 @@ body {
 .rightcontent {
   width: 40%;
   flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  /* 讓內容垂直排列 */
+  justify-content: center;
+  /* 垂直置中 */
+  align-items: center;
+  /* 水平置中 */
+  height: 100%;
+  /* 讓 rightcontent 充滿父容器 */
   position: relative;
+  /* 確保內容能正確對齊 */
 }
 .rightcontent .imgblock {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+  /* 圖片水平置中 */
   align-items: center;
+  /* 圖片垂直置中 */
   margin: 20px auto;
 }
 .rightcontent #ProductImage {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80%;
+  max-height: 80%;
   padding: 15px;
 }
 
@@ -232,9 +246,6 @@ body {
 }
 
 .btnallcheckboxfalse {
-  position: fixed;
-  bottom: 10px;
-  right: 110px;
   padding: 4px 8px;
   background-color: #ffffff;
   font-size: 15px;
@@ -243,9 +254,6 @@ body {
 }
 
 .btnoutputQuotation {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
   padding: 4px 8px;
   background-color: #ffffff;
   font-size: 15px;
@@ -280,16 +288,52 @@ body {
 }
 
 .Title {
-  margin: 5px;
+  margin: 10px;
   font-weight: 800;
   /*設定字體粗細*/
-  font-size: 30px;
+  font-size: 32px;
   /* 設定字體大小 */
   cursor: default;
 }
 
 .checklist {
   width: 100%;
+  overflow-y: auto;
+  /* 允許垂直滾動 */
+  scroll-behavior: smooth;
+  max-height: 900px;
+  /* 設定高度 */
+  overflow-x: hidden;
+  /* 禁止水平滾動 */
+  padding-right: 1px;
+  /* 增加左側間距 */
+}
+
+/* 修改滾動條寬度 */
+.checklist::-webkit-scrollbar {
+  width: 4px;
+  /* 調整滾動條寬度 */
+}
+
+/* 滾動條軌道（背景） */
+.checklist::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* 淺灰色背景 */
+  border-radius: 8px;
+  /* 圓角 */
+}
+
+/* 滾動條滑塊 */
+.checklist::-webkit-scrollbar-thumb {
+  background: #888;
+  /* 深灰色滑塊 */
+  border-radius: 10px;
+  /* 圓角 */
+}
+
+/* 滑鼠懸停時變色 */
+.checklist::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .target {
@@ -317,7 +361,7 @@ body {
 .target .subtitle {
   display: flex;
   /* 使用 Flexbox */
-  width: 100%;
+  width: 99%;
   /* 設定寬度 */
   border-radius: 8px;
   /* 設定圓角半徑 */
@@ -361,7 +405,7 @@ body {
   /* 設定圓角半徑 */
   padding: 6px;
   /* 內邊距 */
-  margin: 3px 3px 3px 4px;
+  margin: 3px 0px 3px 0px;
   text-align: center;
   /* 文字置中 */
   background-color: rgba(54, 52, 52, 0.8823529412);
