@@ -224,6 +224,7 @@ document.addEventListener("click", function (event) {
 
           Price_carbasesize.forEach(function (openIntro) {
             //直接判斷是第幾個.Price
+            let suggestion_basesize = Price_carbasesize[1];
             let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
 
             if (
@@ -259,13 +260,16 @@ document.addEventListener("click", function (event) {
                 nowprice_basesize.style.padding = "1px";
                 nowprice_basesize.style.margin = "3px 0px 3px 0px";
                 nowprice_basesize.style.textAlign = "center";
-                nowprice_basesize.style.fontSize = "20px";
+                nowprice_basesize.style.fontSize = "17px";
                 nowprice_basesize.style.fontWeight = "600";
                 nowprice_basesize.style.alignItems = "center";
                 nowprice_basesize.style.justifyContent = "center";
 
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_basesize.style.fontSize = "13px";
+                  introdutionid.style.width = "calc(100% - 10px)";
+                  suggestion_basesize.style.padding = "5px";
+                  suggestion_basesize.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -284,9 +288,12 @@ document.addEventListener("click", function (event) {
             introdutionid.style.padding = "0";
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
-
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carbasesize") === "carbasesize"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_basesize.style.display = "none";
           });
         }
@@ -305,13 +312,13 @@ carseat.addEventListener("click", function (event) {
   if (showinfo === "carbasesize" || showinfo === "carbasesize2") {
     let introdutionid = event.target.nextElementSibling;
     let introdutionid1 = event.target.parentNode.nextElementSibling;
-
     let Price_carbasesize = document.querySelectorAll(".pricing");
     let carSeat = carseat.querySelector(".target_img"); // 找到最近的 .target_img
     let img = carSeat.querySelector("img");
 
     Price_carbasesize.forEach(function (openIntro) {
       //直接判斷是第幾個.Price
+      let suggestion_basesize = Price_carbasesize[1];
       let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
 
       if (
@@ -358,7 +365,7 @@ carseat.addEventListener("click", function (event) {
           nowprice_basesize.style.padding = "1px";
           nowprice_basesize.style.margin = "3px 3px 3px 2px";
           nowprice_basesize.style.textAlign = "center";
-          nowprice_basesize.style.fontSize = "20px";
+          nowprice_basesize.style.fontSize = "17px";
           nowprice_basesize.style.fontWeight = "600";
           nowprice_basesize.style.alignItems = "center";
           nowprice_basesize.style.justifyContent = "center";
@@ -369,6 +376,9 @@ carseat.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_basesize.style.fontSize = "13px";
+            introdutionid.style.width = "calc(100% - 10px)";
+            suggestion_basesize.style.padding = "5px";
+            suggestion_basesize.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -424,6 +434,7 @@ document.addEventListener("click", function (event) {
           let Price_cartripod = document.querySelectorAll(".pricing");
 
           Price_cartripod.forEach(function (openIntro) {
+            let suggestion_cartripod = Price_cartripod[2];
             //直接判斷是第幾個.Price
             let nowprice_tripod = Price_cartripod[2].nextElementSibling;
 
@@ -461,12 +472,15 @@ document.addEventListener("click", function (event) {
                 nowprice_tripod.style.padding = "1px";
                 nowprice_tripod.style.margin = "3px 3px 3px 2px";
                 nowprice_tripod.style.textAlign = "center";
-                nowprice_tripod.style.fontSize = "21px";
+                nowprice_tripod.style.fontSize = "20px";
                 nowprice_tripod.style.fontWeight = "600";
                 nowprice_tripod.style.alignItems = "center";
                 nowprice_tripod.style.justifyContent = "center";
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_tripod.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  suggestion_cartripod.style.padding = "5px";
+                  suggestion_cartripod.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -477,7 +491,6 @@ document.addEventListener("click", function (event) {
           Price_cartripod.forEach(function (openIntro) {
             let nowprice_tripod = Price_cartripod[2].nextElementSibling;
             //把data-collapse-status改成0
-            //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
 
             //建議售價標題隱藏
@@ -487,8 +500,12 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-cartripod") === "cartripod"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_tripod.style.display = "none";
           });
         }
@@ -511,6 +528,7 @@ cartripod.addEventListener("click", function (event) {
     let img = carTripod.querySelector("img");
 
     Price_cartripod.forEach(function (openIntro) {
+      let suggestion_cartripod = Price_cartripod[2];
       //直接判斷是第幾個.Price
       let nowprice_tripod = Price_cartripod[2].nextElementSibling;
 
@@ -548,7 +566,7 @@ cartripod.addEventListener("click", function (event) {
           nowprice_tripod.style.padding = "1px";
           nowprice_tripod.style.margin = "3px 3px 3px 2px";
           nowprice_tripod.style.textAlign = "center";
-          nowprice_tripod.style.fontSize = "21px";
+          nowprice_tripod.style.fontSize = "20px";
           nowprice_tripod.style.fontWeight = "600";
           nowprice_tripod.style.alignItems = "center";
           nowprice_tripod.style.justifyContent = "center";
@@ -559,6 +577,9 @@ cartripod.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_tripod.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            suggestion_cartripod.style.padding = "5px";
+            suggestion_cartripod.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -607,6 +628,7 @@ document.addEventListener("click", function (event) {
           let Price_carfootpedal = document.querySelectorAll(".pricing");
 
           Price_carfootpedal.forEach(function (openIntro) {
+            let suggestion_carfootpedal = Price_carfootpedal[3];
             //直接判斷是第幾個.Price
             let nowprice_carfootpedal =
               Price_carfootpedal[3].nextElementSibling;
@@ -648,13 +670,16 @@ document.addEventListener("click", function (event) {
                 nowprice_carfootpedal.style.padding = "1px";
                 nowprice_carfootpedal.style.margin = "3px 3px 3px 2px";
                 nowprice_carfootpedal.style.textAlign = "center";
-                nowprice_carfootpedal.style.fontSize = "21px";
+                nowprice_carfootpedal.style.fontSize = "20px";
                 nowprice_carfootpedal.style.fontWeight = "600";
                 nowprice_carfootpedal.style.alignItems = "center";
                 nowprice_carfootpedal.style.justifyContent = "center";
 
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_carfootpedal.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 8px)";
+                  suggestion_carfootpedal.style.padding = "5px";
+                  suggestion_carfootpedal.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -676,8 +701,13 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carfootpedal") ===
+              "carfootpedal"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_carfootpedal.style.display = "none";
           });
         }
@@ -700,6 +730,7 @@ carfootpedal.addEventListener("click", function (event) {
     let img = carFootpedal.querySelector("img");
 
     Price_carfootpedal.forEach(function (openIntro) {
+      let suggestion_carfootpedal = Price_carfootpedal[3];
       //直接判斷是第幾個.Price
       let nowprice_carfootpedal = Price_carfootpedal[3].nextElementSibling;
 
@@ -738,7 +769,7 @@ carfootpedal.addEventListener("click", function (event) {
           nowprice_carfootpedal.style.padding = "1px";
           nowprice_carfootpedal.style.margin = "3px 3px 3px 2px";
           nowprice_carfootpedal.style.textAlign = "center";
-          nowprice_carfootpedal.style.fontSize = "21px";
+          nowprice_carfootpedal.style.fontSize = "20px";
           nowprice_carfootpedal.style.fontWeight = "600";
           nowprice_carfootpedal.style.alignItems = "center";
           nowprice_carfootpedal.style.justifyContent = "center";
@@ -749,6 +780,9 @@ carfootpedal.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_carfootpedal.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 8px)";
+            suggestion_carfootpedal.style.padding = "5px";
+            suggestion_carfootpedal.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -797,6 +831,7 @@ document.addEventListener("click", function (event) {
           let Price_headsupports = document.querySelectorAll(".pricing");
 
           Price_headsupports.forEach(function (openIntro) {
+            let suggestion_headsupports = Price_headsupports[4];
             //直接判斷是第幾個.Price
             let nowprice_carheadsupports =
               Price_headsupports[4].nextElementSibling;
@@ -837,13 +872,16 @@ document.addEventListener("click", function (event) {
                 nowprice_carheadsupports.style.padding = "1px";
                 nowprice_carheadsupports.style.margin = "3px 3px 3px 2px";
                 nowprice_carheadsupports.style.textAlign = "center";
-                nowprice_carheadsupports.style.fontSize = "21px";
+                nowprice_carheadsupports.style.fontSize = "20px";
                 nowprice_carheadsupports.style.fontWeight = "600";
                 nowprice_carheadsupports.style.alignItems = "center";
                 nowprice_carheadsupports.style.justifyContent = "center";
 
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_carheadsupports.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  suggestion_headsupports.style.padding = "5px";
+                  suggestion_headsupports.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -865,8 +903,13 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carheadsupports") ===
+              "carheadsupports"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_carheadsupports.style.display = "none";
           });
         }
@@ -889,6 +932,7 @@ carheadsupports.addEventListener("click", function (event) {
     let img = carHeadSupports.querySelector("img");
 
     Price_headsupports.forEach(function (openIntro) {
+      let suggestion_headsupports = Price_headsupports[4];
       //直接判斷是第幾個.Price
       let nowprice_carheadsupports = Price_headsupports[4].nextElementSibling;
 
@@ -928,7 +972,7 @@ carheadsupports.addEventListener("click", function (event) {
           nowprice_carheadsupports.style.padding = "1px";
           nowprice_carheadsupports.style.margin = "3px 3px 3px 2px";
           nowprice_carheadsupports.style.textAlign = "center";
-          nowprice_carheadsupports.style.fontSize = "21px";
+          nowprice_carheadsupports.style.fontSize = "20px";
           nowprice_carheadsupports.style.fontWeight = "600";
           nowprice_carheadsupports.style.alignItems = "center";
           nowprice_carheadsupports.style.justifyContent = "center";
@@ -939,6 +983,9 @@ carheadsupports.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_carheadsupports.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            suggestion_headsupports.style.padding = "5px";
+            suggestion_headsupports.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -987,6 +1034,7 @@ document.addEventListener("click", function (event) {
           let Price_backsupports = document.querySelectorAll(".pricing");
 
           Price_backsupports.forEach(function (openIntro) {
+            let suggestion_backsupports = Price_backsupports[5];
             //直接判斷是第幾個.Price
             let nowprice_backsupports =
               Price_backsupports[5].nextElementSibling;
@@ -1027,7 +1075,7 @@ document.addEventListener("click", function (event) {
                 nowprice_backsupports.style.padding = "1px";
                 nowprice_backsupports.style.margin = "3px 3px 3px 2px";
                 nowprice_backsupports.style.textAlign = "center";
-                nowprice_backsupports.style.fontSize = "21px";
+                nowprice_backsupports.style.fontSize = "20px";
                 nowprice_backsupports.style.fontWeight = "600";
                 nowprice_backsupports.style.alignItems = "center";
                 nowprice_backsupports.style.justifyContent = "center";
@@ -1035,6 +1083,9 @@ document.addEventListener("click", function (event) {
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_backsupports.style.margin = "3px 0px 76px 0px";
                   nowprice_backsupports.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  suggestion_backsupports.style.padding = "5px";
+                  suggestion_backsupports.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -1056,8 +1107,13 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carbacksupports") ===
+              "carbacksupports"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_backsupports.style.display = "none";
           });
         }
@@ -1080,6 +1136,7 @@ carbacksupports.addEventListener("click", function (event) {
     let img = carBackSupports.querySelector("img");
 
     Price_backsupports.forEach(function (openIntro) {
+      let suggestion_backsupports = Price_backsupports[5];
       //直接判斷是第幾個.Price
       let nowprice_backsupports = Price_backsupports[5].nextElementSibling;
 
@@ -1118,7 +1175,7 @@ carbacksupports.addEventListener("click", function (event) {
           nowprice_backsupports.style.padding = "1px";
           nowprice_backsupports.style.margin = "3px 3px 3px 2px";
           nowprice_backsupports.style.textAlign = "center";
-          nowprice_backsupports.style.fontSize = "21px";
+          nowprice_backsupports.style.fontSize = "20px";
           nowprice_backsupports.style.fontWeight = "600";
           nowprice_backsupports.style.alignItems = "center";
           nowprice_backsupports.style.justifyContent = "center";
@@ -1130,6 +1187,9 @@ carbacksupports.addEventListener("click", function (event) {
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_backsupports.style.margin = "3px 0px 76px 0px";
             nowprice_backsupports.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            suggestion_backsupports.style.padding = "5px";
+            suggestion_backsupports.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -1179,6 +1239,8 @@ document.addEventListener("click", function (event) {
             document.querySelectorAll(".pricing");
 
           Price_carlatertrunksupports.forEach(function (openIntro) {
+            let suggestion_carlatertrunksupports =
+              Price_carlatertrunksupports[6];
             //直接判斷是第幾個.Price
             let nowprice_carlatertrunksupports =
               Price_carlatertrunksupports[6].nextElementSibling;
@@ -1219,13 +1281,17 @@ document.addEventListener("click", function (event) {
                 nowprice_carlatertrunksupports.style.padding = "1px";
                 nowprice_carlatertrunksupports.style.margin = "3px 3px 3px 2px";
                 nowprice_carlatertrunksupports.style.textAlign = "center";
-                nowprice_carlatertrunksupports.style.fontSize = "21px";
+                nowprice_carlatertrunksupports.style.fontSize = "20px";
                 nowprice_carlatertrunksupports.style.fontWeight = "600";
                 nowprice_carlatertrunksupports.style.alignItems = "center";
                 nowprice_carlatertrunksupports.style.justifyContent = "center";
 
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_carlatertrunksupports.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  suggestion_carlatertrunksupports.style.padding = "5px";
+                  suggestion_carlatertrunksupports.style.margin =
+                    "3px 0px 3px 1px";
                 }
               }
             }
@@ -1248,8 +1314,13 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carlatertrunksupports") ===
+              "carlatertrunksupports"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_carlatertrunksupports.style.display = "none";
           });
         }
@@ -1273,6 +1344,7 @@ carlatertrunksupports.addEventListener("click", function (event) {
     let img = carLaterTrunksupports.querySelector("img");
 
     Price_carlatertrunksupports.forEach(function (openIntro) {
+      let suggestion_carlatertrunksupports = Price_carlatertrunksupports[6];
       //直接判斷是第幾個.Price
       let nowprice_carlatertrunksupports =
         Price_carlatertrunksupports[6].nextElementSibling;
@@ -1313,7 +1385,7 @@ carlatertrunksupports.addEventListener("click", function (event) {
           nowprice_carlatertrunksupports.style.padding = "1px";
           nowprice_carlatertrunksupports.style.margin = "3px 3px 3px 2px";
           nowprice_carlatertrunksupports.style.textAlign = "center";
-          nowprice_carlatertrunksupports.style.fontSize = "21px";
+          nowprice_carlatertrunksupports.style.fontSize = "20px";
           nowprice_carlatertrunksupports.style.fontWeight = "600";
           nowprice_carlatertrunksupports.style.alignItems = "center";
           nowprice_carlatertrunksupports.style.justifyContent = "center";
@@ -1324,6 +1396,9 @@ carlatertrunksupports.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_carlatertrunksupports.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            suggestion_carlatertrunksupports.style.padding = "5px";
+            suggestion_carlatertrunksupports.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -1373,6 +1448,7 @@ document.addEventListener("click", function (event) {
 
           Price_seatbase.forEach(function (openIntro) {
             //直接判斷是第幾個.Price
+            let suggestion_seatbase = Price_seatbase[7];
             let nowprice_seatbase = Price_seatbase[7].nextElementSibling;
 
             if (
@@ -1410,13 +1486,16 @@ document.addEventListener("click", function (event) {
                 nowprice_seatbase.style.padding = "1px";
                 nowprice_seatbase.style.margin = "3px 3px 3px 2px";
                 nowprice_seatbase.style.textAlign = "center";
-                nowprice_seatbase.style.fontSize = "21px";
+                nowprice_seatbase.style.fontSize = "20px";
                 nowprice_seatbase.style.fontWeight = "600";
                 nowprice_seatbase.style.alignItems = "center";
                 nowprice_seatbase.style.justifyContent = "center";
 
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_seatbase.style.fontSize = "14px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  suggestion_seatbase.style.padding = "5px";
+                  suggestion_seatbase.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -1437,8 +1516,12 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carseatbase") === "carseatbase"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_seatbase.style.display = "none";
           });
         }
@@ -1461,6 +1544,7 @@ carseatbase.addEventListener("click", function (event) {
     let img = carSeatBase.querySelector("img");
 
     Price_seatbase.forEach(function (openIntro) {
+      let suggestion_seatbase = Price_seatbase[7];
       //直接判斷是第幾個.Price
       let nowprice_seatbase = Price_seatbase[7].nextElementSibling;
 
@@ -1498,7 +1582,7 @@ carseatbase.addEventListener("click", function (event) {
           nowprice_seatbase.style.padding = "1px";
           nowprice_seatbase.style.margin = "3px 3px 3px 2px";
           nowprice_seatbase.style.textAlign = "center";
-          nowprice_seatbase.style.fontSize = "21px";
+          nowprice_seatbase.style.fontSize = "20px";
           nowprice_seatbase.style.fontWeight = "600";
           nowprice_seatbase.style.alignItems = "center";
           nowprice_seatbase.style.justifyContent = "center";
@@ -1509,6 +1593,9 @@ carseatbase.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_seatbase.style.fontSize = "14px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            suggestion_seatbase.style.padding = "5px";
+            suggestion_seatbase.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -1557,6 +1644,7 @@ document.addEventListener("click", function (event) {
           let Price_cushion = document.querySelectorAll(".pricing");
 
           Price_cushion.forEach(function (openIntro) {
+            let suggestion_cushion = Price_cushion[8];
             //直接判斷是第幾個.Price
             let nowprice_cushion = Price_cushion[8].nextElementSibling;
 
@@ -1595,13 +1683,16 @@ document.addEventListener("click", function (event) {
                 nowprice_cushion.style.padding = "1px";
                 nowprice_cushion.style.margin = "3px 3px 3px 2px";
                 nowprice_cushion.style.textAlign = "center";
-                nowprice_cushion.style.fontSize = "21px";
+                nowprice_cushion.style.fontSize = "17px";
                 nowprice_cushion.style.fontWeight = "600";
                 nowprice_cushion.style.alignItems = "center";
                 nowprice_cushion.style.justifyContent = "center";
 
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_cushion.style.fontSize = "11px";
+                  introdutionid.style.width = "calc(100% - 10px)";
+                  suggestion_cushion.style.padding = "5px";
+                  suggestion_cushion.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -1622,8 +1713,12 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carcushion") === "carcushion"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_cushion.style.display = "none";
           });
         }
@@ -1646,6 +1741,7 @@ carcushion.addEventListener("click", function (event) {
     let img = carCushion.querySelector("img");
 
     Price_cushion.forEach(function (openIntro) {
+      let suggestion_cushion = Price_cushion[8];
       //直接判斷是第幾個.Price
       let nowprice_cushion = Price_cushion[8].nextElementSibling;
 
@@ -1683,7 +1779,7 @@ carcushion.addEventListener("click", function (event) {
           nowprice_cushion.style.padding = "1px";
           nowprice_cushion.style.margin = "3px 3px 3px 2px";
           nowprice_cushion.style.textAlign = "center";
-          nowprice_cushion.style.fontSize = "21px";
+          nowprice_cushion.style.fontSize = "17px";
           nowprice_cushion.style.fontWeight = "600";
           nowprice_cushion.style.alignItems = "center";
           nowprice_cushion.style.justifyContent = "center";
@@ -1694,6 +1790,9 @@ carcushion.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_cushion.style.fontSize = "11px";
+            introdutionid.style.width = "calc(100% - 10px)";
+            suggestion_cushion.style.padding = "5px";
+            suggestion_cushion.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -1742,6 +1841,7 @@ document.addEventListener("click", function (event) {
           let Price_bandage = document.querySelectorAll(".pricing");
 
           Price_bandage.forEach(function (openIntro) {
+            let suggestion_bandage = Price_bandage[9];
             //直接判斷是第幾個.Price
             let nowprice_bandage = Price_bandage[9].nextElementSibling;
 
@@ -1780,13 +1880,16 @@ document.addEventListener("click", function (event) {
                 nowprice_bandage.style.padding = "1px";
                 nowprice_bandage.style.margin = "3px 3px 3px 2px";
                 nowprice_bandage.style.textAlign = "center";
-                nowprice_bandage.style.fontSize = "21px";
+                nowprice_bandage.style.fontSize = "20px";
                 nowprice_bandage.style.fontWeight = "600";
                 nowprice_bandage.style.alignItems = "center";
                 nowprice_bandage.style.justifyContent = "center";
 
                 if (window.matchMedia("(max-width: 650px)").matches) {
                   nowprice_bandage.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 10px)";
+                  suggestion_bandage.style.padding = "5px";
+                  suggestion_bandage.style.margin = "3px 0px 3px 1px";
                 }
               }
             }
@@ -1807,8 +1910,12 @@ document.addEventListener("click", function (event) {
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
 
-            //建議售價金額隱藏
-            openIntro.style.display = "none";
+            if (
+              openIntro.getAttribute("data-price-carbandage") === "carbandage"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
             nowprice_bandage.style.display = "none";
           });
         }
@@ -1831,6 +1938,7 @@ carbandage.addEventListener("click", function (event) {
     let img = carBandage.querySelector("img");
 
     Price_bandage.forEach(function (openIntro) {
+      let suggestion_bandage = Price_bandage[9];
       //直接判斷是第幾個.Price
       let nowprice_bandage = Price_bandage[9].nextElementSibling;
 
@@ -1868,7 +1976,7 @@ carbandage.addEventListener("click", function (event) {
           nowprice_bandage.style.padding = "1px";
           nowprice_bandage.style.margin = "3px 3px 3px 2px";
           nowprice_bandage.style.textAlign = "center";
-          nowprice_bandage.style.fontSize = "21px";
+          nowprice_bandage.style.fontSize = "20px";
           nowprice_bandage.style.fontWeight = "600";
           nowprice_bandage.style.alignItems = "center";
           nowprice_bandage.style.justifyContent = "center";
@@ -1879,6 +1987,9 @@ carbandage.addEventListener("click", function (event) {
 
           if (window.matchMedia("(max-width: 650px)").matches) {
             nowprice_bandage.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 10px)";
+            suggestion_bandage.style.padding = "5px";
+            suggestion_bandage.style.margin = "3px 0px 3px 1px";
           }
         } else {
           //把data-collapse-status改成0
@@ -1997,6 +2108,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+//手機模式時將btndiv從rightcontent拉出來
+window.addEventListener("resize", function () {
+  let rightDiv = document.querySelector(".rightcontent");
+  let btnDiv = document.querySelector(".btndiv");
+
+  if (window.innerWidth <= 768) {
+    // 如果螢幕寬度小於 768px，將 btndiv 移到 body 裡
+    if (btnDiv.parentElement !== document.body) {
+      document.body.appendChild(btnDiv);
+      btnDiv.style.display = "block";
+      btnDiv.style.position = "fixed";
+      btnDiv.style.right = "5px";
+      btnDiv.style.bottom = "15px";
+      btnDiv.style.zIndex = "100";
+    }
+  } else {
+    // 如果是電腦模式，把 btndiv 放回 rightdiv
+    if (btnDiv.parentElement !== rightDiv) {
+      rightDiv.appendChild(btnDiv);
+      // **恢復原本的 CSS，移除 inline styles**
+      btnDiv.removeAttribute("style"); // 這行會清除所有內聯樣式
+    }
+  }
+});
+
+// 讓程式碼在頁面載入時就執行一次
+window.dispatchEvent(new Event("resize"));
 
 //測試我每次都點了甚麼
 document.addEventListener("click", function (event) {
