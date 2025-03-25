@@ -77,52 +77,55 @@ carorder.addEventListener("click", function (event) {
   let Price_carcolor = document.querySelectorAll(".pricing");
   let targetimg = document.querySelector(".target_img");
   let img = targetimg.querySelector("img");
+  console.log(event.target);
+  if (introdutionid) {
+    let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+    if (visibilityValue === "hidden") {
+      Price_carcolor.forEach(function (openIntro) {
+        let nowprice_color = Price_carcolor[0].nextElementSibling;
+        if (
+          openIntro.getAttribute("data-price-carcolor") === "carcolor" &&
+          nowprice_color.getAttribute("data-nowprice-carcolor") ===
+            "nowcarcolor"
+        ) {
+          if (introdution.getAttribute("data-collapse-status") === "0") {
+            //把data-collapse-status改成1
+            introdution.setAttribute("data-collapse-status", "1");
 
-  let visibilityValue = window.getComputedStyle(introdutionid).visibility;
-  if (visibilityValue === "hidden") {
-    Price_carcolor.forEach(function (openIntro) {
-      let nowprice_color = Price_carcolor[0].nextElementSibling;
-      if (
-        openIntro.getAttribute("data-price-carcolor") === "carcolor" &&
-        nowprice_color.getAttribute("data-nowprice-carcolor") === "nowcarcolor"
-      ) {
-        if (introdution.getAttribute("data-collapse-status") === "0") {
-          //把data-collapse-status改成1
-          introdution.setAttribute("data-collapse-status", "1");
-
-          //carcolor勾選位置大小設置
-          introdutionid.style.visibility = "visible";
-          introdutionid.style.padding = "1px 1px 1px 6px";
-          introdutionid.style.width = "calc(100% - 10px)";
-          introdutionid.style.flexWrap = "wrap";
-          introdutionid.style.border = "3px dashed black";
-          introdutionid.style.borderTop = "none";
-          introdutionid.style.display = "flex";
-          introdutionid.style.margin = "3px 0px 5px 8px";
-          introdutionid.style.height = "auto";
-          if (img) {
-            img.setAttribute("src", "./img/black triangle after.png");
+            //carcolor勾選位置大小設置
+            introdutionid.style.visibility = "visible";
+            introdutionid.style.padding = "1px 1px 1px 6px";
+            introdutionid.style.width = "calc(100% - 10px)";
+            introdutionid.style.flexWrap = "wrap";
+            introdutionid.style.border = "3px dashed black";
+            introdutionid.style.borderTop = "none";
+            introdutionid.style.display = "flex";
+            introdutionid.style.margin = "3px 0px 5px 8px";
+            introdutionid.style.height = "auto";
+            if (img) {
+              img.setAttribute("src", "./img/black triangle after.png");
+            }
           }
         }
-      }
-    });
-  }
-  //確認我點擊到的位置是否是carcolor
-  else if (showinfo === "carcolor") {
-    Price_carcolor.forEach(function () {
-      //把data-collapse-status改成0
-      introdution.setAttribute("data-collapse-status", "0");
+      });
+    }
+    //確認我點擊到的位置是否是carcolor
+    else if (showinfo === "carcolor") {
+      Price_carcolor.forEach(function () {
+        //把data-collapse-status改成0
+        introdution.setAttribute("data-collapse-status", "0");
 
-      // //建議售價標題隱藏
-      introdutionid.style.visibility = "hidden";
-      introdutionid.style.height = "0";
-      introdutionid.style.padding = "0";
-      introdutionid.style.margin = "0";
-      introdutionid.style.border = "0px dashed black";
-      if (img) {
-        img.setAttribute("src", "./img/black triangle.png");
-      }
-    });
+        // //建議售價標題隱藏
+        introdutionid.style.visibility = "hidden";
+        introdutionid.style.height = "0";
+        introdutionid.style.padding = "0";
+        introdutionid.style.margin = "0";
+        introdutionid.style.border = "0px dashed black";
+        if (img) {
+          img.setAttribute("src", "./img/black triangle.png");
+        }
+      });
+    }
   }
 });
 
@@ -1560,7 +1563,7 @@ document.addEventListener("click", function (event) {
             if (
               openIntro.getAttribute("data-price-carcushion") ===
                 "carcushion" &&
-                nowprice_cushion.getAttribute("data-nowprice-carcushion") ===
+              nowprice_cushion.getAttribute("data-nowprice-carcushion") ===
                 "nowcarcushion"
             ) {
               if (introdution.getAttribute("data-collapse-status") === "0") {
