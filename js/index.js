@@ -77,7 +77,7 @@ carorder.addEventListener("click", function (event) {
   let Price_carcolor = document.querySelectorAll(".pricing");
   let targetimg = document.querySelector(".target_img");
   let img = targetimg.querySelector("img");
-  console.log(event.target);
+
   if (introdutionid) {
     let visibilityValue = window.getComputedStyle(introdutionid).visibility;
     if (visibilityValue === "hidden") {
