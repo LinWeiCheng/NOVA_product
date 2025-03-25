@@ -257,7 +257,7 @@ document.addEventListener("click", function (event) {
                 nowprice_basesize.style.color = "#000000";
                 nowprice_basesize.style.borderRadius = "8px";
                 nowprice_basesize.style.padding = "1px";
-                nowprice_basesize.style.margin = "3px 3px 3px 4px";
+                nowprice_basesize.style.margin = "3px 0px 3px 0px";
                 nowprice_basesize.style.textAlign = "center";
                 nowprice_basesize.style.fontSize = "20px";
                 nowprice_basesize.style.fontWeight = "600";
@@ -356,7 +356,7 @@ carseat.addEventListener("click", function (event) {
           nowprice_basesize.style.color = "#000000";
           nowprice_basesize.style.borderRadius = "8px";
           nowprice_basesize.style.padding = "1px";
-          nowprice_basesize.style.margin = "3px 3px 3px 4px";
+          nowprice_basesize.style.margin = "3px 3px 3px 2px";
           nowprice_basesize.style.textAlign = "center";
           nowprice_basesize.style.fontSize = "20px";
           nowprice_basesize.style.fontWeight = "600";
@@ -454,12 +454,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_tripod.style.display = "block";
                 nowprice_tripod.style.display = "flex";
-                nowprice_tripod.style.width = "100%";
+                nowprice_tripod.style.width = "95%";
                 nowprice_tripod.style.height = "90%";
                 nowprice_tripod.style.color = "#000000";
                 nowprice_tripod.style.borderRadius = "8px";
                 nowprice_tripod.style.padding = "1px";
-                nowprice_tripod.style.margin = "3px 3px 3px 4px";
+                nowprice_tripod.style.margin = "3px 3px 3px 2px";
                 nowprice_tripod.style.textAlign = "center";
                 nowprice_tripod.style.fontSize = "21px";
                 nowprice_tripod.style.fontWeight = "600";
@@ -541,12 +541,12 @@ cartripod.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_tripod.style.display = "block";
           nowprice_tripod.style.display = "flex";
-          nowprice_tripod.style.width = "100%";
+          nowprice_tripod.style.width = "95%";
           nowprice_tripod.style.height = "90%";
           nowprice_tripod.style.color = "#000000";
           nowprice_tripod.style.borderRadius = "8px";
           nowprice_tripod.style.padding = "1px";
-          nowprice_tripod.style.margin = "3px 3px 3px 4px";
+          nowprice_tripod.style.margin = "3px 3px 3px 2px";
           nowprice_tripod.style.textAlign = "center";
           nowprice_tripod.style.fontSize = "21px";
           nowprice_tripod.style.fontWeight = "600";
@@ -641,12 +641,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_carfootpedal.style.display = "block";
                 nowprice_carfootpedal.style.display = "flex";
-                nowprice_carfootpedal.style.width = "100%";
+                nowprice_carfootpedal.style.width = "95%";
                 nowprice_carfootpedal.style.height = "30%";
                 nowprice_carfootpedal.style.color = "#000000";
                 nowprice_carfootpedal.style.borderRadius = "8px";
                 nowprice_carfootpedal.style.padding = "1px";
-                nowprice_carfootpedal.style.margin = "3px 3px 3px 4px";
+                nowprice_carfootpedal.style.margin = "3px 3px 3px 2px";
                 nowprice_carfootpedal.style.textAlign = "center";
                 nowprice_carfootpedal.style.fontSize = "21px";
                 nowprice_carfootpedal.style.fontWeight = "600";
@@ -731,12 +731,12 @@ carfootpedal.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_carfootpedal.style.display = "block";
           nowprice_carfootpedal.style.display = "flex";
-          nowprice_carfootpedal.style.width = "100%";
+          nowprice_carfootpedal.style.width = "95%";
           nowprice_carfootpedal.style.height = "30%";
           nowprice_carfootpedal.style.color = "#000000";
           nowprice_carfootpedal.style.borderRadius = "8px";
           nowprice_carfootpedal.style.padding = "1px";
-          nowprice_carfootpedal.style.margin = "3px 3px 3px 4px";
+          nowprice_carfootpedal.style.margin = "3px 3px 3px 2px";
           nowprice_carfootpedal.style.textAlign = "center";
           nowprice_carfootpedal.style.fontSize = "21px";
           nowprice_carfootpedal.style.fontWeight = "600";
@@ -830,12 +830,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_carheadsupports.style.display = "block";
                 nowprice_carheadsupports.style.display = "flex";
-                nowprice_carheadsupports.style.width = "100%";
+                nowprice_carheadsupports.style.width = "95%";
                 nowprice_carheadsupports.style.height = "90%";
                 nowprice_carheadsupports.style.color = "#000000";
                 nowprice_carheadsupports.style.borderRadius = "8px";
                 nowprice_carheadsupports.style.padding = "1px";
-                nowprice_carheadsupports.style.margin = "3px 3px 3px 4px";
+                nowprice_carheadsupports.style.margin = "3px 3px 3px 2px";
                 nowprice_carheadsupports.style.textAlign = "center";
                 nowprice_carheadsupports.style.fontSize = "21px";
                 nowprice_carheadsupports.style.fontWeight = "600";
@@ -921,12 +921,12 @@ carheadsupports.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_carheadsupports.style.display = "block";
           nowprice_carheadsupports.style.display = "flex";
-          nowprice_carheadsupports.style.width = "100%";
+          nowprice_carheadsupports.style.width = "95%";
           nowprice_carheadsupports.style.height = "90%";
           nowprice_carheadsupports.style.color = "#000000";
           nowprice_carheadsupports.style.borderRadius = "8px";
           nowprice_carheadsupports.style.padding = "1px";
-          nowprice_carheadsupports.style.margin = "3px 3px 3px 4px";
+          nowprice_carheadsupports.style.margin = "3px 3px 3px 2px";
           nowprice_carheadsupports.style.textAlign = "center";
           nowprice_carheadsupports.style.fontSize = "21px";
           nowprice_carheadsupports.style.fontWeight = "600";
@@ -1020,12 +1020,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_backsupports.style.display = "block";
                 nowprice_backsupports.style.display = "flex";
-                nowprice_backsupports.style.width = "100%";
+                nowprice_backsupports.style.width = "95%";
                 nowprice_backsupports.style.height = "90%";
                 nowprice_backsupports.style.color = "#000000";
                 nowprice_backsupports.style.borderRadius = "8px";
                 nowprice_backsupports.style.padding = "1px";
-                nowprice_backsupports.style.margin = "3px 3px 3px 4px";
+                nowprice_backsupports.style.margin = "3px 3px 3px 2px";
                 nowprice_backsupports.style.textAlign = "center";
                 nowprice_backsupports.style.fontSize = "21px";
                 nowprice_backsupports.style.fontWeight = "600";
@@ -1111,12 +1111,12 @@ carbacksupports.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_backsupports.style.display = "block";
           nowprice_backsupports.style.display = "flex";
-          nowprice_backsupports.style.width = "100%";
+          nowprice_backsupports.style.width = "95%";
           nowprice_backsupports.style.height = "90%";
           nowprice_backsupports.style.color = "#000000";
           nowprice_backsupports.style.borderRadius = "8px";
           nowprice_backsupports.style.padding = "1px";
-          nowprice_backsupports.style.margin = "3px 3px 3px 4px";
+          nowprice_backsupports.style.margin = "3px 3px 3px 2px";
           nowprice_backsupports.style.textAlign = "center";
           nowprice_backsupports.style.fontSize = "21px";
           nowprice_backsupports.style.fontWeight = "600";
@@ -1212,12 +1212,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_carlatertrunksupports.style.display = "block";
                 nowprice_carlatertrunksupports.style.display = "flex";
-                nowprice_carlatertrunksupports.style.width = "100%";
+                nowprice_carlatertrunksupports.style.width = "95%";
                 nowprice_carlatertrunksupports.style.height = "90%";
                 nowprice_carlatertrunksupports.style.color = "#000000";
                 nowprice_carlatertrunksupports.style.borderRadius = "8px";
                 nowprice_carlatertrunksupports.style.padding = "1px";
-                nowprice_carlatertrunksupports.style.margin = "3px 3px 3px 4px";
+                nowprice_carlatertrunksupports.style.margin = "3px 3px 3px 2px";
                 nowprice_carlatertrunksupports.style.textAlign = "center";
                 nowprice_carlatertrunksupports.style.fontSize = "21px";
                 nowprice_carlatertrunksupports.style.fontWeight = "600";
@@ -1306,12 +1306,12 @@ carlatertrunksupports.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_carlatertrunksupports.style.display = "block";
           nowprice_carlatertrunksupports.style.display = "flex";
-          nowprice_carlatertrunksupports.style.width = "100%";
+          nowprice_carlatertrunksupports.style.width = "95%";
           nowprice_carlatertrunksupports.style.height = "90%";
           nowprice_carlatertrunksupports.style.color = "#000000";
           nowprice_carlatertrunksupports.style.borderRadius = "8px";
           nowprice_carlatertrunksupports.style.padding = "1px";
-          nowprice_carlatertrunksupports.style.margin = "3px 3px 3px 4px";
+          nowprice_carlatertrunksupports.style.margin = "3px 3px 3px 2px";
           nowprice_carlatertrunksupports.style.textAlign = "center";
           nowprice_carlatertrunksupports.style.fontSize = "21px";
           nowprice_carlatertrunksupports.style.fontWeight = "600";
@@ -1403,12 +1403,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_seatbase.style.display = "block";
                 nowprice_seatbase.style.display = "flex";
-                nowprice_seatbase.style.width = "100%";
+                nowprice_seatbase.style.width = "95%";
                 nowprice_seatbase.style.height = "90%";
                 nowprice_seatbase.style.color = "#000000";
                 nowprice_seatbase.style.borderRadius = "8px";
                 nowprice_seatbase.style.padding = "1px";
-                nowprice_seatbase.style.margin = "3px 3px 3px 4px";
+                nowprice_seatbase.style.margin = "3px 3px 3px 2px";
                 nowprice_seatbase.style.textAlign = "center";
                 nowprice_seatbase.style.fontSize = "21px";
                 nowprice_seatbase.style.fontWeight = "600";
@@ -1491,12 +1491,12 @@ carseatbase.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_seatbase.style.display = "block";
           nowprice_seatbase.style.display = "flex";
-          nowprice_seatbase.style.width = "100%";
+          nowprice_seatbase.style.width = "95%";
           nowprice_seatbase.style.height = "90%";
           nowprice_seatbase.style.color = "#000000";
           nowprice_seatbase.style.borderRadius = "8px";
           nowprice_seatbase.style.padding = "1px";
-          nowprice_seatbase.style.margin = "3px 3px 3px 4px";
+          nowprice_seatbase.style.margin = "3px 3px 3px 2px";
           nowprice_seatbase.style.textAlign = "center";
           nowprice_seatbase.style.fontSize = "21px";
           nowprice_seatbase.style.fontWeight = "600";
@@ -1588,12 +1588,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_cushion.style.display = "block";
                 nowprice_cushion.style.display = "flex";
-                nowprice_cushion.style.width = "100%";
+                nowprice_cushion.style.width = "95%";
                 nowprice_cushion.style.height = "90%";
                 nowprice_cushion.style.color = "#000000";
                 nowprice_cushion.style.borderRadius = "8px";
                 nowprice_cushion.style.padding = "1px";
-                nowprice_cushion.style.margin = "3px 3px 3px 4px";
+                nowprice_cushion.style.margin = "3px 3px 3px 2px";
                 nowprice_cushion.style.textAlign = "center";
                 nowprice_cushion.style.fontSize = "21px";
                 nowprice_cushion.style.fontWeight = "600";
@@ -1676,12 +1676,12 @@ carcushion.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_cushion.style.display = "block";
           nowprice_cushion.style.display = "flex";
-          nowprice_cushion.style.width = "100%";
+          nowprice_cushion.style.width = "95%";
           nowprice_cushion.style.height = "90%";
           nowprice_cushion.style.color = "#000000";
           nowprice_cushion.style.borderRadius = "8px";
           nowprice_cushion.style.padding = "1px";
-          nowprice_cushion.style.margin = "3px 3px 3px 4px";
+          nowprice_cushion.style.margin = "3px 3px 3px 2px";
           nowprice_cushion.style.textAlign = "center";
           nowprice_cushion.style.fontSize = "21px";
           nowprice_cushion.style.fontWeight = "600";
@@ -1773,12 +1773,12 @@ document.addEventListener("click", function (event) {
                 //建議售價金額顯示
                 nowprice_bandage.style.display = "block";
                 nowprice_bandage.style.display = "flex";
-                nowprice_bandage.style.width = "100%";
+                nowprice_bandage.style.width = "95%";
                 nowprice_bandage.style.height = "90%";
                 nowprice_bandage.style.color = "#000000";
                 nowprice_bandage.style.borderRadius = "8px";
                 nowprice_bandage.style.padding = "1px";
-                nowprice_bandage.style.margin = "3px 3px 3px 4px";
+                nowprice_bandage.style.margin = "3px 3px 3px 2px";
                 nowprice_bandage.style.textAlign = "center";
                 nowprice_bandage.style.fontSize = "21px";
                 nowprice_bandage.style.fontWeight = "600";
@@ -1861,12 +1861,12 @@ carbandage.addEventListener("click", function (event) {
           //建議售價金額顯示
           nowprice_bandage.style.display = "block";
           nowprice_bandage.style.display = "flex";
-          nowprice_bandage.style.width = "100%";
+          nowprice_bandage.style.width = "95%";
           nowprice_bandage.style.height = "90%";
           nowprice_bandage.style.color = "#000000";
           nowprice_bandage.style.borderRadius = "8px";
           nowprice_bandage.style.padding = "1px";
-          nowprice_bandage.style.margin = "3px 3px 3px 4px";
+          nowprice_bandage.style.margin = "3px 3px 3px 2px";
           nowprice_bandage.style.textAlign = "center";
           nowprice_bandage.style.fontSize = "21px";
           nowprice_bandage.style.fontWeight = "600";
