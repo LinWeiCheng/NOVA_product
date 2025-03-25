@@ -2,7 +2,7 @@
 function formatPrice(back_supports_prices) {
   return new Intl.NumberFormat("en-US").format(back_supports_prices);
 }
-let  color_car_switch = false;
+let color_car_switch = false;
 let productImage = document.getElementById("ProductImage");
 
 /*-----  1.車體顏色點擊列  -----*/
@@ -31,7 +31,7 @@ Price.forEach(function (openIntro) {
   Car_color_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
       if (event.target.checked && color_car_switch === false) {
-        color_car_switch =true;
+        color_car_switch = true;
         // 取消其他 checkbox 的勾選
         Car_color_checkboxes.forEach((otherCheckbox) => {
           if (otherCheckbox !== event.target) {
@@ -52,13 +52,12 @@ Price.forEach(function (openIntro) {
         } else if (!event.target.checked) {
           productImage.src = "./img/Novarc_standrad.png";
         }
-      } 
-      else if( color_car_switch === true)
-      {
+      } else if (color_car_switch === true) {
         Car_color_checkboxes.forEach((otherCheckbox) => {
           if (otherCheckbox !== event.target) {
             otherCheckbox.checked = false;
           }
+          color_car_switch = false;
         });
 
         Car_color_checkboxes.forEach((checkbox) => {
@@ -75,20 +74,18 @@ Price.forEach(function (openIntro) {
             } else if (checkbox.id === "checkbox_gray") {
               nowprice_size.textContent = "36,500元";
             }
-          }
-          else{
+          } else {
             let isAnyChecked = Array.from(Car_color_checkboxes).some(
               (checkbox) => checkbox.checked
             );
-    
+
             if (!isAnyChecked) {
               // 如果沒有任何 checkbox 被勾選，恢復默認圖片
               nowprice_size.textContent = "0元";
             }
           }
         });
-      }
-      else {
+      } else {
         // 檢查是否所有 checkbox 都未選中
         let isAnyChecked = Array.from(Car_color_checkboxes).some(
           (checkbox) => checkbox.checked
@@ -402,7 +399,7 @@ Price.forEach(function (openIntro) {
             footpedal_piecealuminumDiv.style.height = "auto"; // 縮小黑邊
             footpedal_plumbDiv.style.display = "none";
             footpedal_plumbDiv.style.height = "auto"; // 縮小黑邊
-            nowprice_footpedal.style.padding = "43px 0px 0px 0px"
+            nowprice_footpedal.style.padding = "43px 0px 0px 0px";
             nowprice_footpedal.style.margin = "18px 3px 3px 4px";
           });
         }
@@ -457,7 +454,7 @@ Price.forEach(function (openIntro) {
             footpedal_piecealuminumDiv.style.height = "auto"; // 縮小黑邊
             footpedal_footpedal_PluginDiv.style.display = "none";
             footpedal_footpedal_PluginDiv.style.height = "auto"; // 縮小黑邊
-            nowprice_footpedal.style.padding = "43px 0px 0px 0px"
+            nowprice_footpedal.style.padding = "43px 0px 0px 0px";
             nowprice_footpedal.style.margin = "18px 3px 3px 4px";
           });
         }
@@ -853,7 +850,7 @@ let Car_cushion_checkboxes = document.querySelectorAll(
 let seat_cushion_prices = {
   seatcushion_prices1: 1500,
   seatcushion_prices2: 1550,
-  seatcushion_prices3: 10000,// 第 3 個 checkbox 的價格
+  seatcushion_prices3: 10000, // 第 3 個 checkbox 的價格
 };
 
 function update_cushion_Price(event) {
@@ -893,7 +890,6 @@ Car_cushion_checkboxes.forEach((checkbox) => {
     }
   });
 });
-
 
 /*-----  10.綁帶子系統點擊列  -----*/
 let Car_bandage_checkboxes = document.querySelectorAll(
