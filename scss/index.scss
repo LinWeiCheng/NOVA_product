@@ -1,5 +1,44 @@
 @import "reset";
 @import "quotation";
+
+@keyframes blink {
+  0% {
+    background-color: red;
+  }
+
+  /* 紅色 */
+  16% {
+    background-color: orange;
+  }
+
+  /* 橙色 */
+  32% {
+    background-color: yellow;
+  }
+
+  /* 黃色 */
+  48% {
+    background-color: green;
+  }
+
+  /* 綠色 */
+  68% {
+    background-color: blue;
+  }
+
+  /* 藍色 */
+  84% {
+    background-color: Indigo;
+  }
+
+  /* 靛色 */
+  100% {
+    background-color: purple;
+  }
+
+  /* 紫色 */
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -102,8 +141,6 @@ body {
     /* 圖片水平置中 */
     align-items: center;
     /* 圖片垂直置中 */
-    // border: 2px solid black;
-    margin: 20px auto;
   }
 
   #ProductImage {
@@ -123,29 +160,51 @@ body {
   }
 }
 
-//取消勾選
-.btnallcheckboxfalse {
-  // position: fixed;
-  // bottom: 10px;
-  // right: 110px;
-  padding: 4px 8px;
-  background-color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
-}
+.btndiv {
+  display: flex;
+  flex-direction: column;
+
+  //取消勾選
+  .btnallcheckboxfalse {
+    margin: 0 0 4px 0;
+    padding: 4px 8px;
+    background-color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* 平滑過渡動畫 */
+  }
+
+  .btnallcheckboxfalse:hover {
+    animation: blink 0.8s infinite alternate;
+    /* 閃爍動畫 */
+    transform: scale(1.5);
+    /* 放大 */
+  }
 
 
-//報價單
-.btnoutputQuotation {
-  // position: fixed;
-  // bottom: 10px;
-  // right: 10px;
-  padding: 4px 8px;
-  background-color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
+  //報價單
+  .btnoutputQuotation {
+    padding: 4px 8px;
+    background-color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* 平滑過渡動畫 */
+  }
+
+  .btnoutputQuotation:hover {
+    background-color: #ff5733;
+    /* 變色 */
+    transform: scale(1.5);
+    /* 放大 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* 增加陰影 */
+  }
 }
 
 //列印
