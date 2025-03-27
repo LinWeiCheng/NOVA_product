@@ -910,7 +910,7 @@ let bandage_prices = {
 let bandagetotalPrice = 0; // 重置價格
 
 function update_bandagePrice(event) {
-  let nowprice_bandage = Price[8].nextElementSibling;
+  let nowprice_bandage = Price[9].nextElementSibling;
 
   // 計算總價
   Car_bandage_checkboxes.forEach((checkbox, index) => {
