@@ -410,7 +410,7 @@ body {
   }
 }
 
-// 車體顏色
+// 第一個點擊列-車體顏色
 .car-order {
   margin: 0 0 8px 0;
 
@@ -701,7 +701,7 @@ body {
   }
 }
 
-// 座板尺寸
+// 第二個點擊列-座板尺寸
 .car-seat {
   margin: 0 0 8px 0;
 
@@ -865,7 +865,7 @@ body {
   /* 白色文字 */
 }
 
-// 腳架
+//第三個點擊列-腳架
 .car-tripod {
   margin: 0 0 8px 0;
 
@@ -899,7 +899,7 @@ body {
   }
 }
 
-//踏板
+//第四個點擊列-腳踏板
 .car-footpedal {
   margin: 0 0 8px 0;
 
@@ -1184,7 +1184,7 @@ body {
   margin: 12px 2px 9px 2px;
 }
 
-//頭靠子系統
+//第五個點擊列-頭靠子系統
 .car-head_supports {
   margin: 0 0 8px 0;
 
@@ -1232,7 +1232,7 @@ body {
   }
 }
 
-//軀幹子系統_背靠
+//第六個點擊列-軀幹子系統-背靠
 .car-back_supports {
   margin: 0 0 8px 0;
 
@@ -1318,7 +1318,7 @@ body {
 }
 
 
-//軀幹子系統_軀幹側支撐
+//第七個點擊列-軀幹子系統-軀幹側支撐
 .car-latertrunk_supports {
   margin: 0 0 8px 0;
 
@@ -1488,7 +1488,7 @@ body {
   background: #bebebe;
 }
 
-//底座子系統-座板
+//第八個點擊列-底座子系統-座板
 .car-seatbase {
   margin: 0 0 8px 0;
 
@@ -1574,7 +1574,7 @@ body {
   margin: 7.9px 0px 13.1px 0px;
 }
 
-//底座子系統-座墊
+//第九個點擊列-底座子系統-座墊
 .car-cushion {
   margin: 0 0 8px 0;
 
@@ -1672,7 +1672,7 @@ body {
   margin: 8px 0px 11px 0px;
 }
 
-//綁帶子系統
+//第十個點擊列-綁帶子系統
 .car-bandage {
   margin: 0 0 8px 0;
 
@@ -1958,26 +1958,232 @@ body {
 .chest_straps_checkbox input[type="checkbox"] {
   //accent-color: rgb(255, 0, 0);
   /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 12px 5px 12px 5px;
+  margin: 12px 5px 12px 8px;
 }
 
 .pelvic_belt_checkbox input[type="checkbox"] {
   //accent-color: rgb(255, 0, 0);
   /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 12px 5px 12px 5px;
+  margin: 12px 5px 12px 8px;
 }
 
 .calf_bandgroup input[type="checkbox"] {
   //accent-color: rgb(255, 0, 0);
   /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 12px 5px 12px 5px;
+  margin: 12px 5px 12px 8px;
 }
 
 .calf_cuffgroup input[type="checkbox"] {
   //accent-color: rgb(255, 0, 0);
   /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 12px 5px 12px 5px;
+  margin: 12px 5px 12px 8px;
 }
+
+//SPEX區域
+.Spex_area {
+  width: 98.3%;
+  /* 設定寬度 */
+  height: auto;
+  /* 設定高度 */
+  background: linear-gradient(to right, #cb1a21, #bf1966);
+  /* 左邊深紅 -> 右邊淺紅 */
+  display: flex;
+  /* 讓圖片置中 */
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px;
+  /* 圓角 */
+  padding: 2px 0 0 0;
+  margin: 30px 0 8px 12px;
+}
+
+.Spex_area img {
+  max-width: 15%;
+}
+
+//第十一點擊列-Spex底座子系統-座墊
+.Spex_cushion {
+  margin: 0 0 8px 0;
+
+  .chkcontent_11th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexcushiongroup {
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // justify-content: space-between;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
+
+
+
+      .Spexcushiongroup_title {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+
+
+        .Spexcushion_title {
+          border: 1px solid #000000;
+          border-radius: 8px;
+          font-size: 20px;
+          width: 100%;
+          font-weight: 700;
+          margin: 2px 1px;
+
+          .SpexCushion {
+            margin: 12px 16px;
+          }
+        }
+      }
+
+      .Spexcushiongroup_size {
+        display: flex;
+        flex-direction: column;
+        /* 讓子元素橫向排列 */
+        align-items: center;
+        /* 垂直置中 */
+        width: 55%;
+        /* 設定寬度 */
+        margin: 1px 1px 1px 3px;
+        border: 1px solid #000000;
+        border-radius: 8px;
+
+
+        .Spexcushion_Basicssize {
+          border-radius: 6px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: center;
+          /* 對齊到底部 */
+          width: 100%;
+          height: 50%;
+
+          /* 設定左側下拉選單 */
+          .Spexcushion_Width {
+            padding: 3px;
+            margin: 2px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-align: center;
+            /* 設定文字置中 */
+            width: 20%;
+            /* 填滿寬度，讓選項顯示在中間 */
+            display: inline-block;
+
+            .Spexcushion_Width option {
+              text-align: center;
+              /* 讓選項中的文字置中 */
+            }
+          }
+
+          div {
+            font-size: 18px;
+            font-weight: 800;
+            margin: 4px;
+          }
+
+          /* 設定右側下拉選單 */
+          .Spexcushion_Heigh {
+            padding: 3px;
+            margin: 2px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-align: center;
+            width: 20%;
+            /* 填滿寬度，讓選項顯示在中間 */
+            display: inline-block;
+
+            .Spexcushion_Heigh option {
+              text-align: center;
+              /* 讓選項中的文字置中 */
+            }
+
+          }
+        }
+      }
+
+      .Spexcushion_specialsize {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 10px;
+        /* 設定元素之間的間距 */
+        width: 100%;
+        height: 50%;
+
+        .Spexcushion_specialsizenotice {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: end;
+          width: 100%;
+          height: 75%;
+
+          div {
+            font-size: 18px;
+            font-weight: 800;
+            margin: 4px;
+          }
+        }
+
+        input[type="text"] {
+          padding: 6px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #f0f0f0;
+          /* 灰白色 */
+          color: #333;
+        }
+
+        input[type="text"]:focus {
+          background-color: #fff;
+          /* 當獲得焦點時變白色 */
+          border-color: #007bff;
+          /* 獲得焦點時邊框顏色改變 */
+          outline: none;
+        }
+
+        .Spexcushion_specialWidth {
+          width: 10%;
+          height: auto;
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .Spexcushion_specialHeigh {
+          width: 10%;
+          height: auto;
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .Spexcushion_notice {
+          width: 100%;
+          height: 10%;
+          display: flex;
+          justify-content: center;
+          align-items: end;
+
+        }
+      }
+    }
+  }
+}
+
 
 //n.其他
 .car-other {
