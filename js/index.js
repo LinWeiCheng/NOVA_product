@@ -32,7 +32,7 @@ targetimg_1.addEventListener("click", function (event) {
               //carcolor勾選位置大小設置
               introdutionid.style.visibility = "visible";
               introdutionid.style.padding = "1px 1px 1px 6px";
-              introdutionid.style.width = "calc(100% - 10px)";
+              introdutionid.style.width = "calc(100% - 20px)";
               introdutionid.style.flexWrap = "wrap";
               introdutionid.style.border = "3px dashed black";
               introdutionid.style.borderTop = "none";
@@ -95,7 +95,7 @@ carorder.addEventListener("click", function (event) {
             //carcolor勾選位置大小設置
             introdutionid.style.visibility = "visible";
             introdutionid.style.padding = "1px 1px 1px 6px";
-            introdutionid.style.width = "calc(100% - 10px)";
+            introdutionid.style.width = "calc(100% - 20px)";
             introdutionid.style.flexWrap = "wrap";
             introdutionid.style.border = "3px dashed black";
             introdutionid.style.borderTop = "none";
@@ -239,7 +239,7 @@ document.addEventListener("click", function (event) {
                 //carbasesize勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "7px 1px 0px 3px";
-                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.width = "calc(100% - 20px)";
                 introdutionid.style.flexWrap = "wrap";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -334,7 +334,7 @@ carseat.addEventListener("click", function (event) {
             //carbasesize勾選位置大小設置
             introdutionid.style.visibility = "visible";
             introdutionid.style.padding = "7px 1px 0px 3px";
-            introdutionid.style.width = "calc(100% - 8px)";
+            introdutionid.style.width = "calc(100% - 20px)";
             introdutionid.style.flexWrap = "wrap";
             introdutionid.style.border = "3px dashed black";
             introdutionid.style.borderTop = "none";
@@ -450,7 +450,7 @@ document.addEventListener("click", function (event) {
                 //cartripod勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 1px 3px";
-                introdutionid.style.width = "calc(100% - 6px)";
+                introdutionid.style.width = "calc(100% - 20px)";
                 introdutionid.style.flexWrap = "wrap";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -544,7 +544,7 @@ cartripod.addEventListener("click", function (event) {
           //cartripod勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 1px 3px";
-          introdutionid.style.width = "calc(100% - 6px)";
+          introdutionid.style.width = "calc(100% - 20px)";
           introdutionid.style.flexWrap = "wrap";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
@@ -647,7 +647,7 @@ document.addEventListener("click", function (event) {
                 //carfootpedal勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 1px 3px";
-                introdutionid.style.width = "calc(100% - 6px)";
+                introdutionid.style.width = "calc(100% - 19px)";
                 introdutionid.style.flexWrap = "wrap";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -746,7 +746,7 @@ carfootpedal.addEventListener("click", function (event) {
           //carfootpedal勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 1px 3px";
-          introdutionid.style.width = "calc(100% - 6px)";
+          introdutionid.style.width = "calc(100% - 19px)";
           introdutionid.style.flexWrap = "wrap";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
@@ -950,7 +950,7 @@ carheadsupports.addEventListener("click", function (event) {
           //carheadsupports勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 1px 3px";
-          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.width = "calc(100% - 22px)";
           introdutionid.style.display = "flex";
           introdutionid.style.flexDirection = "row";
           introdutionid.style.border = "3px dashed black";
@@ -1053,7 +1053,7 @@ document.addEventListener("click", function (event) {
                 //carbacksupports勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 1px 3px";
-                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.width = "calc(100% - 22px)";
                 introdutionid.style.flexDirection = "column";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -1153,7 +1153,7 @@ carbacksupports.addEventListener("click", function (event) {
           //carbacksupports勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 1px 3px";
-          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.width = "calc(100% - 22px)";
           introdutionid.style.flexDirection = "column";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
@@ -1259,7 +1259,7 @@ document.addEventListener("click", function (event) {
                 //carcarlatertrunksupports勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 6px 3px";
-                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.width = "calc(100% - 22px)";
                 introdutionid.style.flexDirection = "column";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -1363,7 +1363,7 @@ carlatertrunksupports.addEventListener("click", function (event) {
           //carcarlatertrunksupports勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 6px 3px";
-          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.width = "calc(100% - 22px)";
           introdutionid.style.flexDirection = "column";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
@@ -1464,7 +1464,7 @@ document.addEventListener("click", function (event) {
                 //carseatbase勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 1px 3px";
-                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.width = "calc(100% - 20px)";
                 introdutionid.style.flexDirection = "column";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -1560,7 +1560,7 @@ carseatbase.addEventListener("click", function (event) {
           //carseatbase勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 1px 3px";
-          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.width = "calc(100% - 20px)";
           introdutionid.style.flexDirection = "column";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
@@ -1661,7 +1661,7 @@ document.addEventListener("click", function (event) {
                 //carcushion勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 2px 3px";
-                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.width = "calc(100% - 19px)";
                 introdutionid.style.flexDirection = "row";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -1757,7 +1757,7 @@ carcushion.addEventListener("click", function (event) {
           //carseatbase勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 2px 3px";
-          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.width = "calc(100% - 19px)";
           introdutionid.style.flexDirection = "row";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
@@ -1857,8 +1857,8 @@ document.addEventListener("click", function (event) {
 
                 //carbandage勾選位置大小設置
                 introdutionid.style.visibility = "visible";
-                introdutionid.style.padding = "0px 1px 1px 3px";
-                introdutionid.style.width = "calc(100% - 8px)";
+                introdutionid.style.padding = "0px 3px 1px 3px";
+                introdutionid.style.width = "calc(100% - 19px)";
                 introdutionid.style.flexDirection = "column";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -1953,8 +1953,8 @@ carbandage.addEventListener("click", function (event) {
 
           //carbandage勾選位置大小設置
           introdutionid.style.visibility = "visible";
-          introdutionid.style.padding = "0px 1px 1px 3px";
-          introdutionid.style.width = "calc(100% - 8px)";
+          introdutionid.style.padding = "0px 3px 1px 3px";
+          introdutionid.style.width = "calc(100% - 19px)";
           introdutionid.style.flexDirection = "column";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
