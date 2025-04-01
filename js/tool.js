@@ -209,6 +209,7 @@ Price.forEach(function (openIntro) {
 });
 
 /*-----  4.踏板樣式點擊列  -----*/
+//region
 let Car_footpedal_twopiece_class_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="footpedal_twopiecechk"]'
 );
@@ -522,8 +523,10 @@ function addfootpedal_plumb(footpedal_plumb) {
   footpedal_plumb.style.margin = "0 0 1px 0";
   footpedal_plumb.style.padding = "2px";
 }
+//endregion
 
 /*-----  5.頭靠點擊列  -----*/
+//region
 let Car_head_supports_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_head_supports"]'
 );
@@ -552,8 +555,10 @@ Price.forEach(function (openIntro) {
     });
   });
 });
+//endregion
 
 /*-----  6.軀幹點擊列-背靠  -----*/
+ //#region 
 let Car_side_supports_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_back_supports"]'
 );
@@ -659,8 +664,10 @@ Car_side_supports_checkboxes.forEach((checkbox) => {
     }
   });
 });
+//#endregion 
 
 /*-----  7.軀幹點擊列-軀幹側支撐 -----*/
+//#region
 let Car_latertrunk_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_latertrunk_support"]'
 );
@@ -735,8 +742,10 @@ Car_latertrunk_checkboxes.forEach((checkbox) => {
     }
   });
 });
+//#endregion
 
 /*-----  8.底座子系統-座板  -----*/
+//#region
 let Car_seatbase_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_ironseatbase"]'
 );
@@ -841,8 +850,10 @@ Car_seatbase_checkboxes.forEach((checkbox) => {
     }
   });
 });
+//#endregion
 
 /*-----  9.底座子系統-座墊  -----*/
+//#region
 let Car_cushion_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_basecushion"]'
 );
@@ -890,8 +901,10 @@ Car_cushion_checkboxes.forEach((checkbox) => {
     }
   });
 });
+//endregion
 
 /*-----  10.綁帶子系統點擊列  -----*/
+//region
 let Car_bandage_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_bandage"]'
 );
@@ -930,3 +943,10 @@ Car_bandage_checkboxes.forEach((checkbox) => {
     update_bandagePrice(event);
   });
 });
+//endregion
+
+
+/*-----  11.Spex底座子系統-座墊點擊列  -----*/
+//region
+
+//endregion
