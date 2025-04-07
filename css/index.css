@@ -1895,6 +1895,8 @@ body {
 .Spex_cushion .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize .Spexcushion_Width .Spexcushion_Width option {
   text-align: center;
   /* 讓選項中的文字置中 */
+  background-color: #e0e0e0;
+  color: #000000;
 }
 .Spex_cushion .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize div {
   font-size: 18px;
