@@ -1,11 +1,12 @@
 // 格式化為帶逗號的數字
-function formatPrice(back_supports_prices) {
-  return new Intl.NumberFormat("en-US").format(back_supports_prices);
+function formatPrice(prices) {
+  return new Intl.NumberFormat("en-US").format(prices);
 }
 let color_car_switch = false;
 let productImage = document.getElementById("ProductImage");
 
 /*-----  1.車體顏色點擊列  -----*/
+//region
 let Car_color_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_color"]'
 );
@@ -99,8 +100,10 @@ Price.forEach(function (openIntro) {
     });
   });
 });
+//endregion
 
 /*-----  2.座板尺寸點擊列  -----*/
+//region
 let Car_Basewidth_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_basewidth"]'
 );
@@ -173,8 +176,10 @@ Price.forEach(function (openIntro) {
     checkbox.addEventListener("change", checkBothLines);
   });
 });
+//endregion
 
 /*-----  3.腳架點擊列  -----*/
+//region
 let Car_tripod_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_tripod"]'
 );
@@ -207,6 +212,7 @@ Price.forEach(function (openIntro) {
     });
   });
 });
+//endregion
 
 /*-----  4.踏板樣式點擊列  -----*/
 //region
@@ -558,7 +564,7 @@ Price.forEach(function (openIntro) {
 //endregion
 
 /*-----  6.軀幹點擊列-背靠  -----*/
- //#region 
+//#region
 let Car_side_supports_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_back_supports"]'
 );
@@ -664,7 +670,7 @@ Car_side_supports_checkboxes.forEach((checkbox) => {
     }
   });
 });
-//#endregion 
+//#endregion
 
 /*-----  7.軀幹點擊列-軀幹側支撐 -----*/
 //#region
@@ -945,8 +951,102 @@ Car_bandage_checkboxes.forEach((checkbox) => {
 });
 //endregion
 
-
 /*-----  11.Spex底座子系統-座墊點擊列  -----*/
 //region
+let Car_SpexCushion_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_SpexCushion"]'
+);
+let nowprice_SpexCushion = Price[10].nextElementSibling;
+
+let Spex_Vigour_std_prices = {
+  Spex_Vigour_std_prices1: 14600,
+  Spex_Vigour_std_prices2: 14600,
+  Spex_Vigour_std_prices3: 14600,
+  Spex_Vigour_std_prices4: 14600,
+  Spex_Vigour_std_prices5: 14600,
+  Spex_Vigour_std_prices6: 15800,
+};
+
+let VigourStdCheckbox = document.querySelector("#Spex_Vigour_std");
+let VigourHighCheckbox = document.querySelector("#Spex_Vigour_High");
+let SpexStandardCheckbox = document.querySelector("#Spex_Standard");
+let SpexHighCheckbox = document.querySelector("#Spex_High");
+let Spex_SuperHighCheckbox = document.querySelector("#Spex_SuperHigh");
+let Spex_FlexCheckbox = document.querySelector("#Spex_Flex");
+let Spex_Flex_HighCheckbox = document.querySelector("#Spex_Flex_High");
+let Spex_Flex_SuperHighCheckbox = document.querySelector(
+  "#Spex_Flex_SuperHigh"
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+  let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
+  let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
+
+  // 監聽高度選單
+  CushionheightSelect.addEventListener("change", function () {
+    let widthselectedOption = CushionwidthSelect.options[CushionwidthSelect.selectedIndex];
+    let heightselectedOption = CushionheightSelect.options[CushionheightSelect.selectedIndex];
+
+    console.log("寬度選擇：", widthselectedOption.text);
+    console.log("高度選擇：", heightselectedOption.text);
+
+    if (VigourStdCheckbox.id === "Spex_Vigour_std") {
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_std_prices.Spex_Vigour_std_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_std_prices.Spex_Vigour_std_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_std_prices.Spex_Vigour_std_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_std_prices.Spex_Vigour_std_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_std_prices.Spex_Vigour_std_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text.replaceAll("”", '"') === '19"' &&
+        (heightselectedOption.text.replaceAll("”", '"') === '18"' ||
+          heightselectedOption.text.replaceAll("”", '"') === '20"')
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_std_prices.Spex_Vigour_std_prices6
+        )} 元`;
+      }
+    }
+  });
+});
 
 //endregion
