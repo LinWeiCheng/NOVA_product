@@ -1,6 +1,6 @@
 let left = document.querySelector(".leftcontent");
 /*-----  1.車體顏色點擊列  -----*/
-
+//reion
 /*--- 車體顏色點擊列-圖片箭頭部分   ---*/
 let targetimg_1 = document.querySelector(".target_img");
 targetimg_1.addEventListener("click", function (event) {
@@ -128,9 +128,10 @@ carorder.addEventListener("click", function (event) {
     }
   }
 });
+//endregion
 
 /*-----  2.座板尺寸點擊列  -----*/
-
+//region
 //座寬尺寸黑格子
 let SW_container = document.querySelector(".width_number");
 let SWCount = 30;
@@ -410,9 +411,10 @@ carseat.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*-----  3.腳架點擊列  -----*/
-
+//region
 /*--- 腳架點擊列-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -604,9 +606,10 @@ cartripod.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*-----  4.踏板樣式點擊列  -----*/
-
+//region
 /*--- 踏板樣式點擊列-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -807,9 +810,10 @@ carfootpedal.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*-----  5.頭靠子系統點擊列  -----*/
-
+//region
 /*--- 頭靠子系統點擊列-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1010,9 +1014,10 @@ carheadsupports.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*-----  6.軀幹子系統-背靠點擊列  -----*/
-
+//region
 /*--- 軀幹子系統-背靠點擊列-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1214,9 +1219,10 @@ carbacksupports.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*-----  7.軀幹子系統-軀幹側支撐點擊列  -----*/
-
+//region
 /*--- 軀幹子系統-軀幹側支撐點擊列-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1423,9 +1429,10 @@ carlatertrunksupports.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*----- 8.底座子系統-座板  -----*/
-
+//region
 /*--- 底座子系統-座板-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1620,9 +1627,10 @@ carseatbase.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*----- 9.底座子系統-座墊  -----*/
-
+//region
 /*--- 底座子系統-座墊-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1817,9 +1825,10 @@ carcushion.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*----- 10.綁帶子系統  -----*/
-
+//region
 /*--- 綁帶子系統-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -2014,12 +2023,17 @@ carbandage.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
 
 /*----- n.其他  -----*/
+//region
 let carother = document.querySelector(".car-other");
 carother.style.visibility = "hidden";
+//endregion
 
 /*-----  Last.總價格相加  -----*/
+//region
+
 function formatPrice(price) {
   return new Intl.NumberFormat("en-US").format(price);
 }
@@ -2027,33 +2041,74 @@ function formatPrice(price) {
 document.addEventListener("DOMContentLoaded", () => {
   let priceDisplay = document.getElementById("priceDisplay");
 
-  // 監聽 body 的變化事件
-  document.body.addEventListener("change", (event) => {
-    if (event.target.type === "checkbox") {
-      updateTotalPrice();
-    }
-  });
-
   // 更新總價函式
   function updateTotalPrice() {
     let alladdprice = 0;
 
-    // 遍歷所有 checkbox 並計算總價
     document.querySelectorAll('[data-addPrice="add"]').forEach((addprice) => {
-      let price = parseInt(addprice.textContent.replace(/[^0-9]/g, ""), 10); // 去掉所有非數字字符
-
+      let price = parseInt(addprice.textContent.replace(/[^0-9]/g, ""), 10);
       if (!isNaN(price)) {
-        // 確保 price 是有效數字
-        alladdprice += price; // 累加價格
+        alladdprice += price;
       } else {
-        console.error(`Invalid price text: ${textContent}`);
+        console.error(`Invalid price text: ${addprice.textContent}`);
       }
     });
 
-    // 更新總價到畫面
     priceDisplay.textContent = `${formatPrice(alladdprice)}`;
   }
+
+  // 建立 MutationObserver 來監控內容變化
+  const observer = new MutationObserver(updateTotalPrice);
+
+  // 為所有 data-addPrice="add" 的元素加上監聽器
+  document.querySelectorAll('[data-addPrice="add"]').forEach((element) => {
+    observer.observe(element, {
+      childList: true,
+      characterData: true,
+      subtree: true
+    });
+  });
+
+  // 初始化一次總價
+  updateTotalPrice();
 });
+
+// function formatPrice(price) {
+//   return new Intl.NumberFormat("en-US").format(price);
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   let priceDisplay = document.getElementById("priceDisplay");
+
+//   // 監聽 body 的變化事件
+//   document.body.addEventListener("change", (event) => {
+//     if (event.target.type === "checkbox") {
+//       updateTotalPrice();
+//     }
+//   });
+
+//   // 更新總價函式
+//   function updateTotalPrice() {
+//     let alladdprice = 0;
+
+//     // 遍歷所有 checkbox 並計算總價
+//     document.querySelectorAll('[data-addPrice="add"]').forEach((addprice) => {
+//       let price = parseInt(addprice.textContent.replace(/[^0-9]/g, ""), 10); // 去掉所有非數字字符
+
+//       if (!isNaN(price)) {
+//         // 確保 price 是有效數字
+//         alladdprice += price; // 累加價格
+//       } else {
+//         console.error(`Invalid price text: ${textContent}`);
+//       }
+//     });
+
+//     // 更新總價到畫面
+//     priceDisplay.textContent = `${formatPrice(alladdprice)}`;
+//   }
+// });
+
+//endregion
 
 let allcheckboxfalsebtn = document.getElementById("allcheckboxfalse");
 
