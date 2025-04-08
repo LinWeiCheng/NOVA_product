@@ -35,7 +35,7 @@
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_red"
                                                 name="car_color" data-item="車體顏色(櫻桃紅)" data-group="Sbsize"
-                                                data-price="40,000" data-note=" " value="1">
+                                                data-price="36,000" data-note=" " value="1">
                                         </div>
                                         <div class="red_car">櫻桃紅</div>
                                         <div class="img_red"></div>
@@ -45,7 +45,7 @@
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_org"
                                                 name="car_color" data-item="車體顏色(珍珠橘)" data-group="Sbsize"
-                                                data-price="40,000" data-note=" " value="2">
+                                                data-price="36,000" data-note=" " value="2">
                                         </div>
                                         <div class="orange_car">珍珠橘</div>
                                         <div class="img_orange"></div>
@@ -55,7 +55,7 @@
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_gold"
                                                 name="car_color" data-item="車體顏色(玫瑰金)" data-group="Sbsize"
-                                                data-price="40,000" data-note=" " value="3">
+                                                data-price="36,000" data-note=" " value="3">
                                         </div>
                                         <div class="pink_car">玫瑰金</div>
                                         <div class="img_pink"></div>
@@ -65,7 +65,7 @@
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_blue"
                                                 name="car_color" data-item="車體顏色(天空藍)" data-group="Sbsize"
-                                                data-price="40,000" data-note=" " value="4">
+                                                data-price="36,000" data-note=" " value="4">
                                         </div>
                                         <div class="blue_car">天空藍</div>
                                         <div class="img_blue"></div>
@@ -75,7 +75,7 @@
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_gray"
                                                 name="car_color" data-item="車體顏色(迷彩灰)" data-group="Sbsize"
-                                                data-price="40,000" data-note=" " value="5">
+                                                data-price="36,500" data-note=" " value="5">
                                         </div>
                                         <div class="gray_car">迷彩灰</div>
                                         <div class="img_gray"></div>
@@ -671,9 +671,9 @@
                                 <div class="Spexcushiongroup">
                                     <div class="Spexcushiongroup_title">
                                         <div class="Spexcushion_title">
-                                            <input type="checkbox" class="SpexCushion" id="Spex_Vigour_std"
+                                            <input type="checkbox" class="SpexCushion" id="Spex_Vigour_Std"
                                                 name="car_SpexCushion" data-item="Vigour_Std 標準型座墊" data-price=""
-                                                data-note="">Vigour_Std 標準型座墊
+                                                data-spexgroup ="spex"  data-note="">Vigour_Std 標準型座墊
                                         </div>
                                         <div class="Spexcushion_title">
                                             <input type="checkbox" class="SpexCushion" id="Spex_Vigour_High"
@@ -713,18 +713,25 @@
                                     </div>
                                     <div class="Spexcushiongroup_size">
                                         <div class="Spexcushion_Basicssize">
-                                            <select class="Spexcushion_Width">
-                                                <option value="option1" selected>寬</option> <!-- 設定此選項為預設選中 -->
-                                                <!-- <option value="option2">左邊選單 2</option>
+                                            <div class="Spexcushion_WH">
+                                                <select class="Spexcushion_Width">
+                                                    <option value="option1" selected>寬</option> <!-- 設定此選項為預設選中 -->
+                                                    <!-- <option value="option2">左邊選單 2</option>
                                                 <option value="option3">左邊選單 3</option> -->
-                                            </select>
-                                            <div> X </div>
-                                            <select class="Spexcushion_Heigh">
-                                                <option value="optionA" selected>長</option> <!-- 設定此選項為預設選中 -->
-                                                <!-- <option value="optionA">右邊選單 A</option>
+                                                </select>
+                                                <div> X </div>
+                                                <select class="Spexcushion_Heigh">
+                                                    <option value="optionA" selected>長</option> <!-- 設定此選項為預設選中 -->
+                                                    <!-- <option value="optionA">右邊選單 A</option>
                                                 <option value="optionB">右邊選單 B</option>
                                                 <option value="optionC">右邊選單 C</option> -->
-                                            </select>
+                                                </select>
+                                            </div>
+                                            <div class="Spexcushion_color">顏色：
+                                                <select class="Spexcushion_colorsel">
+                                                    <option value="optiona" selected>請選擇</option> <!-- 設定此選項為預設選中 -->
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="Spexcushion_specialsize">
                                             <div class="Spexcushion_specialsizenotice">
@@ -740,8 +747,8 @@
                             </div>
                             <div class="pricecontent">
                                 <div class="pricing" data-price-Spexcushion="Spexcushion">建議售價</div>
-                                <div class="nowprice" data-nowprice-Spexcushion="nowSpexcushion"
-                                    data-addPrice="add">0<div class="dollar">元</div>
+                                <div class="nowprice" data-nowprice-Spexcushion="nowSpexcushion" data-addPrice="add">0
+                                    <div class="dollar">元</div>
                                 </div>
                             </div>
                         </div>
