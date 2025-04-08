@@ -958,16 +958,101 @@ let Car_SpexCushion_checkboxes = document.querySelectorAll(
 );
 let nowprice_SpexCushion = Price[10].nextElementSibling;
 
-let Spex_Vigour_std_prices = {
-  Spex_Vigour_std_prices1: 14600,
-  Spex_Vigour_std_prices2: 14600,
-  Spex_Vigour_std_prices3: 14600,
-  Spex_Vigour_std_prices4: 14600,
-  Spex_Vigour_std_prices5: 14600,
-  Spex_Vigour_std_prices6: 15800,
+//Spex_Vigour_Std 標準型座墊
+let Spex_Vigour_Std_prices = {
+  Spex_Vigour_Std_prices1: 14600,
+  Spex_Vigour_Std_prices2: 14600,
+  Spex_Vigour_Std_prices3: 14600,
+  Spex_Vigour_Std_prices4: 14600,
+  Spex_Vigour_Std_prices5: 14600,
+  Spex_Vigour_Std_prices6: 15800,
 };
 
-let VigourStdCheckbox = document.querySelector("#Spex_Vigour_std");
+//Spex_Vigour_High 加深型座墊
+let Spex_Vigour_High_prices = {
+  Spex_Vigour_High_prices1: 16200,
+  Spex_Vigour_High_prices2: 16200,
+  Spex_Vigour_High_prices3: 16200,
+  Spex_Vigour_High_prices4: 16200,
+  Spex_Vigour_High_prices5: 16200,
+  Spex_Vigour_High_prices6: 17200,
+};
+
+//Spex_Standard 標準廓型座墊
+let Spex_Standard_prices = {
+  Spex_Standard_prices1: 15800,
+  Spex_Standard_prices2: 15800,
+  Spex_Standard_prices3: 15800,
+  Spex_Standard_prices4: 15800,
+  Spex_Standard_prices5: 15800,
+  Spex_Standard_prices6: 20800,
+  Spex_Standard_prices7: 20800,
+};
+
+//Spex_High 加深廓型座墊
+let Spex_High_prices = {
+  Spex_High_prices1: 16400,
+  Spex_High_prices2: 16400,
+  Spex_High_prices3: 16400,
+  Spex_High_prices4: 16400,
+  Spex_High_prices5: 17100,
+  Spex_High_prices6: 17100,
+  Spex_High_prices7: 17100,
+  Spex_High_prices8: 17100,
+  Spex_High_prices9: 17100,
+  Spex_High_prices10: 22300,
+  Spex_High_prices11: 22300,
+};
+
+//Spex_SuperHigh 超加深廓型座墊
+let Spex_SuperHigh_prices = {
+  Spex_SuperHigh_prices1: 21600,
+  Spex_SuperHigh_prices2: 21600,
+  Spex_SuperHigh_prices3: 21600,
+  Spex_SuperHigh_prices4: 21600,
+  Spex_SuperHigh_prices5: 22300,
+  Spex_SuperHigh_prices6: 22300,
+  Spex_SuperHigh_prices7: 22300,
+  Spex_SuperHigh_prices8: 22300,
+  Spex_SuperHigh_prices9: 22300,
+  Spex_SuperHigh_prices10: 25600,
+  Spex_SuperHigh_prices11: 25600,
+};
+
+//Spex_Flex 標準型座墊
+let Spex_Flex_prices = {
+  Spex_Flex_prices1: 31200,
+  Spex_Flex_prices2: 31200,
+  Spex_Flex_prices3: 33300,
+  Spex_Flex_prices4: 33300,
+  Spex_Flex_prices5: 33300,
+  Spex_Flex_prices6: 33300,
+  Spex_Flex_prices7: 33300,
+};
+
+//Spex_Flex 加深型座墊
+let Spex_Flex_High_prices = {
+  Spex_Flex_High_prices1: 32600,
+  Spex_Flex_High_prices2: 32600,
+  Spex_Flex_High_prices3: 34400,
+  Spex_Flex_High_prices4: 34400,
+  Spex_Flex_High_prices5: 34400,
+  Spex_Flex_High_prices6: 34400,
+  Spex_Flex_High_prices7: 34400,
+};
+
+//Spex_Flex 超加深型座墊
+let Spex_Flex_SuperHigh_prices = {
+  Spex_Flex_SuperHigh_prices1: 33600,
+  Spex_Flex_SuperHigh_prices2: 33600,
+  Spex_Flex_SuperHigh_prices3: 35400,
+  Spex_Flex_SuperHigh_prices4: 35400,
+  Spex_Flex_SuperHigh_prices5: 35400,
+  Spex_Flex_SuperHigh_prices6: 35400,
+  Spex_Flex_SuperHigh_prices7: 35400,
+};
+
+let VigourStdCheckbox = document.querySelector("#Spex_Vigour_Std");
 let VigourHighCheckbox = document.querySelector("#Spex_Vigour_High");
 let SpexStandardCheckbox = document.querySelector("#Spex_Standard");
 let SpexHighCheckbox = document.querySelector("#Spex_High");
@@ -984,20 +1069,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 監聽高度選單
   CushionheightSelect.addEventListener("change", function () {
-    let widthselectedOption = CushionwidthSelect.options[CushionwidthSelect.selectedIndex];
-    let heightselectedOption = CushionheightSelect.options[CushionheightSelect.selectedIndex];
+    let widthselectedOption =
+      CushionwidthSelect.options[CushionwidthSelect.selectedIndex];
+    let heightselectedOption =
+      CushionheightSelect.options[CushionheightSelect.selectedIndex];
 
-    console.log("寬度選擇：", widthselectedOption.text);
-    console.log("高度選擇：", heightselectedOption.text);
-
-    if (VigourStdCheckbox.id === "Spex_Vigour_std") {
+    //region --- Spex_Vigour_Std ---
+    if (
+      VigourStdCheckbox.id === "Spex_Vigour_Std" &&
+      VigourStdCheckbox.checked
+    ) {
       if (
         widthselectedOption.text === "14”" &&
         (heightselectedOption.text === "14”" ||
           heightselectedOption.text === "16”")
       ) {
         nowprice_SpexCushion.textContent = `${formatPrice(
-          Spex_Vigour_std_prices.Spex_Vigour_std_prices1
+          Spex_Vigour_Std_prices.Spex_Vigour_Std_prices1
         )} 元`;
       }
       if (
@@ -1006,7 +1094,7 @@ document.addEventListener("DOMContentLoaded", function () {
           heightselectedOption.text === "16”")
       ) {
         nowprice_SpexCushion.textContent = `${formatPrice(
-          Spex_Vigour_std_prices.Spex_Vigour_std_prices2
+          Spex_Vigour_Std_prices.Spex_Vigour_Std_prices2
         )} 元`;
       }
       if (
@@ -1015,7 +1103,7 @@ document.addEventListener("DOMContentLoaded", function () {
           heightselectedOption.text === "18”")
       ) {
         nowprice_SpexCushion.textContent = `${formatPrice(
-          Spex_Vigour_std_prices.Spex_Vigour_std_prices3
+          Spex_Vigour_Std_prices.Spex_Vigour_Std_prices3
         )} 元`;
       }
       if (
@@ -1024,7 +1112,7 @@ document.addEventListener("DOMContentLoaded", function () {
           heightselectedOption.text === "18”")
       ) {
         nowprice_SpexCushion.textContent = `${formatPrice(
-          Spex_Vigour_std_prices.Spex_Vigour_std_prices4
+          Spex_Vigour_Std_prices.Spex_Vigour_Std_prices4
         )} 元`;
       }
       if (
@@ -1033,7 +1121,7 @@ document.addEventListener("DOMContentLoaded", function () {
           heightselectedOption.text === "20”")
       ) {
         nowprice_SpexCushion.textContent = `${formatPrice(
-          Spex_Vigour_std_prices.Spex_Vigour_std_prices5
+          Spex_Vigour_Std_prices.Spex_Vigour_Std_prices5
         )} 元`;
       }
       if (
@@ -1042,11 +1130,571 @@ document.addEventListener("DOMContentLoaded", function () {
           heightselectedOption.text.replaceAll("”", '"') === '20"')
       ) {
         nowprice_SpexCushion.textContent = `${formatPrice(
-          Spex_Vigour_std_prices.Spex_Vigour_std_prices6
+          Spex_Vigour_Std_prices.Spex_Vigour_Std_prices6
         )} 元`;
       }
     }
+    //endregion
+
+    //region --- Spex_Vigour_High ---
+    if (
+      VigourHighCheckbox.id === "Spex_Vigour_High" &&
+      VigourHighCheckbox.checked
+    ) {
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_High_prices.Spex_Vigour_High_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_High_prices.Spex_Vigour_High_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_High_prices.Spex_Vigour_High_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_High_prices.Spex_Vigour_High_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_High_prices.Spex_Vigour_High_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text.replaceAll("”", '"') === '19"' &&
+        (heightselectedOption.text.replaceAll("”", '"') === '18"' ||
+          heightselectedOption.text.replaceAll("”", '"') === '20"')
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Vigour_High_prices.Spex_Vigour_High_prices6
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- Spex_Standard ---
+    if (
+      SpexStandardCheckbox.id === "Spex_Standard" &&
+      SpexStandardCheckbox.checked
+    ) {
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Standard_prices.Spex_Standard_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Standard_prices.Spex_Standard_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Standard_prices.Spex_Standard_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Standard_prices.Spex_Standard_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Standard_prices.Spex_Standard_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "19”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Standard_prices.Spex_Standard_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "20”" &&
+        (heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Standard_prices.Spex_Standard_prices7
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- Spex_High ---
+    if (SpexHighCheckbox.id === "Spex_High" && SpexHighCheckbox.checked) {
+      if (
+        widthselectedOption.text === "10”" &&
+        (heightselectedOption.text === "10”" ||
+          heightselectedOption.text === "12”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "11”" &&
+        (heightselectedOption.text === "10”" ||
+          heightselectedOption.text === "12”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "12”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "13”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices7
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices8
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices9
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "19”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices10
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "20”" &&
+        (heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_High_prices.Spex_High_prices11
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- Spex_SuperHigh ---
+    if (
+      Spex_SuperHighCheckbox.id === "Spex_SuperHigh" &&
+      Spex_SuperHighCheckbox.checked
+    ) {
+      if (
+        widthselectedOption.text === "10”" &&
+        (heightselectedOption.text === "10”" ||
+          heightselectedOption.text === "12”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "11”" &&
+        (heightselectedOption.text === "10”" ||
+          heightselectedOption.text === "12”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "12”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "13”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices7
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices8
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices9
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "19”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices10
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "20”" &&
+        (heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_SuperHigh_prices.Spex_SuperHigh_prices11
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- Spex_Flex ---
+    if (Spex_FlexCheckbox.id === "Spex_Flex" && Spex_FlexCheckbox.checked) {
+      if (
+        widthselectedOption.text === "12”" &&
+        heightselectedOption.text === "14”"
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_prices.Spex_Flex_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "13”" &&
+        heightselectedOption.text === "14”"
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_prices.Spex_Flex_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_prices.Spex_Flex_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_prices.Spex_Flex_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_prices.Spex_Flex_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_prices.Spex_Flex_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_prices.Spex_Flex_prices7
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- Spex_Flex_High ---
+    if (
+      Spex_Flex_HighCheckbox.id === "Spex_Flex_High" &&
+      Spex_Flex_HighCheckbox.checked
+    ) {
+      if (
+        widthselectedOption.text === "12”" &&
+        heightselectedOption.text === "14”"
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_High_prices.Spex_Flex_High_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "13”" &&
+        heightselectedOption.text === "14”"
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_High_prices.Spex_Flex_High_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_High_prices.Spex_Flex_High_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_High_prices.Spex_Flex_High_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_High_prices.Spex_Flex_High_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_High_prices.Spex_Flex_High_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_High_prices.Spex_Flex_High_prices7
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- Spex_Flex_SuperHigh ---
+    if (
+      Spex_Flex_SuperHighCheckbox.id === "Spex_Flex_SuperHigh" &&
+      Spex_Flex_SuperHighCheckbox.checked
+    ) {
+      if (
+        widthselectedOption.text === "12”" &&
+        heightselectedOption.text === "14”"
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_SuperHigh_prices.Spex_Flex_SuperHigh_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "13”" &&
+        heightselectedOption.text === "14”"
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_SuperHigh_prices.Spex_Flex_SuperHigh_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_SuperHigh_prices.Spex_Flex_SuperHigh_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_SuperHigh_prices.Spex_Flex_SuperHigh_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_SuperHigh_prices.Spex_Flex_SuperHigh_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_SuperHigh_prices.Spex_Flex_SuperHigh_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexCushion.textContent = `${formatPrice(
+          Spex_Flex_SuperHigh_prices.Spex_Flex_SuperHigh_prices7
+        )} 元`;
+      }
+    }
+    //endregion
   });
 });
-
 //endregion
