@@ -383,6 +383,20 @@ let Spex_Flex_SuperHighheightOptions = [
 ];
 //endregion
 
+//region --- Color_Selected ---
+let ColorSelectOptions = [
+  { value: "optiona", text: "黑色", color: "#000000", selected: true },
+  { value: "optionb", text: "紅色", color: "#dd3333" },
+  { value: "optionc", text: "藍色", color: "#6eb1c9" },
+  { value: "optiond", text: "紫色", color: "#8224e3" },
+  { value: "optione", text: "灰色", color: "#999999" },
+  { value: "optionf", text: "黃色", color: "#eeee22" },
+  { value: "optiong", text: "橘色", color: "#dd9933" },
+  { value: "optionh", text: "粉色", color: "#f925d6" },
+  { value: "optioni", text: "綠色", color: "#81d742" }, // 改掉重複的optionh
+];
+
+//"寬"、"長"的選項會進入這裡做篩選
 function CushionSizeSelect(selectElement, options) {
   selectElement.innerHTML = ""; // 清空現有內容
   options.forEach((option) => {
@@ -395,6 +409,32 @@ function CushionSizeSelect(selectElement, options) {
     selectElement.appendChild(opt);
   });
 }
+
+//產品顏色選擇在這裡做
+function ProductColorSelect(selectElement, options) {
+  selectElement.innerHTML = "";
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    opt.style.backgroundColor = option.color; // 設定每個選項背景色
+    opt.style.color = "white"; //  把字體設成白色
+    if (option.selected) {
+      opt.selected = true;
+      selectElement.style.backgroundColor = option.color; // 初始選中時也改背景色
+      selectElement.style.color = "white"; //初始選擇也改字體顏色
+    }
+    selectElement.appendChild(opt);
+  });
+}
+
+let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
+
+CushioncolorSelect.addEventListener("change", function () {
+  const selectedOption = this.options[this.selectedIndex];
+  this.style.backgroundColor = selectedOption.style.backgroundColor;
+  this.style.color = "white"; //更新字體顏色
+});
 
 document
   .querySelectorAll('input[name="car_SpexCushion"]')
@@ -409,6 +449,7 @@ document
         });
       let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
       let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
+      let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
 
       //確認是選擇"Vigour_Std 標準型座墊"
       if (this.dataset.item === "Vigour_Std 標準型座墊") {
@@ -416,6 +457,7 @@ document
         CushionwidthSelect.disabled = false;
         CushionSizeSelect(CushionwidthSelect, Vigour_StdwidthOptions);
         CushionSizeSelect(CushionheightSelect, Vigour_StdheightOptions);
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       }
 
       //確認是選擇"Vigour_High 加深型座墊"
@@ -484,22 +526,25 @@ document
 document.addEventListener("DOMContentLoaded", function () {
   let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
   let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
+  let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
 
+  //剛開啟時讓colorSelect無法選擇
+  CushioncolorSelect.disabled = true;
   //剛開啟時讓widthSelect無法選擇
   CushionwidthSelect.disabled = true;
-
   // 預設讓 heightSelect 無法選擇
   CushionheightSelect.disabled = true;
 
   CushionwidthSelect.addEventListener("change", function () {
     if (CushionwidthSelect.value) {
       CushionheightSelect.disabled = false; // 當有選擇時，解鎖heightSelect
+      CushioncolorSelect.disabled = false;
     } else {
       CushionheightSelect.disabled = true; // 當未選擇時，鎖住heightSelect
     }
 
     // 找到 checkbox
-    let VigourStdCheckbox = document.querySelector("#Spex_Vigour_std");
+    let VigourStdCheckbox = document.querySelector("#Spex_Vigour_Std");
     let VigourHighCheckbox = document.querySelector("#Spex_Vigour_High");
     let SpexStandardCheckbox = document.querySelector("#Spex_Standard");
     let SpexHighCheckbox = document.querySelector("#Spex_High");
