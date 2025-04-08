@@ -2065,7 +2065,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(element, {
       childList: true,
       characterData: true,
-      subtree: true
+      subtree: true,
     });
   });
 
@@ -2119,6 +2119,12 @@ allcheckboxfalsebtn.addEventListener("click", () => {
 function allcheckboxfalsefct() {
   // 查询所有复选框
   let allcheckboxsearch = document.querySelectorAll('input[type="checkbox"]');
+  let allnowprice = document.querySelectorAll('[data-addPrice="add"]');
+
+  // 遍历每个價錢並歸0
+  allnowprice.forEach((price) => {
+    price.textContent = "0元";
+  });
 
   // 遍历每个复选框并取消勾选
   allcheckboxsearch.forEach((checkbox) => {
