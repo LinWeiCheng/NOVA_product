@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 全局數據存儲
   let selectedItems = [];
   let basesize = [];
+  let spexCushion = [];
 
   // 顯示大 Div
   showoutputQuotationBtn.addEventListener("click", () => {
@@ -47,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     container.style.display = "";
     printButton.style.visibility = "hidden";
     totalPricedisplay.style.visibility = "visible";
-
   });
 
   if (QuotationDiv) {
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function clearcarbasesize() {
     selectedItems.length = 0;
     basesize.length = 0;
+    spexCushion.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -94,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkedCheckboxes.forEach((checkbox) => {
       let group = checkbox.dataset.group;
+      let spexgroup = checkbox.dataset.spexgroup;
       let item = checkbox.dataset.item;
       let price = checkbox.dataset.price;
       let notes = checkbox.dataset.note;
@@ -101,14 +103,55 @@ document.addEventListener("DOMContentLoaded", () => {
       if (addedItems.has(item)) {
         return;
       }
-      if (!group) {
+      if (!group && !spexgroup) {
         selectedItems.push({ item: item, price: price, note: notes });
       }
 
       // 記錄這個 item 已經被加入
       addedItems.add(item);
     });
-    console.log(selectedItems);
+
+    checkedCheckboxes.forEach((checkbox) => {
+      let spexgroup = checkbox.dataset.spexgroup;
+      let item = checkbox.dataset.item;
+      let price = checkbox.dataset.price;
+      let notes = checkbox.dataset.note;
+      // 如果這個 item 已經存過了，就跳過
+      // if (addedItems.has(item)) {
+      //   return;
+      // }
+      if (spexgroup) {
+        if (item) {
+          spexCushion.push(item);
+        }
+        let ProductcolorSelect = document.querySelector(
+          ".Spexcushion_colorsel"
+        );
+        let productcolorselectedOption =
+          ProductcolorSelect.options[ProductcolorSelect.selectedIndex];
+
+        let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
+        let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
+        let widthselectedOption =
+          CushionwidthSelect.options[CushionwidthSelect.selectedIndex];
+        let heightselectedOption =
+          CushionheightSelect.options[CushionheightSelect.selectedIndex];
+        // 組合字串：寬x高-顏色
+        let spexString = `${widthselectedOption.text}x${heightselectedOption.text}-${productcolorselectedOption.text}`;
+        spexCushion.push(spexString);
+        let spexitem = spexCushion.join("");
+        // checkbox.dataset.item = spexString;
+        let nowSpexcushionprice = document.querySelector(
+          '[data-nowprice-Spexcushion="nowSpexcushion"]'
+        );
+        let Cushionprice = nowSpexcushionprice.textContent;
+
+        selectedItems.push({ item: spexitem, price: Cushionprice, note: notes });
+      }
+
+      // 記錄這個 item 已經被加入
+      addedItems.add(item);
+    });
   }
 
   //  -------  創建Header 區塊  -------
