@@ -4,6 +4,7 @@ function formatPrice(prices) {
 }
 let color_car_switch = false;
 let productImage = document.getElementById("ProductImage");
+let Price = document.querySelectorAll(".pricing");
 
 /*-----  1.車體顏色點擊列  -----*/
 //region
@@ -25,8 +26,6 @@ let Car_checkbox_blue = document.querySelectorAll(
 let Car_checkbox_gray = document.querySelectorAll(
   'input[type="checkbox"][id="checkbox_gray"]'
 );
-
-let Price = document.querySelectorAll(".pricing");
 
 Price.forEach(function (openIntro) {
   Car_color_checkboxes.forEach((checkbox) => {
@@ -1698,3 +1697,224 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //endregion
+
+/*-----  11.Spex底座子系統-座墊點擊列  -----*/
+//region
+let Car_SpexSeatBase_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_SpexSeatBase"]'
+);
+let nowprice_SpexSeatBase = Price[11].nextElementSibling;
+
+//Spex_Seat_Base 硬座板(固定扣具)
+let Spex_Seat_Base_Fixed_prices = {
+  Spex_Seat_Base_Fixed_prices1: 11800,
+  Spex_Seat_Base_Fixed_prices2: 11800,
+  Spex_Seat_Base_Fixed_prices3: 14200,
+  Spex_Seat_Base_Fixed_prices4: 14200,
+  Spex_Seat_Base_Fixed_prices5: 14200,
+  Spex_Seat_Base_Fixed_prices6: 14200,
+  Spex_Seat_Base_Fixed_prices7: 14200,
+  Spex_Seat_Base_Fixed_prices8: 14200,
+};
+
+//Spex_Seat Base 硬座板(快拆扣具)
+let Spex_Seat_Base_Quick_prices = {
+  Spex_Seat_Base_Quick_prices1: 12800,
+  Spex_Seat_Base_Quick_prices2: 12800,
+  Spex_Seat_Base_Quick_prices3: 15400,
+  Spex_Seat_Base_Quick_prices4: 15400,
+  Spex_Seat_Base_Quick_prices5: 15400,
+  Spex_Seat_Base_Quick_prices6: 15400,
+  Spex_Seat_Base_Quick_prices7: 15400,
+  Spex_Seat_Base_Quick_prices8: 15400,
+};
+
+let SeatBasefixedCheckbox = document.querySelector("#Spex_SeatBase_fixed");
+let SeatBasequickCheckbox = document.querySelector("#Spex_SeatBase_quick");
+
+document.addEventListener("DOMContentLoaded", function () {
+  let SeatBasewidthSelect = document.querySelector(".Spexseatbase_Width");
+  let SeatBaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
+
+  // 監聽高度選單
+  SeatBaseheightSelect.addEventListener("change", function () {
+    let widthselectedOption =
+      SeatBasewidthSelect.options[SeatBasewidthSelect.selectedIndex];
+    let heightselectedOption =
+      SeatBaseheightSelect.options[SeatBaseheightSelect.selectedIndex];
+
+    //region Spex_Seat Base 硬座板(固定扣具)
+    if (
+      SeatBasefixedCheckbox.id === "Spex_SeatBase_fixed" &&
+      SeatBasefixedCheckbox.checked
+    ) {
+      if (
+        widthselectedOption.text === "10”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "12”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices7
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "20”" &&
+        (heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Fixed_prices.Spex_Seat_Base_Fixed_prices8
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region Spex_Seat Base 硬座板(快拆扣具)
+    if (
+      SeatBasequickCheckbox.id === "Spex_SeatBase_quick" &&
+      SeatBasequickCheckbox.checked
+    ) {
+      if (
+        widthselectedOption.text === "10”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "12”" &&
+        (heightselectedOption.text === "12”" ||
+          heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        (heightselectedOption.text === "14”" ||
+          heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "15”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "20”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        (heightselectedOption.text === "16”" ||
+          heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices5
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "17”" &&
+        (heightselectedOption.text === "17”" ||
+          heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices6
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        (heightselectedOption.text === "18”" ||
+          heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices7
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "20”" &&
+        (heightselectedOption.text === "20”" ||
+          heightselectedOption.text === "22”")
+      ) {
+        nowprice_SpexSeatBase.textContent = `${formatPrice(
+          Spex_Seat_Base_Quick_prices.Spex_Seat_Base_Quick_prices8
+        )} 元`;
+      }
+    }
+    //endregion
+  });
+});
