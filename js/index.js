@@ -1,6 +1,6 @@
 let left = document.querySelector(".leftcontent");
 /*-----  1.車體顏色點擊列  -----*/
-//reion
+//region
 /*--- 車體顏色點擊列-圖片箭頭部分   ---*/
 let targetimg_1 = document.querySelector(".target_img");
 targetimg_1.addEventListener("click", function (event) {
