@@ -395,8 +395,9 @@ let ColorSelectOptions = [
   { value: "optionh", text: "粉色", color: "#f925d6" },
   { value: "optioni", text: "綠色", color: "#81d742" }, // 改掉重複的optionh
 ];
+//endregion
 
-//"寬"、"長"的選項會進入這裡做篩選
+//Spex座墊的"寬"、"長"的選項會進入這裡做篩選
 function CushionSizeSelect(selectElement, options) {
   selectElement.innerHTML = ""; // 清空現有內容
   options.forEach((option) => {
@@ -436,6 +437,7 @@ CushioncolorSelect.addEventListener("change", function () {
   this.style.color = "white"; //更新字體顏色
 });
 
+//確定勾選的是哪個Spex座墊並給予"寬"及"長"，且不會重複勾選選項
 document
   .querySelectorAll('input[name="car_SpexCushion"]')
   .forEach((checkbox) => {
@@ -466,6 +468,7 @@ document
         CushionwidthSelect.disabled = false;
         CushionSizeSelect(CushionwidthSelect, Vigour_HighwidthOptions);
         CushionSizeSelect(CushionheightSelect, Vigour_HighheightOptions);
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       }
 
       //確認是選擇"Vigour_High 加深型座墊"
@@ -474,6 +477,7 @@ document
         CushionwidthSelect.disabled = false;
         CushionSizeSelect(CushionwidthSelect, Spex_StandardwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_StandardheightOptions);
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       }
 
       //確認是選擇"Spex_High 加深廓型座墊"
@@ -482,6 +486,7 @@ document
         CushionwidthSelect.disabled = false;
         CushionSizeSelect(CushionwidthSelect, Spex_HighwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_HighheightOptions);
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       }
 
       //確認是選擇"Spex_SuperHigh 超加深廓型座墊"
@@ -490,6 +495,7 @@ document
         CushionwidthSelect.disabled = false;
         CushionSizeSelect(CushionwidthSelect, Spex_SuperHighwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_SuperHighheightOptions);
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       }
 
       //確認是選擇"Spex_Flex 標準型座墊"
@@ -498,6 +504,7 @@ document
         CushionwidthSelect.disabled = false;
         CushionSizeSelect(CushionwidthSelect, Spex_FlexwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_FlexheightOptions);
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       }
 
       //確認是選擇"Spex_Flex 加深型座墊"
@@ -506,6 +513,7 @@ document
         CushionwidthSelect.disabled = false;
         CushionSizeSelect(CushionwidthSelect, Spex_FlexwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_FlexheightOptions);
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       }
 
       //確認是選擇"Spex_Flex_SuperHigh 超加深型座墊"
@@ -517,8 +525,10 @@ document
           CushionheightSelect,
           Spex_Flex_SuperHighheightOptions
         );
+        ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
       } else if (CushionheightSelect.disabled === false) {
         CushionheightSelect.disabled = true;
+        CushioncolorSelect.disabled = true;
       }
     });
   });
@@ -527,6 +537,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
   let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
   let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
+  let Price = document.querySelectorAll(".pricing");
+  let nowprice_SpexCushion = Price[10].nextElementSibling;
 
   //剛開啟時讓colorSelect無法選擇
   CushioncolorSelect.disabled = true;
@@ -541,8 +553,12 @@ document.addEventListener("DOMContentLoaded", function () {
       CushioncolorSelect.disabled = false;
     } else {
       CushionheightSelect.disabled = true; // 當未選擇時，鎖住heightSelect
+      CushioncolorSelect.disabled = true;
     }
 
+    if (nowprice_SpexCushion.textContent) {
+      nowprice_SpexCushion.textContent = "0元";
+    }
     // 找到 checkbox
     let VigourStdCheckbox = document.querySelector("#Spex_Vigour_Std");
     let VigourHighCheckbox = document.querySelector("#Spex_Vigour_High");
@@ -562,6 +578,7 @@ document.addEventListener("DOMContentLoaded", function () {
         CushionSizeSelect(CushionwidthSelect, Vigour_StdwidthOptions);
         CushionSizeSelect(CushionheightSelect, Vigour_StdheightOptions);
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住 Vigour_StdheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"14”"時，"長"只會有14”、16”
@@ -627,6 +644,7 @@ document.addEventListener("DOMContentLoaded", function () {
         CushionSizeSelect(CushionwidthSelect, Vigour_HighwidthOptions);
         CushionSizeSelect(CushionheightSelect, Vigour_HighheightOptions);
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住 Vigour_HighheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"14”"時，"長"只會有14”、16”
@@ -692,6 +710,7 @@ document.addEventListener("DOMContentLoaded", function () {
         CushionSizeSelect(CushionwidthSelect, Spex_StandardwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_StandardheightOptions);
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住Spex_StandardheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"14”"時，"長"只會有14”、16”
@@ -766,6 +785,7 @@ document.addEventListener("DOMContentLoaded", function () {
         CushionSizeSelect(CushionwidthSelect, Spex_HighwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_HighheightOptions);
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住Spex_HighheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"10”"時，"長"只會有10”、12”
@@ -876,6 +896,7 @@ document.addEventListener("DOMContentLoaded", function () {
         CushionSizeSelect(CushionwidthSelect, Spex_SuperHighwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_SuperHighheightOptions);
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住Spex_HighheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"10”"時，"長"只會有10”、12”
@@ -986,6 +1007,7 @@ document.addEventListener("DOMContentLoaded", function () {
         CushionSizeSelect(CushionwidthSelect, Spex_FlexwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_FlexheightOptions);
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住Spex_FlexheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"12”"時，"長"只會有14”
@@ -1060,6 +1082,7 @@ document.addEventListener("DOMContentLoaded", function () {
         CushionSizeSelect(CushionwidthSelect, Spex_Flex_HighwidthOptions);
         CushionSizeSelect(CushionheightSelect, Spex_Flex_HighheightOptions);
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住Spex_FlexheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"12”"時，"長"只會有14”
@@ -1137,6 +1160,7 @@ document.addEventListener("DOMContentLoaded", function () {
           Spex_Flex_SuperHighheightOptions
         );
         CushionheightSelect.disabled = true; // 當未選擇時，鎖住Spex_Flex_SuperHighheightSelect
+        CushioncolorSelect.disabled = true;
       }
 
       //當選擇是寬"12”"時，"長"只會有14”
@@ -1208,3 +1232,511 @@ document.addEventListener("DOMContentLoaded", function () {
     //endregion
   });
 });
+
+/*-----  12.Spex底座子系統-硬座板點擊列 -----*/
+//region
+/*--- Spex底座子系統-硬座板點擊列-圖片箭頭部分 ---*/
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_12 = event.target;
+  let carseat12 = tgimg_12.closest(".Spex_seatbase"); // 找到最近的 Spex_seatbase
+  let imgSpexseatbase = event.target.dataset.imgSpexseatbase;
+
+  //確認我點擊到的位置是否是car-Spex_seatbase的箭頭
+  if (carseat12 && carseat12.className.trim() === "Spex_seatbase") {
+    let introdutionid = carseat12.querySelector(".Spexseatbasegroup"); // 在 Spex_seatbase 內部找 Spexseatbasegroup
+    let introdution = carseat12.querySelector(".subtitle"); // 在 Spex_seatbase 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgSpexseatbase === "SpexseatbaseImg") {
+        if (visibilityValue === "hidden") {
+          let Price_Spexseatbase = document.querySelectorAll(".pricing");
+
+          Price_Spexseatbase.forEach(function (openIntro) {
+            let Spexseatbase = Price_Spexseatbase[11];
+            //直接判斷是第幾個.Price
+            let nowprice_Spexseatbase =
+              Price_Spexseatbase[11].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-Spexseatbase") ===
+                "Spexseatbase" &&
+              nowprice_Spexcushion.getAttribute(
+                "data-nowprice-Spexseatbase"
+              ) === "nowSpexseatbase"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //carSpexcushion勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 22px)";
+                introdutionid.style.display = "flex";
+                introdutionid.style.flexDirection = "row";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.margin = "0 0 0 7px";
+                introdutionid.style.height = "auto";
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_Spexseatbase.style.display = "block";
+                nowprice_Spexseatbase.style.display = "flex";
+                nowprice_Spexseatbase.style.width = "95%";
+                nowprice_Spexseatbase.style.height = "90%";
+                nowprice_Spexseatbase.style.color = "#000000";
+                nowprice_Spexseatbase.style.borderRadius = "8px";
+                nowprice_Spexseatbase.style.padding = "1px";
+                nowprice_Spexseatbase.style.margin = "3px 3px 3px 2px";
+                nowprice_Spexseatbase.style.textAlign = "center";
+                nowprice_Spexseatbase.style.fontSize = "17px";
+                nowprice_Spexseatbase.style.fontWeight = "600";
+                nowprice_Spexseatbase.style.alignItems = "center";
+                nowprice_Spexseatbase.style.justifyContent = "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_Spexseatbase.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  Spexseatbase.style.padding = "5px";
+                  Spexseatbase.style.margin = "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_SpexSpexseatbase = document.querySelectorAll(".pricing");
+
+          Price_SpexSpexseatbase.forEach(function (openIntro) {
+            let nowprice_SpexSpexseatbase =
+              Price_SpexSpexseatbase[11].nextElementSibling;
+
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (
+              openIntro.getAttribute("data-price-carSpexSpexseatbase") ===
+              "carSpexSpexseatbase"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_SpexSpexseatbase.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+
+/*---  Spex底座子系統-硬座板系統點擊列 -subtitle部分  ---*/
+let Spex_seatbase = document.querySelector(".Spex_seatbase");
+Spex_seatbase.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是Spex_seatbase
+  if (showinfo === "Spexseatbase") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_Spex_seatbase = document.querySelectorAll(".pricing");
+    let Spex_seatbaseimg = Spex_seatbase.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = Spex_seatbaseimg.querySelector("img");
+
+    Price_Spex_seatbase.forEach(function (openIntro) {
+      let Spexseatbase = Price_Spex_seatbase[11];
+      //直接判斷是第幾個.Price
+      let nowprice_Spexseatbase = Price_Spex_seatbase[11].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-Spexseatbase") === "Spexseatbase" &&
+        nowprice_Spexseatbase.getAttribute("data-nowprice-Spexseatbase") ===
+          "nowSpexseatbase"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carSpexcushion勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 1px 3px";
+          introdutionid.style.width = "calc(100% - 22px)";
+          introdutionid.style.display = "flex";
+          introdutionid.style.flexDirection = "row";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.margin = "0 0 0 7px";
+          introdutionid.style.height = "auto";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_Spexseatbase.style.display = "block";
+          nowprice_Spexseatbase.style.display = "flex";
+          nowprice_Spexseatbase.style.width = "95%";
+          nowprice_Spexseatbase.style.height = "90%";
+          nowprice_Spexseatbase.style.color = "#000000";
+          nowprice_Spexseatbase.style.borderRadius = "8px";
+          nowprice_Spexseatbase.style.padding = "1px";
+          nowprice_Spexseatbase.style.margin = "3px 3px 3px 2px";
+          nowprice_Spexseatbase.style.textAlign = "center";
+          nowprice_Spexseatbase.style.fontSize = "17px";
+          nowprice_Spexseatbase.style.fontWeight = "600";
+          nowprice_Spexseatbase.style.alignItems = "center";
+          nowprice_Spexseatbase.style.justifyContent = "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_Spexseatbase.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            Spexseatbase.style.padding = "5px";
+            Spexseatbase.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_Spexseatbase.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
+
+//region ---SeatBase_Fixed Selected---
+let SeatBaseFixedwidthOptions = [
+  { value: "option1", text: "寬", selected: true },
+  { value: "option2", text: "10”" },
+  { value: "option3", text: "12”" },
+  { value: "option4", text: "14”" },
+  { value: "option5", text: "15”" },
+  { value: "option6", text: "16”" },
+  { value: "option7", text: "17”" },
+  { value: "option8", text: "18”" },
+  { value: "option9", text: "20”" },
+];
+
+let SeatBaseFixedheightOptions = [
+  { value: "optionA", text: "長", selected: true },
+  { value: "optionB", text: "12”" },
+  { value: "optionC", text: "14”" },
+  { value: "optionD", text: "16”" },
+  { value: "optionE", text: "17”" },
+  { value: "optionF", text: "18”" },
+  { value: "optionG", text: "20”" },
+  { value: "optionH", text: "22”" },
+];
+//endregion
+
+//region ---SeatBase_Quick Selected---
+let SeatBaseQuickwidthOptions = [
+  { value: "option1", text: "寬", selected: true },
+  { value: "option2", text: "10”" },
+  { value: "option3", text: "12”" },
+  { value: "option4", text: "14”" },
+  { value: "option5", text: "15”" },
+  { value: "option6", text: "16”" },
+  { value: "option7", text: "17”" },
+  { value: "option8", text: "18”" },
+  { value: "option9", text: "20”" },
+];
+
+let SeatBaseQuickheightOptions = [
+  { value: "optionA", text: "長", selected: true },
+  { value: "optionB", text: "12”" },
+  { value: "optionC", text: "14”" },
+  { value: "optionD", text: "16”" },
+  { value: "optionE", text: "17”" },
+  { value: "optionF", text: "18”" },
+  { value: "optionG", text: "20”" },
+  { value: "optionH", text: "22”" },
+];
+//endregion
+
+//Spex硬座板的"車寬"、"板長"的選項會進入這裡做篩選
+//region
+function SeatbaseSizeSelect(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+//endregion
+
+//確定勾選的是哪個Spex硬座板並給予"車寬"及"板長"，且不會重複勾選選項
+//region
+document
+  .querySelectorAll('input[name="car_SpexSeatBase"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexSeatBase"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+
+      let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
+      let SeatbaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
+
+      //確認是選擇"Spex_Seat Base 硬座板(固定扣具)"
+      if (this.dataset.item === "Spex_Seat Base 硬座板(固定扣具)") {
+        //確認有勾選坐墊後開啟
+        SeatbasewidthSelect.disabled = false;
+        SeatbaseSizeSelect(SeatbasewidthSelect, SeatBaseFixedwidthOptions);
+        SeatbaseSizeSelect(SeatbaseheightSelect, SeatBaseFixedheightOptions);
+      }
+
+      //確認是選擇"Spex_Seat Base 硬座板(快拆扣具)"
+      if (this.dataset.item === "Spex_Seat Base 硬座板(快拆扣具)") {
+        //確認有勾選坐墊後開啟
+        SeatbasewidthSelect.disabled = false;
+        SeatbaseSizeSelect(SeatbasewidthSelect, SeatBaseQuickwidthOptions);
+        SeatbaseSizeSelect(SeatbaseheightSelect, SeatBaseQuickheightOptions);
+      } else if (SeatbaseheightSelect.disabled === false) {
+        SeatbaseheightSelect.disabled = true;
+      }
+    });
+  });
+//endregion
+
+//硬座板選擇特定"車寬"時，"板長"會自動跳出相對應的長度
+//region
+document.addEventListener("DOMContentLoaded", function () {
+  let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
+  let SeatbaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
+  let Price = document.querySelectorAll(".pricing");
+  let nowprice_SpexSeatBase = Price[11].nextElementSibling;
+
+  //剛開啟時讓widthSelect無法選擇
+  SeatbasewidthSelect.disabled = true;
+  // 預設讓 heightSelect 無法選擇
+  SeatbaseheightSelect.disabled = true;
+
+  SeatbasewidthSelect.addEventListener("change", function () {
+    if (SeatbasewidthSelect.value) {
+      SeatbaseheightSelect.disabled = false; // 當有選擇時，解鎖heightSelect
+    } else {
+      SeatbaseheightSelect.disabled = true; // 當未選擇時，鎖住heightSelect
+    }
+
+    // 找到 checkbox
+    let SeatBaseFixedCheckbox = document.querySelector("#Spex_SeatBase_fixed");
+    let SeatBaseQuickCheckbox = document.querySelector("#Spex_SeatBase_quick");
+
+    if (nowprice_SpexSeatBase.textContent) {
+      nowprice_SpexSeatBase.textContent = "0元";
+    }
+
+    //region ---Spex_SeatBase 硬座板(固定扣具)---
+    if (SeatBaseQuickCheckbox.checked) {
+      //當選擇在"座寬"時則將"板長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
+      if (SeatbasewidthSelect.value === "option1") {
+        SeatbaseSizeSelect(SeatbasewidthSelect, SeatBaseFixedwidthOptions);
+        SeatbaseSizeSelect(SeatbaseheightSelect, SeatBaseFixedheightOptions);
+        SeatbaseheightSelect.disabled = true; // 當未選擇時，鎖住SeatbaseheightSelect
+      }
+
+      //當選擇"車寬"是"10”"時，"板長"會有"12”"、"14”"
+      if (SeatbasewidthSelect.value === "option2") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionB", "optionC"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"12”"時，"板長"會有"12”"、"14”"、"16”"、"18”"
+      if (SeatbasewidthSelect.value === "option3") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionB", "optionC", "optionD", "optionF"].includes(
+            option.value
+          )
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"14”"時，"板長"只會有"14”"、"16”"、"18”"
+      if (SeatbasewidthSelect.value === "option4") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionC", "optionD", "optionF"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"15”"時，"板長"只會有"17”"、"20”"
+      if (SeatbasewidthSelect.value === "option5") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionE", "optionG"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"16”"時，"板長"只會有"16”"、"18”"、"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option6") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionD", "optionF", "optionG", "optionH"].includes(
+            option.value
+          )
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"17”"時，"板長"只會有"17”"、"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option7") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionE", "optionG", "optionH"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"18”"時，"板長"只會有"18”"、"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option8") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionF", "optionG", "optionH"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"20”"時，"板長"只會有"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option9") {
+        let filteredHeightOptions = SeatBaseFixedheightOptions;
+        filteredHeightOptions = SeatBaseFixedheightOptions.filter((option) =>
+          ["optionA", "optionG", "optionH"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+    }
+    //endregion
+
+    //region ---Spex_SeatBase 硬座板(快拆扣具)---
+    if (SeatBaseQuickCheckbox.checked) {
+      //當選擇在"車寬"時則將"板長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"車寬"可鎖住"板長"
+      if (SeatbasewidthSelect.value === "option1") {
+        SeatbaseSizeSelect(SeatbasewidthSelect, SeatBaseQuickwidthOptions);
+        SeatbaseSizeSelect(SeatbaseheightSelect, SeatBaseQuickheightOptions);
+        SeatbaseheightSelect.disabled = true; // 當未選擇時，鎖住SeatbaseheightSelect
+      }
+
+      //當選擇"車寬"是"10”"時，"板長"會有"12”"、"14”"
+      if (SeatbasewidthSelect.value === "option2") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionB", "optionC"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"12”"時，"板長"會有"12”"、"14”"、"16”"、"18”"
+      if (SeatbasewidthSelect.value === "option3") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionB", "optionC", "optionD", "optionF"].includes(
+            option.value
+          )
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"14”"時，"板長"只會有"14”"、"16”"、"18”"
+      if (SeatbasewidthSelect.value === "option4") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionC", "optionD", "optionF"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"15”"時，"板長"只會有"17”"、"20”"
+      if (SeatbasewidthSelect.value === "option5") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionE", "optionG"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"16”"時，"板長"只會有"16”"、"18”"、"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option6") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionD", "optionF", "optionG", "optionH"].includes(
+            option.value
+          )
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"17”"時，"板長"只會有"17”"、"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option7") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionE", "optionG", "optionH"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"18”"時，"板長"只會有"18”"、"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option8") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionF", "optionG", "optionH"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+
+      //當選擇"車寬"是"20”"時，"板長"只會有"20”"、"22”"
+      if (SeatbasewidthSelect.value === "option9") {
+        let filteredHeightOptions = SeatBaseQuickheightOptions;
+        filteredHeightOptions = SeatBaseQuickheightOptions.filter((option) =>
+          ["optionA", "optionG", "optionH"].includes(option.value)
+        );
+        SeatbaseSizeSelect(SeatbaseheightSelect, filteredHeightOptions);
+      }
+    }
+    //endregion
+  });
+});
+//endregion
