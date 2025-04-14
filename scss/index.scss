@@ -2020,12 +2020,9 @@ body {
       // padding: 0px 1px 1px 3px;
       // border: 3px dashed black;
       // border-Top: none;
-      // justify-content: space-between;
       // margin: 0 0 0 7px;
       height: 0;
       width: 100%;
-
-
 
       .Spexcushiongroup_title {
         display: flex;
@@ -2058,7 +2055,6 @@ body {
         margin: 1px 1px 1px 3px;
         border: 1px solid #000000;
         border-radius: 8px;
-
 
         .Spexcushion_Basicssize {
           display: flex;
@@ -2209,7 +2205,100 @@ body {
           display: flex;
           justify-content: center;
           align-items: end;
+        }
+      }
+    }
+  }
+}
 
+//第十二點擊列-Spex底座子系統-硬座板
+.Spex_seatbase {
+  .chkcontent_12th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexseatbasegroup {
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
+
+      .Spexseatbasegroup_title {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+
+        .Spexseatbase_title {
+          display: flex;
+          border: 1px solid #000000;
+          border-radius: 8px;
+          font-size: 20px;
+          height: 50%;
+          width: 100%;
+          font-weight: 700;
+          margin: 2px 1px;
+          align-items: center;
+
+          .SpexSeatBase {
+            margin: 12px 16px;
+          }
+        }
+      }
+
+      .Spexseatbasegroup_size {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+        margin: 0 5px 0 0px;
+
+        .Spexseatbase_WH {
+          display: flex;
+          border: 1px solid #000000;
+          border-radius: 8px;
+          font-size: 20px;
+          width: 100%;
+          font-weight: 700;
+          margin: 2px 4px;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .Spexseatbase_Width {
+          padding: 3px;
+          margin: 2px;
+          font-size: 16px;
+          border-radius: 8px;
+          text-align: center;
+          width: 40%;
+          display: inline-block;
+        }
+
+        div {
+          font-size: 18px;
+          font-weight: 800;
+          margin: 4px;
+        }
+
+        .Spexseatbase_Heigh {
+          padding: 3px;
+          margin: 2px;
+          font-size: 16px;
+          border-radius: 8px;
+          text-align: center;
+          width: 40%;
+          display: inline-block;
         }
       }
     }

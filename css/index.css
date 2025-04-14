@@ -2002,6 +2002,79 @@ body {
   align-items: end;
 }
 
+.Spex_seatbase .chkcontent_12th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title {
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 20px;
+  height: 50%;
+  width: 100%;
+  font-weight: 700;
+  margin: 2px 1px;
+  align-items: center;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title .SpexSeatBase {
+  margin: 12px 16px;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  margin: 0 5px 0 0px;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size .Spexseatbase_WH {
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 100%;
+  font-weight: 700;
+  margin: 2px 4px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size .Spexseatbase_Width {
+  padding: 3px;
+  margin: 2px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  width: 40%;
+  display: inline-block;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size div {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 4px;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size .Spexseatbase_Heigh {
+  padding: 3px;
+  margin: 2px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  width: 40%;
+  display: inline-block;
+}
+
 .car-other {
   visibility: hidden;
 }
