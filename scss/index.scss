@@ -2213,6 +2213,8 @@ body {
 
 //第十二點擊列-Spex底座子系統-硬座板
 .Spex_seatbase {
+  margin: 0 0 7px 0;
+
   .chkcontent_12th {
     display: flex;
     width: 100%;
@@ -2299,6 +2301,125 @@ body {
           text-align: center;
           width: 40%;
           display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.Spex_medialthigh {
+  margin: 0 0 7px 0;
+
+  .chkcontent_13th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexmedialthighgroup {
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 2px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
+
+      .Spexmedialthighgroup_title {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+
+        .Spexmedialthigh_title {
+          display: flex;
+          border: 1px solid #000000;
+          border-radius: 8px;
+          font-size: 20px;
+          height: 50%;
+          width: 100%;
+          font-weight: 700;
+          margin: 2px 1px;
+          align-items: center;
+
+          .SpexMedialThigh {
+            margin: 12px 16px;
+          }
+        }
+      }
+
+      .Spexmedialthigh_sizegroup {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #000000;
+        margin: 2px 2px 0px 4px;
+        border-radius: 8px;
+        height: 95%;
+        width: 50%;
+
+
+        .Spexmedialthigh_size {
+          display:flex ;
+          font-size: 20px;
+          font-weight: 700;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          width: 100%;
+          height: 50%; // 佔上半部
+
+          .Spexmedialthigh_sel {
+            padding: 3px;
+            margin: 2px;
+            font-size: 20px;
+            border-radius: 8px;
+            width: 50%;
+            text-align: center;
+            box-sizing: border-box;
+          }
+        }
+
+        .Spexmedialthigh_sizetable {
+          display:flex ;
+          align-items: center;
+          justify-content: center;
+          margin: 0 0 2px 0;
+
+          .Spexmedialthigh_table {
+            width: 98%;
+            height: 50%; // 佔下半部
+            border-collapse: collapse;
+            table-layout: fixed;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            overflow: hidden;
+
+            tr {
+              height: 50%; // 兩排各佔一半
+              font-size: 12px;
+            }
+
+            td {
+              width: 16.66%;
+              font-weight: bold;
+              border: 1px solid #ccc;
+            }
+
+            .header-row td {
+              background-color: #ff6f6f;
+              color: white;
+            }
+
+            .value-row td {
+              background-color: #f0f0f0;
+              color: #000;
+            }
+          }
         }
       }
     }
