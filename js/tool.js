@@ -1698,7 +1698,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //endregion
 
-/*-----  11.Spex底座子系統-座墊點擊列  -----*/
+/*-----  12.Spex底座子系統-硬座板點擊列  -----*/
 //region
 let Car_SpexSeatBase_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_SpexSeatBase"]'
