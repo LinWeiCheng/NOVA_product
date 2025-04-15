@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedItems = [];
   let basesize = [];
   let spexCushion = [];
+  let spexSeatbase = [];
 
   // 顯示大 Div
   showoutputQuotationBtn.addEventListener("click", () => {
@@ -63,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedItems.length = 0;
     basesize.length = 0;
     spexCushion.length = 0;
+    spexSeatbase.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -114,13 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
     checkedCheckboxes.forEach((checkbox) => {
       let spexgroup = checkbox.dataset.spexgroup;
       let item = checkbox.dataset.item;
-      let price = checkbox.dataset.price;
       let notes = checkbox.dataset.note;
-      // 如果這個 item 已經存過了，就跳過
-      // if (addedItems.has(item)) {
-      //   return;
-      // }
-      if (spexgroup) {
+
+      if (spexgroup === "SpexCushion") {
         if (item) {
           spexCushion.push(item);
         }
@@ -136,17 +134,47 @@ document.addEventListener("DOMContentLoaded", () => {
           CushionwidthSelect.options[CushionwidthSelect.selectedIndex];
         let heightselectedOption =
           CushionheightSelect.options[CushionheightSelect.selectedIndex];
-        // 組合字串：寬x高-顏色
-        let spexString = `${widthselectedOption.text}x${heightselectedOption.text}-${productcolorselectedOption.text}`;
+        // 組合字串：寬 x 高 - 顏色
+        let spexString = ` - ${widthselectedOption.text}x ${heightselectedOption.text}- ${productcolorselectedOption.text}`;
         spexCushion.push(spexString);
         let spexitem = spexCushion.join("");
-        // checkbox.dataset.item = spexString;
         let nowSpexcushionprice = document.querySelector(
           '[data-nowprice-Spexcushion="nowSpexcushion"]'
         );
         let Cushionprice = nowSpexcushionprice.textContent;
 
-        selectedItems.push({ item: spexitem, price: Cushionprice, note: notes });
+        selectedItems.push({
+          item: spexitem,
+          price: Cushionprice,
+          note: notes,
+        });
+      }
+      if (spexgroup === "SpexSeatBase") {
+        if (item) {
+          spexSeatbase.push(item);
+        }
+        let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
+        let SeatbaseheightSelect = document.querySelector(
+          ".Spexseatbase_Heigh"
+        );
+        let widthselectedOption =
+          SeatbasewidthSelect.options[SeatbasewidthSelect.selectedIndex];
+        let heightselectedOption =
+          SeatbaseheightSelect.options[SeatbaseheightSelect.selectedIndex];
+        // 組合字串：車寬 x 板長
+        let spexString = ` - ${widthselectedOption.text}x ${heightselectedOption.text}`;
+        spexSeatbase.push(spexString);
+        let spexitem = spexSeatbase.join("");
+        let nowSpexseatbaseprice = document.querySelector(
+          '[data-nowprice-Spexseatbase="nowSpexseatbase"]'
+        );
+        let Seatbaseprice = nowSpexseatbaseprice.textContent;
+
+        selectedItems.push({
+          item: spexitem,
+          price: Seatbaseprice,
+          note: notes,
+        });
       }
 
       // 記錄這個 item 已經被加入
@@ -260,6 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
       priceCell.style.textAlign = "center"; // 價錢置中
       priceCell.style.borderBottom = "2px solid black";
       priceCell.style.fontSize = "12px";
+      priceCell.style.fontWeight = "600";
       tr.appendChild(priceCell);
 
       // 備註
