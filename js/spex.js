@@ -1949,9 +1949,41 @@ Spex_medialthigh.addEventListener("click", function (event) {
 //endregion
 //endregion
 
-//當我選擇分腿器size時，會對應不同的內容尺寸
+//region ----- 分腿器選擇尺寸方式及不同尺寸會有不同規格 -----
+//Spex硬座板的"車寬"、"板長"的選項會進入這裡做篩選
 //region
+let Spex_medialthighOrgOptions = [
+  { value: "option1", text: "尺寸", selected: true },
+  { value: "option2", text: "size 1" },
+  { value: "option3", text: "size 2" },
+  { value: "option4", text: "size 3" }
+];
 
+
+function MedialThighSizeSelect() {
+  //清空第二排
+  document.querySelectorAll(".value-row td").forEach((cell) => {
+    cell.textContent = ""; // 清掉文字
+    cell.style.backgroundColor = "#f0f0f0";
+    cell.innerHTML = "&nbsp;";
+  });
+  let Spexmedialthighselect = document.querySelector(".Spexmedialthigh_sel");
+
+  //下拉式選單重新排序
+  Spexmedialthighselect.innerHTML = ""; // 清空現有內容
+  Spex_medialthighOrgOptions.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    Spexmedialthighselect.appendChild(opt);
+  });
+}
+//endregion
+
+//當我選擇不同分腿器的size時，會對應不同的內容尺寸
 //region ---Medial Thigh_Standard Selected---
 let SpexmedialthighstandardOptions = {
   option2: ["60mm", "145mm", "95mm", "40mm", "40mm", "65mm"],
@@ -1962,29 +1994,280 @@ let SpexmedialthighstandardOptions = {
 
 //region ---Medial Thigh_Multiaxial Selected---
 let SpexmedialthighmultiaxialOptions = {
-  option1: ["70-140mm", "145mm", "95mm", "50-120mm", "40mm", "65mm"],
-  option2: ["70-140mm", "155mm", "100mm", "60-140mm", "50mm", "65mm"],
-  option3: ["70-160mmm", "185mm", "105mm", "60-140mm", "60mm", "75mm"],
+  option2: ["70-140mm", "145mm", "95mm", "50-120mm", "40mm", "65mm"],
+  option3: ["70-140mm", "155mm", "100mm", "60-140mm", "50mm", "65mm"],
+  option4: ["70-160mm", "185mm", "105mm", "60-140mm", "60mm", "75mm"],
 };
 //endregion
 
-//根據 <select> 的選擇，動態改變第二排的表格資料。
-// let select = document.querySelector(".Spexmedialthigh_sel");
-// let secondRowCells = document.querySelectorAll("#spexTable tr:nth-child(2) td");
+//確定勾選的是哪個Spex分腿器，且不會重複勾選選項
+//region
+document
+  .querySelectorAll('input[name="car_SpexMedialThigh"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexMedialThigh"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+          MedialThighSizeSelect();
+        });
+    });
+  });
+//endregion
 
-// select.addEventListener("change", () => {
-//   let selected = select.value;
-//   let data = sizeOptions[selected];
+//根據分腿器的選擇，動態改變分腿器第二行的表格資料。
+//region
+let Spexmedialthighselect = document.querySelector(".Spexmedialthigh_sel");
+let Spexmedialthigh_secondRowCells = document.querySelectorAll(".value-row td");
+let MedialThigh_Standardcheckbox = document.getElementById(
+  "Spex_MedialThigh_Standard"
+);
+let MedialThigh_Multiaxialcheckbox = document.getElementById(
+  "Spex_MedialThigh_Multiaxial"
+);
 
-//   // 如果有對應資料就填入
-//   if (data) {
-//     data.forEach((value, index) => {
-//       secondRowCells[index].textContent = value;
-//     });
-//   } else {
-//     // 若是選擇 "尺寸"，清空第二排
-//     secondRowCells.forEach((cell) => (cell.textContent = ""));
-//   }
-// });
+Spexmedialthighselect.addEventListener("change", () => {
+  let selected = Spexmedialthighselect.value;
 
+  if (MedialThigh_Standardcheckbox.checked) {
+    let data = SpexmedialthighstandardOptions[selected];
+    // 如果有對應資料就填入
+    if (data) {
+      data.forEach((value, index) => {
+        Spexmedialthigh_secondRowCells[index].textContent = value;
+      });
+    } else {
+      // 若是選擇 "尺寸"，清空第二排
+      Spexmedialthigh_secondRowCells.forEach(cell => cell.innerHTML = "&nbsp;");
+
+    }
+  }
+
+  if (MedialThigh_Multiaxialcheckbox.checked) {
+    let data = SpexmedialthighmultiaxialOptions[selected];
+    // 如果有對應資料就填入
+    if (data) {
+      data.forEach((value, index) => {
+        Spexmedialthigh_secondRowCells[index].textContent = value;
+      });
+    } else {
+      // 若是選擇 "尺寸"，清空第二排
+      Spexmedialthigh_secondRowCells.forEach(cell => cell.innerHTML = "&nbsp;");
+
+    }
+  }
+});
+//endregion
+
+//endregion
+
+
+/*-----  14.Spex底座子系統-扶手臀撐點擊列 -----*/
+//region
+//region
+/*--- Spex底座子系統-扶手臀撐點擊列-圖片箭頭部分 ---*/
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_14 = event.target;
+  let carseat14 = tgimg_14.closest(".Spex_armsup_latthigh"); // 找到最近的 Spex_armsup_latthigh
+  let imgSpexarmsuplatthigh = event.target.dataset.imgSpexarmsuplatthigh;
+
+  //確認我點擊到的位置是否是car-Spex_armsuplatthigh的箭頭
+  if (carseat14 && carseat14.className.trim() === "Spex_armsup_latthigh") {
+    let introdutionid = carseat14.querySelector(".Spexarmsuplatthighgroup"); // 在 Spex_armsuplatthigh 內部找 Spexarmsuplatthighgroup
+    let introdution = carseat14.querySelector(".subtitle"); // 在 Spex_armsuplatthigh 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgSpexarmsuplatthigh === "SpexarmsuplatthighImg") {
+        if (visibilityValue === "hidden") {
+          let Price_Spexarmsuplatthigh = document.querySelectorAll(".pricing");
+
+          Price_Spexarmsuplatthigh.forEach(function (openIntro) {
+            let Spexarmsuplatthigh = Price_Spexarmsuplatthigh[13];
+            //直接判斷是第幾個.Price
+            let nowprice_Spexarmsuplatthigh =
+              Price_Spexarmsuplatthigh[13].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-Spexarmsuplatthigh") ===
+                "Spexarmsuplatthigh" &&
+              nowprice_Spexarmsuplatthigh.getAttribute(
+                "data-nowprice-Spexarmsuplatthigh"
+              ) === "nowSpexarmsuplatthigh"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //carSpexarmsuplatthigh勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 2px 3px";
+                introdutionid.style.width = "calc(100% - 22px)";
+                introdutionid.style.display = "flex";
+                introdutionid.style.flexDirection = "row";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.margin = "0 0 0 7px";
+                introdutionid.style.height = "auto";
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_Spexarmsuplatthigh.style.display = "block";
+                nowprice_Spexarmsuplatthigh.style.display = "flex";
+                nowprice_Spexarmsuplatthigh.style.width = "95%";
+                nowprice_Spexarmsuplatthigh.style.height = "90%";
+                nowprice_Spexarmsuplatthigh.style.color = "#000000";
+                nowprice_Spexarmsuplatthigh.style.borderRadius = "8px";
+                nowprice_Spexarmsuplatthigh.style.padding = "1px";
+                nowprice_Spexarmsuplatthigh.style.margin = "3px 3px 3px 2px";
+                nowprice_Spexarmsuplatthigh.style.textAlign = "center";
+                nowprice_Spexarmsuplatthigh.style.fontSize = "17px";
+                nowprice_Spexarmsuplatthigh.style.fontWeight = "600";
+                nowprice_Spexarmsuplatthigh.style.alignItems = "center";
+                nowprice_Spexarmsuplatthigh.style.justifyContent = "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_Spexarmsuplatthigh.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  Spexarmsuplatthigh.style.padding = "5px";
+                  Spexarmsuplatthigh.style.margin = "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_Spexarmsuplatthigh = document.querySelectorAll(".pricing");
+
+          Price_Spexarmsuplatthigh.forEach(function (openIntro) {
+            let nowprice_Spexarmsuplatthigh =
+              Price_Spexarmsuplatthigh[13].nextElementSibling;
+
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (
+              openIntro.getAttribute("data-price-Spexarmsuplatthigh") ===
+              "Spexarmsuplatthigh"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_Spexarmsuplatthigh.style.display = "none";
+          });
+        }
+      }
+    }
+
+  }
+});
+//endregion
+
+//region
+/*---  Spex底座子系統-分腿器點擊列 -subtitle部分  ---*/
+let Spex_armsuplatthigh = document.querySelector(".Spex_armsup_latthigh");
+Spex_armsuplatthigh.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是Spex_armsuplatthigh
+  if (showinfo === "Spexarmsuplatthigh") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_Spex_armsuplatthigh = document.querySelectorAll(".pricing");
+    let Spex_armsuplatthighimg = Spex_armsuplatthigh.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = Spex_armsuplatthighimg.querySelector("img");
+
+    Price_Spex_armsuplatthigh.forEach(function (openIntro) {
+      let Spexarmsuplatthigh = Price_Spex_armsuplatthigh[13];
+      //直接判斷是第幾個.Price
+      let nowprice_Spexarmsuplatthigh =
+        Price_Spex_armsuplatthigh[13].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-Spexarmsuplatthigh") ===
+          "Spexarmsuplatthigh" &&
+        nowprice_Spexarmsuplatthigh.getAttribute(
+          "data-nowprice-Spexarmsuplatthigh"
+        ) === "nowSpexarmsuplatthigh"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carSpexarmsuplatthigh勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 2px 3px";
+          introdutionid.style.width = "calc(100% - 22px)";
+          introdutionid.style.display = "flex";
+          introdutionid.style.flexDirection = "row";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.margin = "0 0 0 7px";
+          introdutionid.style.height = "auto";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_Spexarmsuplatthigh.style.display = "block";
+          nowprice_Spexarmsuplatthigh.style.display = "flex";
+          nowprice_Spexarmsuplatthigh.style.width = "95%";
+          nowprice_Spexarmsuplatthigh.style.height = "90%";
+          nowprice_Spexarmsuplatthigh.style.color = "#000000";
+          nowprice_Spexarmsuplatthigh.style.borderRadius = "8px";
+          nowprice_Spexarmsuplatthigh.style.padding = "1px";
+          nowprice_Spexarmsuplatthigh.style.margin = "3px 3px 3px 2px";
+          nowprice_Spexarmsuplatthigh.style.textAlign = "center";
+          nowprice_Spexarmsuplatthigh.style.fontSize = "17px";
+          nowprice_Spexarmsuplatthigh.style.fontWeight = "600";
+          nowprice_Spexarmsuplatthigh.style.alignItems = "center";
+          nowprice_Spexarmsuplatthigh.style.justifyContent = "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_Spexarmsuplatthigh.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            Spexarmsuplatthigh.style.padding = "5px";
+            Spexarmsuplatthigh.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_Spexarmsuplatthigh.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
 //endregion
