@@ -2307,6 +2307,7 @@ body {
   }
 }
 
+//第十三點擊列-Spex底座子系統-分腿器
 .Spex_medialthigh {
   margin: 0 0 7px 0;
 
@@ -2363,7 +2364,7 @@ body {
 
 
         .Spexmedialthigh_size {
-          display:flex ;
+          display: flex;
           font-size: 20px;
           font-weight: 700;
           align-items: center;
@@ -2384,7 +2385,7 @@ body {
         }
 
         .Spexmedialthigh_sizetable {
-          display:flex ;
+          display: flex;
           align-items: center;
           justify-content: center;
           margin: 0 0 2px 0;
@@ -2426,6 +2427,162 @@ body {
   }
 }
 
+.Spex_armsup_latthigh {
+  margin: 0 0 7px 0;
+
+  .chkcontent_14th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexarmsuplatthighgroup {
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 2px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
+
+      .Spexarmsuplatthighgroup_title {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+
+
+        .Spexarmsuplatthigh_title {
+          display: flex;
+          align-items: center;
+          border: 1px solid #000000;
+          border-radius: 8px;
+          font-size: 18px;
+          height: 50%;
+          width: 100%;
+          font-weight: 700;
+          margin: 2px 1px;
+
+
+          .SpexArmSupLatThigh {
+            margin: 12px 16px;
+          }
+        }
+      }
+    }
+
+    .Spexarmsuplatthigh_bucklegroup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 13%;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 2px 1px 2px 4px;
+
+      .Spexarmsuplatthigh_bucklesel {
+        padding: 3px;
+        margin: 2px;
+        font-size: 18px;
+        border-radius: 8px;
+        width: 90%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+
+    .Spexarmsuplatthigh_armsupgroup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 13%;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 2px 1px 2px 1px;
+
+      .Spexarmsuplatthigh_armsupsel {
+        padding: 3px;
+        margin: 2px;
+        font-size: 18px;
+        border-radius: 8px;
+        width: 90%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+
+    .Spexarmsuplatthigh_latthighgroup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 13%;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 2px 1px 2px 1px;
+
+      .Spexarmsuplatthigh_latthighsel {
+        padding: 3px;
+        margin: 2px;
+        font-size: 18px;
+        border-radius: 8px;
+        width: 90%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+
+    .Spexarmsuplatthigh_padgroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 25%;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 2px 1px 2px 1px;
+
+      .Spexarmsuplatthigh_armpadsize {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .Spexarmsuplatthigh_armpadsel {
+          padding: 3px;
+          margin: 2px;
+          font-size: 18px;
+          border-radius: 8px;
+          width: 100%;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+
+      .Spexarmsuplatthigh_lateralpadsize {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .Spexarmsuplatthigh_lateralpadsel {
+          padding: 3px;
+          margin: 2px;
+          font-size: 18px;
+          border-radius: 8px;
+          width: 100%;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+  }
+}
 
 //n.其他
 .car-other {
