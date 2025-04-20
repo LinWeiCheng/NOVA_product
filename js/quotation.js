@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedItems = [];
   let basesize = [];
   let spexCushion = [];
-  let spexSeatbase = [];
+  let spexSeatBase = [];
+  let spexMedialThigh = [];
+
 
   // 顯示大 Div
   showoutputQuotationBtn.addEventListener("click", () => {
@@ -64,7 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedItems.length = 0;
     basesize.length = 0;
     spexCushion.length = 0;
-    spexSeatbase.length = 0;
+    spexSeatBase.length = 0;
+    spexMedialThigh.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -151,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (spexgroup === "SpexSeatBase") {
         if (item) {
-          spexSeatbase.push(item);
+          spexSeatBase.push(item);
         }
         let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
         let SeatbaseheightSelect = document.querySelector(
@@ -163,16 +166,38 @@ document.addEventListener("DOMContentLoaded", () => {
           SeatbaseheightSelect.options[SeatbaseheightSelect.selectedIndex];
         // 組合字串：車寬 x 板長
         let spexString = ` - ${widthselectedOption.text}x ${heightselectedOption.text}`;
-        spexSeatbase.push(spexString);
-        let spexitem = spexSeatbase.join("");
+        spexSeatBase.push(spexString);
+        let spexitem = spexSeatBase.join("");
         let nowSpexseatbaseprice = document.querySelector(
           '[data-nowprice-Spexseatbase="nowSpexseatbase"]'
         );
-        let Seatbaseprice = nowSpexseatbaseprice.textContent;
+        let SeatBaseprice = nowSpexseatbaseprice.textContent;
 
         selectedItems.push({
           item: spexitem,
-          price: Seatbaseprice,
+          price: SeatBaseprice,
+          note: notes,
+        });
+      }
+
+      if (spexgroup === "SpexMedialThigh") {
+        if (item) {
+          spexMedialThigh.push(item);
+        }
+        let MedialThighSizeSelect = document.querySelector(".Spexmedialthigh_sel");
+      
+        let selectedOption =
+        MedialThighSizeSelect.options[MedialThighSizeSelect.selectedIndex];
+        // 組合字串：- 尺寸
+        let spexString = ` - ${selectedOption.text}`;
+        spexMedialThigh.push(spexString);
+        let spexitem = spexMedialThigh.join("");
+        let nowSpexmedialthighprice = document.querySelector('[data-nowprice-Spexmedialthigh="nowSpexmedialthigh"]')
+        let MedialThighprice = nowSpexmedialthighprice.textContent;
+
+        selectedItems.push({
+          item: spexitem,
+          price: MedialThighprice,
           note: notes,
         });
       }
