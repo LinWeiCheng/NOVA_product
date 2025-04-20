@@ -1918,3 +1918,83 @@ document.addEventListener("DOMContentLoaded", function () {
     //endregion
   });
 });
+//endregion
+
+/*-----  13.Spex底座子系統-分腿器點擊列  -----*/
+//region
+let Car_MedialThigh_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_SpexMedialThigh"]'
+);
+let nowprice_SpexMedialThigh = Price[12].nextElementSibling;
+
+//Spex_MedialThigh_Standard 分腿器-標準型
+let Spex_MedialThigh_Standard_prices = {
+  Spex_MedialThigh_Standard_prices1: 12500,
+  Spex_MedialThigh_Standard_prices2: 12500,
+  Spex_MedialThigh_Standard_prices3: 12500,
+};
+
+//Spex_MedialThigh_Multiaxial 分腿器-標準型
+let Spex_MedialThigh_Multiaxial_prices = {
+  Spex_MedialThigh_Multiaxial_prices1: 18000,
+  Spex_MedialThigh_Multiaxial_prices2: 18000,
+  Spex_MedialThigh_Multiaxial_prices3: 18000,
+};
+
+let medialthighstandardCheckbox = document.querySelector(
+  "#Spex_MedialThigh_Standard"
+);
+let medialthighmultiaxialCheckbox = document.querySelector(
+  "#Spex_MedialThigh_Multiaxial"
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+  let MedialThighSizeSelect = document.querySelector(".Spexmedialthigh_sel");
+
+  // 監聽高度選單
+  MedialThighSizeSelect.addEventListener("change", function () {
+    let medialthighOption =
+      MedialThighSizeSelect.options[MedialThighSizeSelect.selectedIndex];
+    if (
+      medialthighstandardCheckbox.id === "Spex_MedialThigh_Standard" &&
+      medialthighstandardCheckbox.checked
+    ) {
+      if (medialthighOption.text === "size 1") {
+        nowprice_SpexMedialThigh.textContent = `${formatPrice(
+          Spex_MedialThigh_Standard_prices.Spex_MedialThigh_Standard_prices1
+        )} 元`;
+      }
+      if (medialthighOption.text === "size 2") {
+        nowprice_SpexMedialThigh.textContent = `${formatPrice(
+          Spex_MedialThigh_Standard_prices.Spex_MedialThigh_Standard_prices2
+        )} 元`;
+      }
+      if (medialthighOption.text === "size 3") {
+        nowprice_SpexMedialThigh.textContent = `${formatPrice(
+          Spex_MedialThigh_Standard_prices.Spex_MedialThigh_Standard_prices3
+        )} 元`;
+      }
+    }
+
+    if (
+      medialthighmultiaxialCheckbox.id === "Spex_MedialThigh_Multiaxial" &&
+      medialthighmultiaxialCheckbox.checked
+    ) {
+      if (medialthighOption.text === "size 1") {
+        nowprice_SpexMedialThigh.textContent = `${formatPrice(
+          Spex_MedialThigh_Multiaxial_prices.Spex_MedialThigh_Multiaxial_prices1
+        )} 元`;
+      }
+      if (medialthighOption.text === "size 2") {
+        nowprice_SpexMedialThigh.textContent = `${formatPrice(
+          Spex_MedialThigh_Multiaxial_prices.Spex_MedialThigh_Multiaxial_prices2
+        )} 元`;
+      }
+      if (medialthighOption.text === "size 3") {
+        nowprice_SpexMedialThigh.textContent = `${formatPrice(
+          Spex_MedialThigh_Multiaxial_prices.Spex_MedialThigh_Multiaxial_prices3
+        )} 元`;
+      }
+    }
+  });
+});
