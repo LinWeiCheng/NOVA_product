@@ -952,9 +952,6 @@ Car_bandage_checkboxes.forEach((checkbox) => {
 
 /*-----  11.Spex底座子系統-座墊點擊列  -----*/
 //region
-let Car_SpexCushion_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][name="car_SpexCushion"]'
-);
 let nowprice_SpexCushion = Price[10].nextElementSibling;
 
 //Spex_Vigour_Std 標準型座墊
@@ -1700,9 +1697,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  12.Spex底座子系統-硬座板點擊列  -----*/
 //region
-let Car_SpexSeatBase_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][name="car_SpexSeatBase"]'
-);
 let nowprice_SpexSeatBase = Price[11].nextElementSibling;
 
 //Spex_Seat_Base 硬座板(固定扣具)
@@ -1922,9 +1916,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  13.Spex底座子系統-分腿器點擊列  -----*/
 //region
-let Car_MedialThigh_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][name="car_SpexMedialThigh"]'
-);
 let nowprice_SpexMedialThigh = Price[12].nextElementSibling;
 
 //Spex_MedialThigh_Standard 分腿器-標準型
@@ -1998,3 +1989,654 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+//endregion
+
+/*-----  14.Spex底座子系統-分腿器點擊列  -----*/
+//region
+let nowprice_SpexArmSupLatThigh = Price[13].nextElementSibling;
+
+//region --- 扶手支撐價格 ---
+//Spex_Arm_Supports_Quick 扶手支撐快拆式
+let Spex_Arm_Supports_Quickprices = {
+  Spex_Arm_Supports_Quickprices1: 11200,
+  Spex_Arm_Supports_Quickprices2: 9800,
+};
+
+//Spex_Arm_Supports_FlipDown 扶手支撐下擺式
+let Spex_Arm_Supports_FlipDownprices = {
+  Spex_Arm_Supports_FlipDownprices1: 12800,
+  Spex_Arm_Supports_FlipDownprices2: 11200,
+};
+
+//Spex_Arm_Supports_Fixed 扶手支撐固定式
+let Spex_Arm_Supports_Fixedprices = {
+  Spex_Arm_Supports_Fixedprices1: 10000,
+  Spex_Arm_Supports_Fixedprices2: 8400,
+};
+//endregion
+
+//region --- 臀測支撐價格 ---
+//Spex_Lateral_Thigh_Supports_Quick 臀測支撐快拆式
+let Spex_Lateral_Thigh_Supports_Quickprices = {
+  Spex_Lateral_Thigh_Supports_Quickprices1: 9100,
+  Spex_Lateral_Thigh_Supports_Quickprices2: 7700,
+};
+
+//Spex_Lateral_Thigh_Supports_FlipDown 臀測支撐下擺式
+let Spex_Lateral_Thigh_Supports_FlipDownprices = {
+  Spex_Lateral_Thigh_Supports_FlipDownprices1: 10900,
+  Spex_Lateral_Thigh_Supports_FlipDownprices2: 9100,
+};
+//endregion
+
+//region --- 扶手臀撐價格 ---
+//Spex_ArmSup_LatThigh_Quick 扶手臀撐快拆式
+let Spex_ArmSup_LatThigh_Quickprices = {
+  Spex_ArmSup_LatThigh_Quickprices1: 14200,
+  Spex_ArmSup_LatThigh_Quickprices2: 13200,
+  Spex_ArmSup_LatThigh_Quickprices3: 11300,
+  Spex_ArmSup_LatThigh_Quickprices4: 10600,
+};
+
+//Spex_ArmSup_LatThigh_FlipDown 扶手臀撐下擺式
+let Spex_ArmSup_LatThigh_FlipDownprices = {
+  Spex_ArmSup_LatThigh_FlipDownprices1: 15900,
+  Spex_ArmSup_LatThigh_FlipDownprices2: 14800,
+  Spex_ArmSup_LatThigh_FlipDownprices3: 12700,
+  Spex_ArmSup_LatThigh_FlipDownprices4: 12100,
+};
+
+//Spex_ArmSup_LatThigh_Fixed 扶手臀撐固定式
+let Spex_ArmSup_LatThigh_Fixedprices = {
+  Spex_ArmSup_LatThigh_Fixedprices1: 12700,
+  Spex_ArmSup_LatThigh_Fixedprices2: 12100,
+  Spex_ArmSup_LatThigh_Fixedprices3: 10600,
+  Spex_ArmSup_LatThigh_Fixedprices4: 9000,
+};
+//endregion
+
+let armsupportsCheckbox = document.querySelector("#Spex_ArmSupports");
+let lateralthighsupportsCheckbox = document.querySelector(
+  "#Spex_LateralThighSupports"
+);
+let armsup_latthighCheckbox = document.querySelector("#Spex_ArmSup_LatThigh");
+
+document.addEventListener("DOMContentLoaded", function () {
+  let buckle = document.querySelector(".Spexarmsuplatthigh_bucklesel");
+  let armsup = document.querySelector(".Spexarmsuplatthigh_armsupsel");
+  let latthigh = document.querySelector(".Spexarmsuplatthigh_latthighsel");
+  let armpad = document.querySelector(".Spexarmsuplatthigh_armpadsel");
+  let lateralpad = document.querySelector(".Spexarmsuplatthigh_lateralpadsel");
+
+  // 監聽高度選單
+  buckle.addEventListener("change", function () {
+    let buckleOption = buckle.options[buckle.selectedIndex];
+    let armsupOption = armsup.options[armsup.selectedIndex];
+    let latthighOption = latthigh.options[latthigh.selectedIndex];
+    let armpadOption = armpad.options[armpad.selectedIndex];
+    let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
+
+    //扶手支撐
+    if (
+      armsupportsCheckbox.id === "Spex_ArmSupports" &&
+      armsupportsCheckbox.checked
+    ) {
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2
+        )} 元`;
+      }
+
+      //臀側支撐
+    } else if (
+      lateralthighsupportsCheckbox.id === "Spex_LateralThighSupports" &&
+      lateralthighsupportsCheckbox.checked
+    ) {
+      if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2
+        )} 元`;
+      }
+
+      //扶手臀撐
+    } else if (
+      armsup_latthighCheckbox.id === "Spex_ArmSup_LatThigh" &&
+      armsup_latthighCheckbox.checked
+    ) {
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+        )} 元`;
+      }
+
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+        )} 元`;
+      }
+
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+        )} 元`;
+      }
+    }
+  });
+
+  armsup.addEventListener("change", function () {
+    let buckleOption = buckle.options[buckle.selectedIndex];
+    let armsupOption = armsup.options[armsup.selectedIndex];
+    let latthighOption = latthigh.options[latthigh.selectedIndex];
+    let armpadOption = armpad.options[armpad.selectedIndex];
+    let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
+
+    //扶手支撐
+    if (
+      armsupportsCheckbox.id === "Spex_ArmSupports" &&
+      armsupportsCheckbox.checked
+    ) {
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2
+        )} 元`;
+      }
+
+      //臀側支撐
+    } else if (
+      lateralthighsupportsCheckbox.id === "Spex_LateralThighSupports" &&
+      lateralthighsupportsCheckbox.checked
+    ) {
+      if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2
+        )} 元`;
+      }
+
+      //扶手臀撐
+    } else if (
+      armsup_latthighCheckbox.id === "Spex_ArmSup_LatThigh" &&
+      armsup_latthighCheckbox.checked
+    ) {
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+        )} 元`;
+      }
+
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+        )} 元`;
+      }
+
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+        )} 元`;
+      }
+    }
+  });
+
+  latthigh.addEventListener("change", function () {
+    let buckleOption = buckle.options[buckle.selectedIndex];
+    let armsupOption = armsup.options[armsup.selectedIndex];
+    let latthighOption = latthigh.options[latthigh.selectedIndex];
+    let armpadOption = armpad.options[armpad.selectedIndex];
+    let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
+
+    //扶手支撐
+    if (
+      armsupportsCheckbox.id === "Spex_ArmSupports" &&
+      armsupportsCheckbox.checked
+    ) {
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度可調") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2
+        )} 元`;
+      }
+
+      //臀側支撐
+    } else if (
+      lateralthighsupportsCheckbox.id === "Spex_LateralThighSupports" &&
+      lateralthighsupportsCheckbox.checked
+    ) {
+      if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2
+        )} 元`;
+      }
+
+      if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1
+        )} 元`;
+      }
+      if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2
+        )} 元`;
+      }
+
+      //扶手臀撐
+    } else if (
+      armsup_latthighCheckbox.id === "Spex_ArmSup_LatThigh" &&
+      armsup_latthighCheckbox.checked
+    ) {
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "快拆式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+        )} 元`;
+      }
+
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "下擺式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+        )} 元`;
+      }
+
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度可調" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "多軸"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+        )} 元`;
+      }
+      if (
+        buckleOption.text === "固定式" &&
+        armsupOption.text === "角度固定" &&
+        latthighOption.text === "固定"
+      ) {
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+        )} 元`;
+      }
+    }
+  });
+});
+//endregion
