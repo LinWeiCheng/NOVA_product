@@ -438,6 +438,7 @@ CushioncolorSelect.addEventListener("change", function () {
 });
 
 //確定勾選的是哪個Spex座墊並給予"寬"及"長"，且不會重複勾選選項
+//region
 document
   .querySelectorAll('input[name="car_SpexCushion"]')
   .forEach((checkbox) => {
@@ -449,6 +450,10 @@ document
             otherCheckbox.checked = false;
           }
         });
+
+      if (nowprice_SpexCushion.textContent !== "0元") {
+        nowprice_SpexCushion.textContent = "0元";
+      }
       let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
       let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
       let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
@@ -532,6 +537,7 @@ document
       }
     });
   });
+//endregion
 
 document.addEventListener("DOMContentLoaded", function () {
   let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
@@ -1237,6 +1243,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //region
 //region
 /*--- Spex底座子系統-硬座板點擊列-圖片箭頭部分 ---*/
+//region
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_12 = event.target;
@@ -1342,8 +1349,9 @@ document.addEventListener("click", function (event) {
   }
 });
 //endregion
-//region
+
 /*---  Spex底座子系統-硬座板點擊列 -subtitle部分  ---*/
+//region
 let Spex_seatbase = document.querySelector(".Spex_seatbase");
 Spex_seatbase.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1514,6 +1522,10 @@ document
             otherCheckbox.checked = false;
           }
         });
+      let nowprice_SpexSeatBase = Price[11].nextElementSibling;
+      if (nowprice_SpexSeatBase.textContent) {
+        nowprice_SpexSeatBase.textContent = "0元";
+      }
 
       let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
       let SeatbaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
@@ -1743,11 +1755,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //endregion
+//endregion
 
 /*-----  13.Spex底座子系統-分腿器點擊列 -----*/
 //region
-//region
 /*--- Spex底座子系統-硬座板點擊列-圖片箭頭部分 ---*/
+//region
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_13 = event.target;
@@ -1853,8 +1866,9 @@ document.addEventListener("click", function (event) {
   }
 });
 //endregion
-//region
+
 /*---  Spex底座子系統-分腿器點擊列 -subtitle部分  ---*/
+//region
 let Spex_medialthigh = document.querySelector(".Spex_medialthigh");
 Spex_medialthigh.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1947,7 +1961,6 @@ Spex_medialthigh.addEventListener("click", function (event) {
   }
 });
 //endregion
-//endregion
 
 //region ----- 分腿器選擇尺寸方式及不同尺寸會有不同規格 -----
 //Spex硬座板的"車寬"、"板長"的選項會進入這裡做篩選
@@ -1956,11 +1969,17 @@ let Spex_medialthighOrgOptions = [
   { value: "option1", text: "尺寸", selected: true },
   { value: "option2", text: "size 1" },
   { value: "option3", text: "size 2" },
-  { value: "option4", text: "size 3" }
+  { value: "option4", text: "size 3" },
 ];
 
+function MedialThighSizeSelect(otherCheckbox) {
+  let SpexmedialthighSel = document.querySelector(".Spexmedialthigh_sel");
+  if (!otherCheckbox) {
+    SpexmedialthighSel.disabled = true;
+  } else {
+    SpexmedialthighSel.disabled = false;
+  }
 
-function MedialThighSizeSelect() {
   //清空第二排
   document.querySelectorAll(".value-row td").forEach((cell) => {
     cell.textContent = ""; // 清掉文字
@@ -2012,7 +2031,12 @@ document
           if (otherCheckbox !== this) {
             otherCheckbox.checked = false;
           }
-          MedialThighSizeSelect();
+          let nowprice_Spexmedialthigh = Price[12].nextElementSibling;
+          if (nowprice_Spexmedialthigh.textContent) {
+            nowprice_Spexmedialthigh.textContent = "0元";
+          }
+
+          MedialThighSizeSelect(otherCheckbox !== this);
         });
     });
   });
@@ -2028,6 +2052,8 @@ let MedialThigh_Standardcheckbox = document.getElementById(
 let MedialThigh_Multiaxialcheckbox = document.getElementById(
   "Spex_MedialThigh_Multiaxial"
 );
+let SpexmedialthighSel = document.querySelector(".Spexmedialthigh_sel");
+SpexmedialthighSel.disabled = true;
 
 Spexmedialthighselect.addEventListener("change", () => {
   let selected = Spexmedialthighselect.value;
@@ -2041,8 +2067,9 @@ Spexmedialthighselect.addEventListener("change", () => {
       });
     } else {
       // 若是選擇 "尺寸"，清空第二排
-      Spexmedialthigh_secondRowCells.forEach(cell => cell.innerHTML = "&nbsp;");
-
+      Spexmedialthigh_secondRowCells.forEach(
+        (cell) => (cell.innerHTML = "&nbsp;")
+      );
     }
   }
 
@@ -2055,20 +2082,22 @@ Spexmedialthighselect.addEventListener("change", () => {
       });
     } else {
       // 若是選擇 "尺寸"，清空第二排
-      Spexmedialthigh_secondRowCells.forEach(cell => cell.innerHTML = "&nbsp;");
-
+      Spexmedialthigh_secondRowCells.forEach(
+        (cell) => (cell.innerHTML = "&nbsp;")
+      );
     }
   }
 });
 //endregion
 
 //endregion
-
+//endregion
 
 /*-----  14.Spex底座子系統-扶手臀撐點擊列 -----*/
 //region
-//region
+
 /*--- Spex底座子系統-扶手臀撐點擊列-圖片箭頭部分 ---*/
+//region
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_14 = event.target;
@@ -2171,7 +2200,6 @@ document.addEventListener("click", function (event) {
         }
       }
     }
-
   }
 });
 //endregion
@@ -2187,7 +2215,8 @@ Spex_armsuplatthigh.addEventListener("click", function (event) {
   if (showinfo === "Spexarmsuplatthigh") {
     let introdutionid = event.target.nextElementSibling;
     let Price_Spex_armsuplatthigh = document.querySelectorAll(".pricing");
-    let Spex_armsuplatthighimg = Spex_armsuplatthigh.querySelector(".target_img"); // 找到最近的 .target_img
+    let Spex_armsuplatthighimg =
+      Spex_armsuplatthigh.querySelector(".target_img"); // 找到最近的 .target_img
     let img = Spex_armsuplatthighimg.querySelector("img");
 
     Price_Spex_armsuplatthigh.forEach(function (openIntro) {
@@ -2270,4 +2299,139 @@ Spex_armsuplatthigh.addEventListener("click", function (event) {
   }
 });
 //endregion
+
+//region --- Spex_Arm Supports 扶手角度 Selected---
+let Spex_armsuplatthighbuckleOptions = [
+  { value: "option1", text: "扣具", selected: true },
+  { value: "option2", text: "快拆式" },
+  { value: "option3", text: "下擺式" },
+  { value: "option4", text: "固定式" },
+];
+//endregion
+
+//region --- Spex_Arm Supports 扶手角度 Selected---
+let Spex_armsupportsOptions = [
+  { value: "option1", text: "扶手角度", selected: true },
+  { value: "option2", text: "角度可調" },
+  { value: "option3", text: "角度固定" },
+];
+//endregion
+
+//region --- Spex_Lateral Thigh Supports 腿墊調整 Selected---
+let Spex_lateralthighOptions = [
+  { value: "option1", text: "腿墊調整", selected: true },
+  { value: "option2", text: "多軸" },
+  { value: "option3", text: "固定" },
+];
+//endregion
+
+//region --- Spex_Arm Pad 扶手支撐襯墊 Selected---
+let Spex_armpadOptions = [
+  { value: "option1", text: "扶手襯墊尺寸", selected: true },
+  { value: "option2", text: "40mm*250mm" },
+  { value: "option3", text: "50mm*300mm" },
+  { value: "option4", text: "60mm*350mm" },
+  { value: "option5", text: "70mm*250mm" },
+  { value: "option6", text: "80mm*300mm" },
+  { value: "option6", text: "90mm*350mm" },
+];
+//endregion
+
+//region --- Spex_Lateral Pad 臀側支撐襯墊 Selected---
+let Spex_lateralpadOptions = [
+  { value: "option1", text: "臀側支撐襯墊尺寸", selected: true },
+  { value: "option2", text: "250mm*75mm*25mm" },
+  { value: "option3", text: "300mm*80mm*25mm" },
+  { value: "option4", text: "350mm*90mm*25mm" },
+  { value: "option5", text: "400mm*100mm*25mm" },
+  { value: "option6", text: "430mm*100mm*25mm" },
+  { value: "option6", text: "450mm*100mm*25mm" },
+];
+//endregion
+
+//Spex扶手腿撐的下拉式選單都在這邊加入選項
+//region
+function armsuplatthighSelect(selectElement, options, other) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    if (other && option.value === "option4") return;
+
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+//endregion
+
+//region --- 宣告並隱藏下拉式選單 ---
+let buckle = document.querySelector(".Spexarmsuplatthigh_bucklesel");
+let armsup = document.querySelector(".Spexarmsuplatthigh_armsupsel");
+let latthigh = document.querySelector(".Spexarmsuplatthigh_latthighsel");
+let armpad = document.querySelector(".Spexarmsuplatthigh_armpadsel");
+let lateralpad = document.querySelector(".Spexarmsuplatthigh_lateralpadsel");
+
+buckle.disabled = true;
+armsup.disabled = true;
+latthigh.disabled = true;
+armpad.disabled = true;
+lateralpad.disabled = true;
+//endregion
+
+//確認勾是扶手臀撐、扶手支撐或是臀測支撐，再給出各自的下拉式選單選擇
+//region
+document
+  .querySelectorAll('input[name="car_SpexArmSupLatThigh"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexArmSupLatThigh"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+        let nowprice_Spexarmsuplatthigh = Price[13].nextElementSibling;
+              if (nowprice_Spexarmsuplatthigh.textContent) {
+                nowprice_Spexarmsuplatthigh.textContent = "0元";
+              }
+      if (checkbox.id === "Spex_ArmSupports") {
+        buckle.disabled = false;
+        armsup.disabled = false;
+        armpad.disabled = false;
+        latthigh.disabled = true;
+        lateralpad.disabled = true;
+        armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions);
+        armsuplatthighSelect(armsup, Spex_armsupportsOptions);
+        armsuplatthighSelect(armpad, Spex_armpadOptions);
+      }
+
+      if (checkbox.id === "Spex_LateralThighSupports") {
+        buckle.disabled = false;
+        latthigh.disabled = false;
+        lateralpad.disabled = false;
+        armsup.disabled = true;
+        armpad.disabled = true;
+        armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions, true);
+        armsuplatthighSelect(latthigh, Spex_lateralthighOptions);
+        armsuplatthighSelect(lateralpad, Spex_lateralthighOptions);
+      }
+
+      if (checkbox.id === "Spex_ArmSup_LatThigh") {
+        buckle.disabled = false;
+        armsup.disabled = false;
+        latthigh.disabled = false;
+        armpad.disabled = false;
+        lateralpad.disabled = false;
+        armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions);
+        armsuplatthighSelect(armsup, Spex_armsupportsOptions);
+        armsuplatthighSelect(armpad, Spex_armpadOptions);
+        armsuplatthighSelect(latthigh, Spex_lateralthighOptions);
+        armsuplatthighSelect(lateralpad, Spex_lateralthighOptions);
+      }
+    });
+  });
 //endregion
