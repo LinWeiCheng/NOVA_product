@@ -1080,7 +1080,7 @@ document.addEventListener("click", function (event) {
                 nowprice_backsupports.style.padding = "1px";
                 nowprice_backsupports.style.margin = "3px 3px 3px 2px";
                 nowprice_backsupports.style.textAlign = "center";
-                nowprice_backsupports.style.fontSize = "20px";
+                nowprice_backsupports.style.fontSize = "18px";
                 nowprice_backsupports.style.fontWeight = "600";
                 nowprice_backsupports.style.alignItems = "center";
                 nowprice_backsupports.style.justifyContent = "center";
@@ -1180,7 +1180,7 @@ carbacksupports.addEventListener("click", function (event) {
           nowprice_backsupports.style.padding = "1px";
           nowprice_backsupports.style.margin = "3px 3px 3px 2px";
           nowprice_backsupports.style.textAlign = "center";
-          nowprice_backsupports.style.fontSize = "20px";
+          nowprice_backsupports.style.fontSize = "18px";
           nowprice_backsupports.style.fontWeight = "600";
           nowprice_backsupports.style.alignItems = "center";
           nowprice_backsupports.style.justifyContent = "center";
