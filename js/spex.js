@@ -2373,12 +2373,16 @@ let armsup = document.querySelector(".Spexarmsuplatthigh_armsupsel");
 let latthigh = document.querySelector(".Spexarmsuplatthigh_latthighsel");
 let armpad = document.querySelector(".Spexarmsuplatthigh_armpadsel");
 let lateralpad = document.querySelector(".Spexarmsuplatthigh_lateralpadsel");
+let armpadcount = document.getElementById("armpadcount");
+let lateralpadcount = document.getElementById("lateralpadcount");
 
 buckle.disabled = true;
 armsup.disabled = true;
 latthigh.disabled = true;
 armpad.disabled = true;
 lateralpad.disabled = true;
+armpadcount.disabled = true;
+lateralpadcount.disabled = true;
 //endregion
 
 //確認勾是扶手臀撐、扶手支撐或是臀測支撐，再給出各自的下拉式選單選擇
@@ -2394,16 +2398,20 @@ document
             otherCheckbox.checked = false;
           }
         });
-        let nowprice_Spexarmsuplatthigh = Price[13].nextElementSibling;
-              if (nowprice_Spexarmsuplatthigh.textContent) {
-                nowprice_Spexarmsuplatthigh.textContent = "0元";
-              }
+      let nowprice_Spexarmsuplatthigh = Price[13].nextElementSibling;
+      if (nowprice_Spexarmsuplatthigh.textContent) {
+        nowprice_Spexarmsuplatthigh.textContent = "0元";
+      }
       if (checkbox.id === "Spex_ArmSupports") {
         buckle.disabled = false;
         armsup.disabled = false;
         armpad.disabled = false;
         latthigh.disabled = true;
         lateralpad.disabled = true;
+        armpadcount.disabled = false;
+        lateralpadcount.disabled = true;
+        armpadcount.value = "";
+        lateralpadcount.value = "";
         armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions);
         armsuplatthighSelect(armsup, Spex_armsupportsOptions);
         armsuplatthighSelect(armpad, Spex_armpadOptions);
@@ -2415,6 +2423,10 @@ document
         lateralpad.disabled = false;
         armsup.disabled = true;
         armpad.disabled = true;
+        armpadcount.disabled = true;
+        lateralpadcount.disabled = false;
+        armpadcount.value = "";
+        lateralpadcount.value = "";
         armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions, true);
         armsuplatthighSelect(latthigh, Spex_lateralthighOptions);
         armsuplatthighSelect(lateralpad, Spex_lateralthighOptions);
@@ -2426,6 +2438,10 @@ document
         latthigh.disabled = false;
         armpad.disabled = false;
         lateralpad.disabled = false;
+        armpadcount.disabled = false;
+        lateralpadcount.disabled = false;
+        armpadcount.value = "";
+        lateralpadcount.value = "";
         armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions);
         armsuplatthighSelect(armsup, Spex_armsupportsOptions);
         armsuplatthighSelect(armpad, Spex_armpadOptions);
