@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexCushion = [];
   let spexSeatBase = [];
   let spexMedialThigh = [];
-
+  let spexArmSupLatThigh = [];
+  let spexArmSup = [];
+  let spexLatThigh = [];
 
   // 顯示大 Div
   showoutputQuotationBtn.addEventListener("click", () => {
@@ -68,6 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
     spexCushion.length = 0;
     spexSeatBase.length = 0;
     spexMedialThigh.length = 0;
+    spexArmSupLatThigh.length = 0;
+    spexArmSup.length = 0;
+    spexLatThigh.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -144,7 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let nowSpexcushionprice = document.querySelector(
           '[data-nowprice-Spexcushion="nowSpexcushion"]'
         );
-        let Cushionprice = nowSpexcushionprice.textContent;
+        let Cushionprice = nowSpexcushionprice.textContent
+          .replace("元", "")
+          .trim();
 
         selectedItems.push({
           item: spexitem,
@@ -171,7 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let nowSpexseatbaseprice = document.querySelector(
           '[data-nowprice-Spexseatbase="nowSpexseatbase"]'
         );
-        let SeatBaseprice = nowSpexseatbaseprice.textContent;
+        let SeatBaseprice = nowSpexseatbaseprice.textContent
+          .replace("元", "")
+          .trim();
 
         selectedItems.push({
           item: spexitem,
@@ -184,22 +193,110 @@ document.addEventListener("DOMContentLoaded", () => {
         if (item) {
           spexMedialThigh.push(item);
         }
-        let MedialThighSizeSelect = document.querySelector(".Spexmedialthigh_sel");
-      
+        let MedialThighSizeSelect = document.querySelector(
+          ".Spexmedialthigh_sel"
+        );
+
         let selectedOption =
-        MedialThighSizeSelect.options[MedialThighSizeSelect.selectedIndex];
+          MedialThighSizeSelect.options[MedialThighSizeSelect.selectedIndex];
         // 組合字串：- 尺寸
         let spexString = ` - ${selectedOption.text}`;
         spexMedialThigh.push(spexString);
         let spexitem = spexMedialThigh.join("");
-        let nowSpexmedialthighprice = document.querySelector('[data-nowprice-Spexmedialthigh="nowSpexmedialthigh"]')
-        let MedialThighprice = nowSpexmedialthighprice.textContent;
+        let nowSpexmedialthighprice = document.querySelector(
+          '[data-nowprice-Spexmedialthigh="nowSpexmedialthigh"]'
+        );
+        let MedialThighprice = nowSpexmedialthighprice.textContent
+          .replace("元", "")
+          .trim();
 
         selectedItems.push({
           item: spexitem,
           price: MedialThighprice,
           note: notes,
         });
+      }
+
+      if (spexgroup === "SpexArmSupLatThigh") {
+        if (item) {
+          spexArmSupLatThigh.push(item);
+        }
+        let buckle = document.querySelector(".Spexarmsuplatthigh_bucklesel");
+        let armsup = document.querySelector(".Spexarmsuplatthigh_armsupsel");
+        let latthigh = document.querySelector(
+          ".Spexarmsuplatthigh_latthighsel"
+        );
+        let armpad = document.querySelector(".Spexarmsuplatthigh_armpadsel");
+        let lateralpad = document.querySelector(
+          ".Spexarmsuplatthigh_lateralpadsel"
+        );
+        let armpadcount = document.getElementById("armpadcount").value;
+        let lateralpadcount = document.getElementById("lateralpadcount").value;
+        let SpexarmOrgprices = document.querySelector(".SpexarmOrgprices");
+        let SpexlatOrgprices = document.querySelector(".SpexlatOrgprices");
+
+        let buckleOption = buckle.options[buckle.selectedIndex];
+
+        let armsupOption = armsup.options[armsup.selectedIndex];
+
+        let latthighOption = latthigh.options[latthigh.selectedIndex];
+
+        let armpadOption = armpad.options[armpad.selectedIndex];
+
+        let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
+
+
+        // 組合字串：(扣具) / 扶手角度 / 腿墊調整
+        let spexString = `(${buckleOption.text}) / ${armsupOption.text} / ${latthighOption.text}`;
+        spexArmSupLatThigh.push(spexString);
+        let spexitem = spexArmSupLatThigh.join("");
+
+        let nowSpexarmlatOrgprices = document.querySelector(
+          ".SpexarmlatOrgprices"
+        );
+        let SpexarmlatOrgprices = nowSpexarmlatOrgprices.textContent
+          .replace("元", "")
+          .trim();
+
+        selectedItems.push({
+          item: spexitem,
+          price: SpexarmlatOrgprices,
+          note: notes,
+        });
+
+        if (SpexarmOrgprices) {
+          let nowSpexarmOrgprices = document.querySelector(
+            ".SpexarmOrgprices"
+          );
+          let spexArmSup = "Spex 扶手墊" + ` / ${armpadOption.text} * ${armpadcount}`;
+          
+          let spexarmOrgprices = nowSpexarmOrgprices.textContent
+          .replace("元", "")
+          .trim();
+
+          selectedItems.push({
+            item: spexArmSup,
+            price: spexarmOrgprices,
+            note: notes,
+          });
+        }
+
+        if (SpexlatOrgprices) {
+          let nowSpexlatOrgprices = document.querySelector(
+            ".SpexlatOrgprices"
+          );
+          let spexLatThigh = "Spex 腿撐墊" + ` / ${lateralpadOption.text} * ${lateralpadcount}`;
+          
+          let spexlatOrgprices = nowSpexlatOrgprices.textContent
+          .replace("元", "")
+          .trim();
+
+          selectedItems.push({
+            item: spexLatThigh,
+            price: spexlatOrgprices,
+            note: notes,
+          });
+        }
       }
 
       // 記錄這個 item 已經被加入
