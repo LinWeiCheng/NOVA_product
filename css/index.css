@@ -2281,11 +2281,32 @@ body {
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .Spexarmsuplatthigh_armpadsel {
   padding: 3px;
   margin: 2px;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 8px;
-  width: 100%;
+  width: 70%;
   text-align: center;
   box-sizing: border-box;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .armpadcountgroup {
+  width: 30%;
+  margin: 0 0 0 4px;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .armpadcountgroup label {
+  width: 50%;
+  font-size: 14px;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .armpadcountgroup #armpadcount {
+  width: 40%;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .armpadcountgroup #armpadcount:focus {
+  background-color: #fff;
+  border-color: #007bff;
+  outline: none;
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize {
   display: flex;
@@ -2295,11 +2316,32 @@ body {
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .Spexarmsuplatthigh_lateralpadsel {
   padding: 3px;
   margin: 2px;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 8px;
-  width: 100%;
+  width: 70%;
   text-align: center;
   box-sizing: border-box;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup {
+  width: 30%;
+  margin: 0 0 0 4px;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup label {
+  width: 50%;
+  font-size: 14px;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup #lateralpadcount {
+  width: 40%;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup #lateralpadcount:focus {
+  background-color: #fff;
+  border-color: #007bff;
+  outline: none;
 }
 
 .car-other {
