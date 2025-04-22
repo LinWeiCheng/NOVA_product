@@ -2556,11 +2556,36 @@ body {
         .Spexarmsuplatthigh_armpadsel {
           padding: 3px;
           margin: 2px;
-          font-size: 18px;
+          font-size: 14px;
           border-radius: 8px;
-          width: 100%;
+          width: 70%;
           text-align: center;
           box-sizing: border-box;
+        }
+
+        .armpadcountgroup {
+          width: 30%;
+          margin: 0 0 0 4px;
+
+          label {
+            width: 50%;
+            font-size: 14px;
+          }
+
+          #armpadcount {
+            width: 40%;
+            font-size: 16px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+          }
+
+          #armpadcount:focus {
+            background-color: #fff;
+            border-color: #007bff;
+            outline: none;
+          }
         }
       }
 
@@ -2572,11 +2597,36 @@ body {
         .Spexarmsuplatthigh_lateralpadsel {
           padding: 3px;
           margin: 2px;
-          font-size: 18px;
+          font-size: 16px;
           border-radius: 8px;
-          width: 100%;
+          width: 70%;
           text-align: center;
           box-sizing: border-box;
+        }
+
+        .lateralpadgroup {
+          width: 30%;
+          margin: 0 0 0 4px;
+
+          label {
+            width: 50%;
+            font-size: 14px;
+          }
+
+          #lateralpadcount {
+            width: 40%;
+            font-size: 16px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+          }
+
+          #lateralpadcount:focus {
+            background-color: #fff;
+            border-color: #007bff;
+            outline: none;
+          }
         }
       }
     }
