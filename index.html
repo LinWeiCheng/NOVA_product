@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/quotation.css">
     <link rel="stylesheet" href="./css/mobile.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script> -->
@@ -972,6 +974,110 @@
                                 <div class="SpexarmlatOrgprices" style="display: none;"></div>
                                 <div class="SpexarmOrgprices" style="display: none;"></div>
                                 <div class="SpexlatOrgprices" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 第十五點擊列-Spex軀幹子系統-背靠-->
+                    <div class="Spex_backsupports">
+                        <div class="target">
+                            <div class="target_img" data-img-Spexbacksupports="SpexbacksupportsImg">
+                                <img src="./img/black triangle.png" alt="">
+                            </div>
+                            <div class="chkcontent_15th">
+                                <div class="subtitle" data-collapse-status="0" data-showinfo="Spexbacksupports">
+                                    Spex軀幹子系統-背靠
+                                </div>
+                                <div class="Spexbacksupportsgroup">
+                                    <div class="Spexbacksupportsgroup_title">
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Zygo_Active_Lo"
+                                                name="car_SpexBackSupports" data-item="Spex_Zygo_Active_Lo 淺廓型低背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Zygo_Active_Lo 淺廓型低背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Zygo_Active_Mid"
+                                                name="car_SpexBackSupports" data-item="Spex_Zygo_Active_Mid 淺廓型中背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Zygo_Active_Mid 淺廓型中背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Zygo_Deep_Lo"
+                                                name="car_SpexBackSupports" data-item="Spex_Zygo_Deep_Lo 深廓型低背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Zygo_Deep_Lo 深廓型低背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Zygo_Deep_Mid"
+                                                name="car_SpexBackSupports" data-item="Spex_Zygo_Deep_Mid 深廓型中背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Zygo_Deep_Mid 深廓型中背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Vigour"
+                                                name="car_SpexBackSupports" data-item="Spex_Vigour Vigour高背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Vigour Vigour高背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Mantaray"
+                                                name="car_SpexBackSupports" data-item="Spex_Mantaray 側邊包覆型背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Mantaray 側邊包覆型背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Classic"
+                                                name="car_SpexBackSupports" data-item="Spex_Classic 調整型背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Classic 調整型背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_SuperShape"
+                                                name="car_SpexBackSupports" data-item="Spex_SuperShape 超高度調整型背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_SuperShape 超高度調整型背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Adapta2"
+                                                name="car_SpexBackSupports" data-item="Spex_Adapta2 調整型背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Adapta2 調整型背靠
+                                        </div>
+                                        <div class="Spexbacksupports_title">
+                                            <input type="checkbox" class="SpexBackSupports" id="Spex_Adapta3"
+                                                name="car_SpexBackSupports" data-item="Spex_Adapta3 調整型背靠" data-price=""
+                                                data-spexgroup="SpexBackSupports" data-note="">Spex_Adapta3 調整型背靠
+                                        </div>
+                                    </div>
+                                    <div class="Spexbacksupports_size">
+                                        <div class="Spexbacksupports_backsize">
+                                            <div class="Spexbacksupports_WH">
+                                                <select class="Spexbacksupports_Width">
+                                                    <option value="option1" selected>車寬</option> <!-- 設定此選項為預設選中 -->
+                                                    <!-- <option value="option2">左邊選單 2</option>
+                                                <option value="option3">左邊選單 3</option> -->
+                                                </select>
+                                                <div> X </div>
+                                                <select class="Spexbacksupports_Heigh">
+                                                    <option value="optionA" selected>背高</option> <!-- 設定此選項為預設選中 -->
+                                                    <!-- <option value="optionA">右邊選單 A</option>
+                                                <option value="optionB">右邊選單 B</option>
+                                                <option value="optionC">右邊選單 C</option> -->
+                                                </select>
+                                            </div>
+                                            <div class="Spexbacksupports_color">顏色：
+                                                <select class="Spexbacksupports_colorsel">
+                                                    <option value="optiona" selected>請選擇</option> <!-- 設定此選項為預設選中 -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="Spexbacksupports_specialsize">
+                                            <div class="Spexbacksupports_specialsizenotice">
+                                                <input type="text" class="Spexbacksupports_specialWidth" placeholder="寬">
+                                                <div>X</div>
+                                                <input type="text" class="Spexbacksupports_specialHeigh" placeholder="高">
+                                            </div>
+                                            <div class="Spexbacksupports_notice">※若找不到所需尺寸則需直接填寫</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pricecontent">
+                                <div class="pricing" data-price-Spexbacksupports="Spexbacksupports">建議售價</div>
+                                <div class="nowprice" data-nowprice-Spexbacksupports="nowSpexbacksupports" data-addPrice="add">0
+                                    <div class="dollar">元</div>
+                                </div>
                             </div>
                         </div>
                     </div>
