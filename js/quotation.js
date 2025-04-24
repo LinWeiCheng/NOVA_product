@@ -19,9 +19,279 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexArmSup = [];
   let spexLatThigh = [];
 
+  //防呆，確認每個勾選的內容都是完整的
+  function checkcheckboxselectionscorrect() {
+    //region --- Spex Cushion ---
+    let VigourStdCheckbox = document.querySelector("#Spex_Vigour_Std");
+    let VigourHighCheckbox = document.querySelector("#Spex_Vigour_High");
+    let SpexStandardCheckbox = document.querySelector("#Spex_Standard");
+    let SpexHighCheckbox = document.querySelector("#Spex_High");
+    let Spex_SuperHighCheckbox = document.querySelector("#Spex_SuperHigh");
+    let Spex_FlexCheckbox = document.querySelector("#Spex_Flex");
+    let Spex_Flex_HighCheckbox = document.querySelector("#Spex_Flex_High");
+    let Spex_Flex_SuperHighCheckbox = document.querySelector(
+      "#Spex_Flex_SuperHigh"
+    );
+    let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
+    let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
+
+    if (
+      VigourStdCheckbox.checked ||
+      VigourHighCheckbox.checked ||
+      SpexStandardCheckbox.checked ||
+      SpexHighCheckbox.checked ||
+      Spex_SuperHighCheckbox.checked ||
+      Spex_FlexCheckbox.checked ||
+      Spex_Flex_HighCheckbox.checked ||
+      Spex_Flex_SuperHighCheckbox.checked
+    ) {
+      if (CushionwidthSelect.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex座墊的寬度及長度尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (CushionheightSelect.value === "optionA") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex座墊的長度未做選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      }
+    }
+    //endregion
+
+    //region --- Spex SeatBase
+    let SeatBaseFixedCheckbox = document.querySelector("#Spex_SeatBase_fixed");
+    let SeatBaseQuickCheckbox = document.querySelector("#Spex_SeatBase_quick");
+    let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
+    let SeatbaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
+
+    if (SeatBaseFixedCheckbox.checked || SeatBaseQuickCheckbox.checked) {
+      if (SeatbasewidthSelect.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex硬座板的車寬及板長未做選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      }
+      if (SeatbaseheightSelect.value === "optionA") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex硬座板的板長尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      }
+    }
+    //endregion
+
+    //region --- Spex MedialThigh ---
+    let MedialThigh_Standardcheckbox = document.getElementById(
+      "Spex_MedialThigh_Standard"
+    );
+    let MedialThigh_Multiaxialcheckbox = document.getElementById(
+      "Spex_MedialThigh_Multiaxial"
+    );
+    let SpexmedialthighSel = document.querySelector(".Spexmedialthigh_sel");
+
+    if (
+      MedialThigh_Standardcheckbox.checked ||
+      MedialThigh_Multiaxialcheckbox.checked
+    ) {
+      if (SpexmedialthighSel.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex分腿器的尺寸尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      }
+    }
+    //endregion
+
+    //region --- Spex ArmSuppports LateralThighSupports ---
+    let ArmSupportscheckbox = document.getElementById("Spex_ArmSupports");
+    let LateralThighSupportscheckbox = document.getElementById(
+      "Spex_LateralThighSupports"
+    );
+    let ArmSup_LatThighcheckbox = document.getElementById(
+      "Spex_ArmSup_LatThigh"
+    );
+    let buckle = document.querySelector(".Spexarmsuplatthigh_bucklesel");
+    let armsup = document.querySelector(".Spexarmsuplatthigh_armsupsel");
+    let latthigh = document.querySelector(".Spexarmsuplatthigh_latthighsel");
+    let armpad = document.querySelector(".Spexarmsuplatthigh_armpadsel");
+    let lateralpad = document.querySelector(
+      ".Spexarmsuplatthigh_lateralpadsel"
+    );
+    let armpadcount = document.getElementById("armpadcount");
+    let armpadvalue = armpadcount.value.trim();
+    let lateralpadcount = document.getElementById("lateralpadcount");
+    let lateralpadvalue = lateralpadcount.value.trim();
+
+    // region --- 扶手支撐 ---
+    if (ArmSupportscheckbox.checked) {
+      if (buckle.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扣具、扶手角度、扶手支撐襯墊尺寸及數量尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (armsup.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扶手角度尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (armpad.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扶手支撐襯墊尺寸尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (armpadvalue === "" || !/^[1-9]\d*$/.test(armpadvalue)) {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扶手支撐襯墊數量請輸入數字",
+          confirmButtonText: "OK",
+        });
+        return true;
+      }
+    }
+    //endregion
+
+    //region --- 臀側支撐 ---
+    if (LateralThighSupportscheckbox.checked) {
+      if (buckle.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手臀撐的扣具、腿墊調整、臀側支撐襯墊尺寸及數量尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (latthigh.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手臀撐的腿墊調整",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (lateralpad.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手臀撐的臀側支撐襯墊尺寸尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (
+        lateralpadvalue === "" ||
+        !/^[1-9]\d*$/.test(lateralpadvalue)
+      ) {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扶手支撐襯墊數量請輸入數字",
+          confirmButtonText: "OK",
+        });
+        return true;
+      }
+    }
+    //endregion
+
+    //region --- 扶手臀撐 ---
+    if (ArmSup_LatThighcheckbox.checked) {
+      if (buckle.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手臀撐的扣具、扶手角度、腿墊調整、扶手支撐襯墊尺寸、臀側支撐襯墊尺寸及各自數量尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (armsup.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扶手角度尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (latthigh.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手臀撐的腿墊調整",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (armpad.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扶手支撐襯墊尺寸尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (lateralpad.value === "option1") {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手臀撐的臀側支撐襯墊尺寸尚未選擇",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (armpadvalue === "" || !/^[1-9]\d*$/.test(armpadvalue)) {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的扶手支撐襯墊數量請輸入數字",
+          confirmButtonText: "OK",
+        });
+        return true;
+      } else if (
+        lateralpadvalue === "" ||
+        !/^[1-9]\d*$/.test(lateralpadvalue)
+      ) {
+        Swal.fire({
+          icon: "warning",
+          title: "提醒您",
+          text: "Spex扶手腿撐的臀側支撐襯墊數量請輸入數字",
+          confirmButtonText: "OK",
+        });
+        return true;
+      }
+    }
+    //endregion
+
+    //endregion
+    return false;
+  }
+
   // 顯示大 Div
   showoutputQuotationBtn.addEventListener("click", () => {
-    updatecarbasesize(); // 更新座板大小
+    if (checkcheckboxselectionscorrect()) {
+      return;
+    }
+    updatecarbasesize(); // 更新項目內容
     QuotationDiv.classList.add("visible"); // 顯示大 Div
     updateTable(); // 顯示表格內容
     document.body.style.overflow = "hidden"; // 禁止背景滾動
@@ -245,7 +515,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
 
-
         // 組合字串：(扣具) / 扶手角度 / 腿墊調整
         let spexString = `(${buckleOption.text}) / ${armsupOption.text} / ${latthighOption.text}`;
         spexArmSupLatThigh.push(spexString);
@@ -264,15 +533,14 @@ document.addEventListener("DOMContentLoaded", () => {
           note: notes,
         });
 
-        if (SpexarmOrgprices) {
-          let nowSpexarmOrgprices = document.querySelector(
-            ".SpexarmOrgprices"
-          );
-          let spexArmSup = "Spex 扶手墊" + ` / ${armpadOption.text} * ${armpadcount}`;
-          
+        if (SpexarmOrgprices.textContent.replace("元", "").trim() !== "") {
+          let nowSpexarmOrgprices = document.querySelector(".SpexarmOrgprices");
+          let spexArmSup =
+            "Spex 扶手墊" + ` / ${armpadOption.text} * ${armpadcount}`;
+
           let spexarmOrgprices = nowSpexarmOrgprices.textContent
-          .replace("元", "")
-          .trim();
+            .replace("元", "")
+            .trim();
 
           selectedItems.push({
             item: spexArmSup,
@@ -281,15 +549,14 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
 
-        if (SpexlatOrgprices) {
-          let nowSpexlatOrgprices = document.querySelector(
-            ".SpexlatOrgprices"
-          );
-          let spexLatThigh = "Spex 腿撐墊" + ` / ${lateralpadOption.text} * ${lateralpadcount}`;
-          
+        if (SpexlatOrgprices.textContent.replace("元", "").trim() !== "") {
+          let nowSpexlatOrgprices = document.querySelector(".SpexlatOrgprices");
+          let spexLatThigh =
+            "Spex 腿撐墊" + ` / ${lateralpadOption.text} * ${lateralpadcount}`;
+
           let spexlatOrgprices = nowSpexlatOrgprices.textContent
-          .replace("元", "")
-          .trim();
+            .replace("元", "")
+            .trim();
 
           selectedItems.push({
             item: spexLatThigh,
