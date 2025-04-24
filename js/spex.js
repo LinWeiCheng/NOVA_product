@@ -1,6 +1,7 @@
 /*-----  11.Spex底座子系統-座墊點擊列  -----*/
 //region
 /*--- Spex底座子系統-座墊點擊列-圖片箭頭部分   ---*/
+//region
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_11 = event.target;
@@ -104,8 +105,10 @@ document.addEventListener("click", function (event) {
     }
   }
 });
+//endregion
 
 /*---  Spex底座子系統-座墊點擊列 -subtitle部分  ---*/
+//region
 let Spex_cushion = document.querySelector(".Spex_cushion");
 Spex_cushion.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -196,6 +199,8 @@ Spex_cushion.addEventListener("click", function (event) {
   }
 });
 //endregion
+
+//region --- 座墊選擇在這裡處理 ---
 
 //region ---Vigour_Std Selected---
 let Vigour_StdwidthOptions = [
@@ -397,7 +402,7 @@ let ColorSelectOptions = [
 ];
 //endregion
 
-//Spex座墊的"寬"、"長"的選項會進入這裡做篩選
+//region --- Spex座墊的"寬"、"長"的選項會進入這裡做篩選 ---
 function CushionSizeSelect(selectElement, options) {
   selectElement.innerHTML = ""; // 清空現有內容
   options.forEach((option) => {
@@ -410,8 +415,9 @@ function CushionSizeSelect(selectElement, options) {
     selectElement.appendChild(opt);
   });
 }
+//endregion
 
-//產品顏色選擇在這裡做
+//region --- 產品顏色選擇在這裡做 ---
 function ProductColorSelect(selectElement, options) {
   selectElement.innerHTML = "";
   options.forEach((option) => {
@@ -436,6 +442,7 @@ CushioncolorSelect.addEventListener("change", function () {
   this.style.backgroundColor = selectedOption.style.backgroundColor;
   this.style.color = "white"; //更新字體顏色
 });
+//endregion
 
 //確定勾選的是哪個Spex座墊並給予"寬"及"長"，且不會重複勾選選項
 //region
@@ -539,6 +546,7 @@ document
   });
 //endregion
 
+//region --- 因不同的座墊的"寬"，會有不同"長"的選擇 ---
 document.addEventListener("DOMContentLoaded", function () {
   let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
   let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
@@ -574,8 +582,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let Spex_FlexCheckbox = document.querySelector("#Spex_Flex");
     let Spex_Flex_HighCheckbox = document.querySelector("#Spex_Flex_High");
     let Spex_Flex_SuperHighCheckbox = document.querySelector(
-      "#Spex_Flex_SuperHigh"
-    );
+      "#Spex_Flex_SuperHigh");
 
     //region ---Vigour_std 標準型座墊---
     if (VigourStdCheckbox.checked) {
@@ -1238,9 +1245,13 @@ document.addEventListener("DOMContentLoaded", function () {
     //endregion
   });
 });
+//endregion
+
+//endregion
+
+//endregion
 
 /*-----  12.Spex底座子系統-硬座板點擊列 -----*/
-//region
 //region
 /*--- Spex底座子系統-硬座板點擊列-圖片箭頭部分 ---*/
 //region
@@ -1441,11 +1452,11 @@ Spex_seatbase.addEventListener("click", function (event) {
   }
 });
 //endregion
-//endregion
 
-//region ---SeatBase_Fixed Selected---
+//region --- 選擇不同硬座板的車寬，板長會各自帶入 ---
+//region --- SeatBase_Fixed Selected---
 let SeatBaseFixedwidthOptions = [
-  { value: "option1", text: "寬", selected: true },
+  { value: "option1", text: "車寬", selected: true },
   { value: "option2", text: "10”" },
   { value: "option3", text: "12”" },
   { value: "option4", text: "14”" },
@@ -1457,7 +1468,7 @@ let SeatBaseFixedwidthOptions = [
 ];
 
 let SeatBaseFixedheightOptions = [
-  { value: "optionA", text: "長", selected: true },
+  { value: "optionA", text: "板長", selected: true },
   { value: "optionB", text: "12”" },
   { value: "optionC", text: "14”" },
   { value: "optionD", text: "16”" },
@@ -1468,9 +1479,9 @@ let SeatBaseFixedheightOptions = [
 ];
 //endregion
 
-//region ---SeatBase_Quick Selected---
+//region --- SeatBase_Quick Selected---
 let SeatBaseQuickwidthOptions = [
-  { value: "option1", text: "寬", selected: true },
+  { value: "option1", text: "車寬", selected: true },
   { value: "option2", text: "10”" },
   { value: "option3", text: "12”" },
   { value: "option4", text: "14”" },
@@ -1482,7 +1493,7 @@ let SeatBaseQuickwidthOptions = [
 ];
 
 let SeatBaseQuickheightOptions = [
-  { value: "optionA", text: "長", selected: true },
+  { value: "optionA", text: "板長", selected: true },
   { value: "optionB", text: "12”" },
   { value: "optionC", text: "14”" },
   { value: "optionD", text: "16”" },
@@ -1757,6 +1768,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //endregion
 //endregion
 
+//endregion
+
 /*-----  13.Spex底座子系統-分腿器點擊列 -----*/
 //region
 /*--- Spex底座子系統-硬座板點擊列-圖片箭頭部分 ---*/
@@ -1963,7 +1976,7 @@ Spex_medialthigh.addEventListener("click", function (event) {
 //endregion
 
 //region ----- 分腿器選擇尺寸方式及不同尺寸會有不同規格 -----
-//Spex硬座板的"車寬"、"板長"的選項會進入這裡做篩選
+//Spex分腿器的尺寸選項會進入這裡做篩選
 //region
 let Spex_medialthighOrgOptions = [
   { value: "option1", text: "尺寸", selected: true },
@@ -2091,11 +2104,11 @@ Spexmedialthighselect.addEventListener("change", () => {
 //endregion
 
 //endregion
+
 //endregion
 
 /*-----  14.Spex底座子系統-扶手臀撐點擊列 -----*/
 //region
-
 /*--- Spex底座子系統-扶手臀撐點擊列-圖片箭頭部分 ---*/
 //region
 document.addEventListener("click", function (event) {
@@ -2204,8 +2217,8 @@ document.addEventListener("click", function (event) {
 });
 //endregion
 
-//region
 /*---  Spex底座子系統-分腿器點擊列 -subtitle部分  ---*/
+//region
 let Spex_armsuplatthigh = document.querySelector(".Spex_armsup_latthigh");
 Spex_armsuplatthigh.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -2300,6 +2313,7 @@ Spex_armsuplatthigh.addEventListener("click", function (event) {
 });
 //endregion
 
+//region --- 依不同產品選擇扶手、臀撐或是扶手腿撐 ---
 //region --- Spex_Arm Supports 扶手角度 Selected---
 let Spex_armsuplatthighbuckleOptions = [
   { value: "option1", text: "扣具", selected: true },
@@ -2353,6 +2367,16 @@ let Spex_lateralpadOptions = [
 //region
 function armsuplatthighSelect(selectElement, options, other) {
   selectElement.innerHTML = ""; // 清空現有內容
+  let SpexarmOrgprices = document.querySelector(".SpexarmOrgprices");
+  let SpexlatOrgprices = document.querySelector(".SpexlatOrgprices");
+  if (
+    SpexarmOrgprices.textContent.replace("元", "").trim() !== "0" ||
+    SpexlatOrgprices.textContent.replace("元", "").trim() !== "0"
+  ) {
+    SpexarmOrgprices.textContent = "";
+    SpexlatOrgprices.textContent = "";
+  }
+
   options.forEach((option) => {
     if (other && option.value === "option4") return;
 
@@ -2385,7 +2409,7 @@ armpadcount.disabled = true;
 lateralpadcount.disabled = true;
 //endregion
 
-//確認勾是扶手臀撐、扶手支撐或是臀測支撐，再給出各自的下拉式選單選擇
+//確認勾是扶手臀撐、扶手支撐或是臀側支撐，再給出各自的下拉式選單選擇
 //region
 document
   .querySelectorAll('input[name="car_SpexArmSupLatThigh"]')
@@ -2402,6 +2426,7 @@ document
       if (nowprice_Spexarmsuplatthigh.textContent) {
         nowprice_Spexarmsuplatthigh.textContent = "0元";
       }
+
       if (checkbox.id === "Spex_ArmSupports") {
         buckle.disabled = false;
         armsup.disabled = false;
@@ -2415,6 +2440,8 @@ document
         armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions);
         armsuplatthighSelect(armsup, Spex_armsupportsOptions);
         armsuplatthighSelect(armpad, Spex_armpadOptions);
+        armsuplatthighSelect(latthigh, Spex_lateralthighOptions);
+        armsuplatthighSelect(lateralpad, Spex_lateralpadOptions);
       }
 
       if (checkbox.id === "Spex_LateralThighSupports") {
@@ -2429,7 +2456,9 @@ document
         lateralpadcount.value = "";
         armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions, true);
         armsuplatthighSelect(latthigh, Spex_lateralthighOptions);
-        armsuplatthighSelect(lateralpad, Spex_lateralthighOptions);
+        armsuplatthighSelect(lateralpad, Spex_lateralpadOptions);
+        armsuplatthighSelect(armsup, Spex_armsupportsOptions);
+        armsuplatthighSelect(armpad, Spex_armpadOptions);
       }
 
       if (checkbox.id === "Spex_ArmSup_LatThigh") {
@@ -2446,8 +2475,224 @@ document
         armsuplatthighSelect(armsup, Spex_armsupportsOptions);
         armsuplatthighSelect(armpad, Spex_armpadOptions);
         armsuplatthighSelect(latthigh, Spex_lateralthighOptions);
-        armsuplatthighSelect(lateralpad, Spex_lateralthighOptions);
+        armsuplatthighSelect(lateralpad, Spex_lateralpadOptions);
       }
     });
   });
 //endregion
+//endregion
+
+//endregion
+
+/*-----  15.Spex軀幹子系統-背靠點擊列 -----*/
+//region
+//region
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_15 = event.target;
+  let carseat15 = tgimg_15.closest(".Spex_backsupports"); // 找到最近的 Spex_backsupports
+  let imgSpexbacksupports = event.target.dataset.imgSpexbacksupports;
+
+  //確認我點擊到的位置是否是car-Spex_backsupports
+  if (carseat15 && carseat15.className.trim() === "Spex_backsupports") {
+    let introdutionid = carseat15.querySelector(".Spexbacksupportsgroup"); // 在 Spex_backsupports 內部找 Spexbacksupportsgroup
+    let introdution = carseat15.querySelector(".subtitle"); // 在 Spex_backsupports 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgSpexbacksupports === "SpexbacksupportsImg") {
+        if (visibilityValue === "hidden") {
+          let Price_Spexbacksupports = document.querySelectorAll(".pricing");
+
+          Price_Spexbacksupports.forEach(function (openIntro) {
+            let Spexbacksupports = Price_Spexbacksupports[14];
+            //直接判斷是第幾個.Price
+            let nowprice_Spexbacksupports =
+              Price_Spexbacksupports[14].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-Spexbacksupports") ===
+                "Spexbacksupports" &&
+              nowprice_Spexbacksupports.getAttribute(
+                "data-nowprice-Spexbacksupports"
+              ) === "nowSpexbacksupports"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //carSpexcushion勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 22px)";
+                introdutionid.style.display = "flex";
+                introdutionid.style.flexDirection = "row";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.margin = "0 0 0 7px";
+                introdutionid.style.height = "auto";
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_Spexbacksupports.style.display = "block";
+                nowprice_Spexbacksupports.style.display = "flex";
+                nowprice_Spexbacksupports.style.width = "95%";
+                nowprice_Spexbacksupports.style.height = "90%";
+                nowprice_Spexbacksupports.style.color = "#000000";
+                nowprice_Spexbacksupports.style.borderRadius = "8px";
+                nowprice_Spexbacksupports.style.padding = "1px";
+                nowprice_Spexbacksupports.style.margin = "3px 3px 3px 2px";
+                nowprice_Spexbacksupports.style.textAlign = "center";
+                nowprice_Spexbacksupports.style.fontSize = "17px";
+                nowprice_Spexbacksupports.style.fontWeight = "600";
+                nowprice_Spexbacksupports.style.alignItems = "center";
+                nowprice_Spexbacksupports.style.justifyContent = "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_Spexbacksupports.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  Spexbacksupports.style.padding = "5px";
+                  Spexbacksupports.style.margin = "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_Spexbacksupports = document.querySelectorAll(".pricing");
+
+          Price_Spexbacksupports.forEach(function (openIntro) {
+            let nowprice_Spexbacksupports =
+              Price_Spexbacksupports[14].nextElementSibling;
+
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (
+              openIntro.getAttribute("data-price-carSpexseatbase") ===
+              "carSpexseatbase"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_Spexbacksupports.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+// endregion
+
+/*---  Spex底座子系統-分腿器點擊列 -subtitle部分  ---*/
+//region
+let Spex_backsupports = document.querySelector(".Spex_backsupports");
+Spex_backsupports.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是Spex_backsupports
+  if (showinfo === "Spexbacksupports") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_Spex_backsupports = document.querySelectorAll(".pricing");
+    let Spex_backsupportsimg =
+    Spex_backsupports.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = Spex_backsupportsimg.querySelector("img");
+
+    Price_Spex_backsupports.forEach(function (openIntro) {
+      let Spexbacksupports = Price_Spex_backsupports[14];
+      //直接判斷是第幾個.Price
+      let nowprice_Spexbacksupports =
+        Price_Spex_backsupports[14].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-Spexbacksupports") ===
+          "Spexbacksupports" &&
+        nowprice_Spexbacksupports.getAttribute(
+          "data-nowprice-Spexbacksupports"
+        ) === "nowSpexbacksupports"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carSpexbacksupports勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 2px 3px";
+          introdutionid.style.width = "calc(100% - 22px)";
+          introdutionid.style.display = "flex";
+          introdutionid.style.flexDirection = "row";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.margin = "0 0 0 7px";
+          introdutionid.style.height = "auto";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_Spexbacksupports.style.display = "block";
+          nowprice_Spexbacksupports.style.display = "flex";
+          nowprice_Spexbacksupports.style.width = "95%";
+          nowprice_Spexbacksupports.style.height = "90%";
+          nowprice_Spexbacksupports.style.color = "#000000";
+          nowprice_Spexbacksupports.style.borderRadius = "8px";
+          nowprice_Spexbacksupports.style.padding = "1px";
+          nowprice_Spexbacksupports.style.margin = "3px 3px 3px 2px";
+          nowprice_Spexbacksupports.style.textAlign = "center";
+          nowprice_Spexbacksupports.style.fontSize = "17px";
+          nowprice_Spexbacksupports.style.fontWeight = "600";
+          nowprice_Spexbacksupports.style.alignItems = "center";
+          nowprice_Spexbacksupports.style.justifyContent = "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_Spexbacksupports.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            Spexbacksupports.style.padding = "5px";
+            Spexbacksupports.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_Spexbacksupports.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
+
+//region --- 主要做所有背靠的尺寸選擇 --- 
+
+//endregion
+
+
+//endregion
+
