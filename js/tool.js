@@ -2696,9 +2696,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let latthighOption = latthigh.options[latthigh.selectedIndex];
     let armpadOption = armpad.options[armpad.selectedIndex];
     let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
-    let value = parseInt(armpadInput.value);
+    let armvalue = parseInt(armpadInput.value);
 
-    if (!isNaN(value) && value > 0) {
+    if (!isNaN(armvalue) && armvalue > 0) {
       //region --- 扶手支撐---
       if (
         armsupportsCheckbox.id === "Spex_ArmSupports" &&
@@ -3235,17 +3235,17 @@ document.addEventListener("DOMContentLoaded", function () {
   //endregion
 
   //region --- 監聽臀側支撐襯墊 ---
-  let lateralInput = document.getElementById("lateralpadcount");
+  let lateralpadInput = document.getElementById("lateralpadcount");
 
-  lateralInput.addEventListener("input", function () {
+  lateralpadInput.addEventListener("input", function () {
     let buckleOption = buckle.options[buckle.selectedIndex];
     let armsupOption = armsup.options[armsup.selectedIndex];
     let latthighOption = latthigh.options[latthigh.selectedIndex];
     let armpadOption = armpad.options[armpad.selectedIndex];
     let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
-    let value = parseInt(armpadInput.value);
+    let lateralvalue = parseInt(lateralpadInput.value);
 
-    if (!isNaN(value) && value > 0) {
+    if (!isNaN(lateralvalue) && lateralvalue > 0) {
       //region --- 臀側支撐 ---
       if (
         lateralthighsupportsCheckbox.id === "Spex_LateralThighSupports" &&
@@ -3259,6 +3259,8 @@ document.addEventListener("DOMContentLoaded", function () {
           let lateralthighsupportsprice =
             latthighprice +
             Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
             Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1
@@ -3278,6 +3280,8 @@ document.addEventListener("DOMContentLoaded", function () {
           let lateralthighsupportsprice =
             latthighprice +
             Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
             Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2
@@ -3299,6 +3303,8 @@ document.addEventListener("DOMContentLoaded", function () {
             latthighprice +
             Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1;
 
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
           SpexarmlatOrgprices.textContent = `${formatPrice(
             Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1
           )} 元`;
@@ -3317,6 +3323,8 @@ document.addEventListener("DOMContentLoaded", function () {
           let lateralthighsupportsprice =
             latthighprice +
             Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
             Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2
