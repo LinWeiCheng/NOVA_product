@@ -1,7 +1,9 @@
-// 格式化為帶逗號的數字
+// region --- 格式化為帶逗號的數字 ---
 function formatPrice(prices) {
   return new Intl.NumberFormat("en-US").format(prices);
 }
+//endregion
+
 let color_car_switch = false;
 let productImage = document.getElementById("ProductImage");
 let Price = document.querySelectorAll(".pricing");
@@ -3735,3 +3737,229 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   //endregion
 });
+//endregion
+
+/*-----  11.Spex底座子系統-座墊點擊列  -----*/
+//region
+let nowprice_SpexBackSupports = Price[14].nextElementSibling;
+
+//region --- Spex_Zygo_Active_Lo 淺廓型低背靠 ---
+let Spex_Zygo_Active_Lo_prices = {
+  Spex_Zygo_Active_Lo_prices1: 12400,
+  Spex_Zygo_Active_Lo_prices2: 12400,
+  Spex_Zygo_Active_Lo_prices3: 12400,
+  Spex_Zygo_Active_Lo_prices4: 12400,
+  Spex_Zygo_Active_Lo_prices5: 12400,
+};
+//endregion
+
+//region --- Spex_Zygo_Active_Mid 淺廓型中背靠 ---
+let Spex_Zygo_Active_Mid_prices = {
+  Spex_Zygo_Active_Mid_prices1: 15100,
+  Spex_Zygo_Active_Mid_prices2: 15100,
+  Spex_Zygo_Active_Mid_prices3: 15100,
+  Spex_Zygo_Active_Mid_prices4: 15100,
+  Spex_Zygo_Active_Mid_prices5: 15100,
+  Spex_Zygo_Active_Mid_prices6: 15100,
+};
+//endregion
+
+//region --- Spex_Deep_Lo 深廓型低背靠 ---
+let Spex_Deep_Lo_prices = {
+  Spex_Deep_Lo_prices1: 17500,
+  Spex_Deep_Lo_prices2: 17500,
+  Spex_Deep_Lo_prices3: 17500,
+  Spex_Deep_Lo_prices4: 17500,
+  Spex_Deep_Lo_prices5: 17500,
+};
+//endregion
+
+//region --- Spex_Deep_Mid 深廓型中背靠 ---
+let Spex_Deep_Mid_prices = {
+  Spex_Deep_Mid_prices1: 17500,
+  Spex_Deep_Mid_prices2: 17500,
+  Spex_Deep_Mid_prices3: 17500,
+  Spex_Deep_Mid_prices4: 17500,
+  Spex_Deep_Mid_prices5: 17500,
+  Spex_Deep_Mid_prices6: 17500,
+};
+//endregion
+
+//region --- Spex_Vigour 高背靠 ---
+let Spex_Vigour_prices = {
+  Spex_Vigour_prices1: 17800,
+  Spex_Vigour_prices2: 17800,
+  Spex_Vigour_prices3: 17800,
+  Spex_Vigour_prices4: 17800,
+  Spex_Vigour_prices5: 17800,
+  Spex_Vigour_prices6: 17800,
+  Spex_Vigour_prices7: 17800,
+  Spex_Vigour_prices8: 17800,
+  Spex_Vigour_prices9: 17800,
+};
+//endregion
+
+//region --- Spex_Mantaray 側邊包覆型背靠 ---
+let Spex_Mantaray_prices = {
+  Spex_Mantaray_prices1: 15200,
+  Spex_Mantaray_prices2: 15200,
+  Spex_Mantaray_prices3: 17800,
+  Spex_Mantaray_prices4: 17800,
+  Spex_Mantaray_prices5: 17800,
+  Spex_Mantaray_prices6: 17800,
+  Spex_Mantaray_prices7: 17800,
+  Spex_Mantaray_prices8: 25200,
+  Spex_Mantaray_prices9: 25200,
+};
+//endregion
+
+//region --- Spex_Classic 調整型背靠 ---
+let Spex_Classic_prices = {
+  Spex_Classic_prices1: 27900,
+  Spex_Classic_prices2: 27900,
+  Spex_Classic_prices3: 27900,
+  Spex_Classic_prices4: 27900,
+  Spex_Classic_prices5: 27900,
+  Spex_Classic_prices6: 27900,
+};
+//endregion
+
+//region --- Spex_SupreShape 超高度調整型背靠 ---
+let Spex_SupreShape_prices = {
+  Spex_SupreShape_prices1: 40000,
+  Spex_SupreShape_prices2: 40000,
+  Spex_SupreShape_prices3: 42600,
+  Spex_SupreShape_prices4: 42600,
+  Spex_SupreShape_prices5: 42600,
+  Spex_SupreShape_prices6: 42600,
+  Spex_SupreShape_prices7: 42600,
+};
+//endregion
+
+//region --- Spex_Adapta2 調整型背靠 ---
+let Spex_Adapta2_prices = {
+  Spex_Adapta2_prices1: 31200,
+  Spex_Adapta2_prices2: 31200,
+  Spex_Adapta2_prices3: 31200,
+  Spex_Adapta2_prices4: 31200,
+};
+//endregion
+
+//region --- Spex_Adapta3 調整型背靠 ---
+let Spex_Adapta3_prices = {
+  Spex_Adapta3_prices1: 38800,
+  Spex_Adapta3_prices2: 38800,
+  Spex_Adapta3_prices3: 38800,
+  Spex_Adapta3_prices4: 38800,
+};
+//endregion
+
+//region --- Spex_Adapta3_QuicklyLift 調整型背靠 / 快掀 ---
+let Spex_Adapta3_QuicklyLift_prices = {
+  Spex_Adapta3_QuicklyLift_prices1: 46200,
+  Spex_Adapta3_QuicklyLift_prices2: 46200,
+  Spex_Adapta3_QuicklyLift_prices3: 46200,
+  Spex_Adapta3_QuicklyLift_prices4: 46200,
+};
+//endregion
+
+//region --- Spex_Adapta3_Foam 調整型背靠 / 脊凸泡綿 ---
+let Spex_Adapta3_Foam_prices = {
+  Spex_Adapta3_Foam_prices1: 38800,
+  Spex_Adapta3_Foam_prices2: 38800,
+  Spex_Adapta3_Foam_prices3: 38800,
+  Spex_Adapta3_Foam_prices4: 38800,
+};
+//endregion
+
+//region --- Spex_Adapta3_QuicklyLift_Foam 調整型背靠 / 脊凸泡綿 / 快掀 ---
+let Spex_Adapta3_QuicklyLift_Foam_prices = {
+  Spex_Adapta3_QuicklyLift_Foam_prices1: 46200,
+  Spex_Adapta3_QuicklyLift_Foam_prices2: 46200,
+  Spex_Adapta3_QuicklyLift_Foam_prices3: 46200,
+  Spex_Adapta3_QuicklyLift_Foam_prices4: 46200,
+};
+//endregion
+
+let SpexZygoActiveLoCheckbox = document.querySelector("#Spex_Zygo_Active_Lo");
+let SpexZygoActiveMidCheckbox = document.querySelector("#Spex_Zygo_Active_Mid");
+let SpexZygoDeepLoCheckbox = document.querySelector("#Spex_Zygo_Deep_Lo");
+let SpexZygoDeepMidCheckbox = document.querySelector("#Spex_Zygo_Deep_Mid");
+let SpexVigourCheckbox = document.querySelector("#Spex_Vigour");
+let SpexMantarayCheckbox = document.querySelector("#Spex_Mantaray");
+let SpexClassicCheckbox = document.querySelector("#Spex_Classic");
+let SpexAdapta2Checkbox = document.querySelector("#Spex_Adapta2");
+let SpexAdapta3Checkbox = document.querySelector("#Spex_Adapta3");
+let SpexAdapta3QuicklyLiftCheckbox = document.querySelector(
+  "#Spex_Adapta3_QuicklyLift"
+);
+let SpexAdapta3FoamCheckbox = document.querySelector("#Spex_Adapta3_Foam");
+let SpexAdapta3QuicklyLiftFoamCheckbox = document.querySelector(
+  "#Spex_Adapta3_QuicklyLift_Foam"
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+  let BackSupportsWidthSelect = document.querySelector(
+    ".Spexbacksupports_Width"
+  );
+  let BackSupportsHeighSelect = document.querySelector(
+    ".Spexbacksupports_Heigh"
+  );
+
+  // 監聽高度選單
+  BackSupportsHeighSelect.addEventListener("change", function () {
+    let widthselectedOption =
+      BackSupportsWidthSelect.options[BackSupportsWidthSelect.selectedIndex];
+    let heightselectedOption =
+      BackSupportsHeighSelect.options[BackSupportsHeighSelect.selectedIndex];
+
+    //region --- Spex_Zygo_Active_Lo ---
+    if (
+      Spex_Zygo_Active_Lo.id === "Spex_Zygo_Active_Lo" &&
+      Spex_Zygo_Active_Lo.checked
+    ) {
+      if (
+        widthselectedOption.text === "12”" &&
+        heightselectedOption.text === "7”"
+      ) {
+        nowprice_SpexBackSupports.textContent = `${formatPrice(
+          Spex_Zygo_Active_Lo_prices.Spex_Zygo_Active_Lo_prices1
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "14”" &&
+        heightselectedOption.text === "8”"
+      ) {
+        nowprice_SpexBackSupports.textContent = `${formatPrice(
+          Spex_Zygo_Active_Lo_prices.Spex_Zygo_Active_Lo_prices2
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "16”" &&
+        heightselectedOption.text === "9”"
+      ) {
+        nowprice_SpexBackSupports.textContent = `${formatPrice(
+          Spex_Zygo_Active_Lo_prices.Spex_Zygo_Active_Lo_prices3
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "18”" &&
+        heightselectedOption.text === "9”"
+      ) {
+        nowprice_SpexBackSupports.textContent = `${formatPrice(
+          Spex_Zygo_Active_Lo_prices.Spex_Zygo_Active_Lo_prices4
+        )} 元`;
+      }
+      if (
+        widthselectedOption.text === "20”" &&
+        heightselectedOption.text === "11”"
+      ) {
+        nowprice_SpexBackSupports.textContent = `${formatPrice(
+          Spex_Zygo_Active_Lo_prices.Spex_Zygo_Active_Lo_prices5
+        )} 元`;
+      }
+    }
+    //endregion
+  });
+});
+//endregion
