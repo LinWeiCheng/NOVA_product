@@ -2887,7 +2887,7 @@ let Spex_Adapta2heightOptions = [
   { value: "optionC", text: "13”" },
   { value: "optionD", text: "14”" },
   { value: "optionE", text: "15”" },
-  { value: "optionE", text: "17”" },
+  { value: "optionF", text: "17”" },
 ];
 //endregion
 
@@ -3165,9 +3165,9 @@ document
         ProductColorSelect(BackSupportscolorSelect, ColorSelectOptions);
       }
 
-      //確認是選擇"Spex_Adapta3_QuicklyLift 調整型背靠 / 快掀"
+      //確認是選擇"Spex_Adapta3 調整型背靠 / 快掀"
       else if (
-        this.dataset.item === "Spex_Adapta3_QuicklyLift 調整型背靠 / 快掀"
+        this.dataset.item === "Spex_Adapta3 調整型背靠 / 快掀"
       ) {
         //確認有勾選坐墊後開啟
         BackSupportswidthSelect.disabled = false;
@@ -3182,9 +3182,9 @@ document
         ProductColorSelect(BackSupportscolorSelect, ColorSelectOptions);
       }
 
-      //確認是選擇"Spex_Adapta3_Foam 調整型背靠 / 脊凸泡綿"
+      //確認是選擇"Spex_Adapta3 調整型背靠 / 脊凸泡綿"
       else if (
-        this.dataset.item === "Spex_Adapta3_Foam 調整型背靠 / 脊凸泡綿"
+        this.dataset.item === "Spex_Adapta3 調整型背靠 / 脊凸泡綿"
       ) {
         //確認有勾選坐墊後開啟
         BackSupportswidthSelect.disabled = false;
@@ -3199,10 +3199,10 @@ document
         ProductColorSelect(BackSupportscolorSelect, ColorSelectOptions);
       }
 
-      //確認是選擇"Spex_Adapta3_QuicklyLift_Foam 調整型背靠 / 脊凸泡綿 / 快掀"
+      //確認是選擇"Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀"
       else if (
         this.dataset.item ===
-        "Spex_Adapta3_QuicklyLift_Foam 調整型背靠 / 脊凸泡綿 / 快掀"
+        "Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀"
       ) {
         //確認有勾選坐墊後開啟
         BackSupportswidthSelect.disabled = false;
@@ -3846,6 +3846,256 @@ document.addEventListener("DOMContentLoaded", function () {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
           ["optionA", "optionD", "optionE", "optionF", "optionG"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+    }
+    //endregion
+
+    //region --- Spex_Adapta2 調整型背靠 ---
+    if (SpexAdapta2Checkbox.checked) {
+      //當選擇在"寬"時則將"長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
+      if (BackSupportswidthSelect.value === "option1") {
+        BackSupportsSizeSelect(
+          BackSupportswidthSelect,
+          Spex_Adapta2widthOptions
+        );
+        BackSupportsSizeSelect(
+          BackSupportsheightSelect,
+          Spex_Adapta2heightOptions
+        );
+        BackSupportsheightSelect.disabled = true; // 當未選擇時，鎖住 BackSupportsheightSelect
+        BackSupportscolorSelect.disabled = true;
+      }
+      //當選擇是寬"14”"時，"長"只會有"12”"、"14”"
+      if (BackSupportswidthSelect.value === "option2") {
+        let filteredHeightOptions = Spex_Adapta2heightOptions;
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
+          (option) => ["optionA", "optionB", "optionD"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"16”"時，"長"只會有"13”"、"15”"
+      if (BackSupportswidthSelect.value === "option3") {
+        let filteredHeightOptions = Spex_Adapta2heightOptions;
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
+          (option) => ["optionA", "optionC", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"18”"時，"長"只會有"15”"、"17”"
+      if (BackSupportswidthSelect.value === "option4") {
+        let filteredHeightOptions = Spex_Adapta2heightOptions;
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
+          (option) => ["optionA", "optionE", "optionF"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"20”"時，"長"只會有"15”"、"17”"
+      if (BackSupportswidthSelect.value === "option5") {
+        let filteredHeightOptions = Spex_Adapta2heightOptions;
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
+          (option) => ["optionA", "optionE", "optionF"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+    }
+    //endregion
+
+     //region --- Spex_Adapta3 調整型背靠 ---
+     if (SpexAdapta3Checkbox.checked) {
+      //當選擇在"寬"時則將"長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
+      if (BackSupportswidthSelect.value === "option1") {
+        BackSupportsSizeSelect(
+          BackSupportswidthSelect,
+          Spex_Adapta3widthOptions
+        );
+        BackSupportsSizeSelect(
+          BackSupportsheightSelect,
+          Spex_Adapta3heightOptions
+        );
+        BackSupportsheightSelect.disabled = true; // 當未選擇時，鎖住 BackSupportsheightSelect
+        BackSupportscolorSelect.disabled = true;
+      }
+      //當選擇是寬"14”"時，"長"只會有"16”"、"18”"
+      if (BackSupportswidthSelect.value === "option2") {
+        let filteredHeightOptions = Spex_Adapta3heightOptions;
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
+          (option) => ["optionA", "optionB", "optionC"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"16”"時，"長"只會有"18”"、"20”"
+      if (BackSupportswidthSelect.value === "option3") {
+        let filteredHeightOptions = Spex_Adapta3heightOptions;
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
+          (option) => ["optionA", "optionC", "optionD"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"18”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option4") {
+        let filteredHeightOptions = Spex_Adapta3heightOptions;
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"20”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option5") {
+        let filteredHeightOptions = Spex_Adapta3heightOptions;
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+    }
+    //endregion
+
+    //region --- Spex_Adapta3 調整型背靠 / 快掀 ---
+    if (SpexAdapta3QuicklyLiftCheckbox.checked) {
+      //當選擇在"寬"時則將"長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
+      if (BackSupportswidthSelect.value === "option1") {
+        BackSupportsSizeSelect(
+          BackSupportswidthSelect,
+          Spex_Adapta3_QuicklyLiftwidthOptions
+        );
+        BackSupportsSizeSelect(
+          BackSupportsheightSelect,
+          Spex_Adapta3_QuicklyLiftheightOptions
+        );
+        BackSupportsheightSelect.disabled = true; // 當未選擇時，鎖住 BackSupportsheightSelect
+        BackSupportscolorSelect.disabled = true;
+      }
+      //當選擇是寬"14”"時，"長"只會有"16”"、"18”"
+      if (BackSupportswidthSelect.value === "option2") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions.filter(
+          (option) => ["optionA", "optionB", "optionC"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"16”"時，"長"只會有"18”"、"20”"
+      if (BackSupportswidthSelect.value === "option3") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions.filter(
+          (option) => ["optionA", "optionC", "optionD"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"18”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option4") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"20”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option5") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLiftheightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+    }
+    //endregion
+
+    //region --- Spex_Adapta3 調整型背靠 / 脊凸泡綿 ---
+    if (SpexAdapta3FoamCheckbox.checked) {
+      //當選擇在"寬"時則將"長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
+      if (BackSupportswidthSelect.value === "option1") {
+        BackSupportsSizeSelect(
+          BackSupportswidthSelect,
+          Spex_Adapta3_FoamwidthOptions
+        );
+        BackSupportsSizeSelect(
+          BackSupportsheightSelect,
+          Spex_Adapta3_FoamheightOptions
+        );
+        BackSupportsheightSelect.disabled = true; // 當未選擇時，鎖住 BackSupportsheightSelect
+        BackSupportscolorSelect.disabled = true;
+      }
+      //當選擇是寬"14”"時，"長"只會有"16”"、"18”"
+      if (BackSupportswidthSelect.value === "option2") {
+        let filteredHeightOptions = Spex_Adapta3_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_FoamheightOptions.filter(
+          (option) => ["optionA", "optionB", "optionC"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"16”"時，"長"只會有"18”"、"20”"
+      if (BackSupportswidthSelect.value === "option3") {
+        let filteredHeightOptions = Spex_Adapta3_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_FoamheightOptions.filter(
+          (option) => ["optionA", "optionC", "optionD"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"18”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option4") {
+        let filteredHeightOptions = Spex_Adapta3_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_FoamheightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"20”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option5") {
+        let filteredHeightOptions = Spex_Adapta3_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_FoamheightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+    }
+    //endregion
+
+     //region --- Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀 ---
+     if (SpexAdapta3QuicklyLiftFoamCheckbox.checked) {
+      //當選擇在"寬"時則將"長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
+      if (BackSupportswidthSelect.value === "option1") {
+        BackSupportsSizeSelect(
+          BackSupportswidthSelect,
+          Spex_Adapta3_QuicklyLift_FoamwidthOptions
+        );
+        BackSupportsSizeSelect(
+          BackSupportsheightSelect,
+          Spex_Adapta3_QuicklyLift_FoamheightOptions
+        );
+        BackSupportsheightSelect.disabled = true; // 當未選擇時，鎖住 BackSupportsheightSelect
+        BackSupportscolorSelect.disabled = true;
+      }
+      //當選擇是寬"14”"時，"長"只會有"16”"、"18”"
+      if (BackSupportswidthSelect.value === "option2") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
+          (option) => ["optionA", "optionB", "optionC"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"16”"時，"長"只會有"18”"、"20”"
+      if (BackSupportswidthSelect.value === "option3") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
+          (option) => ["optionA", "optionC", "optionD"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"18”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option4") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        );
+        BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
+      }
+      //當選擇是寬"20”"時，"長"只會有"20”"、"22”"
+      if (BackSupportswidthSelect.value === "option5") {
+        let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
+        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
+          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
