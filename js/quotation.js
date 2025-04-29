@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexArmSupLatThigh = [];
   let spexArmSup = [];
   let spexLatThigh = [];
+  let spexBackSupports = [];
 
   //防呆，確認每個勾選的內容都是完整的
   function checkcheckboxselectionscorrect() {
@@ -343,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spexArmSupLatThigh.length = 0;
     spexArmSup.length = 0;
     spexLatThigh.length = 0;
+    spexBackSupports.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -566,6 +568,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
+      if (spexgroup === "SpexBackSupports") {
+        if (item) {
+          spexBackSupports.push(item);
+        }
+
+        let ProductcolorSelect = document.querySelector(
+          ".Spexbacksupports_colorsel"
+        );
+        let productcolorselectedOption =
+          ProductcolorSelect.options[ProductcolorSelect.selectedIndex];
+
+        let BackSupportswidthSelect = document.querySelector(".Spexbacksupports_Width");
+        let BackSupportsheightSelect = document.querySelector(".Spexbacksupports_Heigh");
+        let widthselectedOption =
+        BackSupportswidthSelect.options[BackSupportswidthSelect.selectedIndex];
+        let heightselectedOption =
+        BackSupportsheightSelect.options[BackSupportsheightSelect.selectedIndex];
+
+        // 組合字串：寬 x 高 - 顏色
+        let spexString = ` - ${widthselectedOption.text}x ${heightselectedOption.text}- ${productcolorselectedOption.text}`;
+        spexBackSupports.push(spexString);
+        let spexitem = spexBackSupports.join("");
+        let nowSpexBackSupports = document.querySelector(
+          '[data-nowprice-Spexbacksupports="nowSpexbacksupports"]'
+        );
+        let BackSupportsprice = nowSpexBackSupports.textContent
+          .replace("元", "")
+          .trim();
+
+        selectedItems.push({
+          item: spexitem,
+          price: BackSupportsprice,
+          note: notes,
+        });
+        }
       // 記錄這個 item 已經被加入
       addedItems.add(item);
     });
