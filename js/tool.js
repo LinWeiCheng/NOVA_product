@@ -1701,7 +1701,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //region
 let nowprice_SpexSeatBase = Price[11].nextElementSibling;
 
-//Spex_Seat_Base 硬座板(固定扣具)
+//region --- Spex_Seat_Base 硬座板(固定扣具) ---
 let Spex_Seat_Base_Fixed_prices = {
   Spex_Seat_Base_Fixed_prices1: 11800,
   Spex_Seat_Base_Fixed_prices2: 11800,
@@ -1712,8 +1712,9 @@ let Spex_Seat_Base_Fixed_prices = {
   Spex_Seat_Base_Fixed_prices7: 14200,
   Spex_Seat_Base_Fixed_prices8: 14200,
 };
+//endregion
 
-//Spex_Seat Base 硬座板(快拆扣具)
+//region --- Spex_Seat Base 硬座板(快拆扣具) ---
 let Spex_Seat_Base_Quick_prices = {
   Spex_Seat_Base_Quick_prices1: 12800,
   Spex_Seat_Base_Quick_prices2: 12800,
@@ -1724,6 +1725,7 @@ let Spex_Seat_Base_Quick_prices = {
   Spex_Seat_Base_Quick_prices7: 15400,
   Spex_Seat_Base_Quick_prices8: 15400,
 };
+//endregion
 
 let SeatBasefixedCheckbox = document.querySelector("#Spex_SeatBase_fixed");
 let SeatBasequickCheckbox = document.querySelector("#Spex_SeatBase_quick");
@@ -1920,19 +1922,21 @@ document.addEventListener("DOMContentLoaded", function () {
 //region
 let nowprice_SpexMedialThigh = Price[12].nextElementSibling;
 
-//Spex_MedialThigh_Standard 分腿器-標準型
+//region --- Spex_MedialThigh_Standard 分腿器-標準型 ---
 let Spex_MedialThigh_Standard_prices = {
   Spex_MedialThigh_Standard_prices1: 12500,
   Spex_MedialThigh_Standard_prices2: 12500,
   Spex_MedialThigh_Standard_prices3: 12500,
 };
+//endregion
 
-//Spex_MedialThigh_Multiaxial 分腿器-標準型
+//region --- Spex_MedialThigh_Multiaxial 分腿器-標準型 ---
 let Spex_MedialThigh_Multiaxial_prices = {
   Spex_MedialThigh_Multiaxial_prices1: 18000,
   Spex_MedialThigh_Multiaxial_prices2: 18000,
   Spex_MedialThigh_Multiaxial_prices3: 18000,
 };
+//endregion
 
 let medialthighstandardCheckbox = document.querySelector(
   "#Spex_MedialThigh_Standard"
@@ -3739,7 +3743,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //endregion
 
-/*-----  11.Spex底座子系統-座墊點擊列  -----*/
+/*-----  15.Spex軀幹子系統-背靠點擊列 -----*/
 //region
 let nowprice_SpexBackSupports = Price[14].nextElementSibling;
 
@@ -4701,4 +4705,101 @@ document.addEventListener("DOMContentLoaded", function () {
     //endregion
   });
 });
+//endregion
+
+/*-----  16.Spex軀幹子系統-扣具 -----*/
+//region
+let nowprice_SpexHardware = Price[15].nextElementSibling;
+let SpexHardware_checkboxes = document.querySelectorAll(
+  'input[type="checkbox"][name="car_SpexHardware"]'
+);
+let SpexHardwareDropMount = document.querySelector("#Spex_Hardware_Drop_Mount");
+
+//region --- SpexHardware 扣具 ---
+let SpexHardware_prices = {
+  SpexHardware_prices1: 10000,
+  SpexHardware_prices2: 10000,
+  SpexHardware_prices3: 11200,
+  SpexHardware_prices4: 10000,
+  SpexHardware_prices5: 10000,
+  SpexHardware_prices6: 10000,
+  SpexHardware_prices7: 10000,
+  SpexHardware_prices8: 10000,
+  SpexHardware_prices9: 10000,
+  SpexHardware_prices10: 10000,
+};
+//endregion
+
+function update_SpexHardware_Price(event) {
+  SpexHardware_checkboxes.forEach((checkbox) => {
+    if (checkbox !== event.target) {
+      checkbox.checked = false;
+    }
+    if (event.target.id === "Spex_Hardware_Adapta_ForwardDual") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices1
+      )} 元`;
+    } else if (event.target.id === "Spex_Hardware_Adapta_Dual") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices2
+      )} 元`;
+    } else if (event.target.id === "Spex_Hardware_ForwardExtendedDual") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices3
+      )} 元`;
+    } else if (event.target.id === "Spex_Hardware_Single") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices4
+      )} 元`;
+    } else if (event.target.id === "Spex_Hardware_Dual") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices5
+      )} 元`;
+    } else if (event.target.id === "Spex_Hardware_Quad") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices6
+      )} 元`;
+    }
+  });
+}
+
+let DropMountSelect = document.querySelector(".Spexdropmount_size");
+
+DropMountSelect.addEventListener("change", function () {
+  let dropmountSelectoptions =
+    DropMountSelect.options[DropMountSelect.selectedIndex];
+  if (SpexHardwareDropMount.checked) {
+    if (dropmountSelectoptions.text === "Paediatric") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices7
+      )} 元`;
+    } else if (dropmountSelectoptions.text === "Small") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices8
+      )} 元`;
+    } else if (dropmountSelectoptions.text === "Medium") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices9
+      )} 元`;
+    } else if (dropmountSelectoptions.text === "Large") {
+      nowprice_SpexHardware.textContent = `${formatPrice(
+        SpexHardware_prices.SpexHardware_prices10
+      )} 元`;
+    }
+  }
+});
+
+//region
+SpexHardware_checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", (event) => {
+    if (event.target.checked) {
+      update_SpexHardware_Price(event);
+    } else {
+      nowprice_SpexHardware.textContent = "0元";
+    }
+  });
+});
+
+//endregion
+
 //endregion
