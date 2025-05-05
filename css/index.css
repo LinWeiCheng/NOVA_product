@@ -2546,10 +2546,13 @@ body {
 }
 .Spex_hardware .chkcontent_16th .Spexhardwaregroup .Spexhardwaregroup_title .Spexhardware_adapta_titlegroup .adapta_hdware_title {
   border: 1px solid #000000;
+  background: linear-gradient(to right, #cb1a21, #bf1966);
+  /* 左邊深紅 -> 右邊淺紅 */
   border-radius: 8px;
   font-size: 20px;
   width: 100%;
   font-weight: 700;
+  color: #ffffff;
   margin: 2px 1px;
   padding: 2px 0 2px 15px;
 }
@@ -2570,6 +2573,9 @@ body {
 }
 .Spex_hardware .chkcontent_16th .Spexhardwaregroup .Spexhardwaregroup_title .Spexhardware_titlegroup .org_hdware_title {
   border: 1px solid #000000;
+  background: linear-gradient(to right, #cb1a21, #bf1966);
+  /* 左邊深紅 -> 右邊淺紅 */
+  color: #ffffff;
   border-radius: 8px;
   font-size: 20px;
   width: 100%;
