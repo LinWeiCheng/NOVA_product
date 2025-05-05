@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexArmSup = [];
   let spexLatThigh = [];
   let spexBackSupports = [];
+  let spexHardware = [];
 
   //防呆，確認每個勾選的內容都是完整的
   function checkcheckboxselectionscorrect() {
@@ -345,6 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spexArmSup.length = 0;
     spexLatThigh.length = 0;
     spexBackSupports.length = 0;
+    spexHardware.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -579,12 +581,20 @@ document.addEventListener("DOMContentLoaded", () => {
         let productcolorselectedOption =
           ProductcolorSelect.options[ProductcolorSelect.selectedIndex];
 
-        let BackSupportswidthSelect = document.querySelector(".Spexbacksupports_Width");
-        let BackSupportsheightSelect = document.querySelector(".Spexbacksupports_Heigh");
+        let BackSupportswidthSelect = document.querySelector(
+          ".Spexbacksupports_Width"
+        );
+        let BackSupportsheightSelect = document.querySelector(
+          ".Spexbacksupports_Heigh"
+        );
         let widthselectedOption =
-        BackSupportswidthSelect.options[BackSupportswidthSelect.selectedIndex];
+          BackSupportswidthSelect.options[
+            BackSupportswidthSelect.selectedIndex
+          ];
         let heightselectedOption =
-        BackSupportsheightSelect.options[BackSupportsheightSelect.selectedIndex];
+          BackSupportsheightSelect.options[
+            BackSupportsheightSelect.selectedIndex
+          ];
 
         // 組合字串：寬 x 高 - 顏色
         let spexString = ` - ${widthselectedOption.text}x ${heightselectedOption.text}- ${productcolorselectedOption.text}`;
@@ -602,7 +612,48 @@ document.addEventListener("DOMContentLoaded", () => {
           price: BackSupportsprice,
           note: notes,
         });
+      }
+      if (spexgroup === "SpexHardware") {
+        if (item) {
+          spexHardware.push(item);
         }
+        let SpexHardwareDropMount = document.querySelector(
+          "#Spex_Hardware_Drop_Mount"
+        );
+        let nowSpexHardware = document.querySelector(
+          '[data-nowprice-Spexhardware="nowSpexhardware"]'
+        );
+        let Hardwareprice = nowSpexHardware.textContent
+          .replace("元", "")
+          .trim();
+        
+        if (SpexHardwareDropMount.checked) {
+          let DropMountSelect = document.querySelector(".Spexdropmount_size");
+          let dropmountSelectoptions =
+            DropMountSelect.options[DropMountSelect.selectedIndex];
+
+          // 組合字串： / 規格
+          let spexString = ` / ${dropmountSelectoptions.text}`;
+          spexHardware.push(spexString);
+          let spexitem = spexHardware.join("");
+
+          
+
+          selectedItems.push({
+            item: spexitem,
+            price: Hardwareprice,
+            note: notes,
+          });
+        }else{
+          selectedItems.push({
+            item: item,
+            price: Hardwareprice,
+            note: notes,
+          });
+        }
+       
+      }
+
       // 記錄這個 item 已經被加入
       addedItems.add(item);
     });
