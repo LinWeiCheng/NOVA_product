@@ -92,8 +92,7 @@ document.addEventListener("click", function (event) {
             introdutionid.style.margin = "0";
 
             if (
-              openIntro.getAttribute("data-price-carSpexcushion") ===
-              "carSpexcushion"
+              openIntro.getAttribute("data-price-Spexcushion") === "Spexcushion"
             ) {
               //建議售價金額隱藏
               openIntro.style.display = "none";
@@ -1347,8 +1346,8 @@ document.addEventListener("click", function (event) {
             introdutionid.style.margin = "0";
 
             if (
-              openIntro.getAttribute("data-price-carSpexseatbase") ===
-              "carSpexseatbase"
+              openIntro.getAttribute("data-price-Spexseatbase") ===
+              "Spexseatbase"
             ) {
               //建議售價金額隱藏
               openIntro.style.display = "none";
@@ -2488,7 +2487,7 @@ document
 /*-----  15.Spex軀幹子系統-背靠點擊列 -----*/
 //region
 /*---  Spex軀幹子系統-背靠點擊列 - 圖片箭頭部分  ---*/
-//region 
+//region
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_15 = event.target;
@@ -3167,9 +3166,7 @@ document
       }
 
       //確認是選擇"Spex_Adapta3 調整型背靠 / 快掀"
-      else if (
-        this.dataset.item === "Spex_Adapta3 調整型背靠 / 快掀"
-      ) {
+      else if (this.dataset.item === "Spex_Adapta3 調整型背靠 / 快掀") {
         //確認有勾選坐墊後開啟
         BackSupportswidthSelect.disabled = false;
         BackSupportsSizeSelect(
@@ -3184,9 +3181,7 @@ document
       }
 
       //確認是選擇"Spex_Adapta3 調整型背靠 / 脊凸泡綿"
-      else if (
-        this.dataset.item === "Spex_Adapta3 調整型背靠 / 脊凸泡綿"
-      ) {
+      else if (this.dataset.item === "Spex_Adapta3 調整型背靠 / 脊凸泡綿") {
         //確認有勾選坐墊後開啟
         BackSupportswidthSelect.disabled = false;
         BackSupportsSizeSelect(
@@ -3202,8 +3197,7 @@ document
 
       //確認是選擇"Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀"
       else if (
-        this.dataset.item ===
-        "Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀"
+        this.dataset.item === "Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀"
       ) {
         //確認有勾選坐墊後開啟
         BackSupportswidthSelect.disabled = false;
@@ -3798,7 +3792,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (BackSupportswidthSelect.value === "option2") {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
-          ["optionA", "optionB", "optionC", "optionD", "optionE"].includes(option.value)
+          ["optionA", "optionB", "optionC", "optionD", "optionE"].includes(
+            option.value
+          )
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -3806,7 +3802,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (BackSupportswidthSelect.value === "option3") {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
-          ["optionA", "optionB", "optionC", "optionD", "optionE"].includes(option.value)
+          ["optionA", "optionB", "optionC", "optionD", "optionE"].includes(
+            option.value
+          )
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -3814,7 +3812,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (BackSupportswidthSelect.value === "option4") {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
-          ["optionA", "optionC", "optionD", "optionE", "optionF"].includes(option.value)
+          ["optionA", "optionC", "optionD", "optionE", "optionF"].includes(
+            option.value
+          )
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -3822,7 +3822,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (BackSupportswidthSelect.value === "option5") {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
-          ["optionA", "optionC", "optionD", "optionE", "optionF"].includes(option.value)
+          ["optionA", "optionC", "optionD", "optionE", "optionF"].includes(
+            option.value
+          )
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -3830,7 +3832,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (BackSupportswidthSelect.value === "option6") {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
-          ["optionA", "optionD", "optionE", "optionF", "optionG"].includes(option.value)
+          ["optionA", "optionD", "optionE", "optionF", "optionG"].includes(
+            option.value
+          )
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -3838,7 +3842,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (BackSupportswidthSelect.value === "option7") {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
-          ["optionA", "optionD", "optionE", "optionF", "optionG"].includes(option.value)
+          ["optionA", "optionD", "optionE", "optionF", "optionG"].includes(
+            option.value
+          )
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -3846,7 +3852,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (BackSupportswidthSelect.value === "option8") {
         let filteredHeightOptions = Spex_SuperShapeheightOptions;
         filteredHeightOptions = Spex_SuperShapeheightOptions.filter((option) =>
-          ["optionA", "optionD", "optionE", "optionF", "optionG"].includes(option.value)
+          ["optionA", "optionD", "optionE", "optionF", "optionG"].includes(
+            option.value
+          )
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -3871,40 +3879,40 @@ document.addEventListener("DOMContentLoaded", function () {
       //當選擇是寬"14”"時，"長"只會有"12”"、"14”"
       if (BackSupportswidthSelect.value === "option2") {
         let filteredHeightOptions = Spex_Adapta2heightOptions;
-        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
-          (option) => ["optionA", "optionB", "optionD"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter((option) =>
+          ["optionA", "optionB", "optionD"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"16”"時，"長"只會有"13”"、"15”"
       if (BackSupportswidthSelect.value === "option3") {
         let filteredHeightOptions = Spex_Adapta2heightOptions;
-        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
-          (option) => ["optionA", "optionC", "optionE"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter((option) =>
+          ["optionA", "optionC", "optionE"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"18”"時，"長"只會有"15”"、"17”"
       if (BackSupportswidthSelect.value === "option4") {
         let filteredHeightOptions = Spex_Adapta2heightOptions;
-        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
-          (option) => ["optionA", "optionE", "optionF"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter((option) =>
+          ["optionA", "optionE", "optionF"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"20”"時，"長"只會有"15”"、"17”"
       if (BackSupportswidthSelect.value === "option5") {
         let filteredHeightOptions = Spex_Adapta2heightOptions;
-        filteredHeightOptions = Spex_Adapta2heightOptions.filter(
-          (option) => ["optionA", "optionE", "optionF"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta2heightOptions.filter((option) =>
+          ["optionA", "optionE", "optionF"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
     }
     //endregion
 
-     //region --- Spex_Adapta3 調整型背靠 ---
-     if (SpexAdapta3Checkbox.checked) {
+    //region --- Spex_Adapta3 調整型背靠 ---
+    if (SpexAdapta3Checkbox.checked) {
       //當選擇在"寬"時則將"長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
       if (BackSupportswidthSelect.value === "option1") {
         BackSupportsSizeSelect(
@@ -3921,32 +3929,32 @@ document.addEventListener("DOMContentLoaded", function () {
       //當選擇是寬"14”"時，"長"只會有"16”"、"18”"
       if (BackSupportswidthSelect.value === "option2") {
         let filteredHeightOptions = Spex_Adapta3heightOptions;
-        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
-          (option) => ["optionA", "optionB", "optionC"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter((option) =>
+          ["optionA", "optionB", "optionC"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"16”"時，"長"只會有"18”"、"20”"
       if (BackSupportswidthSelect.value === "option3") {
         let filteredHeightOptions = Spex_Adapta3heightOptions;
-        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
-          (option) => ["optionA", "optionC", "optionD"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter((option) =>
+          ["optionA", "optionC", "optionD"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"18”"時，"長"只會有"20”"、"22”"
       if (BackSupportswidthSelect.value === "option4") {
         let filteredHeightOptions = Spex_Adapta3heightOptions;
-        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
-          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter((option) =>
+          ["optionA", "optionD", "optionE"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"20”"時，"長"只會有"20”"、"22”"
       if (BackSupportswidthSelect.value === "option5") {
         let filteredHeightOptions = Spex_Adapta3heightOptions;
-        filteredHeightOptions = Spex_Adapta3heightOptions.filter(
-          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
+        filteredHeightOptions = Spex_Adapta3heightOptions.filter((option) =>
+          ["optionA", "optionD", "optionE"].includes(option.value)
         );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
@@ -4053,8 +4061,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     //endregion
 
-     //region --- Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀 ---
-     if (SpexAdapta3QuicklyLiftFoamCheckbox.checked) {
+    //region --- Spex_Adapta3 調整型背靠 / 脊凸泡綿 / 快掀 ---
+    if (SpexAdapta3QuicklyLiftFoamCheckbox.checked) {
       //當選擇在"寬"時則將"長"的欄位鎖住，或是當選擇完其他後又不需要產品時，勾選"寬"可鎖住"長"
       if (BackSupportswidthSelect.value === "option1") {
         BackSupportsSizeSelect(
@@ -4071,38 +4079,41 @@ document.addEventListener("DOMContentLoaded", function () {
       //當選擇是寬"14”"時，"長"只會有"16”"、"18”"
       if (BackSupportswidthSelect.value === "option2") {
         let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
-        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
-          (option) => ["optionA", "optionB", "optionC"].includes(option.value)
-        );
+        filteredHeightOptions =
+          Spex_Adapta3_QuicklyLift_FoamheightOptions.filter((option) =>
+            ["optionA", "optionB", "optionC"].includes(option.value)
+          );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"16”"時，"長"只會有"18”"、"20”"
       if (BackSupportswidthSelect.value === "option3") {
         let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
-        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
-          (option) => ["optionA", "optionC", "optionD"].includes(option.value)
-        );
+        filteredHeightOptions =
+          Spex_Adapta3_QuicklyLift_FoamheightOptions.filter((option) =>
+            ["optionA", "optionC", "optionD"].includes(option.value)
+          );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"18”"時，"長"只會有"20”"、"22”"
       if (BackSupportswidthSelect.value === "option4") {
         let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
-        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
-          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
-        );
+        filteredHeightOptions =
+          Spex_Adapta3_QuicklyLift_FoamheightOptions.filter((option) =>
+            ["optionA", "optionD", "optionE"].includes(option.value)
+          );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
       //當選擇是寬"20”"時，"長"只會有"20”"、"22”"
       if (BackSupportswidthSelect.value === "option5") {
         let filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions;
-        filteredHeightOptions = Spex_Adapta3_QuicklyLift_FoamheightOptions.filter(
-          (option) => ["optionA", "optionD", "optionE"].includes(option.value)
-        );
+        filteredHeightOptions =
+          Spex_Adapta3_QuicklyLift_FoamheightOptions.filter((option) =>
+            ["optionA", "optionD", "optionE"].includes(option.value)
+          );
         BackSupportsSizeSelect(BackSupportsheightSelect, filteredHeightOptions);
       }
     }
     //endregion
-
   });
 });
 
@@ -4113,7 +4124,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  16.Spex軀幹子系統-扣具 -----*/
 //region
-
 /*---  Spex軀幹子系統-扣具點擊列 - 圖片箭頭部分  ---*/
 //region
 document.addEventListener("click", function (event) {
@@ -4239,15 +4249,12 @@ Spex_hardware.addEventListener("click", function (event) {
     Price_Spex_hardware.forEach(function (openIntro) {
       let Spexhardware = Price_Spex_hardware[15];
       //直接判斷是第幾個.Price
-      let nowprice_Spexhardware =
-        Price_Spex_hardware[15].nextElementSibling;
+      let nowprice_Spexhardware = Price_Spex_hardware[15].nextElementSibling;
 
       if (
-        openIntro.getAttribute("data-price-Spexhardware") ===
-          "Spexhardware" &&
-        nowprice_Spexhardware.getAttribute(
-          "data-nowprice-Spexhardware"
-        ) === "nowSpexhardware"
+        openIntro.getAttribute("data-price-Spexhardware") === "Spexhardware" &&
+        nowprice_Spexhardware.getAttribute("data-nowprice-Spexhardware") ===
+          "nowSpexhardware"
       ) {
         if (introdution.getAttribute("data-collapse-status") === "0") {
           //把data-collapse-status改成1
@@ -4315,6 +4322,69 @@ Spex_hardware.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
+
+//確定勾選的是哪個扣具，且不會重複勾選選項
+//region
+document
+  .querySelectorAll('input[name="car_SpexHardware"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexHardware"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+      if (!Spex_HardwareDropMount.checked) {
+        DropMountSelect.disabled = true; // 禁用
+        DropMountSelectOptions(DropMountSelect, SpexHardwareDropMountOptions);
+      }
+    });
+  });
+
+//region --- Spex_DropMount的選項 ---
+let SpexHardwareDropMountOptions = [
+  { value: "option1", text: "尺寸選擇", selected: true },
+  { value: "option2", text: "Paediatric" },
+  { value: "option3", text: "Small" },
+  { value: "option4", text: "Medium" },
+  { value: "option5", text: "Large" },
+];
+
+function DropMountSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+
+let Spex_HardwareDropMount = document.querySelector(
+  "#Spex_Hardware_Drop_Mount"
+);
+
+Spex_HardwareDropMount.addEventListener("change", () => {
+  let DropMountSelect = document.querySelector(".Spexdropmount_size");
+  if (Spex_HardwareDropMount.checked) {
+    DropMountSelect.disabled = false; // 啟用
+    DropMountSelectOptions(DropMountSelect, SpexHardwareDropMountOptions);
+  } else {
+    DropMountSelect.disabled = true; // 禁用
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  let DropMountSelect = document.querySelector(".Spexdropmount_size");
+  DropMountSelect.disabled = true; // 禁用
+});
+
 //endregion
 
 //endregion
