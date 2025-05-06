@@ -2974,12 +2974,476 @@ body {
               }
             }
           }
-
         }
       }
     }
   }
+}
 
+//第十七點擊列-Spex軀幹子系統-軀幹側支撐
+.Spex_latertrunksupports {
+  margin: 0 0 8px 0;
+
+  .chkcontent_17th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexlatertrunksupportsgroup {
+      // visibility: hidden;
+      width: calc(100% - 22px);
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      /* 讓子元素垂直排列 */
+      padding: 0px 1px 1px 3px;
+      border: 3px dashed black;
+      border-Top: none;
+      margin: 0 0 0 7px;
+      // height: 0;
+      // width: 100%;
+
+      .Spexlatertrunksupportsgroup_title {
+        font-size: 20px;
+        width: 100%;
+        font-weight: 700;
+        margin: 2px 1px;
+
+        .SpexlaterHardwaregroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+
+          .laterHardwaregroup {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+
+            .LaterTrunk_Axialgroup {
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              margin: 2px;
+
+              .Spexlatertrunksupports_title {
+                border: 1px solid #000000;
+                margin: 2px 1px 1px 2px;
+                border-radius: 8px;
+                width: 60%;
+
+                .SpexLaterTrunkSupports {
+                  margin: 12px 16px;
+                }
+              }
+
+              .latertrunkaxialcountgroup {
+                display: flex;
+                border: 1px solid #000000;
+                margin: 2px 2px 1px 1px;
+                border-radius: 8px;
+                align-items: center;
+                justify-content: center;
+                width: 40%;
+
+                label {
+                  font-size: 16px;
+                  margin: 0 4px 0 0;
+                }
+
+                #latertrunkaxialcount {
+                  font-size: 16px;
+                  width: 15%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 2px 0 0 0;
+                }
+              }
+            }
+
+            .LaterTrunk_Standardgroup {
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              margin: 2px;
+
+              .Spexlatertrunksupports_title {
+                display: flex;
+                align-items: center;
+                border: 1px solid #000000;
+                border-radius: 8px;
+                margin: 1px 1px 1px 2px;
+                width: 50%;
+
+                .SpexLaterTrunkSupports {
+                  margin: 12px 16px;
+                }
+              }
+
+              .latertrunk_standardsize {
+                border: 1px solid #000000;
+                border-radius: 8px;
+                margin: 1px 1px 1px 1px;
+                width: 35%;
+                text-align: center;
+
+                .latertrunk_standardsizetable {
+                  margin: 0 auto;
+                  /* 左右自動，就會置中 */
+                }
+
+                #standardsize1 {
+                  margin: 0 6px 0 0;
+                }
+              }
+
+              .latertrunkstandardcountgroup {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #000000;
+                border-radius: 8px;
+                margin: 1px 2px 1px 1px;
+                width: 15%;
+
+                label {
+                  font-size: 16px;
+                  margin: 0 4px 0 0;
+                }
+
+                #latertrunkstandardcount {
+                  font-size: 16px;
+                  width: 30%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 2px 0 0 0;
+                }
+              }
+            }
+
+            .LaterTrunk_Offsetgroup {
+              display: flex;
+              flex-direction: row;
+
+              .Spexlatertrunksupports_title {
+                display: flex;
+                align-items: center;
+                border: 1px solid #000000;
+                border-radius: 8px;
+                margin: 1px 1px 1px 2px;
+                width: 50%;
+
+                .SpexLaterTrunkSupports {
+                  margin: 12px 16px;
+                }
+              }
+
+              .latertrunk_offsetsize {
+                border: 1px solid #000000;
+                border-radius: 8px;
+                margin: 1px 1px 1px 1px;
+                width: 40%;
+                text-align: center;
+
+                .latertrunk_offsetsizetable {
+                  margin: 0 auto;
+                  /* 左右自動，就會置中 */
+                }
+
+                #offsetsize1 {
+                  margin: 0 6px 0 0;
+                }
+              }
+
+              .latertrunkoffsetcountgroup {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #000000;
+                border-radius: 8px;
+                margin: 1px 2px 1px 1px;
+                width: 15%;
+
+                label {
+                  font-size: 16px;
+                  margin: 0 4px 0 0;
+                }
+
+                #latertrunkoffsetcount {
+                  font-size: 16px;
+                  width: 30%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 2px 0 0 0;
+                }
+              }
+            }
+          }
+
+          .latertrunkpadtype {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            width: 15%;
+            font-size: 18px;
+            margin: 4px 1px 1px 2px;
+
+            #STANDARDpad {
+              margin: 14px 14px 12px 14px;
+              display: flex;
+              flex-direction: row;
+            }
+
+            #COMFYpad {
+              display: flex;
+              flex-direction: row;
+              margin: 6px 34px 0 0
+            }
+          }
+
+          .latertrunkpadsizegroup {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            width: 25%;
+            margin: 3px 2px 1px 1px;
+
+            .latertrunkpadsize_WH {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              border-radius: 6px;
+              justify-content: center;
+
+              .latertrunkpadsize_Width {
+                padding: 3px;
+                margin: 2px;
+                font-size: 16px;
+                border-radius: 8px;
+                text-align: center;
+                /* 設定文字置中 */
+                width: 40%;
+                /* 填滿寬度，讓選項顯示在中間 */
+                display: inline-block;
+
+                .latertrunkpadsize_Width option {
+                  text-align: center;
+                  /* 讓選項中的文字置中 */
+                  background-color: #e0e0e0;
+                  color: #000000;
+                }
+              }
+
+              div {
+                font-size: 16px;
+                font-weight: 800;
+                margin: 4px;
+              }
+
+              .latertrunkpadsize_Heigh {
+                padding: 3px;
+                margin: 2px;
+                font-size: 16px;
+                border-radius: 8px;
+                text-align: center;
+                /* 設定文字置中 */
+                width: 40%;
+                /* 填滿寬度，讓選項顯示在中間 */
+                display: inline-block;
+
+                .latertrunkpadsize_Heigh option {
+                  text-align: center;
+                  /* 讓選項中的文字置中 */
+                  background-color: #e0e0e0;
+                  color: #000000;
+                }
+              }
+
+              label {
+                font-size: 16px;
+                margin: 0px 0px 0 6px;
+                width: 20%;
+              }
+
+              #latertrunkpadcount {
+                font-size: 16px;
+                width: 15%;
+                text-align: center;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                color: #333;
+                margin: 2px 2px 0 0;
+              }
+            }
+          }
+        }
+
+        .Spexlatertrunksupports_accessorytitle {
+          border: 1px solid #000000;
+          border-radius: 8px;
+          margin: 2px 2px 2px 2px;
+
+          .SpexLaterTrunkSupports {
+            margin: 12px 16px;
+          }
+        }
+
+        .LaterTrunk_AxialBiangulargroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+
+          .SpexLaterTrunkSupports {
+            margin: 12px 16px;
+          }
+
+          .Spexlatertrunksupports_title {
+            display: flex;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 1px 2px 1px 2px;
+            width: 40%;
+          }
+
+          .latertrunk_axialbiangulartypegroup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            font-size: 18px;
+            margin: 1px 2px 1px 2px;
+            width: 20%;
+            padding: 2px;
+
+            #STANDARDpad {
+              margin: 12px 12px 10px 12px;
+              display: flex;
+              flex-direction: row;
+            }
+
+            #COMFYpad {
+              display: flex;
+              flex-direction: row;
+              margin: 3px 35px 0 0
+            }
+          }
+
+          .latertrunk_axialbiangularthicknessgroup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 1px 2px 1px 2px;
+            width: 15%;
+            padding: 3px;
+            text-align: center;
+            /* 設定文字置中 */
+
+            label {
+              margin: 0 12px 0 0;
+            }
+
+            .latertrunkaxialbiangular_thickness {
+              margin: 4px 0 0 0;
+            }
+
+            .latertrunk_axialbiangularthicknessgroup option {
+              text-align: center;
+              /* 讓選項中的文字置中 */
+              background-color: #e0e0e0;
+              color: #000000;
+            }
+          }
+
+          .latertrunk_axialbiangularsizegroup {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 1px 2px 1px 2px;
+            width: 30%;
+
+            .latertrunk_axialbiangular_Width {
+              padding: 3px;
+              margin: 2px;
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              /* 設定文字置中 */
+              width: 40%;
+              /* 填滿寬度，讓選項顯示在中間 */
+              display: inline-block;
+
+              .latertrunk_axialbiangular_Width option {
+                text-align: center;
+                /* 讓選項中的文字置中 */
+                background-color: #e0e0e0;
+                color: #000000;
+              }
+            }
+
+            div {
+              font-size: 16px;
+              font-weight: 800;
+              margin: 4px;
+            }
+
+            .latertrunk_axialbiangular_Heigh {
+              padding: 3px;
+              margin: 2px;
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              /* 設定文字置中 */
+              width: 40%;
+              /* 填滿寬度，讓選項顯示在中間 */
+              display: inline-block;
+
+              .latertrunk_axialbiangular_Heigh option {
+                text-align: center;
+                /* 讓選項中的文字置中 */
+                background-color: #e0e0e0;
+                color: #000000;
+              }
+            }
+
+            label {
+              font-size: 16px;
+              margin: 0px -8px 0 6px;
+              width: 20%;
+            }
+
+            #latertrunkaxialbiangularpadcount {
+              font-size: 16px;
+              width: 12%;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              color: #333;
+              margin: 2px 2px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 
