@@ -2461,7 +2461,7 @@ body {
           border: 1px solid #000000;
           border-radius: 8px;
           font-size: 18px;
-          height: 50%;
+          height: 55%;
           width: 100%;
           font-weight: 700;
           margin: 2px 1px;
@@ -2474,11 +2474,12 @@ body {
       }
     }
 
-    .Spexarmsuplatthigh_bucklegroup {
+    .Spexarmsuplatthigh_ArmSupLatThighgroup {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 13%;
+      width: 25%;
       border: 1px solid #000000;
       border-radius: 8px;
       font-weight: 600;
@@ -2486,56 +2487,108 @@ body {
 
       .Spexarmsuplatthigh_bucklesel {
         padding: 3px;
-        margin: 2px;
+        margin: 3px;
         font-size: 18px;
         border-radius: 8px;
-        width: 90%;
+        width: 80%;
         text-align: center;
         box-sizing: border-box;
       }
-    }
-
-    .Spexarmsuplatthigh_armsupgroup {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 13%;
-      border: 1px solid #000000;
-      border-radius: 8px;
-      font-weight: 600;
-      margin: 2px 1px 2px 1px;
 
       .Spexarmsuplatthigh_armsupsel {
         padding: 3px;
-        margin: 2px;
+        margin: 3px;
         font-size: 18px;
         border-radius: 8px;
-        width: 90%;
+        width: 80%;
         text-align: center;
         box-sizing: border-box;
       }
-    }
-
-    .Spexarmsuplatthigh_latthighgroup {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 13%;
-      border: 1px solid #000000;
-      border-radius: 8px;
-      font-weight: 600;
-      margin: 2px 1px 2px 1px;
 
       .Spexarmsuplatthigh_latthighsel {
         padding: 3px;
-        margin: 2px;
+        margin: 3px;
         font-size: 18px;
         border-radius: 8px;
-        width: 90%;
+        width: 80%;
         text-align: center;
         box-sizing: border-box;
       }
     }
+
+    .Spexarmsuplatthighcountgroup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10%;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 2px 1px 2px 2px;
+
+      label {
+        font-size: 16px;
+      }
+
+      #Spexarmsuplatthighcount {
+        width: 30%;
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: #333;
+        margin: 3px 0 0 6px;
+      }
+
+      #Spexarmsuplatthighcount:focus {
+        background-color: #fff;
+        border-color: #007bff;
+        outline: none;
+
+      }
+    }
+
+    // .Spexarmsuplatthigh_armsupgroup {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   width: 13%;
+    //   border: 1px solid #000000;
+    //   border-radius: 8px;
+    //   font-weight: 600;
+    //   margin: 2px 1px 2px 1px;
+
+    //   .Spexarmsuplatthigh_armsupsel {
+    //     padding: 3px;
+    //     margin: 2px;
+    //     font-size: 18px;
+    //     border-radius: 8px;
+    //     width: 90%;
+    //     text-align: center;
+    //     box-sizing: border-box;
+    //   }
+    // }
+
+    // .Spexarmsuplatthigh_latthighgroup {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   width: 13%;
+    //   border: 1px solid #000000;
+    //   border-radius: 8px;
+    //   font-weight: 600;
+    //   margin: 2px 1px 2px 1px;
+
+    //   .Spexarmsuplatthigh_latthighsel {
+    //     padding: 3px;
+    //     margin: 2px;
+    //     font-size: 18px;
+    //     border-radius: 8px;
+    //     width: 90%;
+    //     text-align: center;
+    //     box-sizing: border-box;
+    //   }
+    // }
 
     .Spexarmsuplatthigh_padgroup {
       display: flex;
@@ -2990,18 +3043,18 @@ body {
     flex-direction: column;
 
     .Spexlatertrunksupportsgroup {
-      // visibility: hidden;
-      width: calc(100% - 22px);
-      height: auto;
-      display: flex;
-      flex-direction: row;
-      /* 讓子元素垂直排列 */
-      padding: 0px 1px 1px 3px;
-      border: 3px dashed black;
-      border-Top: none;
-      margin: 0 0 0 7px;
-      // height: 0;
-      // width: 100%;
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
 
       .Spexlatertrunksupportsgroup_title {
         font-size: 20px;
