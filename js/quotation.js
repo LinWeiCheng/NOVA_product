@@ -400,6 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let item = checkbox.dataset.item;
       let notes = checkbox.dataset.note;
 
+      //Spex座墊
       if (spexgroup === "SpexCushion") {
         if (item) {
           spexCushion.push(item);
@@ -433,6 +434,8 @@ document.addEventListener("DOMContentLoaded", () => {
           note: notes,
         });
       }
+
+      //Spex硬座板
       if (spexgroup === "SpexSeatBase") {
         if (item) {
           spexSeatBase.push(item);
@@ -463,6 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      //Spex分腿器
       if (spexgroup === "SpexMedialThigh") {
         if (item) {
           spexMedialThigh.push(item);
@@ -491,6 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      //Spex扶手臀撐
       if (spexgroup === "SpexArmSupLatThigh") {
         if (item) {
           spexArmSupLatThigh.push(item);
@@ -504,6 +509,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let lateralpad = document.querySelector(
           ".Spexarmsuplatthigh_lateralpadsel"
         );
+
+        let armsuplatthighcount = document.getElementById(
+          "Spexarmsuplatthighcount"
+        ).value;
         let armpadcount = document.getElementById("armpadcount").value;
         let lateralpadcount = document.getElementById("lateralpadcount").value;
         let SpexarmOrgprices = document.querySelector(".SpexarmOrgprices");
@@ -520,7 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
 
         // 組合字串：(扣具) / 扶手角度 / 腿墊調整
-        let spexString = `(${buckleOption.text}) / ${armsupOption.text} / ${latthighOption.text}`;
+        let spexString = `(${buckleOption.text}) / ${armsupOption.text} / ${latthighOption.text} * ${armsuplatthighcount}`;
         spexArmSupLatThigh.push(spexString);
         let spexitem = spexArmSupLatThigh.join("");
 
@@ -570,6 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
+      //Spex背靠
       if (spexgroup === "SpexBackSupports") {
         if (item) {
           spexBackSupports.push(item);
@@ -613,6 +623,8 @@ document.addEventListener("DOMContentLoaded", () => {
           note: notes,
         });
       }
+
+      //Spex扣具
       if (spexgroup === "SpexHardware") {
         if (item) {
           spexHardware.push(item);
@@ -626,7 +638,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let Hardwareprice = nowSpexHardware.textContent
           .replace("元", "")
           .trim();
-        
+
         if (SpexHardwareDropMount.checked) {
           let DropMountSelect = document.querySelector(".Spexdropmount_size");
           let dropmountSelectoptions =
@@ -637,21 +649,18 @@ document.addEventListener("DOMContentLoaded", () => {
           spexHardware.push(spexString);
           let spexitem = spexHardware.join("");
 
-          
-
           selectedItems.push({
             item: spexitem,
             price: Hardwareprice,
             note: notes,
           });
-        }else{
+        } else {
           selectedItems.push({
             item: item,
             price: Hardwareprice,
             note: notes,
           });
         }
-       
       }
 
       // 記錄這個 item 已經被加入
