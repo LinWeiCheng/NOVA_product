@@ -1997,7 +1997,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //endregion
 
-/*-----  14.Spex底座子系統-分腿器點擊列  -----*/
+/*-----  14.Spex底座子系統-扶手臀撐點擊列  -----*/
 //region
 let nowprice_SpexArmSupLatThigh = Price[13].nextElementSibling;
 
@@ -2105,8 +2105,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function ArmSupportsPad(Option, padprice) {
     let armpadcount = document.getElementById("armpadcount");
     let armpadquantity = parseInt(armpadcount.value) || 0; // 轉成數字（預設為 0）
-    let lateralpadcount = document.getElementById("lateralpadcount");
-    let lateralpadquantity = parseInt(lateralpadcount.value) || 0; // 轉成數字（預設為 0）
 
     if (Option.value === "option2") {
       let armpadnewprice =
@@ -2181,11 +2179,931 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   //endregion
 
-  //region --- 監聽扣具 ---
-  buckle.addEventListener("change", function () {
+  //region --- 監聽扶手臀撐數量 ---
+  let armsuplatthighInput = document.getElementById("Spexarmsuplatthighcount");
+  armsuplatthighInput.addEventListener("change", function () {
+    let armsuplatthighquantity = parseInt(armsuplatthighInput.value) || 0; // 轉成數字（預設為 0）
     let buckleOption = buckle.options[buckle.selectedIndex];
     let armsupOption = armsup.options[armsup.selectedIndex];
     let latthighOption = latthigh.options[latthigh.selectedIndex];
+    let armpadOption = armpad.options[armpad.selectedIndex];
+    let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
+    let armvalue = parseInt(armpadInput.value);
+    let lateralvalue = parseInt(lateralpadInput.value);
+
+    //region --- 純計算數量價錢 ---
+
+    //region --- 扶手支撐 ---
+    if (
+      armsupportsCheckbox.id === "Spex_ArmSupports" &&
+      armsupportsCheckbox.checked
+    ) {
+      if (!isNaN(armsuplatthighquantity) &&
+      armsuplatthighquantity > 0) {
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度可調"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度可調"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度可調"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+      }
+    }
+    //endregion
+
+    //region --- 臀側支撐 ---
+
+    if (
+      lateralthighsupportsCheckbox.id === "Spex_LateralThighSupports" &&
+      lateralthighsupportsCheckbox.checked
+    ) {
+      if (!isNaN(armsuplatthighquantity) &&
+      armsuplatthighquantity > 0) {
+        if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+
+        if (buckleOption.text === "下擺式" && latthighOption.text === "多軸") {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (buckleOption.text === "下擺式" && latthighOption.text === "固定") {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+      }
+    }
+    //endregion
+
+    //region --- 扶手臀撐 ---
+    if (
+      armsup_latthighCheckbox.id === "Spex_ArmSup_LatThigh" &&
+      armsup_latthighCheckbox.checked
+    ) {
+      if (
+        (!isNaN(armsuplatthighquantity) &&
+        armsuplatthighquantity > 0)
+      ) {
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "多軸"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "多軸"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "多軸"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "多軸"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "多軸"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "多軸"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "固定"
+        ) {
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+              armsuplatthighquantity
+          )} 元`;
+        }
+      }
+    }
+    //endregion
+
+    //endregion
+
+    //region --- 扶手支撐---
+    if (
+      armsupportsCheckbox.id === "Spex_ArmSupports" &&
+      armsupportsCheckbox.checked &&
+      !isNaN(armvalue) && armvalue > 0
+    ) {
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度可調") {
+        let armsupprice = ArmSupportsPad(
+          armpadOption,
+          Spex_Arm_Supports_Padprices
+        );
+        let armsupportprice =
+          armsupprice +
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1 *
+            armsuplatthighquantity;
+
+        SpexarmlatOrgprices.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1 *
+            armsuplatthighquantity
+        )} 元`;
+
+        SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          armsupportprice
+        )} 元`;
+      }
+
+      if (buckleOption.text === "快拆式" && armsupOption.text === "角度固定") {
+        let armsupprice = ArmSupportsPad(
+          armpadOption,
+          Spex_Arm_Supports_Padprices
+        );
+        let armsupportprice =
+          armsupprice +
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2 *
+            armsuplatthighquantity;
+
+        SpexarmlatOrgprices.textContent = `${formatPrice(
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2 *
+            armsuplatthighquantity
+        )} 元`;
+
+        SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          armsupportprice
+        )} 元`;
+      }
+
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度可調") {
+        let armsupprice = ArmSupportsPad(
+          armpadOption,
+          Spex_Arm_Supports_Padprices
+        );
+        let armsupportprice =
+          armsupprice +
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1 *
+            armsuplatthighquantity;
+
+        SpexarmlatOrgprices.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1 *
+            armsuplatthighquantity
+        )} 元`;
+
+        SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          armsupportprice
+        )} 元`;
+      }
+      if (buckleOption.text === "下擺式" && armsupOption.text === "角度固定") {
+        let armsupprice = ArmSupportsPad(
+          armpadOption,
+          Spex_Arm_Supports_Padprices
+        );
+        let armsupportprice =
+          armsupprice +
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2 *
+            armsuplatthighquantity;
+
+        SpexarmlatOrgprices.textContent = `${formatPrice(
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2 *
+            armsuplatthighquantity
+        )} 元`;
+
+        SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          armsupportprice
+        )} 元`;
+      }
+
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度可調") {
+        let armsupprice = ArmSupportsPad(
+          armpadOption,
+          Spex_Arm_Supports_Padprices
+        );
+        let armsupportprice =
+          armsupprice +
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1 *
+            armsuplatthighquantity;
+
+        SpexarmlatOrgprices.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1 *
+            armsuplatthighquantity
+        )} 元`;
+
+        SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          armsupportprice
+        )} 元`;
+      }
+      if (buckleOption.text === "固定式" && armsupOption.text === "角度固定") {
+        let armsupprice = ArmSupportsPad(
+          armpadOption,
+          Spex_Arm_Supports_Padprices
+        );
+        let armsupportprice =
+          armsupprice +
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2 *
+            armsuplatthighquantity;
+
+        SpexarmlatOrgprices.textContent = `${formatPrice(
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2 *
+            armsuplatthighquantity
+        )} 元`;
+
+        SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+        nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+          armsupportprice
+        )} 元`;
+      }
+      //endregion
+
+    //region --- 臀側支撐 ---
+      if (
+        lateralthighsupportsCheckbox.id === "Spex_LateralThighSupports" &&
+        lateralthighsupportsCheckbox.checked &&
+        !isNaN(lateralvalue) && lateralvalue > 0) {
+        if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+          let lateralthighsupportsprice =
+            latthighprice +
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1 *
+              armsuplatthighquantity;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            lateralthighsupportsprice
+          )} 元`;
+        }
+        if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+          let lateralthighsupportsprice =
+            latthighprice +
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2 *
+              armsuplatthighquantity;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            lateralthighsupportsprice
+          )} 元`;
+        }
+
+        if (buckleOption.text === "下擺式" && latthighOption.text === "多軸") {
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+          let lateralthighsupportsprice =
+            latthighprice +
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1 *
+              armsuplatthighquantity;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            lateralthighsupportsprice
+          )} 元`;
+        }
+        if (buckleOption.text === "下擺式" && latthighOption.text === "固定") {
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+          let lateralthighsupportsprice =
+            latthighprice +
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2 *
+              armsuplatthighquantity;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            lateralthighsupportsprice
+          )} 元`;
+        }
+        //endregion
+
+    //region --- 扶手臀撐 ---
+      } else if (
+        armsup_latthighCheckbox.id === "Spex_ArmSup_LatThigh" &&
+        armsup_latthighCheckbox.checked &&
+        (!isNaN(armvalue) && armvalue > 0) &&
+        (!isNaN(lateralvalue) && lateralvalue > 0)
+      ) {
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "多軸"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "固定"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "多軸"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "快拆式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "固定"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "多軸"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "固定"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+              armsuplatthighquantity
+          )} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "多軸"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "下擺式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "固定"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "多軸"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度可調" &&
+          latthighOption.text === "固定"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "多軸"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+        if (
+          buckleOption.text === "固定式" &&
+          armsupOption.text === "角度固定" &&
+          latthighOption.text === "固定"
+        ) {
+          let armsupprice = ArmSupportsPad(
+            armpadOption,
+            Spex_Arm_Supports_Padprices
+          );
+
+          let latthighprice = LateralThighPad(
+            lateralpadOption,
+            Spex_Lateral_Thigh_Supports_Padprices
+          );
+
+          let armsup_latthighsprice =
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+              armsuplatthighquantity +
+            armsupprice +
+            latthighprice;
+
+          SpexarmlatOrgprices.textContent = `${formatPrice(
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+              armsuplatthighquantity
+          )} 元`;
+
+          SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
+
+          SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
+
+          nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
+            armsup_latthighsprice
+          )} 元`;
+        }
+      }
+    }
+    //endregion
+  });
+  //endregion
+
+  //region --- 監聽扣具 ---
+  buckle.addEventListener("change", function () {
+    let armsuplatthighcount = document.getElementById(
+      "Spexarmsuplatthighcount"
+    );
+    let armsuplatthighquantity = parseInt(armsuplatthighcount.value) || 0; // 轉成數字（預設為 0）
+
+    let buckleOption = buckle.options[buckle.selectedIndex];
+    let armsupOption = armsup.options[armsup.selectedIndex];
+    let latthighOption = latthigh.options[latthigh.selectedIndex];
+    let armpadOption = armpad.options[armpad.selectedIndex];
+    let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
+    let armvalue = parseInt(armpadInput.value);
+    let lateralvalue = parseInt(lateralpadInput.value);
 
     //region --- 扶手支撐 ---
     if (
@@ -2194,34 +3112,40 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       if (buckleOption.text === "快拆式" && armsupOption.text === "角度可調") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "快拆式" && armsupOption.text === "角度固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
 
       if (buckleOption.text === "下擺式" && armsupOption.text === "角度可調") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "下擺式" && armsupOption.text === "角度固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
 
       if (buckleOption.text === "固定式" && armsupOption.text === "角度可調") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "固定式" && armsupOption.text === "角度固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       //endregion
@@ -2233,23 +3157,27 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
 
       if (buckleOption.text === "下擺式" && latthighOption.text === "多軸") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "下擺式" && latthighOption.text === "固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       //endregion
@@ -2265,7 +3193,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2274,7 +3203,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2283,7 +3213,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2292,7 +3223,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
 
@@ -2302,7 +3234,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2311,7 +3244,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2320,7 +3254,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2329,7 +3264,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
 
@@ -2339,7 +3275,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2348,7 +3285,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2357,7 +3295,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2366,7 +3305,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
     }
@@ -2376,6 +3316,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //region --- 監聽扶手角度 ---
   armsup.addEventListener("change", function () {
+    let armsuplatthighcount = document.getElementById(
+      "Spexarmsuplatthighcount"
+    );
+    let armsuplatthighquantity = parseInt(armsuplatthighcount.value) || 0; // 轉成數字（預設為 0）
     let buckleOption = buckle.options[buckle.selectedIndex];
     let armsupOption = armsup.options[armsup.selectedIndex];
     let latthighOption = latthigh.options[latthigh.selectedIndex];
@@ -2387,34 +3331,40 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       if (buckleOption.text === "快拆式" && armsupOption.text === "角度可調") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "快拆式" && armsupOption.text === "角度固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2
+          Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
 
       if (buckleOption.text === "下擺式" && armsupOption.text === "角度可調") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "下擺式" && armsupOption.text === "角度固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2
+          Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
 
       if (buckleOption.text === "固定式" && armsupOption.text === "角度可調") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "固定式" && armsupOption.text === "角度固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2
+          Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       //endregion
@@ -2430,7 +3380,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2439,7 +3390,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2448,7 +3400,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2457,7 +3410,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
 
@@ -2467,7 +3421,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2476,7 +3431,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2485,7 +3441,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2494,7 +3451,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
 
@@ -2504,7 +3462,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2513,7 +3472,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2522,7 +3482,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2531,7 +3492,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
     }
@@ -2541,6 +3503,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //region --- 監聽腿墊調整 ---
   latthigh.addEventListener("change", function () {
+    let armsuplatthighcount = document.getElementById(
+      "Spexarmsuplatthighcount"
+    );
+    let armsuplatthighquantity = parseInt(armsuplatthighcount.value) || 0; // 轉成數字（預設為 0）
     let buckleOption = buckle.options[buckle.selectedIndex];
     let armsupOption = armsup.options[armsup.selectedIndex];
     let latthighOption = latthigh.options[latthigh.selectedIndex];
@@ -2552,23 +3518,27 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       if (buckleOption.text === "快拆式" && latthighOption.text === "多軸") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "快拆式" && latthighOption.text === "固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2
+          Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
 
       if (buckleOption.text === "下擺式" && latthighOption.text === "多軸") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (buckleOption.text === "下擺式" && latthighOption.text === "固定") {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2
+          Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       //endregion
@@ -2584,7 +3554,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2593,7 +3564,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2602,7 +3574,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2611,7 +3584,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+          Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
 
@@ -2621,7 +3595,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2630,7 +3605,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2639,7 +3615,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2648,7 +3625,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+          Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
 
@@ -2658,7 +3636,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2667,7 +3646,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2676,7 +3656,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "多軸"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+            armsuplatthighquantity
         )} 元`;
       }
       if (
@@ -2685,7 +3666,8 @@ document.addEventListener("DOMContentLoaded", function () {
         latthighOption.text === "固定"
       ) {
         nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
-          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+          Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+            armsuplatthighquantity
         )} 元`;
       }
     }
@@ -2697,6 +3679,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let armpadInput = document.getElementById("armpadcount");
 
   armpadInput.addEventListener("input", function () {
+    let armsuplatthighcount = document.getElementById(
+      "Spexarmsuplatthighcount"
+    );
+    let armsuplatthighquantity = parseInt(armsuplatthighcount.value) || 0; // 轉成數字（預設為 0）
     let buckleOption = buckle.options[buckle.selectedIndex];
     let armsupOption = armsup.options[armsup.selectedIndex];
     let latthighOption = latthigh.options[latthigh.selectedIndex];
@@ -2704,7 +3690,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
     let armvalue = parseInt(armpadInput.value);
 
-    if (!isNaN(armvalue) && armvalue > 0) {
+    if (!isNaN(armvalue)) {
       //region --- 扶手支撐---
       if (
         armsupportsCheckbox.id === "Spex_ArmSupports" &&
@@ -2720,10 +3706,12 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let armsupportprice =
             armsupprice +
-            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1;
+            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1 *
+              armsuplatthighquantity;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1
+            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2743,10 +3731,12 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let armsupportprice =
             armsupprice +
-            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2;
+            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2 *
+              armsuplatthighquantity;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2
+            Spex_Arm_Supports_Quickprices.Spex_Arm_Supports_Quickprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2766,10 +3756,12 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let armsupportprice =
             armsupprice +
-            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1;
+            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1 *
+              armsuplatthighquantity;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1
+            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2788,10 +3780,12 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let armsupportprice =
             armsupprice +
-            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2;
+            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2 *
+              armsuplatthighquantity;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2
+            Spex_Arm_Supports_FlipDownprices.Spex_Arm_Supports_FlipDownprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2811,10 +3805,12 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let armsupportprice =
             armsupprice +
-            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1;
+            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1 *
+              armsuplatthighquantity;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1
+            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2833,10 +3829,12 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let armsupportprice =
             armsupprice +
-            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2;
+            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2 *
+              armsuplatthighquantity;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2
+            Spex_Arm_Supports_Fixedprices.Spex_Arm_Supports_Fixedprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2847,7 +3845,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         //endregion
 
-        //region --- 扶手臀撐 ---
+      //region --- 扶手臀撐 ---
       } else if (
         armsup_latthighCheckbox.id === "Spex_ArmSup_LatThigh" &&
         armsup_latthighCheckbox.checked
@@ -2868,12 +3866,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2900,12 +3900,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2932,12 +3934,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2964,12 +3968,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -2997,12 +4003,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3029,12 +4037,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           nowprice_SpexArmSupLatThigh.textContent = `${formatPrice(
@@ -3057,12 +4067,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3089,12 +4101,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3122,12 +4136,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3154,12 +4170,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3186,12 +4204,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3218,12 +4238,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3244,6 +4266,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let lateralpadInput = document.getElementById("lateralpadcount");
 
   lateralpadInput.addEventListener("input", function () {
+    let armsuplatthighcount = document.getElementById(
+      "Spexarmsuplatthighcount"
+    );
+    let armsuplatthighquantity = parseInt(armsuplatthighcount.value) || 0; // 轉成數字（預設為 0）
     let buckleOption = buckle.options[buckle.selectedIndex];
     let armsupOption = armsup.options[armsup.selectedIndex];
     let latthighOption = latthigh.options[latthigh.selectedIndex];
@@ -3251,7 +4277,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let lateralpadOption = lateralpad.options[lateralpad.selectedIndex];
     let lateralvalue = parseInt(lateralpadInput.value);
 
-    if (!isNaN(lateralvalue) && lateralvalue > 0) {
+    if (!isNaN(lateralvalue)) {
       //region --- 臀側支撐 ---
       if (
         lateralthighsupportsCheckbox.id === "Spex_LateralThighSupports" &&
@@ -3264,12 +4290,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let lateralthighsupportsprice =
             latthighprice +
-            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1;
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1 *
+              armsuplatthighquantity;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
@@ -3285,12 +4313,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let lateralthighsupportsprice =
             latthighprice +
-            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2;
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2 *
+              armsuplatthighquantity;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2
+            Spex_Lateral_Thigh_Supports_Quickprices.Spex_Lateral_Thigh_Supports_Quickprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
@@ -3307,12 +4337,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let lateralthighsupportsprice =
             latthighprice +
-            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1;
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1 *
+              armsuplatthighquantity;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
@@ -3328,12 +4360,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           let lateralthighsupportsprice =
             latthighprice +
-            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2;
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2 *
+              armsuplatthighquantity;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2
+            Spex_Lateral_Thigh_Supports_FlipDownprices.Spex_Lateral_Thigh_Supports_FlipDownprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexlatOrgprices.textContent = `${formatPrice(latthighprice)} 元`;
@@ -3365,12 +4399,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3397,12 +4433,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3429,12 +4467,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices3 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3461,12 +4501,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 +
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4
+            Spex_ArmSup_LatThigh_Quickprices.Spex_ArmSup_LatThigh_Quickprices4 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3494,12 +4536,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3526,12 +4570,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3558,12 +4604,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices3 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3590,12 +4638,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 +
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4
+            Spex_ArmSup_LatThigh_FlipDownprices.Spex_ArmSup_LatThigh_FlipDownprices4 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3623,12 +4673,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices1 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3655,12 +4707,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices2 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3687,12 +4741,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices3 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
@@ -3719,12 +4775,14 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           let armsup_latthighsprice =
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 +
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+              armsuplatthighquantity +
             armsupprice +
             latthighprice;
 
           SpexarmlatOrgprices.textContent = `${formatPrice(
-            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4
+            Spex_ArmSup_LatThigh_Fixedprices.Spex_ArmSup_LatThigh_Fixedprices4 *
+              armsuplatthighquantity
           )} 元`;
 
           SpexarmOrgprices.textContent = `${formatPrice(armsupprice)} 元`;
