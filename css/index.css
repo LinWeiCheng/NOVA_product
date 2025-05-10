@@ -2662,7 +2662,8 @@ body {
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 65%;
+  margin: 0 2px 0 0;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup {
   display: flex;
@@ -2689,12 +2690,12 @@ body {
   width: 40%;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialcountgroup label {
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 4px 0 0;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialcountgroup #latertrunkaxialcount {
-  font-size: 16px;
-  width: 15%;
+  font-size: 18px;
+  width: 12%;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -2742,11 +2743,11 @@ body {
   width: 15%;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardcountgroup label {
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 4px 0 0;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardcountgroup #latertrunkstandardcount {
-  font-size: 16px;
+  font-size: 18px;
   width: 30%;
   text-align: center;
   border: 1px solid #ccc;
@@ -2773,7 +2774,7 @@ body {
   border: 1px solid #000000;
   border-radius: 8px;
   margin: 1px 1px 1px 1px;
-  width: 40%;
+  width: 45%;
   text-align: center;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunk_offsetsize .latertrunk_offsetsizetable {
@@ -2789,15 +2790,15 @@ body {
   justify-content: center;
   border: 1px solid #000000;
   border-radius: 8px;
-  margin: 1px 2px 1px 1px;
+  margin: 1px 0px 1px 1px;
   width: 15%;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetcountgroup label {
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 4px 0 0;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetcountgroup #latertrunkoffsetcount {
-  font-size: 16px;
+  font-size: 18px;
   width: 30%;
   text-align: center;
   border: 1px solid #ccc;
@@ -2805,89 +2806,120 @@ body {
   color: #333;
   margin: 2px 0 0 0;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadtype {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadtypegroup {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid #000000;
   border-radius: 8px;
+  font-size: 16px;
   width: 15%;
-  font-size: 18px;
-  margin: 4px 1px 1px 2px;
+  margin: 2px 0px 1px 1px;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadtype #STANDARDpad {
-  margin: 14px 14px 12px 14px;
-  display: flex;
-  flex-direction: row;
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadtypegroup #Straightpad {
+  margin: 0px 23px 10px -9px;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadtype #COMFYpad {
-  display: flex;
-  flex-direction: row;
-  margin: 6px 34px 0 0;
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadtypegroup #Curvedpad {
+  margin: 12px 12px 10px 12px;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadtypegroup #Broadpad {
+  margin: 11px 21px 5px -10px;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid #000000;
   border-radius: 8px;
-  width: 25%;
-  margin: 3px 2px 1px 1px;
+  width: 23%;
+  margin: 2px 2px 1px 1px;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadthinknessgroup {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 6px;
+  justify-content: center;
+  font-size: 14px;
+  margin: 4px 1px 20px 2px;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadthinknessgroup label {
+  font-size: 16px;
+  margin: 0 4px 0 0;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadthinknessgroup .latertrunkpadtype {
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
   justify-content: center;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH .latertrunkpadsize_Width {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadsize_WH {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+  width: 90%;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadsize_WH .latertrunkpadsize_Width {
   padding: 3px;
   margin: 2px;
   font-size: 16px;
   border-radius: 8px;
   text-align: center;
   /* 設定文字置中 */
-  width: 40%;
+  width: 50%;
   /* 填滿寬度，讓選項顯示在中間 */
   display: inline-block;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH .latertrunkpadsize_Width .latertrunkpadsize_Width option {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadsize_WH .latertrunkpadsize_Width .latertrunkpadsize_Width option {
   text-align: center;
   /* 讓選項中的文字置中 */
   background-color: #e0e0e0;
   color: #000000;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH div {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadsize_WH div {
   font-size: 16px;
   font-weight: 800;
   margin: 4px;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH .latertrunkpadsize_Heigh {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadsize_WH .latertrunkpadsize_Heigh {
   padding: 3px;
   margin: 2px;
   font-size: 16px;
   border-radius: 8px;
   text-align: center;
   /* 設定文字置中 */
-  width: 40%;
+  width: 50%;
   /* 填滿寬度，讓選項顯示在中間 */
   display: inline-block;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH .latertrunkpadsize_Heigh .latertrunkpadsize_Heigh option {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadsize_WH .latertrunkpadsize_Heigh .latertrunkpadsize_Heigh option {
   text-align: center;
   /* 讓選項中的文字置中 */
   background-color: #e0e0e0;
   color: #000000;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH label {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadcoungroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0 0 0;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadcoungroup label {
   font-size: 16px;
   margin: 0px 0px 0 6px;
-  width: 20%;
+  width: 25%;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WH #latertrunkpadcount {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .latertrunkpadsizegroup .latertrunkpadsize_WHgroup .latertrunkpadcoungroup #latertrunkpadcount {
   font-size: 16px;
   width: 15%;
   text-align: center;
@@ -2920,7 +2952,30 @@ body {
   margin: 1px 2px 1px 2px;
   width: 40%;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypegroup {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularcountgroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  width: 20%;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularcountgroup label {
+  font-size: 16px;
+  margin: 0px 6px 0px 0px;
+  width: 25%;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularcountgroup #latertrunk_axialbiangularcount {
+  font-size: 18px;
+  width: 20%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  margin: 2px 2px 0 0;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2932,39 +2987,46 @@ body {
   width: 20%;
   padding: 2px;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypegroup #STANDARDpad {
-  margin: 12px 12px 10px 12px;
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialbiangularthicknessgroup {
   display: flex;
   flex-direction: row;
-}
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypegroup #COMFYpad {
-  display: flex;
-  flex-direction: row;
-  margin: 3px 35px 0 0;
-}
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularthicknessgroup {
-  display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #000000;
+  font-size: 14px;
+  margin: 4px 1px 20px 2px;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialbiangularthicknessgroup label {
+  font-size: 16px;
+  margin: 0 4px 0 0;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialbiangularthicknessgroup .latertrunkaxialbiangular {
+  font-size: 16px;
   border-radius: 8px;
-  margin: 1px 2px 1px 2px;
-  width: 15%;
-  padding: 3px;
   text-align: center;
-  /* 設定文字置中 */
+  width: 11vh;
 }
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularthicknessgroup label {
-  margin: 0 12px 0 0;
-}
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularthicknessgroup .latertrunkaxialbiangular_thickness {
-  margin: 4px 0 0 0;
-}
-.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularthicknessgroup .latertrunk_axialbiangularthicknessgroup option {
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialbiangularthicknessgroup .latertrunkaxialbiangular option {
   text-align: center;
   /* 讓選項中的文字置中 */
   background-color: #e0e0e0;
   color: #000000;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialpadthinknessgroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin: 4px 1px 20px 2px;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialpadthinknessgroup label {
+  font-size: 16px;
+  margin: 0 4px 0 0;
+}
+.Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialpadthinknessgroup .latertrunk_axialpadtype {
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
 }
 .Spex_latertrunksupports .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularsizegroup {
   display: flex;

@@ -3070,7 +3070,8 @@ body {
           .laterHardwaregroup {
             display: flex;
             flex-direction: column;
-            width: 60%;
+            width: 65%;
+            margin: 0 2px 0 0;
 
             .LaterTrunk_Axialgroup {
               display: flex;
@@ -3099,13 +3100,13 @@ body {
                 width: 40%;
 
                 label {
-                  font-size: 16px;
+                  font-size: 18px;
                   margin: 0 4px 0 0;
                 }
 
                 #latertrunkaxialcount {
-                  font-size: 16px;
-                  width: 15%;
+                  font-size: 18px;
+                  width: 12%;
                   text-align: center;
                   border: 1px solid #ccc;
                   border-radius: 5px;
@@ -3161,12 +3162,12 @@ body {
                 width: 15%;
 
                 label {
-                  font-size: 16px;
+                  font-size: 18px;
                   margin: 0 4px 0 0;
                 }
 
                 #latertrunkstandardcount {
-                  font-size: 16px;
+                  font-size: 18px;
                   width: 30%;
                   text-align: center;
                   border: 1px solid #ccc;
@@ -3198,7 +3199,7 @@ body {
                 border: 1px solid #000000;
                 border-radius: 8px;
                 margin: 1px 1px 1px 1px;
-                width: 40%;
+                width: 45%;
                 text-align: center;
 
                 .latertrunk_offsetsizetable {
@@ -3217,16 +3218,16 @@ body {
                 justify-content: center;
                 border: 1px solid #000000;
                 border-radius: 8px;
-                margin: 1px 2px 1px 1px;
+                margin: 1px 0px 1px 1px;
                 width: 15%;
 
                 label {
-                  font-size: 16px;
+                  font-size: 18px;
                   margin: 0 4px 0 0;
                 }
 
                 #latertrunkoffsetcount {
-                  font-size: 16px;
+                  font-size: 18px;
                   width: 30%;
                   text-align: center;
                   border: 1px solid #ccc;
@@ -3238,105 +3239,144 @@ body {
             }
           }
 
-          .latertrunkpadtype {
+
+          .latertrunkpadtypegroup {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             border: 1px solid #000000;
             border-radius: 8px;
+            font-size: 16px;
             width: 15%;
-            font-size: 18px;
-            margin: 4px 1px 1px 2px;
+            margin: 2px 0px 1px 1px;
 
-            #STANDARDpad {
-              margin: 14px 14px 12px 14px;
-              display: flex;
-              flex-direction: row;
+            #Straightpad {
+              margin: 0px 23px 10px -9px;
             }
 
-            #COMFYpad {
-              display: flex;
-              flex-direction: row;
-              margin: 6px 34px 0 0
+            #Curvedpad {
+              margin: 12px 12px 10px 12px;
+            }
+
+            #Broadpad {
+              margin: 11px 21px 5px -10px;
+              ;
             }
           }
 
           .latertrunkpadsizegroup {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             border: 1px solid #000000;
             border-radius: 8px;
-            width: 25%;
-            margin: 3px 2px 1px 1px;
+            width: 23%;
+            margin: 2px 2px 1px 1px;
 
-            .latertrunkpadsize_WH {
+            .latertrunkpadthinknessgroup {
               display: flex;
               flex-direction: row;
               align-items: center;
-              border-radius: 6px;
               justify-content: center;
-
-              .latertrunkpadsize_Width {
-                padding: 3px;
-                margin: 2px;
-                font-size: 16px;
-                border-radius: 8px;
-                text-align: center;
-                /* 設定文字置中 */
-                width: 40%;
-                /* 填滿寬度，讓選項顯示在中間 */
-                display: inline-block;
-
-                .latertrunkpadsize_Width option {
-                  text-align: center;
-                  /* 讓選項中的文字置中 */
-                  background-color: #e0e0e0;
-                  color: #000000;
-                }
-              }
-
-              div {
-                font-size: 16px;
-                font-weight: 800;
-                margin: 4px;
-              }
-
-              .latertrunkpadsize_Heigh {
-                padding: 3px;
-                margin: 2px;
-                font-size: 16px;
-                border-radius: 8px;
-                text-align: center;
-                /* 設定文字置中 */
-                width: 40%;
-                /* 填滿寬度，讓選項顯示在中間 */
-                display: inline-block;
-
-                .latertrunkpadsize_Heigh option {
-                  text-align: center;
-                  /* 讓選項中的文字置中 */
-                  background-color: #e0e0e0;
-                  color: #000000;
-                }
-              }
+              font-size: 14px;
+              margin: 4px 1px 20px 2px;
 
               label {
                 font-size: 16px;
-                margin: 0px 0px 0 6px;
-                width: 20%;
+                margin: 0 4px 0 0;
               }
 
-              #latertrunkpadcount {
+              .latertrunkpadtype {
                 font-size: 16px;
-                width: 15%;
+                border-radius: 8px;
                 text-align: center;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                color: #333;
-                margin: 2px 2px 0 0;
+              }
+            }
+
+            .latertrunkpadsize_WHgroup {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              border-radius: 8px;
+              justify-content: center;
+
+              .latertrunkpadsize_WH {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border-radius: 8px;
+                justify-content: center;
+                width: 90%;
+
+                .latertrunkpadsize_Width {
+                  padding: 3px;
+                  margin: 2px;
+                  font-size: 16px;
+                  border-radius: 8px;
+                  text-align: center;
+                  /* 設定文字置中 */
+                  width: 50%;
+                  /* 填滿寬度，讓選項顯示在中間 */
+                  display: inline-block;
+
+                  .latertrunkpadsize_Width option {
+                    text-align: center;
+                    /* 讓選項中的文字置中 */
+                    background-color: #e0e0e0;
+                    color: #000000;
+                  }
+                }
+
+                div {
+                  font-size: 16px;
+                  font-weight: 800;
+                  margin: 4px;
+                }
+
+                .latertrunkpadsize_Heigh {
+                  padding: 3px;
+                  margin: 2px;
+                  font-size: 16px;
+                  border-radius: 8px;
+                  text-align: center;
+                  /* 設定文字置中 */
+                  width: 50%;
+                  /* 填滿寬度，讓選項顯示在中間 */
+                  display: inline-block;
+
+                  .latertrunkpadsize_Heigh option {
+                    text-align: center;
+                    /* 讓選項中的文字置中 */
+                    background-color: #e0e0e0;
+                    color: #000000;
+                  }
+                }
+              }
+
+              .latertrunkpadcoungroup {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 16px 0 0 0;
+
+                label {
+                  font-size: 16px;
+                  margin: 0px 0px 0 6px;
+                  width: 25%;
+                }
+
+                #latertrunkpadcount {
+                  font-size: 16px;
+                  width: 15%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 2px 2px 0 0;
+                }
               }
             }
           }
@@ -3370,7 +3410,33 @@ body {
             width: 40%;
           }
 
-          .latertrunk_axialbiangulartypegroup {
+          .latertrunk_axialbiangularcountgroup {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            width: 20%;
+
+            label {
+              font-size: 16px;
+              margin: 0px 6px 0px 0px;
+              width: 25%;
+            }
+
+            #latertrunk_axialbiangularcount {
+              font-size: 18px;
+              width: 20%;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              color: #333;
+              margin: 2px 2px 0 0;
+            }
+          }
+
+          .latertrunk_axialbiangulartypethicknessgroup {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -3382,44 +3448,52 @@ body {
             width: 20%;
             padding: 2px;
 
-            #STANDARDpad {
-              margin: 12px 12px 10px 12px;
+            .latertrunk_axialbiangularthicknessgroup {
               display: flex;
               flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              font-size: 14px;
+              margin: 4px 1px 20px 2px;
+
+              label {
+                font-size: 16px;
+                margin: 0 4px 0 0;
+              }
+
+              .latertrunkaxialbiangular {
+                font-size: 16px;
+                border-radius: 8px;
+                text-align: center;
+                width: 11vh;
+              }
+
+              .latertrunkaxialbiangular option {
+                text-align: center;
+                /* 讓選項中的文字置中 */
+                background-color: #e0e0e0;
+                color: #000000;
+              }
             }
 
-            #COMFYpad {
+            .latertrunk_axialpadthinknessgroup {
               display: flex;
               flex-direction: row;
-              margin: 3px 35px 0 0
-            }
-          }
+              align-items: center;
+              justify-content: center;
+              font-size: 14px;
+              margin: 4px 1px 20px 2px;
 
-          .latertrunk_axialbiangularthicknessgroup {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #000000;
-            border-radius: 8px;
-            margin: 1px 2px 1px 2px;
-            width: 15%;
-            padding: 3px;
-            text-align: center;
-            /* 設定文字置中 */
+              label {
+                font-size: 16px;
+                margin: 0 4px 0 0;
+              }
 
-            label {
-              margin: 0 12px 0 0;
-            }
-
-            .latertrunkaxialbiangular_thickness {
-              margin: 4px 0 0 0;
-            }
-
-            .latertrunk_axialbiangularthicknessgroup option {
-              text-align: center;
-              /* 讓選項中的文字置中 */
-              background-color: #e0e0e0;
-              color: #000000;
+              .latertrunk_axialpadtype {
+                font-size: 16px;
+                border-radius: 8px;
+                text-align: center;
+              }
             }
           }
 
