@@ -4406,7 +4406,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let DropMountSelect = document.querySelector(".Spexdropmount_size");
   DropMountSelect.disabled = true; // 禁用
 });
-
 //endregion
 
 //endregion
@@ -4625,5 +4624,72 @@ Spex_latertrunksupports.addEventListener("click", function (event) {
   }
 });
 //endregion
+
+//region --- 可外撥側支撐表布的選項 ---
+let SpexLaterTrunkPadTypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "STANDARD" },
+  { value: "option3", text: "COMFY" }
+];
+//endregion
+
+//region --- 可外撥側支撐狹長型擋墊墊寬的選項 ---
+let SpexLaterTrunklStraightPadSizeWidthOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "85mm" },
+  { value: "option3", text: "95mm" },
+  { value: "option4", text: "95mm" },
+  { value: "option5", text: "115mm" },
+  { value: "option6", text: "115mm" }
+];
+//endregion
+
+//region --- 可外撥側支撐狹長型擋墊墊高的選項 ---
+let SpexLaterTrunklStraightPadSizeHeighOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "115mm" },
+  { value: "option3", text: "145mm" },
+  { value: "option4", text: "180mm" },
+  { value: "option5", text: "210mm" },
+  { value: "option6", text: "240mm" }
+];
+//endregion
+
+
+
+
+function DropMountSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+
+// let Spex_HardwareDropMount = document.querySelector(
+//   "#Spex_Hardware_Drop_Mount"
+// );
+
+// Spex_HardwareDropMount.addEventListener("change", () => {
+//   let DropMountSelect = document.querySelector(".Spexdropmount_size");
+//   if (Spex_HardwareDropMount.checked) {
+//     DropMountSelect.disabled = false; // 啟用
+//     DropMountSelectOptions(DropMountSelect, SpexHardwareDropMountOptions);
+//   } else {
+//     DropMountSelect.disabled = true; // 禁用
+//   }
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   let DropMountSelect = document.querySelector(".Spexdropmount_size");
+//   DropMountSelect.disabled = true; // 禁用
+// });
+//endregion
+
 
 //endregion
