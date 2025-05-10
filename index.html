@@ -909,15 +909,15 @@
                                     </div>
                                     <div class="Spexarmsuplatthigh_ArmSupLatThighgroup">
                                         <select class="Spexarmsuplatthigh_bucklesel">
-                                            <option value="option1" selected>扣具</option>                                         
+                                            <option value="option1" selected>扣具</option>
                                         </select>
-                                    <!-- </div> -->
-                                    <!-- <div class="Spexarmsuplatthigh_armsupgroup"> -->
+                                        <!-- </div> -->
+                                        <!-- <div class="Spexarmsuplatthigh_armsupgroup"> -->
                                         <select class="Spexarmsuplatthigh_armsupsel">
                                             <option value="option1" selected>扶手角度</option>
                                         </select>
-                                    <!-- </div> -->
-                                    <!-- <div class="Spexarmsuplatthigh_latthighgroup"> -->
+                                        <!-- </div> -->
+                                        <!-- <div class="Spexarmsuplatthigh_latthighgroup"> -->
                                         <select class="Spexarmsuplatthigh_latthighsel">
                                             <option value="option1" selected>腿墊調整</option>
                                         </select>
@@ -1292,29 +1292,46 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="latertrunkpadtype">
-                                                <div style="display: flex;flex-direction: row;align-items: center;">
-                                                    <input type="checkbox" id="STANDARDpad">
-                                                    <div>STANDARD</div>
+                                            <div class="latertrunkpadtypegroup">
+                                                <div class="PadStraight">
+                                                    <input type="checkbox" id="Straightpad">狹長型
                                                 </div>
-                                                <div style="display: flex;flex-direction: row;align-items: center;">
-                                                    <input type="checkbox" id="COMFYpad">
-                                                    <div>COMFY</div>
+                                                <div class="PadCurved">
+                                                    <input type="checkbox" id="Curvedpad">狹長微彎形
+                                                </div>
+                                                <div class="PadBroad">
+                                                    <input type="checkbox" id="Broadpad">寬短型
                                                 </div>
                                             </div>
                                             <div class="latertrunkpadsizegroup">
-                                                <div class="latertrunkpadsize_WH">
-                                                    <select class="latertrunkpadsize_Width">
-                                                        <option value="option1" selected>墊寬</option> <!-- 設定此選項為預設選中 -->
+                                                <div class="latertrunkpadthinknessgroup">
+                                                    <label for="latertrunkpadtype">表布:</label>
+                                                    <select class="latertrunkpadtype">
+                                                        <option value="option1" selected>請選擇</option>
+                                                        <option value="option2">STANDARD</option>
+                                                        <option value="option3">COMFY</option>
+                                                        <!-- 設定此選項為預設選中 -->
                                                     </select>
-                                                    <div> X </div>
-                                                    <select class="latertrunkpadsize_Heigh">
-                                                        <option value="optionA" selected>墊高</option> <!-- 設定此選項為預設選中 -->
-                                                    </select>
-                                                    <label for="latertrunkpadcount">數量:</label>
-                                                    <input type="text" id="latertrunkpadcount" name="latertrunkpadcount"
-                                                        inputmode="numeric" pattern="[0-9]*" placeholder=""
-                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                </div>
+                                                <div class="latertrunkpadsize_WHgroup">
+                                                    <div class="latertrunkpadsize_WH">
+                                                        <select class="latertrunkpadsize_Width">
+                                                            <option value="option1" selected>墊寬</option>
+                                                            <!-- 設定此選項為預設選中 -->
+                                                        </select>
+                                                        <div> X </div>
+                                                        <select class="latertrunkpadsize_Heigh">
+                                                            <option value="optionA" selected>墊高</option>
+                                                            <!-- 設定此選項為預設選中 -->
+                                                        </select>
+                                                    </div>
+                                                    <div class="latertrunkpadcoungroup">
+                                                        <label for="latertrunkpadcount">數量:</label>
+                                                        <input type="text" id="latertrunkpadcount"
+                                                            name="latertrunkpadcount" inputmode="numeric"
+                                                            pattern="[0-9]*" placeholder=""
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1356,21 +1373,33 @@
                                                     data-price="" data-spexgroup="SpexLaterTrunkSupports"
                                                     data-note="">Spex 雙曲面多軸可外撥側支撐扣具
                                             </div>
-                                            <div class="latertrunk_axialbiangulartypegroup">
-                                                <div style="display: flex;flex-direction: row;align-items: center;">
-                                                    <input type="checkbox" id="STANDARDpad">
-                                                    <div>STANDARD</div>
-                                                </div>
-                                                <div style="display: flex;flex-direction: row;align-items: center;">
-                                                    <input type="checkbox" id="COMFYpad">
-                                                    <div>COMFY</div>
-                                                </div>
+                                            <div class="latertrunk_axialbiangularcountgroup">
+                                                <label for="latertrunk_axialbiangularcount">數量:</label>
+                                                <input type="text" id="latertrunk_axialbiangularcount"
+                                                    name="latertrunk_axialbiangularcount" inputmode="numeric"
+                                                    pattern="[0-9]*" placeholder=""
+                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+
                                             </div>
-                                            <div class="latertrunk_axialbiangularthicknessgroup">
-                                                <label for="latertrunkaxialbiangular">厚度:</label>
-                                                <select class="latertrunkaxialbiangular_thickness">
-                                                    <option value="option1" selected>請選擇</option> <!-- 設定此選項為預設選中 -->
-                                                </select>
+                                            <div class="latertrunk_axialbiangulartypethicknessgroup">
+                                                <div class="latertrunk_axialbiangularthicknessgroup">
+                                                    <label for="latertrunkaxialbiangular">厚度:</label>
+                                                    <select class="latertrunkaxialbiangular">
+                                                        <option value="option1" selected>請選擇</option>
+                                                        <option value="option2">12mm</option>
+                                                        <option value="option3">24mm</option>
+                                                        <!-- 設定此選項為預設選中 -->
+                                                    </select>
+                                                </div>
+                                                <div class="latertrunk_axialpadthinknessgroup">
+                                                    <label for="latertrunk_axialpadtype">表布:</label>
+                                                    <select class="latertrunk_axialpadtype">
+                                                        <option value="option1" selected>請選擇</option>
+                                                        <option value="option2">STANDARD</option>
+                                                        <option value="option3">COMFY</option>
+                                                        <!-- 設定此選項為預設選中 -->
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="latertrunk_axialbiangularsizegroup">
                                                 <select class="latertrunk_axialbiangular_Width">
