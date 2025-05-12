@@ -1217,6 +1217,43 @@
                                                             pattern="[0-9]*" placeholder=""
                                                             oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                                     </div>
+                                                    <div class="latertrunkaxialpadthinknessgroup">
+                                                        <div class="latertrunkaxialpadgroup">
+                                                            <label for="latertrunkaxialpadtype">擋墊:</label>
+                                                            <select class="latertrunkaxialpadtype">
+                                                                <option value="option1" selected>請選擇</option>
+                                                                <option value="option2">狹長型</option>
+                                                                <option value="option3">狹長微彎形</option>
+                                                                <option value="option4">寬短型</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="latertrunkaxialclothpadgroup">
+                                                            <label for="latertrunkaxialclothpadtype">表布:</label>
+                                                            <select class="latertrunkaxialclothpadtype">
+                                                                <option value="option1" selected>請選擇</option>
+                                                                <option value="option2">STANDARD</option>
+                                                                <option value="option3">COMFY</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="latertrunkaxialpadsizegroup">
+                                                        <div class="latertrunkaxialpadsize_WHgroup">
+                                                            <div class="latertrunkaxialpadsize_WH">
+                                                                <select class="latertrunkaxialpadsize_Width">
+                                                                    <option value="option1" selected>墊寬</option>
+                                                                </select>
+                                                                <div> X </div>
+                                                                <select class="latertrunkaxialpadsize_Heigh">
+                                                                    <option value="optionA" selected>墊高</option>
+                                                                </select>
+                                                                <label for="latertrunkaxialpadcount">數量:</label>
+                                                                <input type="text" id="latertrunkaxialpadcount"
+                                                                    name="latertrunkaxialpadcount" inputmode="numeric"
+                                                                    pattern="[0-9]*" placeholder=""
+                                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="LaterTrunk_Standardgroup">
                                                     <div class="Spexlatertrunksupports_title">
@@ -1240,7 +1277,7 @@
                                                                 <td>60mm</td>
                                                             </tr>
                                                             <tr>
-                                                                <td><input type="checkbox" id="standardsize1"> 205mm
+                                                                <td><input type="checkbox" id="standardsize2"> 205mm
                                                                 </td>
                                                                 <td>85mm</td>
                                                             </tr>
@@ -1252,6 +1289,43 @@
                                                             name="latertrunkstandardcount" inputmode="numeric"
                                                             pattern="[0-9]*" placeholder=""
                                                             oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    </div>
+                                                    <div class="latertrunkstandardpadthinknessgroup">
+                                                        <div class="latertrunkstandardpadgroup">
+                                                            <label for="latertrunkstandardpadtype">擋墊:</label>
+                                                            <select class="latertrunkstandardpadtype">
+                                                                <option value="option1" selected>請選擇</option>
+                                                                <option value="option2">狹長型</option>
+                                                                <option value="option3">狹長微彎形</option>
+                                                                <option value="option4">寬短型</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="latertrunkstandardclothpadgroup">
+                                                            <label for="latertrunkstandardclothpadtype">表布:</label>
+                                                            <select class="latertrunkstandardclothpadtype">
+                                                                <option value="option1" selected>請選擇</option>
+                                                                <option value="option2">STANDARD</option>
+                                                                <option value="option3">COMFY</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="latertrunkstandardpadsizegroup">
+                                                        <div class="latertrunkstandardpadsize_WHgroup">
+                                                            <div class="latertrunkstandardpadsize_WH">
+                                                                <select class="latertrunkstandardpadsize_Width">
+                                                                    <option value="option1" selected>墊寬</option>
+                                                                </select>
+                                                                <div> X </div>
+                                                                <select class="latertrunkstandardpadsize_Heigh">
+                                                                    <option value="optionA" selected>墊高</option>
+                                                                </select>
+                                                                <label for="latertrunkstandardpadcount">數量:</label>
+                                                                <input type="text" id="latertrunkstandardpadcount"
+                                                                    name="latertrunkstandardpadcount"
+                                                                    inputmode="numeric" pattern="[0-9]*" placeholder=""
+                                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="LaterTrunk_Offsetgroup">
@@ -1277,7 +1351,7 @@
                                                                 <td>20mm</td>
                                                             </tr>
                                                             <tr>
-                                                                <td><input type="checkbox" id="offsetsize1">205mm</td>
+                                                                <td><input type="checkbox" id="offsetsize2">205mm</td>
                                                                 <td>85mm</td>
                                                                 <td>40mm</td>
                                                             </tr>
@@ -1290,47 +1364,42 @@
                                                             pattern="[0-9]*" placeholder=""
                                                             oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="latertrunkpadtypegroup">
-                                                <div class="PadStraight">
-                                                    <input type="checkbox" id="Straightpad">狹長型
-                                                </div>
-                                                <div class="PadCurved">
-                                                    <input type="checkbox" id="Curvedpad">狹長微彎形
-                                                </div>
-                                                <div class="PadBroad">
-                                                    <input type="checkbox" id="Broadpad">寬短型
-                                                </div>
-                                            </div>
-                                            <div class="latertrunkpadsizegroup">
-                                                <div class="latertrunkpadthinknessgroup">
-                                                    <label for="latertrunkpadtype">表布:</label>
-                                                    <select class="latertrunkpadtype">
-                                                        <option value="option1" selected>請選擇</option>
-                                                        <option value="option2">STANDARD</option>
-                                                        <option value="option3">COMFY</option>
-                                                        <!-- 設定此選項為預設選中 -->
-                                                    </select>
-                                                </div>
-                                                <div class="latertrunkpadsize_WHgroup">
-                                                    <div class="latertrunkpadsize_WH">
-                                                        <select class="latertrunkpadsize_Width">
-                                                            <option value="option1" selected>墊寬</option>
-                                                            <!-- 設定此選項為預設選中 -->
-                                                        </select>
-                                                        <div> X </div>
-                                                        <select class="latertrunkpadsize_Heigh">
-                                                            <option value="optionA" selected>墊高</option>
-                                                            <!-- 設定此選項為預設選中 -->
-                                                        </select>
+                                                    <div class="latertrunkoffsetpadthinknessgroup">
+                                                        <div class="latertrunkoffsetpadgroup">
+                                                            <label for="latertrunkoffsetpadtype">擋墊:</label>
+                                                            <select class="latertrunkoffsetpadtype">
+                                                                <option value="option1" selected>請選擇</option>
+                                                                <option value="option2">狹長型</option>
+                                                                <option value="option3">狹長微彎形</option>
+                                                                <option value="option4">寬短型</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="latertrunkoffsetclothpadgroup">
+                                                            <label for="latertrunkoffsetclothpadtype">表布:</label>
+                                                            <select class="latertrunkoffsetclothpadtype">
+                                                                <option value="option1" selected>請選擇</option>
+                                                                <option value="option2">STANDARD</option>
+                                                                <option value="option3">COMFY</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                    <div class="latertrunkpadcoungroup">
-                                                        <label for="latertrunkpadcount">數量:</label>
-                                                        <input type="text" id="latertrunkpadcount"
-                                                            name="latertrunkpadcount" inputmode="numeric"
-                                                            pattern="[0-9]*" placeholder=""
-                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    <div class="latertrunkoffsetpadsizegroup">
+                                                        <div class="latertrunkoffsetpadsize_WHgroup">
+                                                            <div class="latertrunkoffsetpadsize_WH">
+                                                                <select class="latertrunkoffsetpadsize_Width">
+                                                                    <option value="option1" selected>墊寬</option>
+                                                                </select>
+                                                                <div> X </div>
+                                                                <select class="latertrunkoffsetpadsize_Heigh">
+                                                                    <option value="optionA" selected>墊高</option>
+                                                                </select>
+                                                                <label for="latertrunkoffsetpadcount">數量:</label>
+                                                                <input type="text" id="latertrunkoffsetpadcount"
+                                                                    name="latertrunkoffsetpadcount" inputmode="numeric"
+                                                                    pattern="[0-9]*" placeholder=""
+                                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1417,12 +1486,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="Spexarmsuplatthigh_bucklegroup">
-                                        <select class="Spexarmsuplatthigh_bucklesel">
-                                            <option value="option1" selected>扣具</option>
-
-                                        </select>
-                                    </div> -->
                                 </div>
                             </div>
                             <div class="pricecontent">
