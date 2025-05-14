@@ -4785,6 +4785,78 @@ let SpexLaterTrunklComfyBroadPadSizeHeighOptions = [
 ];
 //endregion
 
+//region --- 雙曲面側支撐12mm厚度STANDARD擋墊墊寬的選項 ---
+let SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "165mm" },
+  { value: "option3", text: "215mm" },
+  { value: "option4", text: "265mm" },
+];
+//endregion
+
+//region --- 雙曲面側支撐12mm厚度STANDARD擋墊墊高的選項 ---
+let SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "175mm" },
+  { value: "option3", text: "195mm" },
+  { value: "option4", text: "195mm" },
+];
+//endregion
+
+//region --- 雙曲面側支撐12mm厚度COMFY擋墊墊寬的選項 ---
+let SpexLaterTrunkAxialBiangular12ComfyPadSizeWidthOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "165mm" },
+  { value: "option3", text: "215mm" },
+  { value: "option4", text: "265mm" },
+];
+//endregion
+
+//region --- 雙曲面側支撐12mm厚度COMFY擋墊墊高的選項 ---
+let SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "175mm" },
+  { value: "option3", text: "195mm" },
+  { value: "option4", text: "195mm" },
+];
+//endregion
+
+//region --- 雙曲面側支撐24mm厚度STANDARD擋墊墊寬的選項 ---
+let SpexLaterTrunkAxialBiangular24StandardPadSizeWidthOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "165mm" },
+  { value: "option3", text: "215mm" },
+  { value: "option4", text: "265mm" },
+];
+//endregion
+
+//region --- 雙曲面側支撐24mm厚度STANDARD擋墊墊高的選項 ---
+let SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "175mm" },
+  { value: "option3", text: "195mm" },
+  { value: "option4", text: "195mm" },
+];
+//endregion
+
+//region --- 雙曲面側支撐24mm厚度COMFY擋墊墊寬的選項 ---
+let SpexLaterTrunkAxialBiangular24ComfyPadSizeWidthOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "165mm" },
+  { value: "option3", text: "215mm" },
+  { value: "option4", text: "265mm" },
+];
+//endregion
+
+//region --- 雙曲面側支撐24mm厚度COMFY擋墊墊高的選項 ---
+let SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "175mm" },
+  { value: "option3", text: "195mm" },
+  { value: "option4", text: "195mm" },
+];
+//endregion
+
 //endregion
 
 //region --- 確定勾選的是哪個側支撐 ---
@@ -4918,6 +4990,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //endregion
 //endregion
 
+//region --- 一開始只顯示哪些選擇
 document
   .querySelectorAll('input[name="car_SpexLaterTrunkSupports"]')
   .forEach((checkbox) => {
@@ -4930,33 +5003,22 @@ document
       if (checkbox.id === "Spex_LaterTrunk_Standard") {
         standardsize1.disabled = false;
         standardsize2.disabled = false;
-        // latertrunkstandardcount.disabled = false;
-        // latertrunkstandardpadtype.disabled = false;
-        // latertrunkstandardclothpadtype.disabled = false;
-        // latertrunkstandardpadsize_Width.disabled = false;
-        // latertrunkstandardpadsize_Heigh.disabled = false;
-        // latertrunkstandardpadcount.disabled = false;
       }
       if (checkbox.id === "Spex_LaterTrunk_Offset") {
         offsetsize1.disabled = false;
         offsetsize2.disabled = false;
-        latertrunkoffsetcount.disabled = false;
-        latertrunkoffsetpadtype.disabled = false;
-        latertrunkoffsetclothpadtype.disabled = false;
-        latertrunkoffsetpadsize_Width.disabled = false;
-        latertrunkoffsetpadsize_Heigh.disabled = false;
-        latertrunkoffsetpadcount.disabled = false;
       }
       if (checkbox.id === "Spex_LaterTrunk_AxialBiangular") {
         latertrunk_axialbiangularcount.disabled = false;
-        latertrunkaxialbiangular.disabled = false;
-        latertrunk_axialpadtype.disabled = false;
-        latertrunk_axialbiangular_Width.disabled = false;
-        latertrunk_axialbiangular_Heigh.disabled = false;
-        latertrunkaxialbiangularpadcount.disabled = false;
+        // latertrunkaxialbiangular.disabled = false;
+        // latertrunk_axialpadtype.disabled = false;
+        // latertrunk_axialbiangular_Width.disabled = false;
+        // latertrunk_axialbiangular_Heigh.disabled = false;
+        // latertrunkaxialbiangularpadcount.disabled = false;
       }
     });
   });
+//endregion
 
 //region --- 多軸可外撥側支撐 ---
 function LaterTrunkAxialSelectOptions(selectElement, options) {
@@ -4972,7 +5034,7 @@ function LaterTrunkAxialSelectOptions(selectElement, options) {
   });
 }
 
-//勾選多軸可外撥側支撐時，才可填入數量及選擇擋墊跟擋墊布套尺寸
+//region --- 勾選多軸可外撥側支撐時，才可填入數量及選擇擋墊跟擋墊布套尺寸 ---
 Spex_LaterTrunk_Axial.addEventListener("change", () => {
   if (Spex_LaterTrunk_Axial.checked) {
     latertrunkaxialcount.disabled = false;
@@ -5012,8 +5074,9 @@ Spex_LaterTrunk_Axial.addEventListener("change", () => {
     latertrunkaxialpadcount.value = "";
   }
 });
+//endregion
 
-//監聽"擋墊種類"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量
+//region --- 監聽"擋墊種類"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
 latertrunkaxialpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Axial.checked) {
     latertrunkaxialpadtype.disabled = false;
@@ -5133,8 +5196,9 @@ latertrunkaxialpadtype.addEventListener("change", () => {
     latertrunkaxialpadcount.value = "";
   }
 });
+//endregion
 
-//監聽"擋墊布套"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量
+//region --- 監聽"擋墊布套"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量---
 latertrunkaxialclothpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Axial.checked) {
     latertrunkaxialpadtype.disabled = false;
@@ -5256,6 +5320,477 @@ latertrunkaxialclothpadtype.addEventListener("change", () => {
 });
 //endregion
 
+//region --- 監聽"多軸可外撥側支撐"的"擋墊寬度"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
+latertrunkaxialpadsize_Width.addEventListener("change", function () {
+  if (Spex_LaterTrunk_Axial.checked) {
+    //region --- 當擋墊是"狹長型"並且表布是"STANDARD"時 ---
+    if (
+      latertrunkaxialpadtype.value === "option2" &&
+      latertrunkaxialclothpadtype.value === "option2"
+    ) {
+      latertrunkaxialpadsize_Heigh.disabled = false;
+      latertrunkaxialpadcount.disabled = false;
+      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
+      if (latertrunkaxialpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkaxialpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkaxialpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkaxialpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkaxialpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"狹長型"並且表布是"COMFY"時 ---
+    if (
+      latertrunkaxialpadtype.value === "option2" &&
+      latertrunkaxialclothpadtype.value === "option3"
+    ) {
+      latertrunkaxialpadsize_Heigh.disabled = false;
+      latertrunkaxialpadcount.disabled = false;
+      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
+      if (latertrunkaxialpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkaxialpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkaxialpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkaxialpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkaxialpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"狹長微彎型"並且表布是"STANDARD"時 ---
+    if (
+      latertrunkaxialpadtype.value === "option3" &&
+      latertrunkaxialclothpadtype.value === "option2"
+    ) {
+      latertrunkaxialpadsize_Heigh.disabled = false;
+      latertrunkaxialpadcount.disabled = false;
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkaxialpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkaxialpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkaxialpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkaxialpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"狹長微彎型"並且表布是"COMFY"時 ---
+    if (
+      latertrunkaxialpadtype.value === "option3" &&
+      latertrunkaxialclothpadtype.value === "option3"
+    ) {
+      latertrunkaxialpadsize_Heigh.disabled = false;
+      latertrunkaxialpadcount.disabled = false;
+      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
+      if (latertrunkaxialpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkaxialpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkaxialpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkaxialpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkaxialpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"寬短型"並且表布是"STANDARD"時 ---
+    if (
+      latertrunkaxialpadtype.value === "option4" &&
+      latertrunkaxialclothpadtype.value === "option2"
+    ) {
+      latertrunkaxialpadsize_Heigh.disabled = false;
+      latertrunkaxialpadcount.disabled = false;
+      //當選擇"墊寬"是"105mm"時，"墊高"會有"130mm"
+      if (latertrunkaxialpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
+      if (latertrunkaxialpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
+      if (latertrunkaxialpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
+      if (latertrunkaxialpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
+      if (latertrunkaxialpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
+      if (latertrunkaxialpadsize_Width.value === "option7") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option7"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"寬短型"並且表布是"COMFY"時 ---
+    if (
+      latertrunkaxialpadtype.value === "option4" &&
+      latertrunkaxialclothpadtype.value === "option3"
+    ) {
+      latertrunkaxialpadsize_Heigh.disabled = false;
+      latertrunkaxialpadcount.disabled = false;
+      //當選擇"墊寬"是"105mm"時，"墊高"會有"130mm"
+      if (latertrunkaxialpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
+      if (latertrunkaxialpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
+      if (latertrunkaxialpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
+      if (latertrunkaxialpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
+      if (latertrunkaxialpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
+      if (latertrunkaxialpadsize_Width.value === "option7") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option7"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkaxialpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+  }
+});
+//endregion
+
+//endregion
+
 //region --- Spex可外撥側支撐(Standard) ---
 function LaterTrunkStandardSelectOptions(selectElement, options) {
   selectElement.innerHTML = ""; // 清空現有內容
@@ -5269,9 +5804,15 @@ function LaterTrunkStandardSelectOptions(selectElement, options) {
     selectElement.appendChild(opt);
   });
 }
-//勾選可外撥側支撐(Standard)時，才可填入數量及選擇擋墊跟擋墊布套尺寸
+//region --- 勾選可外撥側支撐(Standard)時，才可填入數量及選擇擋墊跟擋墊布套尺寸 ---
 Spex_LaterTrunk_Standard.addEventListener("change", () => {
   if (Spex_LaterTrunk_Standard.checked) {
+    latertrunkoffsetpadtype.disabled = true;
+    latertrunkoffsetclothpadtype.disabled = true;
+    latertrunkoffsetpadsize_Width.disabled = true;
+    latertrunkoffsetpadsize_Heigh.disabled = true;
+    latertrunkoffsetpadcount.disabled = true;
+
     LaterTrunkStandardSelectOptions(
       latertrunkstandardpadtype,
       SpexLaterTrunkPadTypeOptions
@@ -5314,8 +5855,9 @@ Spex_LaterTrunk_Standard.addEventListener("change", () => {
     latertrunkstandardpadcount.value = "";
   }
 });
+//endregion
 
-//確定勾選的是哪個側支撐，且不會重複勾選選項
+//region --- 確定勾選的是哪個側支撐尺寸，且不會重複勾選選項 ---
 document
   .querySelectorAll('input[name="latertrunk_standard"]')
   .forEach((checkbox) => {
@@ -5335,8 +5877,23 @@ document
         });
     });
   });
+//endregion
 
-//監聽"擋墊種類"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量
+//region --- 監聽側支撐數量位置是否有輸入數字 ---
+latertrunkstandardcount.addEventListener("input", function () {
+  if (this.value.trim() !== "") {
+    console.log("有數值");
+    latertrunkstandardpadtype.disabled = false;
+    latertrunkstandardclothpadtype.disabled = false;
+  } else {
+    latertrunkstandardpadtype.disabled = true;
+    latertrunkstandardclothpadtype.disabled = true;
+    console.log("沒有數值");
+  }
+});
+//endregion
+
+//region --- 監聽"擋墊種類"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
 latertrunkstandardpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Standard.checked) {
     latertrunkstandardpadtype.disabled = false;
@@ -5462,20 +6019,9 @@ latertrunkstandardpadtype.addEventListener("change", () => {
     latertrunkstandardpadcount.value = "";
   }
 });
+//endregion
 
-latertrunkstandardcount.addEventListener("input", function () {
-  if (this.value.trim() !== "") {
-    console.log("有數值");
-    latertrunkstandardpadtype.disabled = false;
-    latertrunkstandardclothpadtype.disabled = false;
-  } else {
-    latertrunkstandardpadtype.disabled = true;
-    latertrunkstandardclothpadtype.disabled = true;
-    console.log("沒有數值");
-  }
-});
-
-//監聽"擋墊布套"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量
+//region --- 監聽"擋墊布套"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
 latertrunkstandardclothpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Standard.checked) {
     latertrunkstandardpadtype.disabled = false;
@@ -5599,529 +6145,6 @@ latertrunkstandardclothpadtype.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     latertrunkstandardpadcount.value = "";
-  }
-});
-
-//endregion
-
-//region --- Spex可外撥側支撐(Offset) ---
-function LaterTrunkOffsetSelectOptions(selectElement, options) {
-  selectElement.innerHTML = ""; // 清空現有內容
-  options.forEach((option) => {
-    let opt = document.createElement("option");
-    opt.value = option.value;
-    opt.textContent = option.text;
-    if (option.selected) {
-      opt.selected = true;
-    }
-    selectElement.appendChild(opt);
-  });
-}
-Spex_LaterTrunk_Offset.addEventListener("change", () => {
-  if (Spex_LaterTrunk_Offset.checked) {
-    offsetsize1.disabled = false;
-    offsetsize2.disabled = false;
-    latertrunkoffsetcount.disabled = false;
-    latertrunkoffsetpadtype.disabled = false;
-    latertrunkoffsetclothpadtype.disabled = false;
-    latertrunkoffsetpadsize_Width.disabled = false;
-    latertrunkoffsetpadsize_Heigh.disabled = false;
-    latertrunkoffsetpadcount.disabled = false;
-
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetpadtype,
-      SpexLaterTrunkPadTypeOptions
-    );
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetclothpadtype,
-      SpexLaterTrunkPadClothTypeOptions
-    );
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetpadsize_Width,
-      SpexLaterTrunklStandardStraightPadSizeWidthOptions
-    );
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetpadsize_Heigh,
-      SpexLaterTrunklStandardStraightPadSizeHeighOptions
-    );
-  } else {
-    offsetsize1.disabled = true; // 禁用
-    offsetsize2.disabled = true; // 禁用
-    latertrunkoffsetcount.disabled = true; // 禁用
-    latertrunkoffsetpadtype.disabled = true; // 禁用
-    latertrunkoffsetclothpadtype.disabled = true; // 禁用
-    latertrunkoffsetpadsize_Width.disabled = true; // 禁用
-    latertrunkoffsetpadsize_Heigh.disabled = true; // 禁用
-    latertrunkoffsetpadcount.disabled = true; // 禁用
-
-    offsetsize1.checked = false;
-    offsetsize2.checked = false;
-    latertrunkoffsetcount.value = "";
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetpadtype,
-      SpexLaterTrunkPadTypeOptions
-    );
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetclothpadtype,
-      SpexLaterTrunkPadClothTypeOptions
-    );
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetpadsize_Width,
-      SpexLaterTrunklStandardStraightPadSizeWidthOptions
-    );
-    LaterTrunkOffsetSelectOptions(
-      latertrunkoffsetpadsize_Heigh,
-      SpexLaterTrunklStandardStraightPadSizeHeighOptions
-    );
-    latertrunkoffsetpadcount.value = "";
-  }
-});
-//endregion
-
-//region --- Spex 雙曲面多軸可外撥側支撐扣具 ---
-function LaterTrunkAxialBiangularSelectOptions(selectElement, options) {
-  selectElement.innerHTML = ""; // 清空現有內容
-  options.forEach((option) => {
-    let opt = document.createElement("option");
-    opt.value = option.value;
-    opt.textContent = option.text;
-    if (option.selected) {
-      opt.selected = true;
-    }
-    selectElement.appendChild(opt);
-  });
-}
-Spex_LaterTrunk_AxialBiangular.addEventListener("change", () => {
-  if (Spex_LaterTrunk_AxialBiangular.checked) {
-    latertrunk_axialbiangularcount.disabled = false;
-    latertrunkaxialbiangular.disabled = false;
-    latertrunk_axialpadtype.disabled = false;
-    latertrunk_axialbiangular_Width.disabled = false;
-    latertrunk_axialbiangular_Heigh.disabled = false;
-    latertrunkaxialbiangularpadcount.disabled = false;
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunkaxialbiangular,
-      SpexLaterTrunkAxialBiangularOptions
-    );
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunk_axialpadtype,
-      SpexLaterTrunkPadClothTypeOptions
-    );
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunk_axialbiangular_Width,
-      SpexLaterTrunklStandardStraightPadSizeWidthOptions
-    );
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunk_axialbiangular_Heigh,
-      SpexLaterTrunklStandardStraightPadSizeHeighOptions
-    );
-  } else {
-    latertrunk_axialbiangularcount.disabled = true;
-    latertrunkaxialbiangular.disabled = true;
-    latertrunk_axialpadtype.disabled = true;
-    latertrunk_axialbiangular_Width.disabled = true;
-    latertrunk_axialbiangular_Heigh.disabled = true;
-    latertrunkaxialbiangularpadcount.disabled = true;
-
-    latertrunk_axialbiangularcount.value = "";
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunkaxialbiangular,
-      SpexLaterTrunkAxialBiangularOptions
-    );
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunk_axialpadtype,
-      SpexLaterTrunkPadClothTypeOptions
-    );
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunk_axialbiangular_Width,
-      SpexLaterTrunklStandardStraightPadSizeWidthOptions
-    );
-    LaterTrunkAxialBiangularSelectOptions(
-      latertrunk_axialbiangular_Heigh,
-      SpexLaterTrunklStandardStraightPadSizeHeighOptions
-    );
-    latertrunkaxialbiangularpadcount.value = "";
-  }
-});
-//endregion
-
-//region --- 監聽"多軸可外撥側支撐"的"擋墊寬度"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
-latertrunkaxialpadsize_Width.addEventListener("change", function () {
-  if (Spex_LaterTrunk_Axial.checked) {
-    //region --- 當擋墊是"狹長型"並且表布是""是"STANDARD"時 ---
-    if (
-      latertrunkaxialpadtype.value === "option2" &&
-      latertrunkaxialclothpadtype.value === "option2"
-    ) {
-      latertrunkaxialpadsize_Heigh.disabled = false;
-      latertrunkaxialpadcount.disabled = false;
-      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
-      if (latertrunkaxialpadsize_Width.value === "option2") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option2"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
-      if (latertrunkaxialpadsize_Width.value === "option3") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option3"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
-      if (latertrunkaxialpadsize_Width.value === "option4") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option4"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
-      if (latertrunkaxialpadsize_Width.value === "option5") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option5"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
-      if (latertrunkaxialpadsize_Width.value === "option6") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option6"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-    }
-    //endregion
-
-    //region --- 當擋墊是"狹長型"並且表布是""是"COMFY"時 ---
-    if (
-      latertrunkaxialpadtype.value === "option2" &&
-      latertrunkaxialclothpadtype.value === "option3"
-    ) {
-      latertrunkaxialpadsize_Heigh.disabled = false;
-      latertrunkaxialpadcount.disabled = false;
-      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
-      if (latertrunkaxialpadsize_Width.value === "option2") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option2"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
-      if (latertrunkaxialpadsize_Width.value === "option3") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option3"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
-      if (latertrunkaxialpadsize_Width.value === "option4") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option4"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
-      if (latertrunkaxialpadsize_Width.value === "option5") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option5"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
-      if (latertrunkaxialpadsize_Width.value === "option6") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
-            ["option1", "option6"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-    }
-    //endregion
-
-    //region --- 當擋墊是"狹長微彎型"並且表布是""是"STANDARD"時 ---
-    if (
-      latertrunkaxialpadtype.value === "option3" &&
-      latertrunkaxialclothpadtype.value === "option2"
-    ) {
-      latertrunkaxialpadsize_Heigh.disabled = false;
-      latertrunkaxialpadcount.disabled = false;
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
-      if (latertrunkaxialpadsize_Width.value === "option2") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option2"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
-      if (latertrunkaxialpadsize_Width.value === "option3") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option3"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
-      if (latertrunkaxialpadsize_Width.value === "option4") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option4"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
-      if (latertrunkaxialpadsize_Width.value === "option5") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option5"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-    }
-    //endregion
-
-    //region --- 當擋墊是"狹長微彎型"並且表布是""是"COMFY"時 ---
-    if (
-      latertrunkaxialpadtype.value === "option3" &&
-      latertrunkaxialclothpadtype.value === "option3"
-    ) {
-      latertrunkaxialpadsize_Heigh.disabled = false;
-      latertrunkaxialpadcount.disabled = false;
-      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
-      if (latertrunkaxialpadsize_Width.value === "option2") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option2"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
-      if (latertrunkaxialpadsize_Width.value === "option3") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option3"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
-      if (latertrunkaxialpadsize_Width.value === "option4") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option4"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
-      if (latertrunkaxialpadsize_Width.value === "option5") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option5"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
-      if (latertrunkaxialpadsize_Width.value === "option6") {
-        let filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
-            ["option1", "option6"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-    }
-    //endregion
-
-    //region --- 當擋墊是"寬短型"並且表布是""是"STANDARD"時 ---
-    if (
-      latertrunkaxialpadtype.value === "option4" &&
-      latertrunkaxialclothpadtype.value === "option2"
-    ) {
-      latertrunkaxialpadsize_Heigh.disabled = false;
-      latertrunkaxialpadcount.disabled = false;
-      //當選擇"墊寬"是"105mm"時，"墊高"會有"130mm"
-      if (latertrunkaxialpadsize_Width.value === "option2") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
-            ["option1", "option2"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
-      if (latertrunkaxialpadsize_Width.value === "option3") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
-            ["option1", "option3"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
-      if (latertrunkaxialpadsize_Width.value === "option4") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
-            ["option1", "option4"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
-      if (latertrunkaxialpadsize_Width.value === "option5") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
-            ["option1", "option5"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
-      if (latertrunkaxialpadsize_Width.value === "option6") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
-            ["option1", "option6"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-      //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
-      if (latertrunkaxialpadsize_Width.value === "option7") {
-        let filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
-        filteredHeightOptions =
-          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
-            ["option1", "option7"].includes(option.value)
-          );
-        LaterTrunkAxialSelectOptions(
-          latertrunkaxialpadsize_Heigh,
-          filteredHeightOptions
-        );
-      }
-    }
-    //endregion
   }
 });
 //endregion
@@ -6513,6 +6536,1407 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
       }
     }
     //endregion
+
+    //region --- 當擋墊是"寬短型"並且表布是""是"COMFY"時 ---
+    if (
+      latertrunkstandardpadtype.value === "option4" &&
+      latertrunkstandardclothpadtype.value === "option3"
+    ) {
+      latertrunkstandardpadsize_Heigh.disabled = false;
+      latertrunkstandardpadcount.disabled = false;
+      //當選擇"墊寬"是"105mm"時，"墊高"會有"130mm"
+      if (latertrunkstandardpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkstandardpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
+      if (latertrunkstandardpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkstandardpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
+      if (latertrunkstandardpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkstandardpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
+      if (latertrunkstandardpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkstandardpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
+      if (latertrunkstandardpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkstandardpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
+      if (latertrunkstandardpadsize_Width.value === "option7") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option7"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkstandardpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
   }
 });
+//endregion
+
+//endregion
+
+//region --- Spex可外撥側支撐(Offset) ---
+function LaterTrunkOffsetSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+
+//region --- 勾選可外撥側支撐(Offset)時，才可填入數量及選擇擋墊跟擋墊布套尺寸 ---
+Spex_LaterTrunk_Offset.addEventListener("change", () => {
+  if (Spex_LaterTrunk_Offset.checked) {
+    offsetsize1.disabled = false;
+    offsetsize2.disabled = false;
+
+    LaterTrunkOffsetSelectOptions(
+      latertrunkaxialbiangular,
+      SpexLaterTrunkAxialBiangularOptions
+    );
+    LaterTrunkOffsetSelectOptions(
+      latertrunk_axialpadtype,
+      SpexLaterTrunkPadClothTypeOptions
+    );
+    LaterTrunkOffsetSelectOptions(
+      latertrunkoffsetpadsize_Width,
+      SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+    );
+    LaterTrunkOffsetSelectOptions(
+      latertrunkoffsetpadsize_Heigh,
+      SpexLaterTrunkAxialBiangular12StandardPadSizeHeighOptions
+    );
+  } else {
+    offsetsize1.disabled = true; // 禁用
+    offsetsize2.disabled = true; // 禁用
+    latertrunkoffsetcount.disabled = true; // 禁用
+    latertrunkoffsetpadtype.disabled = true; // 禁用
+    latertrunkoffsetclothpadtype.disabled = true; // 禁用
+    latertrunkoffsetpadsize_Width.disabled = true; // 禁用
+    latertrunkoffsetpadsize_Heigh.disabled = true; // 禁用
+    latertrunkoffsetpadcount.disabled = true; // 禁用
+
+    offsetsize1.checked = false;
+    offsetsize2.checked = false;
+    latertrunkoffsetcount.value = "";
+    LaterTrunkOffsetSelectOptions(
+      latertrunkoffsetpadtype,
+      SpexLaterTrunkPadTypeOptions
+    );
+    LaterTrunkOffsetSelectOptions(
+      latertrunkoffsetclothpadtype,
+      SpexLaterTrunkPadClothTypeOptions
+    );
+    LaterTrunkOffsetSelectOptions(
+      latertrunkoffsetpadsize_Width,
+      SpexLaterTrunklStandardStraightPadSizeWidthOptions
+    );
+    LaterTrunkOffsetSelectOptions(
+      latertrunkoffsetpadsize_Heigh,
+      SpexLaterTrunklStandardStraightPadSizeHeighOptions
+    );
+    latertrunkoffsetpadcount.value = "";
+  }
+});
+//endregion
+
+//region --- 確定勾選的是哪個側支撐尺寸，且不會重複勾選選項 ---
+document
+  .querySelectorAll('input[name="latertrunk_offset"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="latertrunk_offset"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+          latertrunkoffsetcount.disabled = false;
+          if (!checkbox.checked) {
+            checkbox.checked = false;
+            latertrunkoffsetcount.value = "";
+            latertrunkoffsetcount.disabled = true;
+          }
+        });
+    });
+  });
+//endregion
+
+//region --- 監聽側支撐數量位置是否有輸入數字 ---
+latertrunkoffsetcount.addEventListener("input", function () {
+  if (this.value.trim() !== "") {
+    console.log("有數值");
+    latertrunkoffsetpadtype.disabled = false;
+    latertrunkoffsetclothpadtype.disabled = false;
+  } else {
+    latertrunkoffsetpadtype.disabled = true;
+    latertrunkoffsetclothpadtype.disabled = true;
+    console.log("沒有數值");
+  }
+});
+//endregion
+
+//region --- 監聽"擋墊種類"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
+latertrunkoffsetpadtype.addEventListener("change", () => {
+  if (Spex_LaterTrunk_Offset.checked) {
+    latertrunkoffsetpadtype.disabled = false;
+    latertrunkoffsetclothpadtype.disabled = false;
+    if (
+      latertrunkoffsetpadtype.value === "option2" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklStandardStraightPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklStandardStraightPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option2" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklComfyStraightPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklComfyStraightPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option3" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklStandardCurvedPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklStandardCurvedPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option3" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklComfyCurvedPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklComfyCurvedPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option4" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklStandardBroadPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklStandardBroadPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option4" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklComfyBroadPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklComfyBroadPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+  } else {
+    offsetsize1.disabled = true; // 禁用
+    offsetsize2.disabled = true; // 禁用
+    latertrunkoffsetcount.disabled = true; // 禁用
+    latertrunkoffsetpadtype.disabled = true; // 禁用
+    latertrunkoffsetclothpadtype.disabled = true; // 禁用
+    latertrunkoffsetpadsize_Width.disabled = true; // 禁用
+    latertrunkoffsetpadsize_Heigh.disabled = true; // 禁用
+    latertrunkoffsetpadcount.disabled = true; // 禁用
+
+    offsetsize1.checked = false;
+    offsetsize2.checked = false;
+    latertrunkoffsetcount.value = "";
+    LaterTrunkAxialSelectOptions(
+      latertrunkoffsetpadsize_Width,
+      SpexLaterTrunklStandardStraightPadSizeWidthOptions
+    );
+    latertrunkoffsetpadcount.value = "";
+  }
+});
+//endregion
+
+//region --- 監聽"擋墊布套"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
+latertrunkoffsetclothpadtype.addEventListener("change", () => {
+  if (Spex_LaterTrunk_Offset.checked) {
+    latertrunkoffsetpadtype.disabled = false;
+    latertrunkoffsetclothpadtype.disabled = false;
+    if (
+      latertrunkoffsetpadtype.value === "option2" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklStandardStraightPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklStandardStraightPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option2" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklComfyStraightPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklComfyStraightPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option3" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklStandardCurvedPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklStandardCurvedPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option3" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklComfyCurvedPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklComfyCurvedPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option4" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklStandardBroadPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklStandardBroadPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+    if (
+      latertrunkoffsetpadtype.value === "option4" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Width,
+        SpexLaterTrunklComfyBroadPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklComfyBroadPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+    }
+  } else {
+    offsetsize1.disabled = true; // 禁用
+    offsetsize2.disabled = true; // 禁用
+    latertrunkoffsetcount.disabled = true; // 禁用
+    latertrunkoffsetpadtype.disabled = true; // 禁用
+    latertrunkoffsetclothpadtype.disabled = true; // 禁用
+    latertrunkoffsetpadsize_Width.disabled = true; // 禁用
+    latertrunkoffsetpadsize_Heigh.disabled = true; // 禁用
+    latertrunkoffsetpadcount.disabled = true; // 禁用
+
+    offsetsize1.checked = false;
+    offsetsize2.checked = false;
+    latertrunkoffsetcount.value = "";
+    LaterTrunkAxialSelectOptions(
+      latertrunkoffsetpadsize_Width,
+      SpexLaterTrunklStandardStraightPadSizeWidthOptions
+    );
+    latertrunkoffsetpadcount.value = "";
+  }
+});
+//endregion
+
+//region --- 監聽"Spex可外撥側支撐(Offset)"的"擋墊寬度"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
+latertrunkoffsetpadsize_Width.addEventListener("change", function () {
+  if (Spex_LaterTrunk_Offset.checked) {
+    if (latertrunkoffsetpadsize_Width.value === "option1") {
+      LaterTrunkStandardSelectOptions(
+        latertrunkoffsetpadsize_Heigh,
+        SpexLaterTrunklStandardStraightPadSizeHeighOptions
+      );
+      latertrunkoffsetpadsize_Heigh.disabled = true;
+      latertrunkoffsetpadcount.value = "";
+      latertrunkoffsetpadcount.disabled = true;
+      return;
+    }
+    //region --- 當擋墊是"狹長型"並且表布是""是"STANDARD"時 ---
+    if (
+      latertrunkoffsetpadtype.value === "option2" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Heigh.disabled = false;
+      latertrunkoffsetpadcount.disabled = false;
+      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
+      if (latertrunkoffsetpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkoffsetpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkoffsetpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkoffsetpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkoffsetpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"狹長型"並且表布是"COMFY"時 ---
+    if (
+      latertrunkoffsetpadtype.value === "option2" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Heigh.disabled = false;
+      latertrunkoffsetpadcount.disabled = false;
+      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
+      if (latertrunkoffsetpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkoffsetpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkoffsetpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkoffsetpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkoffsetpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyStraightPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"狹長微彎型"並且表布是"STANDARD"時 ---
+    if (
+      latertrunkoffsetpadtype.value === "option3" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Heigh.disabled = false;
+      latertrunkoffsetpadcount.disabled = false;
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkoffsetpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkoffsetpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkoffsetpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkoffsetpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"狹長微彎型"並且表布是"COMFY"時 ---
+    if (
+      latertrunkoffsetpadtype.value === "option3" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Heigh.disabled = false;
+      latertrunkoffsetpadcount.disabled = false;
+      //當選擇"墊寬"是"85mm"時，"墊高"會有"115mm"
+      if (latertrunkoffsetpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
+      if (latertrunkoffsetpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
+      if (latertrunkoffsetpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
+      if (latertrunkoffsetpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
+      if (latertrunkoffsetpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklComfyCurvedPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"寬短型"並且表布是"STANDARD"時 ---
+    if (
+      latertrunkoffsetpadtype.value === "option4" &&
+      latertrunkoffsetclothpadtype.value === "option2"
+    ) {
+      latertrunkoffsetpadsize_Heigh.disabled = false;
+      latertrunkoffsetpadcount.disabled = false;
+      //當選擇"墊寬"是"105mm"時，"墊高"會有"130mm"
+      if (latertrunkoffsetpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
+      if (latertrunkoffsetpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
+      if (latertrunkoffsetpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
+      if (latertrunkoffsetpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
+      if (latertrunkoffsetpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
+      if (latertrunkoffsetpadsize_Width.value === "option7") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option7"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當擋墊是"寬短型"並且表布是"COMFY"時 ---
+    if (
+      latertrunkoffsetpadtype.value === "option4" &&
+      latertrunkoffsetclothpadtype.value === "option3"
+    ) {
+      latertrunkoffsetpadsize_Heigh.disabled = false;
+      latertrunkoffsetpadcount.disabled = false;
+      //當選擇"墊寬"是"105mm"時，"墊高"會有"130mm"
+      if (latertrunkoffsetpadsize_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
+      if (latertrunkoffsetpadsize_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
+      if (latertrunkoffsetpadsize_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
+      if (latertrunkoffsetpadsize_Width.value === "option5") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option5"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
+      if (latertrunkoffsetpadsize_Width.value === "option6") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option6"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
+      if (latertrunkoffsetpadsize_Width.value === "option7") {
+        let filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunklStandardBroadPadSizeHeighOptions.filter((option) =>
+            ["option1", "option7"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunkoffsetpadsize_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+  }
+});
+//endregion
+
+//endregion
+
+//region --- Spex 雙曲面多軸可外撥側支撐扣具 ---
+function LaterTrunkAxialBiangularSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+
+//region --- 勾選 雙曲面多軸可外撥側支撐扣具 時，才可填入數量及選擇擋墊跟擋墊布套尺寸 ---
+Spex_LaterTrunk_AxialBiangular.addEventListener("change", () => {
+  if (Spex_LaterTrunk_AxialBiangular.checked) {
+    latertrunk_axialbiangularcount.disabled = false;
+
+    LaterTrunkAxialBiangularSelectOptions(
+      latertrunkaxialbiangular,
+      SpexLaterTrunkAxialBiangularOptions
+    );
+    LaterTrunkAxialBiangularSelectOptions(
+      latertrunk_axialpadtype,
+      SpexLaterTrunkPadClothTypeOptions
+    );
+  } else {
+    latertrunk_axialbiangularcount.disabled = true; // 禁用
+    latertrunkaxialbiangular.disabled = true; // 禁用
+    latertrunk_axialpadtype.disabled = true; // 禁用
+    latertrunk_axialbiangular_Width.disabled = true; // 禁用
+    latertrunk_axialbiangular_Heigh.disabled = true; // 禁用
+    latertrunkaxialbiangularpadcount.disabled = true; // 禁用
+
+    latertrunk_axialbiangularcount.value = "";
+    LaterTrunkAxialBiangularSelectOptions(
+      latertrunkaxialbiangular,
+      SpexLaterTrunkAxialBiangularOptions
+    );
+    LaterTrunkAxialBiangularSelectOptions(
+      latertrunk_axialpadtype,
+      SpexLaterTrunkPadClothTypeOptions
+    );
+    LaterTrunkAxialBiangularSelectOptions(
+      latertrunk_axialbiangular_Width,
+      SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+    );
+    LaterTrunkAxialBiangularSelectOptions(
+      latertrunk_axialbiangular_Heigh,
+      SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions
+    );
+    latertrunkaxialbiangularpadcount.value = "";
+  }
+});
+//endregion
+
+//region --- 監聽側支撐數量位置是否有輸入數字 ---
+latertrunk_axialbiangularcount.addEventListener("input", function () {
+  if (this.value.trim() !== "") {
+    console.log("有數值");
+    latertrunkaxialbiangular.disabled = false;
+    latertrunk_axialpadtype.disabled = false;
+  } else {
+    latertrunkaxialbiangular.disabled = true;
+    latertrunk_axialpadtype.disabled = true;
+    console.log("沒有數值");
+  }
+});
+//endregion
+
+//region --- 監聽"擋墊厚度"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
+latertrunkaxialbiangular.addEventListener("change", () => {
+  if (Spex_LaterTrunk_AxialBiangular.checked) {
+    latertrunkaxialbiangular.disabled = false;
+    latertrunk_axialpadtype.disabled = false;
+    if (
+      latertrunkaxialbiangular.value === "option2" &&
+      latertrunk_axialpadtype.value === "option2"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+    if (
+      latertrunkaxialbiangular.value === "option2" &&
+      latertrunk_axialpadtype.value === "option3"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular12ComfyPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+    if (
+      latertrunkaxialbiangular.value === "option3" &&
+      latertrunk_axialpadtype.value === "option2"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular24StandardPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+    if (
+      latertrunkaxialbiangular.value === "option3" &&
+      latertrunk_axialpadtype.value === "option3"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular24ComfyPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+  } else {
+    latertrunk_axialbiangularcount.disabled = true; // 禁用
+    latertrunkaxialbiangular.disabled = true; // 禁用
+    latertrunk_axialpadtype.disabled = true; // 禁用
+    latertrunk_axialbiangular_Width.disabled = true; // 禁用
+    latertrunk_axialbiangular_Heigh.disabled = true; // 禁用
+    latertrunkaxialbiangularpadcount.disabled = true; // 禁用
+
+    latertrunk_axialbiangularcount.value = "";
+    LaterTrunkAxialSelectOptions(
+      latertrunk_axialbiangular_Width,
+      SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+    );
+    latertrunkaxialbiangularpadcount.value = "";
+  }
+});
+//endregion
+
+//region --- 監聽"擋墊布套"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
+latertrunk_axialpadtype.addEventListener("change", () => {
+  if (Spex_LaterTrunk_AxialBiangular.checked) {
+    latertrunkaxialbiangular.disabled = false;
+    latertrunk_axialpadtype.disabled = false;
+    if (
+      latertrunkaxialbiangular.value === "option2" &&
+      latertrunk_axialpadtype.value === "option2"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+    if (
+      latertrunkaxialbiangular.value === "option2" &&
+      latertrunk_axialpadtype.value === "option3"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular12ComfyPadSizeWidthOptions
+      );
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+    if (
+      latertrunkaxialbiangular.value === "option3" &&
+      latertrunk_axialpadtype.value === "option2"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular24StandardPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+    if (
+      latertrunkaxialbiangular.value === "option3" &&
+      latertrunk_axialpadtype.value === "option3"
+    ) {
+      latertrunk_axialbiangular_Width.disabled = false;
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Width,
+        SpexLaterTrunkAxialBiangular24ComfyPadSizeWidthOptions
+      );
+      LaterTrunkAxialSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+    }
+  } else {
+    latertrunk_axialbiangularcount.disabled = true; // 禁用
+    latertrunkaxialbiangular.disabled = true; // 禁用
+    latertrunk_axialpadtype.disabled = true; // 禁用
+    latertrunk_axialbiangular_Width.disabled = true; // 禁用
+    latertrunk_axialbiangular_Heigh.disabled = true; // 禁用
+    latertrunkaxialbiangularpadcount.disabled = true; // 禁用
+
+    latertrunk_axialbiangularcount.value = "";
+    LaterTrunkAxialSelectOptions(
+      latertrunk_axialbiangular_Width,
+      SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+    );
+    latertrunkaxialbiangularpadcount.value = "";
+  }
+});
+//endregion
+//region --- 監聽"雙曲面多軸可外撥側支撐"的"擋墊寬度"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
+latertrunk_axialbiangular_Width.addEventListener("change", function () {
+  if (Spex_LaterTrunk_AxialBiangular.checked) {
+    if (latertrunk_axialbiangular_Width.value === "option1") {
+      LaterTrunkStandardSelectOptions(
+        latertrunk_axialbiangular_Heigh,
+        SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions
+      );
+      latertrunk_axialbiangular_Heigh.disabled = true;
+      latertrunkaxialbiangularpadcount.value = "";
+      latertrunkaxialbiangularpadcount.disabled = true;
+      return;
+    }
+    //region --- 當厚度是"12mm"並且表布是"STANDARD"時 ---
+    if (
+      latertrunkaxialbiangular.value === "option2" &&
+      latertrunk_axialpadtype.value === "option2"
+    ) {
+      latertrunk_axialbiangular_Heigh.disabled = false;
+      latertrunkaxialbiangularpadcount.disabled = false;
+      //當選擇"墊寬"是"165mm"時，"墊高"會有"175mm"
+      if (latertrunk_axialbiangular_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions.filter(
+            (option) => ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions.filter(
+            (option) => ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions.filter(
+            (option) => ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當厚度是"12mm"並且表布是"COMFY"時 ---
+    if (
+      latertrunkaxialbiangular.value === "option2" &&
+      latertrunk_axialpadtype.value === "option3"
+    ) {
+      latertrunk_axialbiangular_Heigh.disabled = false;
+      latertrunkaxialbiangularpadcount.disabled = false;
+      //當選擇"墊寬"是"165mm"時，"墊高"會有"175mm"
+      if (latertrunk_axialbiangular_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions.filter(
+            (option) => ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions.filter(
+            (option) => ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions.filter(
+            (option) => ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當厚度是"24mm"並且表布是"STANDARD"時 ---
+    if (
+      latertrunkaxialbiangular.value === "option3" &&
+      latertrunk_axialpadtype.value === "option2"
+    ) {
+      latertrunk_axialbiangular_Heigh.disabled = false;
+      latertrunkaxialbiangularpadcount.disabled = false;
+      //當選擇"墊寬"是"165mm"時，"墊高"會有"175mm"
+      if (latertrunk_axialbiangular_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions.filter(
+            (option) => ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions.filter(
+            (option) => ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions.filter(
+            (option) => ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+
+    //region --- 當厚度是"24mm"並且表布是"COMFY"時 ---
+    if (
+      latertrunkaxialbiangular.value === "option3" &&
+      latertrunk_axialpadtype.value === "option3"
+    ) {
+      latertrunk_axialbiangular_Heigh.disabled = false;
+      latertrunkaxialbiangularpadcount.disabled = false;
+      //當選擇"墊寬"是"165mm"時，"墊高"會有"175mm"
+      if (latertrunk_axialbiangular_Width.value === "option2") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions.filter(
+            (option) => ["option1", "option2"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option3") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions.filter(
+            (option) => ["option1", "option3"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+      //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
+      if (latertrunk_axialbiangular_Width.value === "option4") {
+        let filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions;
+        filteredHeightOptions =
+          SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions.filter(
+            (option) => ["option1", "option4"].includes(option.value)
+          );
+        LaterTrunkAxialSelectOptions(
+          latertrunk_axialbiangular_Heigh,
+          filteredHeightOptions
+        );
+      }
+    }
+    //endregion
+  }
+});
+//endregion
+
 //endregion
