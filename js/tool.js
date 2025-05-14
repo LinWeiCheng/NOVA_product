@@ -4504,7 +4504,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       //endregion
 
-    //region --- 扶手臀撐 ---
+      //region --- 扶手臀撐 ---
       if (
         armsup_latthighCheckbox.id === "Spex_ArmSup_LatThigh" &&
         armsup_latthighCheckbox.checked &&
@@ -4923,7 +4923,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     //endregion
   });
-//endregion
+  //endregion
 
   //region --- 監聽扶手襯墊數量 ---
   let armpadInput = document.getElementById("armpadcount");
@@ -7107,7 +7107,208 @@ SpexHardware_checkboxes.forEach((checkbox) => {
     }
   });
 });
+//endregion
+//endregion
 
+/*----- 17.Spex軀幹子系統-軀幹側支撐 -----*/
+//region
+let nowprice_SpexLaterTrunkSupports = Price[16].nextElementSibling;
+let latertrunkaxialcountInput = document.getElementById("latertrunkaxialcount");
+let SpexLaterTrunkAxialCheckbox = document.querySelector(
+  "#Spex_LaterTrunk_Axial"
+);
+let SpexLaterTrunkStandardCheckbox = document.querySelector(
+  "#Spex_LaterTrunk_Standard"
+);
+let SpexLaterTrunkOffsetCheckbox = document.querySelector(
+  "#Spex_LaterTrunk_Offset"
+);
+let SpexLaterTrunkAxialBiangularCheckbox = document.querySelector(
+  "#Spex_LaterTrunk_AxialBiangular"
+);
+
+let SpexLaterTrunkConnectLeftCheckbox = document.querySelector(
+  "#Spex_LaterTrunk_ConnectLeft"
+);
+let SpexLaterTrunkConnectRightCheckbox = document.querySelector(
+  "#Spex_LaterTrunk_ConnectRight"
+);
+let SpexLaterTrunkExtend30Checkbox = document.querySelector(
+  "#Spex_LaterTrunk_Extend30"
+);
+let SpexLaterTrunkExtend115Checkbox = document.querySelector(
+  "#Spex_LaterTrunk_Extend115"
+);
+let SpexLaterTrunkReinforceCheckbox = document.querySelector(
+  "#Spex_LaterTrunk_Reinforce"
+);
+
+//region --- 側支撐扣具價格 ---
+//region --- 多軸可外撥側支撐 ---
+let SpexLaterTrunkAxial_prices = {
+  SpexLaterTrunkAxial_prices1: 10200,
+};
+//endregion
+
+//region --- 可外撥側支撐(Standard) ---
+let SpexLaterTrunkStandard_prices = {
+  SpexLaterTrunkStandard_prices1: 7650,
+  SpexLaterTrunkStandard_prices2: 7650,
+};
+//endregion
+
+//region --- 可外撥側支撐(Offset) ---
+let SpexLaterTrunkOffset_prices = {
+  SpexLaterTrunkOffset_prices1: 7650,
+  SpexLaterTrunkOffset_prices2: 7650,
+};
+//endregion
+
+//region --- 雙曲面多軸可外撥側支撐 ---
+let SpexLaterTrunkAxialBiangular_prices = {
+  SpexLaterTrunkAxialBiangular_prices1: 7620,
+};
+//endregion
+
+//region --- 側支撐連接套件/左背管 ---
+let SpexLaterTrunkConnectLeft_prices = {
+  SpexLaterTrunkConnectLeft_prices1: 3200,
+};
+//endregion
+
+//region --- 側支撐連接套件/右背管 ---
+let SpexLaterTrunkConnectRight_prices = {
+  SpexLaterTrunkConnectRight_prices1: 3200,
+};
+//endregion
+
+//region --- 側支撐30mm延伸套件 ---
+let SpexLaterTrunkConnectExtend30_prices = {
+  SpexLaterTrunkConnectExtend30_prices1: 1900,
+};
+//endregion
+
+//region --- 側支撐115mm延伸套件 ---
+let SpexLaterTrunkConnectExtend115_prices = {
+  SpexLaterTrunkConnectExtend115_prices1: 3200,
+};
+//endregion
+
+//region --- 側支撐強化套件/補強片 ---
+let SpexLaterTrunkConnectReinforce_prices = {
+  SpexLaterTrunkConnectReinforce_prices1: 1900,
+};
+//endregion
+//endregion
+
+//region --- 側支撐擋墊布套價錢 ---
+
+//region --- 可外撥側支撐STANDARD狹長型擋墊價錢 ---
+let SpexLaterTrunklStandardStraight_prices = {
+  SpexLaterTrunklStandardStraight_prices1: 2000,
+  SpexLaterTrunklStandardStraight_prices2: 2000,
+  SpexLaterTrunklStandardStraight_prices3: 2000,
+  SpexLaterTrunklStandardStraight_prices4: 2000,
+  SpexLaterTrunklStandardStraight_prices5: 2000,
+};
+//endregion
+
+//region --- 可外撥側支撐COMFY狹長型擋墊價錢 ---
+let SpexLaterTrunklComfyStraight_prices = {
+  SpexLaterTrunklComfyStraight_prices1: 5200,
+  SpexLaterTrunklComfyStraight_prices2: 5200,
+  SpexLaterTrunklComfyStraight_prices3: 5200,
+  SpexLaterTrunklComfyStraight_prices4: 5200,
+  SpexLaterTrunklComfyStraight_prices5: 5200,
+};
+//endregion
+
+//region --- 可外撥側支撐STANDARD狹長微彎型擋墊價錢 ---
+let SpexLaterTrunklStandardCurved_prices = {
+  SpexLaterTrunklStandardCurved_prices1: 2000,
+  SpexLaterTrunklStandardCurved_prices2: 2000,
+  SpexLaterTrunklStandardCurved_prices3: 2000,
+  SpexLaterTrunklStandardCurved_prices4: 2000,
+};
+//endregion
+
+//region --- 可外撥側支撐STANDARD狹長微彎型擋墊價錢 ---
+let SpexLaterTrunklComfyCurved_prices = {
+  SpexLaterTrunklComfyCurved_prices1: 5200,
+  SpexLaterTrunklComfyCurved_prices2: 5200,
+  SpexLaterTrunklComfyCurved_prices3: 5200,
+  SpexLaterTrunklComfyCurved_prices4: 5200,
+};
+//endregion
+
+//region --- 可外撥側支撐STANDARD寬短型擋墊價錢 ---
+let SpexLaterTrunklStandardBroad_prices = {
+  SpexLaterTrunklStandardBroad_prices1: 2000,
+  SpexLaterTrunklStandardBroad_prices2: 2000,
+  SpexLaterTrunklStandardBroad_prices3: 2000,
+  SpexLaterTrunklStandardBroad_prices4: 2000,
+  SpexLaterTrunklStandardBroad_prices5: 2000,
+  SpexLaterTrunklStandardBroad_prices6: 2000,
+};
+//endregion
+
+//region --- 可外撥側支撐COMFY寬短型擋墊價錢 ---
+let SpexLaterTrunklComfyBroad_prices = {
+  SpexLaterTrunklComfyBroad_prices1: 5200,
+  SpexLaterTrunklComfyBroad_prices2: 5200,
+  SpexLaterTrunklComfyBroad_prices3: 5200,
+  SpexLaterTrunklComfyBroad_prices4: 5200,
+  SpexLaterTrunklComfyBroad_prices5: 5200,
+  SpexLaterTrunklComfyBroad_prices6: 5200,
+};
+//endregion
+
+//region --- 雙曲面側支撐12mm厚度STANDARD擋墊價錢 ---
+let SpexLaterTrunkAxialBiangular12Standard_prices = {
+  SpexLaterTrunkAxialBiangular12Standard_prices1: 5000,
+  SpexLaterTrunkAxialBiangular12Standard_prices2: 5000,
+  SpexLaterTrunkAxialBiangular12Standard_prices3: 5000,
+};
+//endregion
+
+//region --- 雙曲面側支撐12mm厚度COMFY擋墊價錢 ---
+let SpexLaterTrunkAxialBiangular12Comfy_prices = {
+  SpexLaterTrunkAxialBiangular12Comfy_prices1: 6500,
+  SpexLaterTrunkAxialBiangular12Comfy_prices2: 6500,
+  SpexLaterTrunkAxialBiangular12Comfy_prices3: 6500,
+};
+//endregion
+
+//region --- 雙曲面側支撐24mm厚度STANDARD擋墊價錢 ---
+let SpexLaterTrunkAxialBiangular24Standard_prices = {
+  SpexLaterTrunkAxialBiangular24Standard_prices1: 7000,
+  SpexLaterTrunkAxialBiangular24Standard_prices2: 7000,
+  SpexLaterTrunkAxialBiangular24Standard_prices3: 7000,
+};
+//endregion
+
+//region --- 雙曲面側支撐12mm厚度COMFY擋墊價錢 ---
+let SpexLaterTrunkAxialBiangular24Comfy_prices = {
+  SpexLaterTrunkAxialBiangular24Comfy_prices1: 7600,
+  SpexLaterTrunkAxialBiangular24Comfy_prices2: 7600,
+  SpexLaterTrunkAxialBiangular24Comfy_prices3: 7600,
+};
 //endregion
 
 //endregion
+
+latertrunkaxialcountInput.addEventListener("input", () => {
+  if (
+    latertrunkaxialcountInput.value.trim() !== "" &&
+    SpexLaterTrunkAxialCheckbox.checked
+  ) {
+    let latertrunkaxialcountquantity =
+      parseInt(latertrunkaxialcountInput.value) || 0; // 轉成數字（預設為 0）
+
+    nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+      SpexLaterTrunkAxial_prices.SpexLaterTrunkAxial_prices1 *
+      latertrunkaxialcountquantity)} 元`;
+  }
+});
+
+      
