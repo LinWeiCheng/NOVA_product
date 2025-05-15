@@ -4744,7 +4744,7 @@ let SpexLaterTrunklStandardBroadPadSizeWidthOptions = [
   { value: "option3", text: "125mm" },
   { value: "option4", text: "140mm" },
   { value: "option5", text: "160mm" },
-  { value: "option6", text: "160mm" },
+  { value: "option6", text: "195mm" },
   { value: "option7", text: "230mm" },
 ];
 //endregion
@@ -4756,7 +4756,7 @@ let SpexLaterTrunklStandardBroadPadSizeHeighOptions = [
   { value: "option3", text: "140mm" },
   { value: "option4", text: "150mm" },
   { value: "option5", text: "155mm" },
-  { value: "option6", text: "155mm" },
+  { value: "option6", text: "165mm" },
   { value: "option7", text: "175mm" },
 ];
 //endregion
@@ -5342,6 +5342,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkaxialpadsize_Width.value === "option3") {
@@ -5355,6 +5356,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkaxialpadsize_Width.value === "option4") {
@@ -5368,6 +5370,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkaxialpadsize_Width.value === "option5") {
@@ -5381,6 +5384,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkaxialpadsize_Width.value === "option6") {
@@ -5394,6 +5398,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
     }
     //endregion
@@ -5417,6 +5422,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkaxialpadsize_Width.value === "option3") {
@@ -5430,6 +5436,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkaxialpadsize_Width.value === "option4") {
@@ -5443,6 +5450,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkaxialpadsize_Width.value === "option5") {
@@ -5456,6 +5464,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkaxialpadsize_Width.value === "option6") {
@@ -5469,6 +5478,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
     }
     //endregion
@@ -5492,6 +5502,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkaxialpadsize_Width.value === "option3") {
@@ -5505,6 +5516,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkaxialpadsize_Width.value === "option4") {
@@ -5518,6 +5530,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkaxialpadsize_Width.value === "option5") {
@@ -5531,6 +5544,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
     }
     //endregion
@@ -5554,6 +5568,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkaxialpadsize_Width.value === "option3") {
@@ -5567,6 +5582,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkaxialpadsize_Width.value === "option4") {
@@ -5580,6 +5596,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkaxialpadsize_Width.value === "option5") {
@@ -5593,6 +5610,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkaxialpadsize_Width.value === "option6") {
@@ -5606,6 +5624,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
     }
     //endregion
@@ -5629,6 +5648,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
       if (latertrunkaxialpadsize_Width.value === "option3") {
@@ -5642,6 +5662,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
       if (latertrunkaxialpadsize_Width.value === "option4") {
@@ -5655,6 +5676,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
       if (latertrunkaxialpadsize_Width.value === "option5") {
@@ -5668,6 +5690,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
       if (latertrunkaxialpadsize_Width.value === "option6") {
@@ -5681,6 +5704,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
       if (latertrunkaxialpadsize_Width.value === "option7") {
@@ -5694,6 +5718,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
     }
     //endregion
@@ -5717,6 +5742,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
       if (latertrunkaxialpadsize_Width.value === "option3") {
@@ -5730,6 +5756,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
       if (latertrunkaxialpadsize_Width.value === "option4") {
@@ -5743,6 +5770,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
       if (latertrunkaxialpadsize_Width.value === "option5") {
@@ -5756,6 +5784,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
       if (latertrunkaxialpadsize_Width.value === "option6") {
@@ -5769,6 +5798,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
       //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
       if (latertrunkaxialpadsize_Width.value === "option7") {
@@ -5782,6 +5812,7 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
           latertrunkaxialpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialpadcount.value = "";
       }
     }
     //endregion
@@ -5873,6 +5904,9 @@ document
             checkbox.checked = false;
             latertrunkstandardcount.value = "";
             latertrunkstandardcount.disabled = true;
+          }
+          else{
+            latertrunkstandardcount.value = "";
           }
         });
     });
@@ -6181,6 +6215,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkstandardpadsize_Width.value === "option3") {
@@ -6194,6 +6229,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkstandardpadsize_Width.value === "option4") {
@@ -6207,6 +6243,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkstandardpadsize_Width.value === "option5") {
@@ -6220,6 +6257,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkstandardpadsize_Width.value === "option6") {
@@ -6233,6 +6271,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
     }
     //endregion
@@ -6256,6 +6295,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkstandardpadsize_Width.value === "option3") {
@@ -6269,6 +6309,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkstandardpadsize_Width.value === "option4") {
@@ -6282,6 +6323,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkstandardpadsize_Width.value === "option5") {
@@ -6295,6 +6337,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkstandardpadsize_Width.value === "option6") {
@@ -6308,6 +6351,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
     }
     //endregion
@@ -6331,6 +6375,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkstandardpadsize_Width.value === "option3") {
@@ -6344,6 +6389,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkstandardpadsize_Width.value === "option4") {
@@ -6357,6 +6403,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkstandardpadsize_Width.value === "option5") {
@@ -6370,6 +6417,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
     }
     //endregion
@@ -6393,6 +6441,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkstandardpadsize_Width.value === "option3") {
@@ -6406,6 +6455,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkstandardpadsize_Width.value === "option4") {
@@ -6419,6 +6469,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkstandardpadsize_Width.value === "option5") {
@@ -6432,6 +6483,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkstandardpadsize_Width.value === "option6") {
@@ -6445,6 +6497,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
     }
     //endregion
@@ -6468,6 +6521,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
       if (latertrunkstandardpadsize_Width.value === "option3") {
@@ -6481,6 +6535,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
       if (latertrunkstandardpadsize_Width.value === "option4") {
@@ -6494,6 +6549,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
       if (latertrunkstandardpadsize_Width.value === "option5") {
@@ -6507,6 +6563,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
       if (latertrunkstandardpadsize_Width.value === "option6") {
@@ -6520,6 +6577,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
       if (latertrunkstandardpadsize_Width.value === "option7") {
@@ -6533,6 +6591,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
     }
     //endregion
@@ -6556,6 +6615,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
       if (latertrunkstandardpadsize_Width.value === "option3") {
@@ -6569,6 +6629,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
       if (latertrunkstandardpadsize_Width.value === "option4") {
@@ -6582,6 +6643,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
       if (latertrunkstandardpadsize_Width.value === "option5") {
@@ -6595,6 +6657,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
       if (latertrunkstandardpadsize_Width.value === "option6") {
@@ -6608,6 +6671,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
       //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
       if (latertrunkstandardpadsize_Width.value === "option7") {
@@ -6621,6 +6685,7 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
           latertrunkstandardpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkstandardpadcount.value = "";
       }
     }
     //endregion
@@ -7026,6 +7091,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkoffsetpadsize_Width.value === "option3") {
@@ -7039,6 +7105,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkoffsetpadsize_Width.value === "option4") {
@@ -7052,6 +7119,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkoffsetpadsize_Width.value === "option5") {
@@ -7065,6 +7133,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkoffsetpadsize_Width.value === "option6") {
@@ -7078,6 +7147,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
     }
     //endregion
@@ -7101,6 +7171,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkoffsetpadsize_Width.value === "option3") {
@@ -7114,6 +7185,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkoffsetpadsize_Width.value === "option4") {
@@ -7127,6 +7199,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkoffsetpadsize_Width.value === "option5") {
@@ -7140,6 +7213,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkoffsetpadsize_Width.value === "option6") {
@@ -7153,6 +7227,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
     }
     //endregion
@@ -7176,6 +7251,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkoffsetpadsize_Width.value === "option3") {
@@ -7189,6 +7265,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkoffsetpadsize_Width.value === "option4") {
@@ -7202,6 +7279,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkoffsetpadsize_Width.value === "option5") {
@@ -7215,6 +7293,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
     }
     //endregion
@@ -7238,6 +7317,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"145mm"
       if (latertrunkoffsetpadsize_Width.value === "option3") {
@@ -7251,6 +7331,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"95mm"時，"墊高"會有"180mm"
       if (latertrunkoffsetpadsize_Width.value === "option4") {
@@ -7264,6 +7345,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"210mm"
       if (latertrunkoffsetpadsize_Width.value === "option5") {
@@ -7277,6 +7359,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"115mm"時，"墊高"會有"240mm"
       if (latertrunkoffsetpadsize_Width.value === "option6") {
@@ -7290,6 +7373,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
     }
     //endregion
@@ -7313,6 +7397,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
       if (latertrunkoffsetpadsize_Width.value === "option3") {
@@ -7326,6 +7411,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
       if (latertrunkoffsetpadsize_Width.value === "option4") {
@@ -7339,6 +7425,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
       if (latertrunkoffsetpadsize_Width.value === "option5") {
@@ -7352,6 +7439,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
       if (latertrunkoffsetpadsize_Width.value === "option6") {
@@ -7365,6 +7453,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
       if (latertrunkoffsetpadsize_Width.value === "option7") {
@@ -7378,6 +7467,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
     }
     //endregion
@@ -7401,6 +7491,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"125mm"時，"墊高"會有"140mm"
       if (latertrunkoffsetpadsize_Width.value === "option3") {
@@ -7414,6 +7505,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"140mm"時，"墊高"會有"150mm"
       if (latertrunkoffsetpadsize_Width.value === "option4") {
@@ -7427,6 +7519,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"160mm"時，"墊高"會有"155mm"
       if (latertrunkoffsetpadsize_Width.value === "option5") {
@@ -7440,6 +7533,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"195mm"時，"墊高"會有"165mm"
       if (latertrunkoffsetpadsize_Width.value === "option6") {
@@ -7453,6 +7547,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
       //當選擇"墊寬"是"230mm"時，"墊高"會有"175mm"
       if (latertrunkoffsetpadsize_Width.value === "option7") {
@@ -7466,6 +7561,7 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
           latertrunkoffsetpadsize_Heigh,
           filteredHeightOptions
         );
+        latertrunkoffsetpadcount.value = "";
       }
     }
     //endregion
@@ -7727,6 +7823,7 @@ latertrunk_axialpadtype.addEventListener("change", () => {
   }
 });
 //endregion
+
 //region --- 監聽"雙曲面多軸可外撥側支撐"的"擋墊寬度"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
 latertrunk_axialbiangular_Width.addEventListener("change", function () {
   if (Spex_LaterTrunk_AxialBiangular.checked) {
@@ -7759,6 +7856,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option3") {
@@ -7772,6 +7870,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option4") {
@@ -7785,6 +7884,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
     }
     //endregion
@@ -7808,6 +7908,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option3") {
@@ -7821,6 +7922,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option4") {
@@ -7834,6 +7936,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
     }
     //endregion
@@ -7857,6 +7960,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option3") {
@@ -7870,6 +7974,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option4") {
@@ -7883,6 +7988,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
     }
     //endregion
@@ -7906,6 +8012,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"215mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option3") {
@@ -7919,6 +8026,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
       //當選擇"墊寬"是"265mm"時，"墊高"會有"195mm"
       if (latertrunk_axialbiangular_Width.value === "option4") {
@@ -7932,6 +8040,7 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
           latertrunk_axialbiangular_Heigh,
           filteredHeightOptions
         );
+        latertrunkaxialbiangularpadcount.value = "";
       }
     }
     //endregion
