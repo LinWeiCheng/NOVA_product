@@ -7142,8 +7142,25 @@ let latertrunkstandardpadcountInput = document.getElementById(
 let SpexLaterTrunkOffsetCheckbox = document.querySelector(
   "#Spex_LaterTrunk_Offset"
 );
+
+let latertrunkoffsetcountInput = document.getElementById(
+  "latertrunkoffsetcount"
+);
+
+let latertrunkoffsetpadcountInput = document.getElementById(
+  "latertrunkoffsetpadcount"
+);
+
 let SpexLaterTrunkAxialBiangularCheckbox = document.querySelector(
   "#Spex_LaterTrunk_AxialBiangular"
+);
+
+let latertrunkaxialbiangularcountInput = document.getElementById(
+  "latertrunk_axialbiangularcount"
+);
+
+let latertrunkaxialbiangularpadcountInput = document.getElementById(
+  "latertrunkaxialbiangularpadcount"
 );
 
 let SpexLaterTrunkConnectLeftCheckbox = document.querySelector(
@@ -7219,6 +7236,10 @@ let SpexLaterTrunkConnectReinforce_prices = {
   SpexLaterTrunkConnectReinforce_prices1: 1900,
 };
 //endregion
+
+// 把所有價格集合起來成一個大物件（方便查）
+let allSpexLaterTrunkAccessoryPrices = [3200, 3200, 1900, 3200, 1900];
+
 //endregion
 
 //region --- 側支撐擋墊布套價錢 ---
@@ -7307,7 +7328,7 @@ let SpexLaterTrunkAxialBiangular24Standard_prices = {
 };
 //endregion
 
-//region --- 雙曲面側支撐12mm厚度COMFY擋墊價錢 ---
+//region --- 雙曲面側支撐24mm厚度COMFY擋墊價錢 ---
 let SpexLaterTrunkAxialBiangular24Comfy_prices = {
   SpexLaterTrunkAxialBiangular24Comfy_prices1: 7600,
   SpexLaterTrunkAxialBiangular24Comfy_prices2: 7600,
@@ -7784,15 +7805,15 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
 });
 //endregion
 
-//region --- 監聽墊寬，每次重新選擇墊寬寬度時，把價錢重製 --- 
+//region --- 監聽墊寬，每次重新選擇墊寬寬度時，把價錢重製 ---
 let latertrunkaxialpadWidth = document.querySelector(
   ".latertrunkaxialpadsize_Width"
 );
 latertrunkaxialpadWidth.addEventListener("change", () => {
-    latertrunkclothpadprices.textContent = `0元`;
-    nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
-          Number(latertrunkprices.textContent) 
-        )} 元`;
+  latertrunkclothpadprices.textContent = `0元`;
+  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+    Number(latertrunkprices.textContent)
+  )} 元`;
 });
 //endregion
 
@@ -7834,15 +7855,15 @@ latertrunkstandardcountInput.addEventListener("input", () => {
 });
 //endregion
 
-//region --- 監聽墊寬，每次重新選擇墊寬寬度時，把價錢重製 --- 
+//region --- 監聽墊寬，每次重新選擇墊寬寬度時，把價錢重製 ---
 let standardpadWidth = document.querySelector(
   ".latertrunkstandardpadsize_Width"
 );
 standardpadWidth.addEventListener("change", () => {
-    latertrunkclothpadprices.textContent = `0元`;
-    nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
-          Number(latertrunkprices.textContent) 
-        )} 元`;
+  latertrunkclothpadprices.textContent = `0元`;
+  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+    Number(latertrunkprices.textContent)
+  )} 元`;
 });
 //endregion
 
@@ -8027,8 +8048,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
       ) {
@@ -8040,8 +8060,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
       ) {
@@ -8053,8 +8072,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
       ) {
@@ -8088,8 +8106,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
       ) {
@@ -8101,8 +8118,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
       ) {
@@ -8114,8 +8130,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
       ) {
@@ -8131,7 +8146,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
     }
     //endregion
 
-//region --- STANDARD寬短型擋墊價錢 ---
+    //region --- STANDARD寬短型擋墊價錢 ---
     if (
       latertrunkstandardpadtypeSelectoptions.text === "寬短型" &&
       latertrunkstandardclothpadtypeSelectoptions.text === "STANDARD" &&
@@ -8149,8 +8164,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "140mm"
       ) {
@@ -8175,8 +8189,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "155mm"
       ) {
@@ -8188,8 +8201,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "230mm"
       ) {
@@ -8201,8 +8213,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "175mm"
       ) {
@@ -8216,9 +8227,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
         )} 元`;
       }
     }
-//endregion
+    //endregion
 
-//region --- COMFY寬短型擋墊價錢 ---
+    //region --- COMFY寬短型擋墊價錢 ---
     if (
       latertrunkstandardpadtypeSelectoptions.text === "寬短型" &&
       latertrunkstandardclothpadtypeSelectoptions.text === "COMFY" &&
@@ -8236,8 +8247,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "140mm"
       ) {
@@ -8262,8 +8272,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "155mm"
       ) {
@@ -8275,8 +8284,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "165mm"
       ) {
@@ -8288,8 +8296,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
-      }
-      else if (
+      } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "175mm"
       ) {
@@ -8303,7 +8310,902 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
         )} 元`;
       }
     }
-//endregion
+    //endregion
   }
 });
+//endregion
+
+//endregion
+
+//region --- Spex可外撥側支撐(Offset) ---
+//region --- 監聽側支撐數量並給予價錢 ---
+latertrunkoffsetcountInput.addEventListener("input", () => {
+  let offsetsize1 = document.querySelector("#offsetsize1");
+  let offsetsize2 = document.querySelector("#offsetsize2");
+  if (
+    latertrunkoffsetcountInput.value.trim() !== "" &&
+    SpexLaterTrunkOffsetCheckbox.checked
+  ) {
+    let latertrunkoffsetcountquantity =
+      parseInt(latertrunkoffsetcountInput.value) || 0; // 轉成數字（預設為 0）
+    if (offsetsize1.checked) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices1 *
+          latertrunkoffsetcountquantity
+      )} 元`;
+
+      latertrunkprices.textContent =
+        SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices1 *
+        latertrunkoffsetcountquantity;
+    } else if (offsetsize2.checked) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices2 *
+          latertrunkoffsetcountquantity
+      )} 元`;
+
+      latertrunkprices.textContent =
+        SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices2 *
+        latertrunkoffsetcountquantity;
+    }
+  } else {
+    nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+  }
+});
+//endregion
+
+//region --- 監聽墊寬，每次重新選擇墊寬寬度時，把價錢重製 ---
+let offsetpadWidth = document.querySelector(".latertrunkoffsetpadsize_Width");
+offsetpadWidth.addEventListener("change", () => {
+  latertrunkclothpadprices.textContent = `0元`;
+  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+    Number(latertrunkprices.textContent)
+  )} 元`;
+});
+//endregion
+
+//region --- 監聽布套種類數量並給予價錢 ---
+latertrunkoffsetpadcountInput.addEventListener("input", () => {
+  let latertrunkoffsetpadtypeSelectoptions =
+    latertrunkoffsetpadtype.options[latertrunkoffsetpadtype.selectedIndex];
+  let latertrunkoffsetclothpadtypeSelectoptions =
+    latertrunkoffsetclothpadtype.options[
+      latertrunkoffsetclothpadtype.selectedIndex
+    ];
+  let latertrunkoffsetpadsizeWidthSelectoptions =
+    latertrunkoffsetpadsize_Width.options[
+      latertrunkoffsetpadsize_Width.selectedIndex
+    ];
+  let latertrunkoffsetpadsizeHeighSelectoptions =
+    latertrunkoffsetpadsize_Heigh.options[
+      latertrunkoffsetpadsize_Heigh.selectedIndex
+    ];
+  let latertrunkoffsetpadcountquantity =
+    parseInt(latertrunkoffsetpadcountInput.value) || 0; // 轉成數字（預設為 0）
+
+  if (
+    latertrunkoffsetpadcountInput.value.trim() !== "" &&
+    SpexLaterTrunkOffsetCheckbox.checked
+  ) {
+    //region --- STANDARD狹長型擋墊價錢 ---
+    if (
+      latertrunkoffsetpadtypeSelectoptions.text === "狹長型" &&
+      latertrunkoffsetclothpadtypeSelectoptions.text === "STANDARD" &&
+      latertrunkoffsetpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "85mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "115mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardStraight_prices.SpexLaterTrunklStandardStraight_prices1 *
+          latertrunkoffsetpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardStraight_prices.SpexLaterTrunklStandardStraight_prices2 *
+          latertrunkoffsetpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardStraight_prices.SpexLaterTrunklStandardStraight_prices3 *
+          latertrunkoffsetpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardStraight_prices.SpexLaterTrunklStandardStraight_prices4 *
+          latertrunkoffsetpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardStraight_prices.SpexLaterTrunklStandardStraight_prices5 *
+          latertrunkoffsetpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- COMFY狹長型擋墊價錢 ---
+    if (
+      latertrunkoffsetpadtypeSelectoptions.text === "狹長型" &&
+      latertrunkoffsetclothpadtypeSelectoptions.text === "COMFY" &&
+      latertrunkoffsetpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "85mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "115mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyStraight_prices.SpexLaterTrunklComfyStraight_prices1 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyStraight_prices.SpexLaterTrunklComfyStraight_prices2 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyStraight_prices.SpexLaterTrunklComfyStraight_prices3 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyStraight_prices.SpexLaterTrunklComfyStraight_prices4 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyStraight_prices.SpexLaterTrunklComfyStraight_prices5 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- STANDARD狹長微彎型擋墊價錢 ---
+    if (
+      latertrunkoffsetpadtypeSelectoptions.text === "狹長微彎型" &&
+      latertrunkoffsetclothpadtypeSelectoptions.text === "STANDARD" &&
+      latertrunkoffsetpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardCurved_prices.SpexLaterTrunklStandardCurved_prices1 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardCurved_prices.SpexLaterTrunklStandardCurved_prices2 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardCurved_prices.SpexLaterTrunklStandardCurved_prices3 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardCurved_prices.SpexLaterTrunklStandardCurved_prices4 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- COMFY狹長微彎型擋墊價錢 ---
+    if (
+      latertrunkoffsetpadtypeSelectoptions.text === "狹長微彎型" &&
+      latertrunkoffsetclothpadtypeSelectoptions.text === "COMFY" &&
+      latertrunkoffsetpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyCurved_prices.SpexLaterTrunklComfyCurved_prices1 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyCurved_prices.SpexLaterTrunklComfyCurved_prices2 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyCurved_prices.SpexLaterTrunklComfyCurved_prices3 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyCurved_prices.SpexLaterTrunklComfyCurved_prices4 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- STANDARD寬短型擋墊價錢 ---
+    if (
+      latertrunkoffsetpadtypeSelectoptions.text === "寬短型" &&
+      latertrunkoffsetclothpadtypeSelectoptions.text === "STANDARD" &&
+      latertrunkoffsetpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "105mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "130mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices1 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "125mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "140mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices2 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "140mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "150mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices3 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "160mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "155mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices4 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "195mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "230mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices5 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "230mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "175mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices6 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- COMFY寬短型擋墊價錢 ---
+    if (
+      latertrunkoffsetpadtypeSelectoptions.text === "寬短型" &&
+      latertrunkoffsetclothpadtypeSelectoptions.text === "COMFY" &&
+      latertrunkoffsetpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "105mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "130mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyBroad_prices.SpexLaterTrunklComfyBroad_prices1 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "125mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "140mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyBroad_prices.SpexLaterTrunklComfyBroad_prices2 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+      if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "140mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "150mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyBroad_prices.SpexLaterTrunklComfyBroad_prices3 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "160mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "155mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyBroad_prices.SpexLaterTrunklComfyBroad_prices4 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "195mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "165mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyBroad_prices.SpexLaterTrunklComfyBroad_prices5 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkoffsetpadsizeWidthSelectoptions.text === "230mm" &&
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "175mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunklComfyBroad_prices.SpexLaterTrunklComfyBroad_prices6 *
+          latertrunkstandardpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+  }
+});
+//endregion
+//endregion
+
+//region ---  Spex 側支撐配件 ---
+//region ---計算側支撐連接套件總價 ---
+function updateSpexLaterTrunkAccessoryTotalPrice() {
+  let checkboxes = document.querySelectorAll(".SpexLaterTrunkSupportsAccessories");
+
+  let basePrice =
+    Number(latertrunkprices.textContent.replace(/[^0-9]/g, "")) +
+    Number(latertrunkclothpadprices.textContent.replace(/[^0-9]/g, ""));
+
+  let extra = 0;
+
+   checkboxes.forEach((cb, index) => {
+      if (cb.checked) {
+        let price = allSpexLaterTrunkAccessoryPrices[index] || 0;
+        extra += price;
+      }
+    });
+
+  let total = basePrice + extra;
+  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(total)} 元`;
+}
+//endregion
+
+//region --- Spex 側支撐連接套件/左背管 ---
+SpexLaterTrunkConnectLeftCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    updateSpexLaterTrunkAccessoryTotalPrice();
+  } else {
+    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+    if (tempValue !== "0") {
+      updateSpexLaterTrunkAccessoryTotalPrice();
+    } else {
+      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+    }
+  }
+});
+//endregion
+
+//region --- Spex 側支撐連接套件/右背管 ---
+SpexLaterTrunkConnectRightCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    updateSpexLaterTrunkAccessoryTotalPrice();
+  } else {
+    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+    if (tempValue !== "0") {
+      updateSpexLaterTrunkAccessoryTotalPrice();
+    } else {
+      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+    }
+  }
+});
+//endregion
+
+//region --- Spex 側支撐30mm延伸套件 ---
+SpexLaterTrunkExtend30Checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    updateSpexLaterTrunkAccessoryTotalPrice();
+  } else {
+    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+    if (tempValue !== "0") {
+      updateSpexLaterTrunkAccessoryTotalPrice();
+    } else {
+      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+    }
+  }
+});
+//endregion
+
+//region --- Spex 側支撐115mm延伸套件 ---
+SpexLaterTrunkExtend115Checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    updateSpexLaterTrunkAccessoryTotalPrice();
+  } else {
+    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+    if (tempValue !== "0") {
+      updateSpexLaterTrunkAccessoryTotalPrice();
+    } else {
+      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+    }
+  }
+});
+//endregion
+
+//region --- Spex 側支撐強化套件/補強片 ---
+SpexLaterTrunkReinforceCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    updateSpexLaterTrunkAccessoryTotalPrice();
+  } else {
+    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+    if (tempValue !== "0") {
+      updateSpexLaterTrunkAccessoryTotalPrice();
+    } else {
+      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+    }
+  }
+});
+//endregion
+//endregion
+
+//region --- Spex 雙曲面多軸可外撥側支撐扣具 ---
+//region --- 監聽側支撐數量並給予價錢 ---
+latertrunkaxialbiangularcountInput.addEventListener("input", () => {
+  if (
+    latertrunkaxialbiangularcountInput.value.trim() !== "" &&
+    SpexLaterTrunkAxialBiangularCheckbox.checked
+  ) {
+    let latertrunkaxialbiangularcountquantity =
+      parseInt(latertrunkaxialbiangularcountInput.value) || 0; // 轉成數字（預設為 0）
+
+    nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+      SpexLaterTrunkAxialBiangular_prices.SpexLaterTrunkAxialBiangular_prices1 *
+        latertrunkaxialbiangularcountquantity
+    )} 元`;
+
+    latertrunkprices.textContent =
+      SpexLaterTrunkAxialBiangular_prices.SpexLaterTrunkAxialBiangular_prices1 *
+      latertrunkaxialbiangularcountquantity;
+  } else {
+    nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+  }
+});
+//endregion
+
+//region --- 監聽布套種類數量並給予價錢 ---
+latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
+  let latertrunkaxialbiangularSelectoptions =
+    latertrunkaxialbiangular.options[latertrunkaxialbiangular.selectedIndex];
+  let latertrunk_axialpadtypeSelectoptions =
+    latertrunk_axialpadtype.options[latertrunk_axialpadtype.selectedIndex];
+  let latertrunkaxialbiangularWidthSelectoptions =
+    latertrunk_axialbiangular_Width.options[
+      latertrunk_axialbiangular_Width.selectedIndex
+    ];
+  let latertrunkaxialbiangularHeighSelectoptions =
+    latertrunk_axialbiangular_Heigh.options[
+      latertrunk_axialbiangular_Heigh.selectedIndex
+    ];
+  let latertrunkaxialbiangularpadcountquantity =
+    parseInt(latertrunkaxialbiangularpadcountInput.value) || 0; // 轉成數字（預設為 0）
+
+  if (SpexLaterTrunkAxialBiangularCheckbox.checked) {
+    //region --- 12mm厚度STANDARD擋墊價錢 ---
+    if (
+      latertrunkaxialbiangularSelectoptions.text === "12mm" &&
+      latertrunk_axialpadtypeSelectoptions.text === "STANDARD" &&
+      latertrunkaxialbiangularpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "165mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "175mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular12Standard_prices.SpexLaterTrunkAxialBiangular12Standard_prices1 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular12Standard_prices.SpexLaterTrunkAxialBiangular12Standard_prices2 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular12Standard_prices.SpexLaterTrunkAxialBiangular12Standard_prices3 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- 雙曲面側支撐24mm厚度STANDARD擋墊價錢 ---
+    else if (
+      latertrunkaxialbiangularSelectoptions.text === "24mm" &&
+      latertrunk_axialpadtypeSelectoptions.text === "STANDARD" &&
+      latertrunkaxialbiangularpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "165mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "175mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular24Standard_prices.SpexLaterTrunkAxialBiangular24Standard_prices1 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular24Standard_prices.SpexLaterTrunkAxialBiangular24Standard_prices2 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular24Standard_prices.SpexLaterTrunkAxialBiangular24Standard_prices3 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- 雙曲面側支撐12mm厚度COMFY擋墊價錢 ---
+    else if (
+      latertrunkaxialbiangularSelectoptions.text === "12mm" &&
+      latertrunk_axialpadtypeSelectoptions.text === "COMFY" &&
+      latertrunkaxialbiangularpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "165mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "175mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular12Comfy_prices.SpexLaterTrunkAxialBiangular12Comfy_prices1 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular12Comfy_prices.SpexLaterTrunkAxialBiangular12Comfy_prices2 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular12Comfy_prices.SpexLaterTrunkAxialBiangular12Comfy_prices3 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region --- 雙曲面側支撐24mm厚度COMFY擋墊價錢 ---
+    else if (
+      latertrunkaxialbiangularSelectoptions.text === "24mm" &&
+      latertrunk_axialpadtypeSelectoptions.text === "COMFY" &&
+      latertrunkaxialbiangularpadcountInput.value.trim() !== ""
+    ) {
+      if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "165mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "175mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular24Comfy_prices.SpexLaterTrunkAxialBiangular24Comfy_prices1 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular24Comfy_prices.SpexLaterTrunkAxialBiangular24Comfy_prices2 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      } else if (
+        latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
+        latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
+      ) {
+        latertrunkclothpadprices.textContent =
+          SpexLaterTrunkAxialBiangular24Comfy_prices.SpexLaterTrunkAxialBiangular24Comfy_prices3 *
+          latertrunkaxialbiangularpadcountquantity;
+
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent)
+        )} 元`;
+      }
+    }
+    //endregion
+  }
+});
+//endregion
+
+//region --- 監聽墊寬，每次重新選擇墊寬寬度時，把價錢重製 ---
+let latertrunkaxialbiangularWidth = document.querySelector(
+  ".latertrunk_axialbiangular_Width"
+);
+latertrunkaxialbiangularWidth.addEventListener("change", () => {
+  latertrunkclothpadprices.textContent = `0元`;
+  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+    Number(latertrunkprices.textContent)
+  )} 元`;
+});
+//endregion
+
+//region --- 側支撐及配件互不干涉 ---
+let SpexLaterTrunkSupportscheckboxes = document.querySelectorAll(
+  ".SpexLaterTrunkSupports"
+);
+let SpexLaterTrunkSupportsAccessoriescheckboxes = document.querySelectorAll(
+  ".SpexLaterTrunkSupportsAccessories"
+);
+
+//region ---計算側支撐總價 ---
+function updateSpexLaterTrunkTotalPrice() {
+  let basePrice =
+    Number(latertrunkprices.textContent.replace(/[^0-9]/g, "")) +
+    Number(latertrunkclothpadprices.textContent.replace(/[^0-9]/g, ""));
+
+  let extra = 0;
+
+  document
+    .querySelectorAll(".SpexLaterTrunkSupports:checked")
+    .forEach((cb, index) => {
+      if (cb.checked) {
+        let price = allSpexLaterTrunkAccessoryPrices[index] || 0;
+        extra += price;
+      }
+    });
+
+  let total = basePrice + extra;
+  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(total)} 元`;
+}
+//endregion
+
+SpexLaterTrunkSupportscheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    let anyLaterTrunkSupportsChecked = Array.from(
+      SpexLaterTrunkSupportscheckboxes
+    ).some((cb) => cb.checked);
+    let anyAccessoriesChecked = Array.from(
+      SpexLaterTrunkSupportsAccessoriescheckboxes
+    ).some((cb) => cb.checked);
+
+    if (!anyLaterTrunkSupportsChecked) {
+      if (anyAccessoriesChecked) {
+        latertrunkprices.textContent = '0';
+        latertrunkclothpadprices.textContent = '0';
+        updateSpexLaterTrunkAccessoryTotalPrice();
+      } else {
+        nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+      }
+    }
+  });
+});
+
 //endregion
