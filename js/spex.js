@@ -4787,7 +4787,7 @@ let SpexLaterTrunklComfyBroadPadSizeHeighOptions = [
 
 //region --- 雙曲面側支撐12mm厚度STANDARD擋墊墊寬的選項 ---
 let SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊寬", selected: true },
   { value: "option2", text: "165mm" },
   { value: "option3", text: "215mm" },
   { value: "option4", text: "265mm" },
@@ -4796,7 +4796,7 @@ let SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions = [
 
 //region --- 雙曲面側支撐12mm厚度STANDARD擋墊墊高的選項 ---
 let SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊高", selected: true },
   { value: "option2", text: "175mm" },
   { value: "option3", text: "195mm" },
   { value: "option4", text: "195mm" },
@@ -4805,7 +4805,7 @@ let SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions = [
 
 //region --- 雙曲面側支撐12mm厚度COMFY擋墊墊寬的選項 ---
 let SpexLaterTrunkAxialBiangular12ComfyPadSizeWidthOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊寬", selected: true },
   { value: "option2", text: "165mm" },
   { value: "option3", text: "215mm" },
   { value: "option4", text: "265mm" },
@@ -4814,7 +4814,7 @@ let SpexLaterTrunkAxialBiangular12ComfyPadSizeWidthOptions = [
 
 //region --- 雙曲面側支撐12mm厚度COMFY擋墊墊高的選項 ---
 let SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊高", selected: true },
   { value: "option2", text: "175mm" },
   { value: "option3", text: "195mm" },
   { value: "option4", text: "195mm" },
@@ -4823,7 +4823,7 @@ let SpexLaterTrunkAxialBiangular12ComfyPadSizHeighOptions = [
 
 //region --- 雙曲面側支撐24mm厚度STANDARD擋墊墊寬的選項 ---
 let SpexLaterTrunkAxialBiangular24StandardPadSizeWidthOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊寬", selected: true },
   { value: "option2", text: "165mm" },
   { value: "option3", text: "215mm" },
   { value: "option4", text: "265mm" },
@@ -4832,7 +4832,7 @@ let SpexLaterTrunkAxialBiangular24StandardPadSizeWidthOptions = [
 
 //region --- 雙曲面側支撐24mm厚度STANDARD擋墊墊高的選項 ---
 let SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊高", selected: true },
   { value: "option2", text: "175mm" },
   { value: "option3", text: "195mm" },
   { value: "option4", text: "195mm" },
@@ -4841,7 +4841,7 @@ let SpexLaterTrunkAxialBiangular24StandardPadSizHeighOptions = [
 
 //region --- 雙曲面側支撐24mm厚度COMFY擋墊墊寬的選項 ---
 let SpexLaterTrunkAxialBiangular24ComfyPadSizeWidthOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊寬", selected: true },
   { value: "option2", text: "165mm" },
   { value: "option3", text: "215mm" },
   { value: "option4", text: "265mm" },
@@ -4850,7 +4850,7 @@ let SpexLaterTrunkAxialBiangular24ComfyPadSizeWidthOptions = [
 
 //region --- 雙曲面側支撐24mm厚度COMFY擋墊墊高的選項 ---
 let SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions = [
-  { value: "option1", text: "請選擇", selected: true },
+  { value: "option1", text: "墊高", selected: true },
   { value: "option2", text: "175mm" },
   { value: "option3", text: "195mm" },
   { value: "option4", text: "195mm" },
@@ -4858,8 +4858,6 @@ let SpexLaterTrunkAxialBiangular24ComfyPadSizHeighOptions = [
 //endregion
 
 //endregion
-
-//region --- 確定勾選的是哪個側支撐 ---
 
 //region 關閉沒有勾選的checkbox選項
 
@@ -5904,9 +5902,12 @@ document
             checkbox.checked = false;
             latertrunkstandardcount.value = "";
             latertrunkstandardcount.disabled = true;
-          }
-          else{
+            latertrunkstandardpadtype.disabled = true;
+            latertrunkstandardclothpadtype.disabled = true;
+          } else {
             latertrunkstandardcount.value = "";
+            latertrunkstandardpadtype.disabled = true;
+            latertrunkstandardclothpadtype.disabled = true;
           }
         });
     });
@@ -6781,6 +6782,12 @@ document
             checkbox.checked = false;
             latertrunkoffsetcount.value = "";
             latertrunkoffsetcount.disabled = true;
+            latertrunkoffsetpadtype.disabled = true; // 禁用
+            latertrunkoffsetclothpadtype.disabled = true; // 禁用
+          }else {
+            latertrunkoffsetcount.value = "";
+            latertrunkoffsetpadtype.disabled = true; // 禁用
+            latertrunkoffsetclothpadtype.disabled = true; // 禁用
           }
         });
     });
