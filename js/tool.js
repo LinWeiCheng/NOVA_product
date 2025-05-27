@@ -1,6 +1,12 @@
-// region --- 格式化為帶逗號的數字 ---
+//region --- 格式化為帶逗號的數字 ---
 function formatPrice(prices) {
   return new Intl.NumberFormat("en-US").format(prices);
+}
+//endregion
+
+//region --- 價格轉換 ---
+function getNumericValueFromText(text) {
+  return Number(text.replace(/[^0-9]/g, "").trim());
 }
 //endregion
 
@@ -7119,14 +7125,28 @@ let latertrunkprices = document.querySelector(".latertrunkprices");
 let latertrunkclothpadprices = document.querySelector(
   ".latertrunkclothpadprices"
 );
-
-let latertrunkaxialcountInput = document.getElementById("latertrunkaxialcount");
-let latertrunkaxialpadcountInput = document.querySelector(
-  "#latertrunkaxialpadcount"
+let latertrunkaccessoryprices = document.querySelector(
+  ".latertrunkaccessoryprices"
+);
+let AllSpexLaterTrunkSupportscheckboxes = document.querySelectorAll(
+  '[name="car_SpexLaterTrunkSupports"]'
+);
+let allspexlatertrunkaxialprice = document.querySelectorAll(
+  '[name="spexlatertrunkaxial"]'
 );
 
 let SpexLaterTrunkAxialCheckbox = document.querySelector(
   "#Spex_LaterTrunk_Axial"
+);
+let latertrunkaxialcountInput = document.getElementById("latertrunkaxialcount");
+let latertrunkaxialpadcountInput = document.querySelector(
+  "#latertrunkaxialpadcount"
+);
+let latertrunkaxialcountprices = document.querySelector(
+  ".latertrunkaxialcountprices"
+);
+let latertrunkaxialpadcountprices = document.querySelector(
+  ".latertrunkaxialpadcountprices"
 );
 
 let SpexLaterTrunkStandardCheckbox = document.querySelector(
@@ -7138,29 +7158,43 @@ let latertrunkstandardcountInput = document.getElementById(
 let latertrunkstandardpadcountInput = document.getElementById(
   "latertrunkstandardpadcount"
 );
+let latertrunkstandardcountprices = document.querySelector(
+  ".latertrunkstandardcountprices"
+);
+let latertrunkstandardpadcountprices = document.querySelector(
+  ".latertrunkstandardpadcountprices"
+);
 
 let SpexLaterTrunkOffsetCheckbox = document.querySelector(
   "#Spex_LaterTrunk_Offset"
 );
-
 let latertrunkoffsetcountInput = document.getElementById(
   "latertrunkoffsetcount"
 );
-
 let latertrunkoffsetpadcountInput = document.getElementById(
   "latertrunkoffsetpadcount"
+);
+let latertrunkoffsetcountprices = document.querySelector(
+  ".latertrunkstandardcountprices"
+);
+let latertrunkoffsetpadcountprices = document.querySelector(
+  ".latertrunkstandardpadcountprices"
 );
 
 let SpexLaterTrunkAxialBiangularCheckbox = document.querySelector(
   "#Spex_LaterTrunk_AxialBiangular"
 );
-
 let latertrunkaxialbiangularcountInput = document.getElementById(
   "latertrunk_axialbiangularcount"
 );
-
 let latertrunkaxialbiangularpadcountInput = document.getElementById(
   "latertrunkaxialbiangularpadcount"
+);
+let latertrunkaxialbiangularcountprices = document.querySelector(
+  ".latertrunkaxialbiangularcountprices"
+);
+let latertrunkaxialbiangularpadcountprices = document.querySelector(
+  ".latertrunkaxialbiangularpadcountprices"
 );
 
 let SpexLaterTrunkConnectLeftCheckbox = document.querySelector(
@@ -7335,7 +7369,6 @@ let SpexLaterTrunkAxialBiangular24Comfy_prices = {
   SpexLaterTrunkAxialBiangular24Comfy_prices3: 7600,
 };
 //endregion
-
 //endregion
 
 //region --- 多軸可外撥側支撐 ---
@@ -7348,12 +7381,25 @@ latertrunkaxialcountInput.addEventListener("input", () => {
     let latertrunkaxialcountquantity =
       parseInt(latertrunkaxialcountInput.value) || 0; // 轉成數字（預設為 0）
 
-    nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
-      SpexLaterTrunkAxial_prices.SpexLaterTrunkAxial_prices1 *
-        latertrunkaxialcountquantity
-    )} 元`;
-
+    if (latertrunkaccessoryprices.textContent !== "") {
+      let accessoryValue = getNumericValueFromText(
+        latertrunkaccessoryprices.textContent
+      );
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        SpexLaterTrunkAxial_prices.SpexLaterTrunkAxial_prices1 *
+          latertrunkaxialcountquantity + accessoryValue
+      )} 元`;
+    } else {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        SpexLaterTrunkAxial_prices.SpexLaterTrunkAxial_prices1 *
+          latertrunkaxialcountquantity
+      )} 元`;
+    }
     latertrunkprices.textContent =
+      SpexLaterTrunkAxial_prices.SpexLaterTrunkAxial_prices1 *
+      latertrunkaxialcountquantity;
+
+    latertrunkaxialcountprices.textContent =
       SpexLaterTrunkAxial_prices.SpexLaterTrunkAxial_prices1 *
       latertrunkaxialcountquantity;
   } else {
@@ -7396,10 +7442,24 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           SpexLaterTrunklStandardStraight_prices.SpexLaterTrunklStandardStraight_prices1 *
           latertrunkaxialpadcountquantity;
 
+        if (latertrunkaccessoryprices.textContent !== "") {
+      let accessoryValue = getNumericValueFromText(
+        latertrunkaccessoryprices.textContent
+      );
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          Number(latertrunkprices.textContent) +
+            Number(latertrunkclothpadprices.textContent) +
+            accessoryValue
+        )} 元`;
+    }else{
         nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        }
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "145mm"
@@ -7412,6 +7472,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7424,6 +7487,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7436,6 +7502,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7448,6 +7517,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -7470,6 +7542,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "145mm"
@@ -7482,6 +7557,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7494,6 +7572,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7506,6 +7587,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7518,6 +7602,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -7540,6 +7627,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7552,6 +7642,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7564,6 +7657,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7576,6 +7672,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -7598,6 +7697,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7610,6 +7712,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7622,6 +7727,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7634,6 +7742,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -7656,6 +7767,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "140mm"
@@ -7668,6 +7782,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "140mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "150mm"
@@ -7680,6 +7797,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "155mm"
@@ -7692,6 +7812,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "165mm"
@@ -7704,6 +7827,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "175mm"
@@ -7716,6 +7842,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -7738,6 +7867,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "140mm"
@@ -7750,6 +7882,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "140mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "150mm"
@@ -7762,6 +7897,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "155mm"
@@ -7774,6 +7912,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "165mm"
@@ -7786,6 +7927,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "175mm"
@@ -7798,6 +7942,9 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -7810,13 +7957,21 @@ let latertrunkaxialpadWidth = document.querySelector(
   ".latertrunkaxialpadsize_Width"
 );
 latertrunkaxialpadWidth.addEventListener("change", () => {
-  latertrunkclothpadprices.textContent = `0元`;
-  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+  if (latertrunkaccessoryprices.textContent !== "") {
+      let accessoryValue = getNumericValueFromText(
+        latertrunkaccessoryprices.textContent
+      );
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+    Number(latertrunkprices.textContent) + accessoryValue
+  )} 元`;
+  }else{
+    latertrunkclothpadprices.textContent = `0元`;
+    nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
     Number(latertrunkprices.textContent)
   )} 元`;
+}
 });
 //endregion
-
 //endregion
 
 //region --- Spex可外撥側支撐(Standard) ---
@@ -7839,6 +7994,10 @@ latertrunkstandardcountInput.addEventListener("input", () => {
       latertrunkprices.textContent =
         SpexLaterTrunkStandard_prices.SpexLaterTrunkStandard_prices1 *
         latertrunkstandardcountquantity;
+
+      latertrunkstandardcountprices.textContent =
+        SpexLaterTrunkStandard_prices.SpexLaterTrunkStandard_prices1 *
+        latertrunkstandardcountquantity;
     } else if (standardsize2.checked) {
       nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
         SpexLaterTrunkStandard_prices.SpexLaterTrunkStandard_prices2 *
@@ -7846,6 +8005,10 @@ latertrunkstandardcountInput.addEventListener("input", () => {
       )} 元`;
 
       latertrunkprices.textContent =
+        SpexLaterTrunkStandard_prices.SpexLaterTrunkStandard_prices2 *
+        latertrunkstandardcountquantity;
+
+      latertrunkstandardcountprices.textContent =
         SpexLaterTrunkStandard_prices.SpexLaterTrunkStandard_prices2 *
         latertrunkstandardcountquantity;
     }
@@ -7908,6 +8071,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "145mm"
@@ -7920,6 +8086,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -7932,6 +8101,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -7944,6 +8116,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -7956,6 +8131,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -7978,6 +8156,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "145mm"
@@ -7990,6 +8171,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -8002,6 +8186,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -8014,6 +8201,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -8026,6 +8216,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8048,6 +8241,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -8060,6 +8256,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -8072,6 +8271,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -8084,6 +8286,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8106,6 +8311,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -8118,6 +8326,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -8130,6 +8341,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -8142,6 +8356,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8164,6 +8381,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "140mm"
@@ -8176,6 +8396,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
       if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8189,6 +8412,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "155mm"
@@ -8201,6 +8427,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "230mm"
@@ -8213,6 +8442,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "175mm"
@@ -8225,6 +8457,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8247,6 +8482,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "140mm"
@@ -8259,6 +8497,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
       if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8272,6 +8513,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "155mm"
@@ -8284,6 +8528,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "165mm"
@@ -8296,6 +8543,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "175mm"
@@ -8308,6 +8558,9 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkstandardpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8337,6 +8590,10 @@ latertrunkoffsetcountInput.addEventListener("input", () => {
       latertrunkprices.textContent =
         SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices1 *
         latertrunkoffsetcountquantity;
+
+      latertrunkoffsetcountprices.textContent =
+        SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices1 *
+        latertrunkoffsetcountquantity;
     } else if (offsetsize2.checked) {
       nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
         SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices2 *
@@ -8344,6 +8601,10 @@ latertrunkoffsetcountInput.addEventListener("input", () => {
       )} 元`;
 
       latertrunkprices.textContent =
+        SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices2 *
+        latertrunkoffsetcountquantity;
+
+      latertrunkoffsetcountprices.textContent =
         SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices2 *
         latertrunkoffsetcountquantity;
     }
@@ -8404,6 +8665,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
@@ -8416,6 +8680,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8428,6 +8695,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8440,6 +8710,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8452,6 +8725,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8474,6 +8750,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
@@ -8486,6 +8765,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8498,6 +8780,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8510,6 +8795,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8522,6 +8810,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8544,6 +8835,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8556,6 +8850,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8568,6 +8865,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8580,6 +8880,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8602,6 +8905,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8614,6 +8920,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8626,6 +8935,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8638,6 +8950,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8660,6 +8975,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "140mm"
@@ -8672,6 +8990,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
       if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8685,6 +9006,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "155mm"
@@ -8697,6 +9021,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "230mm"
@@ -8709,6 +9036,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "175mm"
@@ -8721,6 +9051,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8743,6 +9076,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "140mm"
@@ -8755,6 +9091,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
       if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8768,6 +9107,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "155mm"
@@ -8780,6 +9122,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "165mm"
@@ -8792,6 +9137,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "175mm"
@@ -8804,6 +9152,9 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkoffsetpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -8814,105 +9165,109 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
 
 //region ---  Spex 側支撐配件 ---
 //region ---計算側支撐連接套件總價 ---
-function updateSpexLaterTrunkAccessoryTotalPrice() {
-  let checkboxes = document.querySelectorAll(".SpexLaterTrunkSupportsAccessories");
+// function updateSpexLaterTrunkAccessoryTotalPrice() {
+//   let checkboxes = document.querySelectorAll(
+//     ".SpexLaterTrunkSupportsAccessories"
+//   );
 
-  let basePrice =
-    Number(latertrunkprices.textContent.replace(/[^0-9]/g, "")) +
-    Number(latertrunkclothpadprices.textContent.replace(/[^0-9]/g, ""));
+//   let extra = 0;
+//   let anyChecked = false;
 
-  let extra = 0;
+//   checkboxes.forEach((cb, index) => {
+//     if (cb.checked) {
+//       anyChecked = true;
+//       let price = allSpexLaterTrunkAccessoryPrices[index] || 0;
+//       extra += price;
+//     }
+//   });
 
-   checkboxes.forEach((cb, index) => {
-      if (cb.checked) {
-        let price = allSpexLaterTrunkAccessoryPrices[index] || 0;
-        extra += price;
-      }
-    });
+//   // 顯示價格（有勾選就顯示總價，沒勾選顯示 0）
+//   latertrunkaccessoryprices.textContent = anyChecked ? extra : 0;
 
-  let total = basePrice + extra;
-  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(total)} 元`;
-}
+//   let total = basePrice + extra;
+//   nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(total)} 元`;
+// }
 //endregion
 
 //region --- Spex 側支撐連接套件/左背管 ---
-SpexLaterTrunkConnectLeftCheckbox.addEventListener("change", function () {
-  if (this.checked) {
-    updateSpexLaterTrunkAccessoryTotalPrice();
-  } else {
-    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
-    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
-    if (tempValue !== "0") {
-      updateSpexLaterTrunkAccessoryTotalPrice();
-    } else {
-      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
-    }
-  }
-});
+// SpexLaterTrunkConnectLeftCheckbox.addEventListener("change", function () {
+//   if (this.checked) {
+//     updateSpexLaterTrunkAccessoryTotalPrice();
+//   } else {
+//     let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+//     let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+//     if (tempValue !== "0") {
+//       updateSpexLaterTrunkAccessoryTotalPrice();
+//     } else {
+//       nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+//     }
+//   }
+// });
 //endregion
 
 //region --- Spex 側支撐連接套件/右背管 ---
-SpexLaterTrunkConnectRightCheckbox.addEventListener("change", function () {
-  if (this.checked) {
-    updateSpexLaterTrunkAccessoryTotalPrice();
-  } else {
-    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
-    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
-    if (tempValue !== "0") {
-      updateSpexLaterTrunkAccessoryTotalPrice();
-    } else {
-      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
-    }
-  }
-});
+// SpexLaterTrunkConnectRightCheckbox.addEventListener("change", function () {
+//   if (this.checked) {
+//     updateSpexLaterTrunkAccessoryTotalPrice();
+//   } else {
+//     let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+//     let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+//     if (tempValue !== "0") {
+//       updateSpexLaterTrunkAccessoryTotalPrice();
+//     } else {
+//       nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+//     }
+//   }
+// });
 //endregion
 
 //region --- Spex 側支撐30mm延伸套件 ---
-SpexLaterTrunkExtend30Checkbox.addEventListener("change", function () {
-  if (this.checked) {
-    updateSpexLaterTrunkAccessoryTotalPrice();
-  } else {
-    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
-    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
-    if (tempValue !== "0") {
-      updateSpexLaterTrunkAccessoryTotalPrice();
-    } else {
-      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
-    }
-  }
-});
+// SpexLaterTrunkExtend30Checkbox.addEventListener("change", function () {
+//   if (this.checked) {
+//     updateSpexLaterTrunkAccessoryTotalPrice();
+//   } else {
+//     let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+//     let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+//     if (tempValue !== "0") {
+//       updateSpexLaterTrunkAccessoryTotalPrice();
+//     } else {
+//       nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+//     }
+//   }
+// });
 //endregion
 
-//region --- Spex 側支撐115mm延伸套件 ---
-SpexLaterTrunkExtend115Checkbox.addEventListener("change", function () {
-  if (this.checked) {
-    updateSpexLaterTrunkAccessoryTotalPrice();
-  } else {
-    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
-    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
-    if (tempValue !== "0") {
-      updateSpexLaterTrunkAccessoryTotalPrice();
-    } else {
-      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
-    }
-  }
-});
+// region --- Spex 側支撐115mm延伸套件 ---
+// SpexLaterTrunkExtend115Checkbox.addEventListener("change", function () {
+//   if (this.checked) {
+//     updateSpexLaterTrunkAccessoryTotalPrice();
+//   } else {
+//     let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+//     let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+//     if (tempValue !== "0") {
+//       updateSpexLaterTrunkAccessoryTotalPrice();
+//     } else {
+//       nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+//     }
+//   }
+// updateSpexLaterTrunkTotalPrice();
+// });
 //endregion
 
 //region --- Spex 側支撐強化套件/補強片 ---
-SpexLaterTrunkReinforceCheckbox.addEventListener("change", function () {
-  if (this.checked) {
-    updateSpexLaterTrunkAccessoryTotalPrice();
-  } else {
-    let rawText = nowprice_SpexLaterTrunkSupports.textContent;
-    let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
-    if (tempValue !== "0") {
-      updateSpexLaterTrunkAccessoryTotalPrice();
-    } else {
-      nowprice_SpexLaterTrunkSupports.textContent = `0元`;
-    }
-  }
-});
+// SpexLaterTrunkReinforceCheckbox.addEventListener("change", function () {
+// if (this.checked) {
+//   updateSpexLaterTrunkAccessoryTotalPrice();
+// } else {
+//   let rawText = nowprice_SpexLaterTrunkSupports.textContent;
+//   let tempValue = Number(rawText.replace(/[^0-9.-]+/g, "")); // 清掉非數字的東西
+//   if (tempValue !== "0") {
+//     updateSpexLaterTrunkAccessoryTotalPrice();
+//   } else {
+//     nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+//   }
+// }
+// updateSpexLaterTrunkTotalPrice();
 //endregion
 //endregion
 
@@ -8932,6 +9287,10 @@ latertrunkaxialbiangularcountInput.addEventListener("input", () => {
     )} 元`;
 
     latertrunkprices.textContent =
+      SpexLaterTrunkAxialBiangular_prices.SpexLaterTrunkAxialBiangular_prices1 *
+      latertrunkaxialbiangularcountquantity;
+
+    latertrunkaxialbiangularcountprices.textContent =
       SpexLaterTrunkAxialBiangular_prices.SpexLaterTrunkAxialBiangular_prices1 *
       latertrunkaxialbiangularcountquantity;
   } else {
@@ -8976,6 +9335,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8988,6 +9350,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -9000,6 +9365,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -9022,6 +9390,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -9034,6 +9405,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -9046,6 +9420,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -9068,6 +9445,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -9080,6 +9460,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -9092,6 +9475,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -9114,6 +9500,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -9126,6 +9515,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -9138,6 +9530,9 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           Number(latertrunkprices.textContent) +
             Number(latertrunkclothpadprices.textContent)
         )} 元`;
+        latertrunkaxialbiangularpadcountprices.textContent = formatPrice(
+          Number(latertrunkclothpadprices.textContent)
+        );
       }
     }
     //endregion
@@ -9156,6 +9551,7 @@ latertrunkaxialbiangularWidth.addEventListener("change", () => {
   )} 元`;
 });
 //endregion
+//endregion
 
 //region --- 側支撐及配件互不干涉 ---
 let SpexLaterTrunkSupportscheckboxes = document.querySelectorAll(
@@ -9166,46 +9562,197 @@ let SpexLaterTrunkSupportsAccessoriescheckboxes = document.querySelectorAll(
 );
 
 //region ---計算側支撐總價 ---
-function updateSpexLaterTrunkTotalPrice() {
-  let basePrice =
-    Number(latertrunkprices.textContent.replace(/[^0-9]/g, "")) +
-    Number(latertrunkclothpadprices.textContent.replace(/[^0-9]/g, ""));
+// function updateSpexLaterTrunkTotalPrice() {
+// let alltrunkaxialaddprice = 0;
+// let latertrunkaxialallount = 0;
+// let latertrunkstandardallount = 0;
+// let latertrunkoffsetallount = 0;
+// let latertrunkaxialbiangularallount = 0;
 
-  let extra = 0;
-
-  document
-    .querySelectorAll(".SpexLaterTrunkSupports:checked")
-    .forEach((cb, index) => {
-      if (cb.checked) {
-        let price = allSpexLaterTrunkAccessoryPrices[index] || 0;
-        extra += price;
-      }
-    });
-
-  let total = basePrice + extra;
-  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(total)} 元`;
-}
+// SpexLaterTrunkSupportscheckboxes.forEach((cb) => {
+//     if (
+//       cb.id === "Spex_LaterTrunk_Axial" &&
+//       (latertrunkaxialcountprices.textContent.trim() !== "" ||
+//         latertrunkaxialpadcountprices.textContent.trim() !== "") &&
+//       SpexLaterTrunkAxialCheckbox.checked
+//     ) {
+//       let countnumericValue = getNumericValueFromText(latertrunkaxialcountprices.textContent);
+//       let padcountnumericValue = getNumericValueFromText(latertrunkaxialpadcountprices.textContent);
+//       latertrunkaxialallount = countnumericValue + padcountnumericValue;
+//     }
+//     else if(cb.id === "Spex_LaterTrunk_Standard" &&
+//       (latertrunkstandardcountprices.textContent.trim() !== "" ||
+//         latertrunkstandardpadcountprices.textContent.trim() !== "") &&
+//         SpexLaterTrunkStandardCheckbox.checked){
+//         let countnumericValue = getNumericValueFromText(latertrunkaxialcountprices.textContent);
+//         let padcountnumericValue = getNumericValueFromText(latertrunkaxialpadcountprices.textContent);
+//         latertrunkstandardallount = countnumericValue + padcountnumericValue;
+//     }
+//     else if(cb.id === "Spex_LaterTrunk_Offset" &&
+//       (latertrunkoffsetcountprices.textContent.trim() !== "" ||
+//         latertrunkoffsetpadcountprices.textContent.trim() !== "") &&
+//         SpexLaterTrunkOffsetCheckbox.checked){
+//         let countnumericValue = getNumericValueFromText(latertrunkoffsetcountprices.textContent);
+//         let padcountnumericValue = getNumericValueFromText(latertrunkoffsetpadcountprices.textContent);
+//         latertrunkoffsetallount = countnumericValue + padcountnumericValue;
+//     }
+//      else if(cb.id === "Spex_LaterTrunk_AxialBiangular" &&
+//       (latertrunkaxialbiangularcountprices.textContent.trim() !== "" ||
+//         latertrunkaxialbiangularpadcountprices.textContent.trim() !== "") &&
+//         SpexLaterTrunkAxialBiangularCheckbox.checked){
+//         let countnumericValue = getNumericValueFromText(latertrunkaxialbiangularcountprices.textContent);
+//         let padcountnumericValue = getNumericValueFromText(latertrunkaxialbiangularpadcountprices.textContent);
+//         latertrunkaxialbiangularallount = countnumericValue + padcountnumericValue;
+//       }
+//     });
+//     alltrunkaxialaddprice = latertrunkaxialallount + latertrunkstandardallount +
+//                             latertrunkoffsetallount + latertrunkaxialbiangularallount;
+//   return alltrunkaxialaddprice;
+// }
 //endregion
 
-SpexLaterTrunkSupportscheckboxes.forEach((checkbox) => {
-  checkbox.addEventListener("change", function () {
-    let anyLaterTrunkSupportsChecked = Array.from(
-      SpexLaterTrunkSupportscheckboxes
-    ).some((cb) => cb.checked);
-    let anyAccessoriesChecked = Array.from(
-      SpexLaterTrunkSupportsAccessoriescheckboxes
-    ).some((cb) => cb.checked);
+// SpexLaterTrunkSupportscheckboxes.forEach((checkbox) => {
+//   checkbox.addEventListener("change", function () {
+//     let anyLaterTrunkSupportsChecked = Array.from(
+//       SpexLaterTrunkSupportscheckboxes
+//     ).some((cb) => cb.checked);
+//     let anyAccessoriesChecked = Array.from(
+//       SpexLaterTrunkSupportsAccessoriescheckboxes
+//     ).some((cb) => cb.checked);
 
-    if (!anyLaterTrunkSupportsChecked) {
-      if (anyAccessoriesChecked) {
-        latertrunkprices.textContent = '0';
-        latertrunkclothpadprices.textContent = '0';
-        updateSpexLaterTrunkAccessoryTotalPrice();
-      } else {
-        nowprice_SpexLaterTrunkSupports.textContent = `0元`;
-      }
+//     if (!anyLaterTrunkSupportsChecked) {
+//       if (anyAccessoriesChecked) {
+//         latertrunkprices.textContent = "0";
+//         latertrunkclothpadprices.textContent = "0";
+//         updateSpexLaterTrunkAccessoryTotalPrice();
+//       } else {
+//         nowprice_SpexLaterTrunkSupports.textContent = `0元`;
+//       }
+//     }
+//   });
+// });
+
+AllSpexLaterTrunkSupportscheckboxes.forEach((cb) => {
+  cb.addEventListener("change", updateSpexLaterTrunkTotalPrice);
+});
+
+function updateSpexLaterTrunkTotalPrice() {
+  let alltrunkaxialaddprice = 0;
+  let latertrunkaxialallount = 0;
+  let latertrunkstandardallount = 0;
+  let latertrunkoffsetallount = 0;
+  let latertrunkaxialbiangularallount = 0;
+  let latertrunkconnectleft = 0;
+  let latertrunkconnectright = 0;
+  let latertrunkconnectextend30 = 0;
+  let latertrunkconnectextend115 = 0;
+  let latertrunkconnectreinforce = 0;
+
+  AllSpexLaterTrunkSupportscheckboxes.forEach((cb) => {
+    if (
+      cb.id === "Spex_LaterTrunk_Axial" &&
+      (latertrunkaxialcountprices.textContent.trim() !== "" ||
+        latertrunkaxialpadcountprices.textContent.trim() !== "") &&
+      SpexLaterTrunkAxialCheckbox.checked
+    ) {
+      let countnumericValue = getNumericValueFromText(
+        latertrunkaxialcountprices.textContent
+      );
+      let padcountnumericValue = getNumericValueFromText(
+        latertrunkaxialpadcountprices.textContent
+      );
+      latertrunkaxialallount = countnumericValue + padcountnumericValue;
+    } else if (
+      cb.id === "Spex_LaterTrunk_Standard" &&
+      (latertrunkstandardcountprices.textContent.trim() !== "" ||
+        latertrunkstandardpadcountprices.textContent.trim() !== "") &&
+      SpexLaterTrunkStandardCheckbox.checked
+    ) {
+      let countnumericValue = getNumericValueFromText(
+        latertrunkaxialcountprices.textContent
+      );
+      let padcountnumericValue = getNumericValueFromText(
+        latertrunkaxialpadcountprices.textContent
+      );
+      latertrunkstandardallount = countnumericValue + padcountnumericValue;
+    } else if (
+      cb.id === "Spex_LaterTrunk_Offset" &&
+      (latertrunkoffsetcountprices.textContent.trim() !== "" ||
+        latertrunkoffsetpadcountprices.textContent.trim() !== "") &&
+      SpexLaterTrunkOffsetCheckbox.checked
+    ) {
+      let countnumericValue = getNumericValueFromText(
+        latertrunkoffsetcountprices.textContent
+      );
+      let padcountnumericValue = getNumericValueFromText(
+        latertrunkoffsetpadcountprices.textContent
+      );
+      latertrunkoffsetallount = countnumericValue + padcountnumericValue;
+    } else if (
+      cb.id === "Spex_LaterTrunk_AxialBiangular" &&
+      (latertrunkaxialbiangularcountprices.textContent.trim() !== "" ||
+        latertrunkaxialbiangularpadcountprices.textContent.trim() !== "") &&
+      SpexLaterTrunkAxialBiangularCheckbox.checked
+    ) {
+      let countnumericValue = getNumericValueFromText(
+        latertrunkaxialbiangularcountprices.textContent
+      );
+      let padcountnumericValue = getNumericValueFromText(
+        latertrunkaxialbiangularpadcountprices.textContent
+      );
+      latertrunkaxialbiangularallount =
+        countnumericValue + padcountnumericValue;
+    } else if (
+      cb.id === "Spex_LaterTrunk_ConnectLeft" &&
+      SpexLaterTrunkConnectLeftCheckbox.checked
+    ) {
+      latertrunkconnectleft =
+        SpexLaterTrunkConnectLeft_prices.SpexLaterTrunkConnectLeft_prices1;
+    } else if (
+      cb.id === "Spex_LaterTrunk_ConnectRight" &&
+      SpexLaterTrunkConnectRightCheckbox.checked
+    ) {
+      latertrunkconnectright =
+        SpexLaterTrunkConnectRight_prices.SpexLaterTrunkConnectRight_prices1;
+    } else if (
+      cb.id === "Spex_LaterTrunk_Extend30" &&
+      SpexLaterTrunkExtend30Checkbox.checked
+    ) {
+      latertrunkconnectextend30 =
+        SpexLaterTrunkConnectExtend30_prices.SpexLaterTrunkConnectExtend30_prices1;
+    } else if (
+      cb.id === "Spex_LaterTrunk_Extend115" &&
+      SpexLaterTrunkExtend115Checkbox.checked
+    ) {
+      latertrunkconnectextend115 =
+        SpexLaterTrunkConnectExtend115_prices.SpexLaterTrunkConnectExtend115_prices1;
+    } else if (
+      cb.id === "Spex_LaterTrunk_Reinforce" &&
+      SpexLaterTrunkReinforceCheckbox.checked
+    ) {
+      latertrunkconnectreinforce =
+        SpexLaterTrunkConnectReinforce_prices.SpexLaterTrunkConnectReinforce_prices1;
     }
   });
-});
+  alltrunkaxialaddprice =
+    latertrunkaxialallount +
+    latertrunkstandardallount +
+    latertrunkoffsetallount +
+    latertrunkaxialbiangularallount +
+    latertrunkconnectleft +
+    latertrunkconnectright +
+    latertrunkconnectextend30 +
+    latertrunkconnectextend115 +
+    latertrunkconnectreinforce;
+  latertrunkaccessoryprices.textContent =
+    latertrunkconnectleft +
+    latertrunkconnectright +
+    latertrunkconnectextend30 +
+    latertrunkconnectextend115 +
+    latertrunkconnectreinforce;
+  nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+    alltrunkaxialaddprice
+  )} 元`;
+}
 
 //endregion
