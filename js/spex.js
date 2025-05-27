@@ -5008,11 +5008,6 @@ document
       }
       if (checkbox.id === "Spex_LaterTrunk_AxialBiangular") {
         latertrunk_axialbiangularcount.disabled = false;
-        // latertrunkaxialbiangular.disabled = false;
-        // latertrunk_axialpadtype.disabled = false;
-        // latertrunk_axialbiangular_Width.disabled = false;
-        // latertrunk_axialbiangular_Heigh.disabled = false;
-        // latertrunkaxialbiangularpadcount.disabled = false;
       }
     });
   });
@@ -5036,7 +5031,10 @@ function LaterTrunkAxialSelectOptions(selectElement, options) {
 Spex_LaterTrunk_Axial.addEventListener("change", () => {
   if (Spex_LaterTrunk_Axial.checked) {
     latertrunkaxialcount.disabled = false;
+    latertrunkaxialpadcount.textContent = "";
 
+    latertrunkaxialcountprices.textContent = "";
+    latertrunkclothpadprices.textContent = "";
     LaterTrunkAxialSelectOptions(
       latertrunkaxialpadtype,
       SpexLaterTrunkPadTypeOptions
@@ -5069,7 +5067,13 @@ Spex_LaterTrunk_Axial.addEventListener("change", () => {
       latertrunkaxialpadsize_Heigh,
       SpexLaterTrunklStandardStraightPadSizeHeighOptions
     );
+    latertrunkprices.value = "";
     latertrunkaxialpadcount.value = "";
+
+    latertrunkprices.textContent = "";
+    latertrunkclothpadprices.textContent = "";
+    latertrunkaxialcountprices.textContent = "";
+    latertrunkaxialpadcountprices.textContent = "";
   }
 });
 //endregion
@@ -5321,6 +5325,16 @@ latertrunkaxialclothpadtype.addEventListener("change", () => {
 //region --- 監聽"多軸可外撥側支撐"的"擋墊寬度"，選擇擋墊種類時會開啟擋墊布套尺寸跟數量 ---
 latertrunkaxialpadsize_Width.addEventListener("change", function () {
   if (Spex_LaterTrunk_Axial.checked) {
+    if (latertrunkaxialpadsize_Width.value === "option1") {
+      LaterTrunkAxialSelectOptions(
+        latertrunkaxialpadsize_Heigh,
+        SpexLaterTrunklStandardStraightPadSizeHeighOptions
+      );
+      latertrunkaxialpadsize_Heigh.disabled = true;
+      latertrunkaxialpadcount.value = "";
+      latertrunkaxialpadcount.disabled = true;
+      return;
+    }
     //region --- 當擋墊是"狹長型"並且表布是"STANDARD"時 ---
     if (
       latertrunkaxialpadtype.value === "option2" &&
@@ -5904,10 +5918,54 @@ document
             latertrunkstandardcount.disabled = true;
             latertrunkstandardpadtype.disabled = true;
             latertrunkstandardclothpadtype.disabled = true;
+            latertrunkstandardpadsize_Width.disabled = true;
+            latertrunkstandardpadsize_Heigh.disabled = true;
+            latertrunkstandardpadcount.disabled = true;
+            latertrunkstandardpadcount.value = "";
+
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardpadtype,
+              SpexLaterTrunkPadTypeOptions
+            );
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardclothpadtype,
+              SpexLaterTrunkPadClothTypeOptions
+            );
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardpadsize_Width,
+              SpexLaterTrunklStandardStraightPadSizeWidthOptions
+            );
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardpadsize_Heigh,
+              SpexLaterTrunklStandardStraightPadSizeHeighOptions
+            );
+            latertrunkstandardpadcount.value = "";
           } else {
             latertrunkstandardcount.value = "";
             latertrunkstandardpadtype.disabled = true;
             latertrunkstandardclothpadtype.disabled = true;
+            latertrunkstandardpadsize_Width.disabled = true;
+            latertrunkstandardpadsize_Heigh.disabled = true;
+            latertrunkstandardpadcount.disabled = true;
+            latertrunkstandardpadcount.value = "";
+
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardpadtype,
+              SpexLaterTrunkPadTypeOptions
+            );
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardclothpadtype,
+              SpexLaterTrunkPadClothTypeOptions
+            );
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardpadsize_Width,
+              SpexLaterTrunklStandardStraightPadSizeWidthOptions
+            );
+            LaterTrunkStandardSelectOptions(
+              latertrunkstandardpadsize_Heigh,
+              SpexLaterTrunklStandardStraightPadSizeHeighOptions
+            );
+            latertrunkstandardpadcount.value = "";
           }
         });
     });
@@ -6784,10 +6842,52 @@ document
             latertrunkoffsetcount.disabled = true;
             latertrunkoffsetpadtype.disabled = true; // 禁用
             latertrunkoffsetclothpadtype.disabled = true; // 禁用
-          }else {
+            latertrunkoffsetpadsize_Width.disabled = true; // 禁用
+            latertrunkoffsetpadsize_Heigh.disabled = true; // 禁用
+            latertrunkoffsetpadcount.disabled = true; // 禁用
+            latertrunkoffsetcount.value = "";
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetpadtype,
+              SpexLaterTrunkPadTypeOptions
+            );
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetclothpadtype,
+              SpexLaterTrunkPadClothTypeOptions
+            );
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetpadsize_Width,
+              SpexLaterTrunklStandardStraightPadSizeWidthOptions
+            );
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetpadsize_Heigh,
+              SpexLaterTrunklStandardStraightPadSizeHeighOptions
+            );
+            latertrunkoffsetpadcount.value = "";
+          } else {
             latertrunkoffsetcount.value = "";
             latertrunkoffsetpadtype.disabled = true; // 禁用
             latertrunkoffsetclothpadtype.disabled = true; // 禁用
+            latertrunkoffsetpadsize_Width.disabled = true; // 禁用
+            latertrunkoffsetpadsize_Heigh.disabled = true; // 禁用
+            latertrunkoffsetpadcount.disabled = true; // 禁用
+            latertrunkoffsetcount.value = "";
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetpadtype,
+              SpexLaterTrunkPadTypeOptions
+            );
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetclothpadtype,
+              SpexLaterTrunkPadClothTypeOptions
+            );
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetpadsize_Width,
+              SpexLaterTrunklStandardStraightPadSizeWidthOptions
+            );
+            LaterTrunkOffsetSelectOptions(
+              latertrunkoffsetpadsize_Heigh,
+              SpexLaterTrunklStandardStraightPadSizeHeighOptions
+            );
+            latertrunkoffsetpadcount.value = "";
           }
         });
     });
