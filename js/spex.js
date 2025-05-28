@@ -4900,9 +4900,6 @@ let latertrunkstandardpadsize_Width = document.querySelector(
 let latertrunkstandardpadsize_Heigh = document.querySelector(
   ".latertrunkstandardpadsize_Heigh"
 );
-let latertrunkstandardpadcount = document.getElementById(
-  "latertrunkstandardpadcount"
-);
 //endregion
 
 //region --- Spex可外撥側支撐(Offset) ---
@@ -5043,6 +5040,20 @@ Spex_LaterTrunk_Axial.addEventListener("change", () => {
       latertrunkaxialclothpadtype,
       SpexLaterTrunkPadClothTypeOptions
     );
+
+    if (latertrunkaxialcountprices.textContent !== "") {
+      latertrunkaxialcountprices.textContent = "";
+    }
+
+    if (latertrunkaxialpadcountprices.textContent !== "") {
+      latertrunkaxialpadcountprices.textContent = "";
+    }
+
+    if (latertrunkaccessoryprices.textContent !== "") {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )}元`;
+    }
   } else {
     latertrunkaxialcount.disabled = true; // 禁用
     latertrunkaxialpadtype.disabled = true;
@@ -5070,10 +5081,21 @@ Spex_LaterTrunk_Axial.addEventListener("change", () => {
     latertrunkprices.value = "";
     latertrunkaxialpadcount.value = "";
 
-    latertrunkprices.textContent = "";
-    latertrunkclothpadprices.textContent = "";
     latertrunkaxialcountprices.textContent = "";
     latertrunkaxialpadcountprices.textContent = "";
+
+    if (latertrunkaxialcountprices.textContent !== "") {
+      latertrunkaxialcountprices.textContent = "";
+    }
+
+    if (latertrunkaxialpadcountprices.textContent !== "") {
+      latertrunkaxialpadcountprices.textContent = "";
+    }
+    if (latertrunkaccessoryprices.textContent !== "") {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )}元`;
+    }
   }
 });
 //endregion
@@ -5184,6 +5206,9 @@ latertrunkaxialpadtype.addEventListener("change", () => {
       latertrunkaxialpadsize_Heigh.disabled = true;
       latertrunkaxialpadcount.value = "";
       latertrunkaxialpadcount.disabled = true;
+    }
+    if (latertrunkaxialpadcountprices.textContent !== "") {
+      latertrunkaxialpadcountprices.textContent = "";
     }
   } else {
     latertrunkaxialpadsize_Width.disabled = true;
@@ -5306,6 +5331,9 @@ latertrunkaxialclothpadtype.addEventListener("change", () => {
       latertrunkaxialpadsize_Heigh.disabled = true;
       latertrunkaxialpadcount.value = "";
       latertrunkaxialpadcount.disabled = true;
+    }
+    if (latertrunkaxialpadcountprices.textContent !== "") {
+      latertrunkaxialpadcountprices.textContent = "";
     }
   } else {
     latertrunkaxialpadsize_Width.disabled = true;
@@ -5896,6 +5924,9 @@ Spex_LaterTrunk_Standard.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeHeighOptions
     );
     latertrunkstandardpadcount.value = "";
+
+    latertrunkstandardcountprices.textContent = "";
+    latertrunkstandardpadcountprices.textContent = "";
   }
 });
 //endregion
@@ -5940,6 +5971,19 @@ document
               SpexLaterTrunklStandardStraightPadSizeHeighOptions
             );
             latertrunkstandardpadcount.value = "";
+
+            if (latertrunkstandardcountprices.textContent !== "") {
+              latertrunkstandardcountprices.textContent = "";
+            }
+
+            if (latertrunkstandardpadcountprices.textContent !== "") {
+              latertrunkstandardpadcountprices.textContent = "";
+            }
+            if (latertrunkaccessoryprices.textContent !== "") {
+              nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+                latertrunkaccessoryprices.textContent
+              )}元`;
+            }
           } else {
             latertrunkstandardcount.value = "";
             latertrunkstandardpadtype.disabled = true;
@@ -5966,6 +6010,19 @@ document
               SpexLaterTrunklStandardStraightPadSizeHeighOptions
             );
             latertrunkstandardpadcount.value = "";
+
+            if (latertrunkstandardcountprices.textContent !== "") {
+              latertrunkstandardcountprices.textContent = "";
+            }
+
+            if (latertrunkstandardpadcountprices.textContent !== "") {
+              latertrunkstandardpadcountprices.textContent = "";
+            }
+            if (latertrunkaccessoryprices.textContent !== "") {
+              nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+                latertrunkaccessoryprices.textContent
+              )}元`;
+            }
           }
         });
     });
@@ -5975,13 +6032,11 @@ document
 //region --- 監聽側支撐數量位置是否有輸入數字 ---
 latertrunkstandardcount.addEventListener("input", function () {
   if (this.value.trim() !== "") {
-    console.log("有數值");
     latertrunkstandardpadtype.disabled = false;
     latertrunkstandardclothpadtype.disabled = false;
   } else {
     latertrunkstandardpadtype.disabled = true;
     latertrunkstandardclothpadtype.disabled = true;
-    console.log("沒有數值");
   }
 });
 //endregion
@@ -6092,6 +6147,10 @@ latertrunkstandardpadtype.addEventListener("change", () => {
       latertrunkstandardpadsize_Heigh.disabled = true;
       latertrunkstandardpadcount.value = "";
       latertrunkstandardpadcount.disabled = true;
+
+      if (latertrunkstandardpadcountprices.textContent !== "") {
+        latertrunkstandardpadcountprices.textContent = "";
+      }
     }
   } else {
     standardsize1.disabled = true;
@@ -6220,6 +6279,9 @@ latertrunkstandardclothpadtype.addEventListener("change", () => {
       latertrunkstandardpadsize_Heigh.disabled = true;
       latertrunkstandardpadcount.value = "";
       latertrunkstandardpadcount.disabled = true;
+      if (latertrunkstandardpadcountprices.textContent !== "") {
+        latertrunkstandardpadcountprices.textContent = "";
+      }
     }
   } else {
     standardsize1.disabled = true;
@@ -6820,6 +6882,9 @@ Spex_LaterTrunk_Offset.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeHeighOptions
     );
     latertrunkoffsetpadcount.value = "";
+
+    latertrunkoffsetcountprices.textContent = "";
+    latertrunkoffsetpadcountprices.textContent = "";
   }
 });
 //endregion
@@ -6863,6 +6928,19 @@ document
               SpexLaterTrunklStandardStraightPadSizeHeighOptions
             );
             latertrunkoffsetpadcount.value = "";
+
+            if (latertrunkoffsetcountprices.textContent !== "") {
+              latertrunkoffsetcountprices.textContent = "";
+            }
+
+            if (latertrunkoffsetpadcountprices.textContent !== "") {
+              latertrunkoffsetpadcountprices.textContent = "";
+            }
+            if (latertrunkaccessoryprices.textContent !== "") {
+              nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+                latertrunkaccessoryprices.textContent
+              )}元`;
+            }
           } else {
             latertrunkoffsetcount.value = "";
             latertrunkoffsetpadtype.disabled = true; // 禁用
@@ -6888,6 +6966,19 @@ document
               SpexLaterTrunklStandardStraightPadSizeHeighOptions
             );
             latertrunkoffsetpadcount.value = "";
+
+            if (latertrunkoffsetcountprices.textContent !== "") {
+              latertrunkoffsetcountprices.textContent = "";
+            }
+
+            if (latertrunkoffsetpadcountprices.textContent !== "") {
+              latertrunkoffsetpadcountprices.textContent = "";
+            }
+            if (latertrunkaccessoryprices.textContent !== "") {
+              nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+                latertrunkaccessoryprices.textContent
+              )}元`;
+            }
           }
         });
     });
@@ -6897,13 +6988,11 @@ document
 //region --- 監聽側支撐數量位置是否有輸入數字 ---
 latertrunkoffsetcount.addEventListener("input", function () {
   if (this.value.trim() !== "") {
-    console.log("有數值");
     latertrunkoffsetpadtype.disabled = false;
     latertrunkoffsetclothpadtype.disabled = false;
   } else {
     latertrunkoffsetpadtype.disabled = true;
     latertrunkoffsetclothpadtype.disabled = true;
-    console.log("沒有數值");
   }
 });
 //endregion
@@ -7705,6 +7794,19 @@ Spex_LaterTrunk_AxialBiangular.addEventListener("change", () => {
       latertrunk_axialpadtype,
       SpexLaterTrunkPadClothTypeOptions
     );
+
+    if (latertrunkaxialbiangularcountprices.textContent !== "") {
+      latertrunkaxialbiangularcountprices.textContent = "";
+    }
+
+    if (latertrunkaxialbiangularpadcountprices.textContent !== "") {
+      latertrunkaxialbiangularpadcountprices.textContent = "";
+    }
+    if (latertrunkaccessoryprices.textContent !== "") {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )}元`;
+    }
   } else {
     latertrunk_axialbiangularcount.disabled = true; // 禁用
     latertrunkaxialbiangular.disabled = true; // 禁用
@@ -7731,6 +7833,15 @@ Spex_LaterTrunk_AxialBiangular.addEventListener("change", () => {
       SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions
     );
     latertrunkaxialbiangularpadcount.value = "";
+
+    latertrunkaxialbiangularcountprices.textContent = "";
+    latertrunkaxialbiangularpadcountprices.textContent = "";
+    
+    if (latertrunkaccessoryprices.textContent !== "") {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )}元`;
+    }
   }
 });
 //endregion
@@ -7738,13 +7849,11 @@ Spex_LaterTrunk_AxialBiangular.addEventListener("change", () => {
 //region --- 監聽側支撐數量位置是否有輸入數字 ---
 latertrunk_axialbiangularcount.addEventListener("input", function () {
   if (this.value.trim() !== "") {
-    console.log("有數值");
     latertrunkaxialbiangular.disabled = false;
     latertrunk_axialpadtype.disabled = false;
   } else {
     latertrunkaxialbiangular.disabled = true;
     latertrunk_axialpadtype.disabled = true;
-    console.log("沒有數值");
   }
 });
 //endregion
