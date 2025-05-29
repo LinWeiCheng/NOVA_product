@@ -4480,7 +4480,7 @@ document.addEventListener("click", function (event) {
                 nowprice_Spexlatertrunksupports.style.margin =
                   "3px 3px 3px 2px";
                 nowprice_Spexlatertrunksupports.style.textAlign = "center";
-                nowprice_Spexlatertrunksupports.style.fontSize = "17px";
+                nowprice_Spexlatertrunksupports.style.fontSize = "16px";
                 nowprice_Spexlatertrunksupports.style.fontWeight = "600";
                 nowprice_Spexlatertrunksupports.style.alignItems = "center";
                 nowprice_Spexlatertrunksupports.style.justifyContent = "center";
@@ -4586,7 +4586,7 @@ Spex_latertrunksupports.addEventListener("click", function (event) {
           nowprice_Spexlatertrunksupports.style.padding = "1px";
           nowprice_Spexlatertrunksupports.style.margin = "3px 3px 3px 2px";
           nowprice_Spexlatertrunksupports.style.textAlign = "center";
-          nowprice_Spexlatertrunksupports.style.fontSize = "17px";
+          nowprice_Spexlatertrunksupports.style.fontSize = "16px";
           nowprice_Spexlatertrunksupports.style.fontWeight = "600";
           nowprice_Spexlatertrunksupports.style.alignItems = "center";
           nowprice_Spexlatertrunksupports.style.justifyContent = "center";
@@ -5030,8 +5030,6 @@ Spex_LaterTrunk_Axial.addEventListener("change", () => {
     latertrunkaxialcount.disabled = false;
     latertrunkaxialpadcount.textContent = "";
 
-    latertrunkaxialcountprices.textContent = "";
-    latertrunkclothpadprices.textContent = "";
     LaterTrunkAxialSelectOptions(
       latertrunkaxialpadtype,
       SpexLaterTrunkPadTypeOptions
@@ -5041,18 +5039,18 @@ Spex_LaterTrunk_Axial.addEventListener("change", () => {
       SpexLaterTrunkPadClothTypeOptions
     );
 
-    if (latertrunkaxialcountprices.textContent !== "") {
-      latertrunkaxialcountprices.textContent = "";
-    }
-
-    if (latertrunkaxialpadcountprices.textContent !== "") {
-      latertrunkaxialpadcountprices.textContent = "";
-    }
-
-    if (latertrunkaccessoryprices.textContent !== "") {
+    latertrunkaxialcountprices.textContent = "";
+    latertrunkaxialpadcountprices.textContent = "";
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
       nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
         latertrunkaccessoryprices.textContent
-      )}元`;
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
     }
   } else {
     latertrunkaxialcount.disabled = true; // 禁用
@@ -5084,17 +5082,16 @@ Spex_LaterTrunk_Axial.addEventListener("change", () => {
     latertrunkaxialcountprices.textContent = "";
     latertrunkaxialpadcountprices.textContent = "";
 
-    if (latertrunkaxialcountprices.textContent !== "") {
-      latertrunkaxialcountprices.textContent = "";
-    }
-
-    if (latertrunkaxialpadcountprices.textContent !== "") {
-      latertrunkaxialpadcountprices.textContent = "";
-    }
-    if (latertrunkaccessoryprices.textContent !== "") {
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
       nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
         latertrunkaccessoryprices.textContent
-      )}元`;
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
     }
   }
 });
@@ -5105,6 +5102,19 @@ latertrunkaxialpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Axial.checked) {
     latertrunkaxialpadtype.disabled = false;
     latertrunkaxialclothpadtype.disabled = false;
+    latertrunkaxialpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkaxialpadtype.value === "option2" &&
       latertrunkaxialclothpadtype.value === "option2"
@@ -5221,6 +5231,19 @@ latertrunkaxialpadtype.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     latertrunkaxialpadcount.value = "";
+    latertrunkaxialpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
   }
 });
 //endregion
@@ -5230,6 +5253,19 @@ latertrunkaxialclothpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Axial.checked) {
     latertrunkaxialpadtype.disabled = false;
     latertrunkaxialclothpadtype.disabled = false;
+    latertrunkaxialpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkaxialpadtype.value === "option2" &&
       latertrunkaxialclothpadtype.value === "option2"
@@ -5332,8 +5368,18 @@ latertrunkaxialclothpadtype.addEventListener("change", () => {
       latertrunkaxialpadcount.value = "";
       latertrunkaxialpadcount.disabled = true;
     }
-    if (latertrunkaxialpadcountprices.textContent !== "") {
-      latertrunkaxialpadcountprices.textContent = "";
+    latertrunkaxialpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
     }
   } else {
     latertrunkaxialpadsize_Width.disabled = true;
@@ -5346,6 +5392,19 @@ latertrunkaxialclothpadtype.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     latertrunkaxialpadcount.value = "";
+    latertrunkaxialpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
   }
 });
 //endregion
@@ -5361,6 +5420,19 @@ latertrunkaxialpadsize_Width.addEventListener("change", function () {
       latertrunkaxialpadsize_Heigh.disabled = true;
       latertrunkaxialpadcount.value = "";
       latertrunkaxialpadcount.disabled = true;
+      latertrunkaxialpadcountprices.textContent = "";
+
+      if (
+        (latertrunkaccessoryprices.textContent !== "" ||
+          latertrunkaccessoryprices.textContent !== "0") &&
+        [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+      ) {
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          latertrunkaccessoryprices.textContent
+        )} 元`;
+      } else {
+        updateSpexLaterTrunkTotalPrice();
+      }
       return;
     }
     //region --- 當擋墊是"狹長型"並且表布是"STANDARD"時 ---
@@ -5878,11 +5950,11 @@ function LaterTrunkStandardSelectOptions(selectElement, options) {
 //region --- 勾選可外撥側支撐(Standard)時，才可填入數量及選擇擋墊跟擋墊布套尺寸 ---
 Spex_LaterTrunk_Standard.addEventListener("change", () => {
   if (Spex_LaterTrunk_Standard.checked) {
-    latertrunkoffsetpadtype.disabled = true;
-    latertrunkoffsetclothpadtype.disabled = true;
-    latertrunkoffsetpadsize_Width.disabled = true;
-    latertrunkoffsetpadsize_Heigh.disabled = true;
-    latertrunkoffsetpadcount.disabled = true;
+    latertrunkstandardpadtype.disabled = true;
+    latertrunkstandardclothpadtype.disabled = true;
+    latertrunkstandardpadsize_Width.disabled = true;
+    latertrunkstandardpadsize_Heigh.disabled = true;
+    latertrunkstandardpadcount.disabled = true;
 
     LaterTrunkStandardSelectOptions(
       latertrunkstandardpadtype,
@@ -5972,17 +6044,19 @@ document
             );
             latertrunkstandardpadcount.value = "";
 
-            if (latertrunkstandardcountprices.textContent !== "") {
-              latertrunkstandardcountprices.textContent = "";
-            }
+            latertrunkstandardcountprices.textContent = "";
+            latertrunkstandardpadcountprices.textContent = "";
 
-            if (latertrunkstandardpadcountprices.textContent !== "") {
-              latertrunkstandardpadcountprices.textContent = "";
-            }
-            if (latertrunkaccessoryprices.textContent !== "") {
+            if (
+              (latertrunkaccessoryprices.textContent !== "" ||
+                latertrunkaccessoryprices.textContent !== "0") &&
+              [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+            ) {
               nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
                 latertrunkaccessoryprices.textContent
-              )}元`;
+              )} 元`;
+            } else {
+              updateSpexLaterTrunkTotalPrice();
             }
           } else {
             latertrunkstandardcount.value = "";
@@ -6011,17 +6085,19 @@ document
             );
             latertrunkstandardpadcount.value = "";
 
-            if (latertrunkstandardcountprices.textContent !== "") {
-              latertrunkstandardcountprices.textContent = "";
-            }
+            latertrunkstandardcountprices.textContent = "";
+            latertrunkstandardpadcountprices.textContent = "";
 
-            if (latertrunkstandardpadcountprices.textContent !== "") {
-              latertrunkstandardpadcountprices.textContent = "";
-            }
-            if (latertrunkaccessoryprices.textContent !== "") {
+            if (
+              (latertrunkaccessoryprices.textContent !== "" ||
+                latertrunkaccessoryprices.textContent !== "0") &&
+              [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+            ) {
               nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
                 latertrunkaccessoryprices.textContent
-              )}元`;
+              )} 元`;
+            } else {
+              updateSpexLaterTrunkTotalPrice();
             }
           }
         });
@@ -6046,6 +6122,19 @@ latertrunkstandardpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Standard.checked) {
     latertrunkstandardpadtype.disabled = false;
     latertrunkstandardclothpadtype.disabled = false;
+    latertrunkstandardpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkstandardpadtype.value === "option2" &&
       latertrunkstandardclothpadtype.value === "option2"
@@ -6147,10 +6236,6 @@ latertrunkstandardpadtype.addEventListener("change", () => {
       latertrunkstandardpadsize_Heigh.disabled = true;
       latertrunkstandardpadcount.value = "";
       latertrunkstandardpadcount.disabled = true;
-
-      if (latertrunkstandardpadcountprices.textContent !== "") {
-        latertrunkstandardpadcountprices.textContent = "";
-      }
     }
   } else {
     standardsize1.disabled = true;
@@ -6169,6 +6254,19 @@ latertrunkstandardpadtype.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     latertrunkstandardpadcount.value = "";
+    latertrunkstandardpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
   }
 });
 //endregion
@@ -6178,6 +6276,19 @@ latertrunkstandardclothpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Standard.checked) {
     latertrunkstandardpadtype.disabled = false;
     latertrunkstandardclothpadtype.disabled = false;
+    latertrunkstandardpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkstandardpadtype.value === "option2" &&
       latertrunkstandardclothpadtype.value === "option2"
@@ -6300,6 +6411,19 @@ latertrunkstandardclothpadtype.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     latertrunkstandardpadcount.value = "";
+    latertrunkstandardpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
   }
 });
 //endregion
@@ -6315,6 +6439,20 @@ latertrunkstandardpadsize_Width.addEventListener("change", function () {
       latertrunkstandardpadsize_Heigh.disabled = true;
       latertrunkstandardpadcount.value = "";
       latertrunkstandardpadcount.disabled = true;
+      latertrunkstandardpadcountprices.textContent = "";
+
+      if (
+        (latertrunkaccessoryprices.textContent !== "" ||
+          latertrunkaccessoryprices.textContent !== "0") &&
+        [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+      ) {
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          latertrunkaccessoryprices.textContent
+        )} 元`;
+      } else {
+        updateSpexLaterTrunkTotalPrice();
+      }
+
       return;
     }
     //region --- 當擋墊是"狹長型"並且表布是""是"STANDARD"時 ---
@@ -6837,20 +6975,20 @@ Spex_LaterTrunk_Offset.addEventListener("change", () => {
     offsetsize2.disabled = false;
 
     LaterTrunkOffsetSelectOptions(
-      latertrunkaxialbiangular,
+      latertrunkoffsetpadtype,
       SpexLaterTrunkAxialBiangularOptions
     );
     LaterTrunkOffsetSelectOptions(
-      latertrunk_axialpadtype,
+      latertrunkoffsetclothpadtype,
       SpexLaterTrunkPadClothTypeOptions
     );
     LaterTrunkOffsetSelectOptions(
       latertrunkoffsetpadsize_Width,
-      SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+      SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     LaterTrunkOffsetSelectOptions(
       latertrunkoffsetpadsize_Heigh,
-      SpexLaterTrunkAxialBiangular12StandardPadSizeHeighOptions
+      SpexLaterTrunklStandardStraightPadSizeHeighOptions
     );
   } else {
     offsetsize1.disabled = true; // 禁用
@@ -6929,17 +7067,19 @@ document
             );
             latertrunkoffsetpadcount.value = "";
 
-            if (latertrunkoffsetcountprices.textContent !== "") {
-              latertrunkoffsetcountprices.textContent = "";
-            }
+            latertrunkoffsetcountprices.textContent = "";
+            latertrunkoffsetpadcountprices.textContent = "";
 
-            if (latertrunkoffsetpadcountprices.textContent !== "") {
-              latertrunkoffsetpadcountprices.textContent = "";
-            }
-            if (latertrunkaccessoryprices.textContent !== "") {
+            if (
+              (latertrunkaccessoryprices.textContent !== "" ||
+                latertrunkaccessoryprices.textContent !== "0") &&
+              [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+            ) {
               nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
                 latertrunkaccessoryprices.textContent
-              )}元`;
+              )} 元`;
+            } else {
+              updateSpexLaterTrunkTotalPrice();
             }
           } else {
             latertrunkoffsetcount.value = "";
@@ -6967,17 +7107,19 @@ document
             );
             latertrunkoffsetpadcount.value = "";
 
-            if (latertrunkoffsetcountprices.textContent !== "") {
-              latertrunkoffsetcountprices.textContent = "";
-            }
+            latertrunkoffsetcountprices.textContent = "";
+            latertrunkoffsetpadcountprices.textContent = "";
 
-            if (latertrunkoffsetpadcountprices.textContent !== "") {
-              latertrunkoffsetpadcountprices.textContent = "";
-            }
-            if (latertrunkaccessoryprices.textContent !== "") {
+            if (
+              (latertrunkaccessoryprices.textContent !== "" ||
+                latertrunkaccessoryprices.textContent !== "0") &&
+              [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+            ) {
               nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
                 latertrunkaccessoryprices.textContent
-              )}元`;
+              )} 元`;
+            } else {
+              updateSpexLaterTrunkTotalPrice();
             }
           }
         });
@@ -7002,6 +7144,19 @@ latertrunkoffsetpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Offset.checked) {
     latertrunkoffsetpadtype.disabled = false;
     latertrunkoffsetclothpadtype.disabled = false;
+    latertrunkoffsetpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkoffsetpadtype.value === "option2" &&
       latertrunkoffsetclothpadtype.value === "option2"
@@ -7122,6 +7277,19 @@ latertrunkoffsetpadtype.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     latertrunkoffsetpadcount.value = "";
+    latertrunkoffsetpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
   }
 });
 //endregion
@@ -7131,6 +7299,19 @@ latertrunkoffsetclothpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_Offset.checked) {
     latertrunkoffsetpadtype.disabled = false;
     latertrunkoffsetclothpadtype.disabled = false;
+    latertrunkoffsetpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkoffsetpadtype.value === "option2" &&
       latertrunkoffsetclothpadtype.value === "option2"
@@ -7251,6 +7432,19 @@ latertrunkoffsetclothpadtype.addEventListener("change", () => {
       SpexLaterTrunklStandardStraightPadSizeWidthOptions
     );
     latertrunkoffsetpadcount.value = "";
+    latertrunkoffsetpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
   }
 });
 //endregion
@@ -7266,6 +7460,20 @@ latertrunkoffsetpadsize_Width.addEventListener("change", function () {
       latertrunkoffsetpadsize_Heigh.disabled = true;
       latertrunkoffsetpadcount.value = "";
       latertrunkoffsetpadcount.disabled = true;
+      latertrunkoffsetpadcountprices.textContent = "";
+
+      if (
+        (latertrunkaccessoryprices.textContent !== "" ||
+          latertrunkaccessoryprices.textContent !== "0") &&
+        [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+      ) {
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          latertrunkaccessoryprices.textContent
+        )} 元`;
+      } else {
+        updateSpexLaterTrunkTotalPrice();
+      }
+
       return;
     }
     //region --- 當擋墊是"狹長型"並且表布是""是"STANDARD"時 ---
@@ -7795,17 +8003,19 @@ Spex_LaterTrunk_AxialBiangular.addEventListener("change", () => {
       SpexLaterTrunkPadClothTypeOptions
     );
 
-    if (latertrunkaxialbiangularcountprices.textContent !== "") {
-      latertrunkaxialbiangularcountprices.textContent = "";
-    }
+    latertrunkaxialbiangularcountprices.textContent = "";
+    latertrunkaxialbiangularpadcountprices.textContent = "";
 
-    if (latertrunkaxialbiangularpadcountprices.textContent !== "") {
-      latertrunkaxialbiangularpadcountprices.textContent = "";
-    }
-    if (latertrunkaccessoryprices.textContent !== "") {
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
       nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
         latertrunkaccessoryprices.textContent
-      )}元`;
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
     }
   } else {
     latertrunk_axialbiangularcount.disabled = true; // 禁用
@@ -7836,11 +8046,17 @@ Spex_LaterTrunk_AxialBiangular.addEventListener("change", () => {
 
     latertrunkaxialbiangularcountprices.textContent = "";
     latertrunkaxialbiangularpadcountprices.textContent = "";
-    
-    if (latertrunkaccessoryprices.textContent !== "") {
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
       nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
         latertrunkaccessoryprices.textContent
-      )}元`;
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
     }
   }
 });
@@ -7863,6 +8079,19 @@ latertrunkaxialbiangular.addEventListener("change", () => {
   if (Spex_LaterTrunk_AxialBiangular.checked) {
     latertrunkaxialbiangular.disabled = false;
     latertrunk_axialpadtype.disabled = false;
+    latertrunkaxialbiangularpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkaxialbiangular.value === "option2" &&
       latertrunk_axialpadtype.value === "option2"
@@ -7945,6 +8174,19 @@ latertrunkaxialbiangular.addEventListener("change", () => {
       SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
     );
     latertrunkaxialbiangularpadcount.value = "";
+    latertrunkaxialbiangularpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
   }
 });
 //endregion
@@ -7954,6 +8196,19 @@ latertrunk_axialpadtype.addEventListener("change", () => {
   if (Spex_LaterTrunk_AxialBiangular.checked) {
     latertrunkaxialbiangular.disabled = false;
     latertrunk_axialpadtype.disabled = false;
+    latertrunkaxialbiangularpadcountprices.textContent = "";
+
+    if (
+      (latertrunkaccessoryprices.textContent !== "" ||
+        latertrunkaccessoryprices.textContent !== "0") &&
+      [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+    ) {
+      nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+        latertrunkaccessoryprices.textContent
+      )} 元`;
+    } else {
+      updateSpexLaterTrunkTotalPrice();
+    }
     if (
       latertrunkaxialbiangular.value === "option2" &&
       latertrunk_axialpadtype.value === "option2"
@@ -8051,6 +8306,19 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
       latertrunk_axialbiangular_Heigh.disabled = true;
       latertrunkaxialbiangularpadcount.value = "";
       latertrunkaxialbiangularpadcount.disabled = true;
+      latertrunkaxialbiangularpadcountprices.textContent = "";
+
+      if (
+        (latertrunkaccessoryprices.textContent !== "" ||
+          latertrunkaccessoryprices.textContent !== "0") &&
+        [...allspexlatertrunkaxialprice].some((cb) => cb.checked)
+      ) {
+        nowprice_SpexLaterTrunkSupports.textContent = `${formatPrice(
+          latertrunkaccessoryprices.textContent
+        )} 元`;
+      } else {
+        updateSpexLaterTrunkTotalPrice();
+      }
       return;
     }
     //region --- 當厚度是"12mm"並且表布是"STANDARD"時 ---
