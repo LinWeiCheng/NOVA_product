@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexLatThigh = [];
   let spexBackSupports = [];
   let spexHardware = [];
+  let spexLaterTrunk = [];
 
   //防呆，確認每個勾選的內容都是完整的
   function checkcheckboxselectionscorrect() {
@@ -347,6 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spexLatThigh.length = 0;
     spexBackSupports.length = 0;
     spexHardware.length = 0;
+    spexLaterTrunk.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -663,8 +665,209 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
+      //軀幹側支撐
+      if (spexgroup === "SpexLaterTrunkSupports") {
+        if (item) {
+          spexLaterTrunk.push(item);
+        }
+        //多軸可外撥側支撐
+        let SpexLTACb = document.querySelector("#Spex_LaterTrunk_Axial");
+        let ltacount = document.getElementById("latertrunkaxialcount");
+        let ltacountquantity = parseInt(ltacount.value) || 0; // 轉成數字（預設為 0）
+        let ltapadtype = document.querySelector(".latertrunkaxialpadtype");
+        let ltaclothpadtype = document.querySelector(
+          ".latertrunkaxialclothpadtype"
+        );
+        let ltapadWidth = document.querySelector(
+          ".latertrunkaxialpadsize_Width"
+        );
+        let ltapadHeigh = document.querySelector(
+          ".latertrunkaxialpadsize_Heigh"
+        );
+        let ltaprices = getFormattedPrice(".latertrunkaxialcountprices");
+
+        let ltapadtypeSel = ltapadtype.options[ltapadtype.selectedIndex];
+        let ltaclothpadtypeSel =
+          ltaclothpadtype.options[ltaclothpadtype.selectedIndex];
+        let ltapadsizeWidthSelectoptions =
+          ltapadWidth.options[ltapadWidth.selectedIndex];
+        let latertrunkaxialpadsizeHeighSelectoptions =
+          ltapadHeigh.options[ltapadHeigh.selectedIndex];
+        let ltapadcount = document.getElementById("latertrunkaxialpadcount");
+        let ltapadcountquantity = parseInt(ltapadcount.value) || 0; // 轉成數字（預設為 0）
+        let ltapadprices = getFormattedPrice(".latertrunkaxialpadcountprices");
+
+        //Spex可外撥側支撐(Standard)
+        let SpexLTSCb = document.querySelector("#Spex_LaterTrunk_Standard");
+        let ltssize1 = document.getElementById("standardsize1");
+        let ltssize2 = document.getElementById("standardsize2");
+        let ltscount = document.getElementById("latertrunkstandardcount");
+        let ltscountquantity = parseInt(ltscount.value) || 0; // 轉成數字（預設為 0）
+        let ltspadtype = document.querySelector(".latertrunkstandardpadtype");
+        let ltsclothpadtype = document.querySelector(
+          ".latertrunkstandardclothpadtype"
+        );
+
+        let ltspadWidth = document.querySelector(
+          ".latertrunkstandardpadsize_Width"
+        );
+        let ltspadHeigh = document.querySelector(
+          ".latertrunkstandardpadsize_Heigh"
+        );
+        let ltsprices = getFormattedPrice(".latertrunkstandardcountprices");
+
+        let ltspadtypeSel = ltspadtype.options[ltspadtype.selectedIndex];
+        let ltsclothpadtypeSel =
+          ltsclothpadtype.options[ltsclothpadtype.selectedIndex];
+        let ltspadWidthSel = ltspadWidth.options[ltspadWidth.selectedIndex];
+        let ltspadHeighSel = ltspadHeigh.options[ltspadHeigh.selectedIndex];
+        let ltspadcount = document.getElementById("latertrunkstandardpadcount");
+        let ltspadcountquantity = parseInt(ltspadcount.value) || 0; // 轉成數字（預設為 0）
+        let ltspadprices = getFormattedPrice(
+          ".latertrunkstandardpadcountprices"
+        );
+
+        //Spex可外撥側支撐(Offset)
+        let SpexLTOCb = document.querySelector("#Spex_LaterTrunk_Offset");
+        let ltosize1 = document.getElementById("offsetsize1");
+        let ltosize2 = document.getElementById("offsetsize2");
+        let ltocount = document.getElementById("latertrunkoffsetcount");
+        let ltocountquantity = parseInt(ltocount.value) || 0; // 轉成數字（預設為 0）
+        let ltopadtype = document.querySelector(".latertrunkoffsetpadtype");
+        let ltoclothpadtype = document.querySelector(
+          ".latertrunkoffsetclothpadtype"
+        );
+        let ltopadWidth = document.querySelector(
+          ".latertrunkoffsetpadsize_Width"
+        );
+        let ltopadHeigh = document.querySelector(
+          ".latertrunkoffsetpadsize_Heigh"
+        );
+        let ltoprices = getFormattedPrice(".latertrunkoffsetcountprices");
+
+        let ltopadtypeSel = ltopadtype.options[ltopadtype.selectedIndex];
+        let ltoclothpadtypeSel =
+          ltoclothpadtype.options[ltoclothpadtype.selectedIndex];
+        let ltopadWidthSel = ltopadWidth.options[ltopadWidth.selectedIndex];
+        let ltopadHeighSel = ltopadHeigh.options[ltopadHeigh.selectedIndex];
+        let ltopadcount = document.getElementById("latertrunkoffsetpadcount");
+        let ltopadcountquantity = parseInt(ltopadcount.value) || 0; // 轉成數字（預設為 0）
+        let ltopadprices = getFormattedPrice(".latertrunkoffsetpadcountprices");
+
+        //Spex 雙曲面多軸可外撥側支撐扣具
+        let SpexLTABCb = document.querySelector(
+          "#Spex_LaterTrunk_AxialBiangular"
+        );
+        let ltabcount = document.getElementById(
+          "latertrunk_axialbiangularcount"
+        );
+        let ltabcountquantity = parseInt(ltabcount.value) || 0; // 轉成數字（預設為 0）
+        let ltab = document.querySelector(".latertrunkaxialbiangular");
+        let ltabpadtype = document.querySelector(".latertrunk_axialpadtype");
+        let ltabpadWidth = document.querySelector(
+          ".latertrunk_axialbiangular_Width"
+        );
+        let ltabpadHeigh = document.querySelector(
+          ".latertrunk_axialbiangular_Heigh"
+        );
+
+        let ltabprices = getFormattedPrice(
+          ".latertrunkaxialbiangularcountprices"
+        );
+
+        let ltabSel = ltab.options[ltab.selectedIndex];
+        let ltabpadtypeSel = ltabpadtype.options[ltabpadtype.selectedIndex];
+        let ltabpadWidthSel = ltabpadWidth.options[ltabpadWidth.selectedIndex];
+        let ltabpadHeighSel = ltabpadHeigh.options[ltabpadHeigh.selectedIndex];
+        let ltabpadcount = document.getElementById(
+          "latertrunkaxialbiangularpadcount"
+        );
+        let ltabpadcountquantity = parseInt(ltabpadcount.value) || 0; // 轉成數字（預設為 0）
+        let ltabpadprices = getFormattedPrice(
+          ".latertrunkaxialbiangularpadcountprices"
+        );
+
+        if (SpexLTACb.checked) {
+          // 組合字串： * 數量
+          let spexString = ` * ${ltacountquantity}`;
+          spexLaterTrunk.push(spexString);
+          let spexitem = spexLaterTrunk.join("");
+
+          selectedItems.push({
+            item: spexitem,
+            price: ltaprices,
+            note: notes,
+          });
+          spexLaterTrunk = [];
+        } else if (SpexLTSCb.checked) {
+          if (ltssize1.checked) {
+            let spexString = `/ 175mm / 60mm * ${ltscountquantity}`;
+            spexLaterTrunk.push(spexString);
+            let spexitem = spexLaterTrunk.join("");
+
+            selectedItems.push({
+              item: spexitem,
+              price: ltsprices,
+              note: notes,
+            });
+            spexLaterTrunk = [];
+          } else if (ltssize2.checked) {
+            let spexString = `/ 205mm / 85mm * ${ltscountquantity}`;
+            spexLaterTrunk.push(spexString);
+            let spexitem = spexLaterTrunk.join("");
+
+            selectedItems.push({
+              item: spexitem,
+              price: ltsprices,
+              note: notes,
+            });
+            spexLaterTrunk = [];
+          }
+        } else if (SpexLTOCb.checked) {
+          if (ltosize1.checked) {
+            // 如果這個 item 已經存過了，就跳過
+            let spexStrings = `/ 175mm / 60mm + 內縮20mm * ${ltocountquantity}`;
+            spexLaterTrunk.push(spexStrings);
+            let spexitems = spexLaterTrunk.join("");
+
+            selectedItems.push({
+              item: spexitems,
+              price: ltoprices,
+              note: notes,
+            });
+            spexLaterTrunk = [];
+          } else if (ltosize2.checked) {
+            
+            let spexStrings = `/ 205mm / 85mm + 內縮20mm * ${ltocountquantity}`;
+            spexLaterTrunk.push(spexStrings);
+            let spexitems = spexLaterTrunk.join("");
+
+            selectedItems.push({
+              item: spexitems,
+              price: ltoprices,
+              note: notes,
+            });
+            spexLaterTrunk = [];
+          }
+        } else if (SpexLTABCb.checked) {
+          let spexString = ` * ${ltabcountquantity}`;
+          spexLaterTrunk.push(spexString);
+          let spexitem = spexLaterTrunk.join("");
+
+          selectedItems.push({
+            item: spexitem,
+            price: ltabprices,
+            note: notes,
+          });
+          spexLaterTrunk = [];
+        }
+      }
+
       // 記錄這個 item 已經被加入
-      addedItems.add(item);
+      if (item !== undefined && item !== null && item !== "") {
+        addedItems.add(item);
+        addedItems.delete(undefined);
+      }
     });
   }
 
