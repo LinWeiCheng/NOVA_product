@@ -8128,7 +8128,7 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
 
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "195mm" &&
-        latertrunkstandardpadsizeHeighSelectoptions.text === "230mm"
+        latertrunkstandardpadsizeHeighSelectoptions.text === "165mm"
       ) {
         latertrunkstandardpadcountprices.textContent =
           SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices5 *
@@ -8555,7 +8555,7 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
 
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "195mm" &&
-        latertrunkoffsetpadsizeHeighSelectoptions.text === "230mm"
+        latertrunkoffsetpadsizeHeighSelectoptions.text === "165mm"
       ) {
         latertrunkoffsetpadcountprices.textContent =
           SpexLaterTrunklStandardBroad_prices.SpexLaterTrunklStandardBroad_prices5 *
