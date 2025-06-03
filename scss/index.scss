@@ -4011,7 +4011,536 @@ body {
   }
 }
 
+//第十八點擊列-Spex軀幹子系統-扣具
+.Spex_headsupports {
+  margin: 0 0 8px 0;
 
+  .chkcontent_18th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexheadsupportsgroup {
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
+
+      .Spexheadsupportsgroup_title {
+        font-size: 20px;
+        width: 100%;
+        font-weight: 700;
+        margin: 2px 1px;
+
+        .head_circlepadgroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 2px 0 2px 0;
+
+          .Spexcirclepadtype_title {
+            display: flex;
+            width: 35%;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+
+            .SpexHeadSupports {
+              margin: 12px 16px;
+            }
+          }
+
+          .headsupports_circlepadtypegroup {
+            display: flex;
+            width: 15%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 1px 0 2px;
+
+            label {
+              font-size: 16px;
+              margin: 0 4px 0 0;
+            }
+
+            .headsupportscirclepad {
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
+          }
+
+          .Spexcirclepad_sizetable {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 0 0 2px;
+            padding: 2px;
+
+            .Spexcirclepad_table {
+              width: 100%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+
+              .circlepadheader-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .circlepadvalue-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .circlepadheader-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .circlepadvalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
+            }
+          }
+        }
+
+        .head_comfortpadgroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 4px 0 2px 0;
+
+          .Spexcomfortpadtype_title {
+            display: flex;
+            width: 35%;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+
+            .SpexHeadSupports {
+              margin: 12px 16px;
+            }
+          }
+
+          .headsupports_comfortpadtypegroup {
+            display: flex;
+            width: 15%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 1px 0 2px;
+
+            label {
+              font-size: 16px;
+              margin: 0 4px 0 0;
+            }
+
+            .headsupportscomfortpad {
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
+          }
+
+          .Spexcomfortpad_sizetable {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 0 0 2px;
+            padding: 2px;
+
+            .Spexcomfortpad_table {
+              width: 100%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+
+              .comfortpadheader-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .comfortpadvalue-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .comfortpadheader-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .comfortpadvalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
+            }
+          }
+        }
+
+        .head_contourpadgroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 4px 0 2px 0;
+
+          .Spexcontourpadtype_title {
+            display: flex;
+            width: 35%;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+
+            .SpexHeadSupports {
+              margin: 12px 16px;
+            }
+          }
+
+          .headsupports_contourpadtypegroup {
+            display: flex;
+            width: 15%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 1px 0 2px;
+
+            label {
+              font-size: 16px;
+              margin: 0 4px 0 0;
+            }
+
+            .headsupportscontourpad {
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
+          }
+
+          .Spexcontourpad_sizetable {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 0 0 2px;
+            padding: 2px;
+
+            .Spexcontourpad_table {
+              width: 100%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+
+              .contourpadheader-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .contourpadvalue-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .contourpadheader-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .contourpadvalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
+            }
+          }
+        }
+
+        .head_standardlateralpadgroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 4px 0 2px 0;
+
+          .Spexstandardlateralpadtype_title {
+            display: flex;
+            width: 35%;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+
+            .SpexHeadSupports {
+              margin: 12px 16px;
+            }
+          }
+
+          .headsupports_standardlateralpadtypegroup {
+            display: flex;
+            width: 15%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 1px 0 2px;
+
+            label {
+              font-size: 16px;
+              margin: 0 4px 0 0;
+            }
+
+            .headsupportsstandardlateralpad {
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
+          }
+
+          .Spexstandardlateralpad_sizetable {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 0 0 2px;
+            padding: 2px;
+
+            .Spexstandardlateralpad_table {
+              width: 100%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+
+              .standardlateralpadheader-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .standardlateralpadvalue-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .standardlateralpadheader-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .standardlateralpadvalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
+            }
+          }
+        }
+
+        .head_extendedlateralpadgroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 4px 0 2px 0;
+
+          .Spexextendedlateralpadtype_title {
+            display: flex;
+            width: 35%;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+
+            .SpexHeadSupports {
+              margin: 12px 16px;
+            }
+          }
+
+          .headsupports_extendedlateralpadtypegroup {
+            display: flex;
+            width: 15%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 1px 0 2px;
+
+            label {
+              font-size: 16px;
+              margin: 0 4px 0 0;
+            }
+
+            .headsupportsextendedlateralpad {
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
+          }
+
+          .Spexextendedlateralpad_sizetable {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 0 0 2px;
+            padding: 2px;
+
+            .Spexextendedlateralpad_table {
+              width: 100%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+
+              .extendedlateralpadheader-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .extendedlateralpadvalue-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .extendedlateralpadheader-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .extendedlateralpadvalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
+            }
+          }
+        }
+
+        .head_adjustablelateralpadgroup {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 4px 0 2px 0;
+
+          .Spexadjustablelateralpadtype_title {
+            display: flex;
+            width: 35%;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+
+            .SpexHeadSupports {
+              margin: 12px 16px;
+            }
+          }
+
+          .headsupports_adjustablelateralpadtypegroup {
+            display: flex;
+            width: 15%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 1px 0 2px;
+
+            label {
+              font-size: 16px;
+              margin: 0 4px 0 0;
+            }
+
+            .headsupportsadjustablelateralpad {
+              font-size: 16px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
+          }
+
+          .Spexadjustablelateralpad_sizetable {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 0 0 0 2px;
+            padding: 2px;
+
+            .Spexadjustablelateralpad_table {
+              width: 100%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+
+              .adjustablelateralpadheader-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .adjustablelateralpadvalue-row {
+                height: 50%;
+                font-size: 10px;
+              }
+
+              .adjustablelateralpadheader-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .adjustablelateralpadvalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 //n.其他
 .car-other {
