@@ -8533,3 +8533,220 @@ latertrunk_axialbiangular_Width.addEventListener("change", function () {
 //endregion
 
 //endregion
+
+//endregion
+
+/*----- 18.Spex頭靠子系統-頭靠 -----*/
+//region
+
+/*---  Spex頭靠子系統-頭靠點擊列 - 圖片箭頭部分  ---*/
+//region
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_18 = event.target;
+  let carseat18 = tgimg_18.closest(".Spex_headsupports"); // 找到最近的 Spex_headsupports
+  let imgSpexheadsupports =
+    event.target.dataset.imgSpexheadsupports;
+
+  //確認我點擊到的位置是否是 Spex_headsupports
+  if (carseat18 && carseat18.className.trim() === "Spex_headsupports") {
+    let introdutionid = carseat18.querySelector(".Spexheadsupportsgroup"); // 在 Spex_headsupports 內部找 Spexheadsupports
+    let introdution = carseat18.querySelector(".subtitle"); // 在 Spex_headsupports 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgSpexheadsupports === "SpexheadsupportsImg") {
+        if (visibilityValue === "hidden") {
+          let Price_Spexheadsupports =
+            document.querySelectorAll(".pricing");
+
+          Price_Spexheadsupports.forEach(function (openIntro) {
+            let Spexheadsupports = Price_Spexheadsupports[17];
+            //直接判斷是第幾個.Price
+            let nowprice_Spexheadsupports =
+              Price_Spexheadsupports[17].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-Spexheadsupports") ===
+                "Spexheadsupports" &&
+              nowprice_Spexheadsupports.getAttribute(
+                "data-nowprice-Spexheadsupports"
+              ) === "nowSpexheadsupports"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //Spexbacksupports勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 22px)";
+                introdutionid.style.display = "flex";
+                introdutionid.style.flexDirection = "row";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.margin = "0 0 0 7px";
+                introdutionid.style.height = "auto";
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_Spexheadsupports.style.display = "block";
+                nowprice_Spexheadsupports.style.display = "flex";
+                nowprice_Spexheadsupports.style.width = "95%";
+                nowprice_Spexheadsupports.style.height = "90%";
+                nowprice_Spexheadsupports.style.color = "#000000";
+                nowprice_Spexheadsupports.style.borderRadius = "8px";
+                nowprice_Spexheadsupports.style.padding = "1px";
+                nowprice_Spexheadsupports.style.margin =
+                  "3px 3px 3px 2px";
+                nowprice_Spexheadsupports.style.textAlign = "center";
+                nowprice_Spexheadsupports.style.fontSize = "16px";
+                nowprice_Spexheadsupports.style.fontWeight = "600";
+                nowprice_Spexheadsupports.style.alignItems = "center";
+                nowprice_Spexheadsupports.style.justifyContent = "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_Spexheadsupports.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  Spexheadsupports.style.padding = "5px";
+                  Spexheadsupports.style.margin = "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_Spexheadsupports =
+            document.querySelectorAll(".pricing");
+
+          Price_Spexheadsupports.forEach(function (openIntro) {
+            let nowprice_Spexheadsupports =
+              Price_Spexheadsupports[17].nextElementSibling;
+
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (
+              openIntro.getAttribute("data-price-Spexheadsupports") ===
+              "Spexheadsupports"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_Spexheadsupports.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+// endregion
+
+/*---  Spex軀幹子系統-軀幹側支撐點擊列 - subtitle部分  ---*/
+//region
+let Spex_headsupports = document.querySelector(
+  ".Spex_headsupports"
+);
+Spex_headsupports.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是 Spex_headsupports
+  if (showinfo === "Spexheadsupports") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_Spex_headsupports = document.querySelectorAll(".pricing");
+    let Spex_headsupportsimg =
+      Spex_headsupports.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = Spex_headsupports.querySelector("img");
+
+    Price_Spex_headsupports.forEach(function (openIntro) {
+      let Spexheadsupports = Price_Spex_headsupports[17];
+      //直接判斷是第幾個.Price
+      let nowprice_Spexheadsupports =
+        Price_Spex_headsupports[17].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-Spexheadsupports") ===
+          "Spexheadsupports" &&
+        nowprice_Spexheadsupports.getAttribute(
+          "data-nowprice-Spexheadsupports"
+        ) === "nowSpexheadsupports"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carSpexbacksupports勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 2px 3px";
+          introdutionid.style.width = "calc(100% - 22px)";
+          introdutionid.style.display = "flex";
+          introdutionid.style.flexDirection = "row";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.margin = "0 0 0 7px";
+          introdutionid.style.height = "auto";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_Spexheadsupports.style.display = "block";
+          nowprice_Spexheadsupports.style.display = "flex";
+          nowprice_Spexheadsupports.style.width = "95%";
+          nowprice_Spexheadsupports.style.height = "90%";
+          nowprice_Spexheadsupports.style.color = "#000000";
+          nowprice_Spexheadsupports.style.borderRadius = "8px";
+          nowprice_Spexheadsupports.style.padding = "1px";
+          nowprice_Spexheadsupports.style.margin = "3px 3px 3px 2px";
+          nowprice_Spexheadsupports.style.textAlign = "center";
+          nowprice_Spexheadsupports.style.fontSize = "16px";
+          nowprice_Spexheadsupports.style.fontWeight = "600";
+          nowprice_Spexheadsupports.style.alignItems = "center";
+          nowprice_Spexheadsupports.style.justifyContent = "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_Spexheadsupports.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            Spexheadsupports.style.padding = "5px";
+            Spexheadsupports.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_Spexheadsupports.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
+
+// endregion
