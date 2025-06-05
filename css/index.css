@@ -3368,406 +3368,131 @@ body {
   height: 0;
   width: 100%;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title {
-  font-size: 20px;
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title {
+  font-size: 20px;
+  width: 32%;
   font-weight: 700;
   margin: 2px 1px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_circlepadgroup {
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
   margin: 2px 0 2px 0;
+  width: 100%;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepadtype_title {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_circlepadgroup .Spexcirclepadtype_title {
   display: flex;
-  width: 35%;
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepadtype_title .SpexHeadSupports {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_circlepadgroup .Spexcirclepadtype_title .SpexHeadSupports {
   margin: 12px 16px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .headsupports_circlepadtypegroup {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_comfortpadgroup {
   display: flex;
-  width: 15%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 1px 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .headsupports_circlepadtypegroup label {
-  font-size: 16px;
-  margin: 0 4px 0 0;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .headsupports_circlepadtypegroup .headsupportscirclepad {
-  font-size: 16px;
-  border-radius: 8px;
-  text-align: center;
-  width: 11vh;
-  margin: 3px 0 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepad_sizetable {
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 0 0 2px;
-  padding: 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepad_sizetable .Spexcirclepad_table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepad_sizetable .Spexcirclepad_table .circlepadheader-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepad_sizetable .Spexcirclepad_table .circlepadvalue-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepad_sizetable .Spexcirclepad_table .circlepadheader-row td {
-  background-color: #ff6f6f;
-  color: white;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_circlepadgroup .Spexcirclepad_sizetable .Spexcirclepad_table .circlepadvalue-row td {
-  background-color: #f0f0f0;
-  color: #000;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   margin: 4px 0 2px 0;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpadtype_title {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_comfortpadgroup .Spexcomfortpadtype_title {
   display: flex;
-  width: 35%;
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpadtype_title .SpexHeadSupports {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_comfortpadgroup .Spexcomfortpadtype_title .SpexHeadSupports {
   margin: 12px 16px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .headsupports_comfortpadtypegroup {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_contourpadgroup {
   display: flex;
-  width: 15%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 1px 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .headsupports_comfortpadtypegroup label {
-  font-size: 16px;
-  margin: 0 4px 0 0;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .headsupports_comfortpadtypegroup .headsupportscomfortpad {
-  font-size: 16px;
-  border-radius: 8px;
-  text-align: center;
-  width: 11vh;
-  margin: 3px 0 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpad_sizetable {
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 0 0 2px;
-  padding: 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpad_sizetable .Spexcomfortpad_table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpad_sizetable .Spexcomfortpad_table .comfortpadheader-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpad_sizetable .Spexcomfortpad_table .comfortpadvalue-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpad_sizetable .Spexcomfortpad_table .comfortpadheader-row td {
-  background-color: #ff6f6f;
-  color: white;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_comfortpadgroup .Spexcomfortpad_sizetable .Spexcomfortpad_table .comfortpadvalue-row td {
-  background-color: #f0f0f0;
-  color: #000;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   margin: 4px 0 2px 0;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpadtype_title {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_contourpadgroup .Spexcontourpadtype_title {
   display: flex;
-  width: 35%;
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpadtype_title .SpexHeadSupports {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_contourpadgroup .Spexcontourpadtype_title .SpexHeadSupports {
   margin: 12px 16px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .headsupports_contourpadtypegroup {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_standardlateralpadgroup {
   display: flex;
-  width: 15%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 1px 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .headsupports_contourpadtypegroup label {
-  font-size: 16px;
-  margin: 0 4px 0 0;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .headsupports_contourpadtypegroup .headsupportscontourpad {
-  font-size: 16px;
-  border-radius: 8px;
-  text-align: center;
-  width: 11vh;
-  margin: 3px 0 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpad_sizetable {
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 0 0 2px;
-  padding: 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpad_sizetable .Spexcontourpad_table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpad_sizetable .Spexcontourpad_table .contourpadheader-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpad_sizetable .Spexcontourpad_table .contourpadvalue-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpad_sizetable .Spexcontourpad_table .contourpadheader-row td {
-  background-color: #ff6f6f;
-  color: white;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_contourpadgroup .Spexcontourpad_sizetable .Spexcontourpad_table .contourpadvalue-row td {
-  background-color: #f0f0f0;
-  color: #000;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   margin: 4px 0 2px 0;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpadtype_title {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpadtype_title {
   display: flex;
-  width: 35%;
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpadtype_title .SpexHeadSupports {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpadtype_title .SpexHeadSupports {
   margin: 12px 16px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .headsupports_standardlateralpadtypegroup {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_extendedlateralpadgroup {
   display: flex;
-  width: 15%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 1px 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .headsupports_standardlateralpadtypegroup label {
-  font-size: 16px;
-  margin: 0 4px 0 0;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .headsupports_standardlateralpadtypegroup .headsupportsstandardlateralpad {
-  font-size: 16px;
-  border-radius: 8px;
-  text-align: center;
-  width: 11vh;
-  margin: 3px 0 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpad_sizetable {
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 0 0 2px;
-  padding: 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpad_sizetable .Spexstandardlateralpad_table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpad_sizetable .Spexstandardlateralpad_table .standardlateralpadheader-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpad_sizetable .Spexstandardlateralpad_table .standardlateralpadvalue-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpad_sizetable .Spexstandardlateralpad_table .standardlateralpadheader-row td {
-  background-color: #ff6f6f;
-  color: white;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpad_sizetable .Spexstandardlateralpad_table .standardlateralpadvalue-row td {
-  background-color: #f0f0f0;
-  color: #000;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   margin: 4px 0 2px 0;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpadtype_title {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpadtype_title {
   display: flex;
-  width: 35%;
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpadtype_title .SpexHeadSupports {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpadtype_title .SpexHeadSupports {
   margin: 12px 16px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .headsupports_extendedlateralpadtypegroup {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_adjustablelateralpadgroup {
   display: flex;
-  width: 15%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 1px 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .headsupports_extendedlateralpadtypegroup label {
-  font-size: 16px;
-  margin: 0 4px 0 0;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .headsupports_extendedlateralpadtypegroup .headsupportsextendedlateralpad {
-  font-size: 16px;
-  border-radius: 8px;
-  text-align: center;
-  width: 11vh;
-  margin: 3px 0 0 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpad_sizetable {
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin: 0 0 0 2px;
-  padding: 2px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpad_sizetable .Spexextendedlateralpad_table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpad_sizetable .Spexextendedlateralpad_table .extendedlateralpadheader-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpad_sizetable .Spexextendedlateralpad_table .extendedlateralpadvalue-row {
-  height: 50%;
-  font-size: 10px;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpad_sizetable .Spexextendedlateralpad_table .extendedlateralpadheader-row td {
-  background-color: #ff6f6f;
-  color: white;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpad_sizetable .Spexextendedlateralpad_table .extendedlateralpadvalue-row td {
-  background-color: #f0f0f0;
-  color: #000;
-}
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   margin: 4px 0 2px 0;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpadtype_title {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpadtype_title {
   display: flex;
-  width: 35%;
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpadtype_title .SpexHeadSupports {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpadtype_title .SpexHeadSupports {
   margin: 12px 16px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .headsupports_adjustablelateralpadtypegroup {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup {
   display: flex;
-  width: 15%;
+  flex-direction: column;
+  width: 10%;
   align-items: center;
   justify-content: center;
   border: 1px solid #000000;
   border-radius: 8px;
   margin: 0 1px 0 2px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .headsupports_adjustablelateralpadtypegroup label {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup label {
   font-size: 16px;
   margin: 0 4px 0 0;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .headsupports_adjustablelateralpadtypegroup .headsupportsadjustablelateralpad {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup .headsupportspad {
   font-size: 16px;
   border-radius: 8px;
   text-align: center;
-  width: 11vh;
+  width: 10vh;
   margin: 3px 0 0 2px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpad_sizetable {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable {
   display: flex;
-  width: 50%;
+  width: 58%;
   align-items: center;
   justify-content: center;
   border: 1px solid #000000;
@@ -3775,8 +3500,9 @@ body {
   margin: 0 0 0 2px;
   padding: 2px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpad_sizetable .Spexadjustablelateralpad_table {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable .headsupportspad_table {
   width: 100%;
+  height: 20%;
   border-collapse: collapse;
   table-layout: fixed;
   text-align: center;
@@ -3784,19 +3510,23 @@ body {
   border-radius: 12px;
   overflow: hidden;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpad_sizetable .Spexadjustablelateralpad_table .adjustablelateralpadheader-row {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable .headsupportspad_table .padheader-row {
   height: 50%;
   font-size: 10px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpad_sizetable .Spexadjustablelateralpad_table .adjustablelateralpadvalue-row {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable .headsupportspad_table .padvalue-row {
   height: 50%;
   font-size: 10px;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpad_sizetable .Spexadjustablelateralpad_table .adjustablelateralpadheader-row td {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable .headsupportspad_table td {
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable .headsupportspad_table .padheader-row td {
   background-color: #ff6f6f;
   color: white;
 }
-.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpad_sizetable .Spexadjustablelateralpad_table .adjustablelateralpadvalue-row td {
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable .headsupportspad_table .padvalue-row td {
   background-color: #f0f0f0;
   color: #000;
 }
