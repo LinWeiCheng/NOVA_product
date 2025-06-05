@@ -1987,11 +1987,14 @@ let Spex_medialthighOrgOptions = [
 
 function MedialThighSizeSelect(otherCheckbox) {
   let SpexmedialthighSel = document.querySelector(".Spexmedialthigh_sel");
-  if (!otherCheckbox) {
-    SpexmedialthighSel.disabled = true;
-  } else {
+  if (MedialThigh_Standardcheckbox.checked || MedialThigh_Multiaxialcheckbox.checked) {
     SpexmedialthighSel.disabled = false;
   }
+  if (!MedialThigh_Standardcheckbox.checked && !MedialThigh_Multiaxialcheckbox.checked) {
+    SpexmedialthighSel.disabled = true;
+  }
+   
+  
 
   //清空第二排
   document.querySelectorAll(".value-row td").forEach((cell) => {
@@ -8545,8 +8548,7 @@ document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_18 = event.target;
   let carseat18 = tgimg_18.closest(".Spex_headsupports"); // 找到最近的 Spex_headsupports
-  let imgSpexheadsupports =
-    event.target.dataset.imgSpexheadsupports;
+  let imgSpexheadsupports = event.target.dataset.imgSpexheadsupports;
 
   //確認我點擊到的位置是否是 Spex_headsupports
   if (carseat18 && carseat18.className.trim() === "Spex_headsupports") {
@@ -8559,8 +8561,7 @@ document.addEventListener("click", function (event) {
 
       if (imgSpexheadsupports === "SpexheadsupportsImg") {
         if (visibilityValue === "hidden") {
-          let Price_Spexheadsupports =
-            document.querySelectorAll(".pricing");
+          let Price_Spexheadsupports = document.querySelectorAll(".pricing");
 
           Price_Spexheadsupports.forEach(function (openIntro) {
             let Spexheadsupports = Price_Spexheadsupports[17];
@@ -8600,8 +8601,7 @@ document.addEventListener("click", function (event) {
                 nowprice_Spexheadsupports.style.color = "#000000";
                 nowprice_Spexheadsupports.style.borderRadius = "8px";
                 nowprice_Spexheadsupports.style.padding = "1px";
-                nowprice_Spexheadsupports.style.margin =
-                  "3px 3px 3px 2px";
+                nowprice_Spexheadsupports.style.margin = "3px 3px 3px 2px";
                 nowprice_Spexheadsupports.style.textAlign = "center";
                 nowprice_Spexheadsupports.style.fontSize = "16px";
                 nowprice_Spexheadsupports.style.fontWeight = "600";
@@ -8618,8 +8618,7 @@ document.addEventListener("click", function (event) {
             }
           });
         } else {
-          let Price_Spexheadsupports =
-            document.querySelectorAll(".pricing");
+          let Price_Spexheadsupports = document.querySelectorAll(".pricing");
 
           Price_Spexheadsupports.forEach(function (openIntro) {
             let nowprice_Spexheadsupports =
@@ -8653,9 +8652,7 @@ document.addEventListener("click", function (event) {
 
 /*---  Spex軀幹子系統-軀幹側支撐點擊列 - subtitle部分  ---*/
 //region
-let Spex_headsupports = document.querySelector(
-  ".Spex_headsupports"
-);
+let Spex_headsupports = document.querySelector(".Spex_headsupports");
 Spex_headsupports.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -8664,8 +8661,7 @@ Spex_headsupports.addEventListener("click", function (event) {
   if (showinfo === "Spexheadsupports") {
     let introdutionid = event.target.nextElementSibling;
     let Price_Spex_headsupports = document.querySelectorAll(".pricing");
-    let Spex_headsupportsimg =
-      Spex_headsupports.querySelector(".target_img"); // 找到最近的 .target_img
+    let Spex_headsupportsimg = Spex_headsupports.querySelector(".target_img"); // 找到最近的 .target_img
     let img = Spex_headsupports.querySelector("img");
 
     Price_Spex_headsupports.forEach(function (openIntro) {
@@ -8749,4 +8745,221 @@ Spex_headsupports.addEventListener("click", function (event) {
 });
 //endregion
 
+//region --- 頭靠尺寸 ---
+//region --- Circle Pad 枕部淺廓型頭靠墊 ---
+//Circle Pad尺寸
+let SpexheadsupportsCirclePadSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "150" },
+  { value: "option3", text: "250" },
+];
+//Circle Pad尺寸數據
+let SpexheadsupportsCirclePad150DataOptions = {
+  option1: ["150", "145mm", "50mm", "175mm", "55mm","145mm","45mm","25mm"]
+};
+
+let SpexheadsupportsCirclePad250DataOptions = {
+  option1: ["250", "180mm", "60mm", "220mm", "70mm","185mm","60mm","30mm"]
+};
+//endregion
+
+//region --- Comfort Pad 枕部淺廓型頭靠墊 ---
+//Comfort Pad尺寸
+let SpexheadsupportsComfortPadSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "250" },
+  { value: "option3", text: "350" },
+];
+//Comfort Pad尺寸數據
+let SpexheadsupportsComfortPad250DataOptions = {
+  option1: ["250", "235mm", "60mm", "260mm", "90mm","125mm","45mm","30mm"]
+};
+let SpexheadsupportsComfortPad350DataOptions = {
+  option1: ["350", "310mm", "80mm", "340mm", "120mm","165mm","60mm","50mm"]
+};
+//endregion
+
+//region --- Contour Pad 枕部淺廓型頭靠墊 ---
+//Contour Pad尺寸
+let SpexheadsupportsContourPadSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "250" },
+  { value: "option3", text: "350" },
+];
+//Contour Pad尺寸數據
+let SpexheadsupportsContourPad250DataOptions = {
+  option1: ["250", "105mm", "140mm", "280mm", "140mm","165mm","35mm","30mm"]
+};
+let SpexheadsupportsContourPad350DataOptions = {
+  option1: ["350", "130mm", "170mm", "350mm", "170mm","210mm","50mm","40mm"]
+};
+//endregion
+
+//region --- Standard Lateral Pad 枕部淺廓型頭靠墊 ---
+//Standard Lateral Pad尺寸
+let SpexheadsupportsStandardLateralPadSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "Paediatric" },
+  { value: "option3", text: "Adult" },
+];
+//Standard Lateral Pad尺寸數據
+let SpexheadsupportsStandardLateralPad250DataOptions = {
+  option1: ["Paediatric", "135mm", "80mm", "220mm", "180mm","150mm","50mm","40mm","55mm","30mm"]
+};
+let SpexheadsupportsStandardLateralPad350DataOptions = {
+  option1: ["Adult", "160mm", "100mm", "250mm", "145mm","170mm","60mm","45mm","60mm","30mm"]
+};
+//endregion
+
+//region --- Extended Lateral Pad 枕部淺廓型頭靠墊 ---
+//Extended Lateral Pad尺寸
+let SpexheadsupportsExtendedLateralPadSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "Paediatric" },
+  { value: "option3", text: "Adult" },
+];
+//Extended Lateral Pad尺寸數據
+let SpexheadsupportsExtendedLateralPad250DataOptions = {
+  option1: ["Paediatric", "135mm", "120mm", "230mm", "160mm","180mm","50mm","40mm","50mm","35mm"]
+};
+
+let SpexheadsupportsExtendedLateralPad350DataOptions = {
+  option1: ["Adult", "160mm", "140mm", "260mm", "180mm","190mm","60mm","45mm","60mm","35mm"]
+};
+//endregion
+
+//region --- Adjustable Lateral Pad 枕部淺廓型頭靠墊 ---
+//Adjustable Lateral Pad尺寸
+let SpexheadsupportsAdjustableLateralPadSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "150" },
+  { value: "option3", text: "250" },
+];
+//Adjustable Lateral Pad尺寸數據
+let SpexheadsupportsAdjustableLateralPad250DataOptions = {
+  option1: ["150", "145mm", "205mm", "175mm", "55mm","145mm","45mm","25mm","55mm","40mm","155mm"]
+};
+
+let SpexheadsupportsAdjustableLateralPad350DataOptions = {
+  option1: ["250", "180mm", "215mm", "220mm", "70mm","185m","60mm","30mm","70mm","40mm","155mm"]
+};
+//endregion
+
+//確定勾選的是哪個頭靠，且不會重複勾選選項
+//region
+document
+  .querySelectorAll('input[name="car_SpexHeadSupports"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexHeadSupports"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+        HeadSupportsSelectOptions();
+        ReseatHeadSupportsTableSizeSelect(otherCheckbox !== this)
+    });
+  });
+
+function HeadSupportsSelectOptions() {
+  let CirclePadCheckbox = document.querySelector("#Spex_Head_Supports_Circle");
+  let ComfortPadCheckbox = document.querySelector(
+    "#Spex_Head_Supports_Comfort"
+  );
+  let ContourPadCheckbox = document.querySelector(
+    "#Spex_Head_Supports_Contour"
+  );
+  let StandardlateralPadCheckbox = document.querySelector(
+    "#Spex_Head_Supports_Standardlateral"
+  );
+  let ExtendedLateralPadCheckbox = document.querySelector(
+    "#Spex_Head_Supports_ExtendedLateral"
+  );
+  let AdjustableLateralPadCheckbox = document.querySelector(
+    "#Spex_Head_Supports_AdjustableLateral"
+  );
+
+  let headsupportspadsel = document.querySelector(".headsupportspad");
+  let headsupportspad_table = document.querySelector(".headsupportspad_table");
+  if (CirclePadCheckbox.checked) {
+    recodeHeadSupportsSelectOptions(
+      headsupportspadsel,
+      SpexheadsupportsCirclePadSizeOptions
+    );
+  }
+  if (ComfortPadCheckbox.checked) {
+    recodeHeadSupportsSelectOptions(
+      headsupportspadsel,
+      SpexheadsupportsComfortPadSizeOptions
+    );
+  }
+  if (ContourPadCheckbox.checked) {
+    recodeHeadSupportsSelectOptions(
+      headsupportspadsel,
+      SpexheadsupportsContourPadSizeOptions
+    );
+  }
+  if (StandardlateralPadCheckbox.checked) {
+    recodeHeadSupportsSelectOptions(
+      headsupportspadsel,
+      SpexheadsupportsStandardLateralPadSizeOptions
+    );
+  }
+  if (ExtendedLateralPadCheckbox.checked) {
+    recodeHeadSupportsSelectOptions(
+      headsupportspadsel,
+      SpexheadsupportsExtendedLateralPadSizeOptions
+    );
+  }
+   if (AdjustableLateralPadCheckbox.checked) {
+    recodeHeadSupportsSelectOptions(
+      headsupportspadsel,
+      SpexheadsupportsAdjustableLateralPadSizeOptions
+    );
+  }
+}
+
+function recodeHeadSupportsSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+
+
+function ReseatHeadSupportsTableSizeSelect(otherCheckbox) {
+    let headsupportspadsel = document.querySelector(".headsupportspad");
+  if (!otherCheckbox) {
+    headsupportspadsel.disabled = true;
+  } else {
+    headsupportspadsel.disabled = false;
+  }
+
+  //清空第二排
+  document.querySelectorAll(".padvalue-row td").forEach((cell) => {
+    cell.textContent = ""; // 清掉文字
+    cell.style.backgroundColor = "#f0f0f0";
+    cell.innerHTML = "&nbsp;";
+  });
+
+  //下拉式選單重新排序
+  headsupportspadsel.innerHTML = ""; // 清空現有內容
+  SpexheadsupportsCirclePadSizeOptions.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    headsupportspadsel.appendChild(opt);
+  });
+}
 // endregion
