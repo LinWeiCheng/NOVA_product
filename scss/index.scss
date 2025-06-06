@@ -4179,6 +4179,17 @@ body {
           }
         }
 
+        .padvalue-row,
+        .padheader-row {
+          td {
+            &.disabled-cell {
+              background-color: #f0f0f0 !important;
+              color: #aaa !important;
+              font-style: italic !important;
+            }
+          }
+        }
+
         .headsupportspad_sizetable {
           display: flex;
           width: 58%;

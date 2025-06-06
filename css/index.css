@@ -3490,6 +3490,12 @@ body {
   width: 10vh;
   margin: 3px 0 0 2px;
 }
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .padvalue-row td.disabled-cell,
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .padheader-row td.disabled-cell {
+  background-color: #f0f0f0 !important;
+  color: #aaa !important;
+  font-style: italic !important;
+}
 .Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable {
   display: flex;
   width: 58%;
