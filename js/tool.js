@@ -11,9 +11,12 @@ function getNumericValueFromText(text) {
 //endregion
 
 //region --- 從某個 DOM 元素中直接抓出數字、格式化後回傳 ---
-let getFormattedPrice = selector =>
+let getFormattedPrice = (selector) =>
   new Intl.NumberFormat("en-US").format(
-    Number(document.querySelector(selector)?.textContent.replace(/[^0-9.-]/g, "") || 0)
+    Number(
+      document.querySelector(selector)?.textContent.replace(/[^0-9.-]/g, "") ||
+        0
+    )
   );
 
 //endregion
@@ -7279,9 +7282,6 @@ let SpexLaterTrunkConnectReinforce_prices = {
 };
 //endregion
 
-// 把所有價格集合起來成一個大物件（方便查）
-let allSpexLaterTrunkAccessoryPrices = [3200, 3200, 1900, 3200, 1900];
-
 //endregion
 
 //region --- 側支撐擋墊布套價錢 ---
@@ -7393,8 +7393,7 @@ latertrunkaxialcountInput.addEventListener("input", () => {
       SpexLaterTrunkAxial_prices.SpexLaterTrunkAxial_prices1 *
       latertrunkaxialcountquantity;
 
-      updateSpexLaterTrunkTotalPrice();
-
+    updateSpexLaterTrunkTotalPrice();
   } else {
     updateSpexLaterTrunkTotalPrice();
   }
@@ -7436,7 +7435,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "145mm"
@@ -7446,7 +7444,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7456,7 +7453,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7466,7 +7462,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7476,7 +7471,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -7496,7 +7490,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "145mm"
@@ -7506,7 +7499,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7516,7 +7508,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7526,7 +7517,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7536,7 +7526,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -7556,7 +7545,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7566,7 +7554,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7576,7 +7563,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7586,7 +7572,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -7606,7 +7591,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "180mm"
@@ -7616,7 +7600,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "210mm"
@@ -7626,7 +7609,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "240mm"
@@ -7636,7 +7618,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -7656,7 +7637,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "140mm"
@@ -7666,7 +7646,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "140mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "150mm"
@@ -7676,7 +7655,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "155mm"
@@ -7686,7 +7664,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "165mm"
@@ -7696,7 +7673,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "175mm"
@@ -7706,7 +7682,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -7726,7 +7701,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "140mm"
@@ -7736,7 +7710,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "140mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "150mm"
@@ -7746,7 +7719,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "155mm"
@@ -7756,7 +7728,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "165mm"
@@ -7766,7 +7737,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkaxialpadsizeHeighSelectoptions.text === "175mm"
@@ -7776,7 +7746,6 @@ latertrunkaxialpadcountInput.addEventListener("input", () => {
           latertrunkaxialpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -7812,14 +7781,12 @@ latertrunkstandardcountInput.addEventListener("input", () => {
         latertrunkstandardcountquantity;
 
       updateSpexLaterTrunkTotalPrice();
-        
     } else if (standardsize2.checked) {
       latertrunkstandardcountprices.textContent =
         SpexLaterTrunkStandard_prices.SpexLaterTrunkStandard_prices2 *
         latertrunkstandardcountquantity;
 
       updateSpexLaterTrunkTotalPrice();
-
     }
   } else {
     updateSpexLaterTrunkTotalPrice();
@@ -7875,7 +7842,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "145mm"
@@ -7885,7 +7851,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -7895,7 +7860,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -7905,7 +7869,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -7934,7 +7897,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "145mm"
@@ -7944,7 +7906,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -7954,7 +7915,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -7964,7 +7924,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -7974,7 +7933,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -7994,7 +7952,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -8004,7 +7961,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-        
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -8014,7 +7970,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -8024,7 +7979,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8044,7 +7998,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "180mm"
@@ -8054,7 +8007,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "210mm"
@@ -8064,7 +8016,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "240mm"
@@ -8074,7 +8025,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8094,7 +8044,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "140mm"
@@ -8104,7 +8053,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
       if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8115,7 +8063,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "155mm"
@@ -8125,7 +8072,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "165mm"
@@ -8135,7 +8081,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "175mm"
@@ -8145,7 +8090,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8165,7 +8109,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "140mm"
@@ -8175,7 +8118,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
       if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8186,7 +8128,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "155mm"
@@ -8196,7 +8137,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "165mm"
@@ -8206,7 +8146,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkstandardpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkstandardpadsizeHeighSelectoptions.text === "175mm"
@@ -8216,7 +8155,6 @@ latertrunkstandardpadcountInput.addEventListener("input", () => {
           latertrunkstandardpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8242,18 +8180,16 @@ latertrunkoffsetcountInput.addEventListener("input", () => {
         SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices1 *
         latertrunkoffsetcountquantity;
 
-        updateSpexLaterTrunkTotalPrice();
-
+      updateSpexLaterTrunkTotalPrice();
     } else if (offsetsize2.checked) {
       latertrunkoffsetcountprices.textContent =
         SpexLaterTrunkOffset_prices.SpexLaterTrunkOffset_prices2 *
         latertrunkoffsetcountquantity;
 
-        updateSpexLaterTrunkTotalPrice();
-
+      updateSpexLaterTrunkTotalPrice();
     }
   } else {
-           updateSpexLaterTrunkTotalPrice();
+    updateSpexLaterTrunkTotalPrice();
   }
 });
 //endregion
@@ -8304,7 +8240,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
@@ -8314,7 +8249,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8324,7 +8258,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8334,7 +8267,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8363,7 +8295,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "145mm"
@@ -8373,7 +8304,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8383,7 +8313,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-        
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8393,7 +8322,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8422,7 +8350,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8432,7 +8359,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8442,7 +8368,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8471,7 +8396,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "95mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "180mm"
@@ -8481,7 +8405,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "210mm"
@@ -8491,7 +8414,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "115mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "240mm"
@@ -8501,7 +8423,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8521,7 +8442,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "140mm"
@@ -8531,7 +8451,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
       if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8542,7 +8461,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "155mm"
@@ -8552,7 +8470,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "165mm"
@@ -8562,7 +8479,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "175mm"
@@ -8572,7 +8488,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8592,7 +8507,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "125mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "140mm"
@@ -8602,7 +8516,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
       if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "140mm" &&
@@ -8613,7 +8526,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "160mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "155mm"
@@ -8623,7 +8535,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "195mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "165mm"
@@ -8633,7 +8544,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkoffsetpadsizeWidthSelectoptions.text === "230mm" &&
         latertrunkoffsetpadsizeHeighSelectoptions.text === "175mm"
@@ -8643,7 +8553,6 @@ latertrunkoffsetpadcountInput.addEventListener("input", () => {
           latertrunkoffsetpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8666,7 +8575,7 @@ latertrunkaxialbiangularcountInput.addEventListener("input", () => {
       SpexLaterTrunkAxialBiangular_prices.SpexLaterTrunkAxialBiangular_prices1 *
       latertrunkaxialbiangularcountquantity;
 
-      updateSpexLaterTrunkTotalPrice();
+    updateSpexLaterTrunkTotalPrice();
   } else {
     updateSpexLaterTrunkTotalPrice();
   }
@@ -8706,7 +8615,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8716,7 +8624,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8726,7 +8633,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8746,7 +8652,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8755,8 +8660,7 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           SpexLaterTrunkAxialBiangular24Standard_prices.SpexLaterTrunkAxialBiangular24Standard_prices2 *
           latertrunkaxialbiangularpadcountquantity;
 
-       updateSpexLaterTrunkTotalPrice();
-
+        updateSpexLaterTrunkTotalPrice();
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8766,7 +8670,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8786,7 +8689,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8796,7 +8698,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8806,7 +8707,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -8825,8 +8725,7 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           SpexLaterTrunkAxialBiangular24Comfy_prices.SpexLaterTrunkAxialBiangular24Comfy_prices1 *
           latertrunkaxialbiangularpadcountquantity;
 
-       updateSpexLaterTrunkTotalPrice();
-
+        updateSpexLaterTrunkTotalPrice();
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "215mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8836,7 +8735,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       } else if (
         latertrunkaxialbiangularWidthSelectoptions.text === "265mm" &&
         latertrunkaxialbiangularHeighSelectoptions.text === "195mm"
@@ -8846,7 +8744,6 @@ latertrunkaxialbiangularpadcountInput.addEventListener("input", () => {
           latertrunkaxialbiangularpadcountquantity;
 
         updateSpexLaterTrunkTotalPrice();
-
       }
     }
     //endregion
@@ -9002,5 +8899,135 @@ function updateSpexLaterTrunkTotalPrice() {
   )} 元`;
 }
 //endregion
+
+//endregion
+
+//endregion
+
+/*----- 18.Spex頭靠子系統-頭靠 -----*/
+//region
+let nowprice_SpexHeadSupports = Price[17].nextElementSibling;
+let headsupportspadselect = document.querySelector(".headsupportspad");
+let CirclePad = document.querySelector("#Spex_Head_Supports_Circle");
+let ComfortPad = document.querySelector("#Spex_Head_Supports_Comfort");
+let ContourPad = document.querySelector("#Spex_Head_Supports_Contour");
+let StandardlateralPad = document.querySelector(
+  "#Spex_Head_Supports_Standardlateral"
+);
+let ExtendedLateralPad = document.querySelector(
+  "#Spex_Head_Supports_ExtendedLateral"
+);
+let AdjustableLateralPad = document.querySelector(
+  "#Spex_Head_Supports_AdjustableLateral"
+);
+
+//region --- 頭靠價錢 ---
+//region --- Circle Pad 枕部淺廓型頭靠墊 ---
+let SpexCirclePad150_prices = {
+  SpexCirclePad150_prices1: 4000,
+};
+let SpexCirclePad250_prices = {
+  SpexCirclePad250_prices1: 4000,
+};
+//endregion
+
+//region --- Comfort Pad 枕部淺廓型頭靠墊 ---
+let SpexComfortPad250_prices = {
+  SpexComfortPad250_prices1: 4000,
+};
+let SpexComfortPad350_prices = {
+  SpexComfortPad350_prices1: 4000,
+};
+//endregion
+
+//region --- Contour Pad 枕部淺廓型頭靠墊 ---
+let SpexContourPad250_prices = {
+  SpexContourPad250_prices1: 4000,
+};
+let SpexContourPad350_prices = {
+  SpexContourPad350_prices1: 4000,
+};
+//endregion
+
+//region --- Standard Lateral Pad 枕部淺廓型頭靠墊 ---
+let SpexStandardLateralPadPaediatric_prices = {
+  SpexStandardLateralPadPaediatric_prices1: 5100,
+};
+let SpexStandardLateralPadAdult_prices = {
+  SpexStandardLateralPadAdult_prices1: 5100,
+};
+//endregion
+
+//region --- Extended Lateral Pad 枕部淺廓型頭靠墊 ---
+let SpexExtendedLateralPadPaediatric_prices = {
+  SpexExtendedLateralPadPaediatric_prices1: 5100,
+};
+let SpexExtendedLateralPadAdult_prices = {
+  SpexExtendedLateralPadAdult_prices1: 5100,
+};
+//endregion
+
+//region --- Adjustable Lateral Pad 枕部淺廓型頭靠墊 ---
+let SpexAdjustableLateralPad150_prices = {
+  SpexExtendedLateralPad150_prices1: 15200,
+};
+let SpexAdjustableLateralPad250_prices = {
+  SpexExtendedLateralPad250_prices1: 15200,
+};
+//endregion
+//endregion
+
+headsupportspadselect.addEventListener("change", () => {
+  let selectedText =
+    headsupportspadsel.options[headsupportspadsel.selectedIndex].text;
+  if (CirclePad.checked) {
+    if (selectedText === "150") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexCirclePad150_prices.SpexCirclePad150_prices1)} 元`;
+    }
+    if (selectedText === "250") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexCirclePad250_prices.SpexCirclePad250_prices1)} 元`;
+    }
+  }
+  if (ComfortPad.checked) {
+    if (selectedText === "250") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexComfortPad250_prices.SpexComfortPad250_prices1)} 元`;
+    }
+    if (selectedText === "350") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexComfortPad350_prices.SpexComfortPad350_prices1)} 元`;
+    }
+  }
+  if (ContourPad.checked) {
+    if (selectedText === "250") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexContourPad250_prices.SpexContourPad250_prices1)} 元`;
+    }
+    if (selectedText === "350") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexContourPad350_prices.SpexContourPad350_prices1)} 元`;
+    }
+  }
+  if (StandardlateralPad.checked) {
+    if (selectedText === "Paediatric") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexStandardLateralPadPaediatric_prices.SpexStandardLateralPadPaediatric_prices1)} 元`;
+    }
+    if (selectedText === "Adult") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexStandardLateralPadAdult_prices.SpexStandardLateralPadAdult_prices1)} 元`;
+    }
+  }
+  if (ExtendedLateralPad.checked) {
+    if (selectedText === "Paediatric") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexExtendedLateralPadPaediatric_prices.SpexExtendedLateralPadPaediatric_prices1)} 元`;
+    }
+    if (selectedText === "Adult") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexExtendedLateralPadAdult_prices.SpexExtendedLateralPadAdult_prices1)} 元`;
+    }
+  }
+ if (AdjustableLateralPad.checked) {
+    if (selectedText === "150") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexAdjustableLateralPad150_prices.SpexExtendedLateralPad150_prices1)} 元`;
+    }
+    if (selectedText === "250") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexAdjustableLateralPad250_prices.SpexExtendedLateralPad250_prices1)} 元`;
+    }
+  }
+});
 
 //endregion
