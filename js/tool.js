@@ -8907,6 +8907,9 @@ function updateSpexLaterTrunkTotalPrice() {
 /*----- 18.Spex頭靠子系統-頭靠 -----*/
 //region
 let nowprice_SpexHeadSupports = Price[17].nextElementSibling;
+let SpexHeadSupportsCheckboxes = document.querySelectorAll(
+  'input[name="car_SpexHeadSupports"]'
+);
 let headsupportspadselect = document.querySelector(".headsupportspad");
 let CirclePad = document.querySelector("#Spex_Head_Supports_Circle");
 let ComfortPad = document.querySelector("#Spex_Head_Supports_Comfort");
@@ -8919,6 +8922,23 @@ let ExtendedLateralPad = document.querySelector(
 );
 let AdjustableLateralPad = document.querySelector(
   "#Spex_Head_Supports_AdjustableLateral"
+);
+let Spexheadsupportsprices = document.querySelector(".Spexheadsupportsprices");
+
+let bracketCheckboxes = document.querySelectorAll(
+  'input[name="car_SpexHeadSupportsBracket"]'
+);
+let Stylo160 = document.querySelector("#Spex_Head_Supports_Bracket160");
+let StyloFlipback160 = document.querySelector(
+  "#Spex_Head_Supports_Bracket_Flipback_160"
+);
+let Stylo260 = document.querySelector("#Spex_Head_Supports_Bracket260");
+let StyloFlipback260 = document.querySelector(
+  "#Spex_Head_Supports_Bracket_Flipback_260"
+);
+
+let Spexheadsupportsbracketprices = document.querySelector(
+  ".Spexheadsupportsbracketprices"
 );
 
 //region --- 頭靠價錢 ---
@@ -8975,59 +8995,229 @@ let SpexAdjustableLateralPad250_prices = {
   SpexExtendedLateralPad250_prices1: 15200,
 };
 //endregion
+
+//region --- Stylo 160 ---
+let SpexStylo160_prices = {
+  SpexStylo160_prices1: 9200,
+};
 //endregion
 
+//region --- Stylo Flip-back 160 ---
+let SpexStyloFlipBack160_prices = {
+  SpexStyloFlipBack160_prices1: 11300,
+};
+//endregion
+
+//region --- Stylo 260 ---
+let SpexStylo260_prices = {
+  SpexStylo260_prices1: 11000,
+};
+//endregion
+
+//region --- Stylo Flip-back 260 ---
+let SpexStyloFlipBack260_prices = {
+  SpexStyloFlipBack260_prices1: 13400,
+};
+//endregion
+
+//endregion
+
+//region --- 頭靠價錢計算方式 ---
 headsupportspadselect.addEventListener("change", () => {
   let selectedText =
     headsupportspadsel.options[headsupportspadsel.selectedIndex].text;
   if (CirclePad.checked) {
     if (selectedText === "150") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexCirclePad150_prices.SpexCirclePad150_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexCirclePad150_prices.SpexCirclePad150_prices1
+      )} 元`;
+      Spexheadsupportsprices = SpexCirclePad150_prices.SpexCirclePad150_prices1;
     }
     if (selectedText === "250") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexCirclePad250_prices.SpexCirclePad250_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexCirclePad250_prices.SpexCirclePad250_prices1
+      )} 元`;
+      Spexheadsupportsprices = SpexCirclePad250_prices.SpexCirclePad250_prices1;
     }
   }
   if (ComfortPad.checked) {
     if (selectedText === "250") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexComfortPad250_prices.SpexComfortPad250_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexComfortPad250_prices.SpexComfortPad250_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexComfortPad250_prices.SpexComfortPad250_prices1;
     }
     if (selectedText === "350") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexComfortPad350_prices.SpexComfortPad350_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexComfortPad350_prices.SpexComfortPad350_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexComfortPad350_prices.SpexComfortPad350_prices1;
     }
   }
   if (ContourPad.checked) {
     if (selectedText === "250") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexContourPad250_prices.SpexContourPad250_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexContourPad250_prices.SpexContourPad250_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexContourPad250_prices.SpexContourPad250_prices1;
     }
     if (selectedText === "350") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexContourPad350_prices.SpexContourPad350_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexContourPad350_prices.SpexContourPad350_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexContourPad350_prices.SpexContourPad350_prices1;
     }
   }
   if (StandardlateralPad.checked) {
     if (selectedText === "Paediatric") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexStandardLateralPadPaediatric_prices.SpexStandardLateralPadPaediatric_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexStandardLateralPadPaediatric_prices.SpexStandardLateralPadPaediatric_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexStandardLateralPadPaediatric_prices.SpexStandardLateralPadPaediatric_prices1;
     }
     if (selectedText === "Adult") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexStandardLateralPadAdult_prices.SpexStandardLateralPadAdult_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexStandardLateralPadAdult_prices.SpexStandardLateralPadAdult_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexStandardLateralPadAdult_prices.SpexStandardLateralPadAdult_prices1;
     }
   }
   if (ExtendedLateralPad.checked) {
     if (selectedText === "Paediatric") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexExtendedLateralPadPaediatric_prices.SpexExtendedLateralPadPaediatric_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexExtendedLateralPadPaediatric_prices.SpexExtendedLateralPadPaediatric_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexExtendedLateralPadPaediatric_prices.SpexExtendedLateralPadPaediatric_prices1;
     }
     if (selectedText === "Adult") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexExtendedLateralPadAdult_prices.SpexExtendedLateralPadAdult_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexExtendedLateralPadAdult_prices.SpexExtendedLateralPadAdult_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexExtendedLateralPadAdult_prices.SpexExtendedLateralPadAdult_prices1;
     }
   }
- if (AdjustableLateralPad.checked) {
+  if (AdjustableLateralPad.checked) {
     if (selectedText === "150") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexAdjustableLateralPad150_prices.SpexExtendedLateralPad150_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexAdjustableLateralPad150_prices.SpexExtendedLateralPad150_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexAdjustableLateralPad150_prices.SpexExtendedLateralPad150_prices1;
     }
     if (selectedText === "250") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(SpexAdjustableLateralPad250_prices.SpexExtendedLateralPad250_prices1)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        SpexAdjustableLateralPad250_prices.SpexExtendedLateralPad250_prices1
+      )} 元`;
+      Spexheadsupportsprices =
+        SpexAdjustableLateralPad250_prices.SpexExtendedLateralPad250_prices1;
     }
   }
+  if (Spexheadsupportsbracketprices.textContent !== "") {
+    nowprice_SpexHeadSupports.textContent = getNumericValueFromText(
+      Spexheadsupportsprices.textContent +
+        Spexheadsupportsbracketprices.textContent
+    );
+  }
+});
+
+// SpexHeadSupportsCheckboxes.forEach((checkbox) => {
+//   checkbox.addEventListener("change", () => {
+//     // 確保只有一個 checkbox 被選取
+//     let selected = Array.from(SpexHeadSupportsCheckboxes).filter(cb => cb.checked);
+
+//     if (selected.length === 0) {
+//       nowprice_SpexHeadSupports.textContent = "0元";
+//     }
+//   });
+// });
+//endregion
+
+//region --- 頭靠支架價錢計算方式 ---
+Stylo160.addEventListener("change", () => {
+  if (Stylo160.checked) {
+    Spexheadsupportsbracketprices.textContent = `${formatPrice(
+      SpexStylo160_prices.SpexStylo160_prices1
+    )} 元`;
+    nowprice_SpexHeadSupports.textContent = `${formatPrice(
+      SpexStylo160_prices.SpexStylo160_prices1
+    )} 元`;
+  }
+  if (Spexheadsupportsprices.textContent !== "") {
+    nowprice_SpexHeadSupports.textContent = getNumericValueFromText(
+      Spexheadsupportsprices.textContent +
+        Spexheadsupportsbracketprices.textContent
+    );
+  }
+});
+
+StyloFlipback160.addEventListener("change", () => {
+  if (StyloFlipback160.checked) {
+    Spexheadsupportsbracketprices.textContent = `${formatPrice(
+      SpexStyloFlipBack160_prices.SpexStyloFlipBack160_prices1
+    )} 元`;
+    nowprice_SpexHeadSupports.textContent = `${formatPrice(
+      SpexStyloFlipBack160_prices.SpexStyloFlipBack160_prices1
+    )} 元`;
+  }
+  if (Spexheadsupportsprices.textContent !== "") {
+    nowprice_SpexHeadSupports.textContent = getNumericValueFromText(
+      Spexheadsupportsprices.textContent +
+        Spexheadsupportsbracketprices.textContent
+    );
+  }
+});
+
+Stylo260.addEventListener("change", () => {
+  if (Stylo260.checked) {
+    Spexheadsupportsbracketprices.textContent = `${formatPrice(
+      SpexStylo260_prices.SpexStylo260_prices1
+    )} 元`;
+    nowprice_SpexHeadSupports.textContent = `${formatPrice(
+      SpexStylo260_prices.SpexStylo260_prices1
+    )} 元`;
+  }
+  if (Spexheadsupportsprices.textContent !== "") {
+    nowprice_SpexHeadSupports.textContent = getNumericValueFromText(
+      Spexheadsupportsprices.textContent +
+        Spexheadsupportsbracketprices.textContent
+    );
+  }
+});
+
+StyloFlipback260.addEventListener("change", () => {
+  if (StyloFlipback260.checked) {
+    Spexheadsupportsbracketprices.textContent = `${formatPrice(
+      SpexStyloFlipBack260_prices.SpexStyloFlipBack260_prices1
+    )} 元`;
+    nowprice_SpexHeadSupports.textContent = `${formatPrice(
+      SpexStyloFlipBack260_prices.SpexStyloFlipBack260_prices1
+    )} 元`;
+  }
+  if (Spexheadsupportsprices.textContent !== "") {
+    nowprice_SpexHeadSupports.textContent = getNumericValueFromText(
+      Spexheadsupportsprices.textContent +
+        Spexheadsupportsbracketprices.textContent
+    );
+  }
+});
+
+bracketCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    // 確保只有一個 checkbox 被選取
+    let selected = Array.from(bracketCheckboxes).filter(cb => cb.checked);
+
+    if (selected.length === 0) {
+      nowprice_SpexHeadSupports.textContent = "0元";
+    }
+  });
 });
 
 //endregion
