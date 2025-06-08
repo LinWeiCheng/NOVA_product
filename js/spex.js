@@ -8589,7 +8589,7 @@ document.addEventListener("click", function (event) {
                 introdutionid.style.padding = "0px 1px 1px 3px";
                 introdutionid.style.width = "calc(100% - 22px)";
                 introdutionid.style.display = "flex";
-                introdutionid.style.flexDirection = "row";
+                introdutionid.style.flexDirection = "column";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
                 introdutionid.style.margin = "0 0 0 7px";
@@ -8690,7 +8690,7 @@ Spex_headsupports.addEventListener("click", function (event) {
           introdutionid.style.padding = "0px 1px 2px 3px";
           introdutionid.style.width = "calc(100% - 22px)";
           introdutionid.style.display = "flex";
-          introdutionid.style.flexDirection = "row";
+          introdutionid.style.flexDirection = "column";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
           introdutionid.style.margin = "0 0 0 7px";
@@ -9195,7 +9195,7 @@ function HeadSupportsPadSizeadSelectOptions(
         headerCells[index].classList.remove("disabled-cell");
       }
     });
-    nowprice_SpexHeadSupports.textContent = "0 元"
+    nowprice_SpexHeadSupports.textContent = "0 元";
     return; // 提前結束
   }
 
@@ -9219,6 +9219,19 @@ function HeadSupportsPadSizeadSelectOptions(
 }
 // endregion
 
+//確定勾選的是哪個頭靠支架，且不會重複勾選選項
+document
+  .querySelectorAll('input[name="car_SpexHeadSupportsBracket"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexHeadSupportsBracket"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+    });
+  });
+
 // endregion
-
-
