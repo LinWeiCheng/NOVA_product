@@ -4255,24 +4255,113 @@ body {
         .SpexHeadSupportsBracket {
           margin: 12px 16px;
         }
+      }
+    }
+  }
+}
 
-        #Spex_Head_Supports_Bracket160 {
+.Spex_hipbelts {
+  margin: 0 0 8px 0;
 
+  .chkcontent_19th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexhipbeltsgroup {
+      // visibility: hidden;
+      width: calc(100% - 22px);
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      /* 讓子元素垂直排列 */
+      padding: 0px 1px 1px 3px;
+      border: 3px dashed black;
+      border-Top: none;
+      margin: 0 0 0 7px;
+      // height: 0;
+      // width: 100%;
+
+      .hipbeltsgroup {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+
+        .hipbeltsgroup_title {
+          width: 30%;
+          font-size: 20px;
+          font-weight: 700;
+          height: auto;
+
+          .hipbelts_title {
+            display: flex;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            height: 20%;
+
+            .SpexHipBelts {
+              margin: 12px 16px;
+            }
+          }
         }
 
-        #Spex_Head_Supports_Bracket_Flip-back_160 {
+        .hipbelts_typesizegroup {
+          width: 20%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #000000;
+          border-radius: 8px;
 
+          .hipbelts_type {
+
+            .hipbeltstype {}
+          }
+
+          .hipbelts_size {
+
+
+            .hipbeltssize {}
+          }
         }
 
-        #Spex_Head_Supports_Bracket260 {
+        .hipbeltsrefersizegroup {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border: 1px solid #000000;
+          border-radius: 8px;
 
-        }
+          .hipbeltsimage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-        #Spex_Head_Supports_Bracket_Flip-back_260 {
-          
+            img {
+              width: 95%;
+            }
+          }
+
+          .hipbeltssizetable {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .headsupportspad_table {
+              .beltshead-row {}
+
+              .beltsvalue-row {}
+
+              .beltsvalue-row {}
+            }
+          }
         }
       }
-
     }
   }
 }

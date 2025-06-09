@@ -3552,6 +3552,78 @@ body {
 .Spex_headsupports .chkcontent_18th .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title .SpexHeadSupportsBracket {
   margin: 12px 16px;
 }
+
+.Spex_hipbelts {
+  margin: 0 0 8px 0;
+}
+.Spex_hipbelts .chkcontent_19th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup {
+  width: calc(100% - 22px);
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  /* 讓子元素垂直排列 */
+  padding: 0px 1px 1px 3px;
+  border: 3px dashed black;
+  border-Top: none;
+  margin: 0 0 0 7px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title {
+  width: 30%;
+  font-size: 20px;
+  font-weight: 700;
+  height: auto;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title .hipbelts_title {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  height: 20%;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title .hipbelts_title .SpexHipBelts {
+  margin: 12px 16px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltsimage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltsimage img {
+  width: 95%;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltssizetable {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .car-other {
   visibility: hidden;
 }
