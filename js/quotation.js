@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexBackSupports = [];
   let spexHardware = [];
   let spexLaterTrunk = [];
+  let spexHeadSupports = [];
+  let spexHeadSupportsBracket = [];
 
   //軀幹側支撐計數，確保不會重複計算
   let LaterTrunkadd = 1;
@@ -353,6 +355,8 @@ document.addEventListener("DOMContentLoaded", () => {
     spexBackSupports.length = 0;
     spexHardware.length = 0;
     spexLaterTrunk.length = 0;
+    spexHeadSupports.length = 0;
+    spexHeadSupportsBracket.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -806,7 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
           spexLaterTrunk = [];
           if (ltapadprices !== "" && ltapadprices !== "0") {
-            // 組合字串： * 數量
+            // 組合字串： Spex 側支撐擋墊 /
             let spexString = `Spex 側支撐擋墊 / ${ltapadtypeSel.text} ${ltapadsizeWidthSelectoptions.text} * ${latertrunkaxialpadsizeHeighSelectoptions.text} / ${ltaclothpadtypeSel.text} * ${ltapadcountquantity}`;
             selectedItems.push({
               item: spexString,
@@ -840,7 +844,7 @@ document.addEventListener("DOMContentLoaded", () => {
             spexLaterTrunk = [];
           }
           if (ltspadprices !== "" && ltspadprices !== "0") {
-            // 組合字串： * 數量
+            // 組合字串： Spex 側支撐擋墊 /
             let spexString = `Spex 側支撐擋墊 / ${ltspadtypeSel.text} ${ltspadWidthSel.text} * ${ltspadHeighSel.text} / ${ltsclothpadtypeSel.text} * ${ltspadcountquantity}`;
             selectedItems.push({
               item: spexString,
@@ -875,7 +879,7 @@ document.addEventListener("DOMContentLoaded", () => {
             spexLaterTrunk = [];
           }
           if (ltopadprices !== "" && ltopadprices !== "0") {
-            // 組合字串： * 數量
+            // 組合字串： Spex 側支撐擋墊 /
             let spexString = `Spex 側支撐擋墊 / ${ltopadtypeSel.text} ${ltopadWidthSel.text} * ${ltopadHeighSel.text} / ${ltoclothpadtypeSel.text} * ${ltopadcountquantity}`;
             selectedItems.push({
               item: spexString,
@@ -895,7 +899,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
           spexLaterTrunk = [];
           if (ltabpadprices !== "" && ltabpadprices !== "0") {
-            // 組合字串： * 數量
+            // 組合字串： Spex Biangular 擋墊 /
             let spexString = `Spex Biangular 擋墊 / ${ltabpadWidthSel.text} * ${ltabpadHeighSel.text} * ${ltabSel.text} / ${ltabpadtypeSel.text} * ${ltabpadcountquantity}`;
             selectedItems.push({
               item: spexString,
@@ -979,6 +983,45 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         LaterTrunkaddConnect += 1;
       }
+
+      //頭靠
+      if (spexgroup === "SpexHeadSupports") {
+        if (item) {
+          spexHeadSupports.push(item);
+        }
+        let headsupportsel = document.querySelector(".headsupportspad");
+        let headsupportText =
+          headsupportsel.options[headsupportsel.selectedIndex].text;
+          let headsupportsprice = getFormattedPrice(
+          ".Spexheadsupportsprices"
+        );
+
+        let spexString = ` ${headsupportText}`;
+        spexHeadSupports.push(spexString);
+        let spexitem = spexHeadSupports.join("");
+        selectedItems.push({
+          item: spexitem,
+          price: headsupportsprice,
+          note: notes,
+        });
+      }
+
+      //頭靠支架
+      if (spexgroup === "SpexHeadSupportsBracket") {
+        if (item) {
+          spexHeadSupportsBracket.push(item);
+        }
+        let headsupportsbracketprice = getFormattedPrice(
+          ".Spexheadsupportsbracketprices"
+        );
+
+        selectedItems.push({
+          item: item,
+          price: headsupportsbracketprice,
+          note: notes,
+        });
+      }
+
 
       // 記錄這個 item 已經被加入
       if (item !== undefined && item !== null && item !== "") {
