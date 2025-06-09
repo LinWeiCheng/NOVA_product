@@ -4273,7 +4273,7 @@ Spex_hardware.addEventListener("click", function (event) {
     let introdutionid = event.target.nextElementSibling;
     let Price_Spex_hardware = document.querySelectorAll(".pricing");
     let Spex_hardwareimg = Spex_hardware.querySelector(".target_img"); // 找到最近的 .target_img
-    let img = Spex_hardware.querySelector("img");
+    let img = Spex_hardwareimg.querySelector("img");
 
     Price_Spex_hardware.forEach(function (openIntro) {
       let Spexhardware = Price_Spex_hardware[15];
@@ -8654,7 +8654,7 @@ document.addEventListener("click", function (event) {
 });
 // endregion
 
-/*---  Spex軀幹子系統-軀幹側支撐點擊列 - subtitle部分  ---*/
+/*---  Spex頭靠子系統-頭靠點擊列 - subtitle部分  ---*/
 //region
 let Spex_headsupports = document.querySelector(".Spex_headsupports");
 Spex_headsupports.addEventListener("click", function (event) {
@@ -8666,7 +8666,7 @@ Spex_headsupports.addEventListener("click", function (event) {
     let introdutionid = event.target.nextElementSibling;
     let Price_Spex_headsupports = document.querySelectorAll(".pricing");
     let Spex_headsupportsimg = Spex_headsupports.querySelector(".target_img"); // 找到最近的 .target_img
-    let img = Spex_headsupports.querySelector("img");
+    let img = Spex_headsupportsimg.querySelector("img");
 
     Price_Spex_headsupports.forEach(function (openIntro) {
       let Spexheadsupports = Price_Spex_headsupports[17];
@@ -8955,6 +8955,8 @@ let HeadSupportcheckboxes = document.querySelectorAll(
 );
 let padValueRow = document.querySelector(".padvalue-row");
 let padValueCells = padValueRow.querySelectorAll("td");
+let headsupportsprices = document.querySelector(".Spexheadsupportsprices");
+let bracketprices = document.querySelector(".Spexheadsupportsbracketprices");
 //endregion
 
 //確定勾選的是哪個頭靠，且不會重複勾選選項
@@ -8970,12 +8972,12 @@ document
             otherCheckbox.checked = false;
           }
         });
-      HeadSupportsSelectOptions();
       HeadSupportsPadSizeadSelectOptions(
         padValueCells,
         SpexheadsupportsClearPadDataOptions,
         2
       );
+      HeadSupportsSelectOptions();
     });
   });
 
@@ -9186,6 +9188,11 @@ function HeadSupportsPadSizeadSelectOptions(
     let padHeaderTd = document.querySelector(".padheader-row .padheadertd");
     padHeaderTd.textContent = "頭靠類型";
 
+    recodeHeadSupportsSelectOptions(
+      headsupportspadsel,
+      SpexheadsupportsCirclePadSizeOptions
+    );
+
     // 清空所有 value-row 的欄位並移除灰色樣式
     selectElement.forEach((cell, index) => {
       cell.innerHTML = "&nbsp;";
@@ -9195,7 +9202,12 @@ function HeadSupportsPadSizeadSelectOptions(
         headerCells[index].classList.remove("disabled-cell");
       }
     });
-    nowprice_SpexHeadSupports.textContent = "0 元";
+    if (bracketprices.textContent !== "") {
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(bracketprices.textContent)} 元`;
+    } else {
+      nowprice_SpexHeadSupports.textContent = "0 元";
+      headsupportsprices.textContent = "";
+    }
     return; // 提前結束
   }
 
@@ -9220,6 +9232,7 @@ function HeadSupportsPadSizeadSelectOptions(
 // endregion
 
 //確定勾選的是哪個頭靠支架，且不會重複勾選選項
+//region
 document
   .querySelectorAll('input[name="car_SpexHeadSupportsBracket"]')
   .forEach((checkbox) => {
@@ -9233,5 +9246,6 @@ document
         });
     });
   });
+// endregion
 
 // endregion
