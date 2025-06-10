@@ -8959,8 +8959,8 @@ let headsupportsprices = document.querySelector(".Spexheadsupportsprices");
 let bracketprices = document.querySelector(".Spexheadsupportsbracketprices");
 //endregion
 
-//確定勾選的是哪個頭靠，且不會重複勾選選項
 //region
+//確定勾選的是哪個頭靠，且不會重複勾選選項
 document
   .querySelectorAll('input[name="car_SpexHeadSupports"]')
   .forEach((checkbox) => {
@@ -8981,12 +8981,13 @@ document
     });
   });
 
+//如果沒有打勾的選項，就將下拉式選單
 function updateHeadSupportsStatus() {
   let anyChecked = Array.from(HeadSupportcheckboxes).some((cb) => cb.checked);
   headsupportspadsel.disabled = !anyChecked;
 }
 
-// 綁定每個 checkbox 的事件
+// 監聽頭靠每個checkbox 的事件
 HeadSupportcheckboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", updateHeadSupportsStatus);
 });
@@ -8994,6 +8995,7 @@ HeadSupportcheckboxes.forEach((checkbox) => {
 // 初始檢查一次狀態
 updateHeadSupportsStatus();
 
+//將下拉式選單的options更新成勾選的checkbox
 function HeadSupportsSelectOptions() {
   if (CirclePadCheckbox.checked) {
     recodeHeadSupportsSelectOptions(
@@ -9038,6 +9040,7 @@ function HeadSupportsSelectOptions() {
   }
 }
 
+//清空下拉式選單的內容並重新填入options
 function recodeHeadSupportsSelectOptions(selectElement, options) {
   selectElement.innerHTML = ""; // 清空現有內容
   options.forEach((option) => {
@@ -9051,6 +9054,7 @@ function recodeHeadSupportsSelectOptions(selectElement, options) {
   });
 }
 
+//監聽下拉式選單
 headsupportspadsel.addEventListener("change", () => {
   updateHeadSupportsPadValueRow();
 });
@@ -9176,6 +9180,8 @@ function updateHeadSupportsPadValueRow() {
     }
   }
 }
+
+//頭靠表格更新
 function HeadSupportsPadSizeadSelectOptions(
   selectElement,
   options,
@@ -9203,7 +9209,9 @@ function HeadSupportsPadSizeadSelectOptions(
       }
     });
     if (bracketprices.textContent !== "") {
-      nowprice_SpexHeadSupports.textContent = `${formatPrice(bracketprices.textContent)} 元`;
+      nowprice_SpexHeadSupports.textContent = `${formatPrice(
+        bracketprices.textContent
+      )} 元`;
     } else {
       nowprice_SpexHeadSupports.textContent = "0 元";
       headsupportsprices.textContent = "";
@@ -9246,6 +9254,502 @@ document
         });
     });
   });
+// endregion
+
+// endregion
+
+/*----- 19.Spex綁帶子系統-骨盆帶 -----*/
+//region
+/*---  Spex綁帶子系統-骨盆帶 - 圖片箭頭部分  ---*/
+//region
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_19 = event.target;
+  let carseat19 = tgimg_19.closest(".Spex_hipbelts"); // 找到最近的 Spex_hipbelts
+  let imgSpexhipbelts = event.target.dataset.imgSpexhipbelts;
+
+  //確認我點擊到的位置是否是 Spex_hipbelts
+  if (carseat19 && carseat19.className.trim() === "Spex_hipbelts") {
+    let introdutionid = carseat19.querySelector(".Spexhipbeltsgroup"); // 在 Spex_hipbelts 內部找 Spexhipbelts
+    let introdution = carseat19.querySelector(".subtitle"); // 在 Spex_hipbelts 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgSpexhipbelts === "SpexhipbeltsImg") {
+        if (visibilityValue === "hidden") {
+          let Price_Spexhipbelts = document.querySelectorAll(".pricing");
+
+          Price_Spexhipbelts.forEach(function (openIntro) {
+            let Spexhipbelts = Price_Spexhipbelts[18];
+            //直接判斷是第幾個.Price
+            let nowprice_Spexhipbelts =
+              Price_Spexhipbelts[18].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-Spexhipbelts") ===
+                "Spexhipbelts" &&
+              nowprice_Spexhipbelts.getAttribute(
+                "data-nowprice-Spexhipbelts"
+              ) === "nowSpexhipbelts"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //Spexbacksupports勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 22px)";
+                introdutionid.style.display = "flex";
+                introdutionid.style.flexDirection = "row";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.margin = "0 0 0 7px";
+                introdutionid.style.height = "auto";
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_Spexhipbelts.style.display = "block";
+                nowprice_Spexhipbelts.style.display = "flex";
+                nowprice_Spexhipbelts.style.width = "95%";
+                nowprice_Spexhipbelts.style.height = "90%";
+                nowprice_Spexhipbelts.style.color = "#000000";
+                nowprice_Spexhipbelts.style.borderRadius = "8px";
+                nowprice_Spexhipbelts.style.padding = "1px";
+                nowprice_Spexhipbelts.style.margin = "3px 3px 3px 2px";
+                nowprice_Spexhipbelts.style.textAlign = "center";
+                nowprice_Spexhipbelts.style.fontSize = "16px";
+                nowprice_Spexhipbelts.style.fontWeight = "600";
+                nowprice_Spexhipbelts.style.alignItems = "center";
+                nowprice_Spexhipbelts.style.justifyContent = "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_Spexhipbelts.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  Spexhipbelts.style.padding = "5px";
+                  Spexhipbelts.style.margin = "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_Spexhipbelts = document.querySelectorAll(".pricing");
+
+          Price_Spexhipbelts.forEach(function (openIntro) {
+            let nowprice_Spexhipbelts =
+              Price_Spexhipbelts[18].nextElementSibling;
+
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (
+              openIntro.getAttribute("data-price-Spexhipbelts") ===
+              "Spexhipbelts"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_Spexhipbelts.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+// endregion
+
+/*---  Spex綁帶子系統-骨盆帶 - subtitle部分  ---*/
+//region
+let Spex_hipbelts = document.querySelector(".Spex_hipbelts");
+Spex_hipbelts.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是 Spex_hipbelts
+  if (showinfo === "Spexhipbelts") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_Spex_hipbelts = document.querySelectorAll(".pricing");
+    let Spex_hipbeltsimg = Spex_hipbelts.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = Spex_hipbeltsimg.querySelector("img");
+
+    Price_Spex_hipbelts.forEach(function (openIntro) {
+      let Spexhipbelts = Price_Spex_hipbelts[18];
+      //直接判斷是第幾個.Price
+      let nowprice_Spexhipbelts = Price_Spex_hipbelts[18].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-Spexhipbelts") === "Spexhipbelts" &&
+        nowprice_Spexhipbelts.getAttribute("data-nowprice-Spexhipbelts") ===
+          "nowSpexhipbelts"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carSpexbacksupports勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 2px 3px";
+          introdutionid.style.width = "calc(100% - 22px)";
+          introdutionid.style.display = "flex";
+          introdutionid.style.flexDirection = "row";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.margin = "0 0 0 7px";
+          introdutionid.style.height = "auto";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_Spexhipbelts.style.display = "block";
+          nowprice_Spexhipbelts.style.display = "flex";
+          nowprice_Spexhipbelts.style.width = "95%";
+          nowprice_Spexhipbelts.style.height = "90%";
+          nowprice_Spexhipbelts.style.color = "#000000";
+          nowprice_Spexhipbelts.style.borderRadius = "8px";
+          nowprice_Spexhipbelts.style.padding = "1px";
+          nowprice_Spexhipbelts.style.margin = "3px 3px 3px 2px";
+          nowprice_Spexhipbelts.style.textAlign = "center";
+          nowprice_Spexhipbelts.style.fontSize = "16px";
+          nowprice_Spexhipbelts.style.fontWeight = "600";
+          nowprice_Spexhipbelts.style.alignItems = "center";
+          nowprice_Spexhipbelts.style.justifyContent = "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_Spexhipbelts.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            Spexhipbelts.style.padding = "5px";
+            Spexhipbelts.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_Spexhipbelts.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
+
+//region --- 骨盆帶選項 ---
+//骨盆帶款式
+let SpexhipbeltstypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "上下開" },
+  { value: "option3", text: "中開" },
+  { value: "option4", text: "防脫式" },
+  { value: "option5", text: "筆開式" },
+];
+//骨盆帶尺寸
+let SpexhipbeltssizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSM" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+];
+//endregion
+
+//region --- 骨盆帶選項 ---
+//region --- 2點單拉襯墊型骨盆帶 選項 ---
+//2點單拉襯墊型骨盆帶款式
+let Spexhipbelts2PointCentrePulltypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "上下開" },
+  { value: "option3", text: "中開" },
+  { value: "option4", text: "防脫式" },
+  { value: "option5", text: "筆開式" },
+];
+//2點單拉襯墊型骨盆帶尺寸
+let Spexhipbelts2PointCentrePullsizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSM" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+];
+//endregion
+
+//region --- 2點雙拉襯墊型骨盆帶 選項 ---
+//2點雙拉襯墊型骨盆帶款式
+let Spexhipbelts2PointDualPulltypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "上下開" },
+];
+//2點雙拉襯墊型骨盆帶尺寸
+let Spexhipbelts2PointDualPullsizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSM" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+];
+//endregion
+
+//region --- 4點單拉襯墊型骨盆帶 選項 ---
+//4點單拉襯墊型骨盆帶款式
+let Spexhipbelts4PointCentrePulltypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "上下開" },
+  { value: "option3", text: "中開" },
+  { value: "option4", text: "防脫式" },
+  { value: "option5", text: "筆開式" },
+];
+//4點單拉襯墊型骨盆帶尺寸
+let Spexhipbelts4PointCentrePullsizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSM" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+];
+//endregion
+
+//region --- 4點雙拉襯墊型骨盆帶 選項 ---
+//4點雙拉襯墊型骨盆帶款式
+let Spexhipbelts4PointDualPulltypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "上下開" },
+];
+//4點雙拉襯墊型骨盆帶尺寸
+let Spexhipbelts4PointDualPullsizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSM" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+];
+//endregion
+
+//region --- 4點側拉襯墊型骨盆帶 選項 ---
+//4點側拉襯墊型骨盆帶款式
+let Spexhipbelts4PointSidePulltypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "上下開" },
+  { value: "option3", text: "中開" },
+  { value: "option4", text: "防脫式" },
+  { value: "option5", text: "筆開式" },
+];
+//4點側拉襯墊型骨盆帶尺寸
+let Spexhipbelts4PointSidePullsizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSM" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+];
+//endregion
+//endregion
+
+//region --- 宣告所有元素 ---
+let HipBeltscheckboxes = document.querySelectorAll(
+  'input[name="car_SpexHipBelts"]'
+);
+let Spex2PointCentrePullcheckbox = document.getElementById(
+  "Spex_2_Point_Centre_Pull"
+);
+let Spex2PointDualCentrePullcheckbox = document.getElementById(
+  "Spex_2_Point_Dual_Centre_Pull"
+);
+let Spex4PointCentrePullcheckbox = document.getElementById(
+  "Spex_4_Point_Centre_Pull"
+);
+let Spex4PointDualCentrePullcheckbox = document.getElementById(
+  "Spex_4_Point_Dual_Centre_Pull"
+);
+let Spex4PointSidePullcheckbox = document.getElementById(
+  "Spex_4_Point_Side_Pull"
+);
+
+let hipbeltstypesel = document.querySelector(".hipbeltstype");
+let hipbeltssizesel = document.querySelector(".hipbeltssize");
+
+//endregion
+
+//region 確定勾選的是哪個頭靠，且不會重複勾選選項
+document
+  .querySelectorAll('input[name="car_SpexHipBelts"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexHipBelts"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+
+      if (Spex2PointDualCentrePullcheckbox.checked) {
+        renderSelectOptions(
+          hipbeltstypesel,
+          Spexhipbelts2PointDualPullsizeOptions
+        );
+        renderSelectOptions(
+          hipbeltstypesel,
+          Spexhipbelts2PointDualPulltypeOptions
+        );
+      }
+      if (Spex4PointDualCentrePullcheckbox.checked) {
+        renderSelectOptions(
+          hipbeltstypesel,
+          Spexhipbelts4PointDualPullsizeOptions
+        );
+        renderSelectOptions(
+          hipbeltstypesel,
+          Spexhipbelts4PointDualPulltypeOptions
+        );
+      }
+      renderSelectOptions(hipbeltstypesel, SpexhipbeltstypeOptions);
+      renderSelectOptions(hipbeltssizesel, SpexhipbeltssizeOptions);
+    });
+  });
+//endregion
+
+//region如果沒有打勾的選項，就將下拉式選單
+function updateHipBeltsStatus() {
+  let anyChecked = Array.from(HipBeltscheckboxes).some((cb) => cb.checked);
+  hipbeltstypesel.disabled = !anyChecked;
+  hipbeltssizesel.disabled = !anyChecked;
+}
+
+// 監聽頭靠每個checkbox 的事件
+HipBeltscheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", updateHipBeltsStatus);
+});
+
+updateHipBeltsStatus();
+//endregion
+
+//region 渲染下拉選單
+function renderSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有選項
+  options.forEach((opt) => {
+    let option = document.createElement("option");
+    option.value = opt.value;
+    option.textContent = opt.text;
+    if (opt.selected) option.selected = true;
+    selectElement.appendChild(option);
+  });
+}
+
+// 根據條件過濾選項
+function updatehipbeltssizeSelectOptions(Options) {
+  // 取得目前選取值
+  let selectedSize = hipbeltssizesel.value;
+
+  // 過濾 type options
+  let typeOptions = Options.filter((opt) => {
+    if (selectedSize === "option2" && opt.value === "option4") {
+      sizecheck = true;
+      return false; // XSM 不顯示 防脫式
+    }
+    return true;
+  });
+
+  renderSelectOptions(hipbeltstypesel, typeOptions);
+}
+
+function updatehipbeltstypeSelectOptions(Options) {
+  // 取得目前選取值
+  let selectedType = hipbeltstypesel.value;
+
+  // 過濾 size options
+  let sizeOptions = Options.filter((opt) => {
+    if (selectedType === "option4" && opt.value === "option2") {
+      return false; // 防脫式不顯示 XSM
+    }
+    return true;
+  });
+
+  // 重新渲染
+  renderSelectOptions(hipbeltssizesel, sizeOptions);
+}
+
+// 綁定事件
+hipbeltstypesel.addEventListener("change", () => {
+  if (Spex2PointCentrePullcheckbox.checked) {
+    let spexhipbeltstypeOption =
+      hipbeltstypesel.options[hipbeltstypesel.selectedIndex];
+    let spexhipbeltssizeOption =
+      hipbeltssizesel.options[hipbeltssizesel.selectedIndex];
+    if (spexhipbeltstypeOption.value === "option4") {
+      updatehipbeltstypeSelectOptions(Spexhipbelts2PointCentrePullsizeOptions);
+    } else if (spexhipbeltstypeOption.value === "option1") {
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts2PointCentrePullsizeOptions
+      );
+    }
+  }
+  if (Spex4PointCentrePullcheckbox.checked) {
+    renderSelectOptions(
+      hipbeltstypesel,
+      Spexhipbelts4PointCentrePullsizeOptions
+    );
+  }
+  if (Spex4PointCentrePullcheckbox.checked) {
+    renderSelectOptions(hipbeltstypesel, Spexhipbelts4PointSidePullsizeOptions);
+  }
+});
+
+hipbeltssizesel.addEventListener("change", () => {
+  if (Spex2PointCentrePullcheckbox.checked) {
+    let spexhipbeltstypeOption =
+      hipbeltstypesel.options[hipbeltstypesel.selectedIndex];
+    let spexhipbeltssizeOption =
+      hipbeltssizesel.options[hipbeltssizesel.selectedIndex];
+    if (spexhipbeltssizeOption.value === "option2") {
+      updatehipbeltssizeSelectOptions(Spexhipbelts2PointCentrePulltypeOptions);
+    } else if (spexhipbeltssizeOption.value === "option1") {
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts2PointCentrePulltypeOptions
+      );
+    }
+  }
+  if (Spex4PointCentrePullcheckbox.checked) {
+    renderSelectOptions(
+      hipbeltstypesel,
+      Spexhipbelts4PointCentrePulltypeOptions
+    );
+  }
+  if (Spex4PointCentrePullcheckbox.checked) {
+    renderSelectOptions(hipbeltstypesel, Spexhipbelts4PointSidePulltypeOptions);
+  }
+});
+
+// 預設執行一次
+renderSelectOptions(hipbeltstypesel, SpexhipbeltstypeOptions);
+renderSelectOptions(hipbeltssizesel, SpexhipbeltssizeOptions);
 // endregion
 
 // endregion
