@@ -3562,15 +3562,9 @@ body {
   flex-direction: column;
 }
 .Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup {
-  width: calc(100% - 22px);
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  /* 讓子元素垂直排列 */
-  padding: 0px 1px 1px 3px;
-  border: 3px dashed black;
-  border-Top: none;
-  margin: 0 0 0 7px;
+  visibility: hidden;
+  height: 0;
+  width: 100%;
 }
 .Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup {
   width: 100%;
@@ -3588,7 +3582,7 @@ body {
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
-  height: 20%;
+  margin: 2px;
 }
 .Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title .hipbelts_title .SpexHipBelts {
   margin: 12px 16px;
@@ -3601,9 +3595,39 @@ body {
   align-items: center;
   border: 1px solid #000000;
   border-radius: 8px;
+  margin: 2px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_type {
+  margin: 3px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_type label {
+  font-size: 18px;
+  margin: 0 4px 0 0;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_type .hipbeltstype {
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  width: 11vh;
+  margin: 3px 0 0 2px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_size {
+  margin: 3px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_size label {
+  font-size: 18px;
+  margin: 0 4px 0 0;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_size .hipbeltssize {
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  width: 11vh;
+  margin: 3px 0 0 2px;
 }
 .Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup {
   width: 50%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3614,16 +3638,47 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50%;
 }
 .Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltsimage img {
   width: 95%;
+  margin: 10px 0 0 0;
 }
 .Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltssizetable {
   width: 100%;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px 0 -2px 0;
 }
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltssizetable .hipbelts_table {
+  width: 80%;
+  height: 85%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltssizetable .hipbelts_table .padheadertd {
+  border: none;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltssizetable .hipbelts_table td {
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltssizetable .hipbelts_table .beltshead-row td {
+  background-color: #ff6f6f;
+  color: white;
+}
+.Spex_hipbelts .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup .hipbeltssizetable .hipbelts_table .beltsvalue-row td {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
 .car-other {
   visibility: hidden;
 }

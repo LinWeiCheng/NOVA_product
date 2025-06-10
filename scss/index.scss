@@ -4269,18 +4269,17 @@ body {
     flex-direction: column;
 
     .Spexhipbeltsgroup {
-      // visibility: hidden;
-      width: calc(100% - 22px);
-      height: auto;
-      display: flex;
-      flex-direction: row;
-      /* 讓子元素垂直排列 */
-      padding: 0px 1px 1px 3px;
-      border: 3px dashed black;
-      border-Top: none;
-      margin: 0 0 0 7px;
-      // height: 0;
-      // width: 100%;
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
 
       .hipbeltsgroup {
         width: 100%;
@@ -4299,7 +4298,7 @@ body {
             align-items: center;
             border: 1px solid #000000;
             border-radius: 8px;
-            height: 20%;
+            margin: 2px;
 
             .SpexHipBelts {
               margin: 12px 16px;
@@ -4315,21 +4314,46 @@ body {
           align-items: center;
           border: 1px solid #000000;
           border-radius: 8px;
+          margin: 2px;
 
           .hipbelts_type {
+            margin: 3px;
 
-            .hipbeltstype {}
+            label {
+              font-size: 18px;
+              margin: 0 4px 0 0;
+            }
+
+            .hipbeltstype {
+              font-size: 18px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
           }
 
           .hipbelts_size {
+            margin: 3px;
 
+            label {
+              font-size: 18px;
+              margin: 0 4px 0 0;
+            }
 
-            .hipbeltssize {}
+            .hipbeltssize {
+              font-size: 18px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
           }
         }
 
         .hipbeltsrefersizegroup {
           width: 50%;
+          height: auto;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -4340,24 +4364,51 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 50%;
 
             img {
               width: 95%;
+              margin: 10px 0 0 0;
             }
           }
 
           .hipbeltssizetable {
             width: 100%;
+            height: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 10px 0 -2px 0;
 
-            .headsupportspad_table {
-              .beltshead-row {}
+            .hipbelts_table {
+              width: 80%;
+              height: 85%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+              font-size: 14px;
 
-              .beltsvalue-row {}
+              .padheadertd {
+                border: none;
+              }
 
-              .beltsvalue-row {}
+              td {
+                font-weight: bold;
+                border: 1px solid #ccc;
+              }
+
+              .beltshead-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .beltsvalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
             }
           }
         }
