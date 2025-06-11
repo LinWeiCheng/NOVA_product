@@ -9607,29 +9607,57 @@ document
             otherCheckbox.checked = false;
           }
         });
-
-      if (Spex2PointDualCentrePullcheckbox.checked) {
+      if (Spex2PointCentrePullcheckbox.checked) {
         renderSelectOptions(
           hipbeltstypesel,
-          Spexhipbelts2PointDualPullsizeOptions
+          Spexhipbelts2PointCentrePulltypeOptions
         );
+        renderSelectOptions(
+          hipbeltssizesel,
+          Spexhipbelts2PointCentrePullsizeOptions
+        );
+      } else if (Spex2PointDualCentrePullcheckbox.checked) {
         renderSelectOptions(
           hipbeltstypesel,
           Spexhipbelts2PointDualPulltypeOptions
         );
-      }
-      if (Spex4PointDualCentrePullcheckbox.checked) {
+        renderSelectOptions(
+          hipbeltssizesel,
+          Spexhipbelts2PointDualPullsizeOptions
+        );
+      } else if (Spex4PointCentrePullcheckbox.checked) {
         renderSelectOptions(
           hipbeltstypesel,
-          Spexhipbelts4PointDualPullsizeOptions
+          Spexhipbelts4PointCentrePulltypeOptions
         );
+        renderSelectOptions(
+          hipbeltssizesel,
+          Spexhipbelts4PointCentrePullsizeOptions
+        );
+      } else if (Spex4PointDualCentrePullcheckbox.checked) {
         renderSelectOptions(
           hipbeltstypesel,
           Spexhipbelts4PointDualPulltypeOptions
         );
+        renderSelectOptions(
+          hipbeltssizesel,
+          Spexhipbelts4PointDualPullsizeOptions
+        );
+      } else if (Spex4PointSidePullcheckbox.checked) {
+        renderSelectOptions(
+          hipbeltstypesel,
+          Spexhipbelts4PointSidePulltypeOptions
+        );
+        renderSelectOptions(
+          hipbeltssizesel,
+          Spexhipbelts4PointSidePullsizeOptions
+        );
       }
-      renderSelectOptions(hipbeltstypesel, SpexhipbeltstypeOptions);
-      renderSelectOptions(hipbeltssizesel, SpexhipbeltssizeOptions);
+      let anyChecked = Array.from(HipBeltscheckboxes).some((cb) => cb.checked);
+      if (!anyChecked) {
+        renderSelectOptions(hipbeltstypesel, SpexhipbeltstypeOptions);
+        renderSelectOptions(hipbeltssizesel, SpexhipbeltssizeOptions);
+      }
     });
   });
 //endregion
@@ -9650,100 +9678,234 @@ updateHipBeltsStatus();
 //endregion
 
 //region 渲染下拉選單
-function renderSelectOptions(selectElement, options) {
-  selectElement.innerHTML = ""; // 清空現有選項
+// function renderSelectOptions(selectElement, options) {
+//   selectElement.innerHTML = ""; // 清空現有選項
+//   options.forEach((opt) => {
+//     let option = document.createElement("option");
+//     option.value = opt.value;
+//     option.textContent = opt.text;
+//     if (opt.selected) option.selected = true;
+//     selectElement.appendChild(option);
+//   });
+// }
+
+function renderSelectOptions(
+  selectElement,
+  options,
+  preserveSelectedOption = null
+) {
+  selectElement.innerHTML = "";
+
+  // 若目前選取項目不在選單中，加入它
+  if (
+    preserveSelectedOption &&
+    !options.some((opt) => opt.value === preserveSelectedOption.value)
+  ) {
+    options = [
+      ...options,
+      {
+        value: preserveSelectedOption.value,
+        text: preserveSelectedOption.text,
+      },
+    ];
+  }
+
   options.forEach((opt) => {
     let option = document.createElement("option");
     option.value = opt.value;
     option.textContent = opt.text;
-    if (opt.selected) option.selected = true;
+    if (preserveSelectedOption && opt.value === preserveSelectedOption.value) {
+      option.selected = true;
+    } else if (opt.selected) {
+      option.selected = true;
+    }
     selectElement.appendChild(option);
   });
 }
 
-// 根據條件過濾選項
-function updatehipbeltssizeSelectOptions(Options) {
-  // 取得目前選取值
-  let selectedSize = hipbeltssizesel.value;
+function updatehipbeltstypeSelectOptions(originalOptions) {
+  let selectedType = hipbeltstypesel.value;
+  let currentSize = hipbeltssizesel.options[hipbeltssizesel.selectedIndex];
 
-  // 過濾 type options
-  let typeOptions = Options.filter((opt) => {
-    if (selectedSize === "option2" && opt.value === "option4") {
-      sizecheck = true;
-      return false; // XSM 不顯示 防脫式
-    }
-    return true;
-  });
+  let filteredSizes = originalOptions;
 
-  renderSelectOptions(hipbeltstypesel, typeOptions);
+  if (selectedType === "option4") {
+    // 防脫式 → 移除 XSM
+    filteredSizes = originalOptions.filter((opt) => opt.value !== "option2");
+  }
+
+  renderSelectOptions(hipbeltssizesel, filteredSizes, currentSize);
 }
 
-function updatehipbeltstypeSelectOptions(Options) {
-  // 取得目前選取值
-  let selectedType = hipbeltstypesel.value;
+function updatehipbeltssizeSelectOptions(originalOptions) {
+  let selectedSize = hipbeltssizesel.value;
+  let currentType = hipbeltstypesel.options[hipbeltstypesel.selectedIndex];
 
-  // 過濾 size options
-  let sizeOptions = Options.filter((opt) => {
-    if (selectedType === "option4" && opt.value === "option2") {
-      return false; // 防脫式不顯示 XSM
-    }
-    return true;
-  });
+  let filteredTypes = originalOptions;
 
-  // 重新渲染
-  renderSelectOptions(hipbeltssizesel, sizeOptions);
+  if (selectedSize === "option2") {
+    // 選了 XSM → 不可選防脫式
+    filteredTypes = originalOptions.filter((opt) => opt.value !== "option4");
+  }
+
+  renderSelectOptions(hipbeltstypesel, filteredTypes, currentType);
 }
 
 // 綁定事件
 hipbeltstypesel.addEventListener("change", () => {
+  let spexhipbeltstypeOption =
+    hipbeltstypesel.options[hipbeltstypesel.selectedIndex];
+  let spexhipbeltssizeOption =
+    hipbeltssizesel.options[hipbeltssizesel.selectedIndex];
   if (Spex2PointCentrePullcheckbox.checked) {
-    let spexhipbeltstypeOption =
-      hipbeltstypesel.options[hipbeltstypesel.selectedIndex];
-    let spexhipbeltssizeOption =
-      hipbeltssizesel.options[hipbeltssizesel.selectedIndex];
     if (spexhipbeltstypeOption.value === "option4") {
+      // 防脫式 → 移除 XSM
       updatehipbeltstypeSelectOptions(Spexhipbelts2PointCentrePullsizeOptions);
     } else if (spexhipbeltstypeOption.value === "option1") {
+      // 回到請選擇 → 還原原始資料
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts2PointCentrePulltypeOptions
+      );
       renderSelectOptions(
         hipbeltssizesel,
         Spexhipbelts2PointCentrePullsizeOptions
       );
+    } else {
+      // 非防脫式 → 恢復所有尺寸（包含 XSM）
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts2PointCentrePullsizeOptions,
+        spexhipbeltssizeOption
+      );
     }
   }
   if (Spex4PointCentrePullcheckbox.checked) {
-    renderSelectOptions(
-      hipbeltstypesel,
-      Spexhipbelts4PointCentrePullsizeOptions
-    );
+    if (
+      spexhipbeltstypeOption.value === "option4" &&
+      spexhipbeltssizeOption.value !== "option2"
+    ) {
+      updatehipbeltstypeSelectOptions(Spexhipbelts4PointCentrePullsizeOptions);
+    } else if (spexhipbeltstypeOption.value === "option1") {
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts4PointCentrePullsizeOptions
+      );
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts4PointCentrePulltypeOptions
+      );
+    } else {
+      // 非防脫式 → 恢復所有尺寸（包含 XSM）
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts2PointCentrePullsizeOptions,
+        spexhipbeltssizeOption
+      );
+    }
   }
-  if (Spex4PointCentrePullcheckbox.checked) {
-    renderSelectOptions(hipbeltstypesel, Spexhipbelts4PointSidePullsizeOptions);
+  if (Spex4PointSidePullcheckbox.checked) {
+    if (
+      spexhipbeltstypeOption.value === "option4" &&
+      spexhipbeltssizeOption.value !== "option2"
+    ) {
+      updatehipbeltstypeSelectOptions(Spexhipbelts4PointSidePullsizeOptions);
+    } else if (spexhipbeltstypeOption.value === "option1") {
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts4PointSidePullsizeOptions
+      );
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts4PointSidePulltypeOptions
+      );
+    } else {
+      // 非防脫式 → 恢復所有尺寸（包含 XSM）
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts2PointCentrePullsizeOptions,
+        spexhipbeltssizeOption
+      );
+    }
   }
 });
 
 hipbeltssizesel.addEventListener("change", () => {
+  let spexhipbeltstypeOption =
+    hipbeltstypesel.options[hipbeltstypesel.selectedIndex];
+  let spexhipbeltssizeOption =
+    hipbeltssizesel.options[hipbeltssizesel.selectedIndex];
   if (Spex2PointCentrePullcheckbox.checked) {
-    let spexhipbeltstypeOption =
-      hipbeltstypesel.options[hipbeltstypesel.selectedIndex];
-    let spexhipbeltssizeOption =
-      hipbeltssizesel.options[hipbeltssizesel.selectedIndex];
-    if (spexhipbeltssizeOption.value === "option2") {
+    if (
+      spexhipbeltssizeOption.value === "option2" &&
+      spexhipbeltstypeOption.value !== "option4"
+    ) {
       updatehipbeltssizeSelectOptions(Spexhipbelts2PointCentrePulltypeOptions);
     } else if (spexhipbeltssizeOption.value === "option1") {
       renderSelectOptions(
         hipbeltstypesel,
         Spexhipbelts2PointCentrePulltypeOptions
       );
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts2PointCentrePullsizeOptions
+      );
+    } else {
+      // 非XSM → 恢復所有款式（包含 防脫式)
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts2PointCentrePulltypeOptions,
+        spexhipbeltstypeOption
+      );
     }
   }
   if (Spex4PointCentrePullcheckbox.checked) {
-    renderSelectOptions(
-      hipbeltstypesel,
-      Spexhipbelts4PointCentrePulltypeOptions
-    );
+    if (
+      spexhipbeltssizeOption.value === "option2" &&
+      spexhipbeltstypeOption.value !== "option4"
+    ) {
+      updatehipbeltssizeSelectOptions(Spexhipbelts4PointCentrePulltypeOptions);
+    } else if (spexhipbeltssizeOption.value === "option1") {
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts4PointCentrePulltypeOptions
+      );
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts4PointSidePullsizeOptions
+      );
+    } else {
+      // 非XSM → 恢復所有款式（包含 防脫式)
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts2PointCentrePulltypeOptions,
+        spexhipbeltstypeOption
+      );
+    }
   }
-  if (Spex4PointCentrePullcheckbox.checked) {
-    renderSelectOptions(hipbeltstypesel, Spexhipbelts4PointSidePulltypeOptions);
+  if (Spex4PointSidePullcheckbox.checked) {
+    if (
+      spexhipbeltssizeOption.value === "option2" &&
+      spexhipbeltstypeOption.value !== "option4"
+    ) {
+      updatehipbeltssizeSelectOptions(Spexhipbelts4PointSidePulltypeOptions);
+    } else if (spexhipbeltssizeOption.value === "option1") {
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts4PointSidePulltypeOptions
+      );
+      renderSelectOptions(
+        hipbeltssizesel,
+        Spexhipbelts4PointSidePullsizeOptions
+      );
+    } else {
+      // 非XSM → 恢復所有款式（包含 防脫式)
+      renderSelectOptions(
+        hipbeltstypesel,
+        Spexhipbelts2PointCentrePulltypeOptions,
+        spexhipbeltstypeOption
+      );
+    }
   }
 });
 
