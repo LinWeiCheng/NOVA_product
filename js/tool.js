@@ -8913,7 +8913,7 @@ function updateSpexLaterTrunkTotalPrice() {
 
 /*----- 18.Spex頭靠子系統-頭靠 -----*/
 //region
-//region --- 宣告頭靠所需元素 --- 
+//region --- 宣告頭靠所需元素 ---
 let nowprice_SpexHeadSupports = Price[17].nextElementSibling;
 let SpexHeadSupportsCheckboxes = document.querySelectorAll(
   'input[name="car_SpexHeadSupports"]'
@@ -9146,7 +9146,7 @@ headsupportspadselect.addEventListener("change", () => {
 SpexHeadSupportsCheckboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
     // 檢查目前是否有任何 checkbox 被勾選
-    let anyChecked = [...SpexHeadSupportsCheckboxes].some(cb => cb.checked);
+    let anyChecked = [...SpexHeadSupportsCheckboxes].some((cb) => cb.checked);
 
     if (!anyChecked) {
       Spexheadsupportsprices.textContent = "";
@@ -9253,16 +9253,17 @@ Stylo260.addEventListener("change", () => {
 
 StyloFlipback260.addEventListener("change", () => {
   if (StyloFlipback260.checked) {
-    Spexheadsupportsbracketprices.textContent = SpexStyloFlipBack260_prices.SpexStyloFlipBack260_prices1
-   let supportPrice = getNumericValueFromText(
+    Spexheadsupportsbracketprices.textContent =
+      SpexStyloFlipBack260_prices.SpexStyloFlipBack260_prices1;
+    let supportPrice = getNumericValueFromText(
       Spexheadsupportsprices?.textContent || ""
     );
     if (supportPrice === 0) {
       nowprice_SpexHeadSupports.textContent = `${formatPrice(
-         SpexStyloFlipBack260_prices.SpexStyloFlipBack260_prices1
+        SpexStyloFlipBack260_prices.SpexStyloFlipBack260_prices1
       )} 元`;
     }
-  }else {
+  } else {
     bracketprices.textContent = "";
   }
   if (Spexheadsupportsprices.textContent !== "") {
@@ -9276,7 +9277,6 @@ StyloFlipback260.addEventListener("change", () => {
 
     nowprice_SpexHeadSupports.textContent = total.toLocaleString() + " 元";
   }
-
 });
 
 bracketCheckboxes.forEach((checkbox) => {
@@ -9298,145 +9298,493 @@ bracketCheckboxes.forEach((checkbox) => {
 
 //region ---宣告所有骨盆帶元素 ---
 let nowprice_Spexhipbelts = Price[18].nextElementSibling;
-let HipBeltscbk = document.querySelectorAll(
-  'input[name="car_SpexHipBelts"]'
+let HipBeltscbk = document.querySelectorAll('input[name="car_SpexHipBelts"]');
+let Spex2PointCentrePullckb = document.querySelector(
+  "#Spex_2_Point_Centre_Pull"
 );
-let Spex2PointCentrePullckb = document.getElementById(
-  "Spex_2_Point_Centre_Pull"
+let Spex2PointDualCentrePullckb = document.querySelector(
+  "#Spex_2_Point_Dual_Centre_Pull"
 );
-let Spex2PointDualCentrePullckb = document.getElementById(
-  "Spex_2_Point_Dual_Centre_Pull"
+let Spex4PointCentrePullckb = document.querySelector(
+  "#Spex_4_Point_Centre_Pull"
 );
-let Spex4PointCentrePullckb  = document.getElementById(
-  "Spex_4_Point_Centre_Pull"
+let Spex4PointDualCentrePullckb = document.querySelector(
+  "#Spex_4_Point_Dual_Centre_Pull"
 );
-let Spex4PointDualCentrePullckb = document.getElementById(
-  "Spex_4_Point_Dual_Centre_Pull"
-);
-let Spex4PointSidePullckb = document.getElementById(
-  "Spex_4_Point_Side_Pull"
-);
+let Spex4PointSidePullckb = document.querySelector("#Spex_4_Point_Side_Pull");
 
 let hipbeltstypeselet = document.querySelector(".hipbeltstype");
 let hipbeltssizeselet = document.querySelector(".hipbeltssize");
-let hipbeltstypeOption = hipbeltstypeselet.options[hipbeltstypeselet.selectedIndex];
-let hipbeltssizeOption = hipbeltssizeselet.options[hipbeltssizeselet.selectedIndex];
 //endregion
 
 //region --- 骨盆帶價錢 ---
 //region --- 2 Point Centre Pull 2點單拉襯墊型骨盆帶 ---
 //上下開
 let Spex2PointCentrePull_SideRelprices = {
-   Spex2PointCentrePull_SideRelprices1: 3350,
-   Spex2PointCentrePull_SideRelprices2: 3350,
-   Spex2PointCentrePull_SideRelprices3: 3350,
-   Spex2PointCentrePull_SideRelprices4: 2900
+  Spex2PointCentrePull_SideRelprices1: 3350,
+  Spex2PointCentrePull_SideRelprices2: 3350,
+  Spex2PointCentrePull_SideRelprices3: 3350,
+  Spex2PointCentrePull_SideRelprices4: 2900,
 };
 //中開
 let Spex2PointCentrePull_CentreRelprices = {
-   Spex2PointCentrePull_CentreRelprices1: 3050,
-   Spex2PointCentrePull_CentreRelprices2: 3050,
-   Spex2PointCentrePull_CentreRelprices3: 3050,
-   Spex2PointCentrePull_CentreRelprices4: 3450
+  Spex2PointCentrePull_CentreRelprices1: 3050,
+  Spex2PointCentrePull_CentreRelprices2: 3050,
+  Spex2PointCentrePull_CentreRelprices3: 3050,
+  Spex2PointCentrePull_CentreRelprices4: 3450,
 };
 //防脫式
 let Spex2PointCentrePull_AntiEscprices = {
-   Spex2PointCentrePull_AntiEscprices1: 6000,
-   Spex2PointCentrePull_AntiEscprices2: 6000,
-   Spex2PointCentrePull_AntiEscprices3: 6250
+  Spex2PointCentrePull_AntiEscprices1: 6000,
+  Spex2PointCentrePull_AntiEscprices2: 6000,
+  Spex2PointCentrePull_AntiEscprices3: 6250,
 };
 //筆開式
 let Spex2PointCentrePull_PenPopprices = {
-   Spex2PointCentrePull_PenPopprices1: 6000,
-   Spex2PointCentrePull_PenPopprices2: 6000,
-   Spex2PointCentrePull_PenPopprices3: 6000,
-   Spex2PointCentrePull_PenPopprices4: 6250
+  Spex2PointCentrePull_PenPopprices1: 6000,
+  Spex2PointCentrePull_PenPopprices2: 6000,
+  Spex2PointCentrePull_PenPopprices3: 6000,
+  Spex2PointCentrePull_PenPopprices4: 6250,
 };
 //endregion
 
 //region --- 2 Point Dual Pull 2點雙拉襯墊型骨盆帶 ---
 //上下開
 let Spex2PointDualPull_SideRelprices = {
-   Spex2PointCentrePull_SideRelprices1: 3350,
-   Spex2PointCentrePull_SideRelprices2: 3350,
-   Spex2PointCentrePull_SideRelprices3: 3350,
-   Spex2PointCentrePull_SideRelprices4: 3600
+  Spex2PointCentrePull_SideRelprices1: 3350,
+  Spex2PointCentrePull_SideRelprices2: 3350,
+  Spex2PointCentrePull_SideRelprices3: 3350,
+  Spex2PointCentrePull_SideRelprices4: 3600,
 };
 //endregion
 
 //region --- 4 Point Centre Pull 4點單拉襯墊型骨盆帶 ---
 //上下開
 let Spex4PointCentrePull_SideRelprices = {
-   Spex4PointCentrePull_SideRelprices1: 3900,
-   Spex4PointCentrePull_SideRelprices2: 3900,
-   Spex4PointCentrePull_SideRelprices3: 3900,
-   Spex4PointCentrePull_SideRelprices4: 4300
+  Spex4PointCentrePull_SideRelprices1: 3900,
+  Spex4PointCentrePull_SideRelprices2: 3900,
+  Spex4PointCentrePull_SideRelprices3: 3900,
+  Spex4PointCentrePull_SideRelprices4: 4300,
 };
 //中開
 let Spex4PointCentrePull_CentreRelprices = {
-   Spex4PointCentrePull_CentreRelprices1: 4300,
-   Spex4PointCentrePull_CentreRelprices2: 4300,
-   Spex4PointCentrePull_CentreRelprices3: 4300,
-   Spex4PointCentrePull_CentreRelprices4: 4600
+  Spex4PointCentrePull_CentreRelprices1: 4300,
+  Spex4PointCentrePull_CentreRelprices2: 4300,
+  Spex4PointCentrePull_CentreRelprices3: 4300,
+  Spex4PointCentrePull_CentreRelprices4: 4600,
 };
 //防脫式
 let Spex4PointCentrePull_AntiEscprices = {
-   Spex4PointCentrePull_AntiEscprices1: 7300,
-   Spex4PointCentrePull_AntiEscprices2: 7300,
-   Spex4PointCentrePull_AntiEscprices3: 7500
+  Spex4PointCentrePull_AntiEscprices1: 7300,
+  Spex4PointCentrePull_AntiEscprices2: 7300,
+  Spex4PointCentrePull_AntiEscprices3: 7500,
 };
 //筆開式
 let Spex4PointCentrePull_PenPopprices = {
-   Spex4PointCentrePull_PenPopprices1: 7300,
-   Spex4PointCentrePull_PenPopprices2: 7300,
-   Spex4PointCentrePull_PenPopprices3: 7300,
-   Spex4PointCentrePull_PenPopprices4: 7500
+  Spex4PointCentrePull_PenPopprices1: 7300,
+  Spex4PointCentrePull_PenPopprices2: 7300,
+  Spex4PointCentrePull_PenPopprices3: 7300,
+  Spex4PointCentrePull_PenPopprices4: 7500,
 };
 //endregion
 
 //region --- 4 Point Dual Pull 4點雙拉襯墊型骨盆帶 ---
 //上下開
 let Spex4PointDualPull_SideRelprices = {
-   Spex4PointCentrePull_SideRelprices1: 4100,
-   Spex4PointCentrePull_SideRelprices2: 4100,
-   Spex4PointCentrePull_SideRelprices3: 4100,
-   Spex4PointCentrePull_SideRelprices4: 4500
+  Spex4PointCentrePull_SideRelprices1: 4100,
+  Spex4PointCentrePull_SideRelprices2: 4100,
+  Spex4PointCentrePull_SideRelprices3: 4100,
+  Spex4PointCentrePull_SideRelprices4: 4500,
 };
 //endregion
 
 //region --- 4 Point Side Pull 4點側拉襯墊型骨盆帶 ---
 //上下開
 let Spex4PointSidePull_SideRelprices = {
-   Spex4PointSidePull_SideRelprices1: 4600,
-   Spex4PointSidePull_SideRelprices2: 4600,
-   Spex4PointSidePull_SideRelprices3: 4600,
-   Spex4PointSidePull_SideRelprices4: 4650
+  Spex4PointSidePull_SideRelprices1: 4600,
+  Spex4PointSidePull_SideRelprices2: 4600,
+  Spex4PointSidePull_SideRelprices3: 4600,
+  Spex4PointSidePull_SideRelprices4: 4650,
 };
 //中開
 let Spex4PointSidePull_CentreRelprices = {
-   Spex4PointSidePull_CentreRelprices1: 5300,
-   Spex4PointSidePull_CentreRelprices2: 5300,
-   Spex4PointSidePull_CentreRelprices3: 5300,
-   Spex4PointSidePull_CentreRelprices4: 5600
+  Spex4PointSidePull_CentreRelprices1: 5300,
+  Spex4PointSidePull_CentreRelprices2: 5300,
+  Spex4PointSidePull_CentreRelprices3: 5300,
+  Spex4PointSidePull_CentreRelprices4: 5600,
 };
 //防脫式
 let Spex4PointSidePull_AntiEscprices = {
-   Spex4PointSidePull_AntiEscprices1: 7800,
-   Spex4PointSidePull_AntiEscprices2: 7800,
-   Spex4PointSidePull_AntiEscprices3: 8300
+  Spex4PointSidePull_AntiEscprices1: 7800,
+  Spex4PointSidePull_AntiEscprices2: 7800,
+  Spex4PointSidePull_AntiEscprices3: 8300,
 };
 //筆開式
 let Spex4PointSidePull_PenPopprices = {
-   Spex4PointSidePull_PenPopprices1: 7800,
-   Spex4PointSidePull_PenPopprices2: 7800,
-   Spex4PointSidePull_PenPopprices3: 7800,
-   Spex4PointSidePull_PenPopprices4: 8300
+  Spex4PointSidePull_PenPopprices1: 7800,
+  Spex4PointSidePull_PenPopprices2: 7800,
+  Spex4PointSidePull_PenPopprices3: 7800,
+  Spex4PointSidePull_PenPopprices4: 8300,
 };
 //endregion
 
 //endregion
 
-
 //region 監聽骨盆帶款式下拉式選單
+hipbeltstypeselet.addEventListener("change", () => {
+  let hipbeltstypeOption =
+    hipbeltstypeselet.options[hipbeltstypeselet.selectedIndex];
+  let hipbeltssizeOption =
+    hipbeltssizeselet.options[hipbeltssizeselet.selectedIndex];
+  //2點單拉襯墊型骨盆帶
+  if (Spex2PointCentrePullckb.checked) {
+    //region 上下開
+    if (hipbeltstypeOption.value === "option2") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_SideRelprices.Spex2PointCentrePull_SideRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_SideRelprices.Spex2PointCentrePull_SideRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_SideRelprices.Spex2PointCentrePull_SideRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_SideRelprices.Spex2PointCentrePull_SideRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 中開
+    if (hipbeltstypeOption.value === "option3") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_CentreRelprices.Spex2PointCentrePull_CentreRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_CentreRelprices.Spex2PointCentrePull_CentreRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_CentreRelprices.Spex2PointCentrePull_CentreRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_CentreRelprices.Spex2PointCentrePull_CentreRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 防脫式
+    if (hipbeltstypeOption.value === "option4") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_AntiEscprices.Spex2PointCentrePull_AntiEscprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_AntiEscprices.Spex2PointCentrePull_AntiEscprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_AntiEscprices.Spex2PointCentrePull_AntiEscprices3
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 筆開式
+    if (hipbeltstypeOption.value === "option5") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_PenPopprices.Spex2PointCentrePull_PenPopprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_PenPopprices.Spex2PointCentrePull_PenPopprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_PenPopprices.Spex2PointCentrePull_PenPopprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointCentrePull_PenPopprices.Spex2PointCentrePull_PenPopprices4
+        )} 元`;
+      }
+    }
+    //endregion
+  }
+
+  //2點雙拉襯墊型骨盆帶
+  if (Spex2PointDualCentrePullckb.checked) {
+    //region 上下開
+    if (hipbeltstypeOption.value === "option2") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointDualPull_SideRelprices.Spex2PointCentrePull_SideRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointDualPull_SideRelprices.Spex2PointCentrePull_SideRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointDualPull_SideRelprices.Spex2PointCentrePull_SideRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex2PointDualPull_SideRelprices.Spex2PointCentrePull_SideRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+  }
+
+  //4點單拉襯墊型骨盆帶
+  if (Spex4PointCentrePullckb.checked) {
+    //region 上下開
+    if (hipbeltstypeOption.value === "option2") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_SideRelprices.Spex4PointCentrePull_SideRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_SideRelprices.Spex4PointCentrePull_SideRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_SideRelprices.Spex4PointCentrePull_SideRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_SideRelprices.Spex4PointCentrePull_SideRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 中開
+    if (hipbeltstypeOption.value === "option3") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_CentreRelprices.Spex4PointCentrePull_CentreRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_CentreRelprices.Spex4PointCentrePull_CentreRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_CentreRelprices.Spex4PointCentrePull_CentreRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_CentreRelprices.Spex4PointCentrePull_CentreRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 防脫式
+    if (hipbeltstypeOption.value === "option4") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_AntiEscprices.Spex4PointCentrePull_AntiEscprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_AntiEscprices.Spex4PointCentrePull_AntiEscprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_AntiEscprices.Spex4PointCentrePull_AntiEscprices3
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 筆開式
+    if (hipbeltstypeOption.value === "option5") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_PenPopprices.Spex4PointCentrePull_PenPopprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_PenPopprices.Spex4PointCentrePull_PenPopprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_PenPopprices.Spex4PointCentrePull_PenPopprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointCentrePull_PenPopprices.Spex4PointCentrePull_PenPopprices4
+        )} 元`;
+      }
+    }
+    //endregion
+  }
+
+  //4點雙拉襯墊型骨盆帶
+  if (Spex4PointDualCentrePullckb.checked) {
+    //region 上下開
+    if (hipbeltstypeOption.value === "option2") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointDualPull_SideRelprices.Spex4PointCentrePull_SideRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointDualPull_SideRelprices.Spex4PointCentrePull_SideRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointDualPull_SideRelprices.Spex4PointCentrePull_SideRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointDualPull_SideRelprices.Spex4PointCentrePull_SideRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+  }
+
+  //4點側拉襯墊型骨盆帶
+  if (Spex4PointSidePullckb.checked) {
+    //region 上下開
+    if (hipbeltstypeOption.value === "option2") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_SideRelprices.Spex4PointSidePull_SideRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_SideRelprices.Spex4PointSidePull_SideRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_SideRelprices.Spex4PointSidePull_SideRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_SideRelprices.Spex4PointSidePull_SideRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 中開
+    if (hipbeltstypeOption.value === "option3") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_CentreRelprices.Spex4PointSidePull_CentreRelprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_CentreRelprices.Spex4PointSidePull_CentreRelprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_CentreRelprices.Spex4PointSidePull_CentreRelprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_CentreRelprices.Spex4PointSidePull_CentreRelprices4
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 防脫式
+    if (hipbeltstypeOption.value === "option4") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_AntiEscprices.Spex4PointSidePull_AntiEscprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_AntiEscprices.Spex4PointSidePull_AntiEscprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_AntiEscprices.Spex4PointSidePull_AntiEscprices3
+        )} 元`;
+      }
+    }
+    //endregion
+
+    //region 筆開式
+    if (hipbeltstypeOption.value === "option5") {
+      if (hipbeltssizeOption.value === "option2") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_PenPopprices.Spex4PointSidePull_PenPopprices1
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option3") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_PenPopprices.Spex4PointSidePull_PenPopprices2
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option4") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_PenPopprices.Spex4PointSidePull_PenPopprices3
+        )} 元`;
+      }
+      if (hipbeltssizeOption.value === "option5") {
+        nowprice_Spexhipbelts.textContent = `${formatPrice(
+          Spex4PointSidePull_PenPopprices.Spex4PointSidePull_PenPopprices4
+        )} 元`;
+      }
+    }
+    //endregion
+  }
+});
 
 //endregion
