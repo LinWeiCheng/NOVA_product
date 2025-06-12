@@ -8981,7 +8981,7 @@ document
     });
   });
 
-//如果沒有打勾的選項，就將下拉式選單
+//如果沒有打勾的選項，就將下拉式選單不顯示
 function updateHeadSupportsStatus() {
   let anyChecked = Array.from(HeadSupportcheckboxes).some((cb) => cb.checked);
   headsupportspadsel.disabled = !anyChecked;
@@ -9662,11 +9662,15 @@ document
   });
 //endregion
 
-//region如果沒有打勾的選項，就將下拉式選單
+//region如果沒有打勾的選項，就將下拉式選單不顯示
 function updateHipBeltsStatus() {
   let anyChecked = Array.from(HipBeltscheckboxes).some((cb) => cb.checked);
   hipbeltstypesel.disabled = !anyChecked;
   hipbeltssizesel.disabled = !anyChecked;
+  if (!anyChecked) {
+    let nowprice_SpexHipBelts = Price[18].nextElementSibling;
+    nowprice_SpexHipBelts.textContent = "0 元";
+  }
 }
 
 // 監聽頭靠每個checkbox 的事件
@@ -9677,18 +9681,7 @@ HipBeltscheckboxes.forEach((checkbox) => {
 updateHipBeltsStatus();
 //endregion
 
-//region 渲染下拉選單
-// function renderSelectOptions(selectElement, options) {
-//   selectElement.innerHTML = ""; // 清空現有選項
-//   options.forEach((opt) => {
-//     let option = document.createElement("option");
-//     option.value = opt.value;
-//     option.textContent = opt.text;
-//     if (opt.selected) option.selected = true;
-//     selectElement.appendChild(option);
-//   });
-// }
-
+//region 下拉式選單判斷哪些需要那些不需要
 function renderSelectOptions(
   selectElement,
   options,
@@ -9915,3 +9908,583 @@ renderSelectOptions(hipbeltssizesel, SpexhipbeltssizeOptions);
 // endregion
 
 // endregion
+
+/*----- 20.Spex綁帶子系統-肩胸綁帶 -----*/
+//region
+/*---  Spex綁帶子系統-肩胸綁帶 - 圖片箭頭部分  ---*/
+//region
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_20 = event.target;
+  let carseat20 = tgimg_20.closest(".Spex_shoulderharnesses"); // 找到最近的 Spex_shoulderharnesses
+  let imgSpexshoulderharnesses = event.target.dataset.imgSpexshoulderharnesses;
+
+  //確認我點擊到的位置是否是 Spex_shoulderharnesses
+  if (carseat20 && carseat20.className.trim() === "Spex_shoulderharnesses") {
+    let introdutionid = carseat20.querySelector(".Spexshoulderharnessesgroup"); // 在 Spex_shoulderharnesses 內部找 Spexshoulderharnesses
+    let introdution = carseat20.querySelector(".subtitle"); // 在 Spex_shoulderharnesses 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgSpexshoulderharnesses === "SpexshoulderharnessesImg") {
+        if (visibilityValue === "hidden") {
+          let Price_Spexshoulderharnesses =
+            document.querySelectorAll(".pricing");
+
+          Price_Spexshoulderharnesses.forEach(function (openIntro) {
+            let Spexshoulderharnesses = Price_Spexshoulderharnesses[19];
+            //直接判斷是第幾個.Price
+            let nowprice_Spexshoulderharnesses =
+              Price_Spexshoulderharnesses[19].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-Spexshoulderharnesses") ===
+                "Spexshoulderharnesses" &&
+              nowprice_Spexshoulderharnesses.getAttribute(
+                "data-nowprice-Spexshoulderharnesses"
+              ) === "nowSpexshoulderharnesses"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //Spexbacksupports勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 22px)";
+                introdutionid.style.display = "flex";
+                introdutionid.style.flexDirection = "column";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.margin = "0 0 0 7px";
+                introdutionid.style.height = "auto";
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_Spexshoulderharnesses.style.display = "block";
+                nowprice_Spexshoulderharnesses.style.display = "flex";
+                nowprice_Spexshoulderharnesses.style.width = "95%";
+                nowprice_Spexshoulderharnesses.style.height = "90%";
+                nowprice_Spexshoulderharnesses.style.color = "#000000";
+                nowprice_Spexshoulderharnesses.style.borderRadius = "8px";
+                nowprice_Spexshoulderharnesses.style.padding = "1px";
+                nowprice_Spexshoulderharnesses.style.margin = "3px 3px 3px 2px";
+                nowprice_Spexshoulderharnesses.style.textAlign = "center";
+                nowprice_Spexshoulderharnesses.style.fontSize = "16px";
+                nowprice_Spexshoulderharnesses.style.fontWeight = "600";
+                nowprice_Spexshoulderharnesses.style.alignItems = "center";
+                nowprice_Spexshoulderharnesses.style.justifyContent = "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_Spexshoulderharnesses.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  Spexshoulderharnesses.style.padding = "5px";
+                  Spexshoulderharnesses.style.margin = "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_Spexshoulderharnesses =
+            document.querySelectorAll(".pricing");
+
+          Price_Spexshoulderharnesses.forEach(function (openIntro) {
+            let nowprice_Spexshoulderharnesses =
+              Price_Spexshoulderharnesses[19].nextElementSibling;
+
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (
+              openIntro.getAttribute("data-price-Spexshoulderharnesses") ===
+              "Spexshoulderharnesses"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_Spexshoulderharnesses.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+// endregion
+
+/*---  Spex綁帶子系統-肩胸綁帶 - subtitle部分  ---*/
+//region
+let Spex_shoulderharnesses = document.querySelector(".Spex_shoulderharnesses");
+Spex_shoulderharnesses.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是 Spex_shoulderharnesses
+  if (showinfo === "Spexshoulderharnesses") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_Spex_shoulderharnesses = document.querySelectorAll(".pricing");
+    let Spex_shoulderharnessesimg =
+      Spex_shoulderharnesses.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = Spex_shoulderharnessesimg.querySelector("img");
+
+    Price_Spex_shoulderharnesses.forEach(function (openIntro) {
+      let Spexshoulderharnesses = Price_Spex_shoulderharnesses[19];
+      //直接判斷是第幾個.Price
+      let nowprice_Spexshoulderharnesses =
+        Price_Spex_shoulderharnesses[19].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-Spexshoulderharnesses") ===
+          "Spexshoulderharnesses" &&
+        nowprice_Spexshoulderharnesses.getAttribute(
+          "data-nowprice-Spexshoulderharnesses"
+        ) === "nowSpexshoulderharnesses"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carSpexbacksupports勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 2px 3px";
+          introdutionid.style.width = "calc(100% - 22px)";
+          introdutionid.style.display = "flex";
+          introdutionid.style.flexDirection = "column";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.margin = "0 0 0 7px";
+          introdutionid.style.height = "auto";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_Spexshoulderharnesses.style.display = "block";
+          nowprice_Spexshoulderharnesses.style.display = "flex";
+          nowprice_Spexshoulderharnesses.style.width = "95%";
+          nowprice_Spexshoulderharnesses.style.height = "90%";
+          nowprice_Spexshoulderharnesses.style.color = "#000000";
+          nowprice_Spexshoulderharnesses.style.borderRadius = "8px";
+          nowprice_Spexshoulderharnesses.style.padding = "1px";
+          nowprice_Spexshoulderharnesses.style.margin = "3px 3px 3px 2px";
+          nowprice_Spexshoulderharnesses.style.textAlign = "center";
+          nowprice_Spexshoulderharnesses.style.fontSize = "16px";
+          nowprice_Spexshoulderharnesses.style.fontWeight = "600";
+          nowprice_Spexshoulderharnesses.style.alignItems = "center";
+          nowprice_Spexshoulderharnesses.style.justifyContent = "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_Spexshoulderharnesses.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            Spexshoulderharnesses.style.padding = "5px";
+            Spexshoulderharnesses.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_Spexshoulderharnesses.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
+
+//region --- 肩胸綁帶選項 ---
+//region --- 一字型綁帶 選項 ---
+//一字型綁帶尺寸選項
+let SpexShoulderHarnessesChestStrapSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "SML" },
+  { value: "option3", text: "MED" },
+  { value: "option4", text: "LGE" },
+];
+
+//一字型綁帶寬度及長度選項
+let SpexChestStrapData = {
+  option2: { width: "&nbsp;", length: "35x7.5 cm" },
+  option3: { width: "&nbsp;", length: "40x8 cm" },
+  option4: { width: "&nbsp;", length: "55x10 cm" },
+};
+//endregion
+
+//region --- H型綁帶 選項 ---
+//H型綁帶尺寸選項
+let SpexShoulderHarnessesHHarnessSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSM" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+  { value: "option6", text: "XLG" },
+];
+
+//H型綁帶寬度及長度選項
+let SpexHHarnessData = {
+  option2: { width: "8”-12”", length: "27cm" },
+  option3: { width: "11”-15”", length: "30cm" },
+  option4: { width: "14”-17”", length: "36cm" },
+  option5: { width: "17”-20”", length: "42cm" },
+  option6: { width: "20”+”", length: "48cm" },
+};
+//endregion
+
+//region --- 直條型綁帶 選項 ---
+//直條型綁帶尺寸選項
+let SpexShoulderHarnessesRetractorHarnessSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "SML" },
+  { value: "option3", text: "MED" },
+  { value: "option4", text: "LGE" },
+  { value: "option5", text: "XLG" },
+];
+
+//直條型綁帶寬度及長度選項
+let SpexRetractorHarnessData = {
+  option2: { width: "11”-15”", length: "32cm" },
+  option3: { width: "14”-17”", length: "38cm" },
+  option4: { width: "17”-20””", length: "44cm" },
+  option5: { width: "20”+", length: "50cm" },
+};
+//endregion
+
+//region --- 夾克型綁帶 選項 ---
+//夾克型綁帶尺寸選項
+let SpexShoulderHarnessesVestHarnessSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSML" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+];
+
+//夾克型綁帶寬度及長度選項
+let SpexVestHarnessData = {
+  option2: { width: "8”-12”", length: "24cm" },
+  option3: { width: "11”-15”", length: "32cm" },
+  option4: { width: "14”-17””", length: "40cm" },
+  option5: { width: "17”-20”", length: "48cm" },
+};
+//endregion
+
+//region --- X型綁帶 選項 ---
+//X型綁帶尺寸選項
+let SpexShoulderHarnessesCentrepointHarnessSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "XSML" },
+  { value: "option3", text: "SML" },
+  { value: "option4", text: "MED" },
+  { value: "option5", text: "LGE" },
+  { value: "option6", text: "XLGE" },
+];
+
+//X型綁帶寬度及長度選項
+let SpexCentrepointHarnessData = {
+  option2: { width: "8”-12”", length: "26cm" },
+  option3: { width: "11”-15”", length: "36cm" },
+  option4: { width: "14”-17”", length: "40cm" },
+  option5: { width: "17”-20”", length: "45cm" },
+  option6: { width: "20”+", length: "50cm" },
+};
+//endregion
+//endregion
+
+//endregion
+
+//region --- 宣告所有元素 ---
+let ShoulderHarnessescheckboxes = document.querySelectorAll(
+  'input[name="car_SpexShoulderHarnesses"]'
+);
+let ShoulderStrapGuidescheckboxes = document.querySelectorAll(
+  'input[name="car_SpexShoulderStrapGuides"]'
+);
+let ShoulderHarnessesAllcheckboxes = document.querySelectorAll(
+  ".SpexShoulderHarnesses"
+);
+
+let SpexChestStrapcheckbox = document.getElementById("Chest_Strap");
+let SpexHHarnesscheckbox = document.getElementById("H_Harness");
+let SpexRetractorHarnesscheckbox = document.getElementById("Retractor_Harness");
+let SpexVestHarnesscheckbox = document.getElementById("Vest_Harness");
+let SpexCentrepointHarnesscheckbox = document.getElementById(
+  "Centrepoint_Harness"
+);
+let Spex_Shoulder_Strap_Guidescheckbox = document.getElementById(
+  "Spex_Shoulder_Strap_Guides"
+);
+let Adapta_Shoulder_Strap_Guidescheckbox = document.getElementById(
+  "Adapta_Shoulder_Strap_Guides"
+);
+
+let SpexShoulderHarnessesprices = document.querySelector(
+  ".SpexShoulderHarnessesprices"
+);
+let SpexShoulderStrapGuidesprices = document.querySelector(
+  ".SpexShoulderStrapGuidesprices"
+);
+
+let shoulderharnessessizesel = document.querySelector(".shoulderharnessessize");
+let shouldertable = document.querySelector(".shouldervalue1");
+let tableheaderCell = document.querySelector(".shoulder-header-width");
+//endregion
+
+//region 確定勾選的是哪個肩胸綁帶，且不會重複勾選選項
+document
+  .querySelectorAll('input[name="car_SpexShoulderHarnesses"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexShoulderHarnesses"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+      if (SpexChestStrapcheckbox.checked) {
+        recodeShoulderHarnessesSelectOptions(
+          shoulderharnessessizesel,
+          SpexShoulderHarnessesChestStrapSizeOptions
+        );
+        clearshoulderharnessestablevalue();
+      }
+      if (SpexHHarnesscheckbox.checked) {
+        recodeShoulderHarnessesSelectOptions(
+          shoulderharnessessizesel,
+          SpexShoulderHarnessesHHarnessSizeOptions
+        );
+        clearshoulderharnessestablevalue();
+      }
+      if (SpexRetractorHarnesscheckbox.checked) {
+        recodeShoulderHarnessesSelectOptions(
+          shoulderharnessessizesel,
+          SpexShoulderHarnessesRetractorHarnessSizeOptions
+        );
+        clearshoulderharnessestablevalue();
+      }
+      if (SpexVestHarnesscheckbox.checked) {
+        recodeShoulderHarnessesSelectOptions(
+          shoulderharnessessizesel,
+          SpexShoulderHarnessesVestHarnessSizeOptions
+        );
+       clearshoulderharnessestablevalue();
+      }
+      if (SpexCentrepointHarnesscheckbox.checked) {
+        recodeShoulderHarnessesSelectOptions(
+          shoulderharnessessizesel,
+          SpexShoulderHarnessesCentrepointHarnessSizeOptions
+        );
+        clearshoulderharnessestablevalue();
+      }
+    });
+  });
+//endregion
+
+//region 如果沒有打勾的選項，就將下拉式選單不顯示
+function updateShoulderHarnessesStatus() {
+  let anyChecked = Array.from(ShoulderHarnessescheckboxes).some(
+    (cb) => cb.checked
+  );
+  shoulderharnessessizesel.disabled = !anyChecked;
+  if (!anyChecked) {
+    recodeShoulderHarnessesSelectOptions(
+      shoulderharnessessizesel,
+      SpexShoulderHarnessesCentrepointHarnessSizeOptions
+    );
+    clearshoulderharnessestablevalue();
+    SpexShoulderHarnessesprices.textContent = ""; 
+  }else if(!Spex_Shoulder_Strap_Guidescheckbox.checked &&
+      !Adapta_Shoulder_Strap_Guidescheckbox.checked
+    ){
+      let nowprice_SpexShoulderHarnesses = Price[19].nextElementSibling;
+      nowprice_SpexShoulderHarnesses.textContent = "0 元";
+    }
+}
+
+// 監聽肩胸綁帶每個checkbox 的事件
+ShoulderHarnessescheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", updateShoulderHarnessesStatus);
+});
+
+// 初始檢查一次狀態
+updateShoulderHarnessesStatus();
+
+//清空下拉式選單的內容並重新填入options
+function recodeShoulderHarnessesSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+//endregion
+
+//region --- 選擇到的尺寸來更換table內數值
+shoulderharnessessizesel.addEventListener("change", () => {
+  let shouldervalue1 = document.querySelector(".shouldervalue1");
+  let shouldervalue2 = document.querySelector(".shouldervalue2");
+  let headerWidthCell = document.querySelector(".shoulder-header-width");
+
+  if (SpexChestStrapcheckbox.checked) {
+    //根據你選取的選項值 shoulderharnessessizesel.value，去對應出一個數字索引（index）
+    // let selectedData = SpexChestStrapData[shoulderharnessessizesel.value];
+    let selectedValue = shoulderharnessessizesel.value;
+    if (SpexChestStrapData[selectedValue]) {
+      shouldervalue1.innerHTML = SpexChestStrapData[selectedValue].width;
+      shouldervalue2.textContent = SpexChestStrapData[selectedValue].length;
+
+      // 根據有無寬度內容控制樣式
+      if (SpexChestStrapData[selectedValue].width === "&nbsp;") {
+        shouldervalue1.innerHTML = "&nbsp;";
+        shouldervalue1.classList.add("no-width");
+        headerWidthCell.classList.add("no-width");
+      } else {
+        shouldervalue1.innerText = SpexChestStrapData[selectedValue].width;
+        shouldervalue1.classList.remove("no-width");
+        headerWidthCell.classList.remove("no-width");
+      }
+    } else {
+      shouldervalue1.innerHTML = "&nbsp;";
+      shouldervalue2.innerHTML = "&nbsp;";
+      shouldervalue1.classList.remove("no-width");
+    }
+  }
+
+  if (SpexHHarnesscheckbox.checked) {
+    shouldervalue1.classList.remove("no-width");
+    headerWidthCell.classList.remove("no-width");
+
+    //根據你選取的選項值 shoulderharnessessizesel.value，去對應出一個數字索引（index）
+    let selectedData = SpexHHarnessData[shoulderharnessessizesel.value];
+
+    if (selectedData) {
+      shouldervalue1.textContent = selectedData.width;
+      shouldervalue2.textContent = selectedData.length;
+    }
+  }
+
+  if (SpexRetractorHarnesscheckbox.checked) {
+    //根據你選取的選項值 shoulderharnessessizesel.value，去對應出一個數字索引（index）
+    let selectedData = SpexRetractorHarnessData[shoulderharnessessizesel.value];
+
+    if (selectedData) {
+      shouldervalue1.textContent = selectedData.width;
+      shouldervalue2.textContent = selectedData.length;
+    }
+  }
+
+  if (SpexVestHarnesscheckbox.checked) {
+    //根據你選取的選項值 shoulderharnessessizesel.value，去對應出一個數字索引（index）
+    let selectedData = SpexVestHarnessData[shoulderharnessessizesel.value];
+
+    if (selectedData) {
+      shouldervalue1.textContent = selectedData.width;
+      shouldervalue2.textContent = selectedData.length;
+    }
+  }
+
+  if (SpexCentrepointHarnesscheckbox.checked) {
+    //根據你選取的選項值 shoulderharnessessizesel.value，去對應出一個數字索引（index）
+    let selectedData =
+      SpexCentrepointHarnessData[shoulderharnessessizesel.value];
+
+    if (selectedData) {
+      shouldervalue1.textContent = selectedData.width;
+      shouldervalue2.textContent = selectedData.length;
+    }
+  }
+});
+
+//region 清空表格內容
+function clearshoulderharnessestablevalue() {
+  let shouldervalue1 = document.querySelector(".shouldervalue1");
+  let shouldervalue2 = document.querySelector(".shouldervalue2");
+  let headerWidthCell = document.querySelector(".shoulder-header-width");
+  shouldervalue1.innerHTML = "&nbsp;";
+  shouldervalue2.innerHTML = "&nbsp;";
+  shouldervalue1.classList.remove("no-width");
+  headerWidthCell.classList.remove("no-width");
+  SpexShoulderHarnessesprices.textContent = "";
+}
+//endregion
+
+//endregion
+
+//region 確定勾選的是哪個肩帶導流器，且不會重複勾選選項
+document
+  .querySelectorAll('input[name="car_SpexShoulderStrapGuides"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      document
+        .querySelectorAll('input[name="car_SpexShoulderStrapGuides"]')
+        .forEach((otherCheckbox) => {
+          if (otherCheckbox !== this) {
+            otherCheckbox.checked = false;
+          }
+        });
+    });
+  });
+
+// function updateShoulderStrapGuidesStatus() {
+//   let anyChecked = Array.from(ShoulderStrapGuidescheckboxes).some(
+//     (cb) => cb.checked
+//   );
+//   if (!anyChecked) {
+    
+//   }
+// }
+
+// // 監聽肩帶導流器每個checkbox 的事件
+// ShoulderStrapGuidescheckboxes.forEach((checkbox) => {
+//   checkbox.addEventListener("change", updateShoulderStrapGuidesStatus);
+// });
+
+// // 初始檢查一次狀態
+// updateShoulderStrapGuidesStatus();
+//endregion
+
+//全部肩胸綁帶checkbox都檢查
+ShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    let anyChecked = Array.from(ShoulderHarnessesAllcheckboxes).some(
+      (cb) => cb.checked
+    );
+    if (!anyChecked) {
+      let nowprice_SpexShoulderHarnesses = Price[19].nextElementSibling;
+      nowprice_SpexShoulderHarnesses.textContent = "0 元";
+    }
+  });
+});
+
+//endregion
