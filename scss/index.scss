@@ -2427,6 +2427,7 @@ body {
   }
 }
 
+//第十四點擊列-Spex底座子系統-扶手臀撐
 .Spex_armsup_latthigh {
   margin: 0 0 7px 0;
 
@@ -2547,48 +2548,6 @@ body {
 
       }
     }
-
-    // .Spexarmsuplatthigh_armsupgroup {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   width: 13%;
-    //   border: 1px solid #000000;
-    //   border-radius: 8px;
-    //   font-weight: 600;
-    //   margin: 2px 1px 2px 1px;
-
-    //   .Spexarmsuplatthigh_armsupsel {
-    //     padding: 3px;
-    //     margin: 2px;
-    //     font-size: 18px;
-    //     border-radius: 8px;
-    //     width: 90%;
-    //     text-align: center;
-    //     box-sizing: border-box;
-    //   }
-    // }
-
-    // .Spexarmsuplatthigh_latthighgroup {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   width: 13%;
-    //   border: 1px solid #000000;
-    //   border-radius: 8px;
-    //   font-weight: 600;
-    //   margin: 2px 1px 2px 1px;
-
-    //   .Spexarmsuplatthigh_latthighsel {
-    //     padding: 3px;
-    //     margin: 2px;
-    //     font-size: 18px;
-    //     border-radius: 8px;
-    //     width: 90%;
-    //     text-align: center;
-    //     box-sizing: border-box;
-    //   }
-    // }
 
     .Spexarmsuplatthigh_padgroup {
       display: flex;
@@ -3674,148 +3633,6 @@ body {
               }
             }
           }
-
-
-          // .latertrunkpadtypegroup {
-          //   display: flex;
-          //   flex-direction: column;
-          //   align-items: center;
-          //   justify-content: center;
-          //   border: 1px solid #000000;
-          //   border-radius: 8px;
-          //   font-size: 16px;
-          //   width: 15%;
-          //   margin: 2px 0px 1px 1px;
-
-          //   #Straightpad {
-          //     margin: 0px 23px 10px -9px;
-          //   }
-
-          //   #Curvedpad {
-          //     margin: 12px 12px 10px 12px;
-          //   }
-
-          //   #Broadpad {
-          //     margin: 11px 21px 5px -10px;
-          //     ;
-          //   }
-          // }
-
-          // .latertrunkpadsizegroup {
-          //   display: flex;
-          //   flex-direction: column;
-          //   align-items: center;
-          //   justify-content: center;
-          //   border: 1px solid #000000;
-          //   border-radius: 8px;
-          //   width: 23%;
-          //   margin: 2px 2px 1px 1px;
-
-          //   .latertrunkpadthinknessgroup {
-          //     display: flex;
-          //     flex-direction: row;
-          //     align-items: center;
-          //     justify-content: center;
-          //     font-size: 14px;
-          //     margin: 4px 1px 20px 2px;
-
-          //     label {
-          //       font-size: 16px;
-          //       margin: 0 4px 0 0;
-          //     }
-
-          //     .latertrunkpadtype {
-          //       font-size: 16px;
-          //       border-radius: 8px;
-          //       text-align: center;
-          //     }
-          //   }
-
-          //   .latertrunkpadsize_WHgroup {
-          //     display: flex;
-          //     flex-direction: column;
-          //     align-items: center;
-          //     border-radius: 8px;
-          //     justify-content: center;
-
-          //     .latertrunkpadsize_WH {
-          //       display: flex;
-          //       flex-direction: row;
-          //       align-items: center;
-          //       border-radius: 8px;
-          //       justify-content: center;
-          //       width: 90%;
-
-          //       .latertrunkpadsize_Width {
-          //         padding: 3px;
-          //         margin: 2px;
-          //         font-size: 16px;
-          //         border-radius: 8px;
-          //         text-align: center;
-          //         /* 設定文字置中 */
-          //         width: 50%;
-          //         /* 填滿寬度，讓選項顯示在中間 */
-          //         display: inline-block;
-
-          //         .latertrunkpadsize_Width option {
-          //           text-align: center;
-          //           /* 讓選項中的文字置中 */
-          //           background-color: #e0e0e0;
-          //           color: #000000;
-          //         }
-          //       }
-
-          //       div {
-          //         font-size: 16px;
-          //         font-weight: 800;
-          //         margin: 4px;
-          //       }
-
-          //       .latertrunkpadsize_Heigh {
-          //         padding: 3px;
-          //         margin: 2px;
-          //         font-size: 16px;
-          //         border-radius: 8px;
-          //         text-align: center;
-          //         /* 設定文字置中 */
-          //         width: 50%;
-          //         /* 填滿寬度，讓選項顯示在中間 */
-          //         display: inline-block;
-
-          //         .latertrunkpadsize_Heigh option {
-          //           text-align: center;
-          //           /* 讓選項中的文字置中 */
-          //           background-color: #e0e0e0;
-          //           color: #000000;
-          //         }
-          //       }
-          //     }
-
-          //     .latertrunkpadcoungroup {
-          //       display: flex;
-          //       flex-direction: row;
-          //       align-items: center;
-          //       justify-content: center;
-          //       margin: 16px 0 0 0;
-
-          //       label {
-          //         font-size: 16px;
-          //         margin: 0px 0px 0 6px;
-          //         width: 25%;
-          //       }
-
-          //       #latertrunkpadcount {
-          //         font-size: 16px;
-          //         width: 15%;
-          //         text-align: center;
-          //         border: 1px solid #ccc;
-          //         border-radius: 5px;
-          //         color: #333;
-          //         margin: 2px 2px 0 0;
-          //       }
-          //     }
-          //   }
-          // }
         }
 
         .Spexlatertrunksupports_accessorytitle {
@@ -4260,6 +4077,7 @@ body {
   }
 }
 
+//第十九點擊列-Spex綁帶子系統-骨盆帶
 .Spex_hipbelts {
   margin: 0 0 8px 0;
 
@@ -4410,6 +4228,174 @@ body {
                 color: #000;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+//第二十點擊列-Spex綁帶子系統-肩胸綁帶
+.Spex_shoulderharnesses {
+  margin: 0 0 8px 0;
+
+  .chkcontent_20th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexshoulderharnessesgroup {
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: column;
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
+
+      .shoulderharnessesgroup {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+
+        .shoulderharnessesgroup_title {
+          width: 35%;
+          font-size: 20px;
+          font-weight: 700;
+          height: auto;
+
+          .shoulderharnesses_title {
+            display: flex;
+            align-items: center;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 2px;
+
+            .SpexShoulderHarnesses {
+              margin: 12px 16px;
+            }
+          }
+        }
+
+        .shoulderharnesses_sizegroup {
+          width: 20%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #000000;
+          border-radius: 8px;
+
+          .shoulderharnesses_size {
+            margin: 3px;
+
+            label {
+              font-size: 18px;
+              margin: 0 4px 0 0;
+            }
+
+            .shoulderharnessessize {
+              font-size: 18px;
+              border-radius: 8px;
+              text-align: center;
+              width: 11vh;
+              margin: 3px 0 0 2px;
+            }
+          }
+        }
+
+        .shoulderharnessessizerefersizegroup {
+          width: 45%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #000000;
+          border-radius: 8px;
+
+          .shoulderharnessessizesizetable {
+            width: 95%;
+
+            .shoulderharnesses_table {
+              width: 100%;
+              border-collapse: collapse;
+              table-layout: fixed;
+              text-align: center;
+              border: 1px solid #ccc;
+              border-radius: 12px;
+              overflow: hidden;
+              font-size: 16px;
+
+              .shoulderhead-row {
+                width: 85%;
+
+              }
+
+              .shouldervalue-row {
+                width: 85%;
+
+                td {
+                  &.shouldervalue1 {
+                    &.no-width {
+                      color: #999;
+                      font-style: italic;
+                      background-color: #f5f5f5;
+                    }
+                  }
+                }
+              }
+
+              td.shouldervalue1.no-width,
+              td.shoulder-header-width.no-width {
+                color: #999;
+                font-style: italic;
+                background-color: #f5f5f5;
+              }
+
+              td {
+                font-weight: bold;
+                border: 1px solid #ccc;
+              }
+
+              .shoulderhead-row td {
+                background-color: #ff6f6f;
+                color: white;
+              }
+
+              .shouldervalue-row td {
+                background-color: #f0f0f0;
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+
+      .shoulderstrap_titlegroup {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 700;
+        height: auto;
+
+        .shoulderstrap_title {
+          display: flex;
+          align-items: center;
+          border: 1px solid #000000;
+          border-radius: 8px;
+          margin: 2px;
+
+          .SpexShoulderHarnesses {
+            margin: 12px 16px;
+          }
+
+          p {
+            font-weight: 700;
+            font-size: 10px;
+            color: red;
           }
         }
       }

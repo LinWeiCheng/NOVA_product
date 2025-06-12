@@ -3679,6 +3679,136 @@ body {
   color: #000;
 }
 
+.Spex_shoulderharnesses {
+  margin: 0 0 8px 0;
+}
+.Spex_shoulderharnesses .chkcontent_20th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessesgroup_title {
+  width: 35%;
+  font-size: 20px;
+  font-weight: 700;
+  height: auto;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessesgroup_title .shoulderharnesses_title {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 2px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessesgroup_title .shoulderharnesses_title .SpexShoulderHarnesses {
+  margin: 12px 16px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup {
+  width: 20%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup .shoulderharnesses_size {
+  margin: 3px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup .shoulderharnesses_size label {
+  font-size: 18px;
+  margin: 0 4px 0 0;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup .shoulderharnesses_size .shoulderharnessessize {
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  width: 11vh;
+  margin: 3px 0 0 2px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup {
+  width: 45%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable {
+  width: 95%;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 16px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table .shoulderhead-row {
+  width: 85%;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table .shouldervalue-row {
+  width: 85%;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table .shouldervalue-row td.shouldervalue1.no-width {
+  color: #999;
+  font-style: italic;
+  background-color: #f5f5f5;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table td.shouldervalue1.no-width,
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table td.shoulder-header-width.no-width {
+  color: #999;
+  font-style: italic;
+  background-color: #f5f5f5;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table td {
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table .shoulderhead-row td {
+  background-color: #ff6f6f;
+  color: white;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup .shoulderharnessessizesizetable .shoulderharnesses_table .shouldervalue-row td {
+  background-color: #f0f0f0;
+  color: #000;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  height: auto;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup .shoulderstrap_title {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 2px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup .shoulderstrap_title .SpexShoulderHarnesses {
+  margin: 12px 16px;
+}
+.Spex_shoulderharnesses .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup .shoulderstrap_title p {
+  font-weight: 700;
+  font-size: 10px;
+  color: red;
+}
+
 .car-other {
   visibility: hidden;
 }
