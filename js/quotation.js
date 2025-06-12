@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexLaterTrunk = [];
   let spexHeadSupports = [];
   let spexHeadSupportsBracket = [];
+  let spexHipBelts = [];
 
   //軀幹側支撐計數，確保不會重複計算
   let LaterTrunkadd = 1;
@@ -357,6 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spexLaterTrunk.length = 0;
     spexHeadSupports.length = 0;
     spexHeadSupportsBracket.length = 0;
+    spexHipBelts.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -992,9 +994,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let headsupportsel = document.querySelector(".headsupportspad");
         let headsupportText =
           headsupportsel.options[headsupportsel.selectedIndex].text;
-          let headsupportsprice = getFormattedPrice(
-          ".Spexheadsupportsprices"
-        );
+        let headsupportsprice = getFormattedPrice(".Spexheadsupportsprices");
 
         let spexString = ` ${headsupportText}`;
         spexHeadSupports.push(spexString);
@@ -1022,6 +1022,35 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      //骨盆帶
+      if (spexgroup === "SpexHipBelts") {
+        if (item) {
+          spexHipBelts.push(item);
+        }
+        let nowSpexHipBelts = document.querySelector(
+          '[data-nowprice-Spexhipbelts="nowSpexhipbelts"]'
+        );
+        let HipBeltsprice = nowSpexHipBelts.textContent
+          .replace("元", "")
+          .trim();
+        let hipbeltsType= document.querySelector(".hipbeltstype");
+        let hipbeltsSize = document.querySelector(".hipbeltssize");
+        let hipbeltstype =
+          hipbeltsType.options[hipbeltsType.selectedIndex];
+        let hipbeltssize =
+          hipbeltsSize.options[hipbeltsSize.selectedIndex];
+
+        // 組合字串： / 尺寸 / 款式
+        let spexString = ` / ${hipbeltssize.text} / ${hipbeltstype.text}`;
+        spexHipBelts.push(spexString);
+        let spexitem = spexHipBelts.join("");
+
+        selectedItems.push({
+          item: spexitem,
+          price: HipBeltsprice,
+          note: notes,
+        });
+      }
 
       // 記錄這個 item 已經被加入
       if (item !== undefined && item !== null && item !== "") {
