@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexHeadSupports = [];
   let spexHeadSupportsBracket = [];
   let spexHipBelts = [];
+  let spexShoulderHarnesses = [];
+  let spexShoulderStrapGuides = [];
 
   //軀幹側支撐計數，確保不會重複計算
   let LaterTrunkadd = 1;
@@ -359,6 +361,8 @@ document.addEventListener("DOMContentLoaded", () => {
     spexHeadSupports.length = 0;
     spexHeadSupportsBracket.length = 0;
     spexHipBelts.length = 0;
+    spexShoulderHarnesses.length = 0;
+    spexShoulderStrapGuides.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -1051,6 +1055,47 @@ document.addEventListener("DOMContentLoaded", () => {
           note: notes,
         });
       }
+
+      //肩胸綁帶
+      if (spexgroup === "SpexShoulderHarnesses") {
+        if (item) {
+          spexShoulderHarnesses.push(item);
+        }
+        let shoulderharnessesSize= document.querySelector(".shoulderharnessessize");
+        let shoulderSize =
+          shoulderharnessesSize.options[shoulderharnessesSize.selectedIndex];
+        let ShoulderHarnessesPrices = getFormattedPrice(
+          ".SpexShoulderHarnessesprices"
+        );
+
+        // 組合字串： / 尺寸 
+        let spexString = ` / ${shoulderSize.text}`;
+        spexShoulderHarnesses.push(spexString);
+        let spexitem = spexShoulderHarnesses.join("");
+
+        selectedItems.push({
+          item: spexitem,
+          price: ShoulderHarnessesPrices,
+          note: notes,
+        });
+      }
+
+      //肩胸綁帶
+      if (spexgroup === "SpexShoulderStrapGuides") {
+        if (item) {
+          spexShoulderStrapGuides.push(item);
+        }
+        let ShoulderStrapGuidesPrices = getFormattedPrice(
+          ".SpexShoulderStrapGuidesprices"
+        );
+        
+        selectedItems.push({
+          item: spexShoulderStrapGuides,
+          price: ShoulderStrapGuidesPrices,
+          note: notes,
+        });
+      }
+
 
       // 記錄這個 item 已經被加入
       if (item !== undefined && item !== null && item !== "") {
