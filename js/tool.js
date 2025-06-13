@@ -10177,8 +10177,12 @@ let AdaptaShoulderStrapGuidesckb = document.getElementById(
   "Adapta_Shoulder_Strap_Guides"
 );
 let shouldersizesel = document.querySelector(".shoulderharnessessize");
-let shoulderharnessesprices = document.querySelector(".SpexShoulderHarnessesprices");
-let shoulderstrapguidesprices = document.querySelector(".SpexShoulderStrapGuidesprices");
+let shoulderharnessesprices = document.querySelector(
+  ".SpexShoulderHarnessesprices"
+);
+let shoulderstrapguidesprices = document.querySelector(
+  ".SpexShoulderStrapGuidesprices"
+);
 //endregion
 
 //region --- 肩胸綁帶價錢 ---
@@ -10232,207 +10236,130 @@ let SpexCentrepointHarness_prices = {
 //region --- 肩帶導流器價錢 ---
 //Spex肩帶導流器
 let SpexShoulderStrapGuides_prices = {
-  SpexShoulderStrapGuides_prices1: 2200
+  SpexShoulderStrapGuides_prices1: 2200,
 };
 
 //Adapta胸綁帶導流器
 let AdaptaShoulderStrapGuides_prices = {
-  AdaptaShoulderStrapGuides_prices1: 2760
+  AdaptaShoulderStrapGuides_prices1: 2760,
 };
 //endregion
 
 //region --- 監聽肩胸綁帶尺寸計算價錢 ---
 shouldersizesel.addEventListener("change", () => {
-
   //region 一字型綁帶
   if (SpexChestStrapckb.checked) {
-    if(shouldersizesel.value === "option2"){
-      shoulderharnessesprices.textContent = 
-          SpexChestStrap_prices.SpexChestStrap_pricesprices1
+    if (shouldersizesel.value === "option2") {
+      shoulderharnessesprices.textContent =
+        SpexChestStrap_prices.SpexChestStrap_pricesprices1;
     }
-    if(shouldersizesel.value === "option3"){
-      shoulderharnessesprices.textContent = 
-          SpexChestStrap_prices.SpexChestStrap_pricesprices2;
+    if (shouldersizesel.value === "option3") {
+      shoulderharnessesprices.textContent =
+        SpexChestStrap_prices.SpexChestStrap_pricesprices2;
     }
-    if(shouldersizesel.value === "option4"){
-      shoulderharnessesprices.textContent = 
-          SpexChestStrap_prices.SpexChestStrap_pricesprices3;
-    }
-  }
-  //endregion
-
-  //region H型綁帶
-  if(SpexHHarnessckb.checked){
-    if(shouldersizesel.value === "option2"){
-      shoulderharnessesprices.textContent = 
-          SpexHHarness_prices.SpexHHarness_prices1;
-    }
-    if(shouldersizesel.value === "option3"){
-      shoulderharnessesprices.textContent = 
-          SpexHHarness_prices.SpexHHarness_prices2;
-    }
-    if(shouldersizesel.value === "option4"){
-      shoulderharnessesprices.textContent = 
-          SpexHHarness_prices.SpexHHarness_prices3;
-    }
-    if(shouldersizesel.value === "option5"){
-      shoulderharnessesprices.textContent = 
-          SpexHHarness_prices.SpexHHarness_prices4;
-    }
-    if(shouldersizesel.value === "option6"){
-      shoulderharnessesprices.textContent = 
-          SpexHHarness_prices.SpexHHarness_prices5;
+    if (shouldersizesel.value === "option4") {
+      shoulderharnessesprices.textContent =
+        SpexChestStrap_prices.SpexChestStrap_pricesprices3;
     }
   }
   //endregion
 
   //region H型綁帶
-  if(SpexRetractorHarnessckb.checked){
-    if(shouldersizesel.value === "option2"){
-      shoulderharnessesprices.textContent = 
-          SpexRetractorHarness_prices.SpexRetractorHarness_prices1;
+  if (SpexHHarnessckb.checked) {
+    if (shouldersizesel.value === "option2") {
+      shoulderharnessesprices.textContent =
+        SpexHHarness_prices.SpexHHarness_prices1;
     }
-    if(shouldersizesel.value === "option3"){
-      shoulderharnessesprices.textContent = 
-          SpexRetractorHarness_prices.SpexRetractorHarness_prices2;
+    if (shouldersizesel.value === "option3") {
+      shoulderharnessesprices.textContent =
+        SpexHHarness_prices.SpexHHarness_prices2;
     }
-    if(shouldersizesel.value === "option4"){
-      shoulderharnessesprices.textContent = 
-          SpexRetractorHarness_prices.SpexRetractorHarness_prices3;
+    if (shouldersizesel.value === "option4") {
+      shoulderharnessesprices.textContent =
+        SpexHHarness_prices.SpexHHarness_prices3;
     }
-    if(shouldersizesel.value === "option5"){
-      shoulderharnessesprices.textContent = 
-          SpexRetractorHarness_prices.SpexRetractorHarness_prices4;
+    if (shouldersizesel.value === "option5") {
+      shoulderharnessesprices.textContent =
+        SpexHHarness_prices.SpexHHarness_prices4;
+    }
+    if (shouldersizesel.value === "option6") {
+      shoulderharnessesprices.textContent =
+        SpexHHarness_prices.SpexHHarness_prices5;
+    }
+  }
+  //endregion
+
+  //region H型綁帶
+  if (SpexRetractorHarnessckb.checked) {
+    if (shouldersizesel.value === "option2") {
+      shoulderharnessesprices.textContent =
+        SpexRetractorHarness_prices.SpexRetractorHarness_prices1;
+    }
+    if (shouldersizesel.value === "option3") {
+      shoulderharnessesprices.textContent =
+        SpexRetractorHarness_prices.SpexRetractorHarness_prices2;
+    }
+    if (shouldersizesel.value === "option4") {
+      shoulderharnessesprices.textContent =
+        SpexRetractorHarness_prices.SpexRetractorHarness_prices3;
+    }
+    if (shouldersizesel.value === "option5") {
+      shoulderharnessesprices.textContent =
+        SpexRetractorHarness_prices.SpexRetractorHarness_prices4;
     }
   }
   //endregion
 
   //region 夾克型綁帶
-  if(SpexVestHarnessckb.checked){
-    if(shouldersizesel.value === "option2"){
-        shoulderharnessesprices.textContent = 
-          SpexVestHarness_prices.SpexVestHarness_prices1;
+  if (SpexVestHarnessckb.checked) {
+    if (shouldersizesel.value === "option2") {
+      shoulderharnessesprices.textContent =
+        SpexVestHarness_prices.SpexVestHarness_prices1;
     }
-    if(shouldersizesel.value === "option3"){
-        shoulderharnessesprices.textContent = 
-          SpexVestHarness_prices.SpexVestHarness_prices2;
+    if (shouldersizesel.value === "option3") {
+      shoulderharnessesprices.textContent =
+        SpexVestHarness_prices.SpexVestHarness_prices2;
     }
-    if(shouldersizesel.value === "option4"){
-        shoulderharnessesprices.textContent = 
-          SpexVestHarness_prices.SpexVestHarness_prices3;
+    if (shouldersizesel.value === "option4") {
+      shoulderharnessesprices.textContent =
+        SpexVestHarness_prices.SpexVestHarness_prices3;
     }
-    if(shouldersizesel.value === "option5"){
-        shoulderharnessesprices.textContent = 
-          SpexVestHarness_prices.SpexVestHarness_prices4;
+    if (shouldersizesel.value === "option5") {
+      shoulderharnessesprices.textContent =
+        SpexVestHarness_prices.SpexVestHarness_prices4;
     }
   }
   //endregion
 
   //region X型綁帶
-  if(SpexCentrepointHarnessckb.checked){
-    if(shouldersizesel.value === "option2"){
-        shoulderharnessesprices.textContent = 
-          SpexCentrepointHarness_prices.SpexCentrepointHarness_prices1;
+  if (SpexCentrepointHarnessckb.checked) {
+    if (shouldersizesel.value === "option2") {
+      shoulderharnessesprices.textContent =
+        SpexCentrepointHarness_prices.SpexCentrepointHarness_prices1;
     }
-    if(shouldersizesel.value === "option3"){
-        shoulderharnessesprices.textContent = 
-          SpexCentrepointHarness_prices.SpexCentrepointHarness_prices2;
+    if (shouldersizesel.value === "option3") {
+      shoulderharnessesprices.textContent =
+        SpexCentrepointHarness_prices.SpexCentrepointHarness_prices2;
     }
-    if(shouldersizesel.value === "option4"){
-        shoulderharnessesprices.textContent = 
-          SpexCentrepointHarness_prices.SpexCentrepointHarness_prices3;
+    if (shouldersizesel.value === "option4") {
+      shoulderharnessesprices.textContent =
+        SpexCentrepointHarness_prices.SpexCentrepointHarness_prices3;
     }
-    if(shouldersizesel.value === "option5"){
-        shoulderharnessesprices.textContent = 
-          SpexCentrepointHarness_prices.SpexCentrepointHarness_prices4;
+    if (shouldersizesel.value === "option5") {
+      shoulderharnessesprices.textContent =
+        SpexCentrepointHarness_prices.SpexCentrepointHarness_prices4;
     }
-    if(shouldersizesel.value === "option6"){
-        shoulderharnessesprices.textContent = 
-          SpexCentrepointHarness_prices.SpexCentrepointHarness_prices5;
+    if (shouldersizesel.value === "option6") {
+      shoulderharnessesprices.textContent =
+        SpexCentrepointHarness_prices.SpexCentrepointHarness_prices5;
     }
   }
   //endregion
 
-  if(shoulderharnessesprices.textContent !== "" ||
+  if (
+    shoulderharnessesprices.textContent !== "" ||
     shoulderstrapguidesprices.textContent !== ""
-  ){
-    let supportPrice = getNumericValueFromText(
-      shoulderharnessesprices?.textContent || ""
-    );
-    let bracketPrice = getNumericValueFromText(
-      shoulderstrapguidesprices?.textContent || ""
-    );
-    let total = supportPrice + bracketPrice;
-    nowprice_SpexShoulderHarnesses.textContent = `${formatPrice(total)} 元`;
-  } 
-});
-//endregion
-
-//region 監聽Spex肩帶導流器
-// SpexShoulderStrapGuidesckb.addEventListener("change",()=>{
-// if(SpexShoulderStrapGuidesckb.checked){
-//       shoulderstrapguidesprices.textContent = 
-//       SpexShoulderStrapGuides_prices.SpexShoulderStrapGuides_prices1;
-//     }
-    
-//     if(shoulderharnessesprices.textContent !== "" ||
-//     shoulderstrapguidesprices.textContent !== ""
-//   ){
-//     let supportPrice = getNumericValueFromText(
-//       shoulderharnessesprices?.textContent || ""
-//     );
-//     let bracketPrice = getNumericValueFromText(
-//       shoulderstrapguidesprices?.textContent || ""
-//     );
-//     let total = supportPrice + bracketPrice;
-//     nowprice_SpexShoulderHarnesses.textContent = `${formatPrice(total)} 元`;
-//   }
-// });
-//endregion
-
-//region 監聽Adapta胸綁帶導流器
-// AdaptaShoulderStrapGuidesckb.addEventListener("change",()=>{
-// if(AdaptaShoulderStrapGuidesckb.checked){
-//       shoulderstrapguidesprices.textContent = 
-//       AdaptaShoulderStrapGuides_prices.AdaptaShoulderStrapGuides_prices1;
-//     }
-    
-//     if(shoulderharnessesprices.textContent !== "" ||
-//     shoulderstrapguidesprices.textContent !== ""
-//   ){
-//     let supportPrice = getNumericValueFromText(
-//       shoulderharnessesprices?.textContent || ""
-//     );
-//     let bracketPrice = getNumericValueFromText(
-//       shoulderstrapguidesprices?.textContent || ""
-//     );
-//     let total = supportPrice + bracketPrice;
-//     nowprice_SpexShoulderHarnesses.textContent = `${formatPrice(total)} 元`;
-//   }
-// });
-//endregion
-
-SpexShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
-  checkbox.addEventListener("change", () => {
-    if(SpexShoulderStrapGuidesckb.checked){
-      shoulderstrapguidesprices.textContent = 
-      SpexShoulderStrapGuides_prices.SpexShoulderStrapGuides_prices1;
-    }
-
-    if(AdaptaShoulderStrapGuidesckb.checked){
-      shoulderstrapguidesprices.textContent = 
-      AdaptaShoulderStrapGuides_prices.AdaptaShoulderStrapGuides_prices1;
-    }
-
-    if(!SpexShoulderStrapGuidesckb.checked && 
-      !AdaptaShoulderStrapGuidesckb.checked
-    ){
-      shoulderstrapguidesprices.textContent = "";
-    }
-    
-    if(shoulderharnessesprices.textContent !== "" ||
-    shoulderstrapguidesprices.textContent !== ""
-  ){
+  ) {
     let supportPrice = getNumericValueFromText(
       shoulderharnessesprices?.textContent || ""
     );
@@ -10442,5 +10369,56 @@ SpexShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
     let total = supportPrice + bracketPrice;
     nowprice_SpexShoulderHarnesses.textContent = `${formatPrice(total)} 元`;
   }
+});
+//endregion
+
+//region 計算綁帶跟導流器的總價格
+SpexShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    //計算Spex 肩帶導流器價錢
+    if (SpexShoulderStrapGuidesckb.checked) {
+      shoulderstrapguidesprices.textContent =
+        SpexShoulderStrapGuides_prices.SpexShoulderStrapGuides_prices1;
+    }
+
+    //計算Adapta 胸綁帶導流器價錢
+    if (AdaptaShoulderStrapGuidesckb.checked) {
+      shoulderstrapguidesprices.textContent =
+        AdaptaShoulderStrapGuides_prices.AdaptaShoulderStrapGuides_prices1;
+    }
+
+    //若是Spex 肩帶導流器及Adapta 胸綁帶導流器都沒有勾選時，導流器的價格div要清空
+    if (
+      !SpexShoulderStrapGuidesckb.checked &&
+      !AdaptaShoulderStrapGuidesckb.checked
+    ) {
+      shoulderstrapguidesprices.textContent = "";
+    }
+
+    //若是Spex 肩胸綁帶都沒有勾選時，肩胸綁帶的價格div要清空
+    let anyChecked = Array.from(ShoulderHarnessesckbs).some(
+      (cb) => cb.checked
+    );
+    if (!anyChecked) {
+      SpexShoulderHarnessesprices.textContent = "";
+    }
+
+    if (
+      shoulderharnessesprices.textContent !== "" ||
+      shoulderstrapguidesprices.textContent !== ""
+    ) {
+      let supportPrice = getNumericValueFromText(
+        shoulderharnessesprices?.textContent || ""
+      );
+      let bracketPrice = getNumericValueFromText(
+        shoulderstrapguidesprices?.textContent || ""
+      );
+      let total = supportPrice + bracketPrice;
+      nowprice_SpexShoulderHarnesses.textContent = `${formatPrice(total)} 元`;
+    }
   });
 });
+//endregion
+
+//endregion
+
