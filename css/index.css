@@ -3809,6 +3809,121 @@ body {
   color: red;
 }
 
+.Spex_upperlowerlimbstabilisers {
+  margin: 0 0 8px 0;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup {
+  width: 100%;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title {
+  width: 100%;
+  flex-direction: row;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 700;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlowerlimbstabilisers_title {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 2px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlowerlimbstabilisers_title .Spexupperlowerlimbstabilisers {
+  margin: 12px 16px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 2px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_size {
+  margin: 2px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_size label {
+  font-size: 18px;
+  margin: 0 4px 0 0;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_size .upperlimbstabiliserssize {
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  width: 11vh;
+  margin: 3px 0 0 2px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_type {
+  margin: 2px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_type label {
+  font-size: 18px;
+  margin: 0 4px 0 0;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_type .upperlimbstabiliserstype {
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  width: 11vh;
+  margin: 3px 0 0 2px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 700;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_title {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 2px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_title .Spexupperlowerlimbstabilisers {
+  margin: 12px 16px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_size {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin: 1px;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_size label {
+  font-size: 18px;
+  margin: 0 4px 0 0;
+}
+.Spex_upperlowerlimbstabilisers .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_size .lowerlimbstabiliserssize {
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  width: 11vh;
+  margin: 3px 0 0 2px;
+}
+
 .car-other {
   visibility: hidden;
 }

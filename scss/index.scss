@@ -4403,6 +4403,150 @@ body {
   }
 }
 
+//第二十一點擊列-Spex綁帶子系統-上下肢綁帶
+.Spex_upperlowerlimbstabilisers {
+  margin: 0 0 8px 0;
+
+  .chkcontent_21th {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .Spexupperlowerlimbstabilisersgroup {
+      visibility: hidden;
+      // width: calc(100% - 22px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: column;
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // margin: 0 0 0 7px;
+      height: 0;
+      width: 100%;
+
+      .upperlowerlimbstabilisersgroup {
+        width: 100%;
+
+        .upperlowerlimbstabilisersgroup_title {
+          width: 100%;
+          flex-direction: row;
+
+          .upperlimbstabilisersgroup {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            font-size: 20px;
+            font-weight: 700;
+
+            .upperlowerlimbstabilisers_title {
+              width: 45%;
+              display: flex;
+              align-items: center;
+              border: 1px solid #000000;
+              border-radius: 8px;
+              margin: 2px;
+
+              .Spexupperlowerlimbstabilisers {
+                margin: 12px 16px;
+              }
+            }
+
+            .upperlimbstabilisers_sizetype {
+              width: 55%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid #000000;
+              border-radius: 8px;
+              margin: 2px;
+
+              .upperlimbstabilisers_size {
+                margin: 2px;
+
+                label {
+                  font-size: 18px;
+                  margin: 0 4px 0 0;
+                }
+
+                .upperlimbstabiliserssize {
+                  font-size: 18px;
+                  border-radius: 8px;
+                  text-align: center;
+                  width: 11vh;
+                  margin: 3px 0 0 2px;
+                }
+              }
+
+              .upperlimbstabilisers_type {
+                margin: 2px;
+
+                label {
+                  font-size: 18px;
+                  margin: 0 4px 0 0;
+                }
+
+                .upperlimbstabiliserstype {
+                  font-size: 18px;
+                  border-radius: 8px;
+                  text-align: center;
+                  width: 11vh;
+                  margin: 3px 0 0 2px;
+                }
+              }
+            }
+          }
+
+          .lowerlimbstabilisersgroup {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            font-size: 20px;
+            font-weight: 700;
+
+            .lowerlimbstabilisers_title {
+              width: 45%;
+              display: flex;
+              align-items: center;
+              border: 1px solid #000000;
+              border-radius: 8px;
+              margin: 2px;
+
+              .Spexupperlowerlimbstabilisers {
+                margin: 12px 16px;
+              }
+            }
+
+            .lowerlimbstabilisers_size {
+              width: 55%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid #000000;
+              border-radius: 8px;
+              margin: 1px;
+
+              label {
+                font-size: 18px;
+                margin: 0 4px 0 0;
+              }
+
+              .lowerlimbstabiliserssize {
+                font-size: 18px;
+                border-radius: 8px;
+                text-align: center;
+                width: 11vh;
+                margin: 3px 0 0 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 //n.其他
 .car-other {
   visibility: hidden;
