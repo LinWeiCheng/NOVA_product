@@ -10216,8 +10216,6 @@ let SpexCentrepointHarnessData = {
 //endregion
 //endregion
 
-//endregion
-
 //region --- 宣告所有元素 ---
 let ShoulderHarnessescheckboxes = document.querySelectorAll(
   'input[name="car_SpexShoulderHarnesses"]'
@@ -10293,7 +10291,7 @@ document
           shoulderharnessessizesel,
           SpexShoulderHarnessesVestHarnessSizeOptions
         );
-       clearshoulderharnessestablevalue();
+        clearshoulderharnessestablevalue();
       }
       if (SpexCentrepointHarnesscheckbox.checked) {
         recodeShoulderHarnessesSelectOptions(
@@ -10318,13 +10316,14 @@ function updateShoulderHarnessesStatus() {
       SpexShoulderHarnessesCentrepointHarnessSizeOptions
     );
     clearshoulderharnessestablevalue();
-    SpexShoulderHarnessesprices.textContent = ""; 
-  }else if(!Spex_Shoulder_Strap_Guidescheckbox.checked &&
-      !Adapta_Shoulder_Strap_Guidescheckbox.checked
-    ){
-      let nowprice_SpexShoulderHarnesses = Price[19].nextElementSibling;
-      nowprice_SpexShoulderHarnesses.textContent = "0 元";
-    }
+    SpexShoulderHarnessesprices.textContent = "";
+  } else if (
+    !Spex_Shoulder_Strap_Guidescheckbox.checked &&
+    !Adapta_Shoulder_Strap_Guidescheckbox.checked
+  ) {
+    let nowprice_SpexShoulderHarnesses = Price[19].nextElementSibling;
+    nowprice_SpexShoulderHarnesses.textContent = "0 元";
+  }
 }
 
 // 監聽肩胸綁帶每個checkbox 的事件
@@ -10455,26 +10454,9 @@ document
         });
     });
   });
-
-// function updateShoulderStrapGuidesStatus() {
-//   let anyChecked = Array.from(ShoulderStrapGuidescheckboxes).some(
-//     (cb) => cb.checked
-//   );
-//   if (!anyChecked) {
-    
-//   }
-// }
-
-// // 監聽肩帶導流器每個checkbox 的事件
-// ShoulderStrapGuidescheckboxes.forEach((checkbox) => {
-//   checkbox.addEventListener("change", updateShoulderStrapGuidesStatus);
-// });
-
-// // 初始檢查一次狀態
-// updateShoulderStrapGuidesStatus();
 //endregion
 
-//全部肩胸綁帶checkbox都檢查
+//region 全部肩胸綁帶checkbox都檢查
 ShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
     let anyChecked = Array.from(ShoulderHarnessesAllcheckboxes).some(
@@ -10486,5 +10468,296 @@ ShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
     }
   });
 });
+//endregion
 
+//endregion
+
+/*----- 21.pex綁帶子系統-上下肢綁帶 -----*/
+//region
+
+/*---  Spex綁帶子系統-肩胸綁帶 - 圖片箭頭部分  ---*/
+//region
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_21 = event.target;
+  let carseat21 = tgimg_21.closest(".Spex_upperlowerlimbstabilisers"); // 找到最近的 Spex_upperlowerlimbstabilisers
+  let imgSpexupperlowerlimbstabilisers =
+    event.target.dataset.imgSpexupperlowerlimbstabilisers;
+
+  //確認我點擊到的位置是否是 Spex_upperlowerlimbstabilisers
+  if (
+    carseat21 &&
+    carseat21.className.trim() === "Spex_upperlowerlimbstabilisers"
+  ) {
+    let introdutionid = carseat21.querySelector(
+      ".Spexupperlowerlimbstabilisersgroup"
+    ); // 在 Spex_upperlowerlimbstabilisers 內部找 Spexupperlowerlimbstabilisers
+    let introdution = carseat21.querySelector(".subtitle"); // 在 Spex_upperlowerlimbstabilisers 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (
+        imgSpexupperlowerlimbstabilisers === "SpexupperlowerlimbstabilisersImg"
+      ) {
+        if (visibilityValue === "hidden") {
+          let Price_Spexupperlowerlimbstabilisers =
+            document.querySelectorAll(".pricing");
+
+          Price_Spexupperlowerlimbstabilisers.forEach(function (openIntro) {
+            let Spexupperlowerlimbstabilisers =
+              Price_Spexupperlowerlimbstabilisers[20];
+            //直接判斷是第幾個.Price
+            let nowprice_Spexupperlowerlimbstabilisers =
+              Price_Spexupperlowerlimbstabilisers[20].nextElementSibling;
+
+            if (
+              openIntro.getAttribute(
+                "data-price-Spexupperlowerlimbstabilisers"
+              ) === "Spexupperlowerlimbstabilisers" &&
+              nowprice_Spexupperlowerlimbstabilisers.getAttribute(
+                "data-nowprice-Spexupperlowerlimbstabilisers"
+              ) === "nowSpexupperlowerlimbstabilisers"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //Spexbacksupports勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 22px)";
+                introdutionid.style.display = "flex";
+                introdutionid.style.flexDirection = "column";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.margin = "0 0 0 7px";
+                introdutionid.style.height = "auto";
+                //建議售價標題顯示
+                openIntro.style.display = "block";
+
+                //建議售價金額顯示
+                nowprice_Spexupperlowerlimbstabilisers.style.display = "block";
+                nowprice_Spexupperlowerlimbstabilisers.style.display = "flex";
+                nowprice_Spexupperlowerlimbstabilisers.style.width = "95%";
+                nowprice_Spexupperlowerlimbstabilisers.style.height = "90%";
+                nowprice_Spexupperlowerlimbstabilisers.style.color = "#000000";
+                nowprice_Spexupperlowerlimbstabilisers.style.borderRadius =
+                  "8px";
+                nowprice_Spexupperlowerlimbstabilisers.style.padding = "1px";
+                nowprice_Spexupperlowerlimbstabilisers.style.margin =
+                  "3px 3px 3px 2px";
+                nowprice_Spexupperlowerlimbstabilisers.style.textAlign =
+                  "center";
+                nowprice_Spexupperlowerlimbstabilisers.style.fontSize = "16px";
+                nowprice_Spexupperlowerlimbstabilisers.style.fontWeight = "600";
+                nowprice_Spexupperlowerlimbstabilisers.style.alignItems =
+                  "center";
+                nowprice_Spexupperlowerlimbstabilisers.style.justifyContent =
+                  "center";
+
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_Spexupperlowerlimbstabilisers.style.fontSize =
+                    "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  Spexupperlowerlimbstabilisers.style.padding = "5px";
+                  Spexupperlowerlimbstabilisers.style.margin =
+                    "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_Spexupperlowerlimbstabilisers =
+            document.querySelectorAll(".pricing");
+
+          Price_Spexupperlowerlimbstabilisers.forEach(function (openIntro) {
+            let nowprice_Spexupperlowerlimbstabilisers =
+              Price_Spexupperlowerlimbstabilisers[20].nextElementSibling;
+
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.visibility = "hidden";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (
+              openIntro.getAttribute(
+                "data-price-Spexupperlowerlimbstabilisers"
+              ) === "Spexupperlowerlimbstabilisers"
+            ) {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_Spexupperlowerlimbstabilisers.style.display = "none";
+          });
+        }
+      }
+    }
+  }
+});
+// endregion
+
+/*---  Spex綁帶子系統-肩胸綁帶 - subtitle部分  ---*/
+//region
+let Spex_upperlowerlimbstabilisers = document.querySelector(
+  ".Spex_upperlowerlimbstabilisers"
+);
+Spex_upperlowerlimbstabilisers.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是 Spex_upperlowerlimbstabilisers
+  if (showinfo === "Spexupperlowerlimbstabilisers") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_Spex_upperlowerlimbstabilisers =
+      document.querySelectorAll(".pricing");
+    let Spex_upperlowerlimbstabilisersimg =
+      Spex_upperlowerlimbstabilisers.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = Spex_upperlowerlimbstabilisersimg.querySelector("img");
+
+    Price_Spex_upperlowerlimbstabilisers.forEach(function (openIntro) {
+      let Spexupperlowerlimbstabilisers =
+        Price_Spex_upperlowerlimbstabilisers[20];
+      //直接判斷是第幾個.Price
+      let nowprice_Spexupperlowerlimbstabilisers =
+        Price_Spex_upperlowerlimbstabilisers[20].nextElementSibling;
+
+      if (
+        openIntro.getAttribute("data-price-Spexupperlowerlimbstabilisers") ===
+          "Spexupperlowerlimbstabilisers" &&
+        nowprice_Spexupperlowerlimbstabilisers.getAttribute(
+          "data-nowprice-Spexupperlowerlimbstabilisers"
+        ) === "nowSpexupperlowerlimbstabilisers"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //carSpexbacksupports勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 2px 3px";
+          introdutionid.style.width = "calc(100% - 22px)";
+          introdutionid.style.display = "flex";
+          introdutionid.style.flexDirection = "column";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.margin = "0 0 0 7px";
+          introdutionid.style.height = "auto";
+
+          //建議售價標題顯示
+          openIntro.style.display = "block";
+
+          //建議售價金額顯示
+          nowprice_Spexupperlowerlimbstabilisers.style.display = "block";
+          nowprice_Spexupperlowerlimbstabilisers.style.display = "flex";
+          nowprice_Spexupperlowerlimbstabilisers.style.width = "95%";
+          nowprice_Spexupperlowerlimbstabilisers.style.height = "90%";
+          nowprice_Spexupperlowerlimbstabilisers.style.color = "#000000";
+          nowprice_Spexupperlowerlimbstabilisers.style.borderRadius = "8px";
+          nowprice_Spexupperlowerlimbstabilisers.style.padding = "1px";
+          nowprice_Spexupperlowerlimbstabilisers.style.margin =
+            "3px 3px 3px 2px";
+          nowprice_Spexupperlowerlimbstabilisers.style.textAlign = "center";
+          nowprice_Spexupperlowerlimbstabilisers.style.fontSize = "16px";
+          nowprice_Spexupperlowerlimbstabilisers.style.fontWeight = "600";
+          nowprice_Spexupperlowerlimbstabilisers.style.alignItems = "center";
+          nowprice_Spexupperlowerlimbstabilisers.style.justifyContent =
+            "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_Spexupperlowerlimbstabilisers.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            Spexupperlowerlimbstabilisers.style.padding = "5px";
+            Spexupperlowerlimbstabilisers.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_Spexupperlowerlimbstabilisers.style.display = "none";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
+
+//region --- 上下肢綁帶選項 ---
+
+//region --- 前臂綁帶 選項 ---
+//前臂綁帶尺寸選項
+let SpexUpperLimbStabilisersSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "SML" },
+  { value: "option3", text: "MED" },
+  { value: "option4", text: "LGE" },
+];
+
+//前臂綁帶寬度及長度選項
+let SpexUpperLimbStabilisersTypeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "一組四個" },
+  { value: "option3", text: "單個" },
+];
+//endregion
+
+//region --- 快速腳踝固定帶 選項 ---
+//快速腳踝固定帶尺寸選項
+let SpexLimbStabilisersSizeOptions = [
+  { value: "option1", text: "請選擇", selected: true },
+  { value: "option2", text: "SML" },
+  { value: "option3", text: "MED" },
+  { value: "option4", text: "LGE" },
+];
+//endregion
+
+//endregion
+
+//region --- 宣告所有元素 ---
+let SpexUpperLimbStabiliserscheckbox = document.getElementById(
+  "Upper_Limb_Stabilisers"
+);
+let SpexLowerLimbStabiliserscheckbox = document.getElementById(
+  "Lower_Limb_Stabilisers"
+);
+
+let upperlimbstabiliserssize = document.querySelector(
+  ".upperlimbstabiliserssize"
+);
+let upperlimbstabiliserstype = document.querySelector(
+  ".upperlimbstabiliserstype"
+);
+let lowerlimbstabiliserssize = document.querySelector(
+  ".lowerlimbstabiliserssize"
+);
+
+let Spexupperlimbstabiliserspricesprices = document.querySelector(
+  ".Spexupperlimbstabilisersprices"
+);
+let Spexlowerlimbstabilisersprices = document.querySelector(
+  ".SpexShoulderStrapGuidesprices"
+);
 //endregion
