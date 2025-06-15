@@ -26,10 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let spexHipBelts = [];
   let spexShoulderHarnesses = [];
   let spexShoulderStrapGuides = [];
+  let spexupperlowerlimbstabilisers = [];
 
-  //軀幹側支撐計數，確保不會重複計算
-  let LaterTrunkadd = 1;
-  let LaterTrunkaddConnect = 1;
+  let upperlowerlimbstabilisers = 1;
 
   //防呆，確認每個勾選的內容都是完整的
   function checkcheckboxselectionscorrect() {
@@ -363,6 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spexHipBelts.length = 0;
     spexShoulderHarnesses.length = 0;
     spexShoulderStrapGuides.length = 0;
+    spexupperlowerlimbstabilisers.length = 0;
   }
 
   // 更新大 Div 的內容
@@ -415,6 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkedCheckboxes.forEach((checkbox) => {
       let spexgroup = checkbox.dataset.spexgroup;
+      let spexchoose = checkbox.dataset.spexchoose;
       let item = checkbox.dataset.item;
       let notes = checkbox.dataset.note;
 
@@ -803,7 +804,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ".latertrunkaxialbiangularpadcountprices"
         );
 
-        if (SpexLTACb.checked && LaterTrunkadd === 1) {
+        if (SpexLTACb.checked && spexchoose === "SpexAxial") {
           // 組合字串： * 數量
           let spexString = ` * ${ltacountquantity}`;
           spexLaterTrunk.push(spexString);
@@ -825,7 +826,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           }
         }
-        if (SpexLTSCb.checked && LaterTrunkadd === 2) {
+        if (SpexLTSCb.checked && spexchoose === "SpexStandard") {
           if (ltssize1.checked) {
             let spexString = `/ 175mm / 60mm * ${ltscountquantity}`;
             spexLaterTrunk.push(spexString);
@@ -859,7 +860,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           }
         }
-        if (SpexLTOCb.checked && LaterTrunkadd === 3) {
+        if (SpexLTOCb.checked && spexchoose === "SpexOffset") {
           if (ltosize1.checked) {
             // 如果這個 item 已經存過了，就跳過
             let spexStrings = `/ 175mm / 60mm + 內縮20mm * ${ltocountquantity}`;
@@ -894,7 +895,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           }
         }
-        if (SpexLTABCb.checked && LaterTrunkadd === 4) {
+        if (SpexLTABCb.checked && spexchoose === "SpexAxialBiangular") {
           let spexString = ` * ${ltabcountquantity}`;
           spexLaterTrunk.push(spexString);
           let spexitem = spexLaterTrunk.join("");
@@ -914,7 +915,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           }
         }
-        LaterTrunkadd += 1;
       }
 
       //軀幹側支撐配件
@@ -941,7 +941,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Spex_LaterTrunk_Reinforce"
         );
 
-        if (SpexConnectLeft.checked && LaterTrunkaddConnect === 1) {
+        if (SpexConnectLeft.checked && spexchoose === "SpexConnectLeft") {
           selectedItems.push({
             item: spexLaterTrunk,
             price: formatPrice(
@@ -950,7 +950,10 @@ document.addEventListener("DOMContentLoaded", () => {
             note: notes,
           });
           spexLaterTrunk = [];
-        } else if (SpexConnectRight.checked && LaterTrunkaddConnect === 2) {
+        } else if (
+          SpexConnectRight.checked &&
+          spexchoose === "SpexConnectRight"
+        ) {
           selectedItems.push({
             item: spexLaterTrunk,
             price: formatPrice(
@@ -959,7 +962,7 @@ document.addEventListener("DOMContentLoaded", () => {
             note: notes,
           });
           spexLaterTrunk = [];
-        } else if (SpexExtend30.checked && LaterTrunkaddConnect === 3) {
+        } else if (SpexExtend30.checked && spexchoose === "SpexExtend30") {
           selectedItems.push({
             item: spexLaterTrunk,
             price: formatPrice(
@@ -968,7 +971,7 @@ document.addEventListener("DOMContentLoaded", () => {
             note: notes,
           });
           spexLaterTrunk = [];
-        } else if (SpexExtend115.checked && LaterTrunkaddConnect === 4) {
+        } else if (SpexExtend115.checked && spexchoose === "SpexExtend115") {
           selectedItems.push({
             item: spexLaterTrunk,
             price: formatPrice(
@@ -977,7 +980,7 @@ document.addEventListener("DOMContentLoaded", () => {
             note: notes,
           });
           spexLaterTrunk = [];
-        } else if (SpexReinforce.checked && LaterTrunkaddConnect === 5) {
+        } else if (SpexReinforce.checked && spexchoose === "SpexReinforce") {
           selectedItems.push({
             item: spexLaterTrunk,
             price: formatPrice(
@@ -987,7 +990,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
           spexLaterTrunk = [];
         }
-        LaterTrunkaddConnect += 1;
       }
 
       //頭靠
@@ -1037,12 +1039,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let HipBeltsprice = nowSpexHipBelts.textContent
           .replace("元", "")
           .trim();
-        let hipbeltsType= document.querySelector(".hipbeltstype");
+        let hipbeltsType = document.querySelector(".hipbeltstype");
         let hipbeltsSize = document.querySelector(".hipbeltssize");
-        let hipbeltstype =
-          hipbeltsType.options[hipbeltsType.selectedIndex];
-        let hipbeltssize =
-          hipbeltsSize.options[hipbeltsSize.selectedIndex];
+        let hipbeltstype = hipbeltsType.options[hipbeltsType.selectedIndex];
+        let hipbeltssize = hipbeltsSize.options[hipbeltsSize.selectedIndex];
 
         // 組合字串： / 尺寸 / 款式
         let spexString = ` / ${hipbeltssize.text} / ${hipbeltstype.text}`;
@@ -1061,14 +1061,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (item) {
           spexShoulderHarnesses.push(item);
         }
-        let shoulderharnessesSize= document.querySelector(".shoulderharnessessize");
+        let shoulderharnessesSize = document.querySelector(
+          ".shoulderharnessessize"
+        );
         let shoulderSize =
           shoulderharnessesSize.options[shoulderharnessesSize.selectedIndex];
         let ShoulderHarnessesPrices = getFormattedPrice(
           ".SpexShoulderHarnessesprices"
         );
 
-        // 組合字串： / 尺寸 
+        // 組合字串： / 尺寸
         let spexString = ` / ${shoulderSize.text}`;
         spexShoulderHarnesses.push(spexString);
         let spexitem = spexShoulderHarnesses.join("");
@@ -1088,7 +1090,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let ShoulderStrapGuidesPrices = getFormattedPrice(
           ".SpexShoulderStrapGuidesprices"
         );
-        
+
         selectedItems.push({
           item: spexShoulderStrapGuides,
           price: ShoulderStrapGuidesPrices,
@@ -1096,6 +1098,62 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      //上下肢綁帶
+      if (spexgroup === "Spexupperlowerlimbstabilisers") {
+        if (item) {
+          spexupperlowerlimbstabilisers.push(item);
+        }
+        let Upperckb = document.getElementById("Upper_Limb_Stabilisers");
+        let Lowerckb = document.getElementById("Lower_Limb_Stabilisers");
+
+        let upperssel = document.querySelector(".upperlimbstabiliserssize");
+        let uppertsel = document.querySelector(".upperlimbstabiliserstype");
+        let lowerssel = document.querySelector(".lowerlimbstabiliserssize");
+
+        let uppersizeOption = upperssel.options[upperssel.selectedIndex];
+        let uppertypeOption = uppertsel.options[uppertsel.selectedIndex];
+        let lowersizeOption = lowerssel.options[lowerssel.selectedIndex];
+
+        let UpperLimbStabilisersPrices = getFormattedPrice(
+          ".Spexupperlimbstabilisersprices"
+        );
+        let LowerLimbStabilisersPrices = getFormattedPrice(
+          ".Spexupperlimbstabilisersprices"
+        );
+
+        if (Upperckb.checked && upperlowerlimbstabilisers === 1) {
+          // 組合字串： / 尺寸 / 款式
+          let spexString = ` / ${uppersizeOption.text} / ${uppertypeOption.text}`;
+          spexupperlowerlimbstabilisers.push(spexString);
+          let spexitem = spexupperlowerlimbstabilisers.join("");
+
+          selectedItems.push({
+            item: spexitem,
+            price: UpperLimbStabilisersPrices,
+            note: notes,
+          });
+          spexupperlowerlimbstabilisers = [];
+        }
+
+        if (
+          (Lowerckb.checked && upperlowerlimbstabilisers === 2) ||
+          (!Upperckb.checked && upperlowerlimbstabilisers === 1)
+        ) {
+          // 組合字串： / 尺寸
+          let spexString = ` / ${lowersizeOption.text} / 一對`;
+          spexupperlowerlimbstabilisers.push(spexString);
+          let spexitem = spexupperlowerlimbstabilisers.join("");
+
+          selectedItems.push({
+            item: spexitem,
+            price: LowerLimbStabilisersPrices,
+            note: notes,
+          });
+          spexupperlowerlimbstabilisers = [];
+        }
+
+        upperlowerlimbstabilisers += 1;
+      }
 
       // 記錄這個 item 已經被加入
       if (item !== undefined && item !== null && item !== "") {
@@ -1104,7 +1162,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     LaterTrunkadd = 1;
-    LaterTrunkaddConnect = 1;
+    upperlowerlimbstabilisers = 1;
   }
 
   //  -------  創建Header 區塊  -------
