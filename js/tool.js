@@ -10396,9 +10396,7 @@ SpexShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
     }
 
     //若是Spex 肩胸綁帶都沒有勾選時，肩胸綁帶的價格div要清空
-    let anyChecked = Array.from(ShoulderHarnessesckbs).some(
-      (cb) => cb.checked
-    );
+    let anyChecked = Array.from(ShoulderHarnessesckbs).some((cb) => cb.checked);
     if (!anyChecked) {
       SpexShoulderHarnessesprices.textContent = "";
     }
@@ -10422,3 +10420,203 @@ SpexShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
 
 //endregion
 
+/*----- 21.Spex綁帶子系統-上下肢綁帶 -----*/
+//region
+
+//region --- 宣告所有元素 ---
+let nowprice_Spexupperlowerlimbstabilisers = Price[20].nextElementSibling;
+let UpperLimbStabilisersckb = document.getElementById("Upper_Limb_Stabilisers");
+let LowerLimbStabilisersckb = document.getElementById("Lower_Limb_Stabilisers");
+
+let uppersizesel = document.querySelector(".upperlimbstabiliserssize");
+let uppertypesel = document.querySelector(".upperlimbstabiliserstype");
+let lowersizesel = document.querySelector(".lowerlimbstabiliserssize");
+
+let upperprices = document.querySelector(".Spexupperlimbstabilisersprices");
+let lowerprices = document.querySelector(".Spexlowerlimbstabilisersprices");
+//endregion
+
+//region 前臂綁帶價錢
+let SpexUpperLimbStabiliserssetfour_prices = {
+  SpexUpperLimbStabiliserssetfour_prices1: 6000,
+  SpexUpperLimbStabiliserssetfour_prices2: 6000,
+  SpexUpperLimbStabiliserssetfour_prices3: 6200,
+};
+
+let SpexUpperLimbStabiliserssingle_prices = {
+  SpexUpperLimbStabiliserssingle_prices1: 2200,
+  SpexUpperLimbStabiliserssingle_prices2: 2200,
+  SpexUpperLimbStabiliserssingle_prices3: 2200,
+};
+//endregion
+
+//region 快速腳踝固定帶價錢
+let SpexLowerLimbStabilisers_prices = {
+  SpexLowerLimbStabilisers_prices1: 5100,
+  SpexLowerLimbStabilisers_prices2: 5100,
+  SpexLowerLimbStabilisers_prices3: 5300,
+};
+//endregion
+
+//region 監聽前臂綁帶下拉式選單尺寸的部分
+uppersizesel.addEventListener("change", () => {
+  if (UpperLimbStabilisersckb.checked) {
+    let uppersizeselOption = uppersizesel.options[uppersizesel.selectedIndex];
+    let uppertypeselOption = uppertypesel.options[uppertypesel.selectedIndex];
+
+    if (
+      uppersizeselOption.value === "option1" &&
+      uppertypeselOption.value === "option1"
+    ) {
+      upperprices.textContent = "";
+    }
+    if (uppersizeselOption.value === "option2") {
+      if (uppertypeselOption.value === "option2") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssetfour_prices.SpexUpperLimbStabiliserssetfour_prices1;
+      }
+      if (uppertypeselOption.value === "option3") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssingle_prices.SpexUpperLimbStabiliserssingle_prices1;
+      }
+    }
+    if (uppersizeselOption.value === "option3") {
+      if (uppertypeselOption.value === "option2") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssetfour_prices.SpexUpperLimbStabiliserssetfour_prices2;
+      }
+      if (uppertypeselOption.value === "option3") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssingle_prices.SpexUpperLimbStabiliserssingle_prices2;
+      }
+    }
+    if (uppersizeselOption.value === "option4") {
+      if (uppertypeselOption.value === "option2") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssetfour_prices.SpexUpperLimbStabiliserssetfour_prices3;
+      }
+      if (uppertypeselOption.value === "option3") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssingle_prices.SpexUpperLimbStabiliserssingle_prices3;
+      }
+    }
+  }
+});
+//endregion
+
+//region 監聽前臂綁帶下拉式選單款式的部分
+uppertypesel.addEventListener("change", () => {
+  if (UpperLimbStabilisersckb.checked) {
+    let uppersizeselOption = uppersizesel.options[uppersizesel.selectedIndex];
+    let uppertypeselOption = uppertypesel.options[uppertypesel.selectedIndex];
+
+    if (
+      uppertypeselOption.value === "option1" &&
+      uppersizeselOption.value === "option1"
+    ) {
+      upperprices.textContent = "";
+    }
+    if (uppertypeselOption.value === "option2") {
+      if (uppersizeselOption.value === "option2") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssetfour_prices.SpexUpperLimbStabiliserssetfour_prices1;
+      }
+      if (uppersizeselOption.value === "option3") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssetfour_prices.SpexUpperLimbStabiliserssetfour_prices2;
+      }
+      if (uppersizeselOption.value === "option4") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssetfour_prices.SpexUpperLimbStabiliserssetfour_prices3;
+      }
+    }
+    if (uppertypeselOption.value === "option3") {
+      if (uppersizeselOption.value === "option2") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssingle_prices.SpexUpperLimbStabiliserssingle_prices1;
+      }
+      if (uppersizeselOption.value === "option3") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssingle_prices.SpexUpperLimbStabiliserssingle_prices2;
+      }
+      if (uppersizeselOption.value === "option4") {
+        upperprices.textContent =
+          SpexUpperLimbStabiliserssingle_prices.SpexUpperLimbStabiliserssingle_prices3;
+      }
+    }
+    addupperlowerlimbstabilisersprice();
+  }
+});
+//endregion
+
+//region 監聽快速腳踝固定帶下拉式選單尺寸的部分
+lowersizesel.addEventListener("change", () => {
+  if (LowerLimbStabilisersckb.checked) {
+    let lowersizeselOption = lowersizesel.options[lowersizesel.selectedIndex];
+    if (lowersizeselOption.value === "option1") {
+      lowerprices.textContent = "";
+    }
+    if (lowersizeselOption.value === "option2") {
+      lowerprices.textContent =
+        SpexLowerLimbStabilisers_prices.SpexLowerLimbStabilisers_prices1;
+    }
+    if (lowersizeselOption.value === "option3") {
+      lowerprices.textContent =
+        SpexLowerLimbStabilisers_prices.SpexLowerLimbStabilisers_prices2;
+    }
+    if (lowersizeselOption.value === "option4") {
+      lowerprices.textContent =
+        SpexLowerLimbStabilisers_prices.SpexLowerLimbStabilisers_prices3;
+    }
+    addupperlowerlimbstabilisersprice();
+  }
+});
+//endregion
+
+//region 計算最後總價錢
+function addupperlowerlimbstabilisersprice() {
+  let uppersizeselOption = uppersizesel.options[uppersizesel.selectedIndex];
+  let uppertypeselOption = uppertypesel.options[uppertypesel.selectedIndex];
+  let lowersizeselOption = lowersizesel.options[lowersizesel.selectedIndex];
+
+  if (UpperLimbStabilisersckb.checked && !LowerLimbStabilisersckb.checked) {
+    if (
+      upperprices.textContent !== "" &&
+      uppersizeselOption.value !== "option1" &&
+      uppertypeselOption.value !== "option1"
+    ) {
+      nowprice_Spexupperlowerlimbstabilisers.textContent = `${formatPrice(
+        upperprices.textContent
+      )} 元`;
+    }
+  }
+  if (LowerLimbStabilisersckb.checked && !UpperLimbStabilisersckb.checked) {
+    if (
+      lowerprices.textContent !== "" &&
+      lowersizeselOption.value !== "option1"
+    ) {
+      nowprice_Spexupperlowerlimbstabilisers.textContent = `${formatPrice(
+        lowerprices.textContent
+      )} 元`;
+    }
+  }
+  if (UpperLimbStabilisersckb.checked && LowerLimbStabilisersckb.checked) {
+    if (
+      upperprices.textContent !== "" &&
+      lowerprices.textContent !== "" &&
+      uppersizeselOption.value !== "option1" &&
+      uppertypeselOption.value !== "option1" &&
+      lowersizeselOption.value !== "option1"
+    ) {
+      let upperPrice = getNumericValueFromText(upperprices?.textContent || "");
+      let lowerPrice = getNumericValueFromText(lowerprices?.textContent || "");
+      let total = upperPrice + lowerPrice;
+      nowprice_Spexupperlowerlimbstabilisers.textContent = `${formatPrice(
+        total
+      )} 元`;
+    }
+  }
+}
+//endregion
+
+//endregion
