@@ -10744,20 +10744,97 @@ let SpexLowerLimbStabiliserscheckbox = document.getElementById(
   "Lower_Limb_Stabilisers"
 );
 
-let upperlimbstabiliserssize = document.querySelector(
+let upperlimbstabiliserssizesel = document.querySelector(
   ".upperlimbstabiliserssize"
 );
-let upperlimbstabiliserstype = document.querySelector(
+let upperlimbstabiliserstypesel = document.querySelector(
   ".upperlimbstabiliserstype"
 );
-let lowerlimbstabiliserssize = document.querySelector(
+let lowerlimbstabiliserssizesel = document.querySelector(
   ".lowerlimbstabiliserssize"
 );
 
-let Spexupperlimbstabiliserspricesprices = document.querySelector(
+let Spexupperlimbstabilisersprices = document.querySelector(
   ".Spexupperlimbstabilisersprices"
 );
 let Spexlowerlimbstabilisersprices = document.querySelector(
-  ".SpexShoulderStrapGuidesprices"
+  ".Spexlowerlimbstabilisersprices"
 );
+
+upperlimbstabiliserssizesel.disabled = true;
+upperlimbstabiliserstypesel.disabled = true;
+lowerlimbstabiliserssizesel.disabled = true;
+//endregion
+
+//region --- 如果前臂綁帶沒有勾就不能做選擇 ---
+SpexUpperLimbStabiliserscheckbox.addEventListener("change", () => {
+  if (SpexUpperLimbStabiliserscheckbox.checked) {
+    upperlimbstabiliserssizesel.disabled = false;
+    upperlimbstabiliserstypesel.disabled = false;
+  } else {
+    upperlimbstabiliserssizesel.disabled = true;
+    upperlimbstabiliserstypesel.disabled = true;
+    Spexupperlimbstabilisersprices.textContent = "";
+
+    let nowprice_Spexupperlowerlimbstabilisers = Price[20].nextElementSibling;
+    if (SpexLowerLimbStabiliserscheckbox.checked) {
+      nowprice_Spexupperlowerlimbstabilisers.textContent = `${formatPrice(
+        Spexlowerlimbstabilisersprices.textContent
+      )} 元`;
+    } else {
+      nowprice_Spexupperlowerlimbstabilisers.textContent = "0 元";
+    }
+
+    recodeUpperLowerLimbStabilisersSelectOptions(
+      upperlimbstabiliserssizesel,
+      SpexUpperLimbStabilisersSizeOptions
+    );
+    recodeUpperLowerLimbStabilisersSelectOptions(
+      upperlimbstabiliserstypesel,
+      SpexUpperLimbStabilisersTypeOptions
+    );
+  }
+});
+//endregion
+
+//region --- 如果快速腳踝固定帶沒有勾就不能做選擇 ---
+SpexLowerLimbStabiliserscheckbox.addEventListener("change", () => {
+  if (SpexLowerLimbStabiliserscheckbox.checked) {
+    lowerlimbstabiliserssizesel.disabled = false;
+  } else {
+    lowerlimbstabiliserssizesel.disabled = true;
+
+    let nowprice_Spexupperlowerlimbstabilisers = Price[20].nextElementSibling;
+    if (SpexUpperLimbStabiliserscheckbox.checked) {
+      nowprice_Spexupperlowerlimbstabilisers.textContent = `${formatPrice(
+        Spexupperlimbstabilisersprices.textContent
+      )} 元`;
+    } else {
+      nowprice_Spexupperlowerlimbstabilisers.textContent = "0 元";
+    }
+
+    Spexlowerlimbstabilisersprices.textContent = "";
+    recodeUpperLowerLimbStabilisersSelectOptions(
+      lowerlimbstabiliserssizesel,
+      SpexLimbStabilisersSizeOptions
+    );
+  }
+});
+//endregion
+
+//region 清空下拉式選單的內容並重新填入options
+function recodeUpperLowerLimbStabilisersSelectOptions(selectElement, options) {
+  selectElement.innerHTML = ""; // 清空現有內容
+  options.forEach((option) => {
+    let opt = document.createElement("option");
+    opt.value = option.value;
+    opt.textContent = option.text;
+    if (option.selected) {
+      opt.selected = true;
+    }
+    selectElement.appendChild(opt);
+  });
+}
+//endregion
+
 //endregion
