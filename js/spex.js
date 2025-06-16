@@ -113,7 +113,7 @@ Spex_cushion.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
   let introdution = event.target;
-  //確認我點擊到的位置是否是carbasetripod
+  //確認我點擊到的位置是否是 Spexcushion
   if (showinfo === "Spexcushion") {
     let introdutionid = event.target.nextElementSibling;
     let Price_Spex_cushion = document.querySelectorAll(".pricing");
@@ -134,7 +134,7 @@ Spex_cushion.addEventListener("click", function (event) {
           //把data-collapse-status改成1
           introdution.setAttribute("data-collapse-status", "1");
 
-          //carSpexcushion勾選位置大小設置
+          //Spexcushion勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 1px 3px";
           introdutionid.style.width = "calc(100% - 22px)";
@@ -434,6 +434,7 @@ function ProductColorSelect(selectElement, options) {
   });
 }
 
+let SpexCushioncheckbox = document.querySelectorAll(".SpexCushion");
 let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
 
 CushioncolorSelect.addEventListener("change", function () {
@@ -540,6 +541,11 @@ document
       } else if (CushionheightSelect.disabled === false) {
         CushionheightSelect.disabled = true;
         CushioncolorSelect.disabled = true;
+      }
+
+      let anyChecked = Array.from(SpexCushioncheckbox).some((cb) => cb.checked);
+      if (!anyChecked) {
+        CushionwidthSelect.disabled = !anyChecked;
       }
     });
   });
@@ -1556,6 +1562,15 @@ document
         SeatbaseSizeSelect(SeatbasewidthSelect, SeatBaseQuickwidthOptions);
         SeatbaseSizeSelect(SeatbaseheightSelect, SeatBaseQuickheightOptions);
       } else if (SeatbaseheightSelect.disabled === false) {
+        SeatbaseheightSelect.disabled = true;
+      }
+      // 找到 checkbox
+      let SeatBaseFixedCkb = document.querySelector("#Spex_SeatBase_fixed");
+      let SeatBaseQuickCkb = document.querySelector("#Spex_SeatBase_quick");
+      if (!SeatBaseFixedCkb.checked && !SeatBaseQuickCkb.checked) {
+        //剛開啟時讓widthSelect無法選擇
+        SeatbasewidthSelect.disabled = true;
+        // 預設讓 heightSelect 無法選擇
         SeatbaseheightSelect.disabled = true;
       }
     });
