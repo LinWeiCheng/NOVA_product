@@ -2031,6 +2031,11 @@ body {
 
 
         .Spexcushion_title {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 10px;
+
           border: 1px solid #000000;
           border-radius: 8px;
           font-size: 20px;
@@ -2040,6 +2045,16 @@ body {
 
           .SpexCushion {
             margin: 12px 16px;
+          }
+
+          .cushion-label {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            p {
+              margin: 0;
+            }
           }
         }
       }
@@ -2254,6 +2269,16 @@ body {
           .SpexSeatBase {
             margin: 12px 16px;
           }
+
+          .seatbase-label {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            p {
+              margin: 0;
+            }
+          }
         }
       }
 
@@ -2349,6 +2374,16 @@ body {
 
           .SpexMedialThigh {
             margin: 12px 16px;
+          }
+
+          .medialthigh-label {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            p {
+              margin: 0;
+            }
           }
         }
       }
@@ -2453,7 +2488,7 @@ body {
       .Spexarmsuplatthighgroup_title {
         display: flex;
         flex-direction: column;
-        width: 45%;
+        width: 55%;
 
 
         .Spexarmsuplatthigh_title {
@@ -2471,6 +2506,16 @@ body {
           .SpexArmSupLatThigh {
             margin: 12px 16px;
           }
+
+          .armsuplatthigh-label {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            p {
+              margin: 0;
+            }
+          }
         }
       }
     }
@@ -2480,7 +2525,7 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 25%;
+      width: 20%;
       border: 1px solid #000000;
       border-radius: 8px;
       font-weight: 600;
@@ -2488,8 +2533,8 @@ body {
 
       .Spexarmsuplatthigh_bucklesel {
         padding: 3px;
-        margin: 3px;
-        font-size: 18px;
+        margin: 2px;
+        font-size: 16px;
         border-radius: 8px;
         width: 80%;
         text-align: center;
@@ -2498,8 +2543,8 @@ body {
 
       .Spexarmsuplatthigh_armsupsel {
         padding: 3px;
-        margin: 3px;
-        font-size: 18px;
+        margin: 2px;
+        font-size: 16px;
         border-radius: 8px;
         width: 80%;
         text-align: center;
@@ -2508,8 +2553,8 @@ body {
 
       .Spexarmsuplatthigh_latthighsel {
         padding: 3px;
-        margin: 3px;
-        font-size: 18px;
+        margin: 2px;
+        font-size: 16px;
         border-radius: 8px;
         width: 80%;
         text-align: center;
@@ -2528,17 +2573,17 @@ body {
       margin: 2px 1px 2px 2px;
 
       label {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       #Spexarmsuplatthighcount {
-        width: 30%;
+        width: 35%;
         font-size: 16px;
         text-align: center;
         border: 1px solid #ccc;
         border-radius: 5px;
         color: #333;
-        margin: 3px 0 0 6px;
+        margin: 3px 0 0 1px;
       }
 
       #Spexarmsuplatthighcount:focus {
@@ -2554,7 +2599,7 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      width: 25%;
+      width: 35%;
       border: 1px solid #000000;
       border-radius: 8px;
       font-weight: 600;
@@ -2570,7 +2615,7 @@ body {
           margin: 2px;
           font-size: 14px;
           border-radius: 8px;
-          width: 70%;
+          width: 60%;
           text-align: center;
           box-sizing: border-box;
         }
@@ -2607,9 +2652,9 @@ body {
         justify-content: center;
 
         .Spexarmsuplatthigh_lateralpadsel {
-          padding: 3px;
-          margin: 2px;
-          font-size: 16px;
+          padding: 1px;
+          margin: 0 0 0 2px;
+          font-size: 14px;
           border-radius: 8px;
           width: 70%;
           text-align: center;
@@ -2622,12 +2667,12 @@ body {
 
           label {
             width: 50%;
-            font-size: 14px;
+            font-size: 14x;
           }
 
           #lateralpadcount {
-            width: 40%;
-            font-size: 16px;
+            width: 35%;
+            font-size: 15px;
             text-align: center;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -2680,6 +2725,8 @@ body {
 
 
           .Spexbacksupports_title {
+            display: flex;
+            flex-direction: row;
             border: 1px solid #000000;
             border-radius: 8px;
             font-size: 20px;
@@ -2689,6 +2736,16 @@ body {
 
             .SpexBackSupports {
               margin: 12px 16px;
+            }
+
+            .backsupports-label {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+
+              p {
+                margin: 0;
+              }
             }
           }
         }
@@ -2939,6 +2996,8 @@ body {
           }
 
           .Spexhardware_org_title {
+            display: flex;
+            flex-direction: row;
             border: 1px solid #000000;
             border-radius: 8px;
             font-size: 20px;
@@ -2948,6 +3007,16 @@ body {
 
             .SpexHardware {
               margin: 12px 16px;
+            }
+
+            .hardware-label {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+
+              p {
+                margin: 0;
+              }
             }
           }
 

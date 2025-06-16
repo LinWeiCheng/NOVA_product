@@ -1847,6 +1847,10 @@ body {
   width: 45%;
 }
 .Spex_cushion .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
   border: 1px solid #000000;
   border-radius: 8px;
   font-size: 20px;
@@ -1856,6 +1860,14 @@ body {
 }
 .Spex_cushion .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title .SpexCushion {
   margin: 12px 16px;
+}
+.Spex_cushion .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title .cushion-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.Spex_cushion .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title .cushion-label p {
+  margin: 0;
 }
 .Spex_cushion .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size {
   display: flex;
@@ -2035,6 +2047,14 @@ body {
 .Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title .SpexSeatBase {
   margin: 12px 16px;
 }
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title .seatbase-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title .seatbase-label p {
+  margin: 0;
+}
 .Spex_seatbase .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size {
   display: flex;
   flex-direction: column;
@@ -2110,6 +2130,14 @@ body {
 }
 .Spex_medialthigh .chkcontent_13th .Spexmedialthighgroup .Spexmedialthighgroup_title .Spexmedialthigh_title .SpexMedialThigh {
   margin: 12px 16px;
+}
+.Spex_medialthigh .chkcontent_13th .Spexmedialthighgroup .Spexmedialthighgroup_title .Spexmedialthigh_title .medialthigh-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.Spex_medialthigh .chkcontent_13th .Spexmedialthighgroup .Spexmedialthighgroup_title .Spexmedialthigh_title .medialthigh-label p {
+  margin: 0;
 }
 .Spex_medialthigh .chkcontent_13th .Spexmedialthighgroup .Spexmedialthigh_sizegroup {
   display: flex;
@@ -2189,7 +2217,7 @@ body {
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 55%;
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title .Spexarmsuplatthigh_title {
   display: flex;
@@ -2205,12 +2233,20 @@ body {
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title .Spexarmsuplatthigh_title .SpexArmSupLatThigh {
   margin: 12px 16px;
 }
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title .Spexarmsuplatthigh_title .armsuplatthigh-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title .Spexarmsuplatthigh_title .armsuplatthigh-label p {
+  margin: 0;
+}
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_ArmSupLatThighgroup {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 25%;
+  width: 20%;
   border: 1px solid #000000;
   border-radius: 8px;
   font-weight: 600;
@@ -2218,8 +2254,8 @@ body {
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_ArmSupLatThighgroup .Spexarmsuplatthigh_bucklesel {
   padding: 3px;
-  margin: 3px;
-  font-size: 18px;
+  margin: 2px;
+  font-size: 16px;
   border-radius: 8px;
   width: 80%;
   text-align: center;
@@ -2227,8 +2263,8 @@ body {
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_ArmSupLatThighgroup .Spexarmsuplatthigh_armsupsel {
   padding: 3px;
-  margin: 3px;
-  font-size: 18px;
+  margin: 2px;
+  font-size: 16px;
   border-radius: 8px;
   width: 80%;
   text-align: center;
@@ -2236,8 +2272,8 @@ body {
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_ArmSupLatThighgroup .Spexarmsuplatthigh_latthighsel {
   padding: 3px;
-  margin: 3px;
-  font-size: 18px;
+  margin: 2px;
+  font-size: 16px;
   border-radius: 8px;
   width: 80%;
   text-align: center;
@@ -2254,16 +2290,16 @@ body {
   margin: 2px 1px 2px 2px;
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighcountgroup label {
-  font-size: 16px;
+  font-size: 14px;
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighcountgroup #Spexarmsuplatthighcount {
-  width: 30%;
+  width: 35%;
   font-size: 16px;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #333;
-  margin: 3px 0 0 6px;
+  margin: 3px 0 0 1px;
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthighcountgroup #Spexarmsuplatthighcount:focus {
   background-color: #fff;
@@ -2275,7 +2311,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 25%;
+  width: 35%;
   border: 1px solid #000000;
   border-radius: 8px;
   font-weight: 600;
@@ -2291,7 +2327,7 @@ body {
   margin: 2px;
   font-size: 14px;
   border-radius: 8px;
-  width: 70%;
+  width: 60%;
   text-align: center;
   box-sizing: border-box;
 }
@@ -2322,9 +2358,9 @@ body {
   justify-content: center;
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .Spexarmsuplatthigh_lateralpadsel {
-  padding: 3px;
-  margin: 2px;
-  font-size: 16px;
+  padding: 1px;
+  margin: 0 0 0 2px;
+  font-size: 14px;
   border-radius: 8px;
   width: 70%;
   text-align: center;
@@ -2336,11 +2372,11 @@ body {
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup label {
   width: 50%;
-  font-size: 14px;
+  font-size: 14x;
 }
 .Spex_armsup_latthigh .chkcontent_14th .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup #lateralpadcount {
-  width: 40%;
-  font-size: 16px;
+  width: 35%;
+  font-size: 15px;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -2375,6 +2411,8 @@ body {
   width: 45%;
 }
 .Spex_backsupports .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupportsgroup_title .Spexbacksupports_title {
+  display: flex;
+  flex-direction: row;
   border: 1px solid #000000;
   border-radius: 8px;
   font-size: 20px;
@@ -2384,6 +2422,14 @@ body {
 }
 .Spex_backsupports .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupportsgroup_title .Spexbacksupports_title .SpexBackSupports {
   margin: 12px 16px;
+}
+.Spex_backsupports .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupportsgroup_title .Spexbacksupports_title .backsupports-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.Spex_backsupports .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupportsgroup_title .Spexbacksupports_title .backsupports-label p {
+  margin: 0;
 }
 .Spex_backsupports .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size {
   display: flex;
@@ -2592,6 +2638,8 @@ body {
   padding: 2px 0 2px 15px;
 }
 .Spex_hardware .chkcontent_16th .Spexhardwaregroup .Spexhardwaregroup_title .Spexhardware_titlegroup .Spexhardware_org_title {
+  display: flex;
+  flex-direction: row;
   border: 1px solid #000000;
   border-radius: 8px;
   font-size: 20px;
@@ -2601,6 +2649,14 @@ body {
 }
 .Spex_hardware .chkcontent_16th .Spexhardwaregroup .Spexhardwaregroup_title .Spexhardware_titlegroup .Spexhardware_org_title .SpexHardware {
   margin: 12px 16px;
+}
+.Spex_hardware .chkcontent_16th .Spexhardwaregroup .Spexhardwaregroup_title .Spexhardware_titlegroup .Spexhardware_org_title .hardware-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.Spex_hardware .chkcontent_16th .Spexhardwaregroup .Spexhardwaregroup_title .Spexhardware_titlegroup .Spexhardware_org_title .hardware-label p {
+  margin: 0;
 }
 .Spex_hardware .chkcontent_16th .Spexhardwaregroup .Spexhardwaregroup_title .Spexhardware_titlegroup .Spexdropmount_group {
   display: flex;
