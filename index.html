@@ -1320,20 +1320,23 @@
                                         <div class="SpexlaterHardwaregroup">
                                             <div class="laterHardwaregroup">
                                                 <div class="LaterTrunk_Axialgroup">
-                                                    <div class="Spexlatertrunksupports_title">
-                                                        <input type="checkbox" class="SpexLaterTrunkSupports"
-                                                            id="Spex_LaterTrunk_Axial" name="car_SpexLaterTrunkSupports"
-                                                            data-item="Spex 多軸可外撥側支撐" data-price=""
-                                                            data-spexgroup="SpexLaterTrunkSupports"
-                                                            data-spexchoose="SpexAxial" data-note="">Spex
-                                                        多軸可外撥側支撐
-                                                    </div>
-                                                    <div class="latertrunkaxialcountgroup">
-                                                        <label for="latertrunkaxialcount">數量:</label>
-                                                        <input type="text" id="latertrunkaxialcount"
-                                                            name="latertrunkaxialcount" inputmode="numeric"
-                                                            pattern="[0-9]*" placeholder=""
-                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    <div class="latertrunkaxialgroup">
+                                                        <div class="Spexlatertrunksupports_title">
+                                                            <input type="checkbox" class="SpexLaterTrunkSupports"
+                                                                id="Spex_LaterTrunk_Axial"
+                                                                name="car_SpexLaterTrunkSupports"
+                                                                data-item="Spex 多軸可外撥側支撐" data-price=""
+                                                                data-spexgroup="SpexLaterTrunkSupports"
+                                                                data-spexchoose="SpexAxial" data-note="">Spex
+                                                            多軸可外撥側支撐
+                                                        </div>
+                                                        <div class="latertrunkaxialcountgroup">
+                                                            <label for="latertrunkaxialcount">數量:</label>
+                                                            <input type="text" id="latertrunkaxialcount"
+                                                                name="latertrunkaxialcount" inputmode="numeric"
+                                                                pattern="[0-9]*" placeholder=""
+                                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                        </div>
                                                     </div>
                                                     <div class="latertrunkaxialpadthinknessgroup">
                                                         <div class="latertrunkaxialpadgroup">
@@ -1383,36 +1386,43 @@
                                                             data-spexchoose="SpexStandard" data-note="">Spex
                                                         可外撥側支撐(Standard)
                                                     </div>
-                                                    <div class="latertrunk_standardsize">
-                                                        <table class="latertrunk_standardsizetable">
-                                                            <tr>
-                                                                <td><input type="checkbox" id="standardsize"
-                                                                        style="visibility:hidden;"> 長度</td>
-                                                                <td>深度調整</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><input type="checkbox" name="latertrunk_standard"
-                                                                        id="standardsize1"
-                                                                        data-spexgroup="SpexLaterTrunkSupportsst"> 175mm
-                                                                </td>
-                                                                <td>60mm</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><input type="checkbox" name="latertrunk_standard"
-                                                                        id="standardsize2"
-                                                                        data-spexgroup="SpexLaterTrunkSupportsst"> 205mm
-                                                                </td>
-                                                                <td>85mm</td>
-                                                            </tr>
-                                                        </table>
+                                                    <div class="latertrunk_standardsizecountgroup">
+                                                        <div class="latertrunk_standardsize">
+                                                            <table class="latertrunk_standardsizetable">
+                                                                <tr>
+                                                                    <td><input type="checkbox" id="standardsize"
+                                                                            style="visibility:hidden;"> 長度</td>
+                                                                    <td>深度調整</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox"
+                                                                            name="latertrunk_standard"
+                                                                            id="standardsize1"
+                                                                            data-spexgroup="SpexLaterTrunkSupportsst">
+                                                                        175mm
+                                                                    </td>
+                                                                    <td>60mm</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox"
+                                                                            name="latertrunk_standard"
+                                                                            id="standardsize2"
+                                                                            data-spexgroup="SpexLaterTrunkSupportsst">
+                                                                        205mm
+                                                                    </td>
+                                                                    <td>85mm</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="latertrunkstandardcountgroup">
+                                                            <label for="latertrunkstandardcount">數量:</label>
+                                                            <input type="text" id="latertrunkstandardcount"
+                                                                name="latertrunkstandardcount" inputmode="numeric"
+                                                                pattern="[0-9]*" placeholder=""
+                                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                        </div>
                                                     </div>
-                                                    <div class="latertrunkstandardcountgroup">
-                                                        <label for="latertrunkstandardcount">數量:</label>
-                                                        <input type="text" id="latertrunkstandardcount"
-                                                            name="latertrunkstandardcount" inputmode="numeric"
-                                                            pattern="[0-9]*" placeholder=""
-                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                                                    </div>
+
                                                     <div class="latertrunkstandardpadthinknessgroup">
                                                         <div class="latertrunkstandardpadgroup">
                                                             <label for="latertrunkstandardpadtype">擋墊:</label>
@@ -1461,38 +1471,40 @@
                                                             data-spexchoose="SpexOffset" data-note="">Spex
                                                         可外撥側支撐(Offset)
                                                     </div>
-                                                    <div class="latertrunk_offsetsize">
-                                                        <table class="latertrunk_offsetsizetable">
-                                                            <tr>
-                                                                <td><input type="checkbox" id="offsetsize"
-                                                                        style="visibility:hidden;"> 長度</td>
-                                                                <td>深度調整</td>
-                                                                <td>內縮</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><input type="checkbox" name="latertrunk_offset"
-                                                                        id="offsetsize1"
-                                                                        data-spexgroup="SpexLaterTrunkSupportsoff">175mm
-                                                                </td>
-                                                                <td>60mm</td>
-                                                                <td>20mm</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><input type="checkbox" name="latertrunk_offset"
-                                                                        id="offsetsize2"
-                                                                        data-spexgroup="SpexLaterTrunkSupportsoff">205mm
-                                                                </td>
-                                                                <td>85mm</td>
-                                                                <td>40mm</td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                    <div class="latertrunkoffsetcountgroup">
-                                                        <label for="latertrunkoffsetcount">數量:</label>
-                                                        <input type="text" id="latertrunkoffsetcount"
-                                                            name="latertrunkoffsetcount" inputmode="numeric"
-                                                            pattern="[0-9]*" placeholder=""
-                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    <div class="latertrunk_offsetsizecountgroup">
+                                                        <div class="latertrunk_offsetsize">
+                                                            <table class="latertrunk_offsetsizetable">
+                                                                <tr>
+                                                                    <td><input type="checkbox" id="offsetsize"
+                                                                            style="visibility:hidden;"> 長度</td>
+                                                                    <td>深度調整</td>
+                                                                    <td>內縮</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="latertrunk_offset"
+                                                                            id="offsetsize1"
+                                                                            data-spexgroup="SpexLaterTrunkSupportsoff">175mm
+                                                                    </td>
+                                                                    <td>60mm</td>
+                                                                    <td>20mm</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="latertrunk_offset"
+                                                                            id="offsetsize2"
+                                                                            data-spexgroup="SpexLaterTrunkSupportsoff">205mm
+                                                                    </td>
+                                                                    <td>85mm</td>
+                                                                    <td>40mm</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="latertrunkoffsetcountgroup">
+                                                            <label for="latertrunkoffsetcount">數量:</label>
+                                                            <input type="text" id="latertrunkoffsetcount"
+                                                                name="latertrunkoffsetcount" inputmode="numeric"
+                                                                pattern="[0-9]*" placeholder=""
+                                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                        </div>
                                                     </div>
                                                     <div class="latertrunkoffsetpadthinknessgroup">
                                                         <div class="latertrunkoffsetpadgroup">
@@ -1575,20 +1587,22 @@
                                             側支撐強化套件/補強片
                                         </div>
                                         <div class="LaterTrunk_AxialBiangulargroup">
-                                            <div class="Spexlatertrunksupports_title">
-                                                <input type="checkbox" class="SpexLaterTrunkSupports"
-                                                    id="Spex_LaterTrunk_AxialBiangular"
-                                                    name="car_SpexLaterTrunkSupports" data-item="Spex 雙曲面多軸可外撥側支撐扣具"
-                                                    data-price="" data-spexgroup="SpexLaterTrunkSupports"
-                                                    data-spexchoose="SpexAxialBiangular" data-note="">Spex 雙曲面多軸可外撥側支撐扣具
-                                            </div>
-                                            <div class="latertrunk_axialbiangularcountgroup">
-                                                <label for="latertrunk_axialbiangularcount">數量:</label>
-                                                <input type="text" id="latertrunk_axialbiangularcount"
-                                                    name="latertrunk_axialbiangularcount" inputmode="numeric"
-                                                    pattern="[0-9]*" placeholder=""
-                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-
+                                            <div class="Spexlatertrunksupports_titlecountgroup">
+                                                <div class="Spexlatertrunksupports_title">
+                                                    <input type="checkbox" class="SpexLaterTrunkSupports"
+                                                        id="Spex_LaterTrunk_AxialBiangular"
+                                                        name="car_SpexLaterTrunkSupports" data-item="Spex 雙曲面多軸可外撥側支撐扣具"
+                                                        data-price="" data-spexgroup="SpexLaterTrunkSupports"
+                                                        data-spexchoose="SpexAxialBiangular" data-note="">Spex
+                                                    雙曲面多軸可外撥側支撐扣具
+                                                </div>
+                                                <div class="latertrunk_axialbiangularcountgroup">
+                                                    <label for="latertrunk_axialbiangularcount">數量:</label>
+                                                    <input type="text" id="latertrunk_axialbiangularcount"
+                                                        name="latertrunk_axialbiangularcount" inputmode="numeric"
+                                                        pattern="[0-9]*" placeholder=""
+                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                </div>
                                             </div>
                                             <div class="latertrunk_axialbiangulartypethicknessgroup">
                                                 <div class="latertrunk_axialbiangularthicknessgroup">
@@ -2020,7 +2034,8 @@
                                 </div>
                             </div>
                             <div class="pricecontent">
-                                <div class="pricing" data-price-Spexshoulderharnesses="Spexshoulderharnesses">建議售價</div>
+                                <div class="pricing" data-price-Spexshoulderharnesses="Spexshoulderharnesses">建議售價
+                                </div>
                                 <div class="nowprice" data-nowprice-Spexshoulderharnesses="nowSpexshoulderharnesses"
                                     data-addPrice="add">0
                                     <div class="dollar">元</div>
@@ -2098,7 +2113,8 @@
                             </div>
                             <div class="pricecontent">
                                 <div class="pricing"
-                                    data-price-Spexupperlowerlimbstabilisers="Spexupperlowerlimbstabilisers">建議售價</div>
+                                    data-price-Spexupperlowerlimbstabilisers="Spexupperlowerlimbstabilisers">建議售價
+                                </div>
                                 <div class="nowprice"
                                     data-nowprice-Spexupperlowerlimbstabilisers="nowSpexupperlowerlimbstabilisers"
                                     data-addPrice="add">0
