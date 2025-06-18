@@ -2526,6 +2526,77 @@ document
 //endregion
 //endregion
 
+//region  測試
+function moveCountInputIfNeeded() {
+  let isMobile = window.matchMedia("(max-width: 650px)").matches;
+
+  let countGroup = document.querySelector(".Spexarmsuplatthighcountgroup");
+  let countLabel = document.querySelector(
+    'label[for="Spexarmsuplatthighcount"]'
+  );
+  let countInput = document.querySelector("#Spexarmsuplatthighcount");
+  let targetGroup = document.querySelector(
+    ".Spexarmsuplatthigh_ArmSupLatThighgroup"
+  );
+
+  // 用於記錄是否已經移動過，避免重複操作
+  if (isMobile) {
+    if (countGroup && countLabel && countInput && targetGroup) {
+      // 移除原本的 group，保留內部元素
+      countGroup.remove();
+      // 移動進新的容器中
+      let wrapper = document.createElement("div");
+      wrapper.className = "Spexarmsuplatthighcountgroup";
+      wrapper.style.display = "flex";
+      wrapper.style.flexDirection = "row";
+      wrapper.style.width = "100%";
+      wrapper.style.border = "none";
+      wrapper.appendChild(countLabel);
+      countLabel.style.fontSize = "12px";
+      countLabel.style.width = "50%";
+      wrapper.appendChild(countInput);
+      countInput.style.fontSize = "14px";
+      countInput.style.width = "40%";
+      targetGroup.appendChild(wrapper);
+    }
+  } else {
+    // 螢幕變大時還原
+    let restoredParent = document.querySelector(
+      ".Spexarmsuplatthigh_ArmSupLatThighgroup"
+    );
+    let existingGroup = document.querySelector(".Spexarmsuplatthighcountgroup");
+
+    if (restoredParent && existingGroup) {
+      let countLabel = existingGroup.querySelector(
+        'label[for="Spexarmsuplatthighcount"]'
+      );
+      let countInput = existingGroup.querySelector("#Spexarmsuplatthighcount");
+      countInput.style.width = "35%";
+      countInput.style.fontSize = "16px";
+      countLabel.style.width = "40%";
+      // 移除在內部的舊 group
+      existingGroup.remove();
+
+      // 建立一個新的 div 放回原本位置
+      let newGroup = document.createElement("div");
+      newGroup.className = "Spexarmsuplatthighcountgroup";
+      if (countLabel && countInput) {
+        newGroup.appendChild(countLabel);
+        newGroup.appendChild(countInput);
+        // 將它插入在 .Spexarmsuplatthigh_ArmSupLatThighgroup 後面
+        restoredParent.insertAdjacentElement("afterend", newGroup);
+      }
+    }
+  }
+}
+
+// 初次執行
+moveCountInputIfNeeded();
+
+// 監聽螢幕尺寸變化
+window.addEventListener("resize", moveCountInputIfNeeded);
+//endregion
+
 //endregion
 
 /*-----  15.Spex軀幹子系統-背靠點擊列 -----*/
