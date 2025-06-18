@@ -94,10 +94,10 @@
     width: 100%;
   }
   .subtitle {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   .subtitle .subtitle_2 {
-    font-size: 9px !important;
+    font-size: 10px !important;
   }
   .checklist {
     width: 100%;
@@ -871,6 +871,9 @@
     font-size: 12px;
     width: 80%;
   }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup {
+    width: 45%;
+  }
   .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize {
     display: flex;
     flex-direction: column;
@@ -1042,44 +1045,554 @@
     font-size: 11px;
   }
   /*----- 17.Spex軀幹子系統-軀幹側支撐 -----*/
-  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .Spexlatertrunksupports_title {
-    width: 25%;
-    font-size: 12px;
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgb(244, 120, 120);
+    border-radius: 8px;
+    padding: 2px;
   }
-  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .Spexlatertrunksupports_title .SpexLaterTrunkSupports {
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialgroup {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialgroup .Spexlatertrunksupports_title {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    margin: 0px 1px 0px 0px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialgroup .Spexlatertrunksupports_title .SpexLaterTrunkSupports {
     margin: 7px 6px 8px 7px;
     transform: scale(1.5);
   }
-  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialcountgroup {
-    width: 18%;
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialgroup .latertrunkaxialcountgroup {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
   }
-  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialcountgroup label {
-    font-size: 12px;
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialgroup .latertrunkaxialcountgroup label {
+    font-size: 14px;
+    margin: 0 4px 0 8px;
   }
-  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialcountgroup #latertrunkaxialcount {
-    width: 40%;
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialgroup .latertrunkaxialcountgroup #latertrunkaxialcount {
+    width: 20%;
     font-size: 14px;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup {
-    width: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialpadgroup label {
-    font-size: 12px;
+    font-size: 16px;
     margin: 0 3px 0 0;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialpadgroup .latertrunkaxialpadtype {
-    font-size: 12px;
-    width: 6.5vh;
+    font-size: 16px;
+    width: 11vh;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialclothpadgroup label {
-    font-size: 12px;
+    font-size: 16px;
     margin: 0 3px 0 0;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialclothpadgroup .latertrunkaxialclothpadtype {
-    font-size: 12px;
-    width: 6.5vh;
+    font-size: 16px;
+    width: 11vh;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadsizegroup {
+    width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgb(244, 120, 120);
+    border-radius: 8px;
+    padding: 2px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .Spexlatertrunksupports_title {
+    width: 100%;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .Spexlatertrunksupports_title .SpexLaterTrunkSupports {
+    margin: 7px 6px 8px 7px;
+    transform: scale(1.5);
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunk_standardsizecountgroup {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunk_standardsizecountgroup .latertrunk_standardsize {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunk_standardsizecountgroup .latertrunkstandardcountgroup {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardpadgroup label {
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardpadgroup .latertrunkstandardpadtype {
+    font-size: 16px;
+    width: 11vh;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardclothpadgroup label {
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardclothpadgroup .latertrunkstandardclothpadtype {
+    font-size: 16px;
+    width: 11vh;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadsizegroup {
+    width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgb(244, 120, 120);
+    border-radius: 8px;
+    margin: 2px;
+    padding: 2px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .Spexlatertrunksupports_title {
+    width: 100%;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .Spexlatertrunksupports_title .SpexLaterTrunkSupports {
+    margin: 7px 6px 8px 7px;
+    transform: scale(1.5);
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunk_offsetsizecountgroup {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunk_offsetsizecountgroup .latertrunk_offsetsize {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunk_offsetsizecountgroup .latertrunkoffsetcountgroup {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunk_offsetsizecountgroup .latertrunkoffsetcountgroup label {
+    font-size: 14px;
+    margin: 0 4px 0 8px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadsizegroup {
+    width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .Spexlatertrunksupports_accessorytitle {
+    width: 100%;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .Spexlatertrunksupports_accessorytitle .SpexLaterTrunkSupportsAccessories {
+    margin: 7px 6px 8px 7px;
+    transform: scale(1.5);
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgb(244, 120, 120);
+    border-radius: 8px;
+    margin: 2px;
+    padding: 2px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .Spexlatertrunksupports_titlecountgroup {
+    width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .Spexlatertrunksupports_titlecountgroup .Spexlatertrunksupports_title {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .Spexlatertrunksupports_titlecountgroup .Spexlatertrunksupports_title .SpexLaterTrunkSupports {
+    margin: 7px 6px 8px 7px;
+    transform: scale(1.5);
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .Spexlatertrunksupports_titlecountgroup .latertrunk_axialbiangularcountgroup {
+    width: 30%;
+    display: flex;
+    vertical-align: top;
+    font-size: 16px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .Spexlatertrunksupports_titlecountgroup .latertrunk_axialbiangularcountgroup label {
+    font-size: 14px;
+    margin: 0 4px 0 8px;
+    width: 45%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .Spexlatertrunksupports_titlecountgroup .latertrunk_axialbiangularcountgroup #latertrunk_axialbiangularcount {
+    font-size: 14px;
+    width: 35%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialbiangularthicknessgroup {
+    width: 50%;
+    font-size: 14px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialbiangularthicknessgroup label {
+    font-size: 14px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialbiangularthicknessgroup .latertrunkaxialbiangular {
+    width: 8vh;
+    font-size: 14px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialpadthinknessgroup {
+    width: 50%;
+    font-size: 14px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialpadthinknessgroup label {
+    font-size: 14px;
+    margin: 0 2px 0 0;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangulartypethicknessgroup .latertrunk_axialpadthinknessgroup .latertrunk_axialpadtype {
+    font-size: 14px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularsizegroup {
+    width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularsizegroup .latertrunk_axialbiangular_Width {
+    width: 35%;
+    font-size: 14px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularsizegroup div {
+    font-size: 14px;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularsizegroup .latertrunk_axialbiangular_Heigh {
+    font-size: 14px;
+    width: 35%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularsizegroup label {
+    font-size: 14px;
+    margin: 0px 0px 0 6px;
+    width: 15%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .latertrunk_axialbiangularsizegroup #latertrunkaxialbiangularpadcount {
+    margin: 2px 4px 0 0;
   }
   .Spex_latertrunksupports .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 11px;
+  }
+  /*----- 18.Spex頭靠子系統-頭靠 -----*/
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup {
+    width: 100%;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title {
+    width: 70%;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_circlepadgroup .Spexcirclepadtype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_circlepadgroup .Spexcirclepadtype_title .SpexHeadSupports {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_comfortpadgroup .Spexcomfortpadtype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_comfortpadgroup .Spexcomfortpadtype_title .SpexHeadSupports {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_contourpadgroup .Spexcontourpadtype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_contourpadgroup .Spexcontourpadtype_title .SpexHeadSupports {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpadtype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_standardlateralpadgroup .Spexstandardlateralpadtype_title .SpexHeadSupports {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpadtype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_extendedlateralpadgroup .Spexextendedlateralpadtype_title .SpexHeadSupports {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpadtype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportsgroup_title .head_adjustablelateralpadgroup .Spexadjustablelateralpadtype_title .SpexHeadSupports {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup {
+    width: 30%;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup label {
+    font-size: 14px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup .headsupportspad {
+    font-size: 14px;
+    width: 90%;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupportspad_sizetable {
+    display: none;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup {
+    width: 100%;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title .SpexHeadSupportsBracket {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title .SpexHeadSupportsBracket {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title .SpexHeadSupportsBracket {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title {
+    font-size: 14px;
+    padding: 2px;
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .Spexheadsupportsbracketgroup .Spexheadsupportsbrackettype_title .SpexHeadSupportsBracket {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .div_notice {
+    font-size: 12px;
+  }
+  .Spex_headsupports .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 11px;
+  }
+  /*----- 19.Spex綁帶子系統-骨盆帶 -----*/
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup {
+    width: 100%;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title {
+    width: 70%;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title .hipbelts_title {
+    font-size: 14px;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title .hipbelts_title .SpexHipBelts {
+    margin: 4px 11px 5px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup {
+    width: 30%;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_type label {
+    font-size: 16px;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_type .hipbeltstype {
+    font-size: 16px;
+    width: 100%;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_size label {
+    font-size: 16px;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbelts_typesizegroup .hipbelts_size .hipbeltssize {
+    font-size: 16px;
+    width: 100%;
+  }
+  .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsrefersizegroup {
+    display: none;
+  }
+  .Spex_hipbelts .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 11px;
+  }
+  /*----- 20.Spex綁帶子系統-肩胸綁帶 -----*/
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup {
+    width: 100%;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessesgroup_title {
+    width: 70%;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessesgroup_title .shoulderharnesses_title {
+    font-size: 14px;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessesgroup_title .shoulderharnesses_title .SpexShoulderHarnesses {
+    margin: 9px 11px 6px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup {
+    width: 30%;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup .shoulderharnesses_size {
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup .shoulderharnesses_size label {
+    font-size: 14px;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnesses_sizegroup .shoulderharnesses_size .shoulderharnessessize {
+    font-size: 14px;
+    width: 90%;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderharnessesgroup .shoulderharnessessizerefersizegroup {
+    display: none;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup {
+    width: 100%;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup .shoulderstrap_title {
+    font-size: 14px;
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup .shoulderstrap_title .SpexShoulderHarnesses {
+    margin: 9px 11px 6px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_shoulderharnesses .target .chkcontent_20th .Spexshoulderharnessesgroup .shoulderstrap_titlegroup .shoulderstrap_title p {
+    font-size: 8px;
+    margin: 0 0 0 5px;
+  }
+  .Spex_shoulderharnesses .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 11px;
+  }
+  /*----- 21.Spex綁帶子系統-上下肢綁帶 -----*/
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup {
+    width: 100%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlowerlimbstabilisers_title {
+    font-size: 14px;
+    width: 65%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlowerlimbstabilisers_title .Spexupperlowerlimbstabilisers {
+    margin: 9px 11px 6px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype {
+    padding: 2px;
+    width: 35%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_size label {
+    font-size: 14px;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_size .upperlimbstabiliserssize {
+    font-size: 14px;
+    width: 95%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_type label {
+    font-size: 14px;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .upperlimbstabilisersgroup .upperlimbstabilisers_sizetype .upperlimbstabilisers_type .upperlimbstabiliserstype {
+    font-size: 14px;
+    width: 95%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup {
+    width: 100%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_title {
+    font-size: 14px;
+    width: 65%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_title .Spexupperlowerlimbstabilisers {
+    margin: 9px 11px 6px 11px;
+    transform: scale(1.5);
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_size {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_size label {
+    font-size: 14px;
+  }
+  .Spex_upperlowerlimbstabilisers .target .chkcontent_21th .Spexupperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup .upperlowerlimbstabilisersgroup_title .lowerlimbstabilisersgroup .lowerlimbstabilisers_size .lowerlimbstabiliserssize {
+    font-size: 14px;
+    width: 80%;
+  }
+  .Spex_upperlowerlimbstabilisers .target .pricecontent .pricing {
     margin: 3px 0px 3px 1px;
     font-size: 11px;
   }
