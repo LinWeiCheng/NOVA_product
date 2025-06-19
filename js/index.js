@@ -1224,6 +1224,8 @@ carbacksupports.addEventListener("click", function (event) {
 /*-----  7.軀幹子系統-軀幹側支撐點擊列  -----*/
 //region
 /*--- 軀幹子系統-軀幹側支撐點擊列-圖片箭頭部分   ---*/
+
+//region
 document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_7 = event.target;
@@ -1334,8 +1336,10 @@ document.addEventListener("click", function (event) {
     }
   }
 });
+//endregion
 
 /*---  軀幹子系統-軀幹側支撐點擊列-subtitle部分  ---*/
+//region
 let carlatertrunksupports = document.querySelector(".car-latertrunk_supports");
 carlatertrunksupports.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
@@ -1429,6 +1433,29 @@ carlatertrunksupports.addEventListener("click", function (event) {
     });
   }
 });
+//endregion
+
+//region
+
+//endregion
+let NovalatercountLRs1 = document.getElementById(
+  "NovalateralhardwarecountLRs1"
+);
+let NovalatercountLRs2 = document.getElementById(
+  "NovalateralhardwarecountLRs2"
+);
+let NovalatercountMLRs1 = document.getElementById(
+  "NovalateralhardwarecountMLRs1"
+);
+let NovalatercountMLRs2 = document.getElementById(
+  "NovalateralhardwarecountMLRs2"
+);
+
+NovalatercountLRs1.disabled = true;
+NovalatercountLRs2.disabled = true;
+NovalatercountMLRs1.disabled = true;
+NovalatercountMLRs2.disabled = true;
+
 //endregion
 
 /*----- 8.底座子系統-座板  -----*/
