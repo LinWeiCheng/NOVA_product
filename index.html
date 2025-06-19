@@ -432,31 +432,71 @@
                                         </div>
                                         <div class="side_sizeSMgroup">
                                             <div class="side_sizeSgroup">
-                                                <div class="side_SLR1">左</div>
-                                                <div class="side_SLR2">右</div>
+                                                <div class="side_sizeLR1group">
+                                                    <div class="side_SLR1">左</div>
+                                                    <div class="NovalateralhardwarecountLR1">
+                                                        <label for="NovalateralhardwarecountLR1s">數量:</label>
+                                                        <input type="text" id="NovalateralhardwarecountLRs1"
+                                                            name="NovalateralhardwarecountLRs1" inputmode="numeric"
+                                                            pattern="[0-9]*" placeholder=""
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    </div>
+                                                </div>
+                                                <div class="side_sizeLR2group">
+                                                    <div class="side_SLR2">右</div>
+                                                    <div class="NovalateralhardwarecountLR2">
+                                                        <label for="NovalateralhardwarecountLR2s">數量:</label>
+                                                        <input type="text" id="NovalateralhardwarecountLRs2"
+                                                            name="NovalateralhardwarecountLRs2" inputmode="numeric"
+                                                            pattern="[0-9]*" placeholder=""
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="side_sizeLgroup">
-                                                <div class="side_MLR1">左</div>
-                                                <div class="side_MLR2">右</div>
+                                            <div class="side_sizeMgroup">
+                                                <div class="side_sizeMLR1group">
+                                                    <div class="side_MLR1">左</div>
+                                                    <div class="NovalateralhardwarecountMLR1">
+                                                        <label for="NovalateralhardwarecountMLR1s">數量:</label>
+                                                        <input type="text" id="NovalateralhardwarecountMLRs1"
+                                                            name="NovalateralhardwarecountMLRs1" inputmode="numeric"
+                                                            pattern="[0-9]*" placeholder=""
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    </div>
+                                                </div>
+                                                <div class="side_sizeMLR2group">
+                                                    <div class="side_MLR2">右</div>
+                                                    <div class="NovalateralhardwarecountMLR2">
+                                                        <label for="NovalateralhardwarecountMLR2s">數量:</label>
+                                                        <input type="text" id="NovalateralhardwarecountMLRs2"
+                                                            name="NovalateralhardwarecountMLRs2" inputmode="numeric"
+                                                            pattern="[0-9]*" placeholder=""
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="latertrunk_checkboxes">
                                             <input type="checkbox" class="content-checkbox"
                                                 id="checkbox_latertrunksupportSL_Nova" name="car_latertrunk_support"
-                                                data-item="Nova/多角度快開式側支撐-S擋墊(10*15)-左/右" data-price="8,500"
-                                                data-note="左/右各一">
+                                                data-item="Nova/多角度快開式側支撐-S擋墊(10*15)-左" data-price="" data-note=""
+                                                data-novagroup="Novalatertrunksupport"
+                                                data-novachoose="NovalatertrunksupportSL">
                                             <input type="checkbox" class="content-checkbox"
                                                 id="checkbox_latertrunksupportSR_Nova" name="car_latertrunk_support"
-                                                data-item="Nova/多角度快開式側支撐-S擋墊(10*15)-左/右" data-price="8,500"
-                                                data-note="左/右各一">
+                                                data-item="Nova/多角度快開式側支撐-S擋墊(10*15)-右" data-price="" data-note=""
+                                                data-novagroup="Novalatertrunksupport"
+                                                data-novachoose="NovalatertrunksupportSR">
                                             <input type="checkbox" class="content-checkbox"
                                                 id="checkbox_latertrunksupportML_Nova" name="car_latertrunk_support"
-                                                data-item="Nova/多角度快開式側支撐-M擋墊(15*15)-左/右" data-price="9,000"
-                                                data-note="左/右各一">
+                                                data-item="Nova/多角度快開式側支撐-M擋墊(15*15)-左" data-price="" data-note=""
+                                                data-novagroup="Novalatertrunksupport"
+                                                data-novachoose="NovalatertrunksupportML">
                                             <input type="checkbox" class="content-checkbox"
                                                 id="checkbox_latertrunksupportMR_Nova" name="car_latertrunk_support"
-                                                data-item="Nova/多角度快開式側支撐-M擋墊(15*15)-左/右" data-price="9,000"
-                                                data-note="左/右各一">
+                                                data-item="Nova/多角度快開式側支撐-M擋墊(15*15)-右" data-price="" data-note=""
+                                                data-novagroup="Novalatertrunksupport"
+                                                data-novachoose="NovalatertrunksupportMR">
                                         </div>
                                     </div>
                                 </div>
@@ -466,6 +506,14 @@
                                 <div class="nowprice" data-nowprice-carlatertrunksupports="nowcarlatertrunksupports"
                                     data-addPrice="add">0<div class="dollar">元</div>
                                 </div>
+                                <div class="ltksupSL_Novacouprices" name="latertrunksupport_Nova"
+                                    style="display: none;"></div>
+                                <div class="ltksupSR_Novacouprices" name="latertrunksupport_Nova"
+                                    style="display: none;"></div>
+                                <div class="ltksupML_Novacouprices" name="latertrunksupport_Nova"
+                                    style="display: none;"></div>
+                                <div class="ltksupMR_Novacouprices" name="latertrunksupport_Nova"
+                                    style="display: none;"></div>
                             </div>
                         </div>
                     </div>
