@@ -717,60 +717,129 @@ let latertrunksupportML = document.getElementById(
 let latertrunksupportMR = document.getElementById(
   "checkbox_latertrunksupportMR_Nova"
 );
+let NovalateralhardwarecountLRs1 = document.getElementById(
+  "NovalateralhardwarecountLRs1"
+);
+let NovalateralhardwarecountLRs2 = document.getElementById(
+  "NovalateralhardwarecountLRs2"
+);
+let NovalateralhardwarecountMLRs1 = document.getElementById(
+  "NovalateralhardwarecountMLRs1"
+);
+let NovalateralhardwarecountMLRs2 = document.getElementById(
+  "NovalateralhardwarecountMLRs2"
+);
+
+let ltksupSL_Novacouprices = document.querySelector(".ltksupSL_Novacouprices");
+let ltksupSR_Novacouprices = document.querySelector(".ltksupSR_Novacouprices");
+let ltksupML_Novacouprices = document.querySelector(".ltksupML_Novacouprices");
+let ltksupMR_Novacouprices = document.querySelector(".ltksupMR_Novacouprices");
 
 let latertrunk_supports_prices = {
-  latertrunk_prices1: 7000,
-  latertrunk_prices2: 7600,
+  latertrunk_prices1: 3500,
+  latertrunk_prices2: 3800,
 };
 
-function update_latertrunk_Price(event) {
-  let nowprice_latertrunksupports = Price[6].nextElementSibling;
-
-  Car_latertrunk_checkboxes.forEach((checkbox, index) => {
-    if (checkbox !== event.target) {
-      checkbox.checked = false;
-    }
-    if (event.target.id === "checkbox_latertrunksupportSL_Nova") {
-      nowprice_latertrunksupports.textContent = `${formatPrice(
-        latertrunk_supports_prices.latertrunk_prices1
-      )} 元`;
-      productImage.src = "./img/Side_support(middle).png";
-      latertrunksupportSR.checked = true;
-    } else if (event.target.id === "checkbox_latertrunksupportSR_Nova") {
-      nowprice_latertrunksupports.textContent = `${formatPrice(
-        latertrunk_supports_prices.latertrunk_prices1
-      )} 元`;
-      productImage.src = "./img/Side_support(middle).png";
-      latertrunksupportSL.checked = true;
-    } else if (event.target.id === "checkbox_latertrunksupportML_Nova") {
-      nowprice_latertrunksupports.textContent = `${formatPrice(
-        latertrunk_supports_prices.latertrunk_prices2
-      )} 元`;
-      productImage.src = "./img/Side_support(big).png";
-      latertrunksupportMR.checked = true;
-    } else if (event.target.id === "checkbox_latertrunksupportMR_Nova") {
-      nowprice_latertrunksupports.textContent = `${formatPrice(
-        latertrunk_supports_prices.latertrunk_prices2
-      )} 元`;
-      productImage.src = "./img/Side_support(big).png";
-      latertrunksupportML.checked = true;
+function update_latertrunk_Price() {
+  NovalateralhardwarecountLRs1.addEventListener("change", () => {
+    if (latertrunksupportSL.checked) {
+      ltksupSL_Novacouprices.textContent =
+        NovalateralhardwarecountLRs1.value *
+        latertrunk_supports_prices.latertrunk_prices1;
+      getNovalatertrunksupportsprice();
     }
   });
+
+  NovalateralhardwarecountLRs2.addEventListener("change", () => {
+    if (latertrunksupportSR.checked) {
+      ltksupSR_Novacouprices.textContent =
+        NovalateralhardwarecountLRs2.value *
+        latertrunk_supports_prices.latertrunk_prices1;
+      getNovalatertrunksupportsprice();
+    }
+  });
+
+  NovalateralhardwarecountMLRs1.addEventListener("change", () => {
+    if (latertrunksupportML.checked) {
+      ltksupML_Novacouprices.textContent =
+        NovalateralhardwarecountMLRs1.value *
+        latertrunk_supports_prices.latertrunk_prices2;
+      getNovalatertrunksupportsprice();
+    }
+  });
+  NovalateralhardwarecountMLRs2.addEventListener("change", () => {
+    if (latertrunksupportMR.checked) {
+      ltksupMR_Novacouprices.textContent =
+        NovalateralhardwarecountMLRs2.value *
+        latertrunk_supports_prices.latertrunk_prices2;
+      getNovalatertrunksupportsprice();
+    }
+  });
+}
+
+function getNovalatertrunksupportsprice() {
+  let nowprice_latertrunksupports = Price[6].nextElementSibling;
+  if (
+    ltksupSL_Novacouprices.textContent !== "" ||
+    ltksupSR_Novacouprices.textContent !== "" ||
+    ltksupML_Novacouprices.textContent !== "" ||
+    ltksupMR_Novacouprices.textContent !== ""
+  ) {
+    nowprice_latertrunksupports.textContent = `${formatPrice(
+      getNumericValueFromText(ltksupSL_Novacouprices.textContent) +
+        getNumericValueFromText(ltksupSR_Novacouprices.textContent) +
+        getNumericValueFromText(ltksupML_Novacouprices.textContent) +
+        getNumericValueFromText(ltksupMR_Novacouprices.textContent)
+    )}元`;
+  } else {
+    nowprice_latertrunksupports.textContent = `0 元`;
+  }
 }
 
 //為每個 checkbox 添加事件監聽
 Car_latertrunk_checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", (event) => {
-    if (event.target.checked) {
-      update_latertrunk_Price(event);
+    if (latertrunksupportSL.checked) {
+      NovalatercountLRs1.disabled = false;
+      update_latertrunk_Price();
     } else {
-      let nowprice_latertrunksupports = Price[6].nextElementSibling;
-      nowprice_latertrunksupports.textContent = "0元";
-      Car_latertrunk_checkboxes.forEach((otherCheckbox) => {
-        otherCheckbox.checked = false;
-      });
-      productImage.src = "./img/Novarc_standrad.png";
+      NovalateralhardwarecountLRs1.value = "";
+      ltksupSL_Novacouprices.textContent = "";
+      NovalateralhardwarecountLRs1.disabled = true;
+      getNovalatertrunksupportsprice();
     }
+
+    if (latertrunksupportSR.checked) {
+      NovalateralhardwarecountLRs2.disabled = false;
+      update_latertrunk_Price();
+    } else {
+      NovalateralhardwarecountLRs2.value = "";
+      ltksupSR_Novacouprices.textContent = "";
+      NovalateralhardwarecountLRs2.disabled = true;
+      getNovalatertrunksupportsprice();
+    }
+
+    if (latertrunksupportML.checked) {
+      NovalateralhardwarecountMLRs1.disabled = false;
+      update_latertrunk_Price();
+    } else {
+      NovalateralhardwarecountMLRs1.value = "";
+      ltksupML_Novacouprices.textContent = "";
+      NovalateralhardwarecountMLRs1.disabled = true;
+      getNovalatertrunksupportsprice();
+    }
+
+    if (latertrunksupportMR.checked) {
+      NovalateralhardwarecountMLRs2.disabled = false;
+      update_latertrunk_Price();
+    } else {
+      NovalateralhardwarecountMLRs2.value = "";
+      ltksupMR_Novacouprices.textContent = "";
+      NovalateralhardwarecountMLRs2.disabled = true;
+      getNovalatertrunksupportsprice();
+    }
+
+    productImage.src = "./img/Novarc_standrad.png";
   });
 });
 //#endregion
