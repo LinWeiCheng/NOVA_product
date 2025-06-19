@@ -9754,6 +9754,7 @@ function updateHipBeltsStatus() {
   hipbeltstypesel.disabled = !anyChecked;
   hipbeltssizesel.disabled = !anyChecked;
   if (!anyChecked) {
+    let Price = document.querySelectorAll(".pricing");
     let nowprice_SpexHipBelts = Price[18].nextElementSibling;
     nowprice_SpexHipBelts.textContent = "0 元";
   }
