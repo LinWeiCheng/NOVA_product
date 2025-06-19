@@ -1392,69 +1392,212 @@ body {
             height: 45%;
             margin: 2px 1px 0 2px;
 
-            .side_SLR1 {
-              border: 1px solid #000000;
-              border-radius: 7px;
+            .side_sizeLR1group {
               display: flex;
-              align-items: center;
-              justify-content: center;
-              /* 垂直置中 */
-              font-size: 18px;
-              /* 調整字體大小 */
-              font-weight: 600;
-              /* 調整字體粗細 */
-              height: 48%;
-              margin: 1px 0 3px 0;
+              flex-direction: row;
+              width: 100%;
+
+
+              .side_SLR1 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* 垂直置中 */
+                font-size: 18px;
+                /* 調整字體大小 */
+                font-weight: 600;
+                /* 調整字體粗細 */
+                height: 50%;
+                margin: 1px 2px 1px 0;
+                width: 60%;
+                padding: 1px;
+
+              }
+
+              .NovalateralhardwarecountLR1 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                width: 40%;
+                margin: 0px 0px 1px 0;
+                padding: 1px;
+
+                label {
+                  font-size: 18px;
+                  width: 25%;
+                }
+
+                #NovalateralhardwarecountLRs1 {
+                  font-size: 18px;
+                  width: 15%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 2px 0px 0px 0;
+                }
+              }
             }
 
-            .side_SLR2 {
-              border: 1px solid #000000;
-              border-radius: 7px;
+            .side_sizeLR2group {
               display: flex;
-              align-items: center;
-              justify-content: center;
-              /* 垂直置中 */
-              font-size: 18px;
-              /* 調整字體大小 */
-              font-weight: 600;
-              /* 調整字體粗細 */
-              height: 48%;
-              margin: 2px 0 1px 0;
+              flex-direction: row;
+              width: 100%;
+
+              .side_SLR2 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* 垂直置中 */
+                font-size: 18px;
+                /* 調整字體大小 */
+                font-weight: 600;
+                /* 調整字體粗細 */
+                height: 50%;
+                margin: 3px 2px 0px 0px;
+                width: 60%;
+                padding: 1px;
+
+              }
+
+              .NovalateralhardwarecountLR2 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                width: 40%;
+                margin: 0px 0px 1px 0;
+                padding: 1px;
+
+                label {
+                  font-size: 18px;
+                  width: 25%;
+                }
+
+                #NovalateralhardwarecountLRs2 {
+                  font-size: 18px;
+                  width: 15%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 2px 0px 0px 0;
+                }
+              }
             }
           }
 
-          .side_sizeLgroup {
+          .side_sizeMgroup {
             height: 45%;
             margin: 4px 0 1px 2px;
 
-            .side_MLR1 {
-              border: 1px solid #000000;
-              border-radius: 7px;
+            .side_sizeMLR1group {
               display: flex;
-              align-items: center;
-              justify-content: center;
-              /* 垂直置中 */
-              font-size: 18px;
-              /* 調整字體大小 */
-              font-weight: 600;
-              /* 調整字體粗細 */
-              height: 48%;
-              margin: 2px 0 3px 0;
+              flex-direction: row;
+              width: 100%;
+
+              .side_MLR1 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* 垂直置中 */
+                font-size: 18px;
+                /* 調整字體大小 */
+                font-weight: 600;
+                /* 調整字體粗細 */
+                height: 50%;
+                margin: 3px 2px 0px 0;
+                padding: 1px;
+                width: 60%;
+              }
+
+              .NovalateralhardwarecountMLR1 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                width: 40%;
+                margin: 0px 0px 1px 0;
+                padding: 1px;
+
+                label {
+                  font-size: 18px;
+                  width: 25%;
+                }
+
+                #NovalateralhardwarecountMLRs1 {
+                  font-size: 18px;
+                  width: 15%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 3px 0px 0px 0;
+                }
+              }
             }
 
-            .side_MLR2 {
-              border: 1px solid #000000;
-              border-radius: 7px;
+            .side_sizeMLR2group {
               display: flex;
-              align-items: center;
-              justify-content: center;
-              /* 垂直置中 */
-              font-size: 18px;
-              /* 調整字體大小 */
-              font-weight: 600;
-              /* 調整字體粗細 */
-              height: 48%;
-              margin: 3px 0 1px 0;
+              flex-direction: row;
+              width: 100%;
+
+              .side_MLR2 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* 垂直置中 */
+                font-size: 18px;
+                /* 調整字體大小 */
+                font-weight: 600;
+                /* 調整字體粗細 */
+                height: 50%;
+                margin: 2px 1px 1px 0;
+                width: 60%;
+                padding: 1px;
+              }
+
+              .NovalateralhardwarecountMLR2 {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                width: 40%;
+                margin: 0px 0px 1px 0;
+                padding: 1px;
+
+                label {
+                  font-size: 18px;
+                  width: 25%;
+                }
+
+                #NovalateralhardwarecountMLRs2 {
+                  font-size: 18px;
+                  width: 15%;
+                  text-align: center;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  color: #333;
+                  margin: 1px 0px 2px 0;
+                }
+              }
             }
           }
         }

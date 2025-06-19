@@ -1318,7 +1318,12 @@ body {
   height: 45%;
   margin: 2px 1px 0 2px;
 }
-.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR1 {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .side_SLR1 {
   border: 1px solid #000000;
   border-radius: 7px;
   display: flex;
@@ -1329,10 +1334,41 @@ body {
   /* 調整字體大小 */
   font-weight: 600;
   /* 調整字體粗細 */
-  height: 48%;
-  margin: 1px 0 3px 0;
+  height: 50%;
+  margin: 1px 2px 1px 0;
+  width: 60%;
+  padding: 1px;
 }
-.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR2 {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  width: 40%;
+  margin: 0px 0px 1px 0;
+  padding: 1px;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 label {
+  font-size: 18px;
+  width: 25%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 #NovalateralhardwarecountLRs1 {
+  font-size: 18px;
+  width: 15%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  margin: 2px 0px 0px 0;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .side_SLR2 {
   border: 1px solid #000000;
   border-radius: 7px;
   display: flex;
@@ -1343,28 +1379,45 @@ body {
   /* 調整字體大小 */
   font-weight: 600;
   /* 調整字體粗細 */
-  height: 48%;
-  margin: 2px 0 1px 0;
+  height: 50%;
+  margin: 3px 2px 0px 0px;
+  width: 60%;
+  padding: 1px;
 }
-.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  width: 40%;
+  margin: 0px 0px 1px 0;
+  padding: 1px;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 label {
+  font-size: 18px;
+  width: 25%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 #NovalateralhardwarecountLRs2 {
+  font-size: 18px;
+  width: 15%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  margin: 2px 0px 0px 0;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup {
   height: 45%;
   margin: 4px 0 1px 2px;
 }
-.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR1 {
-  border: 1px solid #000000;
-  border-radius: 7px;
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* 垂直置中 */
-  font-size: 18px;
-  /* 調整字體大小 */
-  font-weight: 600;
-  /* 調整字體粗細 */
-  height: 48%;
-  margin: 2px 0 3px 0;
+  flex-direction: row;
+  width: 100%;
 }
-.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR2 {
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .side_MLR1 {
   border: 1px solid #000000;
   border-radius: 7px;
   display: flex;
@@ -1375,8 +1428,79 @@ body {
   /* 調整字體大小 */
   font-weight: 600;
   /* 調整字體粗細 */
-  height: 48%;
-  margin: 3px 0 1px 0;
+  height: 50%;
+  margin: 3px 2px 0px 0;
+  padding: 1px;
+  width: 60%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  width: 40%;
+  margin: 0px 0px 1px 0;
+  padding: 1px;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 label {
+  font-size: 18px;
+  width: 25%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 #NovalateralhardwarecountMLRs1 {
+  font-size: 18px;
+  width: 15%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  margin: 3px 0px 0px 0;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .side_MLR2 {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 垂直置中 */
+  font-size: 18px;
+  /* 調整字體大小 */
+  font-weight: 600;
+  /* 調整字體粗細 */
+  height: 50%;
+  margin: 2px 1px 1px 0;
+  width: 60%;
+  padding: 1px;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  width: 40%;
+  margin: 0px 0px 1px 0;
+  padding: 1px;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 label {
+  font-size: 18px;
+  width: 25%;
+}
+.car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 #NovalateralhardwarecountMLRs2 {
+  font-size: 18px;
+  width: 15%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  margin: 1px 0px 2px 0;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes {
   display: flex;
