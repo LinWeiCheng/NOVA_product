@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 全局數據存儲
   let selectedItems = [];
+  let novaLaterTrunksup = [];
   let basesize = [];
   let spexCushion = [];
   let spexSeatBase = [];
@@ -347,6 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //清空資料
   function clearcarbasesize() {
     selectedItems.length = 0;
+    novaLaterTrunksup = 0;
     basesize.length = 0;
     spexCushion.length = 0;
     spexSeatBase.length = 0;
@@ -397,6 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkedCheckboxes.forEach((checkbox) => {
       let group = checkbox.dataset.group;
+      let novagroup = checkbox.dataset.novagroup;
       let spexgroup = checkbox.dataset.spexgroup;
       let item = checkbox.dataset.item;
       let price = checkbox.dataset.price;
@@ -405,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (addedItems.has(item)) {
         return;
       }
-      if (!group && !spexgroup) {
+      if (!group && !spexgroup && !novagroup) {
         selectedItems.push({ item: item, price: price, note: notes });
       }
 
@@ -415,9 +418,123 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkedCheckboxes.forEach((checkbox) => {
       let spexgroup = checkbox.dataset.spexgroup;
+      let novagroup = checkbox.dataset.novagroup;
+      let novachoose = checkbox.dataset.novachoose;
       let spexchoose = checkbox.dataset.spexchoose;
       let item = checkbox.dataset.item;
       let notes = checkbox.dataset.note;
+
+      if (novagroup === "Novalatertrunksupport") {
+        novaLaterTrunksup = [];
+        if (item) {
+          novaLaterTrunksup.push(item);
+        }
+        let lattrusupSL = document.getElementById(
+          "checkbox_latertrunksupportSL_Nova"
+        );
+
+        let lattrusupSR = document.getElementById(
+          "checkbox_latertrunksupportSR_Nova"
+        );
+
+        let lattrusupML = document.getElementById(
+          "checkbox_latertrunksupportML_Nova"
+        );
+        let lattrusupMR = document.getElementById(
+          "checkbox_latertrunksupportMR_Nova"
+        );
+        let NovalatSLR1count = document.getElementById(
+          "NovalateralhardwarecountLRs1"
+        );
+        let NovalatSLR2count = document.getElementById(
+          "NovalateralhardwarecountLRs2"
+        );
+        let NovalatMLR1count = document.getElementById(
+          "NovalateralhardwarecountMLRs1"
+        );
+        let NovalatMLR2count = document.getElementById(
+          "NovalateralhardwarecountMLRs2"
+        );
+
+        let NovaltksupSLprices = document.querySelector(
+          ".ltksupSL_Novacouprices"
+        );
+        let NovaltksupSRprices = document.querySelector(
+          ".ltksupSR_Novacouprices"
+        );
+        let NovaltksupMLprices = document.querySelector(
+          ".ltksupML_Novacouprices"
+        );
+        let NovaltksupMRprices = document.querySelector(
+          ".ltksupMR_Novacouprices"
+        );
+        if (lattrusupSL.checked && novachoose === "NovalatertrunksupportSL") {
+          // 組合字串：x 數量
+          let spexString = ` * ${NovalatSLR1count.value}`;
+          novaLaterTrunksup.push(spexString);
+          let spexitem = novaLaterTrunksup.join("");
+          let Novalatertrunksupportprice = formatPrice(
+            NovaltksupSLprices.textContent
+          );
+
+          selectedItems.push({
+            item: spexitem,
+            price: Novalatertrunksupportprice,
+            note: notes,
+          });
+          novaLaterTrunksup = [];
+        }
+
+        if (lattrusupSR.checked && novachoose === "NovalatertrunksupportSR") {
+          // 組合字串：x 數量
+          let spexString = ` * ${NovalatSLR2count.value}`;
+          novaLaterTrunksup.push(spexString);
+          let spexitem = novaLaterTrunksup.join("");
+          let Novalatertrunksupportprice = formatPrice(
+            NovaltksupSRprices.textContent
+          );
+
+          selectedItems.push({
+            item: spexitem,
+            price: Novalatertrunksupportprice,
+            note: notes,
+          });
+          novaLaterTrunksup = [];
+        }
+
+        if (lattrusupML.checked && novachoose === "NovalatertrunksupportML") {
+          // 組合字串：x 數量
+          let spexString = ` * ${NovalatMLR1count.value}`;
+          novaLaterTrunksup.push(spexString);
+          let spexitem = novaLaterTrunksup.join("");
+          let Novalatertrunksupportprice = formatPrice(
+            NovaltksupMLprices.textContent
+          );
+
+          selectedItems.push({
+            item: spexitem,
+            price: Novalatertrunksupportprice,
+            note: notes,
+          });
+          novaLaterTrunksup = [];
+        }
+        if (lattrusupMR.checked && novachoose === "NovalatertrunksupportMR") {
+          // 組合字串：x 數量
+          let spexString = ` * ${NovalatMLR2count.value}`;
+          novaLaterTrunksup.push(spexString);
+          let spexitem = novaLaterTrunksup.join("");
+          let Novalatertrunksupportprice = formatPrice(
+            NovaltksupMRprices.textContent
+          );
+
+          selectedItems.push({
+            item: spexitem,
+            price: Novalatertrunksupportprice,
+            note: notes,
+          });
+          novaLaterTrunksup = [];
+        }
+      }
 
       //Spex座墊
       if (spexgroup === "SpexCushion") {
