@@ -202,8 +202,9 @@
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees {
     margin: 2px;
-    font-size: 15px;
+    font-size: 18px;
     padding: 1px;
+    width: 100%;
   }
   .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_77degrees {
     margin: 4px 0px 2px 3px;
@@ -397,7 +398,7 @@
   }
   .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .div_notice {
     padding: 1px 0 1px 1px;
-    font-size: 14px;
+    font-size: 12px;
   }
   .car-back_supports .target .pricecontent .pricing {
     font-size: 11px;
@@ -424,23 +425,108 @@
   }
   .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup {
     height: 50%;
-    margin: 0px 5px 0px 6px;
+    margin: 0px 0px 0px 2px;
   }
-  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR1 {
-    font-size: 18px;
-  }
-  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_SLR2 {
-    font-size: 18px;
-  }
-  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup {
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group {
     height: 50%;
-    margin: 2px 5px 0px 6px;
+    margin: 2px 0 0 0;
   }
-  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR1 {
-    font-size: 18px;
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .side_SLR1 {
+    font-size: 14px;
+    width: 30%;
+    height: 95%;
+    margin: 0px 2px 0px 0px;
   }
-  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeLgroup .side_MLR2 {
-    font-size: 18px;
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 {
+    width: 70%;
+    height: 95%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 label {
+    font-size: 14px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 #NovalateralhardwarecountLRs1 {
+    font-size: 12px;
+    width: 35%;
+    margin: 4px 0px 0px -5px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group {
+    height: 50%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .side_SLR2 {
+    font-size: 14px;
+    width: 30%;
+    height: 100%;
+    margin: -1px 2px 0px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 {
+    width: 70%;
+    height: 95%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 label {
+    font-size: 14px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 #NovalateralhardwarecountLRs2 {
+    font-size: 12px;
+    width: 35%;
+    margin: 4px 0px 0px -5px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup {
+    height: 50%;
+    margin: 0px 0px 0px 2px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group {
+    height: 50%;
+    margin: 3px 0 0 0;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .side_MLR1 {
+    font-size: 14px;
+    width: 30%;
+    height: 100%;
+    margin: -1px 2px 0px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 {
+    width: 70%;
+    height: 95%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 label {
+    font-size: 14px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 #NovalateralhardwarecountMLRs1 {
+    font-size: 12px;
+    width: 35%;
+    margin: 4px 0px 0px -5px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group {
+    height: 50%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .side_MLR2 {
+    font-size: 14px;
+    width: 30%;
+    height: 100%;
+    margin: -1px 2px 0px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 label {
+    font-size: 14px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 #NovalateralhardwarecountMLRs2 {
+    font-size: 12px;
+    width: 35%;
+    margin: 4px 0px 0px -5px;
   }
   .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes .content-checkbox {
     margin: 13px 0px 9px 0px;
@@ -503,7 +589,7 @@
     padding: 0px;
   }
   .car-cushion .target .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_typeC {
-    font-size: 13px;
+    font-size: 12px;
     height: 34%;
     margin: 1px 1px 1px 0px;
   }
@@ -593,7 +679,7 @@
     width: 100%;
   }
   .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt {
-    font-size: 13px;
+    font-size: 12px;
     padding: 1px 1px 1px 1px;
     margin: 1px;
     width: 80%;
@@ -629,7 +715,7 @@
     margin: 2px 2px 1px 1px;
   }
   .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_font {
-    font-size: 12px;
+    font-size: 11px;
     width: 60%;
     padding: 1px 1px 1px 2px;
     margin: 2px 6px 1px 0px;
@@ -673,7 +759,7 @@
   .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title {
     font-size: 13px;
     padding: 0px;
-    margin: 0px;
+    margin: 1px;
     flex-direction: row;
     align-items: flex-start;
   }
@@ -738,6 +824,7 @@
   }
   .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize {
     height: 25%;
+    gap: 10px;
   }
   .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize .Spexcushion_specialsizenotice .Spexcushion_specialWidth {
     font-size: 9px;
@@ -753,7 +840,7 @@
     height: auto;
   }
   .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize .Spexcushion_notice {
-    font-size: 9px;
+    font-size: 8px;
     line-height: 2;
   }
   .Spex_cushion .target .pricecontent .pricing {
@@ -865,7 +952,7 @@
     flex-direction: column;
   }
   .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighcountgroup label {
-    font-size: 10px;
+    font-size: 10px !important;
   }
   .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighcountgroup #Spexarmsuplatthighcount {
     font-size: 12px;
@@ -1062,7 +1149,7 @@
     width: 70%;
     display: inline-block;
     vertical-align: top;
-    font-size: 16px;
+    font-size: 15px;
     margin: 0px 1px 0px 0px;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialgroup .Spexlatertrunksupports_title .SpexLaterTrunkSupports {
@@ -1088,23 +1175,33 @@
     flex-direction: row;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialpadgroup label {
-    font-size: 16px;
-    margin: 0 3px 0 0;
+    font-size: 14px;
+    margin: 0 0px 0 0;
+    width: 30%;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialpadgroup .latertrunkaxialpadtype {
-    font-size: 16px;
+    font-size: 14px;
     width: 11vh;
   }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialclothpadgroup {
+    width: 50%;
+  }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialclothpadgroup label {
-    font-size: 16px;
-    margin: 0 3px 0 0;
+    font-size: 14px;
+    margin: 0 0px 0 0;
+    width: 30%;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadthinknessgroup .latertrunkaxialclothpadgroup .latertrunkaxialclothpadtype {
-    font-size: 16px;
+    font-size: 14px;
     width: 11vh;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadsizegroup {
     width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Axialgroup .latertrunkaxialpadsizegroup .latertrunkaxialpadsize_WHgroup .latertrunkaxialpadsize_WH label {
+    width: 25%;
+    font-size: 15px;
+    margin: 0px 0px 0 3px;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup {
     display: flex;
@@ -1146,22 +1243,37 @@
     display: flex;
     flex-direction: row;
   }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardpadgroup {
+    width: 50%;
+  }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardpadgroup label {
-    font-size: 16px;
+    font-size: 14px;
+    margin: 0 0px 0 0;
+    width: 30%;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardpadgroup .latertrunkstandardpadtype {
-    font-size: 16px;
+    font-size: 14px;
     width: 11vh;
   }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardclothpadgroup {
+    width: 50%;
+  }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardclothpadgroup label {
-    font-size: 16px;
+    font-size: 14px;
+    margin: 0 0px 0 0;
+    width: 30%;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadthinknessgroup .latertrunkstandardclothpadgroup .latertrunkstandardclothpadtype {
-    font-size: 16px;
+    font-size: 14px;
     width: 11vh;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadsizegroup {
     width: 100%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Standardgroup .latertrunkstandardpadsizegroup .latertrunkstandardpadsize_WHgroup .latertrunkstandardpadsize_WH label {
+    width: 25%;
+    font-size: 14px;
+    margin: 0px 0px 0 3px;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup {
     display: flex;
@@ -1201,12 +1313,37 @@
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunk_offsetsizecountgroup .latertrunkoffsetcountgroup label {
     font-size: 14px;
-    margin: 0 4px 0 8px;
+    margin: 0 0px 0 0;
+    width: 50%;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup {
     width: 100%;
     display: flex;
     flex-direction: row;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup .latertrunkoffsetpadgroup {
+    width: 50%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup .latertrunkoffsetpadgroup label {
+    font-size: 14px;
+    margin: 0 0px 0 0;
+    width: 30%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup .latertrunkoffsetpadgroup .latertrunkoffsetpadtype {
+    font-size: 14px;
+    width: 11vh;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup .latertrunkoffsetclothpadgroup {
+    width: 50%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup .latertrunkoffsetclothpadgroup label {
+    font-size: 14px;
+    margin: 0 0px 0 0;
+    width: 30%;
+  }
+  .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadthinknessgroup .latertrunkoffsetclothpadgroup .latertrunkoffsetclothpadtype {
+    font-size: 14px;
+    width: 11vh;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .SpexlaterHardwaregroup .laterHardwaregroup .LaterTrunk_Offsetgroup .latertrunkoffsetpadsizegroup {
     width: 100%;
@@ -1235,7 +1372,7 @@
     width: 70%;
     display: inline-block;
     vertical-align: top;
-    font-size: 16px;
+    font-size: 14px;
   }
   .Spex_latertrunksupports .target .chkcontent_17th .Spexlatertrunksupportsgroup .Spexlatertrunksupportsgroup_title .LaterTrunk_AxialBiangulargroup .Spexlatertrunksupports_titlecountgroup .Spexlatertrunksupports_title .SpexLaterTrunkSupports {
     margin: 7px 6px 8px 7px;
@@ -1413,7 +1550,7 @@
     transform: scale(1.5);
   }
   .Spex_headsupports .target .chkcontent_18th .Spexheadsupportsgroup .div_notice {
-    font-size: 12px;
+    font-size: 11px;
   }
   .Spex_headsupports .target .pricecontent .pricing {
     margin: 3px 0px 3px 1px;
@@ -1427,7 +1564,8 @@
     width: 70%;
   }
   .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title .hipbelts_title {
-    font-size: 14px;
+    font-size: 12px;
+    padding: 2px;
   }
   .Spex_hipbelts .target .chkcontent_19th .Spexhipbeltsgroup .hipbeltsgroup .hipbeltsgroup_title .hipbelts_title .SpexHipBelts {
     margin: 4px 11px 5px 11px;

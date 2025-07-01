@@ -305,8 +305,9 @@
 
                 .degrees {
                     margin: 2px;
-                    font-size: 15px;
+                    font-size: 18px;
                     padding: 1px;
+                    width: 100%;
 
                     #checkbox_77degrees {
                         margin: 4px 0px 2px 3px;
@@ -583,7 +584,7 @@
 
                     .div_notice {
                         padding: 1px 0 1px 1px;
-                        font-size: 14px;
+                        font-size: 12px;
                     }
                 }
             }
@@ -626,27 +627,132 @@
 
                             .side_sizeSgroup {
                                 height: 50%;
-                                margin: 0px 5px 0px 6px;
+                                margin: 0px 0px 0px 2px;
 
-                                .side_SLR1 {
-                                    font-size: 18px;
+                                .side_sizeLR1group {
+                                    height: 50%;
+                                    margin: 2px 0 0 0;
+
+                                    .side_SLR1 {
+                                        font-size: 14px;
+                                        width: 30%;
+                                        height: 95%;
+                                        margin: 0px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountLR1 {
+                                        width: 70%;
+                                        height: 95%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 14px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountLRs1 {
+                                            font-size: 12px;
+                                            width: 35%;
+                                            margin: 4px 0px 0px -5px;
+
+                                        }
+                                    }
                                 }
 
-                                .side_SLR2 {
-                                    font-size: 18px;
+
+                                .side_sizeLR2group {
+                                    height: 50%;
+
+                                    .side_SLR2 {
+                                        font-size: 14px;
+                                        width: 30%;
+                                        height: 100%;
+                                        margin: -1px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountLR2 {
+                                        width: 70%;
+                                        height: 95%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 14px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountLRs2 {
+                                            font-size: 12px;
+                                            width: 35%;
+                                            margin: 4px 0px 0px -5px;
+                                        }
+                                    }
                                 }
                             }
 
-                            .side_sizeLgroup {
-                                height: 50%;
-                                margin: 2px 5px 0px 6px;
 
-                                .side_MLR1 {
-                                    font-size: 18px;
+
+                            .side_sizeMgroup {
+                                height: 50%;
+                                margin: 0px 0px 0px 2px;
+
+                                .side_sizeMLR1group {
+                                    height: 50%;
+                                    margin: 3px 0 0 0;
+
+                                    .side_MLR1 {
+                                        font-size: 14px;
+                                        width: 30%;
+                                        height: 100%;
+                                        margin: -1px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountMLR1 {
+                                        width: 70%;
+                                        height: 95%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 14px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountMLRs1 {
+                                            font-size: 12px;
+                                            width: 35%;
+                                            margin: 4px 0px 0px -5px;
+                                        }
+                                    }
                                 }
 
-                                .side_MLR2 {
-                                    font-size: 18px;
+                                .side_sizeMLR2group {
+                                    height: 50%;
+
+                                    .side_MLR2 {
+                                        font-size: 14px;
+                                        width: 30%;
+                                        height: 100%;
+                                        margin: -1px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountMLR2 {
+                                        width: 70%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 14px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountMLRs2 {
+                                            font-size: 12px;
+                                            width: 35%;
+                                            margin: 4px 0px 0px -5px;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -748,7 +854,7 @@
                         }
 
                         .cushion_typeC {
-                            font-size: 13px;
+                            font-size: 12px;
                             height: 34%;
                             margin: 1px 1px 1px 0px
                         }
@@ -868,7 +974,7 @@
                                     width: 100%;
 
                                     .pointpelvic_belt {
-                                        font-size: 13px;
+                                        font-size: 12px;
                                         padding: 1px 1px 1px 1px;
                                         margin: 1px;
                                         width: 80%;
@@ -915,7 +1021,7 @@
                             }
 
                             .calf_font {
-                                font-size: 12px;
+                                font-size: 11px;
                                 width: 60%;
                                 padding: 1px 1px 1px 2px;
                                 margin: 2px 6px 1px 0px;
@@ -980,7 +1086,7 @@
                         .Spexcushion_title {
                             font-size: 13px;
                             padding: 0px;
-                            margin: 0px;
+                            margin: 1px;
                             flex-direction: row;
                             align-items: flex-start;
 
@@ -1060,6 +1166,7 @@
 
                         .Spexcushion_specialsize {
                             height: 25%;
+                            gap: 10px;
 
                             .Spexcushion_specialsizenotice {
 
@@ -1081,7 +1188,7 @@
                             }
 
                             .Spexcushion_notice {
-                                font-size: 9px;
+                                font-size: 8px;
                                 line-height: 2;
                             }
                         }
@@ -1267,7 +1374,7 @@
                         flex-direction: column;
 
                         label {
-                            font-size: 10px;
+                            font-size: 10px !important;
                         }
 
                         #Spexarmsuplatthighcount {
@@ -1568,7 +1675,7 @@
                                             width: 70%;
                                             display: inline-block; // 並排顯示
                                             vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-                                            font-size: 16px;
+                                            font-size: 15px;
                                             margin: 0px 1px 0px 0px;
 
                                             .SpexLaterTrunkSupports {
@@ -1601,24 +1708,28 @@
 
                                         .latertrunkaxialpadgroup {
                                             label {
-                                                font-size: 16px;
-                                                margin: 0 3px 0 0;
+                                                font-size: 14px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
                                             }
 
                                             .latertrunkaxialpadtype {
-                                                font-size: 16px;
+                                                font-size: 14px;
                                                 width: 11vh;
                                             }
                                         }
 
                                         .latertrunkaxialclothpadgroup {
+                                            width: 50%;
+
                                             label {
-                                                font-size: 16px;
-                                                margin: 0 3px 0 0;
+                                                font-size: 14px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
                                             }
 
                                             .latertrunkaxialclothpadtype {
-                                                font-size: 16px;
+                                                font-size: 14px;
                                                 width: 11vh;
                                             }
                                         }
@@ -1637,7 +1748,11 @@
 
                                                 .latertrunkaxialpadsize_Heigh {}
 
-                                                label {}
+                                                label {
+                                                    width: 25%;
+                                                    font-size: 15px;
+                                                    margin: 0px 0px 0 3px;
+                                                }
 
                                                 #latertrunkaxialpadcount {}
                                             }
@@ -1702,24 +1817,31 @@
                                         flex-direction: row;
 
                                         .latertrunkstandardpadgroup {
+                                            width: 50%;
 
                                             label {
-                                                font-size: 16px;
+                                                font-size: 14px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
                                             }
 
                                             .latertrunkstandardpadtype {
-                                                font-size: 16px;
+                                                font-size: 14px;
                                                 width: 11vh;
                                             }
                                         }
 
                                         .latertrunkstandardclothpadgroup {
+                                            width: 50%;
+
                                             label {
-                                                font-size: 16px;
+                                                font-size: 14px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
                                             }
 
                                             .latertrunkstandardclothpadtype {
-                                                font-size: 16px;
+                                                font-size: 14px;
                                                 width: 11vh;
                                             }
                                         }
@@ -1735,6 +1857,12 @@
                                                 div {}
 
                                                 .latertrunkstandardpadsize_Heigh {}
+
+                                                label {
+                                                    width: 25%;
+                                                    font-size: 14px;
+                                                    margin: 0px 0px 0 3px;
+                                                }
 
                                                 #latertrunkstandardpadcount {}
                                             }
@@ -1792,7 +1920,8 @@
 
                                             label {
                                                 font-size: 14px;
-                                                margin: 0 4px 0 8px;
+                                                margin: 0 0px 0 0;
+                                                width: 50%;
                                             }
 
                                             #latertrunkoffsetcount {}
@@ -1805,11 +1934,33 @@
                                         flex-direction: row;
 
                                         .latertrunkoffsetpadgroup {
-                                            .latertrunkoffsetpadtype {}
+                                            width: 50%;
+
+                                            label {
+                                                font-size: 14px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
+                                            }
+
+                                            .latertrunkoffsetpadtype {
+                                                font-size: 14px;
+                                                width: 11vh;
+                                            }
                                         }
 
                                         .latertrunkoffsetclothpadgroup {
-                                            .latertrunkoffsetclothpadtype {}
+                                            width: 50%;
+
+                                            label {
+                                                font-size: 14px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
+                                            }
+
+                                            .latertrunkoffsetclothpadtype {
+                                                font-size: 14px;
+                                                width: 11vh;
+                                            }
                                         }
                                     }
 
@@ -1860,7 +2011,7 @@
                                     width: 70%;
                                     display: inline-block; // 並排顯示
                                     vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-                                    font-size: 16px;
+                                    font-size: 14px;
 
                                     .SpexLaterTrunkSupports {
                                         margin: 7px 6px 8px 7px;
@@ -2110,7 +2261,7 @@
                     }
 
                     .div_notice {
-                        font-size: 12px;
+                        font-size: 11px;
                     }
                 }
             }
@@ -2136,7 +2287,8 @@
                             width: 70%;
 
                             .hipbelts_title {
-                                font-size: 14px;
+                                font-size: 12px;
+                                padding: 2px;
 
                                 .SpexHipBelts {
                                     margin: 4px 11px 5px 11px;
