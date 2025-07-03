@@ -410,6 +410,49 @@ body {
   }
 }
 
+// 第零個點擊列-車體
+.car-body {
+  margin: 0 0 8px 0;
+
+  .chkcontent_0rd {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .bodytiltegroup {
+      visibility: hidden;
+      height: 0;
+      width: 100%;
+      // width: calc(100% - 8px);
+      // height: auto;
+      // display: flex;
+      // flex-direction: row;
+      // /* 讓子元素垂直排列 */
+      // padding: 0px 1px 1px 3px;
+      // border: 3px dashed black;
+      // border-Top: none;
+      // justify-content: space-between;
+
+
+      .carbodytitle {
+        flex-grow: 1;
+        /* 文字置中 */
+        padding: 5px;
+        /* 內邊距 */
+        box-sizing: border-box;
+        /* 包含 padding 和 border */
+        font-size: 20px;
+        font-weight: 600;
+
+        input[name="car_body"] {
+          margin: 3px 15px 3px 15px;
+
+        }
+      }
+    }
+  }
+}
+
 // 第一個點擊列-車體顏色
 .car-order {
   margin: 0 0 8px 0;
@@ -721,7 +764,6 @@ body {
       display: flex;
       width: 100%;
       height: 77px;
-      border-bottom: 3px dashed black;
 
       .seat-width {
         //margin: 0 0 12px 0;
@@ -735,29 +777,74 @@ body {
         /* 設定圓角半徑 */
         font-weight: 500;
         height: 65px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -13px;
+          right: -11px; // 離右邊 2px
+          width: 1px;
+          height: 138%;
+          border-right: 3px dashed black;
+          pointer-events: none;
+        }
+      }
+
+      .Bseat-width {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0px 2px 12px 6px;
+
+
+        .Bbasesize-14 {
+          input[type="checkbox"] {
+            margin: 0px 15px 0px 0px;
+            transform: scale(2.3);
+          }
+
+          label {
+            font-size: 24px;
+            font-weight: 800;
+          }
+        }
+
+        .Bbasesize-16 {
+          input[type="checkbox"] {
+            margin: 0px 15px 0px 0px;
+            transform: scale(2.3);
+          }
+
+          label {
+            font-size: 24px;
+            font-weight: 800;
+          }
+        }
       }
     }
 
-    .Seat-deepgroup {
-      display: flex;
-      padding: 11px 2px 0px 0px;
-      width: 100%;
+    // .Seat-deepgroup {
+    //   display: flex;
+    //   padding: 11px 2px 0px 0px;
+    //   width: 100%;
 
-      .seat-deep {
-        //margin: 0 0 12px 0;
-        background-color: rgb(31, 30, 30);
-        color: #ffffff;
-        text-align: center;
-        /* 文字置中 */
-        border: 2px solid black;
-        /* 設定邊框寬度和顏色 */
-        border-radius: 8px;
-        /* 設定圓角半徑 */
-        font-weight: 500;
-        height: 65px;
-      }
-    }
-
+    //   .seat-deep {
+    //     //margin: 0 0 12px 0;
+    //     background-color: rgb(31, 30, 30);
+    //     color: #ffffff;
+    //     text-align: center;
+    //     /* 文字置中 */
+    //     border: 2px solid black;
+    //     /* 設定邊框寬度和顏色 */
+    //     border-radius: 8px;
+    //     /* 設定圓角半徑 */
+    //     font-weight: 500;
+    //     height: 65px;
+    //   }
+    // }
   }
 }
 
@@ -776,7 +863,7 @@ body {
     /* 水平置中 */
 
     .generated_SWdiv {
-      margin: 5px 9px 5px 9px;
+      margin: 10px 9px 5px 18px;
       padding: 10px 11px 10px 11px;
       font-weight: 500;
       border-radius: 8px;
@@ -799,7 +886,7 @@ body {
     /* 水平置中 */
 
     #SWC_checkbox {
-      margin: 10px 23px 0px 22px;
+      margin: 20px 23px 0px 31px;
       border-radius: 8px;
       /* 設定圓角半徑 */
       transform: scale(2.2);
@@ -807,52 +894,52 @@ body {
   }
 }
 
-.deep_cmCount {
-  display: flex;
-  margin: 0 0 2px 2px;
-  padding: 2px 2px 0 2px;
-  flex-direction: column;
+// .deep_cmCount {
+//   display: flex;
+//   margin: 0 0 2px 2px;
+//   padding: 2px 2px 0 2px;
+//   flex-direction: column;
 
-  .deep_number {
-    display: flex;
-    height: 40%;
-    flex-direction: row;
-    /* 水平排列新增的 div */
-    align-items: center;
-    /* 水平置中 */
+//   .deep_number {
+//     display: flex;
+//     height: 40%;
+//     flex-direction: row;
+//     /* 水平排列新增的 div */
+//     align-items: center;
+//     /* 水平置中 */
 
-    .generated_Sddiv {
-      margin: 5px 9px 5px 9px;
-      padding: 10px 11px 10px 11px;
-      font-weight: 500;
-      border-radius: 8px;
-      /* 設定圓角半徑 */
-      text-align: center;
-      /* 文字置中 */
-      align-items: center;
-      /* 水平置中 */
-      justify-content: center;
-      /* 垂直置中 */
-      background-color: rgb(0, 0, 0);
-      color: #ffffff;
-    }
-  }
+//     .generated_Sddiv {
+//       margin: 5px 9px 5px 9px;
+//       padding: 10px 11px 10px 11px;
+//       font-weight: 500;
+//       border-radius: 8px;
+//       /* 設定圓角半徑 */
+//       text-align: center;
+//       /* 文字置中 */
+//       align-items: center;
+//       /* 水平置中 */
+//       justify-content: center;
+//       /* 垂直置中 */
+//       background-color: rgb(0, 0, 0);
+//       color: #ffffff;
+//     }
+//   }
 
-  .deep_chkblock {
-    height: 50%;
-    display: flex;
-    align-items: center;
-    /* 水平置中 */
+//   .deep_chkblock {
+//     height: 50%;
+//     display: flex;
+//     align-items: center;
+//     /* 水平置中 */
 
-    #SdC_checkbox {
-      margin: 10px 23px 0px 22px;
-      border-radius: 8px;
-      /* 設定圓角半徑 */
-      transform: scale(2.2);
-    }
+//     #SdC_checkbox {
+//       margin: 10px 23px 0px 22px;
+//       border-radius: 8px;
+//       /* 設定圓角半徑 */
+//       transform: scale(2.2);
+//     }
 
-  }
-}
+//   }
+// }
 
 .smallblock {
   width: 60px;
@@ -1354,7 +1441,7 @@ body {
           justify-content: center;
           font-weight: 600;
           font-size: 25px;
-          width: 40%;
+          width: 75%;
           padding: 2px 1px 1px 3px;
           margin: 3px;
         }
@@ -1396,7 +1483,7 @@ body {
               display: flex;
               flex-direction: row;
               width: 100%;
-
+              height: 50%;
 
               .side_SLR1 {
                 border: 1px solid #000000;
@@ -1409,7 +1496,7 @@ body {
                 /* 調整字體大小 */
                 font-weight: 600;
                 /* 調整字體粗細 */
-                height: 50%;
+                height: 100%;
                 margin: 1px 2px 1px 0;
                 width: 60%;
                 padding: 1px;
@@ -1429,12 +1516,12 @@ body {
 
                 label {
                   font-size: 18px;
-                  width: 25%;
+                  width: 40%;
                 }
 
                 #NovalateralhardwarecountLRs1 {
                   font-size: 18px;
-                  width: 15%;
+                  width: 20%;
                   text-align: center;
                   border: 1px solid #ccc;
                   border-radius: 5px;
@@ -1447,6 +1534,7 @@ body {
             .side_sizeLR2group {
               display: flex;
               flex-direction: row;
+              height: 50%;
               width: 100%;
 
               .side_SLR2 {
@@ -1460,7 +1548,7 @@ body {
                 /* 調整字體大小 */
                 font-weight: 600;
                 /* 調整字體粗細 */
-                height: 50%;
+                height: 100%;
                 margin: 3px 2px 0px 0px;
                 width: 60%;
                 padding: 1px;
@@ -1475,17 +1563,17 @@ body {
                 justify-content: center;
                 font-weight: 600;
                 width: 40%;
-                margin: 0px 0px 1px 0;
+                margin: 2px 0px -3px 0;
                 padding: 1px;
 
                 label {
                   font-size: 18px;
-                  width: 25%;
+                  width: 40%;
                 }
 
                 #NovalateralhardwarecountLRs2 {
                   font-size: 18px;
-                  width: 15%;
+                  width: 20%;
                   text-align: center;
                   border: 1px solid #ccc;
                   border-radius: 5px;
@@ -1503,7 +1591,9 @@ body {
             .side_sizeMLR1group {
               display: flex;
               flex-direction: row;
+              height: 50%;
               width: 100%;
+              margin: 3px 0 0 0;
 
               .side_MLR1 {
                 border: 1px solid #000000;
@@ -1516,7 +1606,7 @@ body {
                 /* 調整字體大小 */
                 font-weight: 600;
                 /* 調整字體粗細 */
-                height: 50%;
+                height: 100%;
                 margin: 3px 2px 0px 0;
                 padding: 1px;
                 width: 60%;
@@ -1530,17 +1620,17 @@ body {
                 justify-content: center;
                 font-weight: 600;
                 width: 40%;
-                margin: 0px 0px 1px 0;
+                margin: 3px 0px -3px 0;
                 padding: 1px;
 
                 label {
                   font-size: 18px;
-                  width: 25%;
+                  width: 40%;
                 }
 
                 #NovalateralhardwarecountMLRs1 {
                   font-size: 18px;
-                  width: 15%;
+                  width: 20%;
                   text-align: center;
                   border: 1px solid #ccc;
                   border-radius: 5px;
@@ -1554,6 +1644,8 @@ body {
               display: flex;
               flex-direction: row;
               width: 100%;
+              height: 50%;
+              margin: 4px 0 0 0;
 
               .side_MLR2 {
                 border: 1px solid #000000;
@@ -1566,7 +1658,7 @@ body {
                 /* 調整字體大小 */
                 font-weight: 600;
                 /* 調整字體粗細 */
-                height: 50%;
+                height: 100%;
                 margin: 2px 1px 1px 0;
                 width: 60%;
                 padding: 1px;
@@ -1580,17 +1672,17 @@ body {
                 justify-content: center;
                 font-weight: 600;
                 width: 40%;
-                margin: 0px 0px 1px 0;
+                margin: 2px 0px -1px 0;
                 padding: 1px;
 
                 label {
                   font-size: 18px;
-                  width: 25%;
+                  width: 40%;
                 }
 
                 #NovalateralhardwarecountMLRs2 {
                   font-size: 18px;
-                  width: 15%;
+                  width: 20%;
                   text-align: center;
                   border: 1px solid #ccc;
                   border-radius: 5px;
@@ -1619,7 +1711,7 @@ body {
 .latertrunk_checkboxes input[type="checkbox"] {
   //accent-color: rgb(255, 0, 0);
   /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 10px 3px 9.5px 3px;
+  margin: 17px 3px 21.5px 3px;
 }
 
 .div_notice {
