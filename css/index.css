@@ -480,6 +480,33 @@ body {
   display: none;
 }
 
+.car-body {
+  margin: 0 0 8px 0;
+}
+.car-body .chkcontent_0rd {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.car-body .chkcontent_0rd .bodytiltegroup {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+.car-body .chkcontent_0rd .bodytiltegroup .carbodytitle {
+  flex-grow: 1;
+  /* 文字置中 */
+  padding: 5px;
+  /* 內邊距 */
+  box-sizing: border-box;
+  /* 包含 padding 和 border */
+  font-size: 20px;
+  font-weight: 600;
+}
+.car-body .chkcontent_0rd .bodytiltegroup .carbodytitle input[name=car_body] {
+  margin: 3px 15px 3px 15px;
+}
+
 .car-order {
   margin: 0 0 8px 0;
 }
@@ -750,7 +777,6 @@ body {
   display: flex;
   width: 100%;
   height: 77px;
-  border-bottom: 3px dashed black;
 }
 .car-seat .chkcontent_2nd .Seat-widthgroup .seat-width {
   background-color: rgb(31, 30, 30);
@@ -763,23 +789,41 @@ body {
   /* 設定圓角半徑 */
   font-weight: 500;
   height: 65px;
+  position: relative;
 }
-.car-seat .chkcontent_2nd .Seat-deepgroup {
+.car-seat .chkcontent_2nd .Seat-widthgroup .seat-width::after {
+  content: "";
+  position: absolute;
+  top: -13px;
+  right: -11px;
+  width: 1px;
+  height: 138%;
+  border-right: 3px dashed black;
+  pointer-events: none;
+}
+.car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width {
   display: flex;
-  padding: 11px 2px 0px 0px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
+  margin: 0px 2px 12px 6px;
 }
-.car-seat .chkcontent_2nd .Seat-deepgroup .seat-deep {
-  background-color: rgb(31, 30, 30);
-  color: #ffffff;
-  text-align: center;
-  /* 文字置中 */
-  border: 2px solid black;
-  /* 設定邊框寬度和顏色 */
-  border-radius: 8px;
-  /* 設定圓角半徑 */
-  font-weight: 500;
-  height: 65px;
+.car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-14 input[type=checkbox] {
+  margin: 0px 15px 0px 0px;
+  transform: scale(2.3);
+}
+.car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-14 label {
+  font-size: 24px;
+  font-weight: 800;
+}
+.car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-16 input[type=checkbox] {
+  margin: 0px 15px 0px 0px;
+  transform: scale(2.3);
+}
+.car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-16 label {
+  font-size: 24px;
+  font-weight: 800;
 }
 
 .width_cmCount {
@@ -797,7 +841,7 @@ body {
   /* 水平置中 */
 }
 .width_cmCount .width_number .generated_SWdiv {
-  margin: 5px 9px 5px 9px;
+  margin: 10px 9px 5px 18px;
   padding: 10px 11px 10px 11px;
   font-weight: 500;
   border-radius: 8px;
@@ -818,49 +862,7 @@ body {
   /* 水平置中 */
 }
 .width_cmCount .width_chkblock #SWC_checkbox {
-  margin: 10px 23px 0px 22px;
-  border-radius: 8px;
-  /* 設定圓角半徑 */
-  transform: scale(2.2);
-}
-
-.deep_cmCount {
-  display: flex;
-  margin: 0 0 2px 2px;
-  padding: 2px 2px 0 2px;
-  flex-direction: column;
-}
-.deep_cmCount .deep_number {
-  display: flex;
-  height: 40%;
-  flex-direction: row;
-  /* 水平排列新增的 div */
-  align-items: center;
-  /* 水平置中 */
-}
-.deep_cmCount .deep_number .generated_Sddiv {
-  margin: 5px 9px 5px 9px;
-  padding: 10px 11px 10px 11px;
-  font-weight: 500;
-  border-radius: 8px;
-  /* 設定圓角半徑 */
-  text-align: center;
-  /* 文字置中 */
-  align-items: center;
-  /* 水平置中 */
-  justify-content: center;
-  /* 垂直置中 */
-  background-color: rgb(0, 0, 0);
-  color: #ffffff;
-}
-.deep_cmCount .deep_chkblock {
-  height: 50%;
-  display: flex;
-  align-items: center;
-  /* 水平置中 */
-}
-.deep_cmCount .deep_chkblock #SdC_checkbox {
-  margin: 10px 23px 0px 22px;
+  margin: 20px 23px 0px 31px;
   border-radius: 8px;
   /* 設定圓角半徑 */
   transform: scale(2.2);
@@ -1283,7 +1285,7 @@ body {
   justify-content: center;
   font-weight: 600;
   font-size: 25px;
-  width: 40%;
+  width: 75%;
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
@@ -1322,6 +1324,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 50%;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .side_SLR1 {
   border: 1px solid #000000;
@@ -1334,7 +1337,7 @@ body {
   /* 調整字體大小 */
   font-weight: 600;
   /* 調整字體粗細 */
-  height: 50%;
+  height: 100%;
   margin: 1px 2px 1px 0;
   width: 60%;
   padding: 1px;
@@ -1352,11 +1355,11 @@ body {
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 label {
   font-size: 18px;
-  width: 25%;
+  width: 40%;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 #NovalateralhardwarecountLRs1 {
   font-size: 18px;
-  width: 15%;
+  width: 20%;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1366,6 +1369,7 @@ body {
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group {
   display: flex;
   flex-direction: row;
+  height: 50%;
   width: 100%;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .side_SLR2 {
@@ -1379,7 +1383,7 @@ body {
   /* 調整字體大小 */
   font-weight: 600;
   /* 調整字體粗細 */
-  height: 50%;
+  height: 100%;
   margin: 3px 2px 0px 0px;
   width: 60%;
   padding: 1px;
@@ -1392,16 +1396,16 @@ body {
   justify-content: center;
   font-weight: 600;
   width: 40%;
-  margin: 0px 0px 1px 0;
+  margin: 2px 0px -3px 0;
   padding: 1px;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 label {
   font-size: 18px;
-  width: 25%;
+  width: 40%;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 #NovalateralhardwarecountLRs2 {
   font-size: 18px;
-  width: 15%;
+  width: 20%;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1415,7 +1419,9 @@ body {
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group {
   display: flex;
   flex-direction: row;
+  height: 50%;
   width: 100%;
+  margin: 3px 0 0 0;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .side_MLR1 {
   border: 1px solid #000000;
@@ -1428,7 +1434,7 @@ body {
   /* 調整字體大小 */
   font-weight: 600;
   /* 調整字體粗細 */
-  height: 50%;
+  height: 100%;
   margin: 3px 2px 0px 0;
   padding: 1px;
   width: 60%;
@@ -1441,16 +1447,16 @@ body {
   justify-content: center;
   font-weight: 600;
   width: 40%;
-  margin: 0px 0px 1px 0;
+  margin: 3px 0px -3px 0;
   padding: 1px;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 label {
   font-size: 18px;
-  width: 25%;
+  width: 40%;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 #NovalateralhardwarecountMLRs1 {
   font-size: 18px;
-  width: 15%;
+  width: 20%;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1461,6 +1467,8 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 50%;
+  margin: 4px 0 0 0;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .side_MLR2 {
   border: 1px solid #000000;
@@ -1473,7 +1481,7 @@ body {
   /* 調整字體大小 */
   font-weight: 600;
   /* 調整字體粗細 */
-  height: 50%;
+  height: 100%;
   margin: 2px 1px 1px 0;
   width: 60%;
   padding: 1px;
@@ -1486,16 +1494,16 @@ body {
   justify-content: center;
   font-weight: 600;
   width: 40%;
-  margin: 0px 0px 1px 0;
+  margin: 2px 0px -1px 0;
   padding: 1px;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 label {
   font-size: 18px;
-  width: 25%;
+  width: 40%;
 }
 .car-latertrunk_supports .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 #NovalateralhardwarecountMLRs2 {
   font-size: 18px;
-  width: 15%;
+  width: 20%;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1514,7 +1522,7 @@ body {
 
 .latertrunk_checkboxes input[type=checkbox] {
   /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 10px 3px 9.5px 3px;
+  margin: 17px 3px 21.5px 3px;
 }
 
 .div_notice {
