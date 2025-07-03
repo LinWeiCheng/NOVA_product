@@ -87,7 +87,7 @@ Price.forEach(function (openIntro) {
         });
 
         Car_color_checkboxes.forEach((checkbox) => {
-          let nowprice_size = Price[1].nextElementSibling;
+          let nowprice_size = Price[0].nextElementSibling;
           if (checkbox.checked) {
             if (checkbox.id === "checkbox_red") {
               nowprice_size.textContent = "35,000元";
@@ -137,7 +137,7 @@ let Car_Basedeep_checkboxes = document.querySelectorAll(
 );
 
 Price.forEach(function (openIntro) {
-  let nowprice_size = Price[1].nextElementSibling;
+  let nowprice_size = Price[2].nextElementSibling;
 
   Car_Basewidth_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
@@ -152,29 +152,29 @@ Price.forEach(function (openIntro) {
     });
   });
 
-  Car_Basedeep_checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", (event) => {
-      // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
-      if (event.target.checked) {
-        Car_Basedeep_checkboxes.forEach((otherCheckbox) => {
-          if (otherCheckbox !== event.target) {
-            otherCheckbox.checked = false;
-          }
-        });
-      }
-    });
-  });
+  // Car_Basedeep_checkboxes.forEach((checkbox) => {
+  //   checkbox.addEventListener("change", (event) => {
+  //     // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
+  //     if (event.target.checked) {
+  //       Car_Basedeep_checkboxes.forEach((otherCheckbox) => {
+  //         if (otherCheckbox !== event.target) {
+  //           otherCheckbox.checked = false;
+  //         }
+  //       });
+  //     }
+  //   });
+  // });
 
   function checkBothLines() {
     //Array.some()：用來檢查某一行是否至少有一個 checkbox 被勾選。
     let Basewidth = Array.from(Car_Basewidth_checkboxes).some(
       (cb) => cb.checked
     );
-    let Basedeep = Array.from(Car_Basedeep_checkboxes).some((cb) => cb.checked);
+    // let Basedeep = Array.from(Car_Basedeep_checkboxes).some((cb) => cb.checked);
 
-    if (Basewidth && Basedeep) {
+    if (Basewidth /*&& Basedeep*/) {
       Car_color_checkboxes.forEach((checkbox) => {
-        let nowprice_size = Price[1].nextElementSibling;
+        let nowprice_size = Price[2].nextElementSibling;
         if (checkbox.checked) {
           if (checkbox.id === "checkbox_red") {
             nowprice_size.textContent = "35,000元";
@@ -197,9 +197,9 @@ Price.forEach(function (openIntro) {
   Car_Basewidth_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", checkBothLines);
   });
-  Car_Basedeep_checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", checkBothLines);
-  });
+  // Car_Basedeep_checkboxes.forEach((checkbox) => {
+  //   checkbox.addEventListener("change", checkBothLines);
+  // });
 });
 //endregion
 
@@ -210,7 +210,7 @@ let Car_tripod_checkboxes = document.querySelectorAll(
 );
 
 Price.forEach(function (openIntro) {
-  let nowprice_tripod = Price[2].nextElementSibling;
+  let nowprice_tripod = Price[3].nextElementSibling;
 
   Car_tripod_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
@@ -296,7 +296,7 @@ let footpedal_vertical14_Right = document.getElementById(
 );
 
 Price.forEach(function (openIntro) {
-  let nowprice_footpedal = Price[3].nextElementSibling;
+  let nowprice_footpedal = Price[4].nextElementSibling;
 
   //兩片式塑踏板勾選
   Car_footpedal_twopiece_class_checkboxes.forEach((checkbox) => {
@@ -563,7 +563,7 @@ let Car_head_supports_checkboxes = document.querySelectorAll(
 );
 
 Price.forEach(function (openIntro) {
-  let nowprice_carheadsupports = Price[4].nextElementSibling;
+  let nowprice_carheadsupports = Price[5].nextElementSibling;
 
   Car_head_supports_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
@@ -607,7 +607,7 @@ let back_supports_prices = {
 
 // 更新價格的函式
 function update_back_supportsPrice(event) {
-  let nowprice_backsupports = Price[5].nextElementSibling;
+  let nowprice_backsupports = Price[6].nextElementSibling;
   let totalPrice = 0; // 重置價格
   let target = event.target; // 取得觸發事件的 checkbox
 
@@ -652,7 +652,7 @@ function update_back_supportsPrice(event) {
 
 // 更新價格的函式
 function update_back_supports_hardwarePrice(event) {
-  let nowprice_backsupports = Price[5].nextElementSibling;
+  let nowprice_backsupports = Price[6].nextElementSibling;
   let totalPrice = 0; // 重置價格
   let basePriceAdded = false;
 
@@ -778,7 +778,7 @@ function update_latertrunk_Price() {
 }
 
 function getNovalatertrunksupportsprice() {
-  let nowprice_latertrunksupports = Price[6].nextElementSibling;
+  let nowprice_latertrunksupports = Price[7].nextElementSibling;
   if (
     ltksupSL_Novacouprices.textContent !== "" ||
     ltksupSR_Novacouprices.textContent !== "" ||
@@ -863,7 +863,7 @@ let seat_base_prices = {
 
 // 更新價格的函式
 function update_seatbasePrice(event) {
-  let nowprice_seatbase = Price[7].nextElementSibling;
+  let nowprice_seatbase = Price[8].nextElementSibling;
   let totalPrice = 0; // 重置價格
   let target = event.target; // 取得觸發事件的 checkbox
 
@@ -908,7 +908,7 @@ function update_seatbasePrice(event) {
 
 // 更新價格的函式
 function update_seatbase_hardwarePrice(event) {
-  let nowprice_seatbase = Price[7].nextElementSibling;
+  let nowprice_seatbase = Price[8].nextElementSibling;
   let totalPrice = 0; // 重置價格
   let basePriceAdded = false;
 
@@ -965,7 +965,7 @@ let seat_cushion_prices = {
 };
 
 function update_cushion_Price(event) {
-  let nowprice_cushion = Price[8].nextElementSibling;
+  let nowprice_cushion = Price[9].nextElementSibling;
 
   Car_cushion_checkboxes.forEach((checkbox, index) => {
     if (checkbox !== event.target) {
@@ -993,7 +993,7 @@ Car_cushion_checkboxes.forEach((checkbox) => {
     if (event.target.checked) {
       update_cushion_Price(event);
     } else {
-      let nowprice_cushion = Price[8].nextElementSibling;
+      let nowprice_cushion = Price[9].nextElementSibling;
       nowprice_cushion.textContent = "0元";
       Car_cushion_checkboxes.forEach((otherCheckbox) => {
         otherCheckbox.checked = false;
@@ -1023,7 +1023,7 @@ let bandage_prices = {
 let bandagetotalPrice = 0; // 重置價格
 
 function update_bandagePrice(event) {
-  let nowprice_bandage = Price[9].nextElementSibling;
+  let nowprice_bandage = Price[10].nextElementSibling;
 
   // 計算總價
   Car_bandage_checkboxes.forEach((checkbox, index) => {
@@ -1047,7 +1047,7 @@ Car_bandage_checkboxes.forEach((checkbox) => {
 
 /*-----  11.Spex底座子系統-座墊點擊列  -----*/
 //region
-let nowprice_SpexCushion = Price[10].nextElementSibling;
+let nowprice_SpexCushion = Price[11].nextElementSibling;
 
 //Spex_Vigour_Std 標準型座墊
 let Spex_Vigour_Std_prices = {
@@ -1792,7 +1792,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  12.Spex底座子系統-硬座板點擊列  -----*/
 //region
-let nowprice_SpexSeatBase = Price[11].nextElementSibling;
+let nowprice_SpexSeatBase = Price[12].nextElementSibling;
 
 //region --- Spex_Seat_Base 硬座板(固定扣具) ---
 let Spex_Seat_Base_Fixed_prices = {
@@ -2013,7 +2013,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  13.Spex底座子系統-分腿器點擊列  -----*/
 //region
-let nowprice_SpexMedialThigh = Price[12].nextElementSibling;
+let nowprice_SpexMedialThigh = Price[13].nextElementSibling;
 
 //region --- Spex_MedialThigh_Standard 分腿器-標準型 ---
 let Spex_MedialThigh_Standard_prices = {
@@ -2092,7 +2092,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  14.Spex底座子系統-扶手臀撐點擊列  -----*/
 //region
-let nowprice_SpexArmSupLatThigh = Price[13].nextElementSibling;
+let nowprice_SpexArmSupLatThigh = Price[14].nextElementSibling;
 
 //region --- 扶手支撐價格 ---
 //Spex_Arm_Supports_Quick 扶手支撐快拆式
@@ -6146,7 +6146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  15.Spex軀幹子系統-背靠點擊列 -----*/
 //region
-let nowprice_SpexBackSupports = Price[14].nextElementSibling;
+let nowprice_SpexBackSupports = Price[15].nextElementSibling;
 
 //region --- Spex_Zygo_Active_Lo 淺廓型低背靠 ---
 let Spex_Zygo_Active_Lo_prices = {
@@ -7110,7 +7110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-----  16.Spex軀幹子系統-扣具 -----*/
 //region
-let nowprice_SpexHardware = Price[15].nextElementSibling;
+let nowprice_SpexHardware = Price[16].nextElementSibling;
 let SpexHardware_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_SpexHardware"]'
 );
@@ -7207,7 +7207,7 @@ SpexHardware_checkboxes.forEach((checkbox) => {
 //region
 
 //region --- 軀幹側支撐宣告
-let nowprice_SpexLaterTrunkSupports = Price[16].nextElementSibling;
+let nowprice_SpexLaterTrunkSupports = Price[17].nextElementSibling;
 let latertrunkprices = document.querySelector(".latertrunkprices");
 let latertrunkclothpadprices = document.querySelector(
   ".latertrunkclothpadprices"
@@ -8983,7 +8983,7 @@ function updateSpexLaterTrunkTotalPrice() {
 /*----- 18.Spex頭靠子系統-頭靠 -----*/
 //region
 //region --- 宣告頭靠所需元素 ---
-let nowprice_SpexHeadSupports = Price[17].nextElementSibling;
+let nowprice_SpexHeadSupports = Price[18].nextElementSibling;
 let SpexHeadSupportsCheckboxes = document.querySelectorAll(
   'input[name="car_SpexHeadSupports"]'
 );
@@ -9366,7 +9366,7 @@ bracketCheckboxes.forEach((checkbox) => {
 //region
 
 //region ---宣告所有骨盆帶元素 ---
-let nowprice_Spexhipbelts = Price[18].nextElementSibling;
+let nowprice_Spexhipbelts = Price[19].nextElementSibling;
 let HipBeltscbk = document.querySelectorAll('input[name="car_SpexHipBelts"]');
 let Spex2PointCentrePullckb = document.querySelector(
   "#Spex_2_Point_Centre_Pull"
@@ -10221,7 +10221,7 @@ hipbeltssizeselet.addEventListener("change", () => {
 /*----- 20.Spex綁帶子系統-肩胸綁帶 -----*/
 //region
 //region ---宣告所有肩胸綁帶元素 ---
-let nowprice_SpexShoulderHarnesses = Price[19].nextElementSibling;
+let nowprice_SpexShoulderHarnesses = Price[20].nextElementSibling;
 let ShoulderHarnessesckbs = document.querySelectorAll(
   'input[name="car_SpexShoulderHarnesses"]'
 );
@@ -10493,7 +10493,7 @@ SpexShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
 //region
 
 //region --- 宣告所有元素 ---
-let nowprice_Spexupperlowerlimbstabilisers = Price[20].nextElementSibling;
+let nowprice_Spexupperlowerlimbstabilisers = Price[21].nextElementSibling;
 let UpperLimbStabilisersckb = document.getElementById("Upper_Limb_Stabilisers");
 let LowerLimbStabilisersckb = document.getElementById("Lower_Limb_Stabilisers");
 
