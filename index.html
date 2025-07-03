@@ -23,10 +23,37 @@
         <div class="content">
             <div class="leftcontent">
                 <div class="checklist">
+                    <!-- 第零個點擊列-車台 -->
+                    <div class="car-body">
+                        <div class="target">
+                            <div class="target_img" data-img-carbody="carbodyImg">
+                                <img src="./img/black triangle.png" alt="">
+                            </div>
+                            <div class="chkcontent_0rd">
+                                <div class="subtitle" data-collapse-status="0" data-showinfo="carbody">車台</div>
+                                <div class="bodytiltegroup">
+                                    <div class="carbodytitle">
+                                        <input type="checkbox" class="carbody" id="bodytilte_Novarc" name="car_body"
+                                            data-group="Sbsize" data-item="Novarc" data-price="" data-note="">Novarc
+                                    </div>
+                                    <div class="carbodytitle">
+                                        <input type="checkbox" class="carbody" id="bodytilte_Balance" name="car_body"
+                                            data-item="Balance-珍珠橘" data-price="" data-note="">Balance
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pricecontent">
+                                <div class="pricing" data-price-carbody="carbody">建議售價</div>
+                                <div class="nowprice" data-nowprice-carbody="nowcarbody" data-addPrice="add">0<div
+                                        class="dollar">元</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- 第一個點擊列-車體顏色 -->
                     <div class="car-order">
                         <div class="target">
-                            <div class="target_img">
+                            <div class="target_img" data-img-carseat="carorderImg">
                                 <img src="./img/black triangle.png" alt="">
                             </div>
                             <div class="chkcontent_1st">
@@ -36,7 +63,7 @@
                                     <div class="cherry_red">
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_red"
-                                                name="car_color" data-item="車體顏色(櫻桃紅)" data-group="Sbsize"
+                                                name="car_color" data-item="-顏色(櫻桃紅)" data-group="Sbsize"
                                                 data-price="36,000" data-note=" " value="1">
                                         </div>
                                         <div class="red_car">櫻桃紅</div>
@@ -46,7 +73,7 @@
                                     <div class="pearl_orange">
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_org"
-                                                name="car_color" data-item="車體顏色(珍珠橘)" data-group="Sbsize"
+                                                name="car_color" data-item="-顏色(珍珠橘)" data-group="Sbsize"
                                                 data-price="36,000" data-note=" " value="2">
                                         </div>
                                         <div class="orange_car">珍珠橘</div>
@@ -56,7 +83,7 @@
                                     <div class="rose_gold">
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_gold"
-                                                name="car_color" data-item="車體顏色(玫瑰金)" data-group="Sbsize"
+                                                name="car_color" data-item="-顏色(玫瑰金)" data-group="Sbsize"
                                                 data-price="36,000" data-note=" " value="3">
                                         </div>
                                         <div class="pink_car">玫瑰金</div>
@@ -66,7 +93,7 @@
                                     <div class="sky_blue">
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_blue"
-                                                name="car_color" data-item="車體顏色(天空藍)" data-group="Sbsize"
+                                                name="car_color" data-item="-顏色(天空藍)" data-group="Sbsize"
                                                 data-price="36,000" data-note=" " value="4">
                                         </div>
                                         <div class="blue_car">天空藍</div>
@@ -76,7 +103,7 @@
                                     <div class="camo_gray">
                                         <div class="chkblock">
                                             <input type="checkbox" class="content-checkbox" id="checkbox_gray"
-                                                name="car_color" data-item="車體顏色(迷彩灰)" data-group="Sbsize"
+                                                name="car_color" data-item="-顏色(迷彩灰)" data-group="Sbsize"
                                                 data-price="36,500" data-note=" " value="5">
                                         </div>
                                         <div class="gray_car">迷彩灰</div>
@@ -98,8 +125,6 @@
                             </div>
                             <div class="chkcontent_2nd">
                                 <div class="subtitle" data-collapse-status="0" data-showinfo="carbasesize">車體座板尺寸
-                                    <div class="subtitle_2" data-collapse-status="0" data-showinfo="carbasesize2">
-                                        (座寬及座深都要勾選)</div>
                                 </div>
                                 <div class="basesize">
                                     <div class="Seat-widthgroup">
@@ -113,7 +138,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="Seat-deepgroup">
+                                    <!-- <div class="Seat-deepgroup">
                                         <div class="seat-deep">
                                             <div style="padding: 10px 9px 0 9px;">座深</div>
                                             <div style="padding: 2px 9px 6px 9px;">(CM)</div>
@@ -123,7 +148,7 @@
                                             <div class="deep_chkblock">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="pricecontent">
