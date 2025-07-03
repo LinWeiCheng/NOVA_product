@@ -22,9 +22,9 @@ document.addEventListener("click", function (event) {
           let Price_Spexcushion = document.querySelectorAll(".pricing");
 
           Price_Spexcushion.forEach(function (openIntro) {
-            let Spexcushion = Price_Spexcushion[10];
+            let Spexcushion = Price_Spexcushion[11];
             //直接判斷是第幾個.Price
-            let nowprice_Spexcushion = Price_Spexcushion[10].nextElementSibling;
+            let nowprice_Spexcushion = Price_Spexcushion[11].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexcushion") ===
@@ -79,7 +79,7 @@ document.addEventListener("click", function (event) {
           let Price_Spexcushion = document.querySelectorAll(".pricing");
 
           Price_Spexcushion.forEach(function (openIntro) {
-            let nowprice_Spexcushion = Price_Spexcushion[10].nextElementSibling;
+            let nowprice_Spexcushion = Price_Spexcushion[11].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -121,9 +121,9 @@ Spex_cushion.addEventListener("click", function (event) {
     let img = Spex_cushionimg.querySelector("img");
 
     Price_Spex_cushion.forEach(function (openIntro) {
-      let Spexcushion = Price_Spex_cushion[10];
+      let Spexcushion = Price_Spex_cushion[11];
       //直接判斷是第幾個.Price
-      let nowprice_Spexcushion = Price_Spex_cushion[10].nextElementSibling;
+      let nowprice_Spexcushion = Price_Spex_cushion[11].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexcushion") === "Spexcushion" &&
@@ -1281,10 +1281,10 @@ document.addEventListener("click", function (event) {
           let Price_Spexseatbase = document.querySelectorAll(".pricing");
 
           Price_Spexseatbase.forEach(function (openIntro) {
-            let Spexseatbase = Price_Spexseatbase[11];
+            let Spexseatbase = Price_Spexseatbase[12];
             //直接判斷是第幾個.Price
             let nowprice_Spexseatbase =
-              Price_Spexseatbase[11].nextElementSibling;
+              Price_Spexseatbase[12].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexseatbase") ===
@@ -1339,7 +1339,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexseatbase.forEach(function (openIntro) {
             let nowprice_Spexseatbase =
-              Price_Spexseatbase[11].nextElementSibling;
+              Price_Spexseatbase[12].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -1382,9 +1382,9 @@ Spex_seatbase.addEventListener("click", function (event) {
     let img = Spex_seatbaseimg.querySelector("img");
 
     Price_Spex_seatbase.forEach(function (openIntro) {
-      let Spexseatbase = Price_Spex_seatbase[11];
+      let Spexseatbase = Price_Spex_seatbase[12];
       //直接判斷是第幾個.Price
-      let nowprice_Spexseatbase = Price_Spex_seatbase[11].nextElementSibling;
+      let nowprice_Spexseatbase = Price_Spex_seatbase[12].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexseatbase") === "Spexseatbase" &&
@@ -1539,7 +1539,7 @@ document
             otherCheckbox.checked = false;
           }
         });
-      let nowprice_SpexSeatBase = Price[11].nextElementSibling;
+      let nowprice_SpexSeatBase = Price[12].nextElementSibling;
       if (nowprice_SpexSeatBase.textContent) {
         nowprice_SpexSeatBase.textContent = "0元";
       }
@@ -1583,7 +1583,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
   let SeatbaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
   let Price = document.querySelectorAll(".pricing");
-  let nowprice_SpexSeatBase = Price[11].nextElementSibling;
+  let nowprice_SpexSeatBase = Price[12].nextElementSibling;
 
   //剛開啟時讓widthSelect無法選擇
   SeatbasewidthSelect.disabled = true;
@@ -1809,10 +1809,10 @@ document.addEventListener("click", function (event) {
           let Price_Spexmedialthigh = document.querySelectorAll(".pricing");
 
           Price_Spexmedialthigh.forEach(function (openIntro) {
-            let Spexmedialthigh = Price_Spexmedialthigh[12];
+            let Spexmedialthigh = Price_Spexmedialthigh[13];
             //直接判斷是第幾個.Price
             let nowprice_Spexmedialthigh =
-              Price_Spexmedialthigh[12].nextElementSibling;
+              Price_Spexmedialthigh[13].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexmedialthigh") ===
@@ -1867,7 +1867,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexmedialthigh.forEach(function (openIntro) {
             let nowprice_Spexmedialthigh =
-              Price_Spexmedialthigh[12].nextElementSibling;
+              Price_Spexmedialthigh[13].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -1910,10 +1910,10 @@ Spex_medialthigh.addEventListener("click", function (event) {
     let img = Spex_medialthighimg.querySelector("img");
 
     Price_Spex_medialthigh.forEach(function (openIntro) {
-      let Spexmedialthigh = Price_Spex_medialthigh[12];
+      let Spexmedialthigh = Price_Spex_medialthigh[13];
       //直接判斷是第幾個.Price
       let nowprice_Spexmedialthigh =
-        Price_Spex_medialthigh[12].nextElementSibling;
+        Price_Spex_medialthigh[13].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexmedialthigh") ===
@@ -2066,7 +2066,7 @@ document
           if (otherCheckbox !== this) {
             otherCheckbox.checked = false;
           }
-          let nowprice_Spexmedialthigh = Price[12].nextElementSibling;
+          let nowprice_Spexmedialthigh = Price[13].nextElementSibling;
           if (nowprice_Spexmedialthigh.textContent) {
             nowprice_Spexmedialthigh.textContent = "0元";
           }
@@ -2153,10 +2153,10 @@ document.addEventListener("click", function (event) {
           let Price_Spexarmsuplatthigh = document.querySelectorAll(".pricing");
 
           Price_Spexarmsuplatthigh.forEach(function (openIntro) {
-            let Spexarmsuplatthigh = Price_Spexarmsuplatthigh[13];
+            let Spexarmsuplatthigh = Price_Spexarmsuplatthigh[14];
             //直接判斷是第幾個.Price
             let nowprice_Spexarmsuplatthigh =
-              Price_Spexarmsuplatthigh[13].nextElementSibling;
+              Price_Spexarmsuplatthigh[14].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexarmsuplatthigh") ===
@@ -2211,7 +2211,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexarmsuplatthigh.forEach(function (openIntro) {
             let nowprice_Spexarmsuplatthigh =
-              Price_Spexarmsuplatthigh[13].nextElementSibling;
+              Price_Spexarmsuplatthigh[14].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -2255,10 +2255,10 @@ Spex_armsuplatthigh.addEventListener("click", function (event) {
     let img = Spex_armsuplatthighimg.querySelector("img");
 
     Price_Spex_armsuplatthigh.forEach(function (openIntro) {
-      let Spexarmsuplatthigh = Price_Spex_armsuplatthigh[13];
+      let Spexarmsuplatthigh = Price_Spex_armsuplatthigh[14];
       //直接判斷是第幾個.Price
       let nowprice_Spexarmsuplatthigh =
-        Price_Spex_armsuplatthigh[13].nextElementSibling;
+        Price_Spex_armsuplatthigh[14].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexarmsuplatthigh") ===
@@ -2446,7 +2446,7 @@ document
             otherCheckbox.checked = false;
           }
         });
-      let nowprice_Spexarmsuplatthigh = Price[13].nextElementSibling;
+      let nowprice_Spexarmsuplatthigh = Price[14].nextElementSibling;
       if (nowprice_Spexarmsuplatthigh.textContent) {
         nowprice_Spexarmsuplatthigh.textContent = "0元";
       }
@@ -2623,10 +2623,10 @@ document.addEventListener("click", function (event) {
           let Price_Spexbacksupports = document.querySelectorAll(".pricing");
 
           Price_Spexbacksupports.forEach(function (openIntro) {
-            let Spexbacksupports = Price_Spexbacksupports[14];
+            let Spexbacksupports = Price_Spexbacksupports[15];
             //直接判斷是第幾個.Price
             let nowprice_Spexbacksupports =
-              Price_Spexbacksupports[14].nextElementSibling;
+              Price_Spexbacksupports[15].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexbacksupports") ===
@@ -2681,7 +2681,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexbacksupports.forEach(function (openIntro) {
             let nowprice_Spexbacksupports =
-              Price_Spexbacksupports[14].nextElementSibling;
+              Price_Spexbacksupports[15].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -2724,10 +2724,10 @@ Spex_backsupports.addEventListener("click", function (event) {
     let img = Spex_backsupportsimg.querySelector("img");
 
     Price_Spex_backsupports.forEach(function (openIntro) {
-      let Spexbacksupports = Price_Spex_backsupports[14];
+      let Spexbacksupports = Price_Spex_backsupports[15];
       //直接判斷是第幾個.Price
       let nowprice_Spexbacksupports =
-        Price_Spex_backsupports[14].nextElementSibling;
+        Price_Spex_backsupports[15].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexbacksupports") ===
@@ -4261,10 +4261,10 @@ document.addEventListener("click", function (event) {
           let Price_Spexhardware = document.querySelectorAll(".pricing");
 
           Price_Spexhardware.forEach(function (openIntro) {
-            let Spexhardware = Price_Spexhardware[15];
+            let Spexhardware = Price_Spexhardware[16];
             //直接判斷是第幾個.Price
             let nowprice_Spexhardware =
-              Price_Spexhardware[15].nextElementSibling;
+              Price_Spexhardware[16].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexhardware") ===
@@ -4319,7 +4319,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexhardware.forEach(function (openIntro) {
             let nowprice_Spexhardware =
-              Price_Spexhardware[15].nextElementSibling;
+              Price_Spexhardware[16].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -4362,9 +4362,9 @@ Spex_hardware.addEventListener("click", function (event) {
     let img = Spex_hardwareimg.querySelector("img");
 
     Price_Spex_hardware.forEach(function (openIntro) {
-      let Spexhardware = Price_Spex_hardware[15];
+      let Spexhardware = Price_Spex_hardware[16];
       //直接判斷是第幾個.Price
-      let nowprice_Spexhardware = Price_Spex_hardware[15].nextElementSibling;
+      let nowprice_Spexhardware = Price_Spex_hardware[16].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexhardware") === "Spexhardware" &&
@@ -4533,10 +4533,10 @@ document.addEventListener("click", function (event) {
             document.querySelectorAll(".pricing");
 
           Price_Spexlatertrunksupports.forEach(function (openIntro) {
-            let Spexlatertrunksupports = Price_Spexlatertrunksupports[16];
+            let Spexlatertrunksupports = Price_Spexlatertrunksupports[17];
             //直接判斷是第幾個.Price
             let nowprice_Spexlatertrunksupports =
-              Price_Spexlatertrunksupports[16].nextElementSibling;
+              Price_Spexlatertrunksupports[17].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexlatertrunksupports") ===
@@ -4593,7 +4593,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexlatertrunksupports.forEach(function (openIntro) {
             let nowprice_Spexlatertrunksupports =
-              Price_Spexlatertrunksupports[16].nextElementSibling;
+              Price_Spexlatertrunksupports[17].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -4636,13 +4636,13 @@ Spex_latertrunksupports.addEventListener("click", function (event) {
     let Price_Spex_latertrunksupports = document.querySelectorAll(".pricing");
     let Spex_latertrunksupportsimg =
       Spex_latertrunksupports.querySelector(".target_img"); // 找到最近的 .target_img
-    let img = Spex_latertrunksupports.querySelector("img");
+    let img = Spex_latertrunksupportsimg.querySelector("img");
 
     Price_Spex_latertrunksupports.forEach(function (openIntro) {
-      let Spexlatertrunksupports = Price_Spex_latertrunksupports[16];
+      let Spexlatertrunksupports = Price_Spex_latertrunksupports[17];
       //直接判斷是第幾個.Price
       let nowprice_Spexlatertrunksupports =
-        Price_Spex_latertrunksupports[16].nextElementSibling;
+        Price_Spex_latertrunksupports[17].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexlatertrunksupports") ===
@@ -8654,10 +8654,10 @@ document.addEventListener("click", function (event) {
           let Price_Spexheadsupports = document.querySelectorAll(".pricing");
 
           Price_Spexheadsupports.forEach(function (openIntro) {
-            let Spexheadsupports = Price_Spexheadsupports[17];
+            let Spexheadsupports = Price_Spexheadsupports[18];
             //直接判斷是第幾個.Price
             let nowprice_Spexheadsupports =
-              Price_Spexheadsupports[17].nextElementSibling;
+              Price_Spexheadsupports[18].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexheadsupports") ===
@@ -8712,7 +8712,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexheadsupports.forEach(function (openIntro) {
             let nowprice_Spexheadsupports =
-              Price_Spexheadsupports[17].nextElementSibling;
+              Price_Spexheadsupports[18].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -8755,10 +8755,10 @@ Spex_headsupports.addEventListener("click", function (event) {
     let img = Spex_headsupportsimg.querySelector("img");
 
     Price_Spex_headsupports.forEach(function (openIntro) {
-      let Spexheadsupports = Price_Spex_headsupports[17];
+      let Spexheadsupports = Price_Spex_headsupports[18];
       //直接判斷是第幾個.Price
       let nowprice_Spexheadsupports =
-        Price_Spex_headsupports[17].nextElementSibling;
+        Price_Spex_headsupports[18].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexheadsupports") ===
@@ -9273,7 +9273,7 @@ function HeadSupportsPadSizeadSelectOptions(
   options,
   selectoption1
 ) {
-  let nowprice_SpexHeadSupports = Price[17].nextElementSibling;
+  let nowprice_SpexHeadSupports = Price[18].nextElementSibling;
   let data = options.option1 || [];
   let headerCells = document.querySelectorAll(".padheader-row td");
   if (selectoption1 === 2) {
@@ -9368,10 +9368,10 @@ document.addEventListener("click", function (event) {
           let Price_Spexhipbelts = document.querySelectorAll(".pricing");
 
           Price_Spexhipbelts.forEach(function (openIntro) {
-            let Spexhipbelts = Price_Spexhipbelts[18];
+            let Spexhipbelts = Price_Spexhipbelts[19];
             //直接判斷是第幾個.Price
             let nowprice_Spexhipbelts =
-              Price_Spexhipbelts[18].nextElementSibling;
+              Price_Spexhipbelts[19].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexhipbelts") ===
@@ -9426,7 +9426,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexhipbelts.forEach(function (openIntro) {
             let nowprice_Spexhipbelts =
-              Price_Spexhipbelts[18].nextElementSibling;
+              Price_Spexhipbelts[19].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -9469,9 +9469,9 @@ Spex_hipbelts.addEventListener("click", function (event) {
     let img = Spex_hipbeltsimg.querySelector("img");
 
     Price_Spex_hipbelts.forEach(function (openIntro) {
-      let Spexhipbelts = Price_Spex_hipbelts[18];
+      let Spexhipbelts = Price_Spex_hipbelts[19];
       //直接判斷是第幾個.Price
-      let nowprice_Spexhipbelts = Price_Spex_hipbelts[18].nextElementSibling;
+      let nowprice_Spexhipbelts = Price_Spex_hipbelts[19].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexhipbelts") === "Spexhipbelts" &&
@@ -10021,10 +10021,10 @@ document.addEventListener("click", function (event) {
             document.querySelectorAll(".pricing");
 
           Price_Spexshoulderharnesses.forEach(function (openIntro) {
-            let Spexshoulderharnesses = Price_Spexshoulderharnesses[19];
+            let Spexshoulderharnesses = Price_Spexshoulderharnesses[20];
             //直接判斷是第幾個.Price
             let nowprice_Spexshoulderharnesses =
-              Price_Spexshoulderharnesses[19].nextElementSibling;
+              Price_Spexshoulderharnesses[20].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-Spexshoulderharnesses") ===
@@ -10080,7 +10080,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexshoulderharnesses.forEach(function (openIntro) {
             let nowprice_Spexshoulderharnesses =
-              Price_Spexshoulderharnesses[19].nextElementSibling;
+              Price_Spexshoulderharnesses[20].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -10124,10 +10124,10 @@ Spex_shoulderharnesses.addEventListener("click", function (event) {
     let img = Spex_shoulderharnessesimg.querySelector("img");
 
     Price_Spex_shoulderharnesses.forEach(function (openIntro) {
-      let Spexshoulderharnesses = Price_Spex_shoulderharnesses[19];
+      let Spexshoulderharnesses = Price_Spex_shoulderharnesses[20];
       //直接判斷是第幾個.Price
       let nowprice_Spexshoulderharnesses =
-        Price_Spex_shoulderharnesses[19].nextElementSibling;
+        Price_Spex_shoulderharnesses[20].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexshoulderharnesses") ===
@@ -10408,7 +10408,7 @@ function updateShoulderHarnessesStatus() {
     !Spex_Shoulder_Strap_Guidescheckbox.checked &&
     !Adapta_Shoulder_Strap_Guidescheckbox.checked
   ) {
-    let nowprice_SpexShoulderHarnesses = Price[19].nextElementSibling;
+    let nowprice_SpexShoulderHarnesses = Price[20].nextElementSibling;
     nowprice_SpexShoulderHarnesses.textContent = "0 元";
   }
 }
@@ -10550,7 +10550,7 @@ ShoulderHarnessesAllcheckboxes.forEach((checkbox) => {
       (cb) => cb.checked
     );
     if (!anyChecked) {
-      let nowprice_SpexShoulderHarnesses = Price[19].nextElementSibling;
+      let nowprice_SpexShoulderHarnesses = Price[20].nextElementSibling;
       nowprice_SpexShoulderHarnesses.textContent = "0 元";
     }
   });
@@ -10594,10 +10594,10 @@ document.addEventListener("click", function (event) {
 
           Price_Spexupperlowerlimbstabilisers.forEach(function (openIntro) {
             let Spexupperlowerlimbstabilisers =
-              Price_Spexupperlowerlimbstabilisers[20];
+              Price_Spexupperlowerlimbstabilisers[21];
             //直接判斷是第幾個.Price
             let nowprice_Spexupperlowerlimbstabilisers =
-              Price_Spexupperlowerlimbstabilisers[20].nextElementSibling;
+              Price_Spexupperlowerlimbstabilisers[21].nextElementSibling;
 
             if (
               openIntro.getAttribute(
@@ -10661,7 +10661,7 @@ document.addEventListener("click", function (event) {
 
           Price_Spexupperlowerlimbstabilisers.forEach(function (openIntro) {
             let nowprice_Spexupperlowerlimbstabilisers =
-              Price_Spexupperlowerlimbstabilisers[20].nextElementSibling;
+              Price_Spexupperlowerlimbstabilisers[21].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -10710,10 +10710,10 @@ Spex_upperlowerlimbstabilisers.addEventListener("click", function (event) {
 
     Price_Spex_upperlowerlimbstabilisers.forEach(function (openIntro) {
       let Spexupperlowerlimbstabilisers =
-        Price_Spex_upperlowerlimbstabilisers[20];
+        Price_Spex_upperlowerlimbstabilisers[21];
       //直接判斷是第幾個.Price
       let nowprice_Spexupperlowerlimbstabilisers =
-        Price_Spex_upperlowerlimbstabilisers[20].nextElementSibling;
+        Price_Spex_upperlowerlimbstabilisers[21].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-Spexupperlowerlimbstabilisers") ===
@@ -10863,7 +10863,7 @@ SpexUpperLimbStabiliserscheckbox.addEventListener("change", () => {
     upperlimbstabiliserstypesel.disabled = true;
     Spexupperlimbstabilisersprices.textContent = "";
 
-    let nowprice_Spexupperlowerlimbstabilisers = Price[20].nextElementSibling;
+    let nowprice_Spexupperlowerlimbstabilisers = Price[21].nextElementSibling;
     if (SpexLowerLimbStabiliserscheckbox.checked) {
       nowprice_Spexupperlowerlimbstabilisers.textContent = `${formatPrice(
         Spexlowerlimbstabilisersprices.textContent
@@ -10891,7 +10891,7 @@ SpexLowerLimbStabiliserscheckbox.addEventListener("change", () => {
   } else {
     lowerlimbstabiliserssizesel.disabled = true;
 
-    let nowprice_Spexupperlowerlimbstabilisers = Price[20].nextElementSibling;
+    let nowprice_Spexupperlowerlimbstabilisers = Price[21].nextElementSibling;
     if (SpexUpperLimbStabiliserscheckbox.checked) {
       nowprice_Spexupperlowerlimbstabilisers.textContent = `${formatPrice(
         Spexupperlimbstabilisersprices.textContent
