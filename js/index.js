@@ -1,88 +1,430 @@
 let left = document.querySelector(".leftcontent");
+let carorder = document.querySelector(".car-order");
+carorder.style.display = "none";
+let carseat = document.querySelector(".car-seat");
+carseat.style.display = "none";
+
+/*-----  0.車體選擇點擊列  -----*/
+//region
+/*--- 車體選擇點擊列-圖片箭頭部分   ---*/
+//region
+document.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let tgimg_0 = event.target;
+  let carseat0 = tgimg_0.closest(".car-body"); // 找到最近的 .car-body
+  let imgCarbody = event.target.dataset.imgCarbody;
+
+  //確認我點擊到的位置是否是car-body
+  if (carseat0 && carseat0.className.trim() === "car-body") {
+    let introdutionid = carseat0.querySelector(".bodytiltegroup"); // 在 car-body 內部找 bodygroup
+    let introdution = carseat0.querySelector(".subtitle"); // 在 car-body 內部找 subtitle
+
+    if (introdutionid) {
+      // 取得 `visibility` 的計算後樣式
+      let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+
+      if (imgCarbody === "carbodyImg") {
+        if (visibilityValue === "hidden") {
+          let Price_carbody = document.querySelectorAll(".pricing");
+
+          Price_carbody.forEach(function (openIntro) {
+            let nowprice_bodydad = Price_carbody[0].parentElement;
+            let suggestion_carbody = Price_carbody[0];
+            //直接判斷是第幾個.Price
+            let nowprice_body = Price_carbody[0].nextElementSibling;
+
+            if (
+              openIntro.getAttribute("data-price-carbody") === "carbody" &&
+              nowprice_body.getAttribute("data-nowprice-carbody") ===
+                "nowcarbody"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
+
+                //cartripod勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "0px 1px 1px 3px";
+                introdutionid.style.width = "calc(100% - 20px)";
+                introdutionid.style.flexWrap = "wrap";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.display = "flex";
+                introdutionid.style.margin = "0px 5px 5px 7px";
+                introdutionid.style.height = "auto";
+                introdutionid.style.justifyContent = "space-between";
+
+                //建議售價標題顯示
+                openIntro.style.display = "none";
+                nowprice_bodydad.style.display = "none";
+
+                //建議售價金額顯示
+                nowprice_body.style.visibility = "hidden";
+                nowprice_body.style.display = "flex";
+                nowprice_body.style.width = "95%";
+                nowprice_body.style.height = "90%";
+                nowprice_body.style.color = "#000000";
+                nowprice_body.style.borderRadius = "8px";
+                nowprice_body.style.padding = "1px";
+                nowprice_body.style.margin = "3px 3px 3px 2px";
+                nowprice_body.style.textAlign = "center";
+                nowprice_body.style.fontSize = "20px";
+                nowprice_body.style.fontWeight = "600";
+                nowprice_body.style.alignItems = "center";
+                nowprice_body.style.justifyContent = "center";
+                if (window.matchMedia("(max-width: 650px)").matches) {
+                  nowprice_body.style.fontSize = "15px";
+                  introdutionid.style.width = "calc(100% - 9px)";
+                  suggestion_carbody.style.padding = "5px";
+                  suggestion_carbody.style.margin = "3px 0px 3px 1px";
+                }
+              }
+            }
+          });
+        } else {
+          let Price_carbody = document.querySelectorAll(".pricing");
+
+          Price_carbody.forEach(function (openIntro) {
+            let nowprice_body = Price_carbody[0].nextElementSibling;
+            //把data-collapse-status改成0
+            introdution.setAttribute("data-collapse-status", "0");
+
+            //建議售價標題隱藏
+            introdutionid.style.display = "none";
+            introdutionid.style.height = "0";
+            introdutionid.style.padding = "0";
+            introdutionid.style.border = "0px dashed black";
+            introdutionid.style.margin = "0";
+
+            if (openIntro.getAttribute("data-price-carbody") === "carbody") {
+              //建議售價金額隱藏
+              openIntro.style.display = "none";
+            }
+            nowprice_body.style.visibility = "hidden";
+          });
+        }
+      }
+    }
+  }
+});
+//endregion
+
+/*---  車體選擇點擊列-subtitle部分  ---*/
+//region
+let carbody = document.querySelector(".car-body");
+carbody.addEventListener("click", function (event) {
+  //showinfo為我設定的data名稱
+  let showinfo = event.target.dataset.showinfo;
+  let introdution = event.target;
+  //確認我點擊到的位置是否是carbody
+  if (showinfo === "carbody") {
+    let introdutionid = event.target.nextElementSibling;
+    let Price_carbody = document.querySelectorAll(".pricing");
+    let carBody = carbody.querySelector(".target_img"); // 找到最近的 .target_img
+    let img = carBody.querySelector("img");
+
+    Price_carbody.forEach(function (openIntro) {
+      let suggestion_carbody = Price_carbody[0];
+      //直接判斷是第幾個.Price
+      let nowprice_body = Price_carbody[0].nextElementSibling;
+      let nowprice_bodydad = Price_carbody[0].parentElement;
+
+      if (
+        openIntro.getAttribute("data-price-carbody") === "carbody" &&
+        nowprice_body.getAttribute("data-nowprice-carbody") === "nowcarbody"
+      ) {
+        if (introdution.getAttribute("data-collapse-status") === "0") {
+          //把data-collapse-status改成1
+          introdution.setAttribute("data-collapse-status", "1");
+
+          //cartripod勾選位置大小設置
+          introdutionid.style.visibility = "visible";
+          introdutionid.style.padding = "0px 1px 1px 3px";
+          introdutionid.style.width = "calc(100% - 20px)";
+          introdutionid.style.flexWrap = "wrap";
+          introdutionid.style.border = "3px dashed black";
+          introdutionid.style.borderTop = "none";
+          introdutionid.style.display = "flex";
+          introdutionid.style.margin = "0px 5px 5px 7px";
+          introdutionid.style.height = "auto";
+          introdutionid.style.justifyContent = "space-between";
+
+          nowprice_bodydad.style.display = "none";
+          //建議售價標題顯示
+          openIntro.style.display = "none";
+
+          //建議售價金額顯示
+          nowprice_body.style.visibility = "hidden";
+          nowprice_body.style.display = "flex";
+          nowprice_body.style.width = "95%";
+          nowprice_body.style.height = "90%";
+          nowprice_body.style.color = "#000000";
+          nowprice_body.style.borderRadius = "8px";
+          nowprice_body.style.padding = "1px";
+          nowprice_body.style.margin = "3px 3px 3px 2px";
+          nowprice_body.style.textAlign = "center";
+          nowprice_body.style.fontSize = "20px";
+          nowprice_body.style.fontWeight = "600";
+          nowprice_body.style.alignItems = "center";
+          nowprice_body.style.justifyContent = "center";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle after.png");
+          }
+
+          if (window.matchMedia("(max-width: 650px)").matches) {
+            nowprice_body.style.fontSize = "15px";
+            introdutionid.style.width = "calc(100% - 9px)";
+            suggestion_carbody.style.padding = "5px";
+            suggestion_carbody.style.margin = "3px 0px 3px 1px";
+          }
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
+
+          //建議售價標題隱藏
+          introdutionid.style.display = "none";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.border = "0px dashed black";
+          introdutionid.style.margin = "0";
+
+          //建議售價金額隱藏
+          openIntro.style.display = "none";
+          nowprice_body.style.visibility = "hidden";
+
+          if (img) {
+            img.setAttribute("src", "./img/black triangle.png");
+          }
+        }
+      }
+    });
+  }
+});
+//endregion
+
+//////還未完成
+function test() {
+  //region
+  let carseat0 = document.querySelector(".car-body"); // 找到最近的 .car-body
+  let introdutionid = carseat0.querySelector(".bodytiltegroup"); // 在 car-body 內部找 bodygroup
+  introdutionid.style.visibility = "hidden";
+  introdutionid.style.height = "0";
+  introdutionid.style.padding = "0";
+  introdutionid.style.border = "0px dashed black";
+  introdutionid.style.margin = "0";
+
+  let nowbodyprice = document.querySelector(
+    '[data-nowprice-carbasesize="nowcarbasesize"]'
+  );
+  //建議售價金額隱藏
+  let bodyprice = document.querySelector(
+    '[data-nowprice-carbasesize="nowcarbasesize"]'
+  );
+
+  bodyprice.style.display = "none";
+  nowbodyprice.style.display = "none";
+  //endregion
+}
+
+//確定勾選的是哪個車台，且不會重複勾選選項
+//region
+document.querySelectorAll('input[name="car_body"]').forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    document
+      .querySelectorAll('input[name="car_body"]')
+      .forEach((otherCheckbox) => {
+        if (otherCheckbox !== this) {
+          otherCheckbox.checked = false;
+        }
+      });
+  });
+});
+//endregion
+
+let body_Novarc = document.getElementById("bodytilte_Novarc");
+body_Novarc.addEventListener("change", () => {
+  if (body_Novarc.checked) {
+    carorder.style.display = "block"; // 顯示
+    carseat.style.display = "block"; // 顯示
+    let BsizeDiv = document.querySelector(".Bseat-width");
+    if (BsizeDiv) {
+      BsizeDiv.remove();
+    }
+    let Basesize = document.querySelector(".Seat-widthgroup");
+    let Bbasesize = document.querySelector(".basesize");
+
+    if (!document.querySelector(".Basesize")) {
+      Bbasesize.style.height = "0px";
+      Bbasesize.style.visibility = "hidden";
+
+      test();
+      Array.from(Basesize.children).forEach((child) => {
+        child.style.display = "block";
+      });
+    }
+  } else {
+    carorder.style.display = "none"; // 隱藏
+    carseat.style.display = "none"; // 隱藏
+  }
+});
+
+let body_Balance = document.getElementById("bodytilte_Balance");
+body_Balance.addEventListener("change", () => {
+  if (body_Balance.checked) {
+    let Basesize = document.querySelector(".Seat-widthgroup");
+    carseat.style.display = "block"; // 隱藏
+    carorder.style.display = "none"; // 隱藏
+    Array.from(Basesize.children).forEach((child) => {
+      child.style.display = "none";
+    });
+
+    // 檢查是否已經新增過，避免重複新增
+    if (!document.querySelector(".Bseat-width")) {
+      Basesize.style.height = "auto";
+      // 建立新的 div
+      let newDiv = document.createElement("div");
+      newDiv.className = "Bseat-width";
+
+      // 建立 checkbox 14"
+      let checkbox14 = document.createElement("input");
+      checkbox14.type = "checkbox";
+      checkbox14.id = "Bsize14";
+      let label14 = document.createElement("label");
+      label14.htmlFor = "Bsize14";
+      label14.textContent = "14〞";
+
+      let wrapper14 = document.createElement("div");
+      wrapper14.className = "Bbasesize-14";
+      wrapper14.appendChild(checkbox14);
+      wrapper14.appendChild(label14);
+
+      // 建立 checkbox 16"
+      let checkbox16 = document.createElement("input");
+      checkbox16.type = "checkbox";
+      checkbox16.id = "Bsize16";
+      let label16 = document.createElement("label");
+      label16.htmlFor = "Bsize16";
+      label16.textContent = "16〞";
+
+      // 包成一個 div
+      let wrapper16 = document.createElement("div");
+      wrapper16.className = "Bbasesize-16";
+      wrapper16.appendChild(checkbox16);
+      wrapper16.appendChild(label16);
+
+      newDiv.appendChild(wrapper14);
+      newDiv.appendChild(wrapper16);
+
+      // 插入到畫面上
+      Basesize.appendChild(newDiv);
+    }
+  } else {
+    carorder.style.display = "none"; // 顯示
+    carseat.style.display = "none"; // 顯示
+    // 移除新增的 .Bseat-width
+    let BsizeDiv = document.querySelector(".Bseat-width");
+    if (BsizeDiv) {
+      BsizeDiv.remove();
+    }
+    let Basesize = document.querySelector(".Seat-widthgroup");
+    if (!document.querySelector(".Basesize")) {
+      Basesize.style.height = "77px";
+      Basesize.style.visibility = "hidden";
+      Array.from(Basesize.children).forEach((child) => {
+        child.style.display = "block";
+      });
+    }
+  }
+});
+
+//endregion
+
 /*-----  1.車體顏色點擊列  -----*/
 //region
 /*--- 車體顏色點擊列-圖片箭頭部分   ---*/
-let targetimg_1 = document.querySelector(".target_img");
-targetimg_1.addEventListener("click", function (event) {
+document.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let tgimg_1 = event.target;
   let carOrder = tgimg_1.closest(".car-order"); // 找到最近的 .car-order
+  let imgCarorder = event.target.dataset.imgCarseat;
+
   //確認我點擊到的位置是否是car-order的箭頭
-  if (carOrder.className.trim() === "car-order") {
+  if (carOrder && carOrder.className.trim() === "car-order") {
     let introdutionid = carOrder.querySelector(".car_color"); // 在 car-order 內部找 car_color
     let introdution = carOrder.querySelector(".subtitle"); // 在 car-order 內部找 subtitle
 
     if (introdutionid) {
       // 取得 `visibility` 的計算後樣式
       let visibilityValue = window.getComputedStyle(introdutionid).visibility;
+      if (imgCarorder === "carorderImg") {
+        if (visibilityValue === "hidden") {
+          let Price_carcolor = document.querySelectorAll(".pricing");
+          Price_carcolor.forEach(function (openIntro) {
+            let nowprice_color = Price_carcolor[1].nextElementSibling;
+            if (
+              openIntro.getAttribute("data-price-carcolor") === "carcolor" &&
+              nowprice_color.getAttribute("data-nowprice-carcolor") ===
+                "nowcarcolor"
+            ) {
+              if (introdution.getAttribute("data-collapse-status") === "0") {
+                //把data-collapse-status改成1
+                introdution.setAttribute("data-collapse-status", "1");
 
-      if (visibilityValue === "hidden") {
-        let Price_carcolor = document.querySelectorAll(".pricing");
-        Price_carcolor.forEach(function (openIntro) {
-          let nowprice_color = Price_carcolor[0].nextElementSibling;
-          if (
-            openIntro.getAttribute("data-price-carcolor") === "carcolor" &&
-            nowprice_color.getAttribute("data-nowprice-carcolor") ===
-              "nowcarcolor"
-          ) {
-            if (introdution.getAttribute("data-collapse-status") === "0") {
-              //把data-collapse-status改成1
-              introdution.setAttribute("data-collapse-status", "1");
+                //carcolor勾選位置大小設置
+                introdutionid.style.visibility = "visible";
+                introdutionid.style.padding = "1px 1px 1px 6px";
+                introdutionid.style.width = "calc(100% - 20px)";
+                introdutionid.style.flexWrap = "wrap";
+                introdutionid.style.border = "3px dashed black";
+                introdutionid.style.borderTop = "none";
+                introdutionid.style.display = "flex";
+                introdutionid.style.margin = "3px 0px 5px 8px";
+                introdutionid.style.height = "auto";
+              } else {
+                //把data-collapse-status改成0
+                introdution.setAttribute("data-collapse-status", "0");
 
-              //carcolor勾選位置大小設置
-              introdutionid.style.visibility = "visible";
-              introdutionid.style.padding = "1px 1px 1px 6px";
-              introdutionid.style.width = "calc(100% - 20px)";
-              introdutionid.style.flexWrap = "wrap";
-              introdutionid.style.border = "3px dashed black";
-              introdutionid.style.borderTop = "none";
-              introdutionid.style.display = "flex";
-              introdutionid.style.margin = "3px 0px 5px 8px";
-              introdutionid.style.height = "auto";
-            } else {
-              //把data-collapse-status改成0
-              introdution.setAttribute("data-collapse-status", "0");
-
-              // //建議售價標題隱藏
-              introdutionid.style.visibility = "hidden";
-              introdutionid.style.height = "0";
-              introdutionid.style.padding = "0";
-              introdutionid.style.margin = "0";
-              introdutionid.style.border = "0px dashed black";
+                // //建議售價標題隱藏
+                introdutionid.style.visibility = "hidden";
+                introdutionid.style.height = "0";
+                introdutionid.style.padding = "0";
+                introdutionid.style.margin = "0";
+                introdutionid.style.border = "0px dashed black";
+              }
             }
-          }
-        });
-      } else {
-        //把data-collapse-status改成0
-        introdution.setAttribute("data-collapse-status", "0");
+          });
+        } else {
+          //把data-collapse-status改成0
+          introdution.setAttribute("data-collapse-status", "0");
 
-        // //建議售價標題隱藏
-        introdutionid.style.visibility = "hidden";
-        introdutionid.style.height = "0";
-        introdutionid.style.padding = "0";
-        introdutionid.style.margin = "0";
-        introdutionid.style.border = "0px dashed black";
+          // //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
+          introdutionid.style.height = "0";
+          introdutionid.style.padding = "0";
+          introdutionid.style.margin = "0";
+          introdutionid.style.border = "0px dashed black";
+        }
       }
     }
   }
 });
 
 /*---  車體顏色點擊列-subtitle部分  ---*/
-let carorder = document.querySelector(".car-order");
 carorder.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
   let introdution = event.target;
   let introdutionid = event.target.nextElementSibling;
   let Price_carcolor = document.querySelectorAll(".pricing");
-  let targetimg = document.querySelector(".target_img");
+  let targetimg = carorder.querySelector(".target_img");
   let img = targetimg.querySelector("img");
 
   if (introdutionid) {
     let visibilityValue = window.getComputedStyle(introdutionid).visibility;
     if (visibilityValue === "hidden") {
       Price_carcolor.forEach(function (openIntro) {
-        let nowprice_color = Price_carcolor[0].nextElementSibling;
+        let nowprice_color = Price_carcolor[1].nextElementSibling;
         if (
           openIntro.getAttribute("data-price-carcolor") === "carcolor" &&
           nowprice_color.getAttribute("data-nowprice-carcolor") ===
@@ -160,7 +502,7 @@ for (let i = 0; i < 7; i++) {
   divSW_Check.id = `SWC_checkbox`;
   divSW_Check.name = `car_basewidth`;
   // 設置 data-size 屬性，根據需要修改屬性值
-  let formattedItem = ` - ${SWCCount} cm`;
+  let formattedItem = ` - 座寬 ${SWCCount} cm`;
   divSW_Check.setAttribute("data-item", formattedItem);
   divSW_Check.setAttribute("data-group", `Sbsize`);
 
@@ -170,38 +512,38 @@ for (let i = 0; i < 7; i++) {
 }
 
 //座深尺寸黑格子
-let Sd_container = document.querySelector(".deep_number");
-let SdCount = 30;
+// let Sd_container = document.querySelector(".deep_number");
+// let SdCount = 30;
 
-// 生成 8 個新的 div，每個都有唯一的 class 名稱
-for (let i = 0; i < 9; i++) {
-  let divSd_Size = document.createElement("div");
+// // 生成 8 個新的 div，每個都有唯一的 class 名稱
+// for (let i = 0; i < 9; i++) {
+//   let divSd_Size = document.createElement("div");
 
-  divSd_Size.textContent = `${SdCount} `;
-  divSd_Size.classList.add(`generated_Sddiv`);
-  SdCount += 2;
-  Sd_container.appendChild(divSd_Size);
-}
+//   divSd_Size.textContent = `${SdCount} `;
+//   divSd_Size.classList.add(`generated_Sddiv`);
+//   SdCount += 2;
+//   Sd_container.appendChild(divSd_Size);
+// }
 
 //座深的勾選格
-let SdC_container = document.querySelector(".deep_chkblock");
-let SdCCount = 30;
-// 生成 8 個新的 checkbox，每個都有唯一的 class 名稱
-for (let i = 0; i < 9; i++) {
-  let divSd_Check = document.createElement("input");
+// let SdC_container = document.querySelector(".deep_chkblock");
+// let SdCCount = 30;
+// // 生成 8 個新的 checkbox，每個都有唯一的 class 名稱
+// for (let i = 0; i < 9; i++) {
+//   let divSd_Check = document.createElement("input");
 
-  divSd_Check.type = "checkbox";
-  divSd_Check.classList.add(`content-checkbox`);
-  divSd_Check.id = `SdC_checkbox`;
-  divSd_Check.name = `car_basedeep`;
-  // 設置 data-size 屬性，根據需要修改屬性值
-  let formattedItem = ` * ${SdCCount} cm`;
-  divSd_Check.setAttribute("data-item", formattedItem);
-  divSd_Check.setAttribute("data-group", `Sbsize`);
-  SdCCount += 2;
+//   divSd_Check.type = "checkbox";
+//   divSd_Check.classList.add(`content-checkbox`);
+//   divSd_Check.id = `SdC_checkbox`;
+//   divSd_Check.name = `car_basedeep`;
+//   // 設置 data-size 屬性，根據需要修改屬性值
+//   let formattedItem = ` * ${SdCCount} cm`;
+//   divSd_Check.setAttribute("data-item", formattedItem);
+//   divSd_Check.setAttribute("data-group", `Sbsize`);
+//   SdCCount += 2;
 
-  SdC_container.appendChild(divSd_Check);
-}
+//   SdC_container.appendChild(divSd_Check);
+// }
 
 /*--- 車體座板點擊列-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
@@ -225,8 +567,8 @@ document.addEventListener("click", function (event) {
 
           Price_carbasesize.forEach(function (openIntro) {
             //直接判斷是第幾個.Price
-            let suggestion_basesize = Price_carbasesize[1];
-            let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
+            let suggestion_basesize = Price_carbasesize[2];
+            let nowprice_basesize = Price_carbasesize[2].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carbasesize") ===
@@ -279,7 +621,7 @@ document.addEventListener("click", function (event) {
           let Price_carbasesize = document.querySelectorAll(".pricing");
 
           Price_carbasesize.forEach(function (openIntro) {
-            let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
+            let nowprice_basesize = Price_carbasesize[2].nextElementSibling;
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
 
@@ -304,7 +646,6 @@ document.addEventListener("click", function (event) {
 });
 
 /*---  車體座板點擊列-subtitle部分  ---*/
-let carseat = document.querySelector(".car-seat");
 carseat.addEventListener("click", function (event) {
   //showinfo為我設定的data名稱
   let showinfo = event.target.dataset.showinfo;
@@ -319,8 +660,8 @@ carseat.addEventListener("click", function (event) {
 
     Price_carbasesize.forEach(function (openIntro) {
       //直接判斷是第幾個.Price
-      let suggestion_basesize = Price_carbasesize[1];
-      let nowprice_basesize = Price_carbasesize[1].nextElementSibling;
+      let suggestion_basesize = Price_carbasesize[2];
+      let nowprice_basesize = Price_carbasesize[2].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carbasesize") === "carbasesize" &&
@@ -436,9 +777,9 @@ document.addEventListener("click", function (event) {
           let Price_cartripod = document.querySelectorAll(".pricing");
 
           Price_cartripod.forEach(function (openIntro) {
-            let suggestion_cartripod = Price_cartripod[2];
+            let suggestion_cartripod = Price_cartripod[3];
             //直接判斷是第幾個.Price
-            let nowprice_tripod = Price_cartripod[2].nextElementSibling;
+            let nowprice_tripod = Price_cartripod[3].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-cartripod") === "cartripod" &&
@@ -491,7 +832,7 @@ document.addEventListener("click", function (event) {
           let Price_cartripod = document.querySelectorAll(".pricing");
 
           Price_cartripod.forEach(function (openIntro) {
-            let nowprice_tripod = Price_cartripod[2].nextElementSibling;
+            let nowprice_tripod = Price_cartripod[3].nextElementSibling;
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
 
@@ -530,9 +871,9 @@ cartripod.addEventListener("click", function (event) {
     let img = carTripod.querySelector("img");
 
     Price_cartripod.forEach(function (openIntro) {
-      let suggestion_cartripod = Price_cartripod[2];
+      let suggestion_cartripod = Price_cartripod[3];
       //直接判斷是第幾個.Price
-      let nowprice_tripod = Price_cartripod[2].nextElementSibling;
+      let nowprice_tripod = Price_cartripod[3].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-cartripod") === "cartripod" &&
@@ -634,7 +975,7 @@ document.addEventListener("click", function (event) {
             let suggestion_carfootpedal = Price_carfootpedal[3];
             //直接判斷是第幾個.Price
             let nowprice_carfootpedal =
-              Price_carfootpedal[3].nextElementSibling;
+              Price_carfootpedal[4].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carfootpedal") ===
@@ -692,7 +1033,7 @@ document.addEventListener("click", function (event) {
 
           Price_carfootpedal.forEach(function (openIntro) {
             let nowprice_carfootpedal =
-              Price_carfootpedal[3].nextElementSibling;
+              Price_carfootpedal[4].nextElementSibling;
             //把data-collapse-status改成0
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -733,9 +1074,9 @@ carfootpedal.addEventListener("click", function (event) {
     let img = carFootpedal.querySelector("img");
 
     Price_carfootpedal.forEach(function (openIntro) {
-      let suggestion_carfootpedal = Price_carfootpedal[3];
+      let suggestion_carfootpedal = Price_carfootpedal[4];
       //直接判斷是第幾個.Price
-      let nowprice_carfootpedal = Price_carfootpedal[3].nextElementSibling;
+      let nowprice_carfootpedal = Price_carfootpedal[4].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carfootpedal") === "carfootpedal" &&
@@ -835,10 +1176,10 @@ document.addEventListener("click", function (event) {
           let Price_headsupports = document.querySelectorAll(".pricing");
 
           Price_headsupports.forEach(function (openIntro) {
-            let suggestion_headsupports = Price_headsupports[4];
+            let suggestion_headsupports = Price_headsupports[5];
             //直接判斷是第幾個.Price
             let nowprice_carheadsupports =
-              Price_headsupports[4].nextElementSibling;
+              Price_headsupports[5].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carheadsupports") ===
@@ -895,7 +1236,7 @@ document.addEventListener("click", function (event) {
 
           Price_headsupports.forEach(function (openIntro) {
             let nowprice_carheadsupports =
-              Price_headsupports[4].nextElementSibling;
+              Price_headsupports[5].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -936,9 +1277,9 @@ carheadsupports.addEventListener("click", function (event) {
     let img = carHeadSupports.querySelector("img");
 
     Price_headsupports.forEach(function (openIntro) {
-      let suggestion_headsupports = Price_headsupports[4];
+      let suggestion_headsupports = Price_headsupports[5];
       //直接判斷是第幾個.Price
-      let nowprice_carheadsupports = Price_headsupports[4].nextElementSibling;
+      let nowprice_carheadsupports = Price_headsupports[5].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carheadsupports") ===
@@ -1039,10 +1380,10 @@ document.addEventListener("click", function (event) {
           let Price_backsupports = document.querySelectorAll(".pricing");
 
           Price_backsupports.forEach(function (openIntro) {
-            let suggestion_backsupports = Price_backsupports[5];
+            let suggestion_backsupports = Price_backsupports[6];
             //直接判斷是第幾個.Price
             let nowprice_backsupports =
-              Price_backsupports[5].nextElementSibling;
+              Price_backsupports[6].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carbacksupports") ===
@@ -1100,7 +1441,7 @@ document.addEventListener("click", function (event) {
 
           Price_backsupports.forEach(function (openIntro) {
             let nowprice_backsupports =
-              Price_backsupports[5].nextElementSibling;
+              Price_backsupports[6].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -1141,9 +1482,9 @@ carbacksupports.addEventListener("click", function (event) {
     let img = carBackSupports.querySelector("img");
 
     Price_backsupports.forEach(function (openIntro) {
-      let suggestion_backsupports = Price_backsupports[5];
+      let suggestion_backsupports = Price_backsupports[6];
       //直接判斷是第幾個.Price
-      let nowprice_backsupports = Price_backsupports[5].nextElementSibling;
+      let nowprice_backsupports = Price_backsupports[6].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carbacksupports") ===
@@ -1248,10 +1589,10 @@ document.addEventListener("click", function (event) {
 
           Price_carlatertrunksupports.forEach(function (openIntro) {
             let suggestion_carlatertrunksupports =
-              Price_carlatertrunksupports[6];
+              Price_carlatertrunksupports[7];
             //直接判斷是第幾個.Price
             let nowprice_carlatertrunksupports =
-              Price_carlatertrunksupports[6].nextElementSibling;
+              Price_carlatertrunksupports[7].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carlatertrunksupports") ===
@@ -1310,7 +1651,7 @@ document.addEventListener("click", function (event) {
 
           Price_carlatertrunksupports.forEach(function (openIntro) {
             let nowprice_carlatertrunksupports =
-              Price_carlatertrunksupports[6].nextElementSibling;
+              Price_carlatertrunksupports[7].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -1357,7 +1698,7 @@ carlatertrunksupports.addEventListener("click", function (event) {
       let suggestion_carlatertrunksupports = Price_carlatertrunksupports[6];
       //直接判斷是第幾個.Price
       let nowprice_carlatertrunksupports =
-        Price_carlatertrunksupports[6].nextElementSibling;
+        Price_carlatertrunksupports[7].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carlatertrunksupports") ===
@@ -1436,8 +1777,6 @@ carlatertrunksupports.addEventListener("click", function (event) {
 //endregion
 
 //region
-
-//endregion
 let NovalatercountLRs1 = document.getElementById(
   "NovalateralhardwarecountLRs1"
 );
@@ -1482,8 +1821,8 @@ document.addEventListener("click", function (event) {
 
           Price_seatbase.forEach(function (openIntro) {
             //直接判斷是第幾個.Price
-            let suggestion_seatbase = Price_seatbase[7];
-            let nowprice_seatbase = Price_seatbase[7].nextElementSibling;
+            let suggestion_seatbase = Price_seatbase[8];
+            let nowprice_seatbase = Price_seatbase[8].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carseatbase") ===
@@ -1538,7 +1877,7 @@ document.addEventListener("click", function (event) {
           let Price_seatbase = document.querySelectorAll(".pricing");
 
           Price_seatbase.forEach(function (openIntro) {
-            let nowprice_seatbase = Price_seatbase[7].nextElementSibling;
+            let nowprice_seatbase = Price_seatbase[8].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -1578,9 +1917,9 @@ carseatbase.addEventListener("click", function (event) {
     let img = carSeatBase.querySelector("img");
 
     Price_seatbase.forEach(function (openIntro) {
-      let suggestion_seatbase = Price_seatbase[7];
+      let suggestion_seatbase = Price_seatbase[8];
       //直接判斷是第幾個.Price
-      let nowprice_seatbase = Price_seatbase[7].nextElementSibling;
+      let nowprice_seatbase = Price_seatbase[8].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carseatbase") === "carseatbase" &&
@@ -1679,9 +2018,9 @@ document.addEventListener("click", function (event) {
           let Price_cushion = document.querySelectorAll(".pricing");
 
           Price_cushion.forEach(function (openIntro) {
-            let suggestion_cushion = Price_cushion[8];
+            let suggestion_cushion = Price_cushion[9];
             //直接判斷是第幾個.Price
-            let nowprice_cushion = Price_cushion[8].nextElementSibling;
+            let nowprice_cushion = Price_cushion[9].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carcushion") ===
@@ -1736,7 +2075,7 @@ document.addEventListener("click", function (event) {
           let Price_cushion = document.querySelectorAll(".pricing");
 
           Price_cushion.forEach(function (openIntro) {
-            let nowprice_cushion = Price_cushion[8].nextElementSibling;
+            let nowprice_cushion = Price_cushion[9].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -1776,9 +2115,9 @@ carcushion.addEventListener("click", function (event) {
     let img = carCushion.querySelector("img");
 
     Price_cushion.forEach(function (openIntro) {
-      let suggestion_cushion = Price_cushion[8];
+      let suggestion_cushion = Price_cushion[9];
       //直接判斷是第幾個.Price
-      let nowprice_cushion = Price_cushion[8].nextElementSibling;
+      let nowprice_cushion = Price_cushion[9].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carcushion") === "carcushion" &&
@@ -1877,9 +2216,9 @@ document.addEventListener("click", function (event) {
           let Price_bandage = document.querySelectorAll(".pricing");
 
           Price_bandage.forEach(function (openIntro) {
-            let suggestion_bandage = Price_bandage[9];
+            let suggestion_bandage = Price_bandage[10];
             //直接判斷是第幾個.Price
-            let nowprice_bandage = Price_bandage[9].nextElementSibling;
+            let nowprice_bandage = Price_bandage[10].nextElementSibling;
 
             if (
               openIntro.getAttribute("data-price-carbandage") ===
@@ -1934,7 +2273,7 @@ document.addEventListener("click", function (event) {
           let Price_bandage = document.querySelectorAll(".pricing");
 
           Price_bandage.forEach(function (openIntro) {
-            let nowprice_bandage = Price_bandage[9].nextElementSibling;
+            let nowprice_bandage = Price_bandage[10].nextElementSibling;
 
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
@@ -1974,9 +2313,9 @@ carbandage.addEventListener("click", function (event) {
     let img = carBandage.querySelector("img");
 
     Price_bandage.forEach(function (openIntro) {
-      let suggestion_bandage = Price_bandage[9];
+      let suggestion_bandage = Price_bandage[10];
       //直接判斷是第幾個.Price
-      let nowprice_bandage = Price_bandage[9].nextElementSibling;
+      let nowprice_bandage = Price_bandage[10].nextElementSibling;
 
       if (
         openIntro.getAttribute("data-price-carbandage") === "carbandage" &&
