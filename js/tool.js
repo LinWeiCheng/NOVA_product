@@ -85,20 +85,23 @@ Price.forEach(function (openIntro) {
           }
           color_car_switch = false;
         });
+        let isCar_BaseChecked = Array.from(Car_Basewidth_checkboxes).some(
+          (checkbox) => checkbox.checked
+        );
 
         Car_color_checkboxes.forEach((checkbox) => {
-          let nowprice_size = Price[0].nextElementSibling;
-          if (checkbox.checked) {
+          let nowprice_size = Price[2].nextElementSibling;
+          if (checkbox.checked && isCar_BaseChecked) {
             if (checkbox.id === "checkbox_red") {
-              nowprice_size.textContent = "35,000元";
+              nowprice_size.textContent = "35,000 元";
             } else if (checkbox.id === "checkbox_org") {
-              nowprice_size.textContent = "35,000元";
+              nowprice_size.textContent = "35,000 元";
             } else if (checkbox.id === "checkbox_gold") {
-              nowprice_size.textContent = "35,000元";
+              nowprice_size.textContent = "35,000 元";
             } else if (checkbox.id === "checkbox_blue") {
-              nowprice_size.textContent = "35,000元";
+              nowprice_size.textContent = "35,000 元";
             } else if (checkbox.id === "checkbox_gray") {
-              nowprice_size.textContent = "36,500元";
+              nowprice_size.textContent = "36,500 元";
             }
           } else {
             let isAnyChecked = Array.from(Car_color_checkboxes).some(
@@ -132,13 +135,8 @@ Price.forEach(function (openIntro) {
 let Car_Basewidth_checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="car_basewidth"]'
 );
-let Car_Basedeep_checkboxes = document.querySelectorAll(
-  'input[type="checkbox"][name="car_basedeep"]'
-);
 
 Price.forEach(function (openIntro) {
-  let nowprice_size = Price[2].nextElementSibling;
-
   Car_Basewidth_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
       // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
@@ -152,40 +150,26 @@ Price.forEach(function (openIntro) {
     });
   });
 
-  // Car_Basedeep_checkboxes.forEach((checkbox) => {
-  //   checkbox.addEventListener("change", (event) => {
-  //     // 如果選中了當前checkbox，就取消其他checkbox的選中狀態
-  //     if (event.target.checked) {
-  //       Car_Basedeep_checkboxes.forEach((otherCheckbox) => {
-  //         if (otherCheckbox !== event.target) {
-  //           otherCheckbox.checked = false;
-  //         }
-  //       });
-  //     }
-  //   });
-  // });
-
   function checkBothLines() {
     //Array.some()：用來檢查某一行是否至少有一個 checkbox 被勾選。
     let Basewidth = Array.from(Car_Basewidth_checkboxes).some(
       (cb) => cb.checked
     );
-    // let Basedeep = Array.from(Car_Basedeep_checkboxes).some((cb) => cb.checked);
 
-    if (Basewidth /*&& Basedeep*/) {
+    if (Basewidth) {
       Car_color_checkboxes.forEach((checkbox) => {
         let nowprice_size = Price[2].nextElementSibling;
         if (checkbox.checked) {
           if (checkbox.id === "checkbox_red") {
-            nowprice_size.textContent = "35,000元";
+            nowprice_size.textContent = "35,000 元";
           } else if (checkbox.id === "checkbox_org") {
-            nowprice_size.textContent = "35,000元";
+            nowprice_size.textContent = "35,000 元";
           } else if (checkbox.id === "checkbox_gold") {
-            nowprice_size.textContent = "35,000元";
+            nowprice_size.textContent = "35,000 元";
           } else if (checkbox.id === "checkbox_blue") {
-            nowprice_size.textContent = "35,000元";
+            nowprice_size.textContent = "35,000 元";
           } else if (checkbox.id === "checkbox_gray") {
-            nowprice_size.textContent = "36,500元";
+            nowprice_size.textContent = "36,500 元";
           }
         }
       });
@@ -197,10 +181,31 @@ Price.forEach(function (openIntro) {
   Car_Basewidth_checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", checkBothLines);
   });
-  // Car_Basedeep_checkboxes.forEach((checkbox) => {
-  //   checkbox.addEventListener("change", checkBothLines);
-  // });
 });
+
+document.addEventListener("change", (event) => {
+  let checkbox14 = document.getElementById("Bsize14");
+  let checkbox16 = document.getElementById("Bsize16");
+
+  if (!checkbox14 || !checkbox16) return;
+
+  // 當 14 被勾選時，取消勾選 16
+  if (event.target === checkbox14 && checkbox14.checked) {
+    checkbox16.checked = false;
+    Price[2].nextElementSibling.textContent = "19,000 元";
+  }
+
+  // 當 16 被勾選時，取消勾選 14
+  if (event.target === checkbox16 && checkbox16.checked) {
+    checkbox14.checked = false;
+    Price[2].nextElementSibling.textContent = "19,000 元";
+  }
+
+  if (!checkbox14.checked && !checkbox16.checked) {
+    Price[2].nextElementSibling.textContent = "0 元";
+  }
+});
+
 //endregion
 
 /*-----  3.腳架點擊列  -----*/
