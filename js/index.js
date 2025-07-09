@@ -203,29 +203,42 @@ carbody.addEventListener("click", function (event) {
 });
 //endregion
 
-//////還未完成
-function test() {
+//座寬金額消失
+function Bseatwidthhidden() {
   //region
   let carseat0 = document.querySelector(".car-body"); // 找到最近的 .car-body
   let introdutionid = carseat0.querySelector(".bodytiltegroup"); // 在 car-body 內部找 bodygroup
-  introdutionid.style.visibility = "hidden";
-  introdutionid.style.height = "0";
-  introdutionid.style.padding = "0";
-  introdutionid.style.border = "0px dashed black";
-  introdutionid.style.margin = "0";
 
   let nowbodyprice = document.querySelector(
     '[data-nowprice-carbasesize="nowcarbasesize"]'
   );
   //建議售價金額隱藏
   let bodyprice = document.querySelector(
-    '[data-nowprice-carbasesize="nowcarbasesize"]'
+    '[data-price-carbasesize="carbasesize"]'
   );
+  let bodycarbasesize = document.querySelector('[data-showinfo="carbasesize"]');
+
+  let Bbasesize = document.querySelector(".basesize");
+  let carSeat = carseat.querySelector(".target_img"); // 找到最近的 .target_img
+  let img = carSeat.querySelector("img");
+
+  Bbasesize.style.height = "0px";
+  Bbasesize.style.visibility = "hidden";
+  Bbasesize.style.height = "0";
+  Bbasesize.style.padding = "0";
+  Bbasesize.style.border = "0px dashed black";
+  Bbasesize.style.margin = "0";
 
   bodyprice.style.display = "none";
   nowbodyprice.style.display = "none";
+  bodycarbasesize.setAttribute("data-collapse-status", "0");
+  if (img) {
+    img.setAttribute("src", "./img/black triangle.png");
+  }
   //endregion
 }
+let body_Novarc = document.getElementById("bodytilte_Novarc");
+let body_Balance = document.getElementById("bodytilte_Balance");
 
 //確定勾選的是哪個車台，且不會重複勾選選項
 //region
@@ -238,105 +251,126 @@ document.querySelectorAll('input[name="car_body"]').forEach((checkbox) => {
           otherCheckbox.checked = false;
         }
       });
+    if (body_Novarc.checked) {
+      carorder.style.display = "block"; // 顯示
+      carseat.style.display = "block"; // 顯示
+      let BsizeDiv = document.querySelector(".Bseat-width");
+      if (BsizeDiv) {
+        BsizeDiv.remove();
+      }
+      let Basesize = document.querySelector(".Seat-widthgroup");
+      let Bbasesize = document.querySelector(".basesize");
+
+      if (document.querySelector(".Basesize") !== null) {
+        Bbasesize.style.height = "0px";
+        Bbasesize.style.visibility = "hidden";
+        Bseatwidthhidden();
+      }
+
+      Array.from(Basesize.children).forEach((child) => {
+        child.style.display = "block";
+      });
+      Basesize.style.height = "77px";
+      Bseatwidthhidden();
+    } else {
+      let SWC_checkbox = document.querySelectorAll('[name="car_basewidth"]');
+      let CarColor_checkbox = document.querySelectorAll('[name="car_color"]');
+      CarColor_checkbox.forEach((child) => {
+        if (child.checked) {
+          child.checked = false;
+        }
+      });
+
+      SWC_checkbox.forEach((child) => {
+        if (child.checked) {
+          child.checked = false;
+        }
+      });
+      carorder.style.display = "none"; // 隱藏
+      carseat.style.display = "none"; // 隱藏
+    }
+    if (body_Balance.checked) {
+      let Basesize = document.querySelector(".Seat-widthgroup");
+      carseat.style.display = "block"; // 隱藏
+      carorder.style.display = "none"; // 隱藏
+      Array.from(Basesize.children).forEach((child) => {
+        child.style.display = "none";
+      });
+
+      // 檢查是否已經新增過，避免重複新增
+      if (!document.querySelector(".Bseat-width")) {
+        Basesize.style.height = "auto";
+        // 建立新的 div
+        let newDiv = document.createElement("div");
+        newDiv.className = "Bseat-width";
+
+        // 建立 checkbox 14"
+        let checkbox14 = document.createElement("input");
+        checkbox14.type = "checkbox";
+        checkbox14.id = "Bsize14";
+        checkbox14.name = "car_balancebasesize";
+        // 設置 data-size 屬性，根據需要修改屬性值
+        let formattedItem14 = ` - 座寬 14〞~16〞`;
+        checkbox14.setAttribute("data-item", formattedItem14);
+        checkbox14.setAttribute("data-group", `Sbsize`);
+        checkbox14.setAttribute("data-price", `19,000`);
+
+        let label14 = document.createElement("label");
+        label14.htmlFor = "Bsize14";
+        label14.textContent = "14〞";
+
+        let wrapper14 = document.createElement("div");
+        wrapper14.className = "Bbasesize-14";
+        wrapper14.appendChild(checkbox14);
+        wrapper14.appendChild(label14);
+
+        // 建立 checkbox 16"
+        let checkbox16 = document.createElement("input");
+        checkbox16.type = "checkbox";
+        checkbox16.id = "Bsize16";
+        checkbox16.name = "car_balancebasesize";
+        // 設置 data-size 屬性，根據需要修改屬性值
+        let formattedItem16 = ` - 座寬 16〞~18〞`;
+        checkbox16.setAttribute("data-item", formattedItem16);
+        checkbox16.setAttribute("data-group", `Sbsize`);
+        checkbox16.setAttribute("data-price", `19,000`);
+        let label16 = document.createElement("label");
+        label16.htmlFor = "Bsize16";
+        label16.textContent = "16〞";
+
+        // 包成一個 div
+        let wrapper16 = document.createElement("div");
+        wrapper16.className = "Bbasesize-16";
+        wrapper16.appendChild(checkbox16);
+        wrapper16.appendChild(label16);
+
+        newDiv.appendChild(wrapper14);
+        newDiv.appendChild(wrapper16);
+
+        // 插入到畫面上
+        Basesize.appendChild(newDiv);
+      }
+    }
+    if (!body_Novarc.checked && !body_Balance.checked) {
+      carorder.style.display = "none"; // 顯示
+      carseat.style.display = "none"; // 顯示
+      // 移除新增的 .Bseat-width
+      let BsizeDiv = document.querySelector(".Bseat-width");
+      if (BsizeDiv) {
+        BsizeDiv.remove();
+      }
+      let Basesize = document.querySelector(".Seat-widthgroup");
+      if (!document.querySelector(".Basesize")) {
+        Basesize.style.height = "77px";
+        Basesize.style.visibility = "hidden";
+        Array.from(Basesize.children).forEach((child) => {
+          child.style.display = "block";
+        });
+      }
+    }
   });
 });
 //endregion
-
-let body_Novarc = document.getElementById("bodytilte_Novarc");
-body_Novarc.addEventListener("change", () => {
-  if (body_Novarc.checked) {
-    carorder.style.display = "block"; // 顯示
-    carseat.style.display = "block"; // 顯示
-    let BsizeDiv = document.querySelector(".Bseat-width");
-    if (BsizeDiv) {
-      BsizeDiv.remove();
-    }
-    let Basesize = document.querySelector(".Seat-widthgroup");
-    let Bbasesize = document.querySelector(".basesize");
-
-    if (!document.querySelector(".Basesize")) {
-      Bbasesize.style.height = "0px";
-      Bbasesize.style.visibility = "hidden";
-
-      test();
-      Array.from(Basesize.children).forEach((child) => {
-        child.style.display = "block";
-      });
-    }
-  } else {
-    carorder.style.display = "none"; // 隱藏
-    carseat.style.display = "none"; // 隱藏
-  }
-});
-
-let body_Balance = document.getElementById("bodytilte_Balance");
-body_Balance.addEventListener("change", () => {
-  if (body_Balance.checked) {
-    let Basesize = document.querySelector(".Seat-widthgroup");
-    carseat.style.display = "block"; // 隱藏
-    carorder.style.display = "none"; // 隱藏
-    Array.from(Basesize.children).forEach((child) => {
-      child.style.display = "none";
-    });
-
-    // 檢查是否已經新增過，避免重複新增
-    if (!document.querySelector(".Bseat-width")) {
-      Basesize.style.height = "auto";
-      // 建立新的 div
-      let newDiv = document.createElement("div");
-      newDiv.className = "Bseat-width";
-
-      // 建立 checkbox 14"
-      let checkbox14 = document.createElement("input");
-      checkbox14.type = "checkbox";
-      checkbox14.id = "Bsize14";
-      let label14 = document.createElement("label");
-      label14.htmlFor = "Bsize14";
-      label14.textContent = "14〞";
-
-      let wrapper14 = document.createElement("div");
-      wrapper14.className = "Bbasesize-14";
-      wrapper14.appendChild(checkbox14);
-      wrapper14.appendChild(label14);
-
-      // 建立 checkbox 16"
-      let checkbox16 = document.createElement("input");
-      checkbox16.type = "checkbox";
-      checkbox16.id = "Bsize16";
-      let label16 = document.createElement("label");
-      label16.htmlFor = "Bsize16";
-      label16.textContent = "16〞";
-
-      // 包成一個 div
-      let wrapper16 = document.createElement("div");
-      wrapper16.className = "Bbasesize-16";
-      wrapper16.appendChild(checkbox16);
-      wrapper16.appendChild(label16);
-
-      newDiv.appendChild(wrapper14);
-      newDiv.appendChild(wrapper16);
-
-      // 插入到畫面上
-      Basesize.appendChild(newDiv);
-    }
-  } else {
-    carorder.style.display = "none"; // 顯示
-    carseat.style.display = "none"; // 顯示
-    // 移除新增的 .Bseat-width
-    let BsizeDiv = document.querySelector(".Bseat-width");
-    if (BsizeDiv) {
-      BsizeDiv.remove();
-    }
-    let Basesize = document.querySelector(".Seat-widthgroup");
-    if (!document.querySelector(".Basesize")) {
-      Basesize.style.height = "77px";
-      Basesize.style.visibility = "hidden";
-      Array.from(Basesize.children).forEach((child) => {
-        child.style.display = "block";
-      });
-    }
-  }
-});
 
 //endregion
 
