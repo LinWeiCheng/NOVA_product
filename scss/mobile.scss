@@ -191,6 +191,33 @@
         background: #555;
     }
 
+    /*-----  0.車體選擇點擊列  -----*/
+    .car-body {
+        .target {
+            .chkcontent_0rd {
+                .bodytiltegroup {
+                    width: calc(100% - 14px);
+
+                    .carbodytitle {
+                        padding: 4px;
+                        box-sizing: border-box;
+                        font-size: 17px;
+
+                        #bodytilte_Novarc {
+                            margin: 4px 15px 3px 16px;
+                            transform: scale(1.8);
+                        }
+
+                        #bodytilte_Balance {
+                            transform: scale(1.8);
+                            margin: 4px 15px 3px 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     /*-----  1.車體顏色手機板  -----*/
     .car-order {
         .target {
@@ -228,59 +255,77 @@
         .target {
             .chkcontent_2nd {
                 .basesize {
-                    .Seat-widthgroup {
-                        border-bottom: 0px dashed black;
-                        width: 50%;
-                        height: 100%;
-                        padding: 0px 3px 0px 1px;
+                    .Bseat-width {
+                        margin: 0px 2px 0px 6px;
 
-                        .seat-width {
-                            font-size: 12px;
-                        }
+                        .Bbasesize-14 {
+                            display: flex;
+                            flex-direction: row;
+                            margin: 0 20px 4px 20px;
 
-                        .width_cmCount {
-                            .width_number {
-                                margin: 0px 0px 0px 5px;
-
-                                .generated_SWdiv {
-                                    padding: 5px;
-                                    font-size: 20px;
-                                }
+                            #Bsize14 {
+                                margin: 0px 12px 0px 0px;
+                                transform: scale(2);
                             }
 
-                            .width_chkblock {
-                                #SWC_checkbox {
-                                    margin: 17px 10px 13px 0px;
-                                    ;
-                                    transform: scale(2);
-                                }
+                            label {
+                                font-size: 18px;
+                                font-weight: 800;
+                            }
+                        }
+
+                        .Bbasesize-16 {
+                            display: flex;
+                            flex-direction: row;
+                            margin: 0 0px 4px 20px;
+
+                            #Bsize16 {
+                                margin: 0px 12px 0px 0px;
+                                transform: scale(2);
+                            }
+
+                            label {
+                                font-size: 18px;
+                                font-weight: 800;
                             }
                         }
                     }
 
-                    .Seat-deepgroup {
-                        width: 50%;
+                    .Seat-widthgroup {
+                        border-bottom: 0px dashed black;
+                        width: 20%;
                         height: 100%;
-                        padding: 0px 3px 0px 3px;
+                        padding: 0px 3px 0px 1px;
+                        display: flex;
+                        flex-direction: row;
 
-                        .seat-deep {
-                            font-size: 12px;
+                        .seat-width {
+                            font-size: 14px;
                         }
 
-                        .deep_cmCount {
-                            .deep_number {
-                                margin: 0px 0px 0px 8px;
+                        .width_cmCount {
+                            display: flex;
+                            flex-direction: column;
 
-                                .generated_Sddiv {
-                                    font-size: 20px;
-                                    padding: 5px;
+                            .width_number {
+                                display: flex;
+                                flex-direction: row;
+                                margin: 0px 0px 0px 5px;
+
+                                .generated_SWdiv {
+                                    padding: 4px;
+                                    font-size: 16px;
+                                    margin: 10px 6px 5px 10px;
+
                                 }
                             }
 
-                            .deep_chkblock {
-                                #SdC_checkbox {
-                                    margin: 17px 11px 13px 0px;
-                                    ;
+                            .width_chkblock {
+                                display: flex;
+                                flex-direction: row;
+
+                                #SWC_checkbox {
+                                    margin: 17px 7px 13px 22px;
                                     transform: scale(2);
                                 }
                             }
