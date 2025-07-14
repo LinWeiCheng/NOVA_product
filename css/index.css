@@ -1594,7 +1594,22 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+.car-seatbase .chkcontent_8th .seatbasegroup .seatbase_balanceLegSplitter {
+  display: flex;
+  flex-direction: row;
+}
+.car-seatbase .chkcontent_8th .seatbasegroup .seatbase_balanceLegSplitter label {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 25px;
+  font-weight: 600;
+  width: 97%;
+  margin: 3px 10px 3px 2px;
+  padding: 3px 0px 4px 12px;
+}
 .seatbase_checkbox input[type=checkbox] {
   /* 更改勾選顏色（現代瀏覽器支持） */
   margin: 7.9px 0px 13.1px 0px;

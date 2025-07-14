@@ -1799,6 +1799,25 @@ body {
         }
       }
 
+      .seatbase_balanceLegSplitter {
+        display: flex;
+        flex-direction: row;
+
+        label {
+          border: 1px solid #000000;
+          border-radius: 7px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-size: 25px;
+          font-weight: 600;
+          width: 97%;
+          margin: 3px 10px 3px 2px;
+          padding: 3px 0px 4px 12px;
+        }
+
+        #checkbox_balanceLegSplitter {}
+      }
     }
   }
 }
