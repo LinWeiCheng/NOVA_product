@@ -810,20 +810,20 @@ body {
   margin: 0px 2px 12px 6px;
 }
 .car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-14 input[type=checkbox] {
-  margin: 0px 15px 0px 0px;
+  margin: 0px 0px 0px 17px;
   transform: scale(2.3);
 }
 .car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-14 label {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 600;
 }
 .car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-16 input[type=checkbox] {
-  margin: 0px 15px 0px 0px;
+  margin: 0px 0px 0px 17px;
   transform: scale(2.3);
 }
 .car-seat .chkcontent_2nd .Seat-widthgroup .Bseat-width .Bbasesize-16 label {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .width_cmCount {
