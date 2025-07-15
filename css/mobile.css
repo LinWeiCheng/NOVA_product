@@ -171,45 +171,26 @@
   .car-seat {
     margin: 0px 0px 8px 0px;
   }
-  .car-seat .target .chkcontent_2nd .basesize .Bseat-width {
-    margin: 0px 2px 0px 6px;
-  }
-  .car-seat .target .chkcontent_2nd .basesize .Bseat-width .Bbasesize-14 {
-    display: flex;
-    flex-direction: row;
-    margin: 0 20px 4px 20px;
-  }
-  .car-seat .target .chkcontent_2nd .basesize .Bseat-width .Bbasesize-14 #Bsize14 {
-    margin: 0px 12px 0px 0px;
-    transform: scale(2);
-  }
-  .car-seat .target .chkcontent_2nd .basesize .Bseat-width .Bbasesize-14 label {
-    font-size: 18px;
-    font-weight: 800;
-  }
-  .car-seat .target .chkcontent_2nd .basesize .Bseat-width .Bbasesize-16 {
-    display: flex;
-    flex-direction: row;
-    margin: 0 0px 4px 20px;
-  }
-  .car-seat .target .chkcontent_2nd .basesize .Bseat-width .Bbasesize-16 #Bsize16 {
-    margin: 0px 12px 0px 0px;
-    transform: scale(2);
-  }
-  .car-seat .target .chkcontent_2nd .basesize .Bseat-width .Bbasesize-16 label {
-    font-size: 18px;
-    font-weight: 800;
-  }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup {
     border-bottom: 0px dashed black;
-    width: 20%;
+    width: 100%;
     height: 100%;
     padding: 0px 3px 0px 1px;
     display: flex;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup.novarc-width {
     flex-direction: row;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup.balance-width {
+    flex-direction: column;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .seat-width {
     font-size: 14px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .seat-width::after {
+    top: -9px;
+    right: -7px;
+    height: 137%;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount {
     display: flex;
@@ -223,15 +204,45 @@
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_number .generated_SWdiv {
     padding: 4px;
     font-size: 16px;
-    margin: 10px 6px 5px 10px;
+    margin: 10px 5px 5px 1px;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_chkblock {
     display: flex;
     flex-direction: row;
   }
   .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_chkblock #SWC_checkbox {
-    margin: 17px 7px 13px 22px;
-    transform: scale(2);
+    margin: 17px 6px 7px 13px;
+    transform: scale(1.8);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width {
+    margin: 0px 2px 0px 6px;
+    flex-direction: column;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-14 {
+    display: flex;
+    flex-direction: row;
+    margin: 0 20px 8px 20px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-14 #Bsize14 {
+    margin: 0px 12px 0px 0px;
+    transform: scale(1.8);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-14 label {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-16 {
+    display: flex;
+    flex-direction: row;
+    margin: 6px 0px 10px 1px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-16 #Bsize16 {
+    margin: 0px 12px 0px 0px;
+    transform: scale(1.8);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-16 label {
+    font-size: 16px;
+    font-weight: 700;
   }
   .car-seat .target .pricecontent .pricing {
     font-size: 11px;
