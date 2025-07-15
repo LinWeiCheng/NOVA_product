@@ -955,6 +955,17 @@ Car_seatbase_checkboxes.forEach((checkbox) => {
     }
   });
 });
+
+//Balance分腿器價格
+let checkbox_balanceLegSplitter = document.getElementById(
+  "checkbox_balanceLegSplitter"
+);
+checkbox_balanceLegSplitter.addEventListener("change", () => {
+  if (checkbox_balanceLegSplitter.checked) {
+    let nowprice_seatbase = Price[8].nextElementSibling;
+    nowprice_seatbase.textContent = "1,000 元";
+  }
+});
 //#endregion
 
 /*-----  9.底座子系統-座墊  -----*/
