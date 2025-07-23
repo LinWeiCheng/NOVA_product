@@ -45,7 +45,7 @@ document.addEventListener("click", function (event) {
                 //cartripod勾選位置大小設置
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 1px 3px";
-                introdutionid.style.width = "calc(100% - 20px)";
+                introdutionid.style.width = "calc(100% - 22px)";
                 introdutionid.style.flexWrap = "wrap";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
@@ -89,12 +89,14 @@ document.addEventListener("click", function (event) {
             //把data-collapse-status改成0
             introdution.setAttribute("data-collapse-status", "0");
 
-            //建議售價標題隱藏
-            introdutionid.style.display = "none";
+            //cartripod勾選位置大小設置
+            introdutionid.style.visibility = "hidden";
             introdutionid.style.height = "0";
             introdutionid.style.padding = "0";
             introdutionid.style.border = "0px dashed black";
             introdutionid.style.margin = "0";
+
+            nowprice_bodydad.style.display = "none";
 
             if (openIntro.getAttribute("data-price-carbody") === "carbody") {
               //建議售價金額隱藏
@@ -140,7 +142,7 @@ carbody.addEventListener("click", function (event) {
           //cartripod勾選位置大小設置
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 1px 3px";
-          introdutionid.style.width = "calc(100% - 20px)";
+          introdutionid.style.width = "calc(100% - 22px)";
           introdutionid.style.flexWrap = "wrap";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
@@ -183,6 +185,7 @@ carbody.addEventListener("click", function (event) {
           introdution.setAttribute("data-collapse-status", "0");
 
           //建議售價標題隱藏
+          introdutionid.style.visibility = "hidden";
           introdutionid.style.display = "none";
           introdutionid.style.height = "0";
           introdutionid.style.padding = "0";
