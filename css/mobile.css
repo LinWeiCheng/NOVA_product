@@ -136,7 +136,7 @@
   }
   /*-----  0.車體選擇點擊列  -----*/
   .car-body .target .chkcontent_0rd .bodytiltegroup {
-    width: calc(100% - 14px);
+    width: calc(100% - 12px) !important;
   }
   .car-body .target .chkcontent_0rd .bodytiltegroup .carbodytitle {
     padding: 4px;
