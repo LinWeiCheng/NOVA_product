@@ -5,16 +5,185 @@
     display: none;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+  .container {
+    min-height: 1000px;
+  }
   .container .Title {
     font-weight: 800;
     font-size: 30px;
   }
-  .container .totalPrice {
-    top: 55px;
-    right: 10px;
-    padding: 6px 12px;
+  .container .leftcontent {
+    width: 60%;
+  }
+  .container .leftcontent .checklist {
+    width: 100%;
+    overflow-y: auto;
+    /* 允許垂直滾動 */
+    scroll-behavior: smooth;
+    max-height: 850px;
+    /* 設定高度 */
+    overflow-x: hidden;
+    /* 禁止水平滾動 */
+    padding-right: 2px;
+    /* 增加右側間距 */
+    /* 修改滾動條寬度 */
+    /* 滾動條軌道（背景） */
+    /* 滾動條滑塊 */
+    /* 滑鼠懸停時變色 */
+  }
+  .container .leftcontent .checklist .checklist::-webkit-scrollbar {
+    width: 4px;
+    /* 調整滾動條寬度 */
+  }
+  .container .leftcontent .checklist .checklist::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* 淺灰色背景 */
+    border-radius: 8px;
+    /* 圓角 */
+  }
+  .container .leftcontent .checklist .checklist::-webkit-scrollbar-thumb {
+    background: #888;
+    /* 深灰色滑塊 */
+    border-radius: 10px;
+    /* 圓角 */
+  }
+  .container .leftcontent .checklist .checklist::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .container .rightcontent {
+    display: flex;
+    width: 40%;
+    top: 100px;
+  }
+  .container .rightcontent .imgblock #ProductImage {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 5px;
+  }
+  .container .rightcontent .btndiv {
+    width: 100%;
+    align-items: end;
+  }
+  .container .rightcontent .btndiv .btnallcheckboxfalse {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 0 10px 0;
+    padding: 5px 5px;
+    width: 30%;
+  }
+  .container .rightcontent .btndiv .btnoutputQuotation {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 5px;
+    width: 30%;
+  }
+  .totalPrice {
+    top: 10px;
+    right: 18px;
+    padding: 6px 10px;
     font-size: 30px;
+  }
+  /*-----  0.車體選擇點擊列  -----*/
+  .car-body .target .chkcontent_0rd .bodytiltegroup {
+    width: calc(100% - 15px) !important;
+  }
+  .car-body .target .chkcontent_0rd .bodytiltegroup .carbodytitle {
+    padding: 3px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  .car-body .target .chkcontent_0rd .bodytiltegroup .carbodytitle #bodytilte_Novarc {
+    margin: 4px 15px 4px 61px;
+    transform: scale(2);
+  }
+  .car-body .target .chkcontent_0rd .bodytiltegroup .carbodytitle #bodytilte_Balance {
+    transform: scale(2);
+    margin: 4px 13px 3px 5px;
+  }
+  /*-----  1.車體顏色手機板  -----*/
+  .car-order .target .chkcontent_1st .car_color {
+    display: block;
+    width: calc(100% - 16px);
+  }
+  .car-order .target .chkcontent_1st .car_color .cherry_red {
+    width: 99%;
+    margin: 3px 3px 6px 3px;
+  }
+  .car-order .target .chkcontent_1st .car_color .cherry_red #checkbox_red {
+    transform: scale(2.2);
+  }
+  .car-order .target .chkcontent_1st .car_color .cherry_red .red_car {
+    font-size: 25px;
+    padding: 8px 0px 8px 8px;
+    font-weight: 600;
+  }
+  .car-order .target .chkcontent_1st .car_color .cherry_red .img_red {
+    border-bottom: 52px solid #E50046;
+  }
+  .car-order .target .chkcontent_1st .car_color .pearl_orange {
+    width: 99%;
+    margin: 3px 3px 6px 3px;
+  }
+  .car-order .target .chkcontent_1st .car_color .pearl_orange #checkbox_org {
+    transform: scale(2.2);
+  }
+  .car-order .target .chkcontent_1st .car_color .pearl_orange .orange_car {
+    font-size: 25px;
+    padding: 8px 0px 8px 8px;
+    font-weight: 600;
+  }
+  .car-order .target .chkcontent_1st .car_color .pearl_orange .img_orange {
+    border-bottom: 52px solid #EE7500;
+  }
+  .car-order .target .chkcontent_1st .car_color .rose_gold {
+    width: 99%;
+    margin: 3px 3px 6px 3px;
+  }
+  .car-order .target .chkcontent_1st .car_color .rose_gold #checkbox_gold {
+    transform: scale(2.2);
+  }
+  .car-order .target .chkcontent_1st .car_color .rose_gold .pink_car {
+    font-size: 25px;
+    padding: 8px 0px 8px 8px;
+    font-weight: 600;
+  }
+  .car-order .target .chkcontent_1st .car_color .rose_gold .img_pink {
+    border-bottom: 52px solid #F3AECC;
+  }
+  .car-order .target .chkcontent_1st .car_color .sky_blue {
+    width: 99%;
+    margin: 3px 3px 6px 3px;
+  }
+  .car-order .target .chkcontent_1st .car_color .sky_blue #checkbox_blue {
+    transform: scale(2.2);
+  }
+  .car-order .target .chkcontent_1st .car_color .sky_blue .blue_car {
+    font-size: 25px;
+    padding: 8px 0px 8px 8px;
+    font-weight: 600;
+  }
+  .car-order .target .chkcontent_1st .car_color .sky_blue .img_blue {
+    border-bottom: 52px solid #2EA7E0;
+  }
+  .car-order .target .chkcontent_1st .car_color .camo_gray {
+    width: 99%;
+    margin: 3px 3px 6px 3px;
+  }
+  .car-order .target .chkcontent_1st .car_color .camo_gray #checkbox_gray {
+    transform: scale(2.2);
+  }
+  .car-order .target .chkcontent_1st .car_color .camo_gray .gray_car {
+    font-size: 25px;
+    padding: 8px 0px 8px 8px;
+    font-weight: 600;
+  }
+  .car-order .target .chkcontent_1st .car_color .camo_gray .img_gray {
+    border-bottom: 52px solid #666666;
   }
   .basesize {
     flex-direction: row;
@@ -40,32 +209,6 @@
     width: 50%;
   }
   .basesize .Seat-widthgroup .width_chkblock #SWC_checkbox {
-    margin: 17px 31px 18px 10px;
-  }
-  .basesize .Seat-deepgroup {
-    width: 50%;
-    height: auto;
-    flex-direction: column;
-    border-left: 3px dashed black;
-    padding: 0px 1px;
-  }
-  .basesize .Seat-deepgroup .seat-deep {
-    height: 61px;
-  }
-  .basesize .Seat-deepgroup .deep_cmCount {
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-  }
-  .basesize .Seat-deepgroup .deep_number {
-    flex-direction: column;
-    width: 50%;
-  }
-  .basesize .Seat-deepgroup .deep_chkblock {
-    flex-direction: column;
-    width: 50%;
-  }
-  .basesize .Seat-deepgroup .deep_chkblock #SdC_checkbox {
     margin: 17px 31px 18px 10px;
   }
 }
