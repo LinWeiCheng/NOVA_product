@@ -5,7 +5,7 @@
     }
 }
 
-
+/* --- 平板版面 --- */
 @media screen and (max-width:1200px) {
 
     html,
@@ -111,7 +111,7 @@
         font-size: 30px;
     }
 
-    /*-----  0.車體選擇點擊列  -----*/
+    /*-----  0.車體選擇點擊列平板版  -----*/
     .car-body {
         .target {
             .chkcontent_0rd {
@@ -138,7 +138,7 @@
         }
     }
 
-    /*-----  1.車體顏色手機板  -----*/
+    /*-----  1.車體顏色平板版  -----*/
     .car-order {
         .target {
             .chkcontent_1st {
@@ -248,686 +248,695 @@
     }
 
 
+    /*-----  2.座板尺寸平板版  -----*/
+    .car-seat {
+        margin: 0px 0px 8px 0px;
 
+        .target {
+            .chkcontent_2nd {
+                .basesize {
+                    width: calc(100% - 14px) !important;
 
-    .basesize {
-        flex-direction: row;
-        height: 100%;
+                    .Seat-widthgroup {
+                        border-bottom: 0px dashed black;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0px 3px 0px 1px;
+                        display: flex;
+                        // flex-direction: row;
 
-        .Seat-widthgroup {
-            width: 50%;
-            flex-direction: column;
-            padding: 0px 1px;
-            border-bottom: 0px;
+                        &.novarc-width {
+                            flex-direction: row;
+                        }
 
-            .width_cmCount {
-                flex-direction: row;
-                width: 100%;
-                height: 100%;
+                        &.balance-width {
+                            flex-direction: column;
+                        }
 
+                        .seat-width {
+                            font-size: 16px;
+                            margin: 0 10px 0 5px;
 
-                .width_number {
-                    flex-direction: column;
-                    width: 50%;
-                }
+                            &::after {
+                                top: -9px;
+                                right: -14px;
+                                height: 137%;
+                            }
+                        }
 
-                .width_chkblock {
-                    flex-direction: column;
-                    width: 50%;
+                        .width_cmCount {
+                            display: flex;
+                            flex-direction: column;
+
+                            .width_number {
+                                display: flex;
+                                flex-direction: row;
+                                margin: 0px 0px 0px 5px;
+
+                                .generated_SWdiv {
+                                    padding: 6px;
+                                    font-size: 16px;
+                                    margin: 10px 25.5px 5px 10px;
+                                }
+                            }
+
+                            .width_chkblock {
+                                display: flex;
+                                flex-direction: row;
+
+                                #SWC_checkbox {
+                                    margin: 30px 29px 7px 24px;
+                                    transform: scale(2.2);
+                                }
+                            }
+                        }
+
+                        .Bseat-width {
+                            margin: 0px 0px 0px 0px;
+                            flex-direction: row;
+
+                            .Bbasesize-14 {
+                                display: flex;
+                                flex-direction: row;
+                                margin: 6px 20px 8px 20px;
+
+                                #Bsize14 {
+                                    margin: 5px 6px 0px 14px;
+                                    transform: scale(2);
+                                }
+
+                                label {
+                                    font-size: 17px;
+                                    font-weight: 700;
+                                }
+                            }
+
+                            .Bbasesize-16 {
+                                display: flex;
+                                flex-direction: row;
+                                margin: 6px 0px 10px 1px;
+
+                                #Bsize16 {
+                                    margin: 5px 10px 0px 14px;
+                                    transform: scale(2);
+                                }
+
+                                label {
+                                    font-size: 17px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
-            .width_chkblock {
+            .pricecontent {
+                .pricing {
+                    font-size: 16px;
+                }
 
-                #SWC_checkbox {
-                    margin: 17px 31px 18px 10px;
+                .nowprice {
+                    font-size: 16px !important;
                 }
             }
         }
     }
 
-
-
-
-
-
-
-    // /*-----  2.座板尺寸手機板  -----*/
-    // .car-seat {
-    //     margin: 0px 0px 8px 0px;
-
-    //     .target {
-    //         .chkcontent_2nd {
-    //             .basesize {
-    //                 .Seat-widthgroup {
-    //                     border-bottom: 0px dashed black;
-    //                     width: 100%;
-    //                     height: 100%;
-    //                     padding: 0px 3px 0px 1px;
-    //                     display: flex;
-    //                     // flex-direction: row;
-
-    //                     &.novarc-width {
-    //                         flex-direction: row;
-    //                     }
-
-    //                     &.balance-width {
-    //                         flex-direction: column;
-    //                     }
-
-    //                     .seat-width {
-    //                         font-size: 14px;
-
-    //                         &::after {
-    //                             top: -9px;
-    //                             right: -7px;
-    //                             height: 137%;
-    //                         }
-    //                     }
-
-    //                     .width_cmCount {
-    //                         display: flex;
-    //                         flex-direction: column;
-
-    //                         .width_number {
-    //                             display: flex;
-    //                             flex-direction: row;
-    //                             margin: 0px 0px 0px 5px;
-
-    //                             .generated_SWdiv {
-    //                                 padding: 4px;
-    //                                 font-size: 16px;
-    //                                 margin: 10px 5px 5px 1px;
-    //                             }
-    //                         }
-
-    //                         .width_chkblock {
-    //                             display: flex;
-    //                             flex-direction: row;
-
-    //                             #SWC_checkbox {
-    //                                 margin: 17px 6px 7px 13px;
-    //                                 transform: scale(1.8);
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .Bseat-width {
-    //                         margin: 0px 2px 0px 6px;
-    //                         flex-direction: column;
-
-    //                         .Bbasesize-14 {
-    //                             display: flex;
-    //                             flex-direction: row;
-    //                             margin: 0 20px 8px 20px;
-
-    //                             #Bsize14 {
-    //                                 margin: 0px 12px 0px 0px;
-    //                                 transform: scale(1.8);
-    //                             }
-
-    //                             label {
-    //                                 font-size: 16px;
-    //                                 font-weight: 700;
-    //                             }
-    //                         }
-
-    //                         .Bbasesize-16 {
-    //                             display: flex;
-    //                             flex-direction: row;
-    //                             margin: 6px 0px 10px 1px;
-
-    //                             #Bsize16 {
-    //                                 margin: 0px 12px 0px 0px;
-    //                                 transform: scale(1.8);
-    //                             }
-
-    //                             label {
-    //                                 font-size: 16px;
-    //                                 font-weight: 700;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*-----  3.腳架點擊列手機板  -----*/
-    // .car-tripod {
-    //     .chkcontent_3rd {
-    //         .tripodgroup {
-    //             padding: 0px 1px 0px 0px;
-
-    //             .degrees {
-    //                 margin: 2px;
-    //                 font-size: 18px;
-    //                 padding: 1px;
-    //                 width: 100%;
-
-    //                 #checkbox_77degrees {
-    //                     margin: 4px 0px 2px 3px;
-    //                     transform: scale(1.5);
-    //                 }
-
-    //                 #checkbox_80degrees {
-    //                     margin: 4px 0px 2px 3px;
-    //                     transform: scale(1.5);
-    //                 }
-
-    //                 #checkbox_90degrees {
-    //                     margin: 4px 0px 2px 3px;
-    //                     transform: scale(1.5);
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     .pricecontent {
-    //         .pricing {
-    //             font-size: 11px;
-    //         }
-    //     }
-    // }
-
-    // /*-----  4.踏板樣式點擊列手機板  -----*/
-    // .car-footpedal {
-    //     .target {
-    //         .chkcontent_4th {
-    //             .footpedalgroup {
-    //                 .footpedal_twopiece {
-    //                     .div_type {
-    //                         font-size: 15px;
-    //                         height: 100%;
-    //                         width: 20%;
-    //                         padding: 0 1px 0 3px;
-    //                     }
-
-    //                     .div_twopiece_angle {
-    //                         font-size: 14px;
-    //                         height: 100%;
-    //                         width: 68%;
-    //                         margin: 0px 2px 0 1px;
-
-    //                         .twopiece_anglefixed {
-    //                             height: 50%;
-    //                         }
-
-    //                         .twopiece_angleadjust {
-    //                             height: 50%;
-    //                         }
-    //                     }
-
-    //                     .footpedal_checkbox1 {
-    //                         flex: 1;
-
-    //                         #checkbox_twopiece_fixed {
-    //                             flex: 1;
-    //                             margin: 10px 1px 8px 0px;
-    //                             ;
-    //                             transform: scale(1.5);
-    //                         }
-
-    //                         #checkbox_twopiece_adjustable {
-    //                             flex: 0.8;
-    //                             margin: 10px 1px 8px 0px;
-    //                             ;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-
-    //                 }
-
-    //                 .footpedal_piecealuminum {
-    //                     .div_type {
-    //                         font-size: 18px;
-    //                         height: 100%;
-    //                         width: 20%;
-    //                         padding: 0 0 0 6px;
-    //                     }
-
-    //                     .div_angleadjust {
-    //                         font-size: 17px;
-    //                         width: 27%;
-    //                         height: 100%;
-    //                         padding: 0px 0 0 1px;
-    //                     }
-
-    //                     .pedalcmcmgroup {
-    //                         width: 39%;
-    //                         height: 100%;
-    //                         margin: 0 0px 0 2px;
-
-    //                         .pedalcm {
-    //                             font-size: 16px;
-    //                             margin: 0px 0px 1px 0;
-    //                             height: 100%;
-    //                             width: 100%;
-    //                         }
-    //                     }
-
-    //                     .footpedal_checkbox2 {
-    //                         margin: 0px 1px 0 5px;
-    //                         flex: 1;
-
-    //                         .content-checkbox {
-    //                             margin: 17.5px 1px 10px px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .footpedal_Plugin {
-    //                     .div_type {
-    //                         border-radius: 5px;
-    //                         font-size: 18px;
-    //                         height: 100%;
-    //                         width: 20%;
-    //                         padding: 0 0px 0 5px;
-    //                     }
-
-    //                     .div_angle {
-    //                         width: 38%;
-
-    //                         .div_pedalsize {
-    //                             font-size: 13px;
-    //                         }
-    //                     }
-
-    //                     .div_pedal_direction {
-    //                         font-size: 15px;
-    //                         height: 100%;
-    //                         width: 29%;
-    //                         margin: 0px 0px 0px 2px;
-    //                     }
-
-    //                     .footpedal_checkbox3 {
-    //                         flex: 1;
-    //                         margin: 0 8px 0 0;
-
-    //                         .content-checkbox {
-    //                             margin: 10px 0 10px 10px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .footpedal_plumb {
-    //                     .div_type {
-    //                         border-radius: 5px;
-    //                         font-size: 18px;
-    //                         height: 100%;
-    //                         width: 20%;
-    //                         padding: 0 1px 0 5px;
-    //                     }
-
-    //                     .div_angle {
-    //                         width: 40%;
-
-    //                         .div_pedalsize {
-    //                             font-size: 14px;
-    //                             margin: 0px 1px 3px 0px;
-    //                         }
-    //                     }
-
-    //                     .div_pedal_direction {
-    //                         font-size: 15px;
-    //                         height: 100%;
-    //                         width: 28%;
-    //                         margin: 0px 0px 1px 0px;
-    //                     }
-
-    //                     .footpedal_checkbox4 {
-    //                         flex: 1;
-    //                         margin: 0 6px 0 0px;
-
-    //                         .content-checkbox {
-    //                             margin: 10px 0 10px 8px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .div_notice {
-    //                     font-size: 12px;
-    //                     font-weight: 700;
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*-----  5.頭靠子系統手機板  -----*/
-    // .car-head_supports {
-    //     .chkcontent_5th {
-
-    //         .head_supportsgroup {
-    //             padding: 0px 10px 1px 3px;
-    //             width: calc(100% - 11px);
-
-    //             .head_supports_font {
-    //                 margin: 5px 0px 0px 0px;
-    //                 padding: 1px 1px 1px 6px;
-    //                 width: 40%;
-    //                 font-size: 14px;
-    //             }
-
-    //             .head_supports_size {
-    //                 width: 40%;
-    //                 font-size: 14px;
-    //                 margin: 2px 0 0px 0px;
-    //                 padding: 3px 6px 1px 0px;
-    //             }
-
-    //             .head_supports_checkbox {
-    //                 margin: 17px 9px 0 0px;
-    //                 padding: 0px;
-
-    //                 .content-checkbox {
-    //                     transform: scale(1.5);
-    //                 }
-    //             }
-
-    //         }
-    //     }
-
-    //     .pricecontent {
-    //         .pricing {
-    //             font-size: 11px;
-    //         }
-    //     }
-    // }
-
-    // /*-----  6.軀幹子系統-背靠點擊列手機板  -----*/
-    // .car-back_supports {
-    //     .target {
-    //         .chkcontent_6th {
-    //             .trunk_suppotrts_back {
-    //                 .back_supportsgroup {
-    //                     .Nova_back_hardware_title {
-    //                         padding: 1px 0px 0px 0px;
-    //                         font-size: 15px;
-    //                         margin: 0px 1px 0 0;
-    //                         width: 40%;
-    //                     }
-
-    //                     .back_sizegroup {
-    //                         width: 50%;
-
-    //                         .back_size {
-    //                             font-size: 17px;
-    //                             height: 100%;
-    //                             padding: 1px;
-    //                             margin: 0px 1px 2px 0px;
-    //                         }
-    //                     }
-
-    //                     .back_supports_checkbox {
-    //                         margin: 0px 5px 0px 4px;
-
-    //                         .content-checkbox {
-    //                             margin: 13px 0px 18px 0px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .div_notice {
-    //                     padding: 1px 0 1px 1px;
-    //                     font-size: 12px;
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*-----  7.軀幹子系統-軀幹側支撐點擊列手機板  -----*/
-    // .car-latertrunk_supports {
-    //     .target {
-    //         .chkcontent_7th {
-    //             .trunk_suppotrts_LaterTrunk {
-    //                 .side_supportgroup {
-    //                     .Novalateralhardware_title {
-    //                         height: 100%;
-    //                         font-size: 14px;
-    //                         padding: 0px 1px 0px 5px;
-    //                         margin: 2px 1px 0px 1px;
-    //                         width: 25%;
-    //                     }
-
-    //                     .side_sizegroup {
-    //                         height: 100%;
-    //                         margin: 2px 1px 0px 1px;
-    //                         width: 30%;
-
-    //                         .side_size {
-    //                             font-size: 16px;
-    //                             margin: 0px 0px 1px 0px;
-    //                         }
-    //                     }
-
-    //                     .side_sizeSMgroup {
-    //                         width: 35%;
-
-    //                         .side_sizeSgroup {
-    //                             height: 50%;
-    //                             margin: 0px 0px 0px 2px;
-
-    //                             .side_sizeLR1group {
-    //                                 height: 50%;
-    //                                 margin: 2px 0 0 0;
-
-    //                                 .side_SLR1 {
-    //                                     font-size: 14px;
-    //                                     width: 30%;
-    //                                     height: 95%;
-    //                                     margin: 0px 2px 0px 0px;
-    //                                 }
-
-    //                                 .NovalateralhardwarecountLR1 {
-    //                                     width: 70%;
-    //                                     height: 95%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-    //                                     label {
-    //                                         font-size: 14px;
-    //                                         width: 65%;
-    //                                     }
-
-    //                                     #NovalateralhardwarecountLRs1 {
-    //                                         font-size: 12px;
-    //                                         width: 35%;
-    //                                         margin: 4px 0px 0px -5px;
-
-    //                                     }
-    //                                 }
-    //                             }
-
-
-    //                             .side_sizeLR2group {
-    //                                 height: 50%;
-
-    //                                 .side_SLR2 {
-    //                                     font-size: 14px;
-    //                                     width: 30%;
-    //                                     height: 100%;
-    //                                     margin: -1px 2px 0px 0px;
-    //                                 }
-
-    //                                 .NovalateralhardwarecountLR2 {
-    //                                     width: 70%;
-    //                                     height: 95%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-    //                                     label {
-    //                                         font-size: 14px;
-    //                                         width: 65%;
-    //                                     }
-
-    //                                     #NovalateralhardwarecountLRs2 {
-    //                                         font-size: 12px;
-    //                                         width: 35%;
-    //                                         margin: 4px 0px 0px -5px;
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-
-
-
-    //                         .side_sizeMgroup {
-    //                             height: 50%;
-    //                             margin: 0px 0px 0px 2px;
-
-    //                             .side_sizeMLR1group {
-    //                                 height: 50%;
-    //                                 margin: 3px 0 0 0;
-
-    //                                 .side_MLR1 {
-    //                                     font-size: 14px;
-    //                                     width: 30%;
-    //                                     height: 100%;
-    //                                     margin: -1px 2px 0px 0px;
-    //                                 }
-
-    //                                 .NovalateralhardwarecountMLR1 {
-    //                                     width: 70%;
-    //                                     height: 95%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-    //                                     label {
-    //                                         font-size: 14px;
-    //                                         width: 65%;
-    //                                     }
-
-    //                                     #NovalateralhardwarecountMLRs1 {
-    //                                         font-size: 12px;
-    //                                         width: 35%;
-    //                                         margin: 4px 0px 0px -5px;
-    //                                     }
-    //                                 }
-    //                             }
-
-    //                             .side_sizeMLR2group {
-    //                                 height: 50%;
-
-    //                                 .side_MLR2 {
-    //                                     font-size: 14px;
-    //                                     width: 30%;
-    //                                     height: 100%;
-    //                                     margin: -1px 2px 0px 0px;
-    //                                 }
-
-    //                                 .NovalateralhardwarecountMLR2 {
-    //                                     width: 70%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-    //                                     label {
-    //                                         font-size: 14px;
-    //                                         width: 65%;
-    //                                     }
-
-    //                                     #NovalateralhardwarecountMLRs2 {
-    //                                         font-size: 12px;
-    //                                         width: 35%;
-    //                                         margin: 4px 0px 0px -5px;
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-
-
-    //                     .latertrunk_checkboxes {
-    //                         .content-checkbox {
-    //                             margin: 13px 0px 9px 0px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*-----  8.底座子系統-座板點擊列手機版  -----*/
-    // .car-seatbase {
-    //     .target {
-    //         .chkcontent_8th {
-    //             .seatbasegroup {
-    //                 .seat_supportsgroup {
-    //                     .Nova_seatbase_title {
-    //                         font-size: 16px;
-    //                         width: 35%;
-    //                         padding: 0px 1px 0px 2px;
-    //                         margin: 1px 1px 1px 1px;
-    //                     }
-
-    //                     .seatbase_sizegroup {
-    //                         width: 55%;
-    //                         height: 100%;
-
-    //                         .seatbase_size {
-    //                             font-size: 16px;
-    //                             margin: 1px 0px 1px 0px;
-    //                             padding: 1px;
-    //                             height: 12%;
-    //                         }
-    //                     }
-
-    //                     .seatbase_checkbox {
-    //                         margin: -1px 7px 0px 6px;
-    //                         height: 100%;
-
-    //                         .content-checkbox {
-    //                             margin: 12px 0px 6px 0px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-    //                 }
-    //             }
-
-    //             .div_notice {
-    //                 font-size: 13px;
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
+    /*-----  3.腳架點擊列平板版  -----*/
+    .car-tripod {
+        .chkcontent_3rd {
+            .tripodgroup {
+                padding: 0px 1px 0px 0px !important;
+                flex-direction: row;
+                width: calc(100% - 14px) !important;
+
+                .degrees {
+                    margin: 2px;
+                    font-size: 18px;
+                    padding: 1px;
+
+                    #checkbox_77degrees {
+                        margin: 4px 0px 2px 8px;
+                        transform: scale(2);
+                    }
+
+                    #checkbox_80degrees {
+                        margin: 4px 0px 2px 8px;
+                        transform: scale(2);
+                    }
+
+                    #checkbox_90degrees {
+                        margin: 4px 0px 2px 8px;
+                        transform: scale(2);
+                    }
+                }
+            }
+        }
+
+        .pricecontent {
+            .pricing {
+                font-size: 16px;
+            }
+
+            .nowprice {
+                font-size: 16px !important;
+                font-weight: 600;
+            }
+        }
+    }
+
+    /*-----  4.踏板樣式點擊列平板版  -----*/
+    .car-footpedal {
+        .target {
+            .chkcontent_4th {
+                .footpedalgroup {
+                    width: calc(100% - 13px) !important;
+
+                    //兩片式塑踏板
+                    .footpedal_twopiece {
+                        .div_type {
+                            font-size: 15px;
+                            height: 100%;
+                            width: 25%;
+                            padding: 0 1px 0 3px;
+                        }
+
+                        .div_twopiece_angle {
+                            font-size: 16px;
+                            height: 100%;
+                            width: 69%;
+                            margin: 0px 2px 0 0px;
+
+                            .twopiece_anglefixed {
+                                height: 50%;
+                            }
+
+                            .twopiece_angleadjust {
+                                height: 50%;
+                            }
+                        }
+
+                        .footpedal_checkbox1 {
+                            flex: 1;
+
+                            #checkbox_twopiece_fixed {
+                                flex: 1;
+                                margin: 10px 1px 8px 0px;
+                                transform: scale(2);
+                            }
+
+                            #checkbox_twopiece_adjustable {
+                                flex: 0.8;
+                                margin: 10px 1px 8px 0px;
+                                transform: scale(2);
+                            }
+                        }
+
+                    }
+
+                    //一片式鋁踏板
+                    .footpedal_piecealuminum {
+                        .div_type {
+                            font-size: 18px;
+                            height: 100%;
+                            width: 25%;
+                            padding: 0 0 0 6px;
+                        }
+
+                        .div_angleadjust {
+                            font-size: 17px;
+                            width: 30%;
+                            height: 100%;
+                            padding: 0px 0 0 1px;
+                        }
+
+                        .pedalcmcmgroup {
+                            width: 38%;
+                            height: 100%;
+                            margin: 0 0px 0 2px;
+
+                            .pedalcm {
+                                font-size: 16px;
+                                margin: 0px 0px 1px 0;
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+
+                        .footpedal_checkbox2 {
+                            margin: 0px 1px 0 5px;
+                            flex: 1;
+
+                            .content-checkbox {
+                                margin: 17.5px 1px 10px;
+                                transform: scale(2);
+                            }
+                        }
+                    }
+
+                    //外掛式腳踏組
+                    .footpedal_Plugin {
+                        .div_type {
+                            border-radius: 5px;
+                            font-size: 18px;
+                            height: 100%;
+                            width: 25%;
+                            padding: 0 0px 0 5px;
+                        }
+
+                        .div_angle {
+                            width: 40%;
+
+                            .div_pedalsize {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .div_pedal_direction {
+                            font-size: 15px;
+                            height: 100%;
+                            width: 29%;
+                            margin: 0px 0px 0px 2px;
+
+                            .div_direction {
+                                margin: 2px 0 3px 0 !important;
+                            }
+                        }
+
+                        .footpedal_checkbox3 {
+                            flex: 1;
+                            margin: 0 8px 0 0;
+
+                            .content-checkbox {
+                                margin: 12px 0 11px 10px;
+                                transform: scale(2);
+                            }
+                        }
+                    }
+
+                    //垂直調整腳踏組
+                    .footpedal_plumb {
+                        .div_type {
+                            border-radius: 5px;
+                            font-size: 18px;
+                            height: 100%;
+                            width: 25%;
+                            padding: 0 1px 0 5px;
+                        }
+
+                        .div_angle {
+                            width: 40%;
+
+                            .div_pedalsize {
+                                font-size: 16px;
+                                margin: 1px 1px 1px 0px;
+                            }
+                        }
+
+                        .div_pedal_direction {
+                            font-size: 15px;
+                            height: 100%;
+                            width: 28%;
+
+                            .div_direction {
+                                margin: 2px 0 4px 0 !important;
+                            }
+                        }
+
+                        .footpedal_checkbox4 {
+                            flex: 1;
+                            margin: 0 6px 0 0px;
+
+                            .content-checkbox {
+                                margin: 11px 0 13px 8px;
+                                transform: scale(2);
+                            }
+                        }
+                    }
+
+                    .div_notice {
+                        font-size: 13px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*-----  5.頭靠子系統平板版  -----*/
+    .car-head_supports {
+        .chkcontent_5th {
+
+            .head_supportsgroup {
+                padding: 0px 10px 1px 3px !important;
+                width: calc(100% - 14px) !important;
+
+                .head_supports_font {
+                    margin: 7px 0px 0px 0px;
+                    padding: 1px 1px 1px 6px;
+                    width: 50%;
+                    font-size: 16px;
+                }
+
+                .head_supports_size {
+                    width: 45%;
+                    font-size: 16px;
+                    margin: 5px 0 0px 0px;
+                    padding: 3px 6px 1px 0px;
+                }
+
+                .head_supports_checkbox {
+                    margin: 9px 5px 10px 0px;
+                    padding: 0px;
+
+                    .content-checkbox {
+                        transform: scale(2);
+                    }
+                }
+
+            }
+        }
+
+        .pricecontent {
+            .pricing {
+                font-size: 16px;
+            }
+
+            .nowprice {
+                font-size: 16px !important;
+                font-weight: 600;
+            }
+        }
+    }
+
+    /*-----  6.軀幹子系統-背靠點擊列平板版  -----*/
+    .car-back_supports {
+        .target {
+            .chkcontent_6th {
+                .trunk_suppotrts_back {
+                    width: calc(100% - 15px) !important;
+
+                    .back_supportsgroup {
+                        .Nova_back_hardware_title {
+                            padding: 1px 0px 0px 0px;
+                            font-size: 16px;
+                            margin: 0px 1px 0 0;
+                            width: 40%;
+                        }
+
+                        .back_sizegroup {
+                            width: 53%;
+
+                            .back_size {
+                                font-size: 17px;
+                                height: 100%;
+                                padding: 1px;
+                                margin: 0px 1px 2px 0px;
+                            }
+                        }
+
+                        .back_supports_checkbox {
+                            margin: 0px 5px 0px 4px;
+
+                            .content-checkbox {
+                                margin: 16px 0px 15px 0px;
+                                transform: scale(2);
+                            }
+                        }
+                    }
+
+                    .div_notice {
+                        padding: 1px 0 1px 1px;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*-----  7.軀幹子系統-軀幹側支撐點擊列平板版  -----*/
+    .car-latertrunk_supports {
+        .target {
+            .chkcontent_7th {
+                .trunk_suppotrts_LaterTrunk {
+                    width: calc(100% - 15px) !important;
+
+                    .side_supportgroup {
+                        .Novalateralhardware_title {
+                            height: 100%;
+                            font-size: 16px;
+                            padding: 0px 1px 0px 5px;
+                            margin: 2px 1px 0px 1px;
+                            width: 45%;
+                        }
+
+                        .side_sizegroup {
+                            height: 100%;
+                            margin: 2px 1px 0px 1px;
+                            width: 30%;
+
+                            .side_size {
+                                font-size: 16px;
+                                margin: 0px 0px 1px 0px;
+                            }
+                        }
+
+                        .side_sizeSMgroup {
+                            width: 35%;
+
+                            .side_sizeSgroup {
+                                height: 50%;
+                                margin: 0px 0px 0px 2px;
+
+                                .side_sizeLR1group {
+                                    height: 50%;
+                                    margin: 2px 0 0 0;
+
+                                    .side_SLR1 {
+                                        font-size: 16px;
+                                        width: 45%;
+                                        height: 100%;
+                                        margin: 0px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountLR1 {
+                                        width: 50%;
+                                        height: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 16px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountLRs1 {
+                                            font-size: 16px;
+                                            width: 35%;
+                                            margin: 4px 0px 0px -5px;
+
+                                        }
+                                    }
+                                }
+
+
+                                .side_sizeLR2group {
+                                    height: 50%;
+
+                                    .side_SLR2 {
+                                        font-size: 16px;
+                                        width: 45%;
+                                        height: 100%;
+                                        margin: 1px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountLR2 {
+                                        width: 50%;
+                                        height: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 16px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountLRs2 {
+                                            font-size: 16px;
+                                            width: 35%;
+                                            margin: 4px 0px 0px -5px;
+                                        }
+                                    }
+                                }
+                            }
+
+
+
+                            .side_sizeMgroup {
+                                height: 50%;
+                                margin: 0px 0px 5px 2px;
+
+                                .side_sizeMLR1group {
+                                    height: 50%;
+                                    margin: 3px 0 0 0;
+
+                                    .side_MLR1 {
+                                        font-size: 16px;
+                                        width: 45%;
+                                        height: 100%;
+                                        margin: 0px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountMLR1 {
+                                        width: 50%;
+                                        height: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 16px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountMLRs1 {
+                                            font-size: 16px;
+                                            width: 35%;
+                                            margin: 4px 0px 0px -5px;
+                                        }
+                                    }
+                                }
+
+                                .side_sizeMLR2group {
+                                    height: 50%;
+
+                                    .side_MLR2 {
+                                        font-size: 16px;
+                                        width: 45%;
+                                        height: 100%;
+                                        margin: -1px 2px 0px 0px;
+                                    }
+
+                                    .NovalateralhardwarecountMLR2 {
+                                        width: 50%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        label {
+                                            font-size: 16px;
+                                            width: 65%;
+                                        }
+
+                                        #NovalateralhardwarecountMLRs2 {
+                                            font-size: 16px;
+                                            width: 35%;
+                                            margin: 3px 0px 0px -5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                        .latertrunk_checkboxes {
+                            .content-checkbox {
+                                margin: 16px 0px 8px 0px;
+                                transform: scale(2);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*-----  8.底座子系統-座板點擊列平板版  -----*/
+    .car-seatbase {
+        .target {
+            .chkcontent_8th {
+                .seatbasegroup {
+                    .seat_supportsgroup {
+                        .Nova_seatbase_title {
+                            font-size: 16px;
+                            width: 40%;
+                            padding: 0px 1px 0px 2px;
+                            margin: 1px 1px 1px 1px;
+                        }
+
+                        .seatbase_sizegroup {
+                            width: 53%;
+                            height: 100%;
+
+                            .seatbase_size {
+                                font-size: 16px;
+                                margin: 1px 0px 1px 0px;
+                                padding: 1px;
+                                height: 12%;
+                            }
+                        }
+
+                        .seatbase_checkbox {
+                            margin: -1px 7px 0px 6px;
+                            height: 100%;
+
+                            .content-checkbox {
+                                margin: 11px 0px 6px 0px;
+                                transform: scale(2);
+                            }
+                        }
+                    }
+                }
+
+                .div_notice {
+                    font-size: 16px;
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
 
     // /*-----  9.底座子系統-座墊點擊列手機版  -----*/
     // .car-cushion {

@@ -5,6 +5,7 @@
     display: none;
   }
 }
+/* --- 平板版面 --- */
 @media screen and (max-width: 1200px) {
   html,
   body {
@@ -88,7 +89,7 @@
     padding: 6px 10px;
     font-size: 30px;
   }
-  /*-----  0.車體選擇點擊列  -----*/
+  /*-----  0.車體選擇點擊列平板版  -----*/
   .car-body .target .chkcontent_0rd .bodytiltegroup {
     width: calc(100% - 15px) !important;
   }
@@ -105,7 +106,7 @@
     transform: scale(2);
     margin: 4px 13px 3px 5px;
   }
-  /*-----  1.車體顏色手機板  -----*/
+  /*-----  1.車體顏色平板版  -----*/
   .car-order .target .chkcontent_1st .car_color {
     display: block;
     width: calc(100% - 16px);
@@ -185,31 +186,501 @@
   .car-order .target .chkcontent_1st .car_color .camo_gray .img_gray {
     border-bottom: 52px solid #666666;
   }
-  .basesize {
-    flex-direction: row;
-    height: 100%;
+  /*-----  2.座板尺寸平板版  -----*/
+  .car-seat {
+    margin: 0px 0px 8px 0px;
   }
-  .basesize .Seat-widthgroup {
-    width: 50%;
-    flex-direction: column;
-    padding: 0px 1px;
-    border-bottom: 0px;
+  .car-seat .target .chkcontent_2nd .basesize {
+    width: calc(100% - 14px) !important;
   }
-  .basesize .Seat-widthgroup .width_cmCount {
-    flex-direction: row;
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup {
+    border-bottom: 0px dashed black;
     width: 100%;
     height: 100%;
+    padding: 0px 3px 0px 1px;
+    display: flex;
   }
-  .basesize .Seat-widthgroup .width_cmCount .width_number {
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup.novarc-width {
+    flex-direction: row;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup.balance-width {
     flex-direction: column;
-    width: 50%;
   }
-  .basesize .Seat-widthgroup .width_cmCount .width_chkblock {
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .seat-width {
+    font-size: 16px;
+    margin: 0 10px 0 5px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .seat-width::after {
+    top: -9px;
+    right: -14px;
+    height: 137%;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount {
+    display: flex;
     flex-direction: column;
-    width: 50%;
   }
-  .basesize .Seat-widthgroup .width_chkblock #SWC_checkbox {
-    margin: 17px 31px 18px 10px;
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_number {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 0px 0px 5px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_number .generated_SWdiv {
+    padding: 6px;
+    font-size: 16px;
+    margin: 10px 25.5px 5px 10px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_chkblock {
+    display: flex;
+    flex-direction: row;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .width_cmCount .width_chkblock #SWC_checkbox {
+    margin: 30px 29px 7px 24px;
+    transform: scale(2.2);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width {
+    margin: 0px 0px 0px 0px;
+    flex-direction: row;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-14 {
+    display: flex;
+    flex-direction: row;
+    margin: 6px 20px 8px 20px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-14 #Bsize14 {
+    margin: 5px 6px 0px 14px;
+    transform: scale(2);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-14 label {
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-16 {
+    display: flex;
+    flex-direction: row;
+    margin: 6px 0px 10px 1px;
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-16 #Bsize16 {
+    margin: 5px 10px 0px 14px;
+    transform: scale(2);
+  }
+  .car-seat .target .chkcontent_2nd .basesize .Seat-widthgroup .Bseat-width .Bbasesize-16 label {
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .car-seat .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-seat .target .pricecontent .nowprice {
+    font-size: 16px !important;
+  }
+  /*-----  3.腳架點擊列平板版  -----*/
+  .car-tripod .chkcontent_3rd .tripodgroup {
+    padding: 0px 1px 0px 0px !important;
+    flex-direction: row;
+    width: calc(100% - 14px) !important;
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees {
+    margin: 2px;
+    font-size: 18px;
+    padding: 1px;
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_77degrees {
+    margin: 4px 0px 2px 8px;
+    transform: scale(2);
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_80degrees {
+    margin: 4px 0px 2px 8px;
+    transform: scale(2);
+  }
+  .car-tripod .chkcontent_3rd .tripodgroup .degrees #checkbox_90degrees {
+    margin: 4px 0px 2px 8px;
+    transform: scale(2);
+  }
+  .car-tripod .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-tripod .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  4.踏板樣式點擊列平板版  -----*/
+  .car-footpedal .target .chkcontent_4th .footpedalgroup {
+    width: calc(100% - 13px) !important;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_type {
+    font-size: 15px;
+    height: 100%;
+    width: 25%;
+    padding: 0 1px 0 3px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_twopiece_angle {
+    font-size: 16px;
+    height: 100%;
+    width: 69%;
+    margin: 0px 2px 0 0px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_twopiece_angle .twopiece_anglefixed {
+    height: 50%;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .div_twopiece_angle .twopiece_angleadjust {
+    height: 50%;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .footpedal_checkbox1 {
+    flex: 1;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .footpedal_checkbox1 #checkbox_twopiece_fixed {
+    flex: 1;
+    margin: 10px 1px 8px 0px;
+    transform: scale(2);
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_twopiece .footpedal_checkbox1 #checkbox_twopiece_adjustable {
+    flex: 0.8;
+    margin: 10px 1px 8px 0px;
+    transform: scale(2);
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .div_type {
+    font-size: 18px;
+    height: 100%;
+    width: 25%;
+    padding: 0 0 0 6px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .div_angleadjust {
+    font-size: 17px;
+    width: 30%;
+    height: 100%;
+    padding: 0px 0 0 1px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .pedalcmcmgroup {
+    width: 38%;
+    height: 100%;
+    margin: 0 0px 0 2px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .pedalcmcmgroup .pedalcm {
+    font-size: 16px;
+    margin: 0px 0px 1px 0;
+    height: 100%;
+    width: 100%;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .footpedal_checkbox2 {
+    margin: 0px 1px 0 5px;
+    flex: 1;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_piecealuminum .footpedal_checkbox2 .content-checkbox {
+    margin: 17.5px 1px 10px;
+    transform: scale(2);
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_type {
+    border-radius: 5px;
+    font-size: 18px;
+    height: 100%;
+    width: 25%;
+    padding: 0 0px 0 5px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_angle {
+    width: 40%;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_angle .div_pedalsize {
+    font-size: 16px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_pedal_direction {
+    font-size: 15px;
+    height: 100%;
+    width: 29%;
+    margin: 0px 0px 0px 2px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .div_pedal_direction .div_direction {
+    margin: 2px 0 3px 0 !important;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .footpedal_checkbox3 {
+    flex: 1;
+    margin: 0 8px 0 0;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_Plugin .footpedal_checkbox3 .content-checkbox {
+    margin: 12px 0 11px 10px;
+    transform: scale(2);
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_type {
+    border-radius: 5px;
+    font-size: 18px;
+    height: 100%;
+    width: 25%;
+    padding: 0 1px 0 5px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_angle {
+    width: 40%;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_angle .div_pedalsize {
+    font-size: 16px;
+    margin: 1px 1px 1px 0px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_pedal_direction {
+    font-size: 15px;
+    height: 100%;
+    width: 28%;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .div_pedal_direction .div_direction {
+    margin: 2px 0 4px 0 !important;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .footpedal_checkbox4 {
+    flex: 1;
+    margin: 0 6px 0 0px;
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .footpedal_plumb .footpedal_checkbox4 .content-checkbox {
+    margin: 11px 0 13px 8px;
+    transform: scale(2);
+  }
+  .car-footpedal .target .chkcontent_4th .footpedalgroup .div_notice {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .car-footpedal .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-footpedal .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  5.頭靠子系統平板版  -----*/
+  .car-head_supports .chkcontent_5th .head_supportsgroup {
+    padding: 0px 10px 1px 3px !important;
+    width: calc(100% - 14px) !important;
+  }
+  .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_font {
+    margin: 7px 0px 0px 0px;
+    padding: 1px 1px 1px 6px;
+    width: 50%;
+    font-size: 16px;
+  }
+  .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_size {
+    width: 45%;
+    font-size: 16px;
+    margin: 5px 0 0px 0px;
+    padding: 3px 6px 1px 0px;
+  }
+  .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_checkbox {
+    margin: 9px 5px 10px 0px;
+    padding: 0px;
+  }
+  .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_checkbox .content-checkbox {
+    transform: scale(2);
+  }
+  .car-head_supports .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-head_supports .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  6.軀幹子系統-背靠點擊列平板版  -----*/
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back {
+    width: calc(100% - 15px) !important;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .Nova_back_hardware_title {
+    padding: 1px 0px 0px 0px;
+    font-size: 16px;
+    margin: 0px 1px 0 0;
+    width: 40%;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup {
+    width: 53%;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup .back_size {
+    font-size: 17px;
+    height: 100%;
+    padding: 1px;
+    margin: 0px 1px 2px 0px;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_supports_checkbox {
+    margin: 0px 5px 0px 4px;
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_supports_checkbox .content-checkbox {
+    margin: 16px 0px 15px 0px;
+    transform: scale(2);
+  }
+  .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .div_notice {
+    padding: 1px 0 1px 1px;
+    font-size: 16px;
+  }
+  .car-back_supports .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-back_supports .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  7.軀幹子系統-軀幹側支撐點擊列平板版  -----*/
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk {
+    width: calc(100% - 15px) !important;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .Novalateralhardware_title {
+    height: 100%;
+    font-size: 16px;
+    padding: 0px 1px 0px 5px;
+    margin: 2px 1px 0px 1px;
+    width: 45%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup {
+    height: 100%;
+    margin: 2px 1px 0px 1px;
+    width: 30%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizegroup .side_size {
+    font-size: 16px;
+    margin: 0px 0px 1px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup {
+    width: 35%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup {
+    height: 50%;
+    margin: 0px 0px 0px 2px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group {
+    height: 50%;
+    margin: 2px 0 0 0;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .side_SLR1 {
+    font-size: 16px;
+    width: 45%;
+    height: 100%;
+    margin: 0px 2px 0px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 label {
+    font-size: 16px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR1group .NovalateralhardwarecountLR1 #NovalateralhardwarecountLRs1 {
+    font-size: 16px;
+    width: 35%;
+    margin: 4px 0px 0px -5px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group {
+    height: 50%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .side_SLR2 {
+    font-size: 16px;
+    width: 45%;
+    height: 100%;
+    margin: 1px 2px 0px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 label {
+    font-size: 16px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeSgroup .side_sizeLR2group .NovalateralhardwarecountLR2 #NovalateralhardwarecountLRs2 {
+    font-size: 16px;
+    width: 35%;
+    margin: 4px 0px 0px -5px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup {
+    height: 50%;
+    margin: 0px 0px 5px 2px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group {
+    height: 50%;
+    margin: 3px 0 0 0;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .side_MLR1 {
+    font-size: 16px;
+    width: 45%;
+    height: 100%;
+    margin: 0px 2px 0px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 label {
+    font-size: 16px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR1group .NovalateralhardwarecountMLR1 #NovalateralhardwarecountMLRs1 {
+    font-size: 16px;
+    width: 35%;
+    margin: 4px 0px 0px -5px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group {
+    height: 50%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .side_MLR2 {
+    font-size: 16px;
+    width: 45%;
+    height: 100%;
+    margin: -1px 2px 0px 0px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 label {
+    font-size: 16px;
+    width: 65%;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .side_sizeSMgroup .side_sizeMgroup .side_sizeMLR2group .NovalateralhardwarecountMLR2 #NovalateralhardwarecountMLRs2 {
+    font-size: 16px;
+    width: 35%;
+    margin: 3px 0px 0px -5px;
+  }
+  .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes .content-checkbox {
+    margin: 16px 0px 8px 0px;
+    transform: scale(2);
+  }
+  .car-latertrunk_supports .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-latertrunk_supports .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  8.底座子系統-座板點擊列平板版  -----*/
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .Nova_seatbase_title {
+    font-size: 16px;
+    width: 40%;
+    padding: 0px 1px 0px 2px;
+    margin: 1px 1px 1px 1px;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup {
+    width: 53%;
+    height: 100%;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_sizegroup .seatbase_size {
+    font-size: 16px;
+    margin: 1px 0px 1px 0px;
+    padding: 1px;
+    height: 12%;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_checkbox {
+    margin: -1px 7px 0px 6px;
+    height: 100%;
+  }
+  .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .seatbase_checkbox .content-checkbox {
+    margin: 11px 0px 6px 0px;
+    transform: scale(2);
+  }
+  .car-seatbase .target .chkcontent_8th .div_notice {
+    font-size: 16px;
+  }
+  .car-seatbase .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-seatbase .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
   }
 }
 @media screen and (max-width: 650px) {
