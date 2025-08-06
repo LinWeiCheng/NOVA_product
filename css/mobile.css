@@ -458,7 +458,7 @@
     padding: 3px 6px 1px 0px;
   }
   .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_checkbox {
-    margin: 9px 5px 10px 0px;
+    margin: 9px -10px 10px 0px;
     padding: 0px;
   }
   .car-head_supports .chkcontent_5th .head_supportsgroup .head_supports_checkbox .content-checkbox {
@@ -482,13 +482,14 @@
     width: 40%;
   }
   .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup {
-    width: 53%;
+    width: 54%;
+    margin: 0 1px 1px -4px;
   }
   .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_sizegroup .back_size {
     font-size: 17px;
     height: 100%;
     padding: 1px;
-    margin: 0px 1px 2px 0px;
+    margin: 0px 0px 2px 0px;
   }
   .car-back_supports .target .chkcontent_6th .trunk_suppotrts_back .back_supportsgroup .back_supports_checkbox {
     margin: 0px 5px 0px 4px;
@@ -637,7 +638,7 @@
     margin: 3px 0px 0px -5px;
   }
   .car-latertrunk_supports .target .chkcontent_7th .trunk_suppotrts_LaterTrunk .side_supportgroup .latertrunk_checkboxes .content-checkbox {
-    margin: 16px 0px 8px 0px;
+    margin: 16px 6px 8px 0px;
     transform: scale(2);
   }
   .car-latertrunk_supports .target .pricecontent .pricing {
@@ -648,6 +649,9 @@
     font-weight: 600;
   }
   /*-----  8.底座子系統-座板點擊列平板版  -----*/
+  .car-seatbase .target .chkcontent_8th .seatbasegroup {
+    width: calc(100% - 16px) !important;
+  }
   .car-seatbase .target .chkcontent_8th .seatbasegroup .seat_supportsgroup .Nova_seatbase_title {
     font-size: 16px;
     width: 40%;
@@ -675,10 +679,590 @@
   .car-seatbase .target .chkcontent_8th .div_notice {
     font-size: 16px;
   }
+  .car-seatbase .target .chkcontent_8th .seatbase_balanceLegSplitter label {
+    font-size: 16px;
+    width: 94%;
+    margin: 3px 10px 3px 0px;
+  }
   .car-seatbase .target .pricecontent .pricing {
     font-size: 16px;
   }
   .car-seatbase .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  9.底座子系統-座墊點擊列平板版  -----*/
+  .car-cushion .target .chkcontent_9th .cushiongroup {
+    padding: 0px 1px 2px 3px;
+    width: calc(100% - 16px) !important;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .Nova_cushiontitle {
+    height: 100%;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushiongroup_typegroup {
+    width: 70%;
+    margin: 0 0px 1px 3px;
+    height: 100%;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_type {
+    font-size: 16px;
+    height: 33%;
+    margin: 0px 1px 2px 0px;
+    padding: 0px;
+    width: 97%;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_typeC {
+    font-size: 16px;
+    height: 33%;
+    margin: 1px 1px 0px 0px;
+    width: 97%;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushion_checkbox {
+    margin: 8px 0px -7px 0px;
+  }
+  .car-cushion .target .chkcontent_9th .cushiongroup .cushion_checkbox .content-checkbox {
+    transform: scale(2);
+    margin: 2px 9px 17px 0px;
+  }
+  .car-cushion .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-cushion .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  10.綁帶子系統點擊列平板版  -----*/
+  .car-bandage .target .chkcontent_10th .bandagegroup {
+    width: calc(100% - 17px) !important;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_title {
+    font-size: 16px;
+    width: 35%;
+    padding: 1px 0px 0px 5px;
+    margin: 1px 1px 1px 0;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps {
+    width: 60%;
+    margin: 0 1px 0 0;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .chest_straps_font {
+    font-size: 16px;
+    padding: 1px 0px 0px 1px;
+    margin: 1px;
+    width: 98%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup {
+    height: 100%;
+    margin: 1px 0 2px 0;
+    width: 100%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .chest_straps_font_2 {
+    font-size: 16px;
+    padding: 0px 0px 0px 1px;
+    margin: 1px;
+    width: 58%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size {
+    width: 40%;
+    height: 100%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2s {
+    font-size: 16px;
+    padding: 0px 1px 0px 1px;
+    margin: 1px 1px 1px 1px;
+    height: 50%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps .Xchest_strapsgroup .Xchest_straps_size .chest_straps_font_2b {
+    font-size: 16px;
+    margin: 1px 1px 0 1px;
+    height: 50%;
+    padding: 0px 1px 0px 1px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox {
+    margin: 0 3px 0px 4px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .chest_strapsgroup .chest_straps_checkbox .content-checkbox {
+    margin: 8px 0px 7px 2px;
+    transform: scale(2);
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup {
+    margin: 1px 0 1px 0;
+    height: 100%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_title {
+    font-size: 16px;
+    height: 100%;
+    width: 35%;
+    padding: 0px 1px 0px 5px;
+    margin: 1px 1px 1px 0px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt {
+    height: 100%;
+    width: 59%;
+    margin: 0 5px 0 1px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .standard_pelvic_belt {
+    height: 35%;
+    font-size: 16px;
+    padding: 1px 1px 1px 4px;
+    margin: 1px 1px 2px 1px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup {
+    height: 65%;
+    width: 100%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt {
+    font-size: 16px;
+    padding: 1px 1px 1px 1px;
+    margin: 1px;
+    width: 80%;
+    height: 100%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size {
+    height: 100%;
+    width: 25%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fonts {
+    font-size: 14px;
+    padding: 1px 1px 1px 1px;
+    margin: 1px;
+    height: 50%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt .pointpelvic_beltgroup .pointpelvic_belt_size .pointpelvic_belt_fontb {
+    font-size: 16px;
+    padding: 1px 1px 1px 1px;
+    margin: 1px;
+    height: 50%;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .pelvic_beltgroup .pelvic_belt_checkbox .content-checkbox {
+    margin: 12px 0px 6px 7px;
+    transform: scale(2);
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup {
+    margin: 1px 0 1px 0;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_band {
+    font-size: 16px;
+    width: 35%;
+    padding: 0px 0px 0px 0px;
+    margin: 2px 1px 1px 1px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .calf_font {
+    font-size: 16px;
+    width: 59%;
+    padding: 1px 1px 1px 2px;
+    margin: 2px 6px 1px 0px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_bandgroup .content-checkbox {
+    margin: 11px 0px 8px 6px;
+    transform: scale(2);
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup {
+    margin: 1px 0 1px 0;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_cuff {
+    font-size: 16px;
+    width: 35%;
+    padding: 1px 1px 1px 5px;
+    margin: 2px 1px 2px 1px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .calf_font {
+    font-size: 16px;
+    width: 59%;
+    padding: 1px 1px 1px 1px;
+    margin: 2px 2px 2px 0px;
+  }
+  .car-bandage .target .chkcontent_10th .bandagegroup .Shoulder_chest_strapsgroup .calf_cuffgroup .content-checkbox {
+    margin: 10px 0px 8px 10px;
+    transform: scale(2);
+  }
+  .car-bandage .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .car-bandage .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*----- Spex特區 -----*/
+  .Spex_area {
+    width: calc(100% - 12px) !important;
+    font-size: 12px !important;
+  }
+  /*-----  11.Spex底座子系統-座墊點擊列  -----*/
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup {
+    width: calc(100% - 14px) !important;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title {
+    padding: 1px 0px 0px 3px;
+    margin: 1px 1px 1px 0;
+    width: 50%;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title {
+    font-size: 16px;
+    padding: 0px;
+    margin: 1px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title .SpexCushion {
+    margin: 17px 2px 0px 15px;
+    transform: scale(2);
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title .cushion-label {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_title .Spexcushion_title .cushion-label p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size {
+    width: 50%;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize {
+    flex-direction: column;
+    align-items: center;
+    height: 75%;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize .Spexcushion_WH {
+    margin: 0 5px 2px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    /* 控制間距，可依需求調整 */
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize .Spexcushion_WH .Spexcushion_Width {
+    font-size: 16px;
+    width: 85%;
+    height: auto;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize .Spexcushion_WH div {
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize .Spexcushion_WH .Spexcushion_Heigh {
+    font-size: 16px;
+    width: 85%;
+    height: auto;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize .Spexcushion_color {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_Basicssize .Spexcushion_color .Spexcushion_colorsel {
+    font-size: 16px;
+    width: 50%;
+    height: auto;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize {
+    height: 25%;
+    gap: 10px;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize .Spexcushion_specialsizenotice {
+    height: 60%;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize .Spexcushion_specialsizenotice .Spexcushion_specialWidth {
+    font-size: 12px;
+    width: 25%;
+    height: auto;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize .Spexcushion_specialsizenotice div {
+    font-size: 12px;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize .Spexcushion_specialsizenotice .Spexcushion_specialHeigh {
+    font-size: 12px;
+    width: 25%;
+    height: auto;
+  }
+  .Spex_cushion .target .chkcontent_11th .Spexcushiongroup .Spexcushiongroup_size .Spexcushion_specialsize .Spexcushion_notice {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .Spex_cushion .target .pricecontent .pricing {
+    font-size: 16px;
+  }
+  .Spex_cushion .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  12.Spex底座子系統-硬座板點擊列  -----*/
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup {
+    width: calc(100% - 15px) !important;
+  }
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title .SpexSeatBase {
+    margin: 6px 13px 5px 19px;
+    transform: scale(2);
+  }
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title .seatbase-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    gap: 2px;
+  }
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_title .Spexseatbase_title .seatbase-label p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size .Spexseatbase_WH {
+    font-size: 10px;
+  }
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size .Spexseatbase_WH .Spexseatbase_Width {
+    width: 40%;
+    font-size: 16px;
+  }
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size .Spexseatbase_WH div {
+    font-size: 15px;
+    margin: 2px;
+  }
+  .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup .Spexseatbasegroup_size .Spexseatbase_WH .Spexseatbase_Heigh {
+    width: 40%;
+    font-size: 16px;
+  }
+  .Spex_seatbase .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 16px;
+  }
+  .Spex_seatbase .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  13.Spex底座子系統-分腿器點擊列  -----*/
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup {
+    width: calc(100% - 15px) !important;
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthighgroup_title {
+    width: 60%;
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthighgroup_title .Spexmedialthigh_title .SpexMedialThigh {
+    margin: 9px 11px 5px 18px;
+    transform: scale(2);
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthighgroup_title .Spexmedialthigh_title .medialthigh-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthighgroup_title .Spexmedialthigh_title .medialthigh-label p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthigh_sizegroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthigh_sizegroup .Spexmedialthigh_size {
+    height: 100%;
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthigh_sizegroup .Spexmedialthigh_size .Spexmedialthigh_sel {
+    font-size: 16px;
+    width: 80%;
+  }
+  .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup .Spexmedialthigh_sizegroup .Spexmedialthigh_sizetable {
+    visibility: hidden;
+    height: 0%;
+  }
+  .Spex_medialthigh .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 16px;
+  }
+  .Spex_medialthigh .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  14.Spex底座子系統-扶手臀撐點擊列  -----*/
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup {
+    width: calc(100% - 16px) !important;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title {
+    width: 40%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title .Spexarmsuplatthigh_title .SpexArmSupLatThigh {
+    margin: 5px 13px 5px 18px;
+    transform: scale(2);
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title .Spexarmsuplatthigh_title .armsuplatthigh-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighgroup_title .Spexarmsuplatthigh_title .armsuplatthigh-label p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_ArmSupLatThighgroup .Spexarmsuplatthigh_bucklesel {
+    font-size: 12px;
+    width: 95%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_ArmSupLatThighgroup .Spexarmsuplatthigh_armsupsel {
+    font-size: 12px;
+    width: 95%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_ArmSupLatThighgroup .Spexarmsuplatthigh_latthighsel {
+    font-size: 12px;
+    width: 95%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighcountgroup {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighcountgroup label {
+    font-size: 14px !important;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthighcountgroup #Spexarmsuplatthighcount {
+    font-size: 14px;
+    width: 80%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup {
+    width: 30%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize {
+    display: flex;
+    flex-direction: column;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .Spexarmsuplatthigh_armpadsel {
+    width: 90%;
+    font-size: 14px;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .armpadcountgroup {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .armpadcountgroup label {
+    font-size: 14px;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_armpadsize .armpadcountgroup #armpadcount {
+    font-size: 14px;
+    width: 30%;
+    margin: 4px 0 0 0;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize {
+    display: flex;
+    flex-direction: column;
+    gap: 1;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .Spexarmsuplatthigh_lateralpadsel {
+    font-size: 14px;
+    width: 90%;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup label {
+    font-size: 14px;
+  }
+  .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup .Spexarmsuplatthigh_padgroup .Spexarmsuplatthigh_lateralpadsize .lateralpadgroup #lateralpadcount {
+    font-size: 14px;
+    width: 30%;
+    margin: 4px 0 0 0;
+  }
+  .Spex_armsup_latthigh .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 16px;
+  }
+  .Spex_armsup_latthigh .target .pricecontent .nowprice {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+  /*-----  15.Spex軀幹子系統-背靠點擊列 -----*/
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup {
+    width: calc(100% - 16px) !important;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupportsgroup_title .Spexbacksupports_title .SpexBackSupports {
+    margin: 6px 14px 5px 17px;
+    transform: scale(2);
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupportsgroup_title .Spexbacksupports_title .backsupports-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupportsgroup_title .Spexbacksupports_title .backsupports-label p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_backsize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_backsize .Spexbacksupports_WH {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px 4px 5px;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_backsize .Spexbacksupports_WH .Spexbacksupports_Width {
+    width: 100%;
+    font-size: 20px;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_backsize .Spexbacksupports_WH div {
+    font-size: 19px;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_backsize .Spexbacksupports_WH .Spexbacksupports_Heigh {
+    width: 100%;
+    font-size: 20x;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_backsize .Spexbacksupports_color {
+    font-size: 20px;
+    width: 100%;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_backsize .Spexbacksupports_color .Spexbacksupports_colorsel {
+    width: 50%;
+    font-size: 20px;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_specialsize {
+    height: 15%;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_specialsize .Spexbacksupports_specialsizenotice .Spexbacksupports_specialWidth {
+    padding: 5px;
+    font-size: 14px;
+    width: 35%;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_specialsize .Spexbacksupports_specialsizenotice div {
+    font-size: 13px;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_specialsize .Spexbacksupports_specialsizenotice .Spexbacksupports_specialHeigh {
+    padding: 5px;
+    font-size: 14px;
+    width: 35%;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .Spexbacksupports_product .Spexbacksupports_size .Spexbacksupports_specialsize .Spexbacksupports_notice {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup .div_notice {
+    font-size: 14px;
+  }
+  .Spex_backsupports .target .pricecontent .pricing {
+    margin: 3px 0px 3px 1px;
+    font-size: 16px;
+  }
+  .Spex_backsupports .target .pricecontent .nowprice {
     font-size: 16px !important;
     font-weight: 600;
   }
