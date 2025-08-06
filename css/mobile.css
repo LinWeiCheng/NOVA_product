@@ -891,7 +891,7 @@
     width: calc(100% - 12px) !important;
     font-size: 12px !important;
   }
-  /*-----  11.Spex底座子系統-座墊點擊列  -----*/
+  /*-----  11.Spex底座子系統-座墊點擊列平板版  -----*/
   .Spex_cushion .target .chkcontent_11th .Spexcushiongroup {
     width: calc(100% - 14px) !important;
   }
@@ -997,7 +997,7 @@
     font-size: 16px !important;
     font-weight: 600;
   }
-  /*-----  12.Spex底座子系統-硬座板點擊列  -----*/
+  /*-----  12.Spex底座子系統-硬座板點擊列平板版  -----*/
   .Spex_seatbase .target .chkcontent_12th .Spexseatbasegroup {
     width: calc(100% - 15px) !important;
   }
@@ -1038,7 +1038,7 @@
     font-size: 16px !important;
     font-weight: 600;
   }
-  /*-----  13.Spex底座子系統-分腿器點擊列  -----*/
+  /*-----  13.Spex底座子系統-分腿器點擊列平板版  -----*/
   .Spex_medialthigh .target .chkcontent_13th .Spexmedialthighgroup {
     width: calc(100% - 15px) !important;
   }
@@ -1083,7 +1083,7 @@
     font-size: 16px !important;
     font-weight: 600;
   }
-  /*-----  14.Spex底座子系統-扶手臀撐點擊列  -----*/
+  /*-----  14.Spex底座子系統-扶手臀撐點擊列平板版  -----*/
   .Spex_armsup_latthigh .target .chkcontent_14th .Spexarmsuplatthighgroup {
     width: calc(100% - 16px) !important;
   }
@@ -1185,7 +1185,7 @@
     font-size: 16px !important;
     font-weight: 600;
   }
-  /*-----  15.Spex軀幹子系統-背靠點擊列 -----*/
+  /*-----  15.Spex軀幹子系統-背靠點擊列平板版 -----*/
   .Spex_backsupports .target .chkcontent_15th .Spexbacksupportsgroup {
     width: calc(100% - 16px) !important;
   }
