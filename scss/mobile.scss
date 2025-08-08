@@ -1745,1085 +1745,1191 @@
         }
     }
 
-    // /*-----  16.Spex軀幹子系統-扣具 -----*/
-    // .Spex_hardware {
-    //     .target {
-    //         .chkcontent_16th {
-    //             .Spexhardwaregroup {
-
-    //                 .Spexhardwaregroup_title {
-    //                     .Spexhardware_adapta_titlegroup {
-    //                         .adapta_hdware_title {
-    //                             font-size: 12px;
-    //                         }
-
-    //                         .Spexhardware_adapta_title {
-    //                             font-size: 12px;
-
-    //                             .SpexHardware {
-    //                                 margin: 7px 4px 8px 10px;
-    //                                 transform: scale(1.5);
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .Spexhardware_titlegroup {
-    //                         .org_hdware_title {
-    //                             font-size: 12px;
-    //                         }
-
-    //                         .Spexhardware_org_title {
-    //                             font-size: 12px;
-    //                             display: flex;
-    //                             align-items: center;
-
-    //                             .SpexHardware {
-    //                                 margin: 7px 4px 8px 10px;
-    //                                 transform: scale(1.5);
-    //                             }
-    //                         }
-
-    //                         .Spexdropmount_group {
-    //                             .Spexhardware_org_title {
-    //                                 font-size: 12px;
-
-    //                                 .SpexHardware {
-    //                                     margin: 7px 4px 8px 10px;
-    //                                     transform: scale(1.5);
-    //                                 }
-
-    //                                 .hardware-label {
-    //                                     display: flex;
-    //                                     flex-direction: column;
-    //                                     gap: 2px;
-
-    //                                     p {
-    //                                         font-size: 12px;
-    //                                         line-height: 1.4;
-    //                                     }
-    //                                 }
-    //                             }
-
-    //                             .dropmount_sizegroup {
-    //                                 .Spexdropmount_size {
-    //                                     width: 60%;
-    //                                     font-size: 12px;
-    //                                     ;
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 margin: 3px 0px 3px 1px;
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*----- 17.Spex軀幹子系統-軀幹側支撐 -----*/
-    // .Spex_latertrunksupports {
-    //     .target {
-    //         .chkcontent_17th {
-    //             .Spexlatertrunksupportsgroup {
-    //                 .Spexlatertrunksupportsgroup_title {
-    //                     .SpexlaterHardwaregroup {
-    //                         .laterHardwaregroup {
-
-    //                             //Spex 多軸可外撥側支撐
-    //                             .LaterTrunk_Axialgroup {
-    //                                 display: flex;
-    //                                 flex-direction: column; // 垂直排列
-    //                                 width: 100%;
-    //                                 border: 1px solid rgb(244, 120, 120); // 外圈黑框
-    //                                 border-radius: 8px;
-    //                                 padding: 2px; // 可選：內距讓內容不貼邊
-
-    //                                 .latertrunkaxialgroup {
-    //                                     width: 100%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-
-    //                                     .Spexlatertrunksupports_title {
-    //                                         width: 70%;
-    //                                         display: inline-block; // 並排顯示
-    //                                         vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-    //                                         font-size: 15px;
-    //                                         margin: 0px 1px 0px 0px;
-
-    //                                         .SpexLaterTrunkSupports {
-    //                                             margin: 7px 6px 8px 7px;
-    //                                             transform: scale(1.5);
-    //                                         }
-    //                                     }
-
-    //                                     .latertrunkaxialcountgroup {
-    //                                         width: 30%;
-    //                                         display: inline-block; // 並排顯示
-    //                                         vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 4px 0 8px;
-    //                                         }
-
-    //                                         #latertrunkaxialcount {
-    //                                             width: 20%;
-    //                                             font-size: 14px;
-    //                                         }
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunkaxialpadthinknessgroup {
-    //                                     width: 100%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-    //                                     .latertrunkaxialpadgroup {
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 0px 0 0;
-    //                                             width: 30%;
-    //                                         }
-
-    //                                         .latertrunkaxialpadtype {
-    //                                             font-size: 14px;
-    //                                             width: 11vh;
-    //                                         }
-    //                                     }
-
-    //                                     .latertrunkaxialclothpadgroup {
-    //                                         width: 50%;
-
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 0px 0 0;
-    //                                             width: 30%;
-    //                                         }
-
-    //                                         .latertrunkaxialclothpadtype {
-    //                                             font-size: 14px;
-    //                                             width: 11vh;
-    //                                         }
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunkaxialpadsizegroup {
-    //                                     width: 100%;
-
-    //                                     .latertrunkaxialpadsize_WHgroup {
-    //                                         .latertrunkaxialpadsize_WH {
-
-
-    //                                             .latertrunkaxialpadsize_Width {}
-
-    //                                             div {}
-
-    //                                             .latertrunkaxialpadsize_Heigh {}
-
-    //                                             label {
-    //                                                 width: 25%;
-    //                                                 font-size: 15px;
-    //                                                 margin: 0px 0px 0 3px;
-    //                                             }
-
-    //                                             #latertrunkaxialpadcount {}
-    //                                         }
-    //                                     }
-    //                                 }
-    //                             }
-
-    //                             //Spex 可外撥側支撐(Standard)
-    //                             .LaterTrunk_Standardgroup {
-    //                                 display: flex;
-    //                                 flex-direction: column;
-    //                                 width: 100%;
-    //                                 border: 1px solid rgb(244, 120, 120); // 外圈黑框
-    //                                 border-radius: 8px;
-    //                                 padding: 2px; // 可選：內距讓內容不貼邊
-
-    //                                 .Spexlatertrunksupports_title {
-    //                                     width: 100%;
-    //                                     font-size: 16px;
-
-    //                                     .SpexLaterTrunkSupports {
-    //                                         margin: 7px 6px 8px 7px;
-    //                                         transform: scale(1.5);
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunk_standardsizecountgroup {
-    //                                     display: flex;
-    //                                     flex-direction: row;
-    //                                     width: 100%;
-
-    //                                     .latertrunk_standardsize {
-    //                                         width: 70%;
-    //                                         display: inline-block; // 並排顯示
-    //                                         vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-    //                                         font-size: 16px;
-
-    //                                         .latertrunk_standardsizetable {
-    //                                             #standardsize {}
-
-    //                                             #standardsize1 {}
-
-    //                                             #standardsize2 {}
-    //                                         }
-    //                                     }
-
-    //                                     .latertrunkstandardcountgroup {
-    //                                         width: 30%;
-    //                                         display: flex; // 並排顯示
-    //                                         align-items: center;
-    //                                         justify-content: center;
-    //                                         vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-    //                                         font-size: 16px;
-
-    //                                         #latertrunkstandardcount {}
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunkstandardpadthinknessgroup {
-    //                                     width: 100%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-    //                                     .latertrunkstandardpadgroup {
-    //                                         width: 50%;
-
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 0px 0 0;
-    //                                             width: 30%;
-    //                                         }
-
-    //                                         .latertrunkstandardpadtype {
-    //                                             font-size: 14px;
-    //                                             width: 11vh;
-    //                                         }
-    //                                     }
-
-    //                                     .latertrunkstandardclothpadgroup {
-    //                                         width: 50%;
-
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 0px 0 0;
-    //                                             width: 30%;
-    //                                         }
-
-    //                                         .latertrunkstandardclothpadtype {
-    //                                             font-size: 14px;
-    //                                             width: 11vh;
-    //                                         }
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunkstandardpadsizegroup {
-    //                                     width: 100%;
-
-    //                                     .latertrunkstandardpadsize_WHgroup {
-    //                                         .latertrunkstandardpadsize_WH {
-    //                                             .latertrunkstandardpadsize_Width {}
-
-    //                                             div {}
-
-    //                                             .latertrunkstandardpadsize_Heigh {}
-
-    //                                             label {
-    //                                                 width: 25%;
-    //                                                 font-size: 14px;
-    //                                                 margin: 0px 0px 0 3px;
-    //                                             }
-
-    //                                             #latertrunkstandardpadcount {}
-    //                                         }
-    //                                     }
-    //                                 }
-    //                             }
-
-    //                             //Spex 可外撥側支撐(Offset)
-    //                             .LaterTrunk_Offsetgroup {
-    //                                 display: flex;
-    //                                 flex-direction: column;
-    //                                 width: 100%;
-    //                                 border: 1px solid rgb(244, 120, 120); // 外圈黑框
-    //                                 border-radius: 8px;
-    //                                 margin: 2px;
-    //                                 padding: 2px; // 可選：內距讓內容不貼邊
-
-    //                                 .Spexlatertrunksupports_title {
-    //                                     width: 100%;
-    //                                     font-size: 16px;
-
-    //                                     .SpexLaterTrunkSupports {
-    //                                         margin: 7px 6px 8px 7px;
-    //                                         transform: scale(1.5);
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunk_offsetsizecountgroup {
-    //                                     display: flex;
-    //                                     flex-direction: row;
-    //                                     width: 100%;
-
-    //                                     .latertrunk_offsetsize {
-    //                                         width: 70%;
-    //                                         display: inline-block; // 並排顯示
-    //                                         vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-    //                                         font-size: 16px;
-
-    //                                         .latertrunk_offsetsizetable {
-    //                                             #offsetsize {}
-
-    //                                             #offsetsize1 {}
-
-    //                                             #offsetsize2 {}
-    //                                         }
-    //                                     }
-
-    //                                     .latertrunkoffsetcountgroup {
-    //                                         width: 30%;
-    //                                         display: flex; // 並排顯示
-    //                                         align-items: center;
-    //                                         justify-content: center;
-    //                                         vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-    //                                         font-size: 16px;
-
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 0px 0 0;
-    //                                             width: 50%;
-    //                                         }
-
-    //                                         #latertrunkoffsetcount {}
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunkoffsetpadthinknessgroup {
-    //                                     width: 100%;
-    //                                     display: flex;
-    //                                     flex-direction: row;
-
-    //                                     .latertrunkoffsetpadgroup {
-    //                                         width: 50%;
-
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 0px 0 0;
-    //                                             width: 30%;
-    //                                         }
-
-    //                                         .latertrunkoffsetpadtype {
-    //                                             font-size: 14px;
-    //                                             width: 11vh;
-    //                                         }
-    //                                     }
-
-    //                                     .latertrunkoffsetclothpadgroup {
-    //                                         width: 50%;
-
-    //                                         label {
-    //                                             font-size: 14px;
-    //                                             margin: 0 0px 0 0;
-    //                                             width: 30%;
-    //                                         }
-
-    //                                         .latertrunkoffsetclothpadtype {
-    //                                             font-size: 14px;
-    //                                             width: 11vh;
-    //                                         }
-    //                                     }
-    //                                 }
-
-    //                                 .latertrunkoffsetpadsizegroup {
-    //                                     width: 100%;
-
-    //                                     .latertrunkoffsetpadsize_WHgroup {
-    //                                         .latertrunkoffsetpadsize_WH {
-    //                                             .latertrunkoffsetpadsize_Width {}
-
-    //                                             div {}
-
-    //                                             .latertrunkoffsetpadsize_Heigh {}
-
-    //                                             #latertrunkoffsetpadcount {}
-    //                                         }
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .Spexlatertrunksupports_accessorytitle {
-    //                         width: 100%;
-    //                         font-size: 16px;
-
-    //                         .SpexLaterTrunkSupportsAccessories {
-    //                             margin: 7px 6px 8px 7px;
-    //                             ;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-
-    //                     .LaterTrunk_AxialBiangulargroup {
-    //                         display: flex;
-    //                         flex-direction: column;
-    //                         width: 100%;
-    //                         border: 1px solid rgb(244, 120, 120); // 外圈黑框
-    //                         border-radius: 8px;
-    //                         margin: 2px;
-    //                         padding: 2px; // 可選：內距讓內容不貼邊
-
-    //                         .Spexlatertrunksupports_titlecountgroup {
-    //                             width: 100%;
-
-
-    //                             .Spexlatertrunksupports_title {
-    //                                 width: 70%;
-    //                                 display: inline-block; // 並排顯示
-    //                                 vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-    //                                 font-size: 14px;
-
-    //                                 .SpexLaterTrunkSupports {
-    //                                     margin: 7px 6px 8px 7px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-
-
-    //                             .latertrunk_axialbiangularcountgroup {
-    //                                 width: 30%;
-    //                                 display: flex; // 並排顯示
-    //                                 vertical-align: top; // 垂直對齊（避免不同高度時錯位）
-    //                                 font-size: 16px;
-
-    //                                 label {
-    //                                     font-size: 14px;
-    //                                     margin: 0 4px 0 8px;
-    //                                     width: 45%;
-    //                                 }
-
-    //                                 #latertrunk_axialbiangularcount {
-    //                                     font-size: 14px;
-    //                                     width: 35%;
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .latertrunk_axialbiangulartypethicknessgroup {
-    //                             width: 100%;
-    //                             display: flex;
-    //                             flex-direction: row;
-
-    //                             .latertrunk_axialbiangularthicknessgroup {
-    //                                 width: 50%;
-    //                                 font-size: 14px;
-
-    //                                 label {
-    //                                     font-size: 14px;
-    //                                 }
-
-    //                                 .latertrunkaxialbiangular {
-    //                                     width: 8vh;
-    //                                     font-size: 14px;
-    //                                 }
-    //                             }
-
-    //                             .latertrunk_axialpadthinknessgroup {
-    //                                 width: 50%;
-    //                                 font-size: 14px;
-
-    //                                 label {
-    //                                     font-size: 14px;
-    //                                     margin: 0 2px 0 0
-    //                                 }
-
-    //                                 .latertrunk_axialpadtype {
-    //                                     font-size: 14px;
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .latertrunk_axialbiangularsizegroup {
-    //                             width: 100%;
-
-    //                             .latertrunk_axialbiangular_Width {
-    //                                 width: 35%;
-    //                                 font-size: 14px;
-    //                             }
-
-    //                             div {
-    //                                 font-size: 14px;
-    //                             }
-
-    //                             .latertrunk_axialbiangular_Heigh {
-    //                                 font-size: 14px;
-    //                                 width: 35%;
-    //                             }
-
-    //                             label {
-    //                                 font-size: 14px;
-    //                                 margin: 0px 0px 0 6px;
-    //                                 width: 15%;
-    //                             }
-
-    //                             #latertrunkaxialbiangularpadcount {
-    //                                 margin: 2px 4px 0 0;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 margin: 3px 0px 3px 1px;
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*----- 18.Spex頭靠子系統-頭靠 -----*/
-    // .Spex_headsupports {
-    //     .target {
-    //         .chkcontent_18th {
-    //             .Spexheadsupportsgroup {
-    //                 .headsupportsgroup {
-    //                     width: 100%;
-
-    //                     .headsupportsgroup_title {
-    //                         width: 70%;
-
-    //                         .head_circlepadgroup {
-    //                             .Spexcirclepadtype_title {
-    //                                 font-size: 14px;
-    //                                 padding: 2px;
-
-    //                                 .SpexHeadSupports {
-    //                                     margin: 4px 11px 5px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .head_comfortpadgroup {
-    //                             .Spexcomfortpadtype_title {
-    //                                 font-size: 14px;
-    //                                 padding: 2px;
-
-    //                                 .SpexHeadSupports {
-    //                                     margin: 4px 11px 5px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .head_contourpadgroup {
-    //                             .Spexcontourpadtype_title {
-    //                                 font-size: 14px;
-    //                                 padding: 2px;
-
-    //                                 .SpexHeadSupports {
-    //                                     margin: 4px 11px 5px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .head_standardlateralpadgroup {
-    //                             .Spexstandardlateralpadtype_title {
-    //                                 font-size: 14px;
-    //                                 padding: 2px;
-
-    //                                 .SpexHeadSupports {
-    //                                     margin: 4px 11px 5px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .head_extendedlateralpadgroup {
-    //                             .Spexextendedlateralpadtype_title {
-    //                                 font-size: 14px;
-    //                                 padding: 2px;
-
-    //                                 .SpexHeadSupports {
-    //                                     margin: 4px 11px 5px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .head_adjustablelateralpadgroup {
-    //                             .Spexadjustablelateralpadtype_title {
-    //                                 font-size: 14px;
-    //                                 padding: 2px;
-
-    //                                 .SpexHeadSupports {
-    //                                     margin: 4px 11px 5px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .headsupports_padtypegroup {
-    //                         width: 30%;
-
-    //                         label {
-    //                             font-size: 14px;
-    //                         }
-
-    //                         .headsupportspad {
-    //                             font-size: 14px;
-    //                             width: 90%;
-    //                         }
-    //                     }
-
-    //                     .headsupportspad_sizetable {
-    //                         display: none;
-    //                     }
-    //                 }
-
-    //                 .Spexheadsupportsbracketgroup {
-    //                     width: 100%;
-
-    //                     .Spexheadsupportsbrackettype_title {
-    //                         font-size: 14px;
-    //                         padding: 2px;
-
-    //                         .SpexHeadSupportsBracket {
-    //                             margin: 4px 11px 5px 11px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-
-    //                     .Spexheadsupportsbrackettype_title {
-    //                         font-size: 14px;
-    //                         padding: 2px;
-
-    //                         .SpexHeadSupportsBracket {
-    //                             margin: 4px 11px 5px 11px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-
-    //                     .Spexheadsupportsbrackettype_title {
-    //                         font-size: 14px;
-    //                         padding: 2px;
-
-    //                         .SpexHeadSupportsBracket {
-    //                             margin: 4px 11px 5px 11px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-
-    //                     .Spexheadsupportsbrackettype_title {
-    //                         font-size: 14px;
-    //                         padding: 2px;
-
-    //                         .SpexHeadSupportsBracket {
-    //                             margin: 4px 11px 5px 11px;
-    //                             transform: scale(1.5);
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .div_notice {
-    //                     font-size: 11px;
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 margin: 3px 0px 3px 1px;
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*----- 19.Spex綁帶子系統-骨盆帶 -----*/
-    // .Spex_hipbelts {
-    //     .target {
-    //         .chkcontent_19th {
-    //             .Spexhipbeltsgroup {
-    //                 .hipbeltsgroup {
-    //                     width: 100%;
-
-    //                     .hipbeltsgroup_title {
-    //                         width: 70%;
-
-    //                         .hipbelts_title {
-    //                             font-size: 12px;
-    //                             padding: 2px;
-
-    //                             .SpexHipBelts {
-    //                                 margin: 4px 11px 5px 11px;
-    //                                 transform: scale(1.5);
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .hipbelts_typesizegroup {
-    //                         width: 30%;
-
-    //                         .hipbelts_type {
-    //                             display: flex;
-    //                             flex-direction: column;
-    //                             align-items: center;
-    //                             width: 90%;
-
-    //                             label {
-    //                                 font-size: 16px;
-    //                             }
-
-    //                             .hipbeltstype {
-    //                                 font-size: 16px;
-    //                                 width: 100%;
-    //                             }
-    //                         }
-
-    //                         .hipbelts_size {
-    //                             display: flex;
-    //                             flex-direction: column;
-    //                             align-items: center;
-    //                             width: 90%;
-
-    //                             label {
-    //                                 font-size: 16px;
-    //                             }
-
-    //                             .hipbeltssize {
-    //                                 font-size: 16px;
-    //                                 width: 100%;
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .hipbeltsrefersizegroup {
-    //                         display: none;
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 margin: 3px 0px 3px 1px;
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*----- 20.Spex綁帶子系統-肩胸綁帶 -----*/
-    // .Spex_shoulderharnesses {
-    //     .target {
-    //         .chkcontent_20th {
-    //             .Spexshoulderharnessesgroup {
-    //                 .shoulderharnessesgroup {
-    //                     width: 100%;
-
-    //                     .shoulderharnessesgroup_title {
-    //                         width: 70%;
-
-    //                         .shoulderharnesses_title {
-    //                             font-size: 14px;
-
-    //                             .SpexShoulderHarnesses {
-    //                                 margin: 9px 11px 6px 11px;
-    //                                 transform: scale(1.5);
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .shoulderharnesses_sizegroup {
-    //                         width: 30%;
-
-
-    //                         .shoulderharnesses_size {
-    //                             font-size: 14px;
-    //                             width: 100%;
-    //                             display: flex;
-    //                             flex-direction: column;
-    //                             align-items: center;
-    //                             justify-content: center;
-
-    //                             label {
-    //                                 font-size: 14px;
-    //                             }
-
-    //                             .shoulderharnessessize {
-    //                                 font-size: 14px;
-    //                                 width: 90%;
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .shoulderharnessessizerefersizegroup {
-    //                         display: none;
-    //                     }
-    //                 }
-
-    //                 .shoulderstrap_titlegroup {
-    //                     width: 100%;
-
-    //                     .shoulderstrap_title {
-    //                         font-size: 14px;
-
-    //                         .SpexShoulderHarnesses {
-    //                             margin: 9px 11px 6px 11px;
-    //                             transform: scale(1.5);
-    //                         }
-
-    //                         p {
-    //                             font-size: 8px;
-    //                             margin: 0 0 0 5px;
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 margin: 3px 0px 3px 1px;
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*----- 21.Spex綁帶子系統-上下肢綁帶 -----*/
-    // .Spex_upperlowerlimbstabilisers {
-    //     .target {
-    //         .chkcontent_21th {
-    //             .Spexupperlowerlimbstabilisersgroup {
-    //                 .upperlowerlimbstabilisersgroup {
-    //                     .upperlowerlimbstabilisersgroup_title {
-    //                         .upperlimbstabilisersgroup {
-    //                             width: 100%;
-
-    //                             .upperlowerlimbstabilisers_title {
-    //                                 font-size: 14px;
-    //                                 width: 65%;
-
-    //                                 .Spexupperlowerlimbstabilisers {
-    //                                     margin: 9px 11px 6px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-
-    //                             .upperlimbstabilisers_sizetype {
-    //                                 padding: 2px;
-    //                                 width: 35%;
-
-    //                                 .upperlimbstabilisers_size {
-    //                                     display: flex;
-    //                                     flex-direction: column;
-    //                                     align-items: center;
-    //                                     justify-content: center;
-    //                                     width: 95%;
-
-    //                                     label {
-    //                                         font-size: 14px;
-    //                                     }
-
-    //                                     .upperlimbstabiliserssize {
-    //                                         font-size: 14px;
-    //                                         width: 95%;
-    //                                     }
-    //                                 }
-
-    //                                 .upperlimbstabilisers_type {
-    //                                     display: flex;
-    //                                     flex-direction: column;
-    //                                     align-items: center;
-    //                                     justify-content: center;
-    //                                     width: 95%;
-
-    //                                     label {
-    //                                         font-size: 14px;
-    //                                     }
-
-    //                                     .upperlimbstabiliserstype {
-    //                                         font-size: 14px;
-    //                                         width: 95%;
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-
-    //                         .lowerlimbstabilisersgroup {
-    //                             width: 100%;
-
-    //                             .lowerlimbstabilisers_title {
-    //                                 font-size: 14px;
-    //                                 width: 65%;
-
-    //                                 .Spexupperlowerlimbstabilisers {
-    //                                     margin: 9px 11px 6px 11px;
-    //                                     transform: scale(1.5);
-    //                                 }
-    //                             }
-
-    //                             .lowerlimbstabilisers_size {
-    //                                 width: 35%;
-    //                                 display: flex;
-    //                                 flex-direction: column;
-    //                                 align-items: center;
-    //                                 justify-content: center;
-    //                                 padding: 2px;
-
-    //                                 label {
-    //                                     font-size: 14px;
-    //                                 }
-
-    //                                 .lowerlimbstabiliserssize {
-    //                                     font-size: 14px;
-    //                                     width: 80%;
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .pricecontent {
-    //             .pricing {
-    //                 margin: 3px 0px 3px 1px;
-    //                 font-size: 11px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // /*-----  n.其他點擊列  -----*/
-    // .car-other {
-    //     visibility: hidden;
-
-    //     .target {
-    //         .chkcontent_nth {
-    //             width: 100%;
-
-    //             .subtitle {
-    //                 width: 100%;
-    //                 height: 28px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // .Quotation-div {
-    //     width: 430px;
-    //     height: 680px;
-
-    //     .quotationheader {
-    //         h1 {
-    //             font-size: 20px;
-    //         }
-
-    //         h2 {
-    //             font-size: 16px;
-    //         }
-    //     }
-
-    //     .quotationSub {
-    //         .quotation-client-container {
-    //             label {
-    //                 font-size: 14px;
-    //                 font-weight: 800;
-    //             }
-
-    //             input {
-    //                 font-size: 10px;
-    //             }
-    //         }
-
-    //         .quotationTime {
-    //             font-size: 12px;
-    //         }
-    //     }
-
-    //     .quotationtable {
-    //         thead {
-    //             tr {
-    //                 th {
-    //                     font-size: 14px;
-    //                 }
-    //             }
-    //         }
-
-    //         tbody {
-    //             tr {
-    //                 td {
-    //                     &:first-child {
-    //                         // 選擇第一個 <td>
-    //                         font-weight: 700;
-    //                         font-size: 13px; // 設定字體大小
-    //                     }
-
-    //                     &:nth-child(2) {
-    //                         // 選擇第 2 個 td{
-    //                         font-weight: 700;
-    //                         font-size: 12px; // 設定字體大小
-    //                     }
-
-    //                     &:nth-child(3) {
-    //                         // 選擇第 2 個 td{
-    //                         font-weight: 700;
-    //                         font-size: 12px; // 設定字體大小
-    //                     }
-    //                 }
-    //             }
-
-    //             tr {
-    //                 td {
-    //                     table {
-    //                         tr {
-    //                             td {
-    //                                 &:first-child {
-    //                                     // 選擇第一個 <td>
-    //                                     font-size: 13px;
-    //                                 }
-
-    //                                 input {
-    //                                     font-size: 11px;
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-
-    //             .trnotice {
-    //                 .sealtd {
-    //                     border: 0px;
-
-    //                     .sealtextdiv {
-    //                         padding: 0px 0px 0px 0px;
-    //                         border-bottom: 2px solid black;
-    //                     }
-    //                 }
-
-    //             }
-
-    //         }
-    //     }
-    // }
+    /*-----  16.Spex軀幹子系統-扣具點擊列平板版 -----*/
+    .Spex_hardware {
+        .target {
+            .chkcontent_16th {
+                .Spexhardwaregroup {
+                    width: calc(100% - 16px) !important;
+
+                    .Spexhardwaregroup_title {
+                        .Spexhardware_adapta_titlegroup {
+                            .adapta_hdware_title {
+                                font-size: 16px;
+                                margin: 2px 0px;
+                                padding: 3px 0 3px 15px;
+                            }
+
+                            .Spexhardware_adapta_title {
+                                font-size: 16px;
+                                margin: 2px 0px;
+                                padding: 3px 0px 3px 0px;
+
+                                .SpexHardware {
+                                    margin: 9px 12px 5px 14px;
+                                    transform: scale(2);
+                                }
+                            }
+                        }
+
+                        .Spexhardware_titlegroup {
+                            .org_hdware_title {
+                                font-size: 16px;
+                                margin: 2px 0px;
+                                padding: 3px 0 3px 15px;
+                            }
+
+                            .Spexhardware_org_title {
+                                font-size: 16px;
+                                display: flex;
+                                align-items: center;
+                                padding: 3px 0px 3px 0px;
+
+                                .SpexHardware {
+                                    margin: 9px 12px 5px 14px;
+                                    transform: scale(2);
+                                }
+                            }
+
+                            .Spexdropmount_group {
+                                .Spexhardware_org_title {
+                                    font-size: 16px;
+
+                                    .SpexHardware {
+                                        margin: 5px 11px 6px 15px;
+                                        transform: scale(2);
+                                    }
+
+                                    .hardware-label {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 2px;
+
+                                        p {
+                                            font-size: 16px;
+                                            line-height: 1.4;
+                                        }
+                                    }
+                                }
+
+                                .dropmount_sizegroup {
+                                    .Spexdropmount_size {
+                                        width: 60%;
+                                        font-size: 16px;
+                                        ;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    margin: 3px 0px 3px 1px;
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*----- 17.Spex軀幹子系統-軀幹側支撐點擊列平板版 -----*/
+    .Spex_latertrunksupports {
+        .target {
+            .chkcontent_17th {
+                .Spexlatertrunksupportsgroup {
+                    width: calc(100% - 16px) !important;
+
+                    .Spexlatertrunksupportsgroup_title {
+                        .SpexlaterHardwaregroup {
+                            .laterHardwaregroup {
+
+                                //Spex 多軸可外撥側支撐
+                                .LaterTrunk_Axialgroup {
+                                    display: flex;
+                                    flex-direction: column; // 垂直排列
+                                    width: 100%;
+                                    border: 1px solid rgb(244, 120, 120); // 外圈黑框
+                                    border-radius: 8px;
+                                    padding: 2px; // 可選：內距讓內容不貼邊
+
+                                    .latertrunkaxialgroup {
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+
+
+                                        .Spexlatertrunksupports_title {
+                                            width: 70%;
+                                            display: inline-block; // 並排顯示
+                                            vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+                                            font-size: 16px;
+                                            margin: 0px 1px 0px 0px;
+
+                                            .SpexLaterTrunkSupports {
+                                                margin: 11px 12px 10px 11px;
+                                                transform: scale(2);
+                                            }
+                                        }
+
+                                        .latertrunkaxialcountgroup {
+                                            width: 30%;
+                                            display: inline-block; // 並排顯示
+                                            vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 4px 0 8px;
+                                            }
+
+                                            #latertrunkaxialcount {
+                                                width: 20%;
+                                                font-size: 16px;
+                                            }
+                                        }
+                                    }
+
+                                    .latertrunkaxialpadthinknessgroup {
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        .latertrunkaxialpadgroup {
+                                            margin: 3px 15px 3px 1px;
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
+                                            }
+
+                                            .latertrunkaxialpadtype {
+                                                font-size: 16px;
+                                                width: 11vh;
+                                                margin: 4px 0 0 5px;
+                                            }
+                                        }
+
+                                        .latertrunkaxialclothpadgroup {
+
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 0px 0 0;
+                                                width: 30%;
+                                            }
+
+                                            .latertrunkaxialclothpadtype {
+                                                font-size: 16px;
+                                                width: 11vh;
+                                                margin: 4px 0 0 5px;
+                                            }
+                                        }
+                                    }
+
+                                    .latertrunkaxialpadsizegroup {
+                                        width: 100%;
+
+                                        .latertrunkaxialpadsize_WHgroup {
+                                            .latertrunkaxialpadsize_WH {
+                                                margin: 4px;
+
+                                                .latertrunkaxialpadsize_Width {}
+
+                                                div {}
+
+                                                .latertrunkaxialpadsize_Heigh {}
+
+                                                label {
+                                                    width: 18%;
+                                                    font-size: 16px;
+                                                    margin: 0px 0px 0 8px;
+                                                }
+
+                                                #latertrunkaxialpadcount {
+                                                    margin: 4px 2px 0 3px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //Spex 可外撥側支撐(Standard)
+                                .LaterTrunk_Standardgroup {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    border: 1px solid rgb(244, 120, 120); // 外圈黑框
+                                    border-radius: 8px;
+                                    padding: 2px; // 可選：內距讓內容不貼邊
+
+                                    .Spexlatertrunksupports_title {
+                                        width: 100%;
+                                        font-size: 16px;
+
+                                        .SpexLaterTrunkSupports {
+                                            margin: 13px 12px 11px 12px;
+                                            transform: scale(2);
+                                        }
+                                    }
+
+                                    .latertrunk_standardsizecountgroup {
+                                        display: flex;
+                                        flex-direction: row;
+                                        width: 100%;
+                                        margin: 1px 0 0 0;
+
+                                        .latertrunk_standardsize {
+                                            width: 70%;
+                                            display: inline-block; // 並排顯示
+                                            vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+                                            font-size: 16px;
+
+                                            .latertrunk_standardsizetable {
+                                                margin: 2px auto;
+
+                                                #standardsize {}
+
+                                                #standardsize1 {}
+
+                                                #standardsize2 {}
+                                            }
+                                        }
+
+                                        .latertrunkstandardcountgroup {
+                                            width: 30%;
+                                            display: flex; // 並排顯示
+                                            align-items: center;
+                                            justify-content: center;
+                                            vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+                                            font-size: 16px;
+
+                                            #latertrunkstandardcount {
+                                                width: 25%;
+                                                margin: 4px 0 0 0;
+                                            }
+                                        }
+                                    }
+
+                                    .latertrunkstandardpadthinknessgroup {
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        .latertrunkstandardpadgroup {
+                                            width: 50%;
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            margin: 0px 20px 0 0;
+
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 0px 0 0;
+                                                width: 15%;
+                                            }
+
+                                            .latertrunkstandardpadtype {
+                                                font-size: 16px;
+                                                width: 11vh;
+                                                margin: 5px 0 0 4px;
+                                            }
+                                        }
+
+                                        .latertrunkstandardclothpadgroup {
+                                            width: 50%;
+                                            display: flex;
+                                            justify-content: flex-start;
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 0px 0 0;
+                                                width: 15%;
+                                            }
+
+                                            .latertrunkstandardclothpadtype {
+                                                font-size: 16px;
+                                                width: 11vh;
+                                                margin: 5px 0 0 4px;
+                                            }
+                                        }
+                                    }
+
+                                    .latertrunkstandardpadsizegroup {
+                                        width: 100%;
+                                        padding: 3px;
+
+                                        .latertrunkstandardpadsize_WHgroup {
+                                            .latertrunkstandardpadsize_WH {
+                                                margin: 3px;
+
+                                                .latertrunkstandardpadsize_Width {}
+
+                                                div {}
+
+                                                .latertrunkstandardpadsize_Heigh {}
+
+                                                label {
+                                                    width: 20%;
+                                                    font-size: 16px;
+                                                    margin: 0px 0px 0 10px;
+                                                }
+
+                                                #latertrunkstandardpadcount {
+                                                    width: 17%;
+                                                    margin: 4px 0px 0 3px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //Spex 可外撥側支撐(Offset)
+                                .LaterTrunk_Offsetgroup {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    border: 1px solid rgb(244, 120, 120); // 外圈黑框
+                                    border-radius: 8px;
+                                    margin: 2px;
+                                    padding: 2px; // 可選：內距讓內容不貼邊
+
+                                    .Spexlatertrunksupports_title {
+                                        width: 100%;
+                                        font-size: 16px;
+
+                                        .SpexLaterTrunkSupports {
+                                            margin: 13px 13px 12px 13px;
+                                            transform: scale(2);
+                                        }
+                                    }
+
+                                    .latertrunk_offsetsizecountgroup {
+                                        display: flex;
+                                        flex-direction: row;
+                                        width: 100%;
+                                        padding: 3px;
+
+
+                                        .latertrunk_offsetsize {
+                                            width: 70%;
+                                            display: inline-block; // 並排顯示
+                                            vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+                                            font-size: 16px;
+
+                                            .latertrunk_offsetsizetable {
+                                                margin: 2px auto;
+                                                font-size: 16px;
+
+                                                #offsetsize {}
+
+                                                #offsetsize1 {}
+
+                                                #offsetsize2 {}
+                                            }
+                                        }
+
+                                        .latertrunkoffsetcountgroup {
+                                            width: 30%;
+                                            display: flex; // 並排顯示
+                                            align-items: center;
+                                            justify-content: center;
+                                            vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+                                            font-size: 16px;
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 2px 0 0;
+                                                width: 25%;
+                                            }
+
+                                            #latertrunkoffsetcount {
+                                                width: 25%;
+                                            }
+                                        }
+                                    }
+
+                                    .latertrunkoffsetpadthinknessgroup {
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        padding: 3px;
+
+                                        .latertrunkoffsetpadgroup {
+                                            width: 50%;
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            margin: 0 21px 0 0;
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 5px 0 0;
+                                                width: 15%;
+                                            }
+
+                                            .latertrunkoffsetpadtype {
+                                                font-size: 16px;
+                                                width: 11vh;
+                                                margin: 2px 0 0 0;
+                                            }
+                                        }
+
+                                        .latertrunkoffsetclothpadgroup {
+                                            width: 50%;
+                                            display: flex;
+                                            justify-content: flex-start;
+
+
+                                            label {
+                                                font-size: 16px;
+                                                margin: 0 5px 0 0;
+                                                width: 15%;
+                                            }
+
+                                            .latertrunkoffsetclothpadtype {
+                                                font-size: 16px;
+                                                width: 11vh;
+                                                margin: 2px 0 0 0;
+                                            }
+                                        }
+                                    }
+
+                                    .latertrunkoffsetpadsizegroup {
+                                        width: 100%;
+                                        padding: 3px;
+
+                                        .latertrunkoffsetpadsize_WHgroup {
+                                            .latertrunkoffsetpadsize_WH {
+                                                .latertrunkoffsetpadsize_Width {}
+
+                                                div {}
+
+                                                .latertrunkoffsetpadsize_Heigh {}
+
+                                                label {
+                                                    width: 20%;
+                                                    margin: 0 0 0 20px;
+                                                }
+
+                                                #latertrunkoffsetpadcount {
+                                                    width: 18%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .Spexlatertrunksupports_accessorytitle {
+                            width: 100%;
+                            font-size: 16px;
+
+                            .SpexLaterTrunkSupportsAccessories {
+                                margin: 14px 16px 12px 16px;
+                                transform: scale(2);
+                            }
+                        }
+
+                        .LaterTrunk_AxialBiangulargroup {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            border: 1px solid rgb(244, 120, 120); // 外圈黑框
+                            border-radius: 8px;
+                            margin: 2px;
+                            padding: 2px; // 可選：內距讓內容不貼邊
+
+                            .Spexlatertrunksupports_titlecountgroup {
+                                width: 100%;
+
+
+                                .Spexlatertrunksupports_title {
+                                    width: 70%;
+                                    display: inline-block; // 並排顯示
+                                    vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+                                    font-size: 16px;
+                                    margin: 0px 1px 1px 2px;
+
+                                    .SpexLaterTrunkSupports {
+                                        margin: 13px 14px 11px 12px;
+                                        transform: scale(2);
+                                    }
+                                }
+
+
+                                .latertrunk_axialbiangularcountgroup {
+                                    width: 30%;
+                                    display: flex; // 並排顯示
+                                    vertical-align: top; // 垂直對齊（避免不同高度時錯位）
+                                    font-size: 16px;
+
+                                    label {
+                                        font-size: 16px;
+                                        margin: 0 5px 0 4px;
+                                        width: 25%;
+                                    }
+
+                                    #latertrunk_axialbiangularcount {
+                                        font-size: 16px;
+                                        width: 23%;
+                                        margin: 4px 0 0 0;
+                                    }
+                                }
+                            }
+
+                            .latertrunk_axialbiangulartypethicknessgroup {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+
+                                .latertrunk_axialbiangularthicknessgroup {
+                                    width: 50%;
+                                    font-size: 16px;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    margin: 0 20px 0 0;
+
+                                    label {
+                                        font-size: 16px;
+                                    }
+
+                                    .latertrunkaxialbiangular {
+                                        width: 11vh;
+                                        font-size: 16px;
+                                    }
+                                }
+
+                                .latertrunk_axialpadthinknessgroup {
+                                    width: 50%;
+                                    font-size: 16px;
+                                    display: flex;
+                                    justify-content: flex-start;
+
+                                    label {
+                                        font-size: 16px;
+                                        margin: 0 2px 0 0
+                                    }
+
+                                    .latertrunk_axialpadtype {
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+
+                            .latertrunk_axialbiangularsizegroup {
+                                width: 100%;
+                                padding: 5px;
+
+                                .latertrunk_axialbiangular_Width {
+                                    width: 25%;
+                                    font-size: 16px;
+                                }
+
+                                div {
+                                    font-size: 16px;
+                                }
+
+                                .latertrunk_axialbiangular_Heigh {
+                                    font-size: 16px;
+                                    width: 25%;
+                                }
+
+                                label {
+                                    font-size: 16px;
+                                    margin: 0px 0px 0 13px;
+                                    width: 9%;
+                                }
+
+                                #latertrunkaxialbiangularpadcount {
+                                    margin: 2px 0px 0 0;
+                                    width: 9%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    margin: 3px 0px 3px 1px;
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*----- 18.Spex頭靠子系統-頭靠點擊列平板版 -----*/
+    .Spex_headsupports {
+        .target {
+            .chkcontent_18th {
+                .Spexheadsupportsgroup {
+                    width: calc(100% - 15px) !important;
+
+                    .headsupportsgroup {
+                        width: 100%;
+
+                        .headsupportsgroup_title {
+                            width: 70%;
+
+                            .head_circlepadgroup {
+                                .Spexcirclepadtype_title {
+                                    font-size: 16px;
+                                    padding: 2px;
+
+                                    .SpexHeadSupports {
+                                        margin: 10px 11px 5px 11px;
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
+
+                            .head_comfortpadgroup {
+                                .Spexcomfortpadtype_title {
+                                    font-size: 16px;
+                                    padding: 2px;
+
+                                    .SpexHeadSupports {
+                                        margin: 10px 11px 5px 11px;
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
+
+                            .head_contourpadgroup {
+                                .Spexcontourpadtype_title {
+                                    font-size: 16px;
+                                    padding: 2px;
+
+                                    .SpexHeadSupports {
+                                        margin: 10px 11px 5px 11px;
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
+
+                            .head_standardlateralpadgroup {
+                                .Spexstandardlateralpadtype_title {
+                                    font-size: 16px;
+                                    padding: 2px;
+
+                                    .SpexHeadSupports {
+                                        margin: 4px 11px 5px 11px;
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
+
+                            .head_extendedlateralpadgroup {
+                                .Spexextendedlateralpadtype_title {
+                                    font-size: 16px;
+                                    padding: 2px;
+
+                                    .SpexHeadSupports {
+                                        margin: 4px 11px 5px 11px;
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
+
+                            .head_adjustablelateralpadgroup {
+                                .Spexadjustablelateralpadtype_title {
+                                    font-size: 16px;
+                                    padding: 2px;
+
+                                    .SpexHeadSupports {
+                                        margin: 4px 11px 5px 11px;
+                                        transform: scale(2);
+                                    }
+                                }
+                            }
+                        }
+
+                        .headsupports_padtypegroup {
+                            width: 30%;
+
+                            label {
+                                font-size: 16px;
+                            }
+
+                            .headsupportspad {
+                                font-size: 16px;
+                                width: 90%;
+                            }
+                        }
+
+                        .headsupportspad_sizetable {
+                            display: none;
+                        }
+                    }
+
+                    .Spexheadsupportsbracketgroup {
+                        width: 100%;
+
+                        .Spexheadsupportsbrackettype_title {
+                            font-size: 16px;
+                            padding: 2px;
+
+                            .SpexHeadSupportsBracket {
+                                margin: 10px 11px 7px 11px;
+                                transform: scale(2);
+                            }
+                        }
+
+                        .Spexheadsupportsbrackettype_title {
+                            font-size: 16px;
+                            padding: 2px;
+
+                            .SpexHeadSupportsBracket {
+                                margin: 10px 11px 7px 11px;
+                                transform: scale(2);
+                            }
+                        }
+
+                        .Spexheadsupportsbrackettype_title {
+                            font-size: 16px;
+                            padding: 2px;
+
+                            .SpexHeadSupportsBracket {
+                                margin: 10px 11px 7px 11px;
+                                transform: scale(2);
+                            }
+                        }
+
+                        .Spexheadsupportsbrackettype_title {
+                            font-size: 16px;
+                            padding: 2px;
+
+                            .SpexHeadSupportsBracket {
+                                margin: 10px 11px 7px 11px;
+                                transform: scale(2);
+                            }
+                        }
+                    }
+
+                    .div_notice {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    margin: 3px 0px 3px 1px;
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*----- 19.Spex綁帶子系統-骨盆帶點擊列平板版 -----*/
+    .Spex_hipbelts {
+        .target {
+            .chkcontent_19th {
+                .Spexhipbeltsgroup {
+                    width: calc(100% - 15px) !important;
+
+                    .hipbeltsgroup {
+                        width: 100%;
+
+                        .hipbeltsgroup_title {
+                            width: 70%;
+
+                            .hipbelts_title {
+                                font-size: 16px;
+                                padding: 2px;
+
+                                .SpexHipBelts {
+                                    margin: 9px 11px 7px 14px;
+                                    transform: scale(2);
+                                }
+                            }
+                        }
+
+                        .hipbelts_typesizegroup {
+                            width: 30%;
+
+                            .hipbelts_type {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                width: 90%;
+
+                                label {
+                                    font-size: 16px;
+                                }
+
+                                .hipbeltstype {
+                                    font-size: 16px;
+                                    width: 100%;
+                                }
+                            }
+
+                            .hipbelts_size {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                width: 90%;
+
+                                label {
+                                    font-size: 16px;
+                                }
+
+                                .hipbeltssize {
+                                    font-size: 16px;
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .hipbeltsrefersizegroup {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    margin: 3px 0px 3px 1px;
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*----- 20.Spex綁帶子系統-肩胸綁帶點擊列平板版 -----*/
+    .Spex_shoulderharnesses {
+        .target {
+            .chkcontent_20th {
+                .Spexshoulderharnessesgroup {
+                    width: calc(100% - 15px) !important;
+
+                    .shoulderharnessesgroup {
+                        width: 100%;
+
+                        .shoulderharnessesgroup_title {
+                            width: 70%;
+
+                            .shoulderharnesses_title {
+                                font-size: 16px;
+
+                                .SpexShoulderHarnesses {
+                                    margin: 11px 13px 10px 14px;
+                                    transform: scale(2);
+                                }
+                            }
+                        }
+
+                        .shoulderharnesses_sizegroup {
+                            width: 30%;
+
+
+                            .shoulderharnesses_size {
+                                font-size: 16px;
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+
+                                label {
+                                    font-size: 16px;
+                                }
+
+                                .shoulderharnessessize {
+                                    font-size: 16px;
+                                    width: 90%;
+                                }
+                            }
+                        }
+
+                        .shoulderharnessessizerefersizegroup {
+                            display: none;
+                        }
+                    }
+
+                    .shoulderstrap_titlegroup {
+                        width: 100%;
+
+                        .shoulderstrap_title {
+                            font-size: 16px;
+
+                            .SpexShoulderHarnesses {
+                                margin: 11px 13px 10px 14px;
+                                transform: scale(2);
+                            }
+
+                            p {
+                                font-size: 16px;
+                                margin: 0 0 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    margin: 3px 0px 3px 1px;
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*----- 21.Spex綁帶子系統-上下肢綁帶 -----*/
+    .Spex_upperlowerlimbstabilisers {
+        .target {
+            .chkcontent_21th {
+                .Spexupperlowerlimbstabilisersgroup {
+                    width: calc(100% - 15px) !important;
+
+                    .upperlowerlimbstabilisersgroup {
+                        .upperlowerlimbstabilisersgroup_title {
+                            .upperlimbstabilisersgroup {
+                                width: 100%;
+
+                                .upperlowerlimbstabilisers_title {
+                                    font-size: 16px;
+                                    width: 65%;
+
+                                    .Spexupperlowerlimbstabilisers {
+                                        margin: 9px 11px 6px 13px;
+                                        transform: scale(2);
+                                    }
+                                }
+
+                                .upperlimbstabilisers_sizetype {
+                                    padding: 2px;
+                                    width: 35%;
+
+                                    .upperlimbstabilisers_size {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 95%;
+
+                                        label {
+                                            font-size: 16px;
+                                        }
+
+                                        .upperlimbstabiliserssize {
+                                            font-size: 16px;
+                                            width: 95%;
+                                        }
+                                    }
+
+                                    .upperlimbstabilisers_type {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 95%;
+
+                                        label {
+                                            font-size: 16px;
+                                        }
+
+                                        .upperlimbstabiliserstype {
+                                            font-size: 16px;
+                                            width: 95%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .lowerlimbstabilisersgroup {
+                                width: 100%;
+
+                                .lowerlimbstabilisers_title {
+                                    font-size: 16px;
+                                    width: 65%;
+
+                                    .Spexupperlowerlimbstabilisers {
+                                        margin: 9px 11px 6px 13px;
+                                        transform: scale(2);
+                                    }
+                                }
+
+                                .lowerlimbstabilisers_size {
+                                    width: 35%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 3px;
+
+                                    label {
+                                        font-size: 16px;
+                                    }
+
+                                    .lowerlimbstabiliserssize {
+                                        font-size: 16px;
+                                        width: 90%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pricecontent {
+                .pricing {
+                    margin: 3px 0px 3px 1px;
+                    font-size: 16px;
+                }
+
+                .nowprice {
+                    font-size: 16px !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /*-----  n.其他點擊列  -----*/
+    .car-other {
+        visibility: hidden;
+
+        .target {
+            .chkcontent_nth {
+                width: 100%;
+
+                .subtitle {
+                    width: 100%;
+                    height: 28px;
+                }
+            }
+        }
+    }
+
+    .Quotation-div {
+        width: 600px;
+        height: 770px;
+
+        .quotationheader {
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+        }
+
+        .quotationSub {
+            .quotation-client-container {
+                label {
+                    font-size: 14px;
+                    font-weight: 800;
+                }
+
+                input {
+                    font-size: 10px;
+                }
+            }
+
+            .quotationTime {
+                font-size: 12px;
+            }
+        }
+
+        .quotationtable {
+            thead {
+                tr {
+                    th {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        &:first-child {
+                            // 選擇第一個 <td>
+                            font-weight: 700;
+                            font-size: 13px; // 設定字體大小
+                        }
+
+                        &:nth-child(2) {
+                            // 選擇第 2 個 td{
+                            font-weight: 700;
+                            font-size: 12px; // 設定字體大小
+                        }
+
+                        &:nth-child(3) {
+                            // 選擇第 2 個 td{
+                            font-weight: 700;
+                            font-size: 12px; // 設定字體大小
+                        }
+                    }
+                }
+
+                tr {
+                    td {
+                        table {
+                            tr {
+                                td {
+                                    &:first-child {
+                                        // 選擇第一個 <td>
+                                        font-size: 13px;
+                                    }
+
+                                    input {
+                                        font-size: 11px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .trnotice {
+                    .sealtd {
+                        border: 0px;
+
+                        .sealtextdiv {
+                            padding: 0px 0px 0px 0px;
+                            border-bottom: 2px solid black;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
 }
 
 @media screen and (max-width:650px) {
