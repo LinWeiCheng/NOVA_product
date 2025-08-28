@@ -1115,11 +1115,18 @@ document.addEventListener("DOMContentLoaded", () => {
           spexHeadSupports.push(item);
         }
         let headsupportsel = document.querySelector(".headsupportspad");
+        let headsupportcolorsel = document.querySelector(
+          ".headsupportspadcolor"
+        );
+
         let headsupportText =
           headsupportsel.options[headsupportsel.selectedIndex].text;
+        let headsupportcolorText =
+          headsupportcolorsel.options[headsupportcolorsel.selectedIndex].text;
+
         let headsupportsprice = getFormattedPrice(".Spexheadsupportsprices");
 
-        let spexString = ` ${headsupportText}`;
+        let spexString = ` ${headsupportText} - ${headsupportcolorText}`;
         spexHeadSupports.push(spexString);
         let spexitem = spexHeadSupports.join("");
         selectedItems.push({
