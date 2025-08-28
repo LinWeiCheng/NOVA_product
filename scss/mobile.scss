@@ -1539,7 +1539,7 @@
 
                         label {
                             font-size: 14px !important;
-
+                            width: 50%;
                         }
 
                         #Spexarmsuplatthighcount {
@@ -2468,6 +2468,11 @@
                                 font-size: 16px;
                                 width: 90%;
                             }
+
+                            .headsupportspadcolor {
+                                font-size: 16px;
+                                width: 90%;
+                            }
                         }
 
                         .headsupportspad_sizetable {
@@ -2959,6 +2964,10 @@
 
         .leftcontent {
             width: 100%;
+        }
+
+        .rightcontent {
+            display: none;
         }
     }
 
@@ -5086,6 +5095,11 @@
                             }
 
                             .headsupportspad {
+                                font-size: 14px;
+                                width: 90%;
+                            }
+
+                            .headsupportspadcolor {
                                 font-size: 14px;
                                 width: 90%;
                             }
