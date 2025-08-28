@@ -161,7 +161,7 @@ input[type=checkbox] {
   }
   /* 紫色 */
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .container {
     flex-direction: column;
     align-items: flex-start;
@@ -1256,7 +1256,7 @@ body {
 
 .back_supports_checkbox input[type=checkbox] {
   /* 更改勾選顏色（現代瀏覽器支持） */
-  margin: 7.9px 0px 13.1px 0px;
+  margin: 8.6px 0px 13.5px 0px;
 }
 
 .car-latertrunk_supports {
@@ -1594,22 +1594,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.car-seatbase .chkcontent_8th .seatbasegroup .seatbase_balanceLegSplitter {
-  display: flex;
-  flex-direction: row;
-}
-.car-seatbase .chkcontent_8th .seatbasegroup .seatbase_balanceLegSplitter label {
-  border: 1px solid #000000;
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 25px;
-  font-weight: 600;
-  width: 97%;
-  margin: 3px 10px 3px 2px;
-  padding: 3px 0px 4px 12px;
-}
+
 .seatbase_checkbox input[type=checkbox] {
   /* 更改勾選顏色（現代瀏覽器支持） */
   margin: 7.9px 0px 13.1px 0px;
@@ -1628,7 +1613,11 @@ body {
   height: 0;
   width: 100%;
 }
-.car-cushion .chkcontent_9th .cushiongroup .Nova_cushiontitle {
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroupNOVA {
+  display: flex;
+  flex-direction: row;
+}
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroupNOVA .Nova_cushiontitle {
   border: 1px solid #000000;
   border-radius: 7px;
   height: auto;
@@ -1641,14 +1630,14 @@ body {
   padding: 2px 1px 1px 3px;
   margin: 3px;
 }
-.car-cushion .chkcontent_9th .cushiongroup .cushiongroup_typegroup {
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroupNOVA .cushiongroup_typegroup {
   display: flex;
   flex-direction: column;
   width: 60%;
   margin: 0 3px 1px 1px;
   height: 100%;
 }
-.car-cushion .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_type {
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroupNOVA .cushiongroup_typegroup .cushion_type {
   border: 1px solid #000000;
   border-radius: 7px;
   margin: 1px 1px 3px 1px;
@@ -1663,7 +1652,7 @@ body {
   height: 100%;
   padding: 2px;
 }
-.car-cushion .chkcontent_9th .cushiongroup .cushiongroup_typegroup .cushion_typeC {
+.car-cushion .chkcontent_9th .cushiongroup .cushiongroupNOVA .cushiongroup_typegroup .cushion_typeC {
   border: 1px solid #000000;
   border-radius: 7px;
   margin: 1px 1px 3px 1px;
@@ -1677,6 +1666,22 @@ body {
   /* 調整字體粗細 */
   height: 100%;
   padding: 2px;
+}
+.car-cushion .chkcontent_9th .cushiongroup .seatbase_balanceLegSplitter {
+  display: flex;
+  flex-direction: row;
+}
+.car-cushion .chkcontent_9th .cushiongroup .seatbase_balanceLegSplitter label {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 25px;
+  font-weight: 600;
+  width: 97%;
+  margin: 3px 10px 3px 4px;
+  padding: 3px 0px 4px 12px;
 }
 .car-cushion .chkcontent_9th .cushiongroup .cushion_checkbox {
   display: flex;
@@ -3710,6 +3715,13 @@ body {
   margin: 0 4px 0 0;
 }
 .Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup .headsupportspad {
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  width: 10vh;
+  margin: 3px 0 0 2px;
+}
+.Spex_headsupports .chkcontent_18th .Spexheadsupportsgroup .headsupportsgroup .headsupports_padtypegroup .headsupportspadcolor {
   font-size: 16px;
   border-radius: 8px;
   text-align: center;
