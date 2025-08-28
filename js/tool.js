@@ -962,7 +962,7 @@ let checkbox_balanceLegSplitter = document.getElementById(
 );
 checkbox_balanceLegSplitter.addEventListener("change", () => {
   if (checkbox_balanceLegSplitter.checked) {
-    let nowprice_seatbase = Price[8].nextElementSibling;
+    let nowprice_seatbase = Price[9].nextElementSibling;
     nowprice_seatbase.textContent = "1,000 元";
   }
 });
