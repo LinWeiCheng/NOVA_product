@@ -299,6 +299,10 @@ document.querySelectorAll('input[name="car_body"]').forEach((checkbox) => {
       cushion14Novachk.disabled = false;
       cushion16Novachk.disabled = false;
       Bseatwidthhidden();
+      let getbasesize = document.querySelector('[data-showinfo="carbasesize"]');
+      if (getbasesize) {
+        getbasesize.textContent = "車體座板尺寸";
+      }
     } else {
       let SWC_checkbox = document.querySelectorAll('[name="car_basewidth"]');
       let CarColor_checkbox = document.querySelectorAll('[name="car_color"]');
@@ -397,6 +401,13 @@ document.querySelectorAll('input[name="car_body"]').forEach((checkbox) => {
 
         Basesize.style.visibility = "hidden";
         Bseatwidthhidden();
+
+        let getbasesize = document.querySelector(
+          '[data-showinfo="carbasesize"]'
+        );
+        if (getbasesize) {
+          getbasesize.textContent = "車體座寬";
+        }
       }
     }
     if (!body_Novarc.checked && !body_Balance.checked) {
@@ -425,6 +436,10 @@ document.querySelectorAll('input[name="car_body"]').forEach((checkbox) => {
       });
       cushion14Novachk.disabled = false;
       cushion16Novachk.disabled = false;
+      let getbasesize = document.querySelector('[data-showinfo="carbasesize"]');
+      if (getbasesize) {
+        getbasesize.textContent = "車體尺寸";
+      }
     }
   });
 });
@@ -602,40 +617,6 @@ for (let i = 0; i < 7; i++) {
 
   SWC_container.appendChild(divSW_Check);
 }
-
-//座深尺寸黑格子
-// let Sd_container = document.querySelector(".deep_number");
-// let SdCount = 30;
-
-// // 生成 8 個新的 div，每個都有唯一的 class 名稱
-// for (let i = 0; i < 9; i++) {
-//   let divSd_Size = document.createElement("div");
-
-//   divSd_Size.textContent = `${SdCount} `;
-//   divSd_Size.classList.add(`generated_Sddiv`);
-//   SdCount += 2;
-//   Sd_container.appendChild(divSd_Size);
-// }
-
-//座深的勾選格
-// let SdC_container = document.querySelector(".deep_chkblock");
-// let SdCCount = 30;
-// // 生成 8 個新的 checkbox，每個都有唯一的 class 名稱
-// for (let i = 0; i < 9; i++) {
-//   let divSd_Check = document.createElement("input");
-
-//   divSd_Check.type = "checkbox";
-//   divSd_Check.classList.add(`content-checkbox`);
-//   divSd_Check.id = `SdC_checkbox`;
-//   divSd_Check.name = `car_basedeep`;
-//   // 設置 data-size 屬性，根據需要修改屬性值
-//   let formattedItem = ` * ${SdCCount} cm`;
-//   divSd_Check.setAttribute("data-item", formattedItem);
-//   divSd_Check.setAttribute("data-group", `Sbsize`);
-//   SdCCount += 2;
-
-//   SdC_container.appendChild(divSd_Check);
-// }
 
 /*--- 車體座板點擊列-圖片箭頭部分   ---*/
 document.addEventListener("click", function (event) {
@@ -1894,6 +1875,20 @@ NovalatercountLRs2.disabled = true;
 NovalatercountMLRs1.disabled = true;
 NovalatercountMLRs2.disabled = true;
 
+function Novalatercountclear() {
+  NovalatercountLRs1.value = "";
+  NovalatercountLRs2.value = "";
+  NovalatercountMLRs1.value = "";
+  NovalatercountMLRs2.value = "";
+  NovalatercountLRs1.disabled = true;
+  NovalatercountLRs2.disabled = true;
+  NovalatercountMLRs1.disabled = true;
+  NovalatercountMLRs2.disabled = true;
+  ltksupSL_Novacouprices.textContent = "";
+  ltksupSR_Novacouprices.textContent = "";
+  ltksupML_Novacouprices.textContent = "";
+  ltksupMR_Novacouprices.textContent = "";
+}
 //endregion
 //endregion
 
@@ -2136,7 +2131,7 @@ document.addEventListener("click", function (event) {
                 introdutionid.style.visibility = "visible";
                 introdutionid.style.padding = "0px 1px 2px 3px";
                 introdutionid.style.width = "calc(100% - 19px)";
-                introdutionid.style.flexDirection = "row";
+                introdutionid.style.flexDirection = "column";
                 introdutionid.style.border = "3px dashed black";
                 introdutionid.style.borderTop = "none";
                 introdutionid.style.display = "flex";
@@ -2232,7 +2227,7 @@ carcushion.addEventListener("click", function (event) {
           introdutionid.style.visibility = "visible";
           introdutionid.style.padding = "0px 1px 2px 3px";
           introdutionid.style.width = "calc(100% - 19px)";
-          introdutionid.style.flexDirection = "row";
+          introdutionid.style.flexDirection = "column";
           introdutionid.style.border = "3px dashed black";
           introdutionid.style.borderTop = "none";
           introdutionid.style.display = "flex";
@@ -2582,6 +2577,266 @@ allcheckboxfalsebtn.addEventListener("click", () => {
   allcheckboxfalsefct();
 });
 
+//Spex坐墊選項重置
+function SpexCushionSelectclear() {
+  CushionSizeSelect(CushionwidthSelect, Vigour_StdwidthOptions);
+  CushionSizeSelect(CushionheightSelect, Vigour_StdheightOptions);
+  ProductColorSelect(CushioncolorSelect, ColorSelectOptions);
+  CushionwidthSelect.disabled = true;
+  CushionheightSelect.disabled = true;
+  CushioncolorSelect.disabled = true;
+}
+
+//Spex座板選項重置
+function SpexseatbaseSelectclear() {
+  SeatbaseSizeSelect(SeatbasewidthSelect, SeatBaseFixedwidthOptions);
+  SeatbaseSizeSelect(SeatbaseheightSelect, SeatBaseFixedheightOptions);
+  SeatbasewidthSelect.disabled = true;
+  SeatbaseheightSelect.disabled = true;
+}
+
+//Spex分腿器選項重置
+function SpexmedialthighselectSelectclear() {
+  MedialThighSizeSelect();
+  Spexmedialthighselect.disabled = true;
+}
+
+//Spex扶手腿撐選項重置
+function SpexarmsuplatthighSelectclear() {
+  armsuplatthighcount.disabled = true;
+  buckle.disabled = true;
+  armsup.disabled = true;
+  armpad.disabled = true;
+  latthigh.disabled = true;
+  lateralpad.disabled = true;
+  armpadcount.disabled = true;
+  lateralpadcount.disabled = true;
+  armsuplatthighcount.value = "";
+  armpadcount.value = "";
+  lateralpadcount.value = "";
+  armsuplatthighSelect(buckle, Spex_armsuplatthighbuckleOptions);
+  armsuplatthighSelect(armsup, Spex_armsupportsOptions);
+  armsuplatthighSelect(armpad, Spex_armpadOptions);
+  armsuplatthighSelect(latthigh, Spex_lateralthighOptions);
+  armsuplatthighSelect(lateralpad, Spex_lateralpadOptions);
+}
+
+//Spex背靠選項重置
+function Spexbacksupportsclear() {
+  updateBackSupportsStatus();
+  BackSupportsSizeSelect(
+    BackSupportswidthSelect,
+    Spex_Zygo_Active_LowidthOptions
+  );
+  BackSupportsSizeSelect(
+    BackSupportsheightSelect,
+    Spex_Zygo_Active_LoheightOptions
+  );
+  ProductColorSelect(BackSupportscolorSelect, ColorSelectOptions);
+}
+
+//Spex扣具選項重置
+function Spexdropmountclear() {
+  DropMountSelect.disabled = true; // 禁用
+  DropMountSelectOptions(DropMountSelect, SpexHardwareDropMountOptions);
+}
+
+//Spex側支撐選項重置
+function Spexlatertrunkclear() {
+  //多軸可外撥側支撐
+  latertrunkaxialcount.disabled = true; // 禁用
+  latertrunkaxialpadtype.disabled = true;
+  latertrunkaxialclothpadtype.disabled = true;
+  latertrunkaxialpadsize_Width.disabled = true;
+  latertrunkaxialpadsize_Heigh.disabled = true;
+  latertrunkaxialpadcount.disabled = true;
+  latertrunkaxialcount.value = "";
+  LaterTrunkAxialSelectOptions(
+    latertrunkaxialpadtype,
+    SpexLaterTrunkPadTypeOptions
+  );
+  LaterTrunkAxialSelectOptions(
+    latertrunkaxialclothpadtype,
+    SpexLaterTrunkPadClothTypeOptions
+  );
+  LaterTrunkAxialSelectOptions(
+    latertrunkaxialpadsize_Width,
+    SpexLaterTrunklStandardStraightPadSizeWidthOptions
+  );
+  LaterTrunkAxialSelectOptions(
+    latertrunkaxialpadsize_Heigh,
+    SpexLaterTrunklStandardStraightPadSizeHeighOptions
+  );
+  latertrunkprices.value = "";
+  latertrunkaxialpadcount.value = "";
+
+  latertrunkaxialcountprices.textContent = "";
+  latertrunkaxialpadcountprices.textContent = "";
+
+  //Spex可外撥側支撐(Standard)
+  standardsize1.disabled = true;
+  standardsize2.disabled = true;
+  latertrunkstandardcount.disabled = true;
+  latertrunkstandardpadtype.disabled = true;
+  latertrunkstandardclothpadtype.disabled = true;
+  latertrunkstandardpadsize_Width.disabled = true;
+  latertrunkstandardpadsize_Heigh.disabled = true;
+  latertrunkstandardpadcount.disabled = true;
+
+  standardsize1.checked = false;
+  standardsize2.checked = false;
+  latertrunkstandardcount.value = "";
+  latertrunkstandardpadcount.value = "";
+
+  LaterTrunkStandardSelectOptions(
+    latertrunkstandardpadtype,
+    SpexLaterTrunkPadTypeOptions
+  );
+  LaterTrunkStandardSelectOptions(
+    latertrunkstandardclothpadtype,
+    SpexLaterTrunkPadClothTypeOptions
+  );
+  LaterTrunkStandardSelectOptions(
+    latertrunkstandardpadsize_Width,
+    SpexLaterTrunklStandardStraightPadSizeWidthOptions
+  );
+  LaterTrunkStandardSelectOptions(
+    latertrunkstandardpadsize_Heigh,
+    SpexLaterTrunklStandardStraightPadSizeHeighOptions
+  );
+  latertrunkstandardpadcount.value = "";
+
+  latertrunkstandardcountprices.textContent = "";
+  latertrunkstandardpadcountprices.textContent = "";
+
+  //Spex可外撥側支撐(Offset)
+  offsetsize1.disabled = true; // 禁用
+  offsetsize2.disabled = true; // 禁用
+  latertrunkoffsetcount.disabled = true; // 禁用
+  latertrunkoffsetpadtype.disabled = true; // 禁用
+  latertrunkoffsetclothpadtype.disabled = true; // 禁用
+  latertrunkoffsetpadsize_Width.disabled = true; // 禁用
+  latertrunkoffsetpadsize_Heigh.disabled = true; // 禁用
+  latertrunkoffsetpadcount.disabled = true; // 禁用
+
+  offsetsize1.checked = false;
+  offsetsize2.checked = false;
+  latertrunkoffsetcount.value = "";
+  LaterTrunkOffsetSelectOptions(
+    latertrunkoffsetpadtype,
+    SpexLaterTrunkPadTypeOptions
+  );
+  LaterTrunkOffsetSelectOptions(
+    latertrunkoffsetclothpadtype,
+    SpexLaterTrunkPadClothTypeOptions
+  );
+  LaterTrunkOffsetSelectOptions(
+    latertrunkoffsetpadsize_Width,
+    SpexLaterTrunklStandardStraightPadSizeWidthOptions
+  );
+  LaterTrunkOffsetSelectOptions(
+    latertrunkoffsetpadsize_Heigh,
+    SpexLaterTrunklStandardStraightPadSizeHeighOptions
+  );
+  latertrunkoffsetpadcount.value = "";
+
+  latertrunkoffsetcountprices.textContent = "";
+  latertrunkoffsetpadcountprices.textContent = "";
+
+  //Spex 雙曲面多軸可外撥側支撐扣具
+  latertrunk_axialbiangularcount.disabled = true; // 禁用
+  latertrunkaxialbiangular.disabled = true; // 禁用
+  latertrunk_axialpadtype.disabled = true; // 禁用
+  latertrunk_axialbiangular_Width.disabled = true; // 禁用
+  latertrunk_axialbiangular_Heigh.disabled = true; // 禁用
+  latertrunkaxialbiangularpadcount.disabled = true; // 禁用
+
+  latertrunk_axialbiangularcount.value = "";
+  LaterTrunkAxialBiangularSelectOptions(
+    latertrunkaxialbiangular,
+    SpexLaterTrunkAxialBiangularOptions
+  );
+  LaterTrunkAxialBiangularSelectOptions(
+    latertrunk_axialpadtype,
+    SpexLaterTrunkPadClothTypeOptions
+  );
+  LaterTrunkAxialBiangularSelectOptions(
+    latertrunk_axialbiangular_Width,
+    SpexLaterTrunkAxialBiangular12StandardPadSizeWidthOptions
+  );
+  LaterTrunkAxialBiangularSelectOptions(
+    latertrunk_axialbiangular_Heigh,
+    SpexLaterTrunkAxialBiangular12StandardPadSizHeighOptions
+  );
+  latertrunkaxialbiangularpadcount.value = "";
+
+  latertrunkaxialbiangularcountprices.textContent = "";
+  latertrunkaxialbiangularpadcountprices.textContent = "";
+  latertrunkaccessoryprices.textContent = "";
+}
+
+//Spex頭靠選項重置
+function Spexheadsupportsclear() {
+  HeadSupportsPadSizeadSelectOptions(
+    padValueCells,
+    SpexheadsupportsClearPadDataOptions,
+    2
+  );
+  HeadSupportsSelectOptions();
+  ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
+  headsupportspadsel.disabled = true;
+  headsupportspadcolorsel.disabled = true;
+  let nowprice_SpexHeadSupports = Price[18].nextElementSibling;
+  nowprice_SpexHeadSupports.textContent = "0 元";
+
+  headsupportsprices.textContent = "";
+  bracketprices.textContent = "";
+}
+
+//Spex骨盆帶選項重置
+function Spexhipbeltsclear() {
+  renderSelectOptions(hipbeltstypesel, SpexhipbeltstypeOptions);
+  renderSelectOptions(hipbeltssizesel, SpexhipbeltssizeOptions);
+  hipbeltstypesel.disabled = true;
+  hipbeltssizesel.disabled = true;
+}
+
+//Spex胸綁帶選項重置
+function Spexshoulderharnessesclear() {
+  recodeShoulderHarnessesSelectOptions(
+    shoulderharnessessizesel,
+    SpexShoulderHarnessesChestStrapSizeOptions
+  );
+  clearshoulderharnessestablevalue();
+  shoulderharnessessizesel.disabled = true;
+  SpexShoulderHarnessesprices.textContent = "";
+  SpexShoulderStrapGuidesprices.textContent = "";
+}
+
+//Spex上下肢綁帶選項重置
+function Spexupperlowerlimbstabilisersclear() {
+  recodeUpperLowerLimbStabilisersSelectOptions(
+    upperlimbstabiliserssizesel,
+    SpexUpperLimbStabilisersSizeOptions
+  );
+  recodeUpperLowerLimbStabilisersSelectOptions(
+    upperlimbstabiliserstypesel,
+    SpexUpperLimbStabilisersTypeOptions
+  );
+  upperlimbstabiliserssizesel.disabled = true;
+  upperlimbstabiliserstypesel.disabled = true;
+
+  Spexupperlimbstabilisersprices.textContent = "";
+
+  recodeUpperLowerLimbStabilisersSelectOptions(
+    lowerlimbstabiliserssizesel,
+    SpexLimbStabilisersSizeOptions
+  );
+  lowerlimbstabiliserssizesel.disabled = true;
+
+  Spexlowerlimbstabilisersprices.textContent = "";
+}
+
 function allcheckboxfalsefct() {
   // 查询所有复选框
   let allcheckboxsearch = document.querySelectorAll('input[type="checkbox"]');
@@ -2598,6 +2853,52 @@ function allcheckboxfalsefct() {
   });
   let productImage = document.getElementById("ProductImage");
   productImage.src = "./img/Novarc_standrad.png";
+
+  //腳踏板重新調整
+  //兩片式塑踏板
+  addfootpedal_twopiece(footpedal_twopieceDiv);
+  //一片式鋁踏板
+  addfootpedal_piecealuminum(footpedal_piecealuminumDiv);
+  //外掛式腳踏組
+  addfootpedal_footpedal_Plugin(footpedal_footpedal_PluginDiv);
+  //垂直調整腳踏組
+  addfootpedal_plumb(footpedal_plumbDiv);
+
+  //台製側支撐數量歸零
+  Novalatercountclear();
+
+  //Spex坐墊寬、高、顏色需重新更正
+  SpexCushionSelectclear();
+
+  //Spex座板更正
+  SpexseatbaseSelectclear();
+
+  //Spex 分腿器更正
+  SpexmedialthighselectSelectclear();
+
+  //Spex 扶手腿撐更正
+  SpexarmsuplatthighSelectclear();
+
+  //Spex 背靠更正
+  Spexbacksupportsclear();
+
+  //Spex 扣具更正
+  Spexdropmountclear();
+
+  //Spex 側支撐更正
+  Spexlatertrunkclear();
+
+  //Spex 頭靠更正
+  Spexheadsupportsclear();
+
+  //Spex 骨盆帶更正
+  Spexhipbeltsclear();
+
+  //Spex 胸綁帶更正
+  Spexshoulderharnessesclear();
+
+  //Spex 上下肢綁帶更正
+  Spexupperlowerlimbstabilisersclear();
 }
 
 //確保箭頭圖片每次都有更新
