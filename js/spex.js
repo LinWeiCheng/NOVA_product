@@ -389,15 +389,16 @@ let Spex_Flex_SuperHighheightOptions = [
 
 //region --- Color_Selected ---
 let ColorSelectOptions = [
-  { value: "optiona", text: "黑色", color: "#000000", selected: true },
-  { value: "optionb", text: "紅色", color: "#dd3333" },
-  { value: "optionc", text: "藍色", color: "#6eb1c9" },
-  { value: "optiond", text: "紫色", color: "#8224e3" },
-  { value: "optione", text: "灰色", color: "#999999" },
-  { value: "optionf", text: "黃色", color: "#eeee22" },
-  { value: "optiong", text: "橘色", color: "#dd9933" },
-  { value: "optionh", text: "粉色", color: "#f925d6" },
-  { value: "optioni", text: "綠色", color: "#81d742" }, // 改掉重複的optionh
+  { value: "optiona", text: "請選擇", color: "#000000", selected: true },
+  { value: "optionb", text: "黑色", color: "#000000" },
+  { value: "optionc", text: "紅色", color: "#dd3333" },
+  { value: "optiond", text: "藍色", color: "#6eb1c9" },
+  { value: "optione", text: "紫色", color: "#8224e3" },
+  { value: "optionf", text: "灰色", color: "#999999" },
+  { value: "optiong", text: "黃色", color: "#eeee22" },
+  { value: "optionh", text: "橘色", color: "#dd9933" },
+  { value: "optioni", text: "粉色", color: "#f925d6" },
+  { value: "optionj", text: "綠色", color: "#81d742" }, // 改掉重複的optionh
 ];
 //endregion
 
@@ -423,13 +424,31 @@ function ProductColorSelect(selectElement, options) {
     let opt = document.createElement("option");
     opt.value = option.value;
     opt.textContent = option.text;
-    opt.style.backgroundColor = option.color; // 設定每個選項背景色
-    opt.style.color = "white"; //  把字體設成白色
+
+    if (option.value === "optiona") {
+      // 第一個選項：請選擇 → 黑字、白底
+      opt.style.color = "black";
+      opt.style.backgroundColor = "white";
+    } else {
+      // 其他顏色選項 → 背景色 + 白字
+      opt.style.backgroundColor = option.color;
+      opt.style.color = "white";
+    }
+
     if (option.selected) {
       opt.selected = true;
-      selectElement.style.backgroundColor = option.color; // 初始選中時也改背景色
-      selectElement.style.color = "white"; //初始選擇也改字體顏色
+
+      if (option.value === "optiona") {
+        // 初始選擇是 "請選擇" → 不改背景色
+        selectElement.style.backgroundColor = "white";
+        selectElement.style.color = "black";
+      } else {
+        // 初始選擇是顏色 → 改背景與字體
+        selectElement.style.backgroundColor = option.color;
+        selectElement.style.color = "white";
+      }
     }
+
     selectElement.appendChild(opt);
   });
 }
@@ -438,14 +457,21 @@ let SpexCushioncheckbox = document.querySelectorAll(".SpexCushion");
 let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
 
 CushioncolorSelect.addEventListener("change", function () {
-  const selectedOption = this.options[this.selectedIndex];
+  let selectedOption = this.options[this.selectedIndex];
   this.style.backgroundColor = selectedOption.style.backgroundColor;
-  this.style.color = "white"; //更新字體顏色
+
+  if (selectedOption.value === "optiona") {
+    this.style.color = "black"; //更新字體顏色
+  } else {
+    this.style.color = "white"; //更新字體顏色
+  }
 });
 //endregion
 
 //確定勾選的是哪個Spex座墊並給予"寬"及"長"，且不會重複勾選選項
 //region
+let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
+let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
 document
   .querySelectorAll('input[name="car_SpexCushion"]')
   .forEach((checkbox) => {
@@ -461,9 +487,6 @@ document
       if (nowprice_SpexCushion.textContent !== "0元") {
         nowprice_SpexCushion.textContent = "0元";
       }
-      let CushionwidthSelect = document.querySelector(".Spexcushion_Width");
-      let CushionheightSelect = document.querySelector(".Spexcushion_Heigh");
-      let CushioncolorSelect = document.querySelector(".Spexcushion_colorsel");
 
       //確認是選擇"Vigour_Std 標準型座墊"
       if (this.dataset.item === "Vigour_Std 標準型座墊") {
@@ -1528,6 +1551,8 @@ function SeatbaseSizeSelect(selectElement, options) {
 
 //確定勾選的是哪個Spex硬座板並給予"車寬"及"板長"，且不會重複勾選選項
 //region
+let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
+let SeatbaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
 document
   .querySelectorAll('input[name="car_SpexSeatBase"]')
   .forEach((checkbox) => {
@@ -1543,9 +1568,6 @@ document
       if (nowprice_SpexSeatBase.textContent) {
         nowprice_SpexSeatBase.textContent = "0元";
       }
-
-      let SeatbasewidthSelect = document.querySelector(".Spexseatbase_Width");
-      let SeatbaseheightSelect = document.querySelector(".Spexseatbase_Heigh");
 
       //確認是選擇"Spex_Seat Base 硬座板(固定扣具)"
       if (this.dataset.item === "Spex_Seat Base 硬座板(固定扣具)") {
@@ -3093,15 +3115,35 @@ function BackSupportsSizeSelect(selectElement, options) {
 }
 //endregion
 
+let BackSupportswidthSelect = document.querySelector(".Spexbacksupports_Width");
+let BackSupportsheightSelect = document.querySelector(
+  ".Spexbacksupports_Heigh"
+);
 let BackSupportscolorSelect = document.querySelector(
   ".Spexbacksupports_colorsel"
 );
 
 BackSupportscolorSelect.addEventListener("change", function () {
-  const selectedOption = this.options[this.selectedIndex];
+  let selectedOption = this.options[this.selectedIndex];
   this.style.backgroundColor = selectedOption.style.backgroundColor;
-  this.style.color = "white"; //更新字體顏色
+  if (selectedOption.value === "optiona") {
+    this.style.color = "black"; //更新字體顏色
+  } else {
+    this.style.color = "white"; //更新字體顏色
+  }
 });
+
+let BackSupportcheckboxes = document.querySelectorAll(
+  'input[name="car_SpexBackSupports"]'
+);
+
+//如果沒有打勾的選項，就將下拉式選單不顯示
+function updateBackSupportsStatus() {
+  let anyChecked = Array.from(BackSupportcheckboxes).some((cb) => cb.checked);
+  BackSupportswidthSelect.disabled = !anyChecked;
+  BackSupportsheightSelect.disabled = !anyChecked;
+  BackSupportscolorSelect.disabled = !anyChecked;
+}
 
 //確定勾選的是哪個Spex背靠並給予"寬"及"長"，且不會重複勾選選項
 //region
@@ -3120,15 +3162,6 @@ document
       if (nowprice_SpexBackSupports.textContent !== "0元") {
         nowprice_SpexBackSupports.textContent = "0元";
       }
-      let BackSupportswidthSelect = document.querySelector(
-        ".Spexbacksupports_Width"
-      );
-      let BackSupportsheightSelect = document.querySelector(
-        ".Spexbacksupports_Heigh"
-      );
-      let BackSupportscolorSelect = document.querySelector(
-        ".Spexbacksupports_colorsel"
-      );
 
       //確認是選擇"Spex_Zygo_Active_Lo 淺廓型低背靠"
       if (this.dataset.item === "Spex_Zygo_Active_Lo 淺廓型低背靠") {
@@ -3325,6 +3358,12 @@ document
           Spex_Adapta3_QuicklyLift_FoamheightOptions
         );
         ProductColorSelect(BackSupportscolorSelect, ColorSelectOptions);
+      }
+      let hasChecked = Array.from(BackSupportcheckboxes).some(
+        (checkbox) => checkbox.checked
+      );
+      if (!hasChecked) {
+        updateBackSupportsStatus();
       }
     });
   });
@@ -9020,7 +9059,6 @@ let SpexheadsupportsClearPadDataOptions = {
   ],
 };
 //endregion
-//endregion
 
 //region --- 宣告所有所需元素 ---
 let CirclePadCheckbox = document.querySelector("#Spex_Head_Supports_Circle");
@@ -9036,6 +9074,8 @@ let AdjustableLateralPadCheckbox = document.querySelector(
   "#Spex_Head_Supports_AdjustableLateral"
 );
 let headsupportspadsel = document.querySelector(".headsupportspad");
+let headsupportspadcolorsel = document.querySelector(".headsupportspadcolor");
+
 let HeadSupportcheckboxes = document.querySelectorAll(
   'input[name="car_SpexHeadSupports"]'
 );
@@ -9064,6 +9104,7 @@ document
         2
       );
       HeadSupportsSelectOptions();
+      ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
     });
   });
 
@@ -9071,11 +9112,28 @@ document
 function updateHeadSupportsStatus() {
   let anyChecked = Array.from(HeadSupportcheckboxes).some((cb) => cb.checked);
   headsupportspadsel.disabled = !anyChecked;
+  headsupportspadcolorsel.disabled = !anyChecked;
 }
 
 // 監聽頭靠每個checkbox 的事件
 HeadSupportcheckboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", updateHeadSupportsStatus);
+});
+
+//更換下拉式選單頭靠顏色
+let Spexheadsupportspadcolorsel = document.querySelector(
+  ".headsupportspadcolor"
+);
+
+Spexheadsupportspadcolorsel.addEventListener("change", function () {
+  let selectedOption = this.options[this.selectedIndex];
+  this.style.backgroundColor = selectedOption.style.backgroundColor;
+
+  if (selectedOption.value === "optiona") {
+    this.style.color = "black"; //更新字體顏色
+  } else {
+    this.style.color = "white"; //更新字體顏色
+  }
 });
 
 // 初始檢查一次狀態
@@ -9088,41 +9146,54 @@ function HeadSupportsSelectOptions() {
       headsupportspadsel,
       SpexheadsupportsCirclePadSizeOptions
     );
+    ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
     headsupportspadsel.disabled = false;
+    headsupportspadcolorsel.disabled = false;
   }
   if (ComfortPadCheckbox.checked) {
     recodeHeadSupportsSelectOptions(
       headsupportspadsel,
       SpexheadsupportsComfortPadSizeOptions
     );
+    ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
     headsupportspadsel.disabled = false;
+    headsupportspadcolorsel.disabled = false;
   }
   if (ContourPadCheckbox.checked) {
     recodeHeadSupportsSelectOptions(
       headsupportspadsel,
       SpexheadsupportsContourPadSizeOptions
     );
+    ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
     headsupportspadsel.disabled = false;
+    headsupportspadcolorsel.disabled = false;
   }
   if (StandardlateralPadCheckbox.checked) {
     recodeHeadSupportsSelectOptions(
       headsupportspadsel,
       SpexheadsupportsStandardLateralPadSizeOptions
     );
+    ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
     headsupportspadsel.disabled = false;
+    headsupportspadcolorsel.disabled = false;
   }
   if (ExtendedLateralPadCheckbox.checked) {
     recodeHeadSupportsSelectOptions(
       headsupportspadsel,
       SpexheadsupportsExtendedLateralPadSizeOptions
     );
+    ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
     headsupportspadsel.disabled = false;
+    headsupportspadcolorsel.disabled = false;
   }
   if (AdjustableLateralPadCheckbox.checked) {
     recodeHeadSupportsSelectOptions(
       headsupportspadsel,
       SpexheadsupportsAdjustableLateralPadSizeOptions
     );
+    ProductColorSelect(headsupportspadcolorsel, ColorSelectOptions);
+    headsupportspadsel.disabled = false;
+    headsupportspadcolorsel.disabled = false;
   }
 }
 
@@ -9343,6 +9414,8 @@ document
 // endregion
 
 // endregion
+
+//endregion
 
 /*----- 19.Spex綁帶子系統-骨盆帶 -----*/
 //region
