@@ -192,13 +192,13 @@ document.addEventListener("change", (event) => {
   // 當 14 被勾選時，取消勾選 16
   if (event.target === checkbox14 && checkbox14.checked) {
     checkbox16.checked = false;
-    Price[2].nextElementSibling.textContent = "19,000 元";
+    Price[2].nextElementSibling.textContent = "23,000 元";
   }
 
   // 當 16 被勾選時，取消勾選 14
   if (event.target === checkbox16 && checkbox16.checked) {
     checkbox14.checked = false;
-    Price[2].nextElementSibling.textContent = "19,000 元";
+    Price[2].nextElementSibling.textContent = "23,000 元";
   }
 
   if (!checkbox14.checked && !checkbox16.checked) {
